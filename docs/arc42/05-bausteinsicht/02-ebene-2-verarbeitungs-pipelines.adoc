@@ -58,6 +58,13 @@ S5 --> TS
 | Überführt die Drucksachen (OParl-`Paper`) aus den OParl-Rohdaten
   in das ausgelieferte JSON-Batch-Format und lädt die verlinkten PDF-Dokumente.
 
+| *OParl-Aufbereitung*
+| `generate-oparl-assets`
+| Erzeugt aus den OParl-Rohdaten einen schlanken, auf die Stadtrats-Organisation
+  gefilterten Ausschnitt (`data/oparl-council/`: Sitzungen, Tagesordnungspunkte,
+  Beratungen sowie einen Index der Hauptdrucksachen), den der Web-Build direkt liest,
+  statt den vollen Rohbestand zu parsen (siehe <<adr-0006,ADR-0006>>).
+
 | *Video-Verarbeitung*
 | `scan-voting-images`, `speaker-diarization`, `parse-speakers`,
   `scan-check-ui`, `speech-to-text`, `extract-speeches`

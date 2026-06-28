@@ -4,21 +4,16 @@ import type { SessionInput } from '@models/SessionInput';
 
 const getParliamentPeriodStaticPaths = (async () => {
   const parliamentPeriods = await getCollection('parliamentPeriods');
-  const oparlMeetings = (await getCollection('oparlMeetings')).filter(
-    (meeting) =>
-      meeting.data.organization?.includes(
-        'https://ratsinfo.magdeburg.de/oparl/bodies/0001/organizations/gr/1',
-      ),
+  // These collections are already council-scoped by the generate-oparl-assets
+  // precompile step, so no filtering is needed here.
+  const oparlMeetings = (await getCollection('oparlMeetings')).map(
+    (meeting) => meeting.data,
   );
-  const oparlAgendaItems = (await getCollection('oparlAgendaItems')).filter(
-    (agendaItem) =>
-      agendaItem.data.meeting &&
-      oparlMeetings.some((meeting) => meeting.id === agendaItem.data.meeting),
+  const oparlAgendaItems = (await getCollection('oparlAgendaItems')).map(
+    (agendaItem) => agendaItem.data,
   );
-  const oparlConsultations = (await getCollection('oparlConsultations')).filter(
-    (consultation) =>
-      consultation.data.meeting &&
-      oparlMeetings.some((meeting) => meeting.id === consultation.data.meeting),
+  const oparlConsultations = (await getCollection('oparlConsultations')).map(
+    (consultation) => consultation.data,
   );
 
   return parliamentPeriods.map((parliamentPeriod) => {
@@ -26,11 +21,9 @@ const getParliamentPeriodStaticPaths = (async () => {
       params: { parliamentPeriodId: parliamentPeriod.id },
       props: {
         parliamentPeriod: parliamentPeriod.data,
-        oparlMeetings: oparlMeetings.map((meeting) => meeting.data),
-        oparlAgendaItems: oparlAgendaItems.map((agendaItem) => agendaItem.data),
-        oparlConsultations: oparlConsultations.map(
-          (consultation) => consultation.data,
-        ),
+        oparlMeetings,
+        oparlAgendaItems,
+        oparlConsultations,
       },
     };
   });

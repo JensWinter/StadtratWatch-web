@@ -29,6 +29,10 @@ Die ADRs folgen einem schlanken https://adr.github.io/madr/[MADR]-Format. Sie si
 | <<adr-0005,ADR-0005>>
 | OParl-Rohdaten extern statt im Repository
 | Akzeptiert
+
+| <<adr-0006,ADR-0006>>
+| Vorberechnete, ratsbezogene OParl-Assets für den Build
+| Akzeptiert
 |===
 
 include::adr-0001-json-datenbestand.adoc[leveloffset=+1]
@@ -40,3 +44,5 @@ include::adr-0003-automatische-datengewinnung.adoc[leveloffset=+1]
 include::adr-0004-geteilte-modelle.adoc[leveloffset=+1]
 
 include::adr-0005-externe-oparl-rohdaten.adoc[leveloffset=+1]
+
+include::adr-0006-vorberechnete-oparl-assets.adoc[leveloffset=+1]

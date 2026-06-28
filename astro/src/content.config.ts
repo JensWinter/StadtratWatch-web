@@ -8,8 +8,8 @@ import type {
   OparlAgendaItem,
   OparlConsultation,
   OparlMeeting,
-  OparlPaper,
 } from '@models/oparl.ts';
+import type { PaperIndexItem } from '@models/oparl-prepared.ts';
 import { z } from 'astro/zod';
 
 const parliamentPeriods = defineCollection({
@@ -45,10 +45,14 @@ const sessionSpeeches = defineCollection({
   schema: z.array(z.custom<SessionSpeech>()),
 });
 
+// OParl collections below are loaded from the precompiled, council-scoped slice
+// in data/oparl-council/ (produced offline by the generate-oparl-assets Deno
+// script), not from the full raw OParl snapshot. See docs/handoffs/precompile-oparl.md.
+
 const oparlMeetings = defineCollection({
   loader: () =>
     JSON.parse(
-      fs.readFileSync('../data/oparl-magdeburg/meetings.json', 'utf8'),
+      fs.readFileSync('../data/oparl-council/meetings.json', 'utf8'),
     ) as OparlMeeting[],
   schema: z.custom<OparlMeeting>(),
 });
@@ -56,7 +60,7 @@ const oparlMeetings = defineCollection({
 const oparlAgendaItems = defineCollection({
   loader: () =>
     JSON.parse(
-      fs.readFileSync('../data/oparl-magdeburg/agenda-items.json', 'utf8'),
+      fs.readFileSync('../data/oparl-council/agenda-items.json', 'utf8'),
     ) as OparlAgendaItem[],
   schema: z.custom<OparlAgendaItem>(),
 });
@@ -64,17 +68,17 @@ const oparlAgendaItems = defineCollection({
 const oparlConsultations = defineCollection({
   loader: () =>
     JSON.parse(
-      fs.readFileSync('../data/oparl-magdeburg/consultations.json', 'utf8'),
+      fs.readFileSync('../data/oparl-council/consultations.json', 'utf8'),
     ) as OparlConsultation[],
   schema: z.custom<OparlConsultation>(),
 });
 
-const oparlPapers = defineCollection({
+const papersIndex = defineCollection({
   loader: () =>
     JSON.parse(
-      fs.readFileSync('../data/oparl-magdeburg/papers.json', 'utf8'),
-    ) as OparlPaper[],
-  schema: z.custom<OparlPaper>(),
+      fs.readFileSync('../data/oparl-council/papers-index.json', 'utf8'),
+    ) as PaperIndexItem[],
+  schema: z.custom<PaperIndexItem>(),
 });
 
 export const collections = {
@@ -84,5 +88,5 @@ export const collections = {
   oparlMeetings,
   oparlAgendaItems,
   oparlConsultations,
-  oparlPapers,
+  papersIndex,
 };

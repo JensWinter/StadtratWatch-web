@@ -50,6 +50,10 @@ deactivate Astro
 * *Auswertung statt Datenbank:* Die Kennzahlen werden bei jedem Build neu aus den
   JSON-Dateien berechnet; es gibt keine vorberechnete oder persistierte
   Auswertung.
+* *Kein OParl-Rohbestand zur Bauzeit:* Der Build liest die OParl-Daten aus dem
+  vorberechneten, ratsbezogenen Ausschnitt (`data/oparl-council/`), nicht aus dem
+  vollen Rohbestand. Dadurch entfallen der `fetch-oparl`-Vorlauf und die zuvor nötige
+  Heap-Anhebung des Node-Prozesses (siehe <<adr-0006,ADR-0006>>).
 * *Öffentliche API:* Dieselben Daten werden zusätzlich als statische
   JSON-Antworten unter `/api/v1/...` ausgegeben (CC0), was Qualitätsziel #1
   (_Transparenz & Nachvollziehbarkeit_) bedient.

@@ -4,12 +4,13 @@ Run the processing pipeline in this order. The script sections below document in
 
 1. `scrape-oparl` - fetch current OParl data.
 2. `generate-paper-assets` - convert scraped OParl data into the internal paper assets.
-3. Video processing steps:
+3. `generate-oparl-assets` - derive the council-scoped OParl slice the web build reads (`data/oparl-council/`).
+4. Video processing steps:
    1. `parse-speakers` - combine speaker diarization data for the session.
    2. `scan-voting-images` - extract voting results from session screenshots.
    3. `speech-to-text` - generate speech transcriptions.
-4. `generate-image-assets` - create voting visualization image assets from processed session data.
-5. `index-search` - rebuild the Typesense search index after all paper, speech, and asset data is available.
+5. `generate-image-assets` - create voting visualization image assets from processed session data.
+6. `index-search` - rebuild the Typesense search index after all paper, speech, and asset data is available.
 
 
 ### Parse Speakers
@@ -160,6 +161,31 @@ docker run \
   -v $(pwd)/output/ratsinfosystem:/app/oparl:ro \
   srw-generate-paper-assets
 ```
+
+
+### Generate OParl assets
+
+This tool derives the council-scoped OParl slice that the Astro build reads. It
+filters meetings, agenda items and consultations to the city council
+organization and writes a lightweight index of main papers, so the web build no
+longer parses the full ~123 MB raw OParl snapshot. The output goes to
+`data/oparl-council/` (`meetings.json`, `agenda-items.json`,
+`consultations.json`, `papers-index.json`) and is committed to the repository.
+
+Prerequisite: a current raw OParl snapshot in `data/oparl-magdeburg/`, fetched
+with `fetch-oparl` (from the `astro/` directory: `npm run fetch-oparl`).
+
+#### Using the deno script
+```bash
+deno run \
+  --allow-read --allow-write \
+  src/scripts/generate-oparl-assets/index.ts \
+  -r data/oparl-magdeburg \
+  -o data/oparl-council
+```
+
+Re-run this whenever the OParl data changes and commit the updated
+`data/oparl-council/` files.
 
 
 ### Extract text from paper files

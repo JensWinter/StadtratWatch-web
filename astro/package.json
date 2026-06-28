@@ -4,10 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "fetch-oparl": "node --env-file-if-exists=.env scripts/fetch-oparl/fetch-oparl.mjs",
-    "predev": "npm run fetch-oparl",
     "dev": "astro dev",
-    "prebuild": "npm run fetch-oparl",
-    "build": "NODE_OPTIONS='--max-old-space-size=8192' astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --config .prettierrc src/ scripts/ --write",

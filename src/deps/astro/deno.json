@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "exports": {
     "./oparl": "./oparl.ts",
+    "./oparl-prepared": "./oparl-prepared.ts",
     "./registry": "./registry.ts",
     "./session-input": "./session-input.ts",
     "./session-scan": "./session-scan.ts",

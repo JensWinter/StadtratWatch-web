@@ -3,9 +3,9 @@ import PageLayout from '@layouts/PageLayout.astro';
 import { getCollection } from 'astro:content';
 import { getRecentMainPapers, getRecentPapersPeriod } from './_helpers.ts';
 
-const oparlPapersCollection = await getCollection('oparlPapers');
-const allPapers = oparlPapersCollection.map((oparlPaper) => oparlPaper.data);
-const recentMainPapers = getRecentMainPapers(allPapers).toSorted((a, b) =>
+const papersIndexCollection = await getCollection('papersIndex');
+const papersIndex = papersIndexCollection.map((entry) => entry.data);
+const recentMainPapers = getRecentMainPapers(papersIndex).toSorted((a, b) =>
   b.date.localeCompare(a.date),
 );
 const pageTitle = getRecentPapersPeriod();

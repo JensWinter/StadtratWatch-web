@@ -1,23 +1,24 @@
-import type { OparlPaper } from '@models/oparl.ts';
+import type { PaperIndexItem } from '@models/oparl-prepared.ts';
 import type { RecentPaper } from './_models.ts';
 import { formatDate } from '@utils/format-date.ts';
 
-export function getRecentMainPapers(papers: OparlPaper[]): RecentPaper[] {
+// The papers index is already restricted to main papers with a date by the
+// generate-oparl-assets precompile step; only the rolling date window stays here
+// so the list refreshes on every deploy.
+export function getRecentMainPapers(papers: PaperIndexItem[]): RecentPaper[] {
   const today = new Date();
   const threeMonthsAgo = new Date(today.getFullYear(), today.getMonth() - 2, 1);
 
   return papers
-    .filter((oparlPaper) => (oparlPaper.subordinatedPaper || []).length === 0)
-    .filter((oparlPaper) => !!oparlPaper.date)
-    .filter((oparlPaper) => new Date(oparlPaper.date!) >= threeMonthsAgo)
-    .map<RecentPaper>((oparlPaper) => ({
-      oparlId: oparlPaper.id,
-      id: oparlPaper.id.split('/').pop()!,
-      date: oparlPaper.date!,
-      dateDisplay: formatDate(oparlPaper.date!),
-      type: oparlPaper.paperType,
-      reference: oparlPaper.reference,
-      title: oparlPaper.name,
+    .filter((paper) => new Date(paper.date) >= threeMonthsAgo)
+    .map<RecentPaper>((paper) => ({
+      oparlId: paper.id,
+      id: paper.id.split('/').pop()!,
+      date: paper.date,
+      dateDisplay: formatDate(paper.date),
+      type: paper.paperType,
+      reference: paper.reference,
+      title: paper.name,
     }));
 }
 

@@ -1,0 +1,40 @@
+[#adr-0006]
+= ADR-0006: Vorberechnete, ratsbezogene OParl-Assets für den Build
+
+*Status:* Akzeptiert
+
+== Kontext und Problem
+
+Astro las die OParl-Daten bisher über vier _Content Collections_ direkt aus dem rohen Snapshot (`data/oparl-magdeburg/`) ein: `meetings.json` (≈6 MB), `agenda-items.json` (≈39 MB), `consultations.json` (≈25 MB) und `papers.json` (≈33 MB), zusammen rund 123 MB. Um diese Menge zur Bauzeit zu parsen, lief der Build mit einem auf 8 GB angehobenen Node-Heap (`NODE_OPTIONS='--max-old-space-size=8192'`), und der Snapshot musste vor jedem Build über `fetch-oparl` geladen werden (<<adr-0005,ADR-0005>>).
+
+Tatsächlich benötigt der Build nur einen kleinen, ratsbezogenen Ausschnitt: Die Seiten filterten die Sitzungen, Tagesordnungspunkte und Beratungen zur Bauzeit auf die Organisation „Stadtrat" und die Drucksachen-Übersicht brauchte lediglich die Stammdaten der Hauptdrucksachen eines gleitenden Drei-Monats-Fensters. Diese Filter- und Verknüpfungslogik lag im Build (`pp/[parliamentPeriodId]/_helpers.ts`, `papers/_helpers.ts`) und arbeitete jeweils über den vollen Rohbestand.
+
+== Betrachtete Optionen
+
+* *Status quo* — Rohdaten im Build parsen und filtern. Hoher Speicherbedarf, langsamer Build, Verarbeitungslogik in den Seiten.
+* *Seiten-Sichten vorberechnen* — pro Route fertige View-Models erzeugen. Maximale Ersparnis, koppelt den Vorberechnungsschritt aber an jede UI-Änderung.
+* *Aufbereitete Entitäten vorberechnen* (gewählt) — ein Offline-Schritt erzeugt denselben Entitätstyp, aber bereits ratsbezogen gefiltert; die Content Collections werden zu dünnen Ladern, die Seiten bleiben in ihrer Form unverändert.
+
+== Entscheidung
+
+Ein neues Deno-Skript `generate-oparl-assets` erzeugt offline aus dem rohen OParl-Snapshot einen *ratsbezogenen, vorberechneten Ausschnitt* und legt ihn — analog zu den Drucksachen-Assets (`data/papers/`) — *versioniert im Repository* unter `data/oparl-council/` ab:
+
+* `meetings.json`, `agenda-items.json`, `consultations.json` — auf die Stadtrats-Organisation gefilterte Entitäten (gleicher Typ wie zuvor).
+* `papers-index.json` — ein schlanker Index der Hauptdrucksachen (nur `id`, `date`, `paperType`, `reference`, `name`).
+
+Das Skript wiederverwendet die bestehenden OParl-Repositories (`src/scripts/shared/oparl/`); die zuvor im Build hartkodierte Organisations-ID liegt nun als Konstante im Skript. Astro liest die vier Collections aus `data/oparl-council/`; die ratsbezogene Filterung in `_helpers.ts` entfällt. Das gleitende Drei-Monats-Fenster der Drucksachen-Übersicht bleibt bewusst in der Seite, damit sich die Liste bei jedem Deploy aktualisiert.
+
+Weil der Build damit keine OParl-Rohdaten mehr liest, entfallen die `prebuild`/`predev`-`fetch-oparl`-Hooks und die 8-GB-Heap-Anhebung. `fetch-oparl` bleibt als Voraussetzung des Vorberechnungsschritts erhalten (Maintainer-Ablauf: `fetch-oparl` → `generate-oparl-assets` → committen).
+
+== Konsequenzen
+
+*Positiv*
+
+* Der Build parst statt ≈123 MB Rohdaten nur noch ≈22 MB vorbereitete JSON; die Heap-Anhebung ist nicht mehr nötig.
+* Filter- und Verknüpfungslogik verlässt die Seiten und liegt testbar im Vorberechnungsschritt (BDD-Tests, Paritätsprüfung gegen die alte Build-Filterung).
+* Der Web-Build benötigt keine S3/CloudFront-Abhängigkeit mehr; nur der Maintainer-Ablauf nutzt `fetch-oparl`.
+
+*Negativ*
+
+* Der vorberechnete Ausschnitt muss bei OParl-Änderungen neu erzeugt und committet werden — dieselbe Disziplin wie bei `data/papers/` (<<adr-0003,ADR-0003>>).
+* Es liegen abgeleitete Daten im Repository. Der Zuwachs (≈22 MB, selten geändert) ist deutlich kleiner als die in <<adr-0005,ADR-0005>> vermiedene LFS-Aufblähung der Rohdaten und wird bewusst akzeptiert.
