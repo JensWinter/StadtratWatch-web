@@ -1403,6 +1403,12 @@
             "name": "DS0105/26 - Anlage 7 KFP Intensivbetreuung",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740282&type=do",
             "size": 1009351
+          },
+          {
+            "id": 747236,
+            "name": "Beschlussausfertigung",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747236&type=do",
+            "size": 59861
           }
         ],
         "consultations": [

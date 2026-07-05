@@ -521,6 +521,12 @@
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=738148&type=do",
         "size": 168260
+      },
+      {
+        "id": 747220,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747220&type=do",
+        "size": 16272
       }
     ],
     "consultations": [
@@ -555,6 +561,22 @@
         "organization": "Stadtrat",
         "agendaItem": "6.11",
         "result": "zurückgestellt"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-06-09T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "5.12",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.27",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 247618,
@@ -596,6 +618,12 @@
         "name": "DS0570_25 Anlage 4 Vorhabenplan",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=738158&type=do",
         "size": 383765
+      },
+      {
+        "id": 747225,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747225&type=do",
+        "size": 57752
       }
     ],
     "consultations": [
@@ -630,6 +658,22 @@
         "organization": "Stadtrat",
         "agendaItem": "6.12",
         "result": "zurückgestellt"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-06-09T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "5.13",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.28",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 247619,

@@ -681,6 +681,35 @@
     "superOrdinatedPaperIds": []
   },
   {
+    "id": 248933,
+    "reference": "S0235/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Abriss der Brücke über die Schrote an der Dehmbergstraße",
+    "files": [
+      {
+        "id": 746022,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746022&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-06-30T08:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "9.16",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 248933,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248517
+    ]
+  },
+  {
     "id": 248934,
     "reference": "S0236/26",
     "type": "Stellungnahme (Anfrage)",
@@ -1119,13 +1148,42 @@
         "role": "Kenntnisnahme",
         "organization": "Betriebsausschuss Stadtgarten und Friedhöfe Magdeburg",
         "agendaItem": "6.1.2",
-        "result": null
+        "result": "zur Kenntnis genommen"
       }
     ],
     "rootPaperId": 248199,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": [
       248199
+    ]
+  },
+  {
+    "id": 248961,
+    "reference": "S0242/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Systematische Überprüfung und Beseitigung sichtbehindernder Werbeträger im Stadtgebiet",
+    "files": [
+      {
+        "id": 746319,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746319&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-06-30T08:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "9.17",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 248961,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248584
     ]
   },
   {
@@ -1253,7 +1311,9 @@
       }
     ],
     "rootPaperId": 248966,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249166
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -1473,7 +1533,9 @@
       }
     ],
     "rootPaperId": 248975,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249165
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -1507,6 +1569,12 @@
         "name": "A0113/26 Antrag",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=744062&type=do",
         "size": 65779
+      },
+      {
+        "id": 747245,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747245&type=do",
+        "size": 60353
       }
     ],
     "consultations": [
@@ -1882,7 +1950,9 @@
       }
     ],
     "rootPaperId": 248991,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249074
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -1954,7 +2024,9 @@
       }
     ],
     "rootPaperId": 248993,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249164
+    ],
     "superOrdinatedPaperIds": []
   },
   {

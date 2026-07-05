@@ -1579,6 +1579,12 @@
             "name": "DS0466/25 - Anlage 2 Synopse Entgeltordnung",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=737374&type=do",
             "size": 151395
+          },
+          {
+            "id": 747173,
+            "name": "Beschlussausfertigung",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747173&type=do",
+            "size": 12508
           }
         ],
         "consultations": [
@@ -1613,11 +1619,28 @@
             "organization": "Stadtrat",
             "agendaItem": "5.1",
             "result": "in die Ausschüsse verwiesen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Verwaltungsausschusses",
+            "date": "2026-06-05T15:00:00+02:00",
+            "role": "Beratung",
+            "organization": "Verwaltungsausschuss",
+            "agendaItem": "5.1",
+            "result": "empfohlen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-06-18T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "5.1",
+            "result": "geändert beschlossen"
           }
         ],
         "rootPaperId": 247165,
         "subordinatedPaperIds": [
-          248738
+          248738,
+          248764
         ],
         "superOrdinatedPaperIds": []
       },
@@ -1642,6 +1665,35 @@
             "organization": "Stadtrat",
             "agendaItem": "5.1.1",
             "result": "in die Ausschüsse verwiesen"
+          }
+        ],
+        "rootPaperId": 247165,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          247165
+        ]
+      },
+      {
+        "id": 248764,
+        "reference": "DS0466/25/2",
+        "type": "Änderungsantrag",
+        "title": "Benutzungs- und Entgeltordnung für die Räume des Alten Rathauses",
+        "files": [
+          {
+            "id": 746137,
+            "name": "DS0466/25/2 Änderungsantrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746137&type=do",
+            "size": 14755
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-06-18T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "5.1.2",
+            "result": "geändert beschlossen"
           }
         ],
         "rootPaperId": 247165,

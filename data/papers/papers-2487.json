@@ -83,19 +83,25 @@
         "id": 742107,
         "name": "DS0136/26 Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742107&type=do",
-        "size": null
+        "size": 251303
       },
       {
         "id": 742395,
         "name": "DS0136/26 Anlage 1 Maßnahmenplanung gerundet",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742395&type=do",
-        "size": null
+        "size": 128991
       },
       {
         "id": 742396,
         "name": "DS0136/26 Anlage 2 Planungsmatrix gerundet",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742396&type=do",
-        "size": null
+        "size": 105762
+      },
+      {
+        "id": 747193,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747193&type=do",
+        "size": 14170
       }
     ],
     "consultations": [
@@ -130,6 +136,14 @@
         "organization": "Jugendhilfeausschuss",
         "agendaItem": "4.1",
         "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.16",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 248703,
@@ -900,7 +914,13 @@
         "id": 741818,
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741818&type=do",
-        "size": null
+        "size": 164720
+      },
+      {
+        "id": 747190,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747190&type=do",
+        "size": 13145
       }
     ],
     "consultations": [
@@ -919,6 +939,14 @@
         "organization": "Verwaltungsausschuss",
         "agendaItem": "5.4",
         "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.13",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 248729,
@@ -1995,43 +2023,49 @@
         "id": 741993,
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741993&type=do",
-        "size": null
+        "size": 231837
       },
       {
         "id": 741995,
         "name": "DS0147/26 Anlage 1 Lagebeurteilung",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741995&type=do",
-        "size": null
+        "size": 272567
       },
       {
         "id": 741996,
         "name": "DS0147/26 Anlage 2 Bestätigungsvermerk",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741996&type=do",
-        "size": null
+        "size": 374051
       },
       {
         "id": 741998,
         "name": "DS0147/26 Anlage 3 Bilanz 31.12.2025",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741998&type=do",
-        "size": null
+        "size": 116062
       },
       {
         "id": 741999,
         "name": "DS0147/26 Anlage 4 Gewinn- und Verlustrechnung 2025",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741999&type=do",
-        "size": null
+        "size": 110678
       },
       {
         "id": 742000,
         "name": "DS0147/26 Anlage 5 Lagebericht",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742000&type=do",
-        "size": null
+        "size": 1054084
       },
       {
         "id": 742001,
         "name": "DS0147/26 Anlage 6 Beschlussvorschläge AR 05.05.26",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742001&type=do",
-        "size": null
+        "size": 421901
+      },
+      {
+        "id": 747179,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747179&type=do",
+        "size": 15564
       }
     ],
     "consultations": [
@@ -2042,6 +2076,22 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "3.3",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-06-10T16:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "5.1",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.3",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 248762,
@@ -2108,7 +2158,7 @@
         "result": "geändert beschlossen"
       }
     ],
-    "rootPaperId": 248764,
+    "rootPaperId": 247165,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": [
       247165
@@ -2609,7 +2659,9 @@
       }
     ],
     "rootPaperId": 248784,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249148
+    ],
     "superOrdinatedPaperIds": []
   },
   {

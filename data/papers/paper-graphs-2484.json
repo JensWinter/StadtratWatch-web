@@ -238,6 +238,12 @@
             "name": "A0054/26 Antrag",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739048&type=do",
             "size": 76589
+          },
+          {
+            "id": 747244,
+            "name": "Beschlussausfertigung",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747244&type=do",
+            "size": 67100
           }
         ],
         "consultations": [
@@ -264,6 +270,14 @@
             "organization": "Kulturausschuss",
             "agendaItem": "5.1",
             "result": "empfohlen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-06-18T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "6.4",
+            "result": "ungeändert beschlossen"
           }
         ],
         "rootPaperId": 248414,
@@ -959,13 +973,19 @@
             "id": 739348,
             "name": "Beschlussvorlage Stadt",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739348&type=do",
-            "size": null
+            "size": 160053
           },
           {
             "id": 739353,
             "name": "DS0085/26- Anlage",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739353&type=do",
-            "size": null
+            "size": 39178
+          },
+          {
+            "id": 747186,
+            "name": "Beschlussausfertigung",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747186&type=do",
+            "size": 12456
           }
         ],
         "consultations": [
@@ -976,6 +996,14 @@
             "organization": "Die Oberbürgermeisterin",
             "agendaItem": "3.1",
             "result": "genehmigt OB"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-06-18T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "5.9",
+            "result": "ungeändert beschlossen"
           }
         ],
         "rootPaperId": 248435,

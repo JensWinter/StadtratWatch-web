@@ -771,6 +771,12 @@
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739130&type=do",
         "size": 172285
+      },
+      {
+        "id": 747214,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747214&type=do",
+        "size": 19532
       }
     ],
     "consultations": [
@@ -805,6 +811,22 @@
         "organization": "Stadtrat",
         "agendaItem": "6.22",
         "result": "zurückgestellt"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-06-09T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "5.7",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.22",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 248130,
@@ -840,6 +862,12 @@
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739155&type=do",
         "size": 180844
+      },
+      {
+        "id": 747215,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747215&type=do",
+        "size": 59168
       }
     ],
     "consultations": [
@@ -874,6 +902,22 @@
         "organization": "Stadtrat",
         "agendaItem": "6.23",
         "result": "zurückgestellt"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-06-09T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "5.8",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.23",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 248131,
@@ -1252,6 +1296,12 @@
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=737286&type=do",
         "size": 217480
+      },
+      {
+        "id": 747176,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747176&type=do",
+        "size": 64865
       }
     ],
     "consultations": [
@@ -1318,11 +1368,22 @@
         "organization": "Ausschuss für kommunale Rechts- und Bürgerangelegenheiten",
         "agendaItem": "4",
         "result": "Einzelabstimmung"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.2",
+        "result": "mit Beschlussfassung zum Änderungsantrag erledigt"
       }
     ],
     "rootPaperId": 248146,
     "subordinatedPaperIds": [
-      248916
+      248916,
+      249199,
+      249240,
+      249247
     ],
     "superOrdinatedPaperIds": []
   },
@@ -1644,19 +1705,25 @@
         "id": 739984,
         "name": "DS0041/26 Anlage 2 Kriterien zur Weiterleitung der Demographiepauschale",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739984&type=do",
-        "size": null
+        "size": 476802
       },
       {
         "id": 742899,
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742899&type=do",
-        "size": null
+        "size": 187563
       },
       {
         "id": 742970,
         "name": "DS0041/26 Anlage 1 - Konzept Kita-StrukturPlus",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742970&type=do",
-        "size": null
+        "size": 130378
+      },
+      {
+        "id": 747198,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747198&type=do",
+        "size": 58006
       }
     ],
     "consultations": [
@@ -1683,6 +1750,22 @@
         "organization": "Jugendhilfeausschuss",
         "agendaItem": "4.5",
         "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-06-10T16:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "5.9",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.18",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 248156,
@@ -2074,6 +2157,12 @@
         "name": "Antrag",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=736904&type=do",
         "size": 14746
+      },
+      {
+        "id": 747243,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747243&type=do",
+        "size": 12546
       }
     ],
     "consultations": [
@@ -2092,6 +2181,38 @@
         "organization": "Stadtrat",
         "agendaItem": "6.24",
         "result": "in die Ausschüsse verwiesen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Kulturausschusses",
+        "date": "2026-04-22T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Kulturausschuss",
+        "agendaItem": "5.3",
+        "result": "nicht empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Betriebsausschusses Kommunales Gebäudemanagement",
+        "date": "2026-05-05T16:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Betriebsausschuss Kommunales Gebäudemanagement",
+        "agendaItem": "6.4",
+        "result": "nicht empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-05-13T16:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "6.2",
+        "result": "nicht empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.3",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 248172,

@@ -66,7 +66,9 @@
       }
     ],
     "rootPaperId": 249002,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249111
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -468,6 +470,12 @@
         "name": "Beschlussvorlage EB",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=744843&type=do",
         "size": 206607
+      },
+      {
+        "id": 747240,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747240&type=do",
+        "size": 12493
       }
     ],
     "consultations": [
@@ -642,7 +650,9 @@
       }
     ],
     "rootPaperId": 249031,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249215
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -662,6 +672,12 @@
         "name": "DS0224/26 - Anlage 1 DS0224/26 - Anlage 1 Wobau Internationales Figurentheaterfestival Blickwinkel",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=744596&type=do",
         "size": 36806
+      },
+      {
+        "id": 747187,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747187&type=do",
+        "size": 12313
       }
     ],
     "consultations": [
@@ -703,6 +719,12 @@
         "name": "DS0225/26  - Anlage 1 SK DomplatzopenAir2026 - Erhöhung",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=744607&type=do",
         "size": 37980
+      },
+      {
+        "id": 747188,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747188&type=do",
+        "size": 53200
       }
     ],
     "consultations": [
@@ -773,6 +795,12 @@
         "name": "DS0228/26 - Sponsoring MDCC an Puppentheater",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=744734&type=do",
         "size": 83814
+      },
+      {
+        "id": 747189,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747189&type=do",
+        "size": 12357
       }
     ],
     "consultations": [
@@ -981,7 +1009,14 @@
     "reference": "A0118/26",
     "type": "Antrag",
     "title": "Verbindliche Aktivierungsmaßnahmen für junge Bürgergeldempfänger prüfen",
-    "files": [],
+    "files": [
+      {
+        "id": 747246,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747246&type=do",
+        "size": 13167
+      }
+    ],
     "consultations": [
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -993,6 +1028,33 @@
       }
     ],
     "rootPaperId": 249060,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249061,
+    "reference": "A0119/26",
+    "type": "Antrag",
+    "title": "Verkehrssicherheit für Kitakinder / Schülerinnen und Schüler erhöhen",
+    "files": [
+      {
+        "id": 747247,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747247&type=do",
+        "size": 12692
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.8",
+        "result": "ungeändert beschlossen"
+      }
+    ],
+    "rootPaperId": 249061,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": []
   },
@@ -1177,6 +1239,35 @@
     ]
   },
   {
+    "id": 249074,
+    "reference": "S0270/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Verstoß gegen das Gebot der parteipolitischen Neutralität bei der Fête de la Musique",
+    "files": [
+      {
+        "id": 745705,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745705&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-06-30T08:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "9.8",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 248991,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248991
+    ]
+  },
+  {
     "id": 249075,
     "reference": "S0271/26",
     "type": "Stellungnahme (Anfrage)",
@@ -1233,7 +1324,7 @@
         "role": "Kenntnisnahme",
         "organization": "Betriebsausschuss Stadtgarten und Friedhöfe Magdeburg",
         "agendaItem": "7.1",
-        "result": null
+        "result": "zur Kenntnis genommen"
       }
     ],
     "rootPaperId": 247388,
@@ -1274,6 +1365,33 @@
       }
     ],
     "rootPaperId": 249077,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249082,
+    "reference": "A0125/26",
+    "type": "Antrag",
+    "title": "Einbürgerung syrischer Staatsbürger aussetzen",
+    "files": [
+      {
+        "id": 747248,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747248&type=do",
+        "size": 54434
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.9",
+        "result": "abgelehnt"
+      }
+    ],
+    "rootPaperId": 249082,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": []
   },
@@ -1369,7 +1487,7 @@
         "result": "nicht empfohlen"
       }
     ],
-    "rootPaperId": 249095,
+    "rootPaperId": 247754,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": [
       247754
@@ -1438,7 +1556,14 @@
     "reference": "A0133/26",
     "type": "Antrag",
     "title": "Kultur. Vielfalt. Heimat.",
-    "files": [],
+    "files": [
+      {
+        "id": 747249,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747249&type=do",
+        "size": 53829
+      }
+    ],
     "consultations": [
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -1450,6 +1575,33 @@
       }
     ],
     "rootPaperId": 249098,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249099,
+    "reference": "A0134/26",
+    "type": "Antrag",
+    "title": "Pilotprojekt Ampelblitzer",
+    "files": [
+      {
+        "id": 747250,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747250&type=do",
+        "size": 55499
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.14",
+        "result": "abgelehnt"
+      }
+    ],
+    "rootPaperId": 249099,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": []
   }

@@ -2062,6 +2062,12 @@
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740293&type=do",
         "size": 169856
+      },
+      {
+        "id": 747216,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747216&type=do",
+        "size": 18114
       }
     ],
     "consultations": [
@@ -2120,25 +2126,31 @@
         "id": 740299,
         "name": "DS0060_26 Anlage 1 Lageplan",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740299&type=do",
-        "size": null
+        "size": 793583
       },
       {
         "id": 740300,
         "name": "DS0060_26 Anlage 2 B-Plan",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740300&type=do",
-        "size": null
+        "size": 7402415
       },
       {
         "id": 740301,
         "name": "DS0060_26 Anlage 3 Begründung",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740301&type=do",
-        "size": null
+        "size": 1972844
       },
       {
         "id": 740302,
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740302&type=do",
-        "size": null
+        "size": 174005
+      },
+      {
+        "id": 747217,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747217&type=do",
+        "size": 14356
       }
     ],
     "consultations": [
@@ -2157,6 +2169,30 @@
         "organization": "Ausschuss für Umwelt und Energie",
         "agendaItem": "5.11",
         "result": "vertagt"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-06-09T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "5.10",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-06-11T16:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "5.4",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.25",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 248268,
