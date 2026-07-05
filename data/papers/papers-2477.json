@@ -151,6 +151,12 @@
         "name": "A0275/25 Antrag",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=732374&type=do",
         "size": 60796
+      },
+      {
+        "id": 747241,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747241&type=do",
+        "size": 57072
       }
     ],
     "consultations": [
@@ -185,11 +191,28 @@
         "organization": "Stadtrat",
         "agendaItem": "7.15",
         "result": "zurückgestellt"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-04-23T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.9",
+        "result": "zurückgestellt"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.2",
+        "result": "abgelehnt"
       }
     ],
     "rootPaperId": 247704,
     "subordinatedPaperIds": [
-      247928
+      247928,
+      249212
     ],
     "superOrdinatedPaperIds": []
   },
@@ -1686,13 +1709,19 @@
         "id": 738096,
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=738096&type=do",
-        "size": null
+        "size": 190142
       },
       {
         "id": 739485,
         "name": "DS0599_25 - Anlage 1_Warnkonzept",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739485&type=do",
-        "size": null
+        "size": 574704
+      },
+      {
+        "id": 747191,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747191&type=do",
+        "size": 13713
       }
     ],
     "consultations": [
@@ -1735,10 +1764,28 @@
         "organization": "Finanz- und Grundstücksausschuss",
         "agendaItem": "5.3",
         "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Verwaltungsausschusses",
+        "date": "2026-06-05T15:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Verwaltungsausschuss",
+        "agendaItem": "5.3",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.14",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 247754,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249095
+    ],
     "superOrdinatedPaperIds": []
   },
   {

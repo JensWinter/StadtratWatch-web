@@ -1,0 +1,455 @@
+{
+    "youtubeUrl": "https://www.youtube.com/live/NFFqzGC2wp4",
+    "layout": {
+        "namesRowHeight": 41,
+        "namesColumns": [
+            {
+                "left": 125,
+                "top": 373,
+                "width": 466,
+                "testPixelXOffset": 415,
+                "testPixelYOffset": 21
+            },
+            {
+                "left": 714,
+                "top": 373,
+                "width": 466,
+                "testPixelXOffset": 415,
+                "testPixelYOffset": 21
+            },
+            {
+                "left": 1303,
+                "top": 373,
+                "width": 466,
+                "testPixelXOffset": 415,
+                "testPixelYOffset": 21
+            },
+            {
+                "left": 1920,
+                "top": 373,
+                "width": 343,
+                "testPixelXOffset": 330,
+                "testPixelYOffset": 21
+            }
+        ],
+        "videoTimestampRectangle": {
+            "left": 50,
+            "top": 1450,
+            "width": 400,
+            "height": 48
+        },
+        "votingSubjectIdRectangle": {
+            "left": 0,
+            "top": 165,
+            "width": 400,
+            "height": 60
+        },
+        "votingSubjectTitleRectangle": {
+            "left": 350,
+            "top": 186,
+            "width": 1803,
+            "height": 168
+        }
+    },
+    "names": [
+        {
+            "name": "Dr. Beate Bettecken",
+            "columnIndex": 0,
+            "rowIndex": 1,
+            "party": "CDU",
+            "faction": "CDU/FDP"
+        },
+        {
+            "name": "Matthias Boxhorn",
+            "columnIndex": 0,
+            "rowIndex": 2,
+            "party": "CDU",
+            "faction": "CDU/FDP"
+        },
+        {
+            "name": "Florian Bühnemann",
+            "columnIndex": 0,
+            "rowIndex": 3,
+            "party": "CDU",
+            "faction": "CDU/FDP"
+        },
+        {
+            "name": "Bernd Heynemann",
+            "columnIndex": 0,
+            "rowIndex": 4,
+            "party": "CDU",
+            "faction": "CDU/FDP"
+        },
+        {
+            "name": "Stephan Leitel",
+            "columnIndex": 0,
+            "rowIndex": 5,
+            "party": "CDU",
+            "faction": "CDU/FDP"
+        },
+        {
+            "name": "Stefanie Middendorf",
+            "columnIndex": 0,
+            "rowIndex": 6,
+            "party": "CDU",
+            "faction": "CDU/FDP"
+        },
+        {
+            "name": "Tim Rohne",
+            "columnIndex": 0,
+            "rowIndex": 7,
+            "party": "CDU",
+            "faction": "CDU/FDP"
+        },
+        {
+            "name": "Manuel Rupsch",
+            "columnIndex": 0,
+            "rowIndex": 8,
+            "party": "CDU",
+            "faction": "CDU/FDP"
+        },
+        {
+            "name": "Julian Schache",
+            "columnIndex": 0,
+            "rowIndex": 9,
+            "party": "CDU",
+            "faction": "CDU/FDP"
+        },
+        {
+            "name": "Timo Schulze",
+            "columnIndex": 0,
+            "rowIndex": 10,
+            "party": "CDU",
+            "faction": "CDU/FDP"
+        },
+        {
+            "name": "Frank Schuster",
+            "columnIndex": 0,
+            "rowIndex": 11,
+            "party": "CDU",
+            "faction": "CDU/FDP"
+        },
+        {
+            "name": "Wigbert Schwenke",
+            "columnIndex": 0,
+            "rowIndex": 12,
+            "party": "CDU",
+            "faction": "CDU/FDP"
+        },
+        {
+            "name": "Ulf Steinforth",
+            "columnIndex": 0,
+            "rowIndex": 13,
+            "party": "CDU",
+            "faction": "CDU/FDP"
+        },
+        {
+            "name": "Dr. Kathrin Meyer-Pinger",
+            "columnIndex": 0,
+            "rowIndex": 14,
+            "party": "FDP",
+            "faction": "CDU/FDP"
+        },
+        {
+            "name": "Carola Schumann",
+            "columnIndex": 0,
+            "rowIndex": 15,
+            "party": "FDP",
+            "faction": "CDU/FDP"
+        },
+        {
+            "name": "Simone Borris",
+            "columnIndex": 0,
+            "rowIndex": 18,
+            "party": "Oberbürgermeisterin",
+            "faction": "Oberbürgermeisterin"
+        },
+        {
+            "name": "Margot Häfner",
+            "columnIndex": 1,
+            "rowIndex": 1,
+            "party": "AfD",
+            "faction": "AfD"
+        },
+        {
+            "name": "Marika Heinrichs",
+            "columnIndex": 1,
+            "rowIndex": 2,
+            "party": "AfD",
+            "faction": "AfD"
+        },
+        {
+            "name": "Oliver Kirchner",
+            "columnIndex": 1,
+            "rowIndex": 3,
+            "party": "AfD",
+            "faction": "AfD"
+        },
+        {
+            "name": "Hagen Kohl",
+            "columnIndex": 1,
+            "rowIndex": 4,
+            "party": "AfD",
+            "faction": "AfD"
+        },
+        {
+            "name": "Steffen Kraus",
+            "columnIndex": 1,
+            "rowIndex": 5,
+            "party": "AfD",
+            "faction": "AfD"
+        },
+        {
+            "name": "Ronny Kumpf",
+            "columnIndex": 1,
+            "rowIndex": 6,
+            "party": "AfD",
+            "faction": "AfD"
+        },
+        {
+            "name": "Christian Mertens",
+            "columnIndex": 1,
+            "rowIndex": 7,
+            "party": "AfD",
+            "faction": "AfD"
+        },
+        {
+            "name": "Kevin Michalzik",
+            "columnIndex": 1,
+            "rowIndex": 8,
+            "party": "AfD",
+            "faction": "AfD"
+        },
+        {
+            "name": "Dr. Jan Moldenhauer",
+            "columnIndex": 1,
+            "rowIndex": 9,
+            "party": "AfD",
+            "faction": "AfD"
+        },
+        {
+            "name": "Uwe Muelbredt",
+            "columnIndex": 1,
+            "rowIndex": 10,
+            "party": "AfD",
+            "faction": "AfD"
+        },
+        {
+            "name": "Julian Reek",
+            "columnIndex": 1,
+            "rowIndex": 11,
+            "party": "AfD",
+            "faction": "AfD"
+        },
+        {
+            "name": "Florian Ruß",
+            "columnIndex": 1,
+            "rowIndex": 12,
+            "party": "AfD",
+            "faction": "AfD"
+        },
+        {
+            "name": "Bernd Neubauer",
+            "columnIndex": 1,
+            "rowIndex": 13,
+            "party": "AfD",
+            "faction": "AfD"
+        },
+        {
+            "name": "Rainer Buller",
+            "columnIndex": 1,
+            "rowIndex": 16,
+            "party": "Gartenpartei",
+            "faction": "Gartenpartei"
+        },
+        {
+            "name": "Marcel Guderjahn",
+            "columnIndex": 1,
+            "rowIndex": 17,
+            "party": "Gartenpartei",
+            "faction": "Gartenpartei"
+        },
+        {
+            "name": "Roland Zander",
+            "columnIndex": 1,
+            "rowIndex": 18,
+            "party": "Gartenpartei",
+            "faction": "Gartenpartei"
+        },
+        {
+            "name": "Christoph Abel",
+            "columnIndex": 2,
+            "rowIndex": 1,
+            "party": "SPD",
+            "faction": "SPD/Tierschutzallianz/Volt"
+        },
+        {
+            "name": "Dr. Norman Belas",
+            "columnIndex": 2,
+            "rowIndex": 2,
+            "party": "SPD",
+            "faction": "SPD/Tierschutzallianz/Volt"
+        },
+        {
+            "name": "Dr. Falko Grube",
+            "columnIndex": 2,
+            "rowIndex": 3,
+            "party": "SPD",
+            "faction": "SPD/Tierschutzallianz/Volt"
+        },
+        {
+            "name": "Kornelia Keune",
+            "columnIndex": 2,
+            "rowIndex": 4,
+            "party": "SPD",
+            "faction": "SPD/Tierschutzallianz/Volt"
+        },
+        {
+            "name": "Steffi Meyer",
+            "columnIndex": 2,
+            "rowIndex": 5,
+            "party": "SPD",
+            "faction": "SPD/Tierschutzallianz/Volt"
+        },
+        {
+            "name": "Jens Rösler",
+            "columnIndex": 2,
+            "rowIndex": 6,
+            "party": "SPD",
+            "faction": "SPD/Tierschutzallianz/Volt"
+        },
+        {
+            "name": "Dr. Thomas Wiebe",
+            "columnIndex": 2,
+            "rowIndex": 7,
+            "party": "SPD",
+            "faction": "SPD/Tierschutzallianz/Volt"
+        },
+        {
+            "name": "Dr. Niko Zenker",
+            "columnIndex": 2,
+            "rowIndex": 8,
+            "party": "SPD",
+            "faction": "SPD/Tierschutzallianz/Volt"
+        },
+        {
+            "name": "Aila Fassl",
+            "columnIndex": 2,
+            "rowIndex": 9,
+            "party": "Tierschutzallianz",
+            "faction": "SPD/Tierschutzallianz/Volt"
+        },
+        {
+            "name": "Lucas Kemmesies",
+            "columnIndex": 2,
+            "rowIndex": 10,
+            "party": "Volt",
+            "faction": "SPD/Tierschutzallianz/Volt"
+        },
+        {
+            "name": "Nicole Anger",
+            "columnIndex": 2,
+            "rowIndex": 13,
+            "party": "DIE LINKE",
+            "faction": "DIE LINKE"
+        },
+        {
+            "name": "Noah Biswanger",
+            "columnIndex": 2,
+            "rowIndex": 14,
+            "party": "DIE LINKE",
+            "faction": "DIE LINKE"
+        },
+        {
+            "name": "Robert Fietzke",
+            "columnIndex": 2,
+            "rowIndex": 15,
+            "party": "DIE LINKE",
+            "faction": "DIE LINKE"
+        },
+        {
+            "name": "Rebekka Grotjohann",
+            "columnIndex": 2,
+            "rowIndex": 16,
+            "party": "DIE LINKE",
+            "faction": "DIE LINKE"
+        },
+        {
+            "name": "Dennis Jannack",
+            "columnIndex": 2,
+            "rowIndex": 17,
+            "party": "DIE LINKE",
+            "faction": "DIE LINKE"
+        },
+        {
+            "name": "Oliver Müller",
+            "columnIndex": 2,
+            "rowIndex": 18,
+            "party": "DIE LINKE",
+            "faction": "DIE LINKE"
+        },
+        {
+            "name": "Stephan Bublitz",
+            "columnIndex": 3,
+            "rowIndex": 2,
+            "party": "future! Magdeburg",
+            "faction": "GRÜNE/future!"
+        },
+        {
+            "name": "Philipp Händler",
+            "columnIndex": 3,
+            "rowIndex": 3,
+            "party": "Bündnis 90/Die Grünen",
+            "faction": "GRÜNE/future!"
+        },
+        {
+            "name": "Tobias Hartmann",
+            "columnIndex": 3,
+            "rowIndex": 4,
+            "party": "Bündnis 90/Die Grünen",
+            "faction": "GRÜNE/future!"
+        },
+        {
+            "name": "Julia Lehnert",
+            "columnIndex": 3,
+            "rowIndex": 5,
+            "party": "Bündnis 90/Die Grünen",
+            "faction": "GRÜNE/future!"
+        },
+        {
+            "name": "Madeleine Linke",
+            "columnIndex": 3,
+            "rowIndex": 6,
+            "party": "Bündnis 90/Die Grünen",
+            "faction": "GRÜNE/future!"
+        },
+        {
+            "name": "Olaf Meister",
+            "columnIndex": 3,
+            "rowIndex": 7,
+            "party": "Bündnis 90/Die Grünen",
+            "faction": "GRÜNE/future!"
+        },
+        {
+            "name": "Burkhard Moll",
+            "columnIndex": 3,
+            "rowIndex": 10,
+            "party": "Tierschutzpartei",
+            "faction": "Tierschutzpartei"
+        },
+        {
+            "name": "Stephan Papenbreer",
+            "columnIndex": 3,
+            "rowIndex": 11,
+            "party": "Tierschutzpartei",
+            "faction": "Tierschutzpartei"
+        },
+        {
+            "name": "Evelin Schulz",
+            "columnIndex": 3,
+            "rowIndex": 12,
+            "party": "Tierschutzpartei",
+            "faction": "Tierschutzpartei"
+        }
+    ]
+}

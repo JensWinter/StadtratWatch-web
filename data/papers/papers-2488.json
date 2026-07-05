@@ -175,7 +175,9 @@
       }
     ],
     "rootPaperId": 248811,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249139
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -353,43 +355,49 @@
         "id": 742485,
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742485&type=do",
-        "size": null
+        "size": 209889
       },
       {
         "id": 742486,
         "name": "DS0169/26 - Anlage 1 Lagebeurteilung",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742486&type=do",
-        "size": null
+        "size": 658791
       },
       {
         "id": 742487,
         "name": "DS0169/26 - Anlage 2 Bestätigungsvermerk",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742487&type=do",
-        "size": null
+        "size": 550146
       },
       {
         "id": 742488,
         "name": "DS0169/26 - Anlage 3 Bilanz 31.12.2025",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742488&type=do",
-        "size": null
+        "size": 317972
       },
       {
         "id": 742489,
         "name": "DS0169/26 - Anlage 4 - GuV 2025",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742489&type=do",
-        "size": null
+        "size": 310821
       },
       {
         "id": 742490,
         "name": "DS0169/26 - Anlage 5 Lagebericht",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742490&type=do",
-        "size": null
+        "size": 813815
       },
       {
         "id": 742491,
         "name": "DS0169/26 - Anlage 6 AR-Beschlussantrag TOP 2",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742491&type=do",
-        "size": null
+        "size": 77764
+      },
+      {
+        "id": 747181,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747181&type=do",
+        "size": 15284
       }
     ],
     "consultations": [
@@ -408,6 +416,14 @@
         "organization": "Finanz- und Grundstücksausschuss",
         "agendaItem": "5.2",
         "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.5",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 248824,
@@ -424,49 +440,55 @@
         "id": 742574,
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742574&type=do",
-        "size": null
+        "size": 228640
       },
       {
         "id": 742737,
         "name": "DS0171/26 Anlage 1 Lagebeurteilung",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742737&type=do",
-        "size": null
+        "size": 269928
       },
       {
         "id": 742738,
         "name": "DS0171/26 Anlage 2 Bestätigungsvermerk",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742738&type=do",
-        "size": null
+        "size": 368894
       },
       {
         "id": 742739,
         "name": "DS0171/26 Anlage 3 Bilanz 31.12.2025",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742739&type=do",
-        "size": null
+        "size": 126857
       },
       {
         "id": 742740,
         "name": "DS0171/26 Anlage 4 Gewinn- und Verlustrechnung 2025",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742740&type=do",
-        "size": null
+        "size": 116442
       },
       {
         "id": 742741,
         "name": "DS0171/26 Anlage 5 Lagebericht",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742741&type=do",
-        "size": null
+        "size": 275615
       },
       {
         "id": 742742,
         "name": "DS0171/26 Anlage 6 Beschlüsse AR",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742742&type=do",
-        "size": null
+        "size": 358553
       },
       {
         "id": 742743,
         "name": "DS0171/26 Anlage 7 Konzernunterlagen",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742743&type=do",
-        "size": null
+        "size": 443648
+      },
+      {
+        "id": 747180,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747180&type=do",
+        "size": 16096
       }
     ],
     "consultations": [
@@ -485,6 +507,14 @@
         "organization": "Finanz- und Grundstücksausschuss",
         "agendaItem": "5.3",
         "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.4",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 248827,
@@ -501,43 +531,49 @@
         "id": 742575,
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742575&type=do",
-        "size": null
+        "size": 181434
       },
       {
         "id": 742728,
         "name": "DS0172/26 Anlage 1 Lagebeurteilung",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742728&type=do",
-        "size": null
+        "size": 221607
       },
       {
         "id": 742729,
         "name": "DS0172/26 Anlage 2 Bestätigungsvermerk",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742729&type=do",
-        "size": null
+        "size": 267495
       },
       {
         "id": 742732,
         "name": "DS0172/26 Anlage 3 Bilanz 31.12.2025",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742732&type=do",
-        "size": null
+        "size": 116456
       },
       {
         "id": 742733,
         "name": "DS0172/26 Anlage 4 Gewinn- und Verlustrechnung 2025",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742733&type=do",
-        "size": null
+        "size": 112890
       },
       {
         "id": 742734,
         "name": "DS0172/26 Anlage 5 Lagebericht",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742734&type=do",
-        "size": null
+        "size": 265546
       },
       {
         "id": 742735,
         "name": "DS0172/26 Anlage 6 Beschlüsse AR",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742735&type=do",
-        "size": null
+        "size": 429516
+      },
+      {
+        "id": 747183,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747183&type=do",
+        "size": 15394
       }
     ],
     "consultations": [
@@ -556,9 +592,62 @@
         "organization": "Finanz- und Grundstücksausschuss",
         "agendaItem": "5.4",
         "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.6",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 248828,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 248829,
+    "reference": "DS0173/26",
+    "type": "Beschlussvorlage",
+    "title": "Grundsatzbeschluss zur Grundhaften Sanierung der Straßenbahntrasse Nordost einschließlich der angrenzenden Straßenräume unter Federführung der MVB",
+    "files": [
+      {
+        "id": 743848,
+        "name": "DS0173/26  - Anlage 3 Gemeindl. Stellungnahme Projektstudie Nordost",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743848&type=do",
+        "size": null
+      },
+      {
+        "id": 743849,
+        "name": "DS0173/26 - Anlage 1 Erläuterungsbericht",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743849&type=do",
+        "size": null
+      },
+      {
+        "id": 743855,
+        "name": "Beschlussvorlage Stadt",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743855&type=do",
+        "size": null
+      },
+      {
+        "id": 747147,
+        "name": "DS0173/26 - Anlage 2 Übersichtskarte",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747147&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-06-30T08:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "4.10",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 248829,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": []
   },
@@ -1235,7 +1324,7 @@
         "role": "Beratung",
         "organization": "Betriebsausschuss Stadtgarten und Friedhöfe Magdeburg",
         "agendaItem": "5.1",
-        "result": null
+        "result": "empfohlen"
       }
     ],
     "rootPaperId": 248851,
@@ -1318,43 +1407,49 @@
         "id": 743031,
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743031&type=do",
-        "size": null
+        "size": 196393
       },
       {
         "id": 743039,
         "name": "DS0187/26 Anlage 1 Lagebeurteilung",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743039&type=do",
-        "size": null
+        "size": 120109
       },
       {
         "id": 743040,
         "name": "DS0187/26 Anlage 2 Bestätigungsvermerk",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743040&type=do",
-        "size": null
+        "size": 327258
       },
       {
         "id": 743041,
         "name": "DS0187/26 Anlage 3 Bilanz 31.12.2025",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743041&type=do",
-        "size": null
+        "size": 19658
       },
       {
         "id": 743042,
         "name": "DS0187/26 Anlage 4 Gewinn- und Verlustrechnung 2025",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743042&type=do",
-        "size": null
+        "size": 12339
       },
       {
         "id": 743043,
         "name": "DS0187/26 Anlage 5 Lagebericht",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743043&type=do",
-        "size": null
+        "size": 47878
       },
       {
         "id": 743429,
         "name": "DS0187/26 Anlage 6 AR 22.05.2026",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743429&type=do",
-        "size": null
+        "size": 172671
+      },
+      {
+        "id": 747184,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747184&type=do",
+        "size": 16103
       }
     ],
     "consultations": [
@@ -1373,6 +1468,14 @@
         "organization": "Finanz- und Grundstücksausschuss",
         "agendaItem": "5.5",
         "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.7",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 248854,
@@ -1944,7 +2047,9 @@
       }
     ],
     "rootPaperId": 248875,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249270
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -2507,43 +2612,49 @@
         "id": 743425,
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743425&type=do",
-        "size": null
+        "size": 196789
       },
       {
         "id": 743558,
         "name": "DS0194/26 - Anlage 1 Lagebeurteilung",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743558&type=do",
-        "size": null
+        "size": 52158
       },
       {
         "id": 743559,
         "name": "DS0194/26 - Anlage 2 Bestaetigungsvermerk",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743559&type=do",
-        "size": null
+        "size": 123495
       },
       {
         "id": 743560,
         "name": "DS0194/26 - Anlage 3 Bilanz 31.12.2025",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743560&type=do",
-        "size": null
+        "size": 36099
       },
       {
         "id": 743561,
         "name": "DS0194/26 - Anlage 4 GuV 2025",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743561&type=do",
-        "size": null
+        "size": 23194
       },
       {
         "id": 743562,
         "name": "DS0194/26 - Anlage 5 Lagebericht",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743562&type=do",
-        "size": null
+        "size": 145553
       },
       {
         "id": 743563,
         "name": "DS0194/26 - Anlage 6 Beschlussanträge des Aufsichtsrates der MMKT vom 11.05.2026",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743563&type=do",
-        "size": null
+        "size": 48027
+      },
+      {
+        "id": 747185,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747185&type=do",
+        "size": 15226
       }
     ],
     "consultations": [
@@ -2562,6 +2673,14 @@
         "organization": "Finanz- und Grundstücksausschuss",
         "agendaItem": "5.6",
         "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.8",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 248894,

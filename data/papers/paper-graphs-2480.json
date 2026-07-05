@@ -1846,85 +1846,91 @@
             "id": 739022,
             "name": "Beschlussvorlage Stadt",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739022&type=do",
-            "size": null
+            "size": 303746
           },
           {
             "id": 739024,
             "name": "DS0017-26 Anlage 1 Übersichtskarte",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739024&type=do",
-            "size": null
+            "size": 360379
           },
           {
             "id": 739025,
             "name": "DS0017-26 Anlage 2 Erläuterungsbericht",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739025&type=do",
-            "size": null
+            "size": 3252328
           },
           {
             "id": 739026,
             "name": "DS0017-26 Anlage 3 Lageplan Variante 1 mit Querschnitt",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739026&type=do",
-            "size": null
+            "size": 1983251
           },
           {
             "id": 739027,
             "name": "DS0017-26 Anlage 4 Lageplan Variante 2 mit Querschnitt",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739027&type=do",
-            "size": null
+            "size": 2081163
           },
           {
             "id": 739028,
             "name": "DS0017-26 Anlage 5 Lageplan Variante 2.1 mit Querschnitt",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739028&type=do",
-            "size": null
+            "size": 1973774
           },
           {
             "id": 739029,
             "name": "DS0017-26 Anlage 6 Lageplan Variante 2.2 Wendeanlage bestandsnah mit Querschnitt",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739029&type=do",
-            "size": null
+            "size": 2975956
           },
           {
             "id": 739030,
             "name": "DS0017-26 Anlage 7 Lageplan Variante 3 mit Querschnitt",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739030&type=do",
-            "size": null
+            "size": 1577972
           },
           {
             "id": 739031,
             "name": "DS0017-26 Anlage 8 Lageplan Variante 4 mit Querschnitt Vorzugsvariante",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739031&type=do",
-            "size": null
+            "size": 2787280
           },
           {
             "id": 739032,
             "name": "DS0017-26 Anlage 9 Koordinierter Leitungsplan Variante 4",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739032&type=do",
-            "size": null
+            "size": 8129051
           },
           {
             "id": 739033,
             "name": "DS0017-26 Anlage 10 Bewertungsmatrix",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739033&type=do",
-            "size": null
+            "size": 131542
           },
           {
             "id": 739034,
             "name": "DS0017-26 Anlage 11 Kostenschätzung",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739034&type=do",
-            "size": null
+            "size": 254054
           },
           {
             "id": 739035,
             "name": "DS0017-26 Anlage 12 Protokoll Bürgerbeteiligung",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739035&type=do",
-            "size": null
+            "size": 94965
           },
           {
             "id": 739036,
             "name": "DS0017-26 Anlage 13 Protokoll Abstimmung AGMSWM",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739036&type=do",
-            "size": null
+            "size": 172484
+          },
+          {
+            "id": 747213,
+            "name": "Beschlussausfertigung",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747213&type=do",
+            "size": 61491
           }
         ],
         "consultations": [
@@ -1959,6 +1965,14 @@
             "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
             "agendaItem": "5.6",
             "result": "empfohlen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-06-18T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "5.21",
+            "result": "ungeändert beschlossen"
           }
         ],
         "rootPaperId": 248062,

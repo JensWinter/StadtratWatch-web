@@ -1,5 +1,40 @@
 [
   {
+    "id": 249303,
+    "reference": "S0357/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Ladeinfrastruktur an der Stadthalle Magdeburg und Umsetzung des GEIG",
+    "files": [
+      {
+        "id": 746625,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746625&type=do",
+        "size": null
+      },
+      {
+        "id": 746633,
+        "name": "S0357/26 - Anlage 1 Plan Ladeinfrastruktur",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746633&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-06-30T08:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "9.7",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249303,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249256
+    ]
+  },
+  {
     "id": 249304,
     "reference": "A0053/26/1",
     "type": "Änderungsantrag",
@@ -89,5 +124,879 @@
     "rootPaperId": 249313,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249324,
+    "reference": "F0220/26",
+    "type": "Anfrage",
+    "title": "Kleine Schulstraße 18",
+    "files": [
+      {
+        "id": 747000,
+        "name": "F0220/26 Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747000&type=do",
+        "size": 64022
+      },
+      {
+        "id": 747001,
+        "name": "F0220/26 Anlage 1",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747001&type=do",
+        "size": 1278324
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.5",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249324,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249325,
+    "reference": "F0221/26",
+    "type": "Anfrage",
+    "title": "Entwicklung von Glücksspiel-, Sportwetten-, Online- und Mediensucht in Magdeburg",
+    "files": [
+      {
+        "id": 747007,
+        "name": "Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747007&type=do",
+        "size": 36573
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.11",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249325,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249326,
+    "reference": "F0222/26",
+    "type": "Anfrage",
+    "title": "Zielerreichung und Wirksamkeit des Suchtpräventions- und Suchthilfekonzeptes",
+    "files": [
+      {
+        "id": 747010,
+        "name": "Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747010&type=do",
+        "size": 35889
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.12",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249326,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249332,
+    "reference": "F0223/26",
+    "type": "Anfrage",
+    "title": "Sachstand zum Magdeburger Modellprojekt „Selbstbestimmtes Wohnen“",
+    "files": [
+      {
+        "id": 747098,
+        "name": "Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747098&type=do",
+        "size": 71292
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.16",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249332,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249333,
+    "reference": "F0224/26",
+    "type": "Anfrage",
+    "title": "Angebote, Unterstützungsstrukturen und Versorgungslücken für erwachsene Menschen mit Autismus und Neurodivergenz in Magdeburg",
+    "files": [
+      {
+        "id": 747100,
+        "name": "F0224/26 Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747100&type=do",
+        "size": 68515
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.17",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249333,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249336,
+    "reference": "DS0249/26/1",
+    "type": "Änderungsantrag",
+    "title": "Sanierung Dach Elbeschwimmhalle",
+    "files": [
+      {
+        "id": 747107,
+        "name": "Änderungsantrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747107&type=do",
+        "size": 14780
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "4.1.1",
+        "result": "abgelehnt"
+      }
+    ],
+    "rootPaperId": 249336,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249216
+    ]
+  },
+  {
+    "id": 249337,
+    "reference": "F0225/26",
+    "type": "Anfrage",
+    "title": "Gemeinwohlorientierter Wohnungsbau in Magdeburg",
+    "files": [
+      {
+        "id": 747114,
+        "name": "Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747114&type=do",
+        "size": 71790
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.13",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249337,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249338,
+    "reference": "F0226/26",
+    "type": "Anfrage",
+    "title": "Bilanz des vergangenen Hitzewochenendes und Hitzeanpassungsmaßnahmen der Landeshauptstadt Magdeburg",
+    "files": [
+      {
+        "id": 747116,
+        "name": "Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747116&type=do",
+        "size": 23679
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.14",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249338,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249347,
+    "reference": "F0227/26",
+    "type": "Anfrage",
+    "title": "Erreichbarkeit des Magdeburger Weihnachtsmarktes",
+    "files": [
+      {
+        "id": 747212,
+        "name": "Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747212&type=do",
+        "size": 20317
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.2",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249347,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249354,
+    "reference": "F0228/26",
+    "type": "Anfrage",
+    "title": "Gebühren für Ehrenamtlich Arbeit bei „Magdeburg putzt sich“?",
+    "files": [
+      {
+        "id": 747269,
+        "name": "F0228/26 Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747269&type=do",
+        "size": 57896
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.6",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249354,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249356,
+    "reference": "F0229/26",
+    "type": "Anfrage",
+    "title": "Verzögerung der Bordsteinabsenkung am Diesdorfer Graseweg",
+    "files": [
+      {
+        "id": 747295,
+        "name": "F0229/26 Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747295&type=do",
+        "size": 15689
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.7",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249356,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249357,
+    "reference": "DS0271/26",
+    "type": "Beschlussvorlage",
+    "title": "Finanzierung des mobilen Zufahrtsschutzkonzeptes für die Durchführung des Weihnachtsmarktes auf dem Alten Markt",
+    "files": [
+      {
+        "id": 747346,
+        "name": "Beschlussvorlage Stadt",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747346&type=do",
+        "size": 155176
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "4.2",
+        "result": "geändert beschlossen"
+      }
+    ],
+    "rootPaperId": 249357,
+    "subordinatedPaperIds": [
+      249386,
+      249387
+    ],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249361,
+    "reference": "F0230/26",
+    "type": "Anfrage",
+    "title": "Wie geht es bis zur grundhaften Sanierung der Straßenbahntrasse Südost weiter?",
+    "files": [
+      {
+        "id": 747363,
+        "name": "F0230/26 Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747363&type=do",
+        "size": 65784
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.18",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249361,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249362,
+    "reference": "F0231/26",
+    "type": "Anfrage",
+    "title": "Aktueller Stand der Klimatisierung öffentlicher Gebäude und Berücksichtigung bei Neubauten",
+    "files": [
+      {
+        "id": 747365,
+        "name": "F0231/26 Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747365&type=do",
+        "size": 19957
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.19",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249362,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249363,
+    "reference": "F0232/26",
+    "type": "Anfrage",
+    "title": "Dezidierte Unterstützung inhaber:innengeführter Geschäfte auf dem Nordabschnitt des Breiten Wegs",
+    "files": [
+      {
+        "id": 747367,
+        "name": "F0232/26 Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747367&type=do",
+        "size": 20743
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.20",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249363,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249364,
+    "reference": "F0233/26",
+    "type": "Anfrage",
+    "title": "Entwicklung eines Grundstückes (Weizengrund/Olvenstedter Grund/Roggengrund)",
+    "files": [
+      {
+        "id": 747369,
+        "name": "F0233/26 Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747369&type=do",
+        "size": 15815
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.8",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249364,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249367,
+    "reference": "A0142/26",
+    "type": "Antrag",
+    "title": "Verkürzung der Bauzeit 2. Nord-Süd-Verbindung für die Straßenbahn - Knotenpunkt Albert-Vater-Straße",
+    "files": [
+      {
+        "id": 747405,
+        "name": "A0142/26 - Antrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747405&type=do",
+        "size": 16306
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6",
+        "result": "ungeändert beschlossen"
+      }
+    ],
+    "rootPaperId": 249367,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249369,
+    "reference": "DS0249/26/2",
+    "type": "Änderungsantrag",
+    "title": "Sanierung Dach Elbeschwimmhalle",
+    "files": [
+      {
+        "id": 747395,
+        "name": "Änderungsantrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747395&type=do",
+        "size": 16471
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "4.1.2",
+        "result": "abgelehnt"
+      }
+    ],
+    "rootPaperId": 249369,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249216
+    ]
+  },
+  {
+    "id": 249370,
+    "reference": "F0234/26",
+    "type": "Anfrage",
+    "title": "Absperrungen am Alten Markt im Rahmen der Präventionsmesse 50+ der Polizei Sachsen-Anhalt am 02.07.2026",
+    "files": [
+      {
+        "id": 747413,
+        "name": "F0234/26 - Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747413&type=do",
+        "size": 15895
+      },
+      {
+        "id": 747414,
+        "name": "F0234/26 - Anlage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747414&type=do",
+        "size": 563312
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.24",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249370,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249371,
+    "reference": "F0235/26",
+    "type": "Anfrage",
+    "title": "Wirtschaftlichkeit der Beherbergungsteuer",
+    "files": [
+      {
+        "id": 747416,
+        "name": "Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747416&type=do",
+        "size": 66877
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.3",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249371,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249374,
+    "reference": "F0236/26",
+    "type": "Anfrage",
+    "title": "Verkehrssituation Herrenkurgstraße/Biederitzer Weg",
+    "files": [
+      {
+        "id": 747453,
+        "name": "Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747453&type=do",
+        "size": 16303
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.15",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249374,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249376,
+    "reference": "F0237/26",
+    "type": "Anfrage",
+    "title": "Nachfrage zur Bargeldannahme in den Betrieben mit städtischer Beteiligung der Landeshauptstadt Magdeburg",
+    "files": [
+      {
+        "id": 747456,
+        "name": "Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747456&type=do",
+        "size": 62732
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.4",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249376,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249378,
+    "reference": "F0238/26",
+    "type": "Anfrage",
+    "title": "Nachfrage zu Nebenbestimmungen zur parteipolitischen Neutralität in Zuwendungsbescheiden der Jugendförderung",
+    "files": [
+      {
+        "id": 747462,
+        "name": "F0238/26 Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747462&type=do",
+        "size": 72679
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.21",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249378,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249379,
+    "reference": "F0239/26",
+    "type": "Anfrage",
+    "title": "Schrotebrücken in Stadtfeld-West",
+    "files": [
+      {
+        "id": 747460,
+        "name": "F0239/26 Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747460&type=do",
+        "size": 62604
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.9",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249379,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249381,
+    "reference": "DS0249/26/3",
+    "type": "Änderungsantrag",
+    "title": "Sanierung Dach Elbeschwimmhalle",
+    "files": [
+      {
+        "id": 747464,
+        "name": "DS0249/26/3 Änderungsantrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747464&type=do",
+        "size": 18809
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "4.1.3",
+        "result": "abgelehnt"
+      }
+    ],
+    "rootPaperId": 249381,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249216
+    ]
+  },
+  {
+    "id": 249382,
+    "reference": "F0240/26",
+    "type": "Anfrage",
+    "title": "Gewerbliche Nutzung einer Wohnung in der Basedowstraße",
+    "files": [
+      {
+        "id": 747468,
+        "name": "F0240/26 Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747468&type=do",
+        "size": 15602
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.10",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249382,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249383,
+    "reference": "F0241/26",
+    "type": "Anfrage",
+    "title": "Sachstand zur Sanierung des Geh- und Radweges in der ostlichen Havelstraße",
+    "files": [
+      {
+        "id": 747470,
+        "name": "F0241/26 Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747470&type=do",
+        "size": 61710
+      },
+      {
+        "id": 747471,
+        "name": "Anlage 1_F0241-26_Bildmaterial zum Zustand des Gehweges in der Havelstraße",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747471&type=do",
+        "size": 1354992
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.25",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249383,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249384,
+    "reference": "F0242/26",
+    "type": "Anfrage",
+    "title": "„Taut-Kiosk“ als Eyecatcher mit Alleinstellungsmerkmal beim Städtetag",
+    "files": [
+      {
+        "id": 747473,
+        "name": "F0242/26 Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747473&type=do",
+        "size": 62016
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.22",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249384,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249385,
+    "reference": "F0243/26",
+    "type": "Anfrage",
+    "title": "70 Jahre Barleber See in 2028",
+    "files": [
+      {
+        "id": 747475,
+        "name": "F0243/26 Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747475&type=do",
+        "size": 15328
+      },
+      {
+        "id": 747476,
+        "name": "F0243/26 Anlage zur Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747476&type=do",
+        "size": 943831
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "5.23",
+        "result": "schriftliche Stellungnahme"
+      }
+    ],
+    "rootPaperId": 249385,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249386,
+    "reference": "DS0271/26/1",
+    "type": "Änderungsantrag",
+    "title": "Finanzierung des mobilen Zufahrtsschutzkonzeptes für die Durchführung des Weihnachtsmarktes auf dem Alten Markt",
+    "files": [
+      {
+        "id": 747480,
+        "name": "Änderungsantrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747480&type=do",
+        "size": 14137
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "4.2.1",
+        "result": "abgelehnt"
+      }
+    ],
+    "rootPaperId": 249357,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249357
+    ]
+  },
+  {
+    "id": 249387,
+    "reference": "DS0271/26/2",
+    "type": "Änderungsantrag",
+    "title": "Finanzierung des mobilen Zufahrtsschutzkonzeptes für die Durchführung des Weihnachtsmarktes auf",
+    "files": [
+      {
+        "id": 747482,
+        "name": "Änderungsantrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747482&type=do",
+        "size": 13347
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-07-03T15:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "4.2.2",
+        "result": "ungeändert beschlossen"
+      }
+    ],
+    "rootPaperId": 249357,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249357
+    ]
   }
 ]

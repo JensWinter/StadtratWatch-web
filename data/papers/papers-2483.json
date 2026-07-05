@@ -1618,25 +1618,31 @@
         "id": 740361,
         "name": "DS0069_26 Anlage 1 Lageplan",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740361&type=do",
-        "size": null
+        "size": 655056
       },
       {
         "id": 740362,
         "name": "DS0069_26 Anlage 2 Entwurf Aufhebungssatzung",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740362&type=do",
-        "size": null
+        "size": 9818962
       },
       {
         "id": 740368,
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740368&type=do",
-        "size": null
+        "size": 170065
       },
       {
         "id": 741338,
         "name": "DS0069_26 Anlage 3 Begründung",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741338&type=do",
-        "size": null
+        "size": 504602
+      },
+      {
+        "id": 747218,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747218&type=do",
+        "size": 59158
       }
     ],
     "consultations": [
@@ -1663,6 +1669,14 @@
         "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
         "agendaItem": "5.5",
         "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.26",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 248354,
@@ -2073,7 +2087,13 @@
         "id": 741781,
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741781&type=do",
-        "size": null
+        "size": 191828
+      },
+      {
+        "id": 747192,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747192&type=do",
+        "size": 58190
       }
     ],
     "consultations": [
@@ -2116,6 +2136,14 @@
         "organization": "Finanz- und Grundstücksausschuss",
         "agendaItem": "5.7",
         "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.15",
+        "result": "ungeändert beschlossen"
       }
     ],
     "rootPaperId": 248377,

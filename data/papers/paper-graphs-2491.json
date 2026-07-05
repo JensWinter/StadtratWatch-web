@@ -150,40 +150,6 @@
     ]
   },
   {
-    "rootPaperId": 249111,
-    "papers": [
-      {
-        "id": 249111,
-        "reference": "S0279/26",
-        "type": "Stellungnahme (Anfrage)",
-        "title": "Schildbürgerstreich Altenpflegeheim „Peter Zincke“?",
-        "files": [
-          {
-            "id": 745291,
-            "name": "Stellungnahme (Anfrage)",
-            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745291&type=do",
-            "size": null
-          }
-        ],
-        "consultations": [
-          {
-            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
-            "date": "2026-06-16T09:00:00+02:00",
-            "role": "Genehmigung OB",
-            "organization": "Die Oberbürgermeisterin",
-            "agendaItem": "8.6",
-            "result": "genehmigt OB"
-          }
-        ],
-        "rootPaperId": 249111,
-        "subordinatedPaperIds": [],
-        "superOrdinatedPaperIds": [
-          249002
-        ]
-      }
-    ]
-  },
-  {
     "rootPaperId": 249118,
     "papers": [
       {
@@ -425,6 +391,40 @@
         "subordinatedPaperIds": [],
         "superOrdinatedPaperIds": [
           246557
+        ]
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249134,
+    "papers": [
+      {
+        "id": 249134,
+        "reference": "I0188/26",
+        "type": "Informationsvorlage",
+        "title": "Verbesserung des Personalschlüssels in Kitas",
+        "files": [
+          {
+            "id": 745482,
+            "name": "Information",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745482&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-06-30T08:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "6.2",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 249134,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          246948
         ]
       }
     ]
@@ -1088,71 +1088,6 @@
         "rootPaperId": 249197,
         "subordinatedPaperIds": [],
         "superOrdinatedPaperIds": []
-      }
-    ]
-  },
-  {
-    "rootPaperId": 249199,
-    "papers": [
-      {
-        "id": 249199,
-        "reference": "DS0040/26/2",
-        "type": "Änderungsantrag",
-        "title": "Grundsatzentscheidung zur Nutzung von Einrichtungen der Landeshauptstadt Magdeburg für parteipolitische Veranstaltungen",
-        "files": [
-          {
-            "id": 746136,
-            "name": "DS0040/26/2 Änderungsantrag",
-            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746136&type=do",
-            "size": 17968
-          }
-        ],
-        "consultations": [
-          {
-            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
-            "date": "2026-06-18T14:00:00+02:00",
-            "role": "Beschlussfassung",
-            "organization": "Stadtrat",
-            "agendaItem": "5.2.2",
-            "result": "mit Beschlussfassung zum Änderungsantrag erledigt"
-          }
-        ],
-        "rootPaperId": 249199,
-        "subordinatedPaperIds": [
-          249259
-        ],
-        "superOrdinatedPaperIds": [
-          248146
-        ]
-      },
-      {
-        "id": 249259,
-        "reference": "DS0040/26/2/1",
-        "type": "Änderungsantrag",
-        "title": "Grundsatzentscheidung zur Nutzung von Einrichtungen der Landeshauptstadt Magdeburg für parteipolitische Veranstaltungen",
-        "files": [
-          {
-            "id": 746288,
-            "name": "DS0040/26/2/1 Änderungsantrag",
-            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746288&type=do",
-            "size": 18870
-          }
-        ],
-        "consultations": [
-          {
-            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
-            "date": "2026-06-18T14:00:00+02:00",
-            "role": "Beschlussfassung",
-            "organization": "Stadtrat",
-            "agendaItem": "5.2.2.1",
-            "result": "Einzelabstimmung"
-          }
-        ],
-        "rootPaperId": 249199,
-        "subordinatedPaperIds": [],
-        "superOrdinatedPaperIds": [
-          249199
-        ]
       }
     ]
   }

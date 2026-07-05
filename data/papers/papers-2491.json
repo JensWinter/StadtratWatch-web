@@ -147,7 +147,7 @@
         "result": "genehmigt OB"
       }
     ],
-    "rootPaperId": 249111,
+    "rootPaperId": 249002,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": [
       249002
@@ -452,6 +452,35 @@
     ]
   },
   {
+    "id": 249134,
+    "reference": "I0188/26",
+    "type": "Informationsvorlage",
+    "title": "Verbesserung des Personalschlüssels in Kitas",
+    "files": [
+      {
+        "id": 745482,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745482&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-06-30T08:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "6.2",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249134,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      246948
+    ]
+  },
+  {
     "id": 249136,
     "reference": "F0184/26",
     "type": "Anfrage",
@@ -505,6 +534,35 @@
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": [
       248879
+    ]
+  },
+  {
+    "id": 249139,
+    "reference": "S0291/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Möglichkeiten zur Rettung der Lindenallee im Otterslebener Stadtweg",
+    "files": [
+      {
+        "id": 745745,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745745&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-06-30T08:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "9.18",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 248811,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248811
     ]
   },
   {
@@ -693,6 +751,35 @@
     ]
   },
   {
+    "id": 249148,
+    "reference": "S0297/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Heutiger Erkenntnisstand zu Fördermittelvorgängen und Rolle der Stadt im Bereich der Galopprennbahn Herrenkrug",
+    "files": [
+      {
+        "id": 745866,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745866&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-06-30T08:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "9.6",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 248784,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248784
+    ]
+  },
+  {
     "id": 249163,
     "reference": "A0030/26/1",
     "type": "Änderungsantrag",
@@ -719,6 +806,93 @@
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": [
       248202
+    ]
+  },
+  {
+    "id": 249164,
+    "reference": "S0304/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Ausladung der Lesung von Arne Semsrott aus den Räumen der Stadtbibliothek Magdeburg",
+    "files": [
+      {
+        "id": 747002,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747002&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-06-30T08:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "9.9",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 248993,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248993
+    ]
+  },
+  {
+    "id": 249165,
+    "reference": "S0305/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Absage der Lesung mit Arne Semsrott in der Stadtbibliothek",
+    "files": [
+      {
+        "id": 747005,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747005&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-06-30T08:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "9.10",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 248975,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248975
+    ]
+  },
+  {
+    "id": 249166,
+    "reference": "S0306/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Lesung von Arne Semsrott am 5. Juni",
+    "files": [
+      {
+        "id": 747008,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747008&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-06-30T08:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "9.11",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 248966,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248966
     ]
   },
   {
@@ -1254,7 +1428,7 @@
         "result": "mit Beschlussfassung zum Änderungsantrag erledigt"
       }
     ],
-    "rootPaperId": 249199,
+    "rootPaperId": 248146,
     "subordinatedPaperIds": [
       249259
     ],

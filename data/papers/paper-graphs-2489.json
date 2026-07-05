@@ -642,6 +642,40 @@
     ]
   },
   {
+    "rootPaperId": 248933,
+    "papers": [
+      {
+        "id": 248933,
+        "reference": "S0235/26",
+        "type": "Stellungnahme (Anfrage)",
+        "title": "Abriss der Brücke über die Schrote an der Dehmbergstraße",
+        "files": [
+          {
+            "id": 746022,
+            "name": "Stellungnahme (Anfrage)",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746022&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-06-30T08:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "9.16",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 248933,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          248517
+        ]
+      }
+    ]
+  },
+  {
     "rootPaperId": 248934,
     "papers": [
       {
@@ -998,6 +1032,40 @@
     ]
   },
   {
+    "rootPaperId": 248961,
+    "papers": [
+      {
+        "id": 248961,
+        "reference": "S0242/26",
+        "type": "Stellungnahme (Anfrage)",
+        "title": "Systematische Überprüfung und Beseitigung sichtbehindernder Werbeträger im Stadtgebiet",
+        "files": [
+          {
+            "id": 746319,
+            "name": "Stellungnahme (Anfrage)",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746319&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-06-30T08:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "9.17",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 248961,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          248584
+        ]
+      }
+    ]
+  },
+  {
     "rootPaperId": 248962,
     "papers": [
       {
@@ -1064,8 +1132,39 @@
           }
         ],
         "rootPaperId": 248966,
-        "subordinatedPaperIds": [],
+        "subordinatedPaperIds": [
+          249166
+        ],
         "superOrdinatedPaperIds": []
+      },
+      {
+        "id": 249166,
+        "reference": "S0306/26",
+        "type": "Stellungnahme (Anfrage)",
+        "title": "Lesung von Arne Semsrott am 5. Juni",
+        "files": [
+          {
+            "id": 747008,
+            "name": "Stellungnahme (Anfrage)",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747008&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-06-30T08:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "9.11",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 248966,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          248966
+        ]
       }
     ]
   },
@@ -1372,8 +1471,39 @@
           }
         ],
         "rootPaperId": 248975,
-        "subordinatedPaperIds": [],
+        "subordinatedPaperIds": [
+          249165
+        ],
         "superOrdinatedPaperIds": []
+      },
+      {
+        "id": 249165,
+        "reference": "S0305/26",
+        "type": "Stellungnahme (Anfrage)",
+        "title": "Absage der Lesung mit Arne Semsrott in der Stadtbibliothek",
+        "files": [
+          {
+            "id": 747005,
+            "name": "Stellungnahme (Anfrage)",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747005&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-06-30T08:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "9.10",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 248975,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          248975
+        ]
       }
     ]
   },
@@ -1416,6 +1546,12 @@
             "name": "A0113/26 Antrag",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=744062&type=do",
             "size": 65779
+          },
+          {
+            "id": 747245,
+            "name": "Beschlussausfertigung",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747245&type=do",
+            "size": 60353
           }
         ],
         "consultations": [
@@ -1647,8 +1783,39 @@
           }
         ],
         "rootPaperId": 248991,
-        "subordinatedPaperIds": [],
+        "subordinatedPaperIds": [
+          249074
+        ],
         "superOrdinatedPaperIds": []
+      },
+      {
+        "id": 249074,
+        "reference": "S0270/26",
+        "type": "Stellungnahme (Anfrage)",
+        "title": "Verstoß gegen das Gebot der parteipolitischen Neutralität bei der Fête de la Musique",
+        "files": [
+          {
+            "id": 745705,
+            "name": "Stellungnahme (Anfrage)",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745705&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-06-30T08:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "9.8",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 248991,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          248991
+        ]
       }
     ]
   },
@@ -1687,8 +1854,39 @@
           }
         ],
         "rootPaperId": 248993,
-        "subordinatedPaperIds": [],
+        "subordinatedPaperIds": [
+          249164
+        ],
         "superOrdinatedPaperIds": []
+      },
+      {
+        "id": 249164,
+        "reference": "S0304/26",
+        "type": "Stellungnahme (Anfrage)",
+        "title": "Ausladung der Lesung von Arne Semsrott aus den Räumen der Stadtbibliothek Magdeburg",
+        "files": [
+          {
+            "id": 747002,
+            "name": "Stellungnahme (Anfrage)",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747002&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-06-30T08:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "9.9",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 248993,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          248993
+        ]
       }
     ]
   },
