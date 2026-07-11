@@ -228,3 +228,17 @@ Index is rebuilt with index-search script (see docs/guides/HOWTO.md). Frontend u
 - Session data is **immutable** once approved - don't modify historical data without good reason
 - When working with shared models between Astro and Deno, make changes in both locations to maintain consistency
 - Be sure to typecheck when you’re done making a series of code changes
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in GitHub Issues (JensWinter/StadtratWatch-web), via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default canonical labels (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
