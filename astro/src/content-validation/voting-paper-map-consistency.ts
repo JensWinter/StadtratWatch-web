@@ -1,5 +1,6 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import type { Registry } from '@models/registry.ts';
 import type { VotingPaperMap } from '@models/oparl-derivatives.ts';
 
@@ -48,7 +49,8 @@ export function validateVotingPaperMapConsistency(
 }
 
 function defaultDataDir(): string {
-  return path.resolve(process.cwd(), '..', 'data');
+  const moduleDir = path.dirname(fileURLToPath(import.meta.url));
+  return path.resolve(moduleDir, '..', '..', '..', 'data');
 }
 
 function readPeriodsFromDisk(dataDir: string): PeriodConsistencyInput[] {
