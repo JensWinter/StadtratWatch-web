@@ -326,11 +326,12 @@ deno run \
 
 ### Fetch OParl snapshot
 
-The processing scripts and the web build do not scrape OParl themselves — they read the local
-`data/oparl-magdeburg/` directory, which is populated by `fetch-oparl`. This step runs
-automatically before the web build and dev server (the `prebuild` / `predev` hooks in
-`astro/package.json` call `npm run fetch-oparl`), so CI, Netlify and local dev all obtain the data
-without extra steps. You can also run it on its own:
+The processing scripts read the local `data/oparl-magdeburg/` directory, which is populated by
+`fetch-oparl`. This is a **maintainer step**: it is necessary to (re)generate the committed OParl
+derivates via `generate-oparl-derivatives`. The Astro build itself consumes the committed derivates
+(`data/paper-index.json`, `data/{period}/voting-paper-map.json`).
+
+Run it when you need the raw snapshot:
 
 ```bash
 cd astro

@@ -1,12 +1,12 @@
 # Netlify build configuration.
 #
-# `base = "astro"` makes Netlify install and build inside the astro/ workspace,
-# so `npm run build` runs its `prebuild` hook (npm run fetch-oparl) and pulls the
-# raw OParl snapshot from S3/CloudFront before the Astro build reads it.
+# `base = "astro"` makes Netlify install and build inside the astro/ workspace.
+# The Astro build reads only the committed OParl derivates (data/paper-index.json,
+# data/{period}/voting-paper-map.json), so it no longer fetches raw OParl data —
+# there is no prebuild fetch-oparl step anymore.
 # Paths below are relative to `base`, so `publish = "dist"` resolves to astro/dist.
 #
-# AWS_CLOUDFRONT_BASE_URL (and the other env vars in astro.config.mjs) must be set
-# in the Netlify site UI; reads are public, so no AWS credentials are needed.
+# The env vars in astro.config.mjs must be set in the Netlify site UI.
 
 [build]
   base = "astro"
