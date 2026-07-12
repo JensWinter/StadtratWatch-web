@@ -1,6 +1,7 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro';
 import { formatDate } from '@utils/format-date';
+import { getEntry } from 'astro:content';
 import {
   type ParliamentPeriodWithSessionAndVotingProps,
   getParliamentPeriodWithSessionAndVotingPaths,
@@ -12,14 +13,11 @@ import { getVideoTimestampAsSeconds } from '@utils/session-utils';
 export const getStaticPaths = getParliamentPeriodWithSessionAndVotingPaths;
 
 const { parliamentPeriodId, sessionId, votingId } = Astro.params;
-const {
-  parliamentPeriod,
-  sessionInput,
-  voting,
-  oparlMeetings,
-  oparlAgendaItems,
-  oparlConsultations,
-} = Astro.props as ParliamentPeriodWithSessionAndVotingProps;
+const { parliamentPeriod, sessionInput, voting } =
+  Astro.props as ParliamentPeriodWithSessionAndVotingProps;
+
+const votingPaperMap =
+  (await getEntry('votingPaperMaps', parliamentPeriod.id))?.data ?? {};
 
 const breadcrumbItems = [
   {
@@ -76,13 +74,7 @@ const groupsSortedByVotes = Object.entries(votesGroupedByFaction).sort(
   (a, b) => b[1].length - a[1].length,
 );
 
-const paperId = getPaperId(
-  sessionInput.session.date,
-  voting,
-  oparlMeetings,
-  oparlAgendaItems,
-  oparlConsultations,
-);
+const paperId = getPaperId(votingPaperMap, sessionInput.session.date, voting);
 
 const youtubeUrl = `${sessionInput.session.youtubeUrl}?t=${getVideoTimestampAsSeconds(voting)}s`;
 

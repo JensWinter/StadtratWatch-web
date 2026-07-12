@@ -3,11 +3,7 @@ import { type SessionInput } from '@models/SessionInput';
 import { type RegistryFaction } from '@models/registry';
 import { getMotionResult, getVotingId, getVotingResult } from './_helpers';
 import { formatDate } from '@utils/format-date';
-import type {
-  OparlAgendaItem,
-  OparlMeeting,
-  OparlConsultation,
-} from '@models/oparl.ts';
+import type { VotingPaperMap } from '@models/oparl-derivatives.ts';
 import { getPaperId } from '../../_helpers2';
 
 export type MotionListItem = {
@@ -26,19 +22,11 @@ type Props = {
   parliamentPeriodId: string;
   faction: RegistryFaction;
   sessionInputs: SessionInput[];
-  oparlMeetings: OparlMeeting[];
-  oparlAgendaItems: OparlAgendaItem[];
-  oparlConsultations: OparlConsultation[];
+  votingPaperMap: VotingPaperMap;
 };
 
-const {
-  parliamentPeriodId,
-  faction,
-  sessionInputs,
-  oparlMeetings,
-  oparlAgendaItems,
-  oparlConsultations,
-} = Astro.props as Props;
+const { parliamentPeriodId, faction, sessionInputs, votingPaperMap } =
+  Astro.props as Props;
 
 const factionMotionVotings = sessionInputs
   .flatMap((sessionInput) =>
@@ -66,11 +54,9 @@ const motions = Array.from(motionsMap)
     const sessionId = motionVoting.sessionId;
     const sessionDate = motionVoting.sessionDate;
     const paperId = getPaperId(
+      votingPaperMap,
       motionVoting.sessionDate,
       motionVoting.voting,
-      oparlMeetings,
-      oparlAgendaItems,
-      oparlConsultations,
     );
     const votings = motionVotings.map((motionVoting) => ({
       votingId: +motionVoting.voting.votingFilename.substring(11, 14),

@@ -1,5 +1,6 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro';
+import { getEntry } from 'astro:content';
 import {
   type ParliamentPeriodWithFactionProps,
   getParliamentPeriodWithFactionPaths,
@@ -12,14 +13,11 @@ import MetaTags from '@components/MetaTags.astro';
 export const getStaticPaths = getParliamentPeriodWithFactionPaths;
 
 const { parliamentPeriodId, factionId } = Astro.params;
-const {
-  parliamentPeriod,
-  faction,
-  sessionInputs,
-  oparlMeetings,
-  oparlAgendaItems,
-  oparlConsultations,
-} = Astro.props as ParliamentPeriodWithFactionProps;
+const { parliamentPeriod, faction, sessionInputs } =
+  Astro.props as ParliamentPeriodWithFactionProps;
+
+const votingPaperMap =
+  (await getEntry('votingPaperMaps', parliamentPeriod.id))?.data ?? {};
 
 const breadcrumbItems = [
   {
@@ -79,9 +77,7 @@ const breadcrumbItems = [
         parliamentPeriodId={parliamentPeriodId}
         faction={faction}
         sessionInputs={sessionInputs}
-        oparlMeetings={oparlMeetings}
-        oparlAgendaItems={oparlAgendaItems}
-        oparlConsultations={oparlConsultations}
+        votingPaperMap={votingPaperMap}
       />
     </div>
 
