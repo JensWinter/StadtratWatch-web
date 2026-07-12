@@ -1,5 +1,6 @@
 import * as path from '@std/path';
 import { PaperIndex, VotingPaperMap } from '@srw-astro/models/oparl-derivatives';
+import { ensureDirSync } from '@std/fs';
 
 export interface DerivativesWriter {
   writeVotingPaperMap(periodId: string, votingPaperMap: VotingPaperMap): void;
@@ -12,6 +13,7 @@ export class DerivativesFileWriter implements DerivativesWriter {
 
   public writeVotingPaperMap(periodId: string, votingPaperMap: VotingPaperMap): void {
     const filename = path.join(this.dataDir, periodId, 'voting-paper-map.json');
+    ensureDirSync(path.dirname(filename));
     writeJsonFile(filename, votingPaperMap);
   }
 

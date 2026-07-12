@@ -11,6 +11,8 @@ RUN deno install --entrypoint src/scripts/generate-oparl-derivatives/index.ts --
 
 RUN deno cache src/scripts/generate-oparl-derivatives/index.ts --unstable-sloppy-imports
 
+USER deno
+
 CMD ["run", \
         "-R=/app/oparl,/app/data", \
         "-W=/app/data", \
