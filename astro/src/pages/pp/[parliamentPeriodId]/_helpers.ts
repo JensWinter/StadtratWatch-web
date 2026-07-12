@@ -4,33 +4,12 @@ import type { SessionInput } from '@models/SessionInput';
 
 const getParliamentPeriodStaticPaths = (async () => {
   const parliamentPeriods = await getCollection('parliamentPeriods');
-  const oparlMeetings = (await getCollection('oparlMeetings')).filter(
-    (meeting) =>
-      meeting.data.organization?.includes(
-        'https://ratsinfo.magdeburg.de/oparl/bodies/0001/organizations/gr/1',
-      ),
-  );
-  const oparlAgendaItems = (await getCollection('oparlAgendaItems')).filter(
-    (agendaItem) =>
-      agendaItem.data.meeting &&
-      oparlMeetings.some((meeting) => meeting.id === agendaItem.data.meeting),
-  );
-  const oparlConsultations = (await getCollection('oparlConsultations')).filter(
-    (consultation) =>
-      consultation.data.meeting &&
-      oparlMeetings.some((meeting) => meeting.id === consultation.data.meeting),
-  );
 
   return parliamentPeriods.map((parliamentPeriod) => {
     return {
       params: { parliamentPeriodId: parliamentPeriod.id },
       props: {
         parliamentPeriod: parliamentPeriod.data,
-        oparlMeetings: oparlMeetings.map((meeting) => meeting.data),
-        oparlAgendaItems: oparlAgendaItems.map((agendaItem) => agendaItem.data),
-        oparlConsultations: oparlConsultations.map(
-          (consultation) => consultation.data,
-        ),
       },
     };
   });
@@ -82,15 +61,11 @@ export const getParliamentPeriodWithSessionsPaths = (async () => {
         speeches,
       } as SessionInput;
     });
-    const { oparlMeetings, oparlAgendaItems, oparlConsultations } = path.props;
     return {
       params: { parliamentPeriodId: parliamentPeriod.id },
       props: {
         parliamentPeriod,
         sessionInputs,
-        oparlMeetings,
-        oparlAgendaItems,
-        oparlConsultations,
       },
     };
   });
@@ -104,13 +79,7 @@ export const getParliamentPeriodWithSessionPaths = async () => {
   const parliamentPeriodWithSessionsStaticPaths =
     await getParliamentPeriodWithSessionsPaths();
   return parliamentPeriodWithSessionsStaticPaths.flatMap((path) => {
-    const {
-      parliamentPeriod,
-      sessionInputs,
-      oparlMeetings,
-      oparlAgendaItems,
-      oparlConsultations,
-    } = path.props;
+    const { parliamentPeriod, sessionInputs } = path.props;
     return sessionInputs.map((sessionInput) => ({
       params: {
         parliamentPeriodId: parliamentPeriod.id,
@@ -119,9 +88,6 @@ export const getParliamentPeriodWithSessionPaths = async () => {
       props: {
         parliamentPeriod,
         sessionInput,
-        oparlMeetings,
-        oparlAgendaItems,
-        oparlConsultations,
       },
     }));
   });
@@ -135,13 +101,8 @@ export const getParliamentPeriodWithFactionPaths = async () => {
   const parliamentPeriodWithSessionsStaticPaths =
     await getParliamentPeriodWithSessionsPaths();
   return parliamentPeriodWithSessionsStaticPaths.flatMap((path) => {
-    const {
-      parliamentPeriod,
-      sessionInputs,
-      oparlMeetings,
-      oparlAgendaItems,
-      oparlConsultations,
-    } = path.props as ParliamentPeriodWithSessionsProps;
+    const { parliamentPeriod, sessionInputs } =
+      path.props as ParliamentPeriodWithSessionsProps;
     return parliamentPeriod.factions.map((faction) => ({
       params: {
         parliamentPeriodId: parliamentPeriod.id,
@@ -151,9 +112,6 @@ export const getParliamentPeriodWithFactionPaths = async () => {
         parliamentPeriod,
         faction,
         sessionInputs,
-        oparlMeetings,
-        oparlAgendaItems,
-        oparlConsultations,
       },
     }));
   });
@@ -186,13 +144,7 @@ export const getParliamentPeriodWithSessionAndVotingPaths = async () => {
   const paths = await getParliamentPeriodWithSessionPaths();
 
   return paths.flatMap((path) => {
-    const {
-      parliamentPeriod,
-      sessionInput,
-      oparlMeetings,
-      oparlAgendaItems,
-      oparlConsultations,
-    } = path.props;
+    const { parliamentPeriod, sessionInput } = path.props;
 
     return sessionInput.votings.map((voting) => {
       return {
@@ -204,9 +156,6 @@ export const getParliamentPeriodWithSessionAndVotingPaths = async () => {
         props: {
           parliamentPeriod,
           sessionInput,
-          oparlMeetings,
-          oparlAgendaItems,
-          oparlConsultations,
           voting,
         },
       };
