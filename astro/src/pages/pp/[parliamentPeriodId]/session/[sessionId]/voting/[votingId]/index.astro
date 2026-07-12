@@ -1,12 +1,11 @@
 ---
 import PageLayout from '@layouts/PageLayout.astro';
 import { formatDate } from '@utils/format-date';
-import { getEntry } from 'astro:content';
 import {
   type ParliamentPeriodWithSessionAndVotingProps,
   getParliamentPeriodWithSessionAndVotingPaths,
 } from '../../../../_helpers';
-import { getPaperId } from '../../../../_helpers2';
+import { getPaperId, getVotingPaperMap } from '../../../../_helpers2';
 import MetaTags from '@components/MetaTags.astro';
 import { getVideoTimestampAsSeconds } from '@utils/session-utils';
 
@@ -16,8 +15,7 @@ const { parliamentPeriodId, sessionId, votingId } = Astro.params;
 const { parliamentPeriod, sessionInput, voting } =
   Astro.props as ParliamentPeriodWithSessionAndVotingProps;
 
-const votingPaperMap =
-  (await getEntry('votingPaperMaps', parliamentPeriod.id))?.data ?? {};
+const votingPaperMap = await getVotingPaperMap(parliamentPeriod.id);
 
 const breadcrumbItems = [
   {
