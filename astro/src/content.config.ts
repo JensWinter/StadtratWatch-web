@@ -4,8 +4,11 @@ import type { Registry } from '@models/registry.ts';
 import type { SessionScan } from '@models/session-scan.ts';
 import type { SessionSpeech } from '@models/session-speech.ts';
 import * as fs from 'node:fs';
-import type { OparlPaper } from '@models/oparl.ts';
-import { votingPaperMapSchema } from '@models/oparl-derivatives.schema.ts';
+import type { PaperIndex } from '@models/oparl-derivatives.ts';
+import {
+  paperIndexEntrySchema,
+  votingPaperMapSchema,
+} from '@models/oparl-derivatives.schema.ts';
 import { z } from 'astro/zod';
 
 const parliamentPeriods = defineCollection({
@@ -50,12 +53,12 @@ const votingPaperMaps = defineCollection({
   schema: votingPaperMapSchema,
 });
 
-const oparlPapers = defineCollection({
+const paperIndex = defineCollection({
   loader: () =>
     JSON.parse(
-      fs.readFileSync('../data/oparl-magdeburg/papers.json', 'utf8'),
-    ) as OparlPaper[],
-  schema: z.custom<OparlPaper>(),
+      fs.readFileSync('../data/paper-index.json', 'utf8'),
+    ) as PaperIndex,
+  schema: paperIndexEntrySchema,
 });
 
 export const collections = {
@@ -63,5 +66,5 @@ export const collections = {
   sessionScans,
   sessionSpeeches,
   votingPaperMaps,
-  oparlPapers,
+  paperIndex,
 };

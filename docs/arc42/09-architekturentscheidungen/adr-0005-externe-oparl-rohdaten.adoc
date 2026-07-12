@@ -18,9 +18,14 @@ Der rohe OParl-Bestand (`data/oparl-magdeburg/`) umfasst rund 122 MB in wenigen 
 Der rohe OParl-Bestand wird *nicht mehr im Repository* gehalten (`data/oparl-magdeburg/` ist `gitignore`-t), sondern extern in der bestehenden AWS-S3/CloudFront-Infrastruktur unter dem Präfix `oparl/`. Statt einer Versionshistorie wird genau ein „aktueller“ Snapshot vorgehalten: inhaltsadressierte, unveränderliche Blobs (`oparl/<datei>.<sha>.json.gz`) und eine kleine `manifest.json` mit den Hashes und einem `lastSync`-Zeitstempel.
 
 * *Veröffentlichen* ist ein optionaler, authentifizierter Abschlussschritt des Scrapers (`scrape-oparl --push`); ohne das Flag schreibt der Scraper nur lokal. Nur dieser Schritt benötigt AWS-Zugangsdaten und ist dem Maintainer vorbehalten.
-* *Laden* erfolgt öffentlich und ohne Zugangsdaten über `fetch-oparl`; das Skript vergleicht die Hashes des Manifests mit den lokalen Dateien und lädt nur Geändertes. Es läuft automatisch über die `prebuild`/`predev`-Hooks der Web-Anwendung, sodass CI, Netlify und lokale Entwicklung den Bestand ohne Zusatzschritte erhalten.
+* *Laden* erfolgt öffentlich und ohne Zugangsdaten über `fetch-oparl`; das Skript vergleicht die Hashes des Manifests mit den lokalen Dateien und lädt nur Geändertes. Es ist ein manueller, dem Maintainer vorbehaltener Schritt. Der Astro-Build selbst benötigt den Roh-Snapshot nicht; er konsumiert stattdessen die committeten Derivate (`paper-index.json`, `voting-paper-map.json`, siehe Ergänzung unten). `fetch-oparl` lädt den Snapshot nur, wenn der Maintainer die Derivate neu erzeugen will.
 
 Diese Entscheidung betrifft ausschließlich die reproduzierbaren _Rohdaten_. Der verarbeitete Sitzungsbestand (Abstimmungen, Reden, `registry.json`) bleibt weiterhin versioniert im Repository (<<adr-0001,ADR-0001>>).
+
+[NOTE]
+====
+*Ergänzung (OParl-Precompile):* Der Web-Build liest die rohen OParl-Daten inzwischen *nicht mehr* direkt. Ein manueller Precompile-Schritt (`generate-oparl-derivatives`) erzeugt aus den Rohdaten zwei kleine, committete Derivate (`paper-index.json`, `voting-paper-map.json`), die der Astro-Build konsumiert; die `prebuild`/`predev`-Hooks entfallen. `fetch-oparl` bleibt der Maintainer-Weg, den Roh-Snapshot lokal zu laden, um die Derivate zu regenerieren. Diese Entscheidung ändert nur die Bauzeit-Nutzung, nicht die externe Haltung der Rohdaten selbst. Siehe <<konzept-datenhaltung,Datenhaltung & Versionierung>>.
+====
 
 == Konsequenzen
 
@@ -29,7 +34,7 @@ Diese Entscheidung betrifft ausschließlich die reproduzierbaren _Rohdaten_. Der
 * Repository und `.git`-Historie bleiben schlank; das Wachstum durch wiederholte Komplett-Überschreibungen entfällt.
 * Inhaltsadressierte, unveränderliche Blobs machen eine CloudFront-Invalidierung überflüssig; ein neuer Scrape erzeugt neue Blob-Namen und ein neues Manifest.
 * Offline-Entwicklung bleibt möglich: nach dem ersten Abruf liegen die Dateien lokal vor; ist das Manifest nicht erreichbar, aber alle Dateien vorhanden, wird mit dem lokalen Stand weitergearbeitet.
-* Die bestehenden Astro-Loader und das Repository-Muster der Deno-Skripte bleiben unverändert — sie lesen weiterhin lokale JSON-Dateien.
+* Der Astro-Build liest die rohen OParl-Daten nicht mehr direkt, sondern konsumiert die committeten Derivate (`paper-index.json`, `voting-paper-map.json`); das Repository-Muster der Deno-Skripte bleibt unverändert und liest den lokalen Roh-Snapshot weiterhin aus lokalen JSON-Dateien — nun ausschließlich zur Regenerierung der Derivate.
 
 *Negativ*
 

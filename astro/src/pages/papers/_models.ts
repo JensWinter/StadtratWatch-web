@@ -1,9 +1,5 @@
-export type RecentPaper = {
-  oparlId: string;
-  id: string;
-  date: string;
+import type { PaperIndexEntry } from '@models/oparl-derivatives.ts';
+
+export type RecentPaper = PaperIndexEntry & {
   dateDisplay: string;
-  type: string | undefined;
-  reference: string | undefined;
-  title: string;
 };

@@ -84,6 +84,10 @@ data/
 │       └── session-speeches-*.json   # Transkripte
 ├── magdeburg-8/
 ├── oparl-magdeburg/              # rohe OParl-Daten (nicht im Repository;
-│                                 #   extern gehalten, zur Bauzeit geladen)
+│                                 #   extern gehalten, nur vom Maintainer für
+│                                 #   die Derivat-Erzeugung geladen — nicht vom
+│                                 #   Web-Build)
+├── paper-index.json             # committetes OParl-Derivat: Haupt-Drucksachen
+├── magdeburg-*/voting-paper-map.json  # committetes OParl-Derivat je Periode
 └── papers/                       # Drucksachen-Metadaten (JSON-Batches)
 ----
