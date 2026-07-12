@@ -218,6 +218,22 @@ Index is rebuilt with index-search script (see docs/guides/HOWTO.md). Frontend u
 - **Astro formatting**: Uses Prettier with .prettierrc
 - **File naming**: Use kebab-case for directories, camelCase for TypeScript
 - **Session IDs**: Always use ISO date format YYYY-MM-DD
+- **Code Style**:
+  - *Always* write self-documenting code with clear, descriptive names
+  - *Always* refactor unclear code rather than adding explanatory comments
+  - *Always* extract complex logic into well-named functions
+  - *Never* add comments explaining what code does (refactor instead)
+  - *Never* use cryptic abbreviations or unclear variable names
+
+## Boundaries
+
+- *Always* run linting before committing
+- *Always* ensure git commits list only human authors and co-authors
+- *Ask first* when database schema changes
+- *Ask first* when adding new dependencies
+- *Never* commit secrets or `.env` files
+- *Never* force push to main
+- *Never* list AI agents as commit authors or co-authors
 
 ## Important Notes
 
