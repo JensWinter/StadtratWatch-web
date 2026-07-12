@@ -16,5 +16,4 @@ export type PaperIndexEntry = {
   name: string;
 };
 
-// Carries all main papers; the 3-month time filter stays in the Astro build.
 export type PaperIndex = PaperIndexEntry[];

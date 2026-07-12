@@ -15,9 +15,6 @@ import { Registry } from '@srw-astro/models/registry';
 import { RegistryStore } from './registry-store.ts';
 import { DerivativesWriter } from './derivatives-writer.ts';
 
-// The voting-paper-map reproduces the former getPaperId join; the paper-index
-// keeps no time filter (that stays in the Astro build). Output is stably sorted
-// so a repeated run yields no diff.
 export class OparlDerivativesGenerator {
   private readonly meetingsRepository: OparlMeetingsRepository;
   private readonly agendaItemsRepository: OparlAgendaItemsRepository;
@@ -114,7 +111,7 @@ export class OparlDerivativesGenerator {
         continue;
       }
       const consultation = this.consultationsRepository.getConsultationById(agendaItem.consultation);
-      if (!consultation || !consultation.paper) {
+      if (!consultation?.paper) {
         continue;
       }
 

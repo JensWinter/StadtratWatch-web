@@ -6,8 +6,7 @@ import type {
 } from './oparl-derivatives.ts';
 
 // Runtime schemas for the committed OParl derivates, consumed by the Astro
-// content collections to fail-fast-validate each derivate file. Astro-only:
-// intentionally NOT reexported to the Deno workspace, so Deno needs no Zod.
+// content collections to fail-fast-validate each derivate file.
 // Uses astro/zod (= zod v4) so the schema object matches the instance Astro's
 // content-collection validator expects.
 
