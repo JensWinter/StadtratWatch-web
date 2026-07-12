@@ -71,8 +71,10 @@ export type PaperIndexEntry = {
 
 ### Modell-Ort & Zod-Schemata (#434)
 
-- Kanonisch: `astro/src/models/oparl-derivatives.ts` mit **beiden** Typen **und** den zugehörigen **echten Zod-Schemata** (`z.object`/`z.record`). TS-Typen und Schemata synchron halten (z. B. Typ via `z.infer` ableiten). **Keine** `schemaVersion`, **keine** Metadaten-Hülle — selbstprüfendes Schema statt manuell gepflegter Version.
-- Deno-Reexport: neue `src/deps/astro/oparl-derivatives.ts` mit `export * from '../../../astro/src/models/oparl-derivatives.ts';` **und** Eintrag `"./oparl-derivatives": "./oparl-derivatives.ts"` in `src/deps/astro/deno.json`.
+- **Typen und Schemata in zwei Dateien getrennt** (Umsetzungsentscheid, siehe [`docs/research/2026-07-12-oparl-derivatives-zod-alternatives.md`](../research/2026-07-12-oparl-derivatives-zod-alternatives.md)):
+  - `astro/src/models/oparl-derivatives.ts` — **nur** die kanonischen TS-Typen, **importfrei**. Diese Datei wird nach Deno reexportiert; weil sie kein Zod importiert, braucht die Deno-Seite kein Zod (der Generator nutzt ohnehin nur die Typen).
+  - `astro/src/models/oparl-derivatives.schema.ts` — **Astro-only** (nicht nach Deno reexportiert), `import { z } from 'astro/zod'` + die **echten Zod-Schemata** (`z.object`/`z.record`). Typ↔Schema-Synchronität via Compile-Zeit-Drift-Guard (`AssertEqual<z.infer<typeof schema>, Typ>`); bricht den Astro-Build bei Abweichung ab. **Keine** `schemaVersion`, **keine** Metadaten-Hülle — selbstprüfendes Schema statt manuell gepflegter Version.
+- Deno-Reexport: neue `src/deps/astro/oparl-derivatives.ts` mit `export * from '../../../astro/src/models/oparl-derivatives.ts';` (Typ-Datei) **und** Eintrag `"./oparl-derivatives": "./oparl-derivatives.ts"` in `src/deps/astro/deno.json`.
 
 ### Verhältnis zu `data/papers/`
 
@@ -93,7 +95,7 @@ export type PaperIndexEntry = {
 
 **Grundhaltung:** Aktive, minimale **fail-fast-Validierung im Astro-Build**, ausschließlich aus **committeten Dateien** (CI/Netlify haben laut #433 **keine** Roh-OParl → „im CI neu generieren und diffen" ist ausgeschlossen).
 
-1. **Schema-Drift → echte Zod-Schemata.** Die zwei Derivat-Collections in `content.config.ts` bekommen die echten `z.object`/`z.record`-Schemata aus `oparl-derivatives.ts` statt `z.custom`. Der Build validiert die Form jeder Datei und bricht bei Abweichung ab (Feld umbenannt/Struktur geändert → altes File verletzt neues Schema → fail fast). Deckt „Schema ↔ Code laufen auseinander" **und** „altes committetes Derivat trifft neuen Code" strukturell ab.
+1. **Schema-Drift → echte Zod-Schemata.** Die zwei Derivat-Collections in `content.config.ts` bekommen die echten `z.object`/`z.record`-Schemata aus `oparl-derivatives.schema.ts` statt `z.custom`. Der Build validiert die Form jeder Datei und bricht bei Abweichung ab (Feld umbenannt/Struktur geändert → altes File verletzt neues Schema → fail fast). Deckt „Schema ↔ Code laufen auseinander" **und** „altes committetes Derivat trifft neuen Code" strukturell ab.
 2. **Vollständigkeit → referenzieller Check, nur Vorwärtsrichtung.** Build-Zeit-Check: Jeder Sitzungs-Key in `voting-paper-map.json` muss in der `registry.json` der jeweiligen Wahlperiode existieren. Die **Rückrichtung** (registry-Sitzung fehlt im Derivat) ist **kein** Fehler (eine Sitzung darf legitim keine drucksachen-verknüpften Abstimmungen haben; der Build kann ohne Rohdaten „fehlt" nicht von „leer" unterscheiden).
 3. **Echte Staleness → bewusst kein Build-Gate, kein Zeitstempel.** Der einzige Wahrheits-Zeitstempel liegt bei den Rohdaten, die CI/Netlify nicht haben. Staleness bleibt Prozess-/Diff-Sache (dokumentierte Pipeline-Reihenfolge in HOWTO + PR-Review sieht den Diff).
 4. **Ort → dediziertes Validierungsmodul via Astro-Build-Hook.** Der cross-file-Check (Punkt 2) lebt in einem kleinen, dedizierten Modul, aufgerufen aus einem Astro-Build-Hook (`astro:config:setup`/`astro:build:start` in `astro.config.mjs`) — einmal, früh. Sammelt **alle** Inkonsistenzen und meldet sie gebündelt mit klarer Meldung („Sitzung X in voting-paper-map fehlt in registry der Periode Y"), **dann** hartes fail fast (nicht beim ersten Fehler stoppen → spart Regenerierungs-Runden).
@@ -123,7 +125,7 @@ Zusammengefasst: Per-Datei-Form = Zod in `content.config.ts`; Cross-file-Referen
 ## 8. Zusammengefasste Änderungsliste (Umsetzung)
 
 **Neu:**
-- `astro/src/models/oparl-derivatives.ts` (Typen + Zod-Schemata)
+- `astro/src/models/oparl-derivatives.ts` (nur TS-Typen, importfrei) + `astro/src/models/oparl-derivatives.schema.ts` (Astro-only Zod-Schemata)
 - `src/deps/astro/oparl-derivatives.ts` + Eintrag in `src/deps/astro/deno.json`
 - `src/scripts/generate-oparl-derivatives/` (Deno-Generator)
 - `docker/generate-oparl-derivatives.Dockerfile`
