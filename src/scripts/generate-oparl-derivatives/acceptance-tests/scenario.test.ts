@@ -27,7 +27,6 @@ class MockOparlObjectsStore implements OparlObjectsStore {
   ];
 
   loadMeetings = (): OparlMeeting[] => [
-    // Council session on 2024-08-15.
     {
       id: url('meetings/m1'),
       type: 't',
@@ -35,7 +34,7 @@ class MockOparlObjectsStore implements OparlObjectsStore {
       start: '2024-08-15T16:00:00+02:00',
       organization: [COUNCIL_ORG],
     },
-    // A committee meeting on the same day must be ignored.
+    // Same day as m1 but a non-council org -> must be ignored.
     {
       id: url('meetings/m2'),
       type: 't',
@@ -43,7 +42,6 @@ class MockOparlObjectsStore implements OparlObjectsStore {
       start: '2024-08-15T10:00:00+02:00',
       organization: [OTHER_ORG],
     },
-    // Council session on 2024-09-12.
     {
       id: url('meetings/m3'),
       type: 't',
@@ -66,7 +64,6 @@ class MockOparlObjectsStore implements OparlObjectsStore {
   ];
 
   loadPapers = (): OparlPaper[] => [
-    // Main papers (empty subordinatedPaper) with dates.
     paper('300', '2024-08-01', 'Antrag', 'A0123'),
     paper('100', '2024-07-15', 'Beschlussvorlage', 'B0456'),
     // Sub paper (has subordinatedPaper) -> excluded from the index.

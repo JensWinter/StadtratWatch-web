@@ -6,11 +6,6 @@ export interface RegistryStore {
   loadRegistries(): PeriodRegistry[];
 }
 
-/**
- * Discovers parliament period registries by scanning the data directory for
- * `{period-id}/registry.json`. Returns them sorted by period id for a
- * deterministic processing order.
- */
 export class RegistryFileStore implements RegistryStore {
   constructor(private readonly dataDir: string) {
   }
@@ -32,6 +27,7 @@ export class RegistryFileStore implements RegistryStore {
       registries.push({ periodId: entry.name, registry });
     }
 
+    // Sorted for a deterministic processing order across runs.
     return registries.toSorted((a, b) => a.periodId.localeCompare(b.periodId));
   }
 }

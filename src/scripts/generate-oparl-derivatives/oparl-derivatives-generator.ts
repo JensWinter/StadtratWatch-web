@@ -15,18 +15,9 @@ import { Registry } from '@srw-astro/models/registry';
 import { RegistryStore } from './registry-store.ts';
 import { DerivativesWriter } from './derivatives-writer.ts';
 
-/**
- * Builds the committed OParl derivates from the raw OParl objects:
- *
- * - `voting-paper-map.json` per parliament period — for every registry session
- *   the map `{ agendaItemNumber: paperId }`, reproducing exactly what the former
- *   `getPaperId` join (meeting → agenda item → consultation → paper) returned.
- * - the global `paper-index.json` — all main papers (empty `subordinatedPaper`)
- *   projected to {@link PaperIndexEntry}; no time filter (that stays in the
- *   Astro build).
- *
- * Output is deterministic and stably sorted so a repeated run yields no diff.
- */
+// The voting-paper-map reproduces the former getPaperId join; the paper-index
+// keeps no time filter (that stays in the Astro build). Output is stably sorted
+// so a repeated run yields no diff.
 export class OparlDerivativesGenerator {
   private readonly meetingsRepository: OparlMeetingsRepository;
   private readonly agendaItemsRepository: OparlAgendaItemsRepository;
@@ -114,8 +105,6 @@ export class OparlDerivativesGenerator {
       if (!agendaItem.number) {
         continue;
       }
-      // Only the first agenda item per number counts, mirroring the former
-      // getPaperId `find()` on (meeting, number).
       if (seenNumbers.has(agendaItem.number)) {
         continue;
       }
@@ -155,7 +144,6 @@ export class OparlDerivativesGenerator {
   }
 }
 
-/** Extracts the trailing numeric id of an OParl object url, e.g. `.../papers/12345` -> `12345`. */
 function oparlIdSuffix(oparlId: string): string {
   return oparlId.split('/').pop()!;
 }

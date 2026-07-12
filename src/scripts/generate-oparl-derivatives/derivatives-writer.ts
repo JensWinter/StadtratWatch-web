@@ -6,12 +6,6 @@ export interface DerivativesWriter {
   writePaperIndex(paperIndex: PaperIndex): void;
 }
 
-/**
- * Writes the committed OParl derivates into the data directory:
- * `{data-dir}/{period-id}/voting-paper-map.json` per period and the global
- * `{data-dir}/paper-index.json`. Output is pretty-printed with a trailing
- * newline for a clean git diff.
- */
 export class DerivativesFileWriter implements DerivativesWriter {
   constructor(private readonly dataDir: string) {
   }
@@ -28,5 +22,6 @@ export class DerivativesFileWriter implements DerivativesWriter {
 }
 
 function writeJsonFile(filename: string, data: unknown): void {
+  // Trailing newline keeps the committed derivate diffs clean.
   Deno.writeTextFileSync(filename, `${JSON.stringify(data, null, 2)}\n`);
 }
