@@ -102,8 +102,8 @@ export class OparlDerivativesGenerator {
     return votingPaperMap;
   }
 
-  private buildAgendaItemPaperMap(meetingId: string): { [agendaItemNumber: string]: number } {
-    const paperIdByAgendaItemNumber: { [agendaItemNumber: string]: number } = {};
+  private buildAgendaItemPaperMap(meetingId: string): VotingPaperMap[string] {
+    const paperIdByAgendaItemNumber: VotingPaperMap[string] = {};
     const seenNumbers = new Set<string>();
 
     // File order is preserved so the first agenda item per number wins,
@@ -129,7 +129,7 @@ export class OparlDerivativesGenerator {
         continue;
       }
 
-      paperIdByAgendaItemNumber[agendaItem.number] = +consultation.paper.split('/').pop()!;
+      paperIdByAgendaItemNumber[agendaItem.number] = +oparlIdSuffix(consultation.paper);
     }
 
     return paperIdByAgendaItemNumber;
@@ -142,7 +142,7 @@ export class OparlDerivativesGenerator {
       .filter((paper) => !!paper.date)
       .map<PaperIndexEntry>((paper) => ({
         oparlId: paper.id,
-        id: paper.id.split('/').pop()!,
+        id: oparlIdSuffix(paper.id),
         date: paper.date!,
         paperType: paper.paperType,
         reference: paper.reference,
@@ -153,4 +153,9 @@ export class OparlDerivativesGenerator {
         return idComparison !== 0 ? idComparison : a.date.localeCompare(b.date);
       });
   }
+}
+
+/** Extracts the trailing numeric id of an OParl object url, e.g. `.../papers/12345` -> `12345`. */
+function oparlIdSuffix(oparlId: string): string {
+  return oparlId.split('/').pop()!;
 }
