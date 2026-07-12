@@ -7,7 +7,15 @@ export function getPaperId(
   sessionDate: string,
   voting: SessionScanItem,
 ): number | null {
-  return votingPaperMap[sessionDate]?.[voting.votingSubject.agendaItem] ?? null;
+  const paperId =
+    votingPaperMap[sessionDate]?.[voting.votingSubject.agendaItem];
+  if (paperId === undefined) {
+    console.warn(
+      `No paperId found in voting-paper-map for session ${sessionDate}, agendaItem ${voting.votingSubject.agendaItem}`,
+    );
+    return null;
+  }
+  return paperId;
 }
 
 export async function getVotingPaperMap(
