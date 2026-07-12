@@ -4,6 +4,7 @@ Run the processing pipeline in this order. The script sections below document in
 
 1. `scrape-oparl` - fetch current OParl data.
 2. `generate-paper-assets` - convert scraped OParl data into the internal paper assets.
+   `generate-oparl-derivatives` - precompile the committed OParl derivates (`voting-paper-map.json`, `paper-index.json`) the web build consumes. Both step-2 tools only depend on `scrape-oparl`, so their order relative to each other does not matter.
 3. Video processing steps:
    1. `parse-speakers` - combine speaker diarization data for the session.
    2. `scan-voting-images` - extract voting results from session screenshots.
@@ -159,6 +160,43 @@ docker run \
   -v $(pwd)/data/papers:/app/generated \
   -v $(pwd)/output/ratsinfosystem:/app/oparl:ro \
   srw-generate-paper-assets
+```
+
+
+### Generate OParl derivates
+This tool precompiles the two committed OParl derivates the web build consumes instead of reading the raw OParl data directly: one `voting-paper-map.json` per parliament period (session agenda item → paper id) and a single global `paper-index.json` (all main papers). It scans `<data-dir>` for `{period-id}/registry.json` and regenerates **all** derivates in one run — there is no `--period` flag. Output is deterministic and stably sorted, so a repeated run produces no diff.
+
+**The generated files are committed to the repository.** After regenerating them, review the `git diff` and commit the changed `data/{period-id}/voting-paper-map.json` and `data/paper-index.json`. The web build (CI/Netlify) reads only these committed derivates and no longer needs the raw OParl data.
+
+The council organization id is read from the `OPARL_COUNCIL_ORGANIZATION_ID` environment variable (e.g. `https://ratsinfo.magdeburg.de/oparl/bodies/0001/organizations/gr/1`).
+
+#### Using the deno script
+```shell
+OPARL_COUNCIL_ORGANIZATION_ID=<council-org-id> \
+  deno run \
+    -R=. \
+    -W=data \
+    -E=OPARL_COUNCIL_ORGANIZATION_ID \
+    src/scripts/generate-oparl-derivatives/index.ts \
+    -o=data/oparl-magdeburg/ \
+    -d=data/
+```
+
+`-o`/`--oparl-dir` defaults to `data/oparl-magdeburg/` and `-d`/`--data-dir` to `data/`, so both flags can be omitted when run from the repository root.
+
+#### Build the docker image
+```bash
+docker build -t srw-generate-oparl-derivatives -f docker/generate-oparl-derivatives.Dockerfile .
+```
+
+#### Run the docker container
+```shell
+docker run \
+  --rm \
+  -e OPARL_COUNCIL_ORGANIZATION_ID=<council-org-id> \
+  -v $(pwd)/output/ratsinfosystem:/app/oparl:ro \
+  -v $(pwd)/data:/app/data \
+  srw-generate-oparl-derivatives
 ```
 
 

@@ -13,7 +13,8 @@
     "@std/fs": "jsr:@std/fs@^1.0.5",
     "@std/path": "jsr:@std/path@^1.0.8",
     "@std/testing": "jsr:@std/testing@^1.0.5",
-    "openai": "npm:openai@^5.6.0"
+    "openai": "npm:openai@^5.6.0",
+    "zod": "npm:zod@^4.3.6"
   },
   "lint": {
     "include": ["src/"],

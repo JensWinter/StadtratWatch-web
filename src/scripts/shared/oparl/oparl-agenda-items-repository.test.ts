@@ -136,4 +136,26 @@ Deno.test('OparlAgendaItemsInMemoryRepository', async (t) => {
     assertEquals(result1, mockAgendaItems[0]);
     assertEquals(result2, null);
   });
+
+  await t.step('getAgendaItemsByMeeting', async (t) => {
+    const repository = new OparlAgendaItemsInMemoryRepository(mockAgendaItems);
+
+    await t.step('should return all agenda items of a meeting', () => {
+      const result = repository.getAgendaItemsByMeeting('https://example.org/oparl/v1.1/meetings/1');
+      assertEquals(result.map((a) => a.id), [
+        'https://example.org/oparl/v1.1/agenda-items/1',
+        'https://example.org/oparl/v1.1/agenda-items/2',
+      ]);
+    });
+
+    await t.step('should return single agenda item for a meeting with one item', () => {
+      const result = repository.getAgendaItemsByMeeting('https://example.org/oparl/v1.1/meetings/2');
+      assertEquals(result.map((a) => a.id), ['https://example.org/oparl/v1.1/agenda-items/3']);
+    });
+
+    await t.step('should return empty array for unknown meeting', () => {
+      const result = repository.getAgendaItemsByMeeting('https://example.org/oparl/v1.1/meetings/999');
+      assertEquals(result, []);
+    });
+  });
 });
