@@ -4,6 +4,7 @@ Run the processing pipeline in this order. The script sections below document in
 
 1. `scrape-oparl` - fetch current OParl data.
 2. `generate-paper-assets` - convert scraped OParl data into the internal paper assets.
+   `generate-oparl-derivatives` - precompile the committed OParl derivates (`voting-paper-map.json`, `paper-index.json`) the Astro build consumes.
 3. Video processing steps:
    1. `parse-speakers` - combine speaker diarization data for the session.
    2. `scan-voting-images` - extract voting results from session screenshots.
@@ -162,6 +163,41 @@ docker run \
 ```
 
 
+### Generate OParl derivates
+This tool precompiles the two committed OParl derivates the Astro build consumes: one `voting-paper-map.json` per parliament period (session agenda item → paper id) and a single global `paper-index.json` (all main papers). It scans `<data-dir>` for `{period-id}/registry.json` and regenerates all derivates. Output is deterministic and stably sorted, so a repeated run produces no diff.
+
+The council organization id is read from the `OPARL_COUNCIL_ORGANIZATION_ID` environment variable (e.g. `https://ratsinfo.magdeburg.de/oparl/bodies/0001/organizations/gr/1`).
+
+#### Using the deno script
+```shell
+OPARL_COUNCIL_ORGANIZATION_ID=<council-org-id> \
+  deno run \
+    -R=. \
+    -W=data \
+    -E=OPARL_COUNCIL_ORGANIZATION_ID \
+    src/scripts/generate-oparl-derivatives/index.ts \
+    -o=data/oparl-magdeburg/ \
+    -d=data/
+```
+
+`-o`/`--oparl-dir` defaults to `data/oparl-magdeburg/` and `-d`/`--data-dir` to `data/`, so both flags can be omitted when run from the repository root.
+
+#### Build the docker image
+```bash
+docker build -t srw-generate-oparl-derivatives -f docker/generate-oparl-derivatives.Dockerfile .
+```
+
+#### Run the docker container
+```shell
+docker run \
+  --rm \
+  -e OPARL_COUNCIL_ORGANIZATION_ID=<council-org-id> \
+  -v $(pwd)/output/ratsinfosystem:/app/oparl:ro \
+  -v $(pwd)/data:/app/data \
+  srw-generate-oparl-derivatives
+```
+
+
 ### Extract text from paper files
 
 #### Build the tika tool docker image 
@@ -290,11 +326,12 @@ deno run \
 
 ### Fetch OParl snapshot
 
-The processing scripts and the web build do not scrape OParl themselves — they read the local
-`data/oparl-magdeburg/` directory, which is populated by `fetch-oparl`. This step runs
-automatically before the web build and dev server (the `prebuild` / `predev` hooks in
-`astro/package.json` call `npm run fetch-oparl`), so CI, Netlify and local dev all obtain the data
-without extra steps. You can also run it on its own:
+The processing scripts read the local `data/oparl-magdeburg/` directory, which is populated by
+`fetch-oparl`. This is a **maintainer step**: it is necessary to (re)generate the committed OParl
+derivates via `generate-oparl-derivatives`. The Astro build itself consumes the committed derivates
+(`data/paper-index.json`, `data/{period}/voting-paper-map.json`).
+
+Run it when you need the raw snapshot:
 
 ```bash
 cd astro

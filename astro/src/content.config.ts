@@ -4,12 +4,11 @@ import type { Registry } from '@models/registry.ts';
 import type { SessionScan } from '@models/session-scan.ts';
 import type { SessionSpeech } from '@models/session-speech.ts';
 import * as fs from 'node:fs';
-import type {
-  OparlAgendaItem,
-  OparlConsultation,
-  OparlMeeting,
-  OparlPaper,
-} from '@models/oparl.ts';
+import type { PaperIndex } from '@models/oparl-derivatives.ts';
+import {
+  paperIndexEntrySchema,
+  votingPaperMapSchema,
+} from '@models/oparl-derivatives.schema.ts';
 import { z } from 'astro/zod';
 
 const parliamentPeriods = defineCollection({
@@ -45,44 +44,27 @@ const sessionSpeeches = defineCollection({
   schema: z.array(z.custom<SessionSpeech>()),
 });
 
-const oparlMeetings = defineCollection({
-  loader: () =>
-    JSON.parse(
-      fs.readFileSync('../data/oparl-magdeburg/meetings.json', 'utf8'),
-    ) as OparlMeeting[],
-  schema: z.custom<OparlMeeting>(),
+const votingPaperMaps = defineCollection({
+  loader: glob({
+    pattern: '**/voting-paper-map.json',
+    base: '../data',
+    generateId: (options) => options.entry.split('/')[0],
+  }),
+  schema: votingPaperMapSchema,
 });
 
-const oparlAgendaItems = defineCollection({
+const paperIndex = defineCollection({
   loader: () =>
     JSON.parse(
-      fs.readFileSync('../data/oparl-magdeburg/agenda-items.json', 'utf8'),
-    ) as OparlAgendaItem[],
-  schema: z.custom<OparlAgendaItem>(),
-});
-
-const oparlConsultations = defineCollection({
-  loader: () =>
-    JSON.parse(
-      fs.readFileSync('../data/oparl-magdeburg/consultations.json', 'utf8'),
-    ) as OparlConsultation[],
-  schema: z.custom<OparlConsultation>(),
-});
-
-const oparlPapers = defineCollection({
-  loader: () =>
-    JSON.parse(
-      fs.readFileSync('../data/oparl-magdeburg/papers.json', 'utf8'),
-    ) as OparlPaper[],
-  schema: z.custom<OparlPaper>(),
+      fs.readFileSync('../data/paper-index.json', 'utf8'),
+    ) as PaperIndex,
+  schema: paperIndexEntrySchema,
 });
 
 export const collections = {
   parliamentPeriods,
   sessionScans,
   sessionSpeeches,
-  oparlMeetings,
-  oparlAgendaItems,
-  oparlConsultations,
-  oparlPapers,
+  votingPaperMaps,
+  paperIndex,
 };

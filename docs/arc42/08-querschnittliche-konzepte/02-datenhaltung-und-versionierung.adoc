@@ -27,11 +27,20 @@ Große, generierte Binärdaten gehören nicht in das Repository. Abstimmungs-PNG
 
 Der OParl-Datenbestand (`data/oparl-magdeburg/`) ist umfangreich, wird bei jedem Scrape vollständig neu geschrieben und ist aus der OParl-Schnittstelle reproduzierbar. Er liegt daher *nicht im Repository*, sondern extern in AWS S3 unter dem Präfix `oparl/` und wird über CloudFront öffentlich ausgeliefert. Es wird genau ein „aktueller“ Snapshot gehalten: inhaltsadressierte, unveränderliche Blobs (`oparl/<datei>.<sha>.json.gz`) zusammen mit einer kleinen `manifest.json`. Weil die Blob-Namen inhaltsbasiert sind, ist nie eine CloudFront-Invalidierung nötig.
 
-Das Veröffentlichen ist ein optionaler, authentifizierter Abschlussschritt des Scrapers (`scrape-oparl --push`); das Laden (`fetch-oparl`) ist öffentlich und benötigt keine Zugangsdaten. Vor jedem Web-Build und Dev-Start lädt `fetch-oparl` den Snapshot anhand des Manifests in das lokale `data/oparl-magdeburg/` — automatisiert über die `prebuild`/`predev`-Hooks. Diese Entscheidung ist in <<adr-0005,ADR-0005>> festgehalten; sie betrifft nur die reproduzierbaren _OParl-Rohdaten_, während der verarbeitete Sitzungsbestand weiterhin versioniert im Repository bleibt (<<adr-0001,ADR-0001>>).
+Das Veröffentlichen ist ein optionaler, authentifizierter Abschlussschritt des Scrapers (`scrape-oparl --push`); das Laden (`fetch-oparl`) ist öffentlich und benötigt keine Zugangsdaten. `fetch-oparl` ist ein *Maintainer-Schritt*: Es lädt den Snapshot in das lokale `data/oparl-magdeburg/`, damit der Maintainer daraus die committeten OParl-Derivate regenerieren kann.
+
+== OParl-Precompile-Derivate
+
+Statt die rohen OParl-Daten direkt zu lesen, konsumiert der Web-Build zwei kleine, zweckgebundene Derivate, die ein manueller Precompile-Schritt (`generate-oparl-derivatives`) aus den Rohdaten erzeugt:
+
+* `data/paper-index.json` (global) — projizierte Haupt-Drucksachen für die Drucksachen-Liste; der 3-Monats-Filter läuft weiterhin im Build.
+* `data/{periode}/voting-paper-map.json` (je Wahlperiode) — Abbildung Sitzung → Tagesordnungspunkt → Drucksachen-Id für den Voting→Paper-Bezug.
+
+Die Derivate werden mit stabiler Sortierung vollständig neu erzeugt (sauberer `git diff`) und ohne Zeitstempel committet. Ein Astro-Build-Hook prüft die Konsistenz (`voting-paper-map`-Sitzungen gegen die `registry.json`) und bricht bei Abweichung ab (fail fast).
 
 == Einlesen zur Bauzeit
 
-Die Web-Anwendung liest die Dateien der Datenablage zur Bauzeit über Astro _Content Collections_ (`glob`-Loader) typisiert ein. Damit wird der Dateibestand gegen die geteilten Modelle (siehe <<konzept-datenmodell,Fachliches Datenmodell>>) geprüft und steht den statischen Seiten strukturiert zur Verfügung.
+Die Web-Anwendung liest die Dateien der Datenablage — inklusive der committeten OParl-Derivate, aber *ohne* die rohen OParl-Daten — zur Bauzeit über Astro _Content Collections_ (`glob`-Loader) typisiert ein. Die Derivat-Collections nutzen echte Zod-Schemata, sodass ein strukturell abweichendes Derivat den Build abbricht. Damit wird der Dateibestand gegen die geteilten Modelle (siehe <<konzept-datenmodell,Fachliches Datenmodell>>) geprüft und steht den statischen Seiten strukturiert zur Verfügung.
 
 == Konfiguration & Umgebungen
 

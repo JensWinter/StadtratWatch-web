@@ -3,8 +3,8 @@ import PageLayout from '@layouts/PageLayout.astro';
 import { getCollection } from 'astro:content';
 import { getRecentMainPapers, getRecentPapersPeriod } from './_helpers.ts';
 
-const oparlPapersCollection = await getCollection('oparlPapers');
-const allPapers = oparlPapersCollection.map((oparlPaper) => oparlPaper.data);
+const paperIndexCollection = await getCollection('paperIndex');
+const allPapers = paperIndexCollection.map((entry) => entry.data);
 const recentMainPapers = getRecentMainPapers(allPapers).toSorted((a, b) =>
   b.date.localeCompare(a.date),
 );
@@ -38,10 +38,10 @@ const pageTitle = getRecentPapersPeriod();
                     href={`/paper?paperId=${paper.id}`}
                     class="link link-primary"
                   >
-                    {paper.type || 'Drucksache'} {paper.reference || ''}
+                    {paper.paperType || 'Drucksache'} {paper.reference || ''}
                   </a>
                 </td>
-                <td>{paper.title}</td>
+                <td>{paper.name}</td>
               </tr>
             ))
           }

@@ -8,18 +8,15 @@ import Councilors from './_councilors.astro';
 import Motions from './_motions.astro';
 import Statistics from './_statistics.astro';
 import MetaTags from '@components/MetaTags.astro';
+import { getVotingPaperMap } from '../../_helpers2.ts';
 
 export const getStaticPaths = getParliamentPeriodWithFactionPaths;
 
 const { parliamentPeriodId, factionId } = Astro.params;
-const {
-  parliamentPeriod,
-  faction,
-  sessionInputs,
-  oparlMeetings,
-  oparlAgendaItems,
-  oparlConsultations,
-} = Astro.props as ParliamentPeriodWithFactionProps;
+const { parliamentPeriod, faction, sessionInputs } =
+  Astro.props as ParliamentPeriodWithFactionProps;
+
+const votingPaperMap = await getVotingPaperMap(parliamentPeriod.id);
 
 const breadcrumbItems = [
   {
@@ -79,9 +76,7 @@ const breadcrumbItems = [
         parliamentPeriodId={parliamentPeriodId}
         faction={faction}
         sessionInputs={sessionInputs}
-        oparlMeetings={oparlMeetings}
-        oparlAgendaItems={oparlAgendaItems}
-        oparlConsultations={oparlConsultations}
+        votingPaperMap={votingPaperMap}
       />
     </div>
 

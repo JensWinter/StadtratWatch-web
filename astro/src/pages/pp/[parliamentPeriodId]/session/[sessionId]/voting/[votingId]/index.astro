@@ -5,21 +5,17 @@ import {
   type ParliamentPeriodWithSessionAndVotingProps,
   getParliamentPeriodWithSessionAndVotingPaths,
 } from '../../../../_helpers';
-import { getPaperId } from '../../../../_helpers2';
+import { getPaperId, getVotingPaperMap } from '../../../../_helpers2';
 import MetaTags from '@components/MetaTags.astro';
 import { getVideoTimestampAsSeconds } from '@utils/session-utils';
 
 export const getStaticPaths = getParliamentPeriodWithSessionAndVotingPaths;
 
 const { parliamentPeriodId, sessionId, votingId } = Astro.params;
-const {
-  parliamentPeriod,
-  sessionInput,
-  voting,
-  oparlMeetings,
-  oparlAgendaItems,
-  oparlConsultations,
-} = Astro.props as ParliamentPeriodWithSessionAndVotingProps;
+const { parliamentPeriod, sessionInput, voting } =
+  Astro.props as ParliamentPeriodWithSessionAndVotingProps;
+
+const votingPaperMap = await getVotingPaperMap(parliamentPeriod.id);
 
 const breadcrumbItems = [
   {
@@ -76,13 +72,7 @@ const groupsSortedByVotes = Object.entries(votesGroupedByFaction).sort(
   (a, b) => b[1].length - a[1].length,
 );
 
-const paperId = getPaperId(
-  sessionInput.session.date,
-  voting,
-  oparlMeetings,
-  oparlAgendaItems,
-  oparlConsultations,
-);
+const paperId = getPaperId(votingPaperMap, sessionInput.session.date, voting);
 
 const youtubeUrl = `${sessionInput.session.youtubeUrl}?t=${getVideoTimestampAsSeconds(voting)}s`;
 

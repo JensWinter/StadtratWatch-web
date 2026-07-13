@@ -8,7 +8,17 @@ import {
   vi,
 } from 'vitest';
 import { getRecentMainPapers, getRecentPapersPeriod } from './_helpers.ts';
-import type { OparlPaper } from '@models/oparl.ts';
+import type { PaperIndexEntry } from '@models/oparl-derivatives.ts';
+
+function paperIndexEntry(
+  overrides: Partial<PaperIndexEntry> & Pick<PaperIndexEntry, 'id' | 'date'>,
+): PaperIndexEntry {
+  return {
+    oparlId: `https://example.com/oparl/papers/${overrides.id}`,
+    name: 'Paper',
+    ...overrides,
+  };
+}
 
 describe('getRecentMainPapers', () => {
   beforeAll(() => vi.useFakeTimers());
@@ -22,50 +32,15 @@ describe('getRecentMainPapers', () => {
     assert.deepEqual(result, []);
   });
 
-  test('filters out papers with subordinated papers', () => {
-    const papers: OparlPaper[] = [
-      {
-        id: 'https://example.com/oparl/paper-1',
-        type: 'paper',
-        name: 'Main Paper',
-        reference: 'M-001',
-        paperType: 'Antrag',
-        date: '2024-03-01',
-        subordinatedPaper: [],
-      },
-      {
-        id: 'https://example.com/oparl/paper-2',
-        type: 'paper',
-        name: 'Paper with subordinates',
-        reference: 'M-002',
-        paperType: 'Antrag',
-        date: '2024-03-01',
-        subordinatedPaper: ['sub-paper-1'],
-      },
-    ];
-
-    const result = getRecentMainPapers(papers);
-
-    assert.lengthOf(result, 1);
-    assert.equal(result[0].id, 'paper-1');
-    assert.equal(result[0].oparlId, 'https://example.com/oparl/paper-1');
-    assert.equal(result[0].title, 'Main Paper');
-    assert.equal(result[0].reference, 'M-001');
-    assert.equal(result[0].type, 'Antrag');
-    assert.equal(result[0].date, '2024-03-01');
-    assert.equal(result[0].dateDisplay, '01.03.2024');
-  });
-
   test('returns RecentPaper objects with all required fields', () => {
-    const papers: OparlPaper[] = [
+    const papers: PaperIndexEntry[] = [
       {
-        id: 'https://example.com/oparl/papers/12345',
-        type: 'paper',
+        oparlId: 'https://example.com/oparl/papers/12345',
+        id: '12345',
         name: 'Test Paper Title',
         reference: 'A-123/2024',
         paperType: 'Antrag',
         date: '2024-03-10',
-        subordinatedPaper: [],
       },
     ];
 
@@ -74,26 +49,23 @@ describe('getRecentMainPapers', () => {
     assert.lengthOf(result, 1);
     const paper = result[0];
 
-    // Check all fields of RecentPaper
     assert.equal(paper.oparlId, 'https://example.com/oparl/papers/12345');
     assert.equal(paper.id, '12345');
     assert.equal(paper.date, '2024-03-10');
     assert.equal(paper.dateDisplay, '10.03.2024');
-    assert.equal(paper.type, 'Antrag');
+    assert.equal(paper.paperType, 'Antrag');
     assert.equal(paper.reference, 'A-123/2024');
-    assert.equal(paper.title, 'Test Paper Title');
+    assert.equal(paper.name, 'Test Paper Title');
   });
 
   test('handles papers with optional fields as undefined', () => {
-    const papers: OparlPaper[] = [
-      {
-        id: 'https://example.com/oparl/papers/67890',
-        type: 'paper',
+    const papers: PaperIndexEntry[] = [
+      paperIndexEntry({
+        id: '67890',
         name: 'Paper without optional fields',
         date: '2024-03-05',
-        subordinatedPaper: [],
         // paperType and reference are undefined
-      },
+      }),
     ];
 
     const result = getRecentMainPapers(papers);
@@ -101,59 +73,18 @@ describe('getRecentMainPapers', () => {
     assert.lengthOf(result, 1);
     const paper = result[0];
 
-    assert.equal(paper.type, undefined);
+    assert.equal(paper.paperType, undefined);
     assert.equal(paper.reference, undefined);
-    assert.equal(paper.title, 'Paper without optional fields');
-  });
-
-  test('filters out papers without a date', () => {
-    const papers: OparlPaper[] = [
-      {
-        id: 'paper-1',
-        type: 'paper',
-        name: 'Paper with date',
-        date: '2024-03-01',
-        subordinatedPaper: [],
-      },
-      {
-        id: 'paper-2',
-        type: 'paper',
-        name: 'Paper without date',
-        subordinatedPaper: [],
-      },
-    ];
-
-    const result = getRecentMainPapers(papers);
-
-    assert.lengthOf(result, 1);
-    assert.equal(result[0].id, 'paper-1');
+    assert.equal(paper.name, 'Paper without optional fields');
   });
 
   test('includes papers from the last 3 months (starting from first day of month 2 months ago)', () => {
     // Current date: 2024-03-15
     // Three months ago calculation: new Date(2024, 3-2, 1) = 2024-01-01
-    const papers: OparlPaper[] = [
-      {
-        id: 'paper-1',
-        type: 'paper',
-        name: 'Recent paper',
-        date: '2024-02-15',
-        subordinatedPaper: [],
-      },
-      {
-        id: 'paper-2',
-        type: 'paper',
-        name: 'Paper on boundary (included)',
-        date: '2024-01-01',
-        subordinatedPaper: [],
-      },
-      {
-        id: 'paper-3',
-        type: 'paper',
-        name: 'Old paper (excluded)',
-        date: '2023-12-31',
-        subordinatedPaper: [],
-      },
+    const papers: PaperIndexEntry[] = [
+      paperIndexEntry({ id: 'paper-1', date: '2024-02-15' }),
+      paperIndexEntry({ id: 'paper-2', date: '2024-01-01' }),
+      paperIndexEntry({ id: 'paper-3', date: '2023-12-31' }),
     ];
 
     const result = getRecentMainPapers(papers);
@@ -165,94 +96,13 @@ describe('getRecentMainPapers', () => {
     );
   });
 
-  test('handles papers with undefined subordinatedPaper field', () => {
-    const papers: OparlPaper[] = [
-      {
-        id: 'paper-1',
-        type: 'paper',
-        name: 'Paper without subordinatedPaper field',
-        date: '2024-03-01',
-      },
-    ];
-
-    const result = getRecentMainPapers(papers);
-
-    assert.lengthOf(result, 1);
-    assert.equal(result[0].id, 'paper-1');
-  });
-
-  test('applies all filters together', () => {
-    const papers: OparlPaper[] = [
-      {
-        id: 'paper-1',
-        type: 'paper',
-        name: 'Valid recent main paper',
-        date: '2024-02-15',
-        subordinatedPaper: [],
-      },
-      {
-        id: 'paper-2',
-        type: 'paper',
-        name: 'Has subordinates',
-        date: '2024-02-15',
-        subordinatedPaper: ['sub-1'],
-      },
-      {
-        id: 'paper-3',
-        type: 'paper',
-        name: 'No date',
-        subordinatedPaper: [],
-      },
-      {
-        id: 'paper-4',
-        type: 'paper',
-        name: 'Too old',
-        date: '2023-12-31',
-        subordinatedPaper: [],
-      },
-      {
-        id: 'paper-5',
-        type: 'paper',
-        name: 'Another valid paper',
-        date: '2024-01-01',
-        subordinatedPaper: [],
-      },
-    ];
-
-    const result = getRecentMainPapers(papers);
-
-    assert.lengthOf(result, 2);
-    assert.includeMembers(
-      result.map((p) => p.id),
-      ['paper-1', 'paper-5'],
-    );
-  });
-
   test('handles papers at month boundaries correctly', () => {
     // Current date: 2024-03-15
     // Cutoff: 2024-01-01
-    const papers: OparlPaper[] = [
-      {
-        id: 'paper-jan-1',
-        type: 'paper',
-        name: 'January 1st (included)',
-        date: '2024-01-01',
-        subordinatedPaper: [],
-      },
-      {
-        id: 'paper-dec-31',
-        type: 'paper',
-        name: 'December 31st (excluded)',
-        date: '2023-12-31',
-        subordinatedPaper: [],
-      },
-      {
-        id: 'paper-feb-29',
-        type: 'paper',
-        name: 'End of February (included)',
-        date: '2024-02-29',
-        subordinatedPaper: [],
-      },
+    const papers: PaperIndexEntry[] = [
+      paperIndexEntry({ id: 'paper-jan-1', date: '2024-01-01' }),
+      paperIndexEntry({ id: 'paper-dec-31', date: '2023-12-31' }),
+      paperIndexEntry({ id: 'paper-feb-29', date: '2024-02-29' }),
     ];
 
     const result = getRecentMainPapers(papers);
@@ -268,21 +118,9 @@ describe('getRecentMainPapers', () => {
     vi.setSystemTime(new Date('2024-03-01'));
     // Three months ago: new Date(2024, 3-2, 1) = 2024-01-01
 
-    const papers: OparlPaper[] = [
-      {
-        id: 'paper-1',
-        type: 'paper',
-        name: 'January paper',
-        date: '2024-01-15',
-        subordinatedPaper: [],
-      },
-      {
-        id: 'paper-2',
-        type: 'paper',
-        name: 'December paper',
-        date: '2023-12-15',
-        subordinatedPaper: [],
-      },
+    const papers: PaperIndexEntry[] = [
+      paperIndexEntry({ id: 'paper-1', date: '2024-01-15' }),
+      paperIndexEntry({ id: 'paper-2', date: '2023-12-15' }),
     ];
 
     const result = getRecentMainPapers(papers);
@@ -295,49 +133,15 @@ describe('getRecentMainPapers', () => {
     vi.setSystemTime(new Date('2024-03-31'));
     // Three months ago: new Date(2024, 3-2, 1) = 2024-01-01
 
-    const papers: OparlPaper[] = [
-      {
-        id: 'paper-1',
-        type: 'paper',
-        name: 'January paper',
-        date: '2024-01-01',
-        subordinatedPaper: [],
-      },
-      {
-        id: 'paper-2',
-        type: 'paper',
-        name: 'December paper',
-        date: '2023-12-31',
-        subordinatedPaper: [],
-      },
+    const papers: PaperIndexEntry[] = [
+      paperIndexEntry({ id: 'paper-1', date: '2024-01-01' }),
+      paperIndexEntry({ id: 'paper-2', date: '2023-12-31' }),
     ];
 
     const result = getRecentMainPapers(papers);
 
     assert.lengthOf(result, 1);
     assert.equal(result[0].id, 'paper-1');
-  });
-
-  test('handles empty subordinatedPaper array vs undefined correctly', () => {
-    const papers: OparlPaper[] = [
-      {
-        id: 'paper-1',
-        type: 'paper',
-        name: 'Empty array',
-        date: '2024-03-01',
-        subordinatedPaper: [],
-      },
-      {
-        id: 'paper-2',
-        type: 'paper',
-        name: 'Undefined field',
-        date: '2024-03-01',
-      },
-    ];
-
-    const result = getRecentMainPapers(papers);
-
-    assert.lengthOf(result, 2);
   });
 });
 
