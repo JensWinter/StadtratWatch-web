@@ -8,8 +8,8 @@ aufbereitet werden. Quelle ist die standardisierte OParl-Schnittstelle der Stadt
 Der Ablauf ist eine Kette über die Datenablage: `scrape-oparl` legt die
 Rohdaten ab, `download-paper-files` lädt die verlinkten PDF-Dokumente, und
 `generate-paper-assets` überführt die Drucksachen in das ausgelieferte JSON-Format.
-Parallel dazu erzeugt `generate-oparl-derivatives` aus denselben Rohdaten die
-committeten OParl-Derivate (`paper-index.json`, `voting-paper-map.json`), die der
+Im Anschluss erzeugt `generate-oparl-derivatives` aus denselben Rohdaten die
+OParl-Derivate (`paper-index.json`, `voting-paper-map.json`), die der
 Astro-Build konsumiert (siehe <<konzept-datenhaltung,Datenhaltung>>).
 Den Abschluss
 bildet `index-search` — diese Stufe gehört nicht allein zur OParl-Verarbeitung,

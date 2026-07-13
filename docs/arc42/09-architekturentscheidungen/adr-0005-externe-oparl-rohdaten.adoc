@@ -24,7 +24,7 @@ Diese Entscheidung betrifft ausschließlich die reproduzierbaren _Rohdaten_. Der
 
 [NOTE]
 ====
-*Ergänzung (OParl-Precompile):* Der Web-Build liest die rohen OParl-Daten inzwischen *nicht mehr* direkt. Ein manueller Precompile-Schritt (`generate-oparl-derivatives`) erzeugt aus den Rohdaten zwei kleine, committete Derivate (`paper-index.json`, `voting-paper-map.json`), die der Astro-Build konsumiert; die `prebuild`/`predev`-Hooks entfallen. `fetch-oparl` bleibt der Maintainer-Weg, den Roh-Snapshot lokal zu laden, um die Derivate zu regenerieren. Diese Entscheidung ändert nur die Bauzeit-Nutzung, nicht die externe Haltung der Rohdaten selbst. Siehe <<konzept-datenhaltung,Datenhaltung & Versionierung>>.
+*Ergänzung (OParl-Precompile):* Der Web-Build liest die rohen OParl-Daten inzwischen *nicht mehr* direkt. Ein manueller Precompile-Schritt (`generate-oparl-derivatives`) erzeugt aus den Rohdaten zwei kleine Derivate (`paper-index.json`, `voting-paper-map.json`), die der Astro-Build konsumiert; die `prebuild`/`predev`-Hooks entfallen. `fetch-oparl` bleibt der Maintainer-Weg, den Roh-Snapshot lokal zu laden, um die Derivate zu regenerieren. Diese Entscheidung ändert nur die Bauzeit-Nutzung, nicht die externe Haltung der Rohdaten selbst. Siehe <<konzept-datenhaltung,Datenhaltung & Versionierung>>.
 ====
 
 == Konsequenzen
