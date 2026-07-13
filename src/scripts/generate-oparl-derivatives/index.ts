@@ -1,5 +1,5 @@
 import { checkArgs, parseArgs, printHelpText } from './cli.ts';
-import { tryGetGenerateOparlDerivativesEnv } from './env.ts';
+import { getGenerateOparlDerivativesEnvOrExit } from './env.ts';
 import { OparlObjectsFileStore } from '../shared/oparl/oparl-objects-store.ts';
 import { RegistryFileStore } from './registry-store.ts';
 import { DerivativesFileWriter } from './derivatives-writer.ts';
@@ -14,7 +14,7 @@ if (args.help) {
 
 checkArgs(args);
 
-const env = tryGetGenerateOparlDerivativesEnv();
+const env = getGenerateOparlDerivativesEnvOrExit();
 
 const oparlObjectsStore = new OparlObjectsFileStore(args.oparlDir);
 const registryStore = new RegistryFileStore(args.dataDir);
