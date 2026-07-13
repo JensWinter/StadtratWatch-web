@@ -4,7 +4,7 @@ import { OparlDerivativesGenerator } from '../oparl-derivatives-generator.ts';
 import { OparlObjectsStore } from '../../shared/oparl/oparl-objects-store.ts';
 import { RegistryStore } from '../registry-store.ts';
 import { DerivativesWriter } from '../derivatives-writer.ts';
-import { PeriodRegistry } from '../model.ts';
+import { Registry } from '@srw-astro/models/registry';
 import {
   OparlAgendaItem,
   OparlConsultation,
@@ -77,24 +77,23 @@ class MockOparlObjectsStore implements OparlObjectsStore {
   loadOrganizations = (): OparlOrganization[] => [];
 }
 
+const CANONICAL_PERIOD_ID = 'example-8';
+
 class MockRegistryStore implements RegistryStore {
-  loadRegistries = (): PeriodRegistry[] => [
+  loadRegistries = (): Registry[] => [
     {
-      periodId: 'example-8',
-      registry: {
-        id: 'example-8',
-        name: 'Example period',
-        lastUpdate: '2024-10-01',
-        sessions: [
-          session('2024-09-12'),
-          session('2024-08-15'),
-          // Registry session without a matching OParl meeting -> skipped.
-          session('2024-10-10'),
-        ],
-        factions: [],
-        parties: [],
-        persons: [],
-      },
+      id: CANONICAL_PERIOD_ID,
+      name: 'Example period',
+      lastUpdate: '2024-10-01',
+      sessions: [
+        session('2024-09-12'),
+        session('2024-08-15'),
+        // Registry session without a matching OParl meeting -> skipped.
+        session('2024-10-10'),
+      ],
+      factions: [],
+      parties: [],
+      persons: [],
     },
   ];
 }
@@ -122,9 +121,17 @@ describe('Generating OParl derivates', () => {
 
     runGeneration();
 
-    assertEquals(writer.votingPaperMaps['example-8'], {
+    assertEquals(writer.votingPaperMaps[CANONICAL_PERIOD_ID], {
       '2024-08-15': { '4.1': 100, '4.2': 200 },
     });
+  });
+
+  it('writes the voting-paper-map under the canonical registry id', () => {
+    givenStoresAreAvailable();
+
+    runGeneration();
+
+    assertEquals(Object.keys(writer.votingPaperMaps), [CANONICAL_PERIOD_ID]);
   });
 
   it('projects all dated main papers into a sorted paper index', () => {

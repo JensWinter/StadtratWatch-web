@@ -1,17 +1,16 @@
 import * as path from '@std/path';
 import { Registry } from '@srw-astro/models/registry';
-import { PeriodRegistry } from './model.ts';
 
 export interface RegistryStore {
-  loadRegistries(): PeriodRegistry[];
+  loadRegistries(): Registry[];
 }
 
 export class RegistryFileStore implements RegistryStore {
   constructor(private readonly dataDir: string) {
   }
 
-  public loadRegistries(): PeriodRegistry[] {
-    const registries: PeriodRegistry[] = [];
+  public loadRegistries(): Registry[] {
+    const registries: Registry[] = [];
 
     for (const entry of Deno.readDirSync(this.dataDir)) {
       if (!entry.isDirectory) {
@@ -23,12 +22,11 @@ export class RegistryFileStore implements RegistryStore {
         continue;
       }
 
-      const registry = JSON.parse(Deno.readTextFileSync(registryPath)) as Registry;
-      registries.push({ periodId: entry.name, registry });
+      registries.push(JSON.parse(Deno.readTextFileSync(registryPath)) as Registry);
     }
 
-    // Sorted for a deterministic processing order across runs.
-    return registries.toSorted((a, b) => a.periodId.localeCompare(b.periodId));
+    // Sorted by the canonical registry id for a deterministic processing order across runs.
+    return registries.toSorted((a, b) => a.id.localeCompare(b.id));
   }
 }
 

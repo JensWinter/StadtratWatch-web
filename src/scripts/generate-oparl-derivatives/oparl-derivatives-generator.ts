@@ -36,10 +36,10 @@ export class OparlDerivativesGenerator {
   public generate(): void {
     const councilMeetingsByDate = this.indexCouncilMeetingsByDate();
 
-    for (const { periodId, registry } of this.registryStore.loadRegistries()) {
-      console.log(`Generating voting-paper-map for period ${periodId}`);
+    for (const registry of this.registryStore.loadRegistries()) {
+      console.log(`Generating voting-paper-map for period ${registry.id}`);
       const votingPaperMap = this.buildVotingPaperMap(registry, councilMeetingsByDate);
-      this.writer.writeVotingPaperMap(periodId, votingPaperMap);
+      this.writer.writeVotingPaperMap(registry.id, votingPaperMap);
     }
 
     console.log('Generating global paper-index');
