@@ -5,7 +5,7 @@
 
 == Kontext und Problem
 
-Der rohe OParl-Bestand (`data/oparl-magdeburg/`) umfasst rund 122 MB in wenigen großen JSON-Dateien. Er wird bei jedem Scrape vollständig neu geschrieben und war zuvor über Git LFS versioniert. Da LFS je Revision einen kompletten neuen Blob ohne Delta-Kompression ablegt, wuchs die `.git`-Historie auf mehrere Gigabyte. Gleichzeitig ist dieser Bestand eine *Bauzeit-Eingabe*: Astro liest vier der Dateien über _Content Collections_ ein, die Deno-Verarbeitungsskripte lesen weitere. Zu klären war, wie dieser große, häufig komplett überschriebene und zugleich öffentlich-reproduzierbare Bestand gehalten wird, ohne das Repository und seine Historie aufzublähen.
+Der rohe OParl-Bestand (`data/oparl-magdeburg/`) umfasst rund 122 MB in wenigen großen JSON-Dateien. Er wird bei jedem Scrape vollständig neu geschrieben und war zuvor über Git LFS versioniert. Da LFS je Revision einen kompletten neuen Blob ohne Delta-Kompression ablegt, wuchs die `.git`-Historie auf mehrere Gigabyte. Die Deno-Verarbeitungsskripte lesen diesen Bestand, um daraus OParl-Derivate zu erzeugen; der Astro-Build konsumiert diese Derivate. Zu klären war, wie dieser große, häufig komplett überschriebene und zugleich öffentlich-reproduzierbare Bestand gehalten wird, ohne das Repository und seine Historie aufzublähen.
 
 == Betrachtete Optionen
 
@@ -33,11 +33,11 @@ Diese Entscheidung betrifft ausschließlich die reproduzierbaren _Rohdaten_. Der
 
 * Repository und `.git`-Historie bleiben schlank; das Wachstum durch wiederholte Komplett-Überschreibungen entfällt.
 * Inhaltsadressierte, unveränderliche Blobs machen eine CloudFront-Invalidierung überflüssig; ein neuer Scrape erzeugt neue Blob-Namen und ein neues Manifest.
-* Offline-Entwicklung bleibt möglich: nach dem ersten Abruf liegen die Dateien lokal vor; ist das Manifest nicht erreichbar, aber alle Dateien vorhanden, wird mit dem lokalen Stand weitergearbeitet.
+* Astro-Builds und Offline-Entwicklung bleiben ohne Roh-Snapshot und Netzverbindung möglich, da sie ausschließlich die committeten Derivate lesen.
 * Der Astro-Build liest die rohen OParl-Daten nicht mehr direkt, sondern konsumiert die committeten Derivate (`paper-index.json`, `voting-paper-map.json`); das Repository-Muster der Deno-Skripte bleibt unverändert und liest den lokalen Roh-Snapshot weiterhin aus lokalen JSON-Dateien — nun ausschließlich zur Regenerierung der Derivate.
 
 *Negativ*
 
 * Der Rohdatenbestand ist nicht mehr über die Git-Historie diffbar. Das wird bewusst akzeptiert, da der Bestand aus der OParl-Schnittstelle reproduzierbar ist und nur ein aktueller Snapshot benötigt wird.
-* Ein Build auf einer frischen Umgebung benötigt beim ersten Mal Netzzugriff, um den Snapshot zu laden.
-* Es entsteht eine zusätzliche, wenngleich öffentliche und ungeheime, Abhängigkeit von der S3/CloudFront-Verfügbarkeit (durch die Offline-Resilienz abgefedert).
+* Die Regenerierung der Derivate auf einer frischen Maintainer-Umgebung benötigt Netzzugriff, um den Roh-Snapshot mit `fetch-oparl` zu laden.
+* Der manuelle Maintainer-Workflow zur Derivat-Regenerierung hat eine zusätzliche, wenngleich öffentliche und ungeheime, Abhängigkeit von der S3/CloudFront-Verfügbarkeit.
