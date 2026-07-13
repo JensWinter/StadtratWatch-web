@@ -115,7 +115,12 @@ export class OparlDerivativesGenerator {
         continue;
       }
 
-      paperIdByAgendaItemNumber[agendaItem.number] = +oparlIdSuffix(consultation.paper);
+      const paperId = Number(oparlIdSuffix(consultation.paper));
+      if (Number.isNaN(paperId)) {
+        console.warn(`Skipping non-numeric paper id derived from ${consultation.paper}`);
+        continue;
+      }
+      paperIdByAgendaItemNumber[agendaItem.number] = paperId;
     }
 
     return paperIdByAgendaItemNumber;
