@@ -9,7 +9,6 @@ COPY astro/src/models /app/astro/src/models
 
 RUN deno install --entrypoint src/scripts/generate-oparl-derivatives/index.ts --unstable-sloppy-imports
 
-RUN deno cache src/scripts/generate-oparl-derivatives/index.ts --unstable-sloppy-imports
 
 USER deno
 
