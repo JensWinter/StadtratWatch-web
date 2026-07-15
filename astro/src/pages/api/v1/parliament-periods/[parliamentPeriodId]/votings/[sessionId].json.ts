@@ -1,11 +1,9 @@
 import { getStaticPaths as getStaticParliamentPeriodPaths } from '../../[parliamentPeriodId].json.ts';
 import { generateMeta } from '../../../_helpers.ts';
 import { getEntry } from 'astro:content';
-import {
-  getVideoTimestampAsSeconds,
-  getVotingId,
-} from '@utils/session-utils.ts';
+import { getVideoTimestampAsSeconds } from '@utils/session-utils.ts';
 import type { Registry, RegistrySession } from '@models/registry.ts';
+import { getVotingId } from '@models/voting-breakdown.ts';
 
 export const getStaticPaths = async () => {
   const paths = await getStaticParliamentPeriodPaths();

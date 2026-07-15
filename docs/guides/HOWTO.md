@@ -10,7 +10,8 @@ Run the processing pipeline in this order. The script sections below document in
    2. `scan-voting-images` - extract voting results from session screenshots.
    3. `speech-to-text` - generate speech transcriptions.
 4. `generate-image-assets` - create voting visualization image assets from processed session data.
-5. `index-search` - rebuild the Typesense search index after all paper, speech, and asset data is available.
+5. `generate-paper-votings` - reverse the voting-paper-map against the session scans into the per-paper voting assets. Needs both the OParl derivates (step 2) and the scanned votings (step 3.2).
+6. `index-search` - rebuild the Typesense search index after all paper, speech, and asset data is available.
 
 
 ### Parse Speakers
@@ -195,6 +196,42 @@ docker run \
   -v $(pwd)/output/ratsinfosystem:/app/oparl:ro \
   -v $(pwd)/data:/app/data \
   srw-generate-oparl-derivatives
+```
+
+
+### Generate paper votings
+This tool builds the web assets behind the »Abstimmungen« tab on the paper detail page. The link from a voting to a paper only exists forwards (`{period}/voting-paper-map.json`: session date → agenda item → paper id), so this tool reverses it at build time and resolves each vote to its person and faction against the period's `registry.json` — the same breakdown the session detail page renders.
+
+It scans `<data-dir>` for `{period-id}/registry.json` and intersects each period's `voting-paper-map.json` with the session scans: only agenda items that were **actually scanned** produce a voting, so papers that were never voted on do not appear in the output at all (which is what disables the tab). A paper voted on in several parliament periods collects the votings of all of them, each joined against its own registry.
+
+Output is batched by paper id (`paper-votings-{batch}.json`, `batch = paperId / 100`), stably sorted (session date descending, then voting id ascending), so a repeated run produces no diff. The files belong next to the other web assets on S3/CloudFront under `web-assets/paper-votings/`.
+
+Run this **after** the OParl derivates (`voting-paper-map.json`) and the video processing (`session-scan-*.json`) exist.
+
+#### Using the deno script
+```shell
+deno run \
+  -R=data \
+  -W=output/paper-votings \
+  src/scripts/generate-paper-votings/index.ts \
+  -d=data/ \
+  -o=output/paper-votings/
+```
+
+`-d`/`--data-dir` defaults to `data/`, so it can be omitted when run from the repository root.
+
+#### Build the docker image
+```bash
+docker build -t srw-generate-paper-votings -f docker/generate-paper-votings.Dockerfile .
+```
+
+#### Run the docker container
+```shell
+docker run \
+  --rm \
+  -v $(pwd)/data:/app/data:ro \
+  -v $(pwd)/output/paper-votings:/app/generated \
+  srw-generate-paper-votings
 ```
 
 

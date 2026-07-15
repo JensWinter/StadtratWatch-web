@@ -1,5 +1,10 @@
 import { describe, expect, test } from 'vitest';
-import { getVotesByFactions, votingAccepted } from './voting-breakdown.ts';
+import {
+  getVoteCounts,
+  getVotesByFactions,
+  getVotingId,
+  votingAccepted,
+} from './voting-breakdown.ts';
 import type { Registry } from './registry.ts';
 import type { SessionScanItem } from './session-scan.ts';
 
@@ -160,6 +165,38 @@ describe('getVotesByFactions', () => {
     expect(() =>
       getVotesByFactions(createRegistry(), [{ name: 'Ghost', vote: 'J' }]),
     ).toThrow('Person Ghost not found');
+  });
+});
+
+describe('getVotingId', () => {
+  test('reads the voting id encoded in the scan filename', () => {
+    expect(getVotingId(createVoting([]))).toBe(1);
+  });
+
+  test('reads a multi-digit voting id', () => {
+    const voting = createVoting([]);
+    voting.votingFilename = '2024-07-08-014.png';
+
+    expect(getVotingId(voting)).toBe(14);
+  });
+});
+
+describe('getVoteCounts', () => {
+  test('counts each vote result, treating anything unrecognized as not voted', () => {
+    const voting = createVoting([
+      { name: 'Supporter', vote: 'J' },
+      { name: 'Lone Voter', vote: 'J' },
+      { name: 'Opposer', vote: 'N' },
+      { name: 'Abstainer', vote: 'E' },
+      { name: 'Absentee', vote: 'O' },
+      { name: 'Unknown Voter', vote: '?' },
+    ]);
+
+    expect(getVoteCounts(voting)).toEqual({ J: 2, N: 1, E: 1, O: 2 });
+  });
+
+  test('counts a voting without votes as all zero', () => {
+    expect(getVoteCounts(createVoting([]))).toEqual({ J: 0, N: 0, E: 0, O: 0 });
   });
 });
 
