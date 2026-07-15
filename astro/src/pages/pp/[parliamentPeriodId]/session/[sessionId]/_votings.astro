@@ -1,9 +1,12 @@
 ---
-import { type SessionScan, type SessionScanItem } from '@models/session-scan';
-import { type VotesByFaction, type VotingListItem } from './_model';
+import { type SessionScan } from '@models/session-scan';
+import { type VotingListItem } from './_model';
 import { getVotingId } from '@utils/session-utils';
-import { type SessionScanVote } from '@models/session-scan';
 import { type Registry } from '@models/registry';
+import {
+  getVotesByFactions,
+  votingAccepted,
+} from '@models/voting-breakdown.ts';
 
 type Props = {
   parliamentPeriod: Registry;
@@ -23,60 +26,11 @@ const votings = sessionScan
         title: voting.votingSubject.title,
         type: voting.votingSubject.type || '',
         authors: voting.votingSubject.authors,
-        votesByFactions: getVotesByFactions(voting.votes),
+        votesByFactions: getVotesByFactions(parliamentPeriod, voting.votes),
         accepted: votingAccepted(voting),
       }) satisfies VotingListItem,
   )
   .toSorted((a, b) => a.id - b.id);
-
-function getVotesByFactions(votes: SessionScanVote[]): VotesByFaction[] {
-  const votesWithFactionId = votes.map((vote) => {
-    const person = parliamentPeriod.persons.find((p) => p.name === vote.name);
-    if (!person) {
-      throw new Error(`Person ${vote.name} not found`);
-    }
-    return {
-      personName: person.name,
-      factionId: person.factionId,
-      vote: vote.vote,
-    };
-  });
-
-  return parliamentPeriod.factions
-    .toSorted((a, b) => b.seats - a.seats)
-    .map((faction, orderIndex) => {
-      const votes = votesWithFactionId
-        .filter((v) => v.factionId === faction.id)
-        .map((vote) => ({
-          ...vote,
-          orderIndex:
-            vote.vote === 'J'
-              ? 1
-              : vote.vote === 'N'
-                ? 2
-                : vote.vote === 'E'
-                  ? 3
-                  : 4,
-        }))
-        .toSorted((a, b) => a.orderIndex - b.orderIndex)
-        .map((vote) => ({
-          personName: vote.personName,
-          vote: vote.vote,
-        }));
-      return {
-        factionId: faction.id,
-        factionName: faction.name,
-        orderIndex,
-        votes,
-      };
-    });
-}
-
-function votingAccepted(voting: SessionScanItem) {
-  const votedFor = voting.votes.filter((vote) => vote.vote === 'J').length;
-  const votedAgainst = voting.votes.filter((vote) => vote.vote === 'N').length;
-  return votedFor > votedAgainst;
-}
 ---
 
 {
