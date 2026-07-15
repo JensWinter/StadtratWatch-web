@@ -1,9 +1,4 @@
-export type VotesByFaction = {
-  factionId: string;
-  factionName: string;
-  orderIndex: number;
-  votes: { personName: string; vote: string }[];
-};
+import type { VotesByFaction } from '@models/voting-breakdown.ts';
 
 export type VotingListItem = {
   id: number;

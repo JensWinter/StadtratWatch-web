@@ -8,6 +8,7 @@
     "./session-input": "./session-input.ts",
     "./session-scan": "./session-scan.ts",
     "./session-speech": "./session-speech.ts",
-    "./session": "./session.ts"
+    "./session": "./session.ts",
+    "./voting-breakdown": "./voting-breakdown.ts"
   }
 }
