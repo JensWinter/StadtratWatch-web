@@ -3,9 +3,10 @@ import { assertEquals, assertThrows } from '@std/assert';
 import { PaperVotingsGenerator } from '../paper-votings-generator.ts';
 import { PeriodData, PeriodDataStore } from '../period-data-store.ts';
 import { PaperVotingsWriter } from '../paper-votings-writer.ts';
-import { PaperVotingsAssetDto, PaperVotingsDto } from '../model.ts';
+import { PaperVotingsAssetDto } from '../model.ts';
 import { Registry, RegistryFaction, RegistryPerson } from '@srw-astro/models/registry';
 import { SessionScan, SessionScanItem, SessionScanVote } from '@srw-astro/models/session-scan';
+import { PaperVotingsDto } from '@srw-astro/models/paper-votings';
 
 const PERIOD_7 = 'example-7';
 const PERIOD_8 = 'example-8';

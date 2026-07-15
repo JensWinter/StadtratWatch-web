@@ -4,7 +4,8 @@ import { SessionScanItem } from '@srw-astro/models/session-scan';
 import { Registry } from '@srw-astro/models/registry';
 import { PeriodData, PeriodDataStore } from './period-data-store.ts';
 import { PaperVotingsWriter } from './paper-votings-writer.ts';
-import { PaperVotingItem, PaperVotingsAssetDto, PaperVotingsDto } from './model.ts';
+import { PaperVotingsAssetDto } from './model.ts';
+import { PaperVotingItem, PaperVotingsDto } from '@srw-astro/models/paper-votings';
 
 export class PaperVotingsGenerator {
   constructor(
