@@ -72,9 +72,7 @@ export function getFactionOfPerson(
   );
 }
 
-export function getVotingId(voting: SessionScanItem) {
-  return +voting.votingFilename.substring(11, 14);
-}
+export { getVotingId } from '@models/voting-breakdown.ts';
 
 export function getVideoTimestampAsSeconds(voting: SessionScanItem): number {
   const timeParts = voting.videoTimestamp.split(':');

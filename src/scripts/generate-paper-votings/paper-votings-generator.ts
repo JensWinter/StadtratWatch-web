@@ -1,10 +1,9 @@
-import { getVotesByFactions, votingAccepted } from '@srw-astro/models/voting-breakdown';
+import { getVoteCounts, getVotesByFactions, getVotingId, votingAccepted } from '@srw-astro/models/voting-breakdown';
 import { SessionScanItem } from '@srw-astro/models/session-scan';
 import { Registry } from '@srw-astro/models/registry';
-import { VoteResult } from '@srw-astro/models/session';
 import { PeriodData, PeriodDataStore } from './period-data-store.ts';
 import { PaperVotingsWriter } from './paper-votings-writer.ts';
-import { PaperVotingItem, PaperVotingsAssetDto, PaperVotingsDto, VoteCounts } from './model.ts';
+import { PaperVotingItem, PaperVotingsAssetDto, PaperVotingsDto } from './model.ts';
 
 export class PaperVotingsGenerator {
   constructor(
@@ -52,7 +51,7 @@ export class PaperVotingsGenerator {
       title: scan.votingSubject.title,
       type: scan.votingSubject.type || '',
       accepted: votingAccepted(scan),
-      counts: countVotes(scan),
+      counts: getVoteCounts(scan),
       votesByFactions: getVotesByFactions(registry, scan.votes),
     };
   }
@@ -85,33 +84,6 @@ export class PaperVotingsGenerator {
   }
 }
 
-// The scan filename encodes the voting id, mirroring getVotingId in the web app's session-utils.
-function getVotingId(scan: SessionScanItem): number {
-  return +scan.votingFilename.substring(11, 14);
-}
-
 function getBatchNo(paperId: number): string {
   return `${Math.floor(paperId / 100)}`.padStart(4, '0');
-}
-
-function countVotes(scan: SessionScanItem): VoteCounts {
-  const counts: VoteCounts = { J: 0, N: 0, E: 0, O: 0 };
-
-  for (const vote of scan.votes) {
-    switch (vote.vote) {
-      case VoteResult.VOTE_FOR:
-        counts.J++;
-        break;
-      case VoteResult.VOTE_AGAINST:
-        counts.N++;
-        break;
-      case VoteResult.VOTE_ABSTENTION:
-        counts.E++;
-        break;
-      default:
-        counts.O++;
-    }
-  }
-
-  return counts;
 }

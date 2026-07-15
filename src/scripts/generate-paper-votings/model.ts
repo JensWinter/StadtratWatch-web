@@ -1,11 +1,4 @@
-import { VotesByFaction } from '@srw-astro/models/voting-breakdown';
-
-export type VoteCounts = {
-  J: number;
-  N: number;
-  E: number;
-  O: number;
-};
+import { VoteCounts, VotesByFaction } from '@srw-astro/models/voting-breakdown';
 
 export type PaperVotingItem = {
   parliamentPeriodId: string;
