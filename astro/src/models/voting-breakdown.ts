@@ -16,10 +16,11 @@ const votePresentationOrder = new Map<string, number>([
   [VoteResult.DID_NOT_VOTE, 4],
 ]);
 
-const unrecognizedVotePresentationOrder = 4;
-
 function getVotePresentationOrder(vote: string): number {
-  return votePresentationOrder.get(vote) ?? unrecognizedVotePresentationOrder;
+  return (
+    votePresentationOrder.get(vote) ??
+    votePresentationOrder.get(VoteResult.DID_NOT_VOTE)!
+  );
 }
 
 function countVotes(votes: SessionScanVote[], voteResult: VoteResult): number {
@@ -30,10 +31,12 @@ export function getVotesByFactions(
   parliamentPeriod: Registry,
   votes: SessionScanVote[],
 ): VotesByFaction[] {
+  const personsByName = new Map(
+    parliamentPeriod.persons.map((person) => [person.name, person]),
+  );
+
   const votesWithFactionId = votes.map((vote) => {
-    const person = parliamentPeriod.persons.find(
-      (person) => person.name === vote.name,
-    );
+    const person = personsByName.get(vote.name);
     if (!person) {
       throw new Error(`Person ${vote.name} not found`);
     }
