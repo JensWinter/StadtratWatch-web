@@ -72,8 +72,6 @@ export function getFactionOfPerson(
   );
 }
 
-export { getVotingId } from '@models/voting-breakdown.ts';
-
 export function getVideoTimestampAsSeconds(voting: SessionScanItem): number {
   const timeParts = voting.videoTimestamp.split(':');
   switch (timeParts.length) {
