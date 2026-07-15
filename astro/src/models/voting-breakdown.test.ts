@@ -189,9 +189,10 @@ describe('getVoteCounts', () => {
       { name: 'Opposer', vote: 'N' },
       { name: 'Abstainer', vote: 'E' },
       { name: 'Absentee', vote: 'O' },
+      { name: 'Unknown Voter', vote: '?' },
     ]);
 
-    expect(getVoteCounts(voting)).toEqual({ J: 2, N: 1, E: 1, O: 1 });
+    expect(getVoteCounts(voting)).toEqual({ J: 2, N: 1, E: 1, O: 2 });
   });
 
   test('counts a voting without votes as all zero', () => {

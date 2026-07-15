@@ -134,15 +134,23 @@ describe('Generating paper votings', () => {
               vote('Opposer', 'N'),
               vote('Abstainer', 'E'),
               vote('Absentee', 'O'),
+              vote('Unknown Voter', '?'),
             ]),
           ],
         },
+        persons: [
+          person('Supporter', 'faction-1'),
+          person('Opposer', 'faction-1'),
+          person('Abstainer', 'faction-1'),
+          person('Absentee', 'faction-1'),
+          person('Unknown Voter', 'faction-1'),
+        ],
       }),
     ]);
 
     runGeneration();
 
-    assertEquals(votingsOf(111)[0].counts, { J: 1, N: 1, E: 1, O: 1 });
+    assertEquals(votingsOf(111)[0].counts, { J: 1, N: 1, E: 1, O: 2 });
   });
 
   it('accepts a voting with more yes than no votes', () => {
