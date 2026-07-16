@@ -107,23 +107,45 @@ import Layout from '@layouts/Layout.astro';
                   >
                   </div>
                 </div>
-                <a
-                  class="timeline-end timeline-box mt-5 ms-3 block w-full space-y-2"
-                  :class="consultation.sessionId ? 'hover:bg-base-200 hover:cursor-pointer' : ''"
-                  :href="consultation.sessionId ? `/pp/${consultation.parliamentPeriodId}/session/${consultation.sessionId}/` : null"
+                <template
+                  x-if="consultation.parliamentPeriodId && consultation.sessionId"
                 >
-                  <div class="text-base-content/70 space-x-1">
-                    <span>TOP</span>
-                    <span x-text="consultation.agendaItem"></span>
+                  <a
+                    class="timeline-end timeline-box mt-5 ms-3 block w-full space-y-2 hover:bg-base-200 hover:cursor-pointer"
+                    :href="`/pp/${consultation.parliamentPeriodId}/session/${consultation.sessionId}/`"
+                  >
+                    <div class="text-base-content/70 space-x-1">
+                      <span>TOP</span>
+                      <span x-text="consultation.agendaItem"></span>
+                    </div>
+                    <div class="text-base" x-text="consultation.organization">
+                    </div>
+                    <div x-show="consultation.result">
+                      <span
+                        class="badge badge-neutral badge-sm"
+                        x-text="consultation.result"></span>
+                    </div>
+                  </a>
+                </template>
+                <template
+                  x-if="!(consultation.parliamentPeriodId && consultation.sessionId)"
+                >
+                  <div
+                    class="timeline-end timeline-box mt-5 ms-3 w-full space-y-2"
+                  >
+                    <div class="text-base-content/70 space-x-1">
+                      <span>TOP</span>
+                      <span x-text="consultation.agendaItem"></span>
+                    </div>
+                    <div class="text-base" x-text="consultation.organization">
+                    </div>
+                    <div x-show="consultation.result">
+                      <span
+                        class="badge badge-neutral badge-sm"
+                        x-text="consultation.result"></span>
+                    </div>
                   </div>
-                  <div class="text-base" x-text="consultation.organization">
-                  </div>
-                  <div x-show="consultation.result">
-                    <span
-                      class="badge badge-neutral badge-sm"
-                      x-text="consultation.result"></span>
-                  </div>
-                </a>
+                </template>
                 <hr x-show="index < paper.consultations.length - 1" />
               </li>
             </template>
