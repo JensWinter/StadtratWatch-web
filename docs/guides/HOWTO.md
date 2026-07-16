@@ -154,10 +154,13 @@ This tool converts OParl data into the internal paper asset format and generates
 docker build -t srw-generate-paper-assets -f docker/generate-paper-assets.Dockerfile .
 ```
 
+The council organization id is read from the `OPARL_COUNCIL_ORGANIZATION_ID` environment variable (e.g. `https://ratsinfo.magdeburg.de/oparl/bodies/0001/organizations/gr/1`). It is used to link consultations to their session pages only for council (Stadtrat) meetings.
+
 #### Run the docker container
 ```shell
 docker run \
   --rm \
+  -e OPARL_COUNCIL_ORGANIZATION_ID=https://ratsinfo.magdeburg.de/oparl/bodies/0001/organizations/gr/1 \
   -v $(pwd)/output/papers:/app/papers:ro \
   -v $(pwd)/data/papers:/app/generated \
   -v $(pwd)/output/ratsinfosystem:/app/oparl:ro \
@@ -166,8 +169,8 @@ docker run \
 ```
 
 The mounted `data` directory holds the parliament period registries. It lets the
-generator link consultations to their session pages when a session exists for the
-meeting's date.
+generator link consultations to their session pages when a council session exists
+for the meeting's date.
 
 
 ### Generate OParl derivates

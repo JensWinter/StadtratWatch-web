@@ -181,6 +181,7 @@ describe('Generating paper assets', () => {
       paperFilesStore,
       oparlObjectsStore,
       sessionIndexStore,
+      'http://example.com/oparl/organizations/council',
       paperAssetsWriter,
       paperGraphAssetsWriter,
     );

@@ -18,7 +18,7 @@ import {
   OparlAgendaItemsInMemoryRepository,
   OparlAgendaItemsRepository,
 } from '../shared/oparl/oparl-agenda-items-repository.ts';
-import { OparlPaper } from '@srw-astro/models/oparl';
+import { OparlMeeting, OparlPaper } from '@srw-astro/models/oparl';
 import { toPaperBatchNo } from '@srw-astro/models/paper-batch';
 import { createInMemoryPaperGraph } from './paper-graph.ts';
 import { OparlObjectsStore } from '../shared/oparl/oparl-objects-store.ts';
@@ -38,6 +38,7 @@ export class PaperAssetsGenerator {
     private readonly paperFilesStore: PaperFilesStore,
     private readonly oparlObjectsStore: OparlObjectsStore,
     private readonly sessionIndexStore: SessionIndexStore,
+    private readonly councilOrganizationId: string,
     private readonly paperAssetsWriter: PaperAssetsWriter,
     private readonly paperGraphAssetsWriter: PaperGraphAssetsWriter,
   ) {
@@ -150,7 +151,7 @@ export class PaperAssetsGenerator {
           return null;
         }
 
-        const sessionLocation = this.resolveSessionLocation(meeting.start);
+        const sessionLocation = this.resolveSessionLocation(meeting);
 
         return {
           meeting: meeting.name,
@@ -171,12 +172,17 @@ export class PaperAssetsGenerator {
       });
   }
 
-  private resolveSessionLocation(meetingStart: string | undefined): Partial<SessionLocation> {
-    if (!meetingStart) {
+  // A session page only exists for council (Stadtrat) meetings, so a consultation
+  // is only linkable when its meeting belongs to the council organization. Matching
+  // on the meeting date alone would wrongly link non-council meetings (e.g. the
+  // mayor's) that happen to fall on the same day as a council session.
+  private resolveSessionLocation(meeting: OparlMeeting): Partial<SessionLocation> {
+    const isCouncilMeeting = (meeting.organization || []).includes(this.councilOrganizationId);
+    if (!isCouncilMeeting || !meeting.start) {
       return {};
     }
 
-    const meetingDate = meetingStart.split('T')[0];
+    const meetingDate = meeting.start.split('T')[0];
     return this.sessionIndex[meetingDate] ?? {};
   }
 
