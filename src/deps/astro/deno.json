@@ -5,6 +5,7 @@
     "./oparl": "./oparl.ts",
     "./oparl-derivatives": "./oparl-derivatives.ts",
     "./paper-batch": "./paper-batch.ts",
+    "./paper-votings": "./paper-votings.ts",
     "./registry": "./registry.ts",
     "./session-input": "./session-input.ts",
     "./session-scan": "./session-scan.ts",

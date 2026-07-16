@@ -131,6 +131,88 @@ import Layout from '@layouts/Layout.astro';
         <input
           role="tab"
           class="tab"
+          aria-label="Abstimmungen"
+          type="radio"
+          name="paper-tabs-radio"
+          x-bind:disabled="paperVotings.length === 0"
+        />
+        <div class="tab-content border-base-200 bg-base-100 p-6">
+          <div class="space-y-4">
+            <template
+              x-for="voting in paperVotings"
+              :key="`${voting.parliamentPeriodId}-${voting.sessionId}-${voting.votingId}`"
+            >
+              <a
+                :href="`/pp/${voting.parliamentPeriodId}/session/${voting.sessionId}/voting/${voting.votingId}`"
+                class="card card-border border-base-300 bg-base-100 hover:bg-base-200 hover:cursor-pointer block"
+              >
+                <div class="card-body space-y-2">
+                  <div
+                    class="text-base-content/70 flex flex-wrap items-center gap-2 text-sm"
+                  >
+                    <span
+                      x-show="showPeriodBadge"
+                      class="badge badge-outline badge-sm"
+                      x-text="voting.periodBadgeLabel"></span>
+                    <span x-text="voting.dateDisplay"></span>
+                    <span x-text="`TOP ${voting.agendaItem}`"></span>
+                    <span
+                      x-show="voting.type"
+                      class="badge badge-neutral badge-sm"
+                      x-text="voting.type"></span>
+                    <span
+                      class="badge badge-sm"
+                      :class="voting.accepted ? 'badge-success' : 'badge-error'"
+                      x-text="voting.accepted ? 'angenommen' : 'abgelehnt'"
+                    ></span>
+                  </div>
+
+                  <div class="text-base" x-text="voting.title"></div>
+
+                  <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                    <span class="text-success" x-text="`${voting.counts.J} Ja`"
+                    ></span>
+                    <span class="text-error" x-text="`${voting.counts.N} Nein`"
+                    ></span>
+                    <span
+                      class="text-warning"
+                      x-text="`${voting.counts.E} Enth.`"></span>
+                    <span
+                      class="text-base-content/60"
+                      x-text="`${voting.counts.O} —`"></span>
+                  </div>
+
+                  <div class="grid sm:grid-cols-[auto_1fr] sm:gap-x-2">
+                    <template x-for="votesByFaction in voting.votesByFactions">
+                      <div class="contents">
+                        <div
+                          class="text-base-content/70"
+                          x-text="`${votesByFaction.factionName}:`"
+                        >
+                        </div>
+                        <div class="space-x-1 mb-1">
+                          <template x-for="vote in votesByFaction.votes">
+                            <div class="tooltip" :data-tip="vote.personName">
+                              <div
+                                class="status status-lg"
+                                :class="voteStatusClass(vote.vote)"
+                              >
+                              </div>
+                            </div>
+                          </template>
+                        </div>
+                      </div>
+                    </template>
+                  </div>
+                </div>
+              </a>
+            </template>
+          </div>
+        </div>
+
+        <input
+          role="tab"
+          class="tab"
           aria-label="Zugehörige Drucksachen"
           type="radio"
           name="paper-tabs-radio"
@@ -150,6 +232,14 @@ import Layout from '@layouts/Layout.astro';
   import Alpine from 'alpinejs';
   import { AWS_CLOUDFRONT_BASE_URL } from 'astro:env/client';
   import { toPaperBatchNo } from '@models/paper-batch.ts';
+  import type { PaperVotingsDto } from '@models/paper-votings.ts';
+  import {
+    getVoteStatusClass,
+    selectPaperVotings,
+    spansMultipleParliamentPeriods,
+    toPaperVotingViews,
+    type PaperVotingView,
+  } from './_helpers.ts';
 
   type PaperFile = {
     id: number;
@@ -241,6 +331,9 @@ import Layout from '@layouts/Layout.astro';
         superordinatedPaperIds: [],
       } as Paper,
       paperTree: null as PaperTree | null,
+      paperVotings: [] as PaperVotingView[],
+      showPeriodBadge: false,
+      voteStatusClass: getVoteStatusClass,
       selectedFile: null as number | null,
       documentUrl: null as string | null,
       fileSizeOk: true,
@@ -281,9 +374,12 @@ import Layout from '@layouts/Layout.astro';
 
         const paperGraphBatchNo = toPaperBatchNo(paper.rootPaperId);
 
-        const paperGraphBatchResponse = await fetch(
-          `${AWS_CLOUDFRONT_BASE_URL}/web-assets/papers/paper-graphs-${paperGraphBatchNo}.json`,
-        );
+        const [, paperGraphBatchResponse] = await Promise.all([
+          this.loadPaperVotings(paperId),
+          fetch(
+            `${AWS_CLOUDFRONT_BASE_URL}/web-assets/papers/paper-graphs-${paperGraphBatchNo}.json`,
+          ),
+        ]);
         const paperGraphBatch =
           (await paperGraphBatchResponse.json()) as PaperGraph[];
         const paperGraph = paperGraphBatch.find(
@@ -298,6 +394,24 @@ import Layout from '@layouts/Layout.astro';
         }
 
         this.paperTree = createPaperTree(paperGraph, paperGraph.rootPaperId);
+      },
+      // Papers without scanned votings have no asset at all, so a missing batch
+      // is expected and leaves the tab disabled rather than raising an error.
+      async loadPaperVotings(paperId: number) {
+        try {
+          const response = await fetch(
+            `${AWS_CLOUDFRONT_BASE_URL}/web-assets/paper-votings/paper-votings-${toPaperBatchNo(paperId)}.json`,
+          );
+          if (!response.ok) return;
+
+          const batch = (await response.json()) as PaperVotingsDto[];
+          const votings = selectPaperVotings(batch, paperId);
+
+          this.paperVotings = toPaperVotingViews(votings);
+          this.showPeriodBadge = spansMultipleParliamentPeriods(votings);
+        } catch (error) {
+          console.debug('Could not load paper votings.', error);
+        }
       },
       selectFile: function (fileId: number) {
         if (fileId) {
