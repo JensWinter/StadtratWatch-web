@@ -119,3 +119,22 @@ App --> Ratsinfo : HTTPS, PDF-Abruf
 | Projekt-Server (VPS)
 | Typesense-Collections (Drucksachen, Redebeiträge), gegen die der Browser sucht.
 |===
+
+== Veröffentlichung der Web-Assets
+
+Die Assets unter `web-assets/` (Drucksachen-Batches, `paper-votings`-Batches,
+Abstimmungs-PNGs) entstehen aus Generatorläufen auf der Maintainer-Maschine, nicht
+im Netlify-Build. Architektonisch folgt daraus: die Veröffentlichung der Assets ist
+von der Veröffentlichung der Website *entkoppelt*. Ein Push auf `main` rollt die
+Seite aus, erreicht den S3-Bucket aber nicht — die beiden Kanäle haben eigene
+Auslöser und können auseinanderlaufen.
+
+Zwei Prefixes im selben Bucket verhalten sich dabei gegensätzlich:
+
+* `oparl/` wird von `scrape-oparl --push` skriptgesteuert veröffentlicht,
+  inhaltsadressiert und unveränderlich — eine Invalidierung ist nie nötig.
+* `web-assets/` wird manuell hochgeladen, mit stabilen, in-place überschriebenen
+  Dateinamen — hier ist nach jedem Upload eine CloudFront-Invalidierung nötig.
+
+Der operative Weg (Klickpfad, Cache-Regeln, Verifikation) ist in
+`docs/guides/publishing-web-assets.md` dokumentiert.
