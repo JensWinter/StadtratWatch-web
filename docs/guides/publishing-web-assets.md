@@ -96,9 +96,13 @@ status code:
 - no paper in that batch has a scanned voting, so the generator correctly produced no such file —
   permanent and expected.
 
-Pick the probe by checking `output/paper-votings/` first: a batch that does not exist locally must
-return 403 in production too. `239123` is a good probe, since it has votings in two parliament
-periods and therefore also exercises the cross-period path:
+Pick the probe by checking `output/paper-votings/` first, and probe a batch that **does** exist
+locally. Do not invert the rule: a locally-absent batch only returns 403 once step 5 has actually
+been done — if an obsolete object was left behind, it happily returns 200 and serves stale votings.
+A 200 for a batch with no local counterpart is therefore a *finding*, not a pass.
+
+`239123` is a good probe, since it has votings in two parliament periods and therefore also
+exercises the cross-period path:
 
 ```shell
 curl -sS -o /dev/null -D - \

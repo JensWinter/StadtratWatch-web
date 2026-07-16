@@ -105,7 +105,7 @@ Neuer Ordner `src/scripts/generate-paper-votings/` nach dem Muster von `generate
 
 ## 7. Deployment des Assets
 
-Die Batch-Dateien landen im selben S3-Bucket/CloudFront wie `web-assets/papers/` und werden über **denselben operativen Upload-Weg** wie die bestehenden Paper-Assets nach `web-assets/paper-votings/` synchronisiert. ~~Weil der Client per `find` auf `paperId` sucht, ist keine CloudFront-Invalidierung pro Inhalt nötig, solange Batchdateien überschrieben werden~~ (ggf. Standard-Invalidierung wie bei den übrigen Web-Assets).
+Die Batch-Dateien landen im selben S3-Bucket/CloudFront wie `web-assets/papers/` und werden über **denselben operativen Upload-Weg** wie die bestehenden Paper-Assets nach `web-assets/paper-votings/` synchronisiert. ~~Weil der Client per `find` auf `paperId` sucht, ist keine CloudFront-Invalidierung pro Inhalt nötig, solange Batchdateien überschrieben werden (ggf. Standard-Invalidierung wie bei den übrigen Web-Assets).~~ Nach **jedem** Upload ist eine CloudFront-Invalidierung nötig — siehe Korrektur unten.
 
 > **Erledigt in [#457](https://github.com/JensWinter/StadtratWatch-web/issues/457).** Der Upload-Weg ist identifiziert und dokumentiert: **manueller Upload über die AWS-S3-Konsole**, siehe `docs/guides/publishing-web-assets.md`.
 >
