@@ -10,8 +10,6 @@ export type PaperVotingView = PaperVotingItem & {
   periodBadgeLabel: string;
 };
 
-const papersPerBatch = 100;
-const batchNoLength = 4;
 const periodNumberPattern = /-(\d+)$/;
 
 // Only cast votes get a colour; anything else keeps daisyUI's faint default
@@ -21,10 +19,6 @@ const voteStatusClasses = new Map<string, string>([
   [VoteResult.VOTE_AGAINST, 'status-error'],
   [VoteResult.VOTE_ABSTENTION, 'status-warning'],
 ]);
-
-export function toBatchNo(paperId: number): string {
-  return `${Math.floor(paperId / papersPerBatch)}`.padStart(batchNoLength, '0');
-}
 
 export function selectPaperVotings(
   batch: PaperVotingsDto[],

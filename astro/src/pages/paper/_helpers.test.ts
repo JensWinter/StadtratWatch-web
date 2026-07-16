@@ -3,7 +3,6 @@ import {
   getVoteStatusClass,
   selectPaperVotings,
   spansMultipleParliamentPeriods,
-  toBatchNo,
   toPaperVotingViews,
 } from './_helpers.ts';
 import type {
@@ -29,19 +28,6 @@ function paperVotingItem(
     ...overrides,
   };
 }
-
-describe('toBatchNo', () => {
-  test('groups papers into batches of 100', () => {
-    assert.equal(toBatchNo(236011), '2360');
-    assert.equal(toBatchNo(236099), '2360');
-    assert.equal(toBatchNo(236100), '2361');
-  });
-
-  test('pads batch numbers to four digits', () => {
-    assert.equal(toBatchNo(0), '0000');
-    assert.equal(toBatchNo(4711), '0047');
-  });
-});
 
 describe('selectPaperVotings', () => {
   test('returns the votings of the matching paper', () => {

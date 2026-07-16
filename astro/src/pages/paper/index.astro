@@ -237,7 +237,6 @@ import Layout from '@layouts/Layout.astro';
     getVoteStatusClass,
     selectPaperVotings,
     spansMultipleParliamentPeriods,
-    toBatchNo,
     toPaperVotingViews,
     type PaperVotingView,
   } from './_helpers.ts';
@@ -373,13 +372,14 @@ import Layout from '@layouts/Layout.astro';
           paper.files.length > 0 && (paper.files[0].size || 0) <= 1024 * 1024;
         this.fileSizeDisplay = formatFileSize(paper.files[0].size || 0);
 
-        await this.loadPaperVotings(paperId);
-
         const paperGraphBatchNo = toPaperBatchNo(paper.rootPaperId);
 
-        const paperGraphBatchResponse = await fetch(
-          `${AWS_CLOUDFRONT_BASE_URL}/web-assets/papers/paper-graphs-${paperGraphBatchNo}.json`,
-        );
+        const [, paperGraphBatchResponse] = await Promise.all([
+          this.loadPaperVotings(paperId),
+          fetch(
+            `${AWS_CLOUDFRONT_BASE_URL}/web-assets/papers/paper-graphs-${paperGraphBatchNo}.json`,
+          ),
+        ]);
         const paperGraphBatch =
           (await paperGraphBatchResponse.json()) as PaperGraph[];
         const paperGraph = paperGraphBatch.find(
@@ -400,7 +400,7 @@ import Layout from '@layouts/Layout.astro';
       async loadPaperVotings(paperId: number) {
         try {
           const response = await fetch(
-            `${AWS_CLOUDFRONT_BASE_URL}/web-assets/paper-votings/paper-votings-${toBatchNo(paperId)}.json`,
+            `${AWS_CLOUDFRONT_BASE_URL}/web-assets/paper-votings/paper-votings-${toPaperBatchNo(paperId)}.json`,
           );
           if (!response.ok) return;
 
@@ -409,8 +409,8 @@ import Layout from '@layouts/Layout.astro';
 
           this.paperVotings = toPaperVotingViews(votings);
           this.showPeriodBadge = spansMultipleParliamentPeriods(votings);
-        } catch {
-          return;
+        } catch (error) {
+          console.debug('Could not load paper votings.', error);
         }
       },
       selectFile: function (fileId: number) {
