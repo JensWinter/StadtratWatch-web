@@ -1558,7 +1558,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "10.18",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2022-12-08"
           }
         ],
         "rootPaperId": 236311,
@@ -2008,7 +2010,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "9.18",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2025-03-13"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2016,7 +2020,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "9.18",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2025-03-17"
           }
         ],
         "rootPaperId": 236314,
@@ -3367,7 +3373,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "5.15",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2022-09-01"
           }
         ],
         "rootPaperId": 236328,

@@ -1,0 +1,142 @@
+[
+  {
+    "rootPaperId": 249412,
+    "papers": [
+      {
+        "id": 249412,
+        "reference": "S0382/26",
+        "type": "Stellungnahme (Anfrage)",
+        "title": "Inanspruchnahme des Einwegkunststofffonds durch die Landeshauptstadt Magdeburg",
+        "files": [
+          {
+            "id": 747657,
+            "name": "Stellungnahme (Anfrage)",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747657&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-07-14T09:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "6.2",
+            "result": "zur Kenntnis genommen"
+          }
+        ],
+        "rootPaperId": 249412,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          249118
+        ]
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249413,
+    "papers": [
+      {
+        "id": 249413,
+        "reference": "S0383/26",
+        "type": "Stellungnahme (Anfrage)",
+        "title": "Gebühren für ehrenamtliche Arbeit bei „Magdeburg putzt sich“?",
+        "files": [
+          {
+            "id": 747666,
+            "name": "Stellungnahme (Anfrage)",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747666&type=do",
+            "size": null
+          },
+          {
+            "id": 747817,
+            "name": "S0383/26 - Anlage 1 Infoblatt Container",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747817&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-07-14T09:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "6.3",
+            "result": "zur Kenntnis genommen"
+          }
+        ],
+        "rootPaperId": 249413,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          249354
+        ]
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249415,
+    "papers": [
+      {
+        "id": 249415,
+        "reference": "S0384/26",
+        "type": "Stellungnahme (Antrag)",
+        "title": "Verstärkten Nutzung der städtischen LED-Fläche für Bürger:innenbeteiligung und Gremienarbeit",
+        "files": [
+          {
+            "id": 747694,
+            "name": "Stellungnahme (Antrag)",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747694&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-07-14T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "7.1",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 249415,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          248889
+        ]
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249421,
+    "papers": [
+      {
+        "id": 249421,
+        "reference": "DS0291/26",
+        "type": "Beschlussvorlage",
+        "title": "Präsentation der Landeshauptstadt Magdeburg auf der Grünen Woche 2027",
+        "files": [
+          {
+            "id": 747732,
+            "name": "Beschlussvorlage Stadt",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747732&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-07-14T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "2.3",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 249421,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  }
+]

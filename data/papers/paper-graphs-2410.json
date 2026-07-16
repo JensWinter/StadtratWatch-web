@@ -36,7 +36,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.7",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-06-22"
           }
         ],
         "rootPaperId": 241002,
@@ -74,7 +76,9 @@
             "role": "Stellungnahme",
             "organization": "Stadtrat",
             "agendaItem": "8.1",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -82,7 +86,9 @@
             "role": "Stellungnahme",
             "organization": "Stadtrat",
             "agendaItem": "8.1",
-            "result": "schriftliche Stellungnahme"
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           }
         ],
         "rootPaperId": 241005,
@@ -203,7 +209,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.6",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-06-22"
           }
         ],
         "rootPaperId": 241007,
@@ -235,7 +243,9 @@
             "role": "Stellungnahme",
             "organization": "Stadtrat",
             "agendaItem": "8.2",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -243,7 +253,9 @@
             "role": "Stellungnahme",
             "organization": "Stadtrat",
             "agendaItem": "8.2",
-            "result": "schriftliche Stellungnahme"
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           }
         ],
         "rootPaperId": 241015,
@@ -354,7 +366,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "5.7",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-09-14"
           }
         ],
         "rootPaperId": 241019,
@@ -386,7 +400,9 @@
             "role": "Stellungnahme",
             "organization": "Stadtrat",
             "agendaItem": "8.3",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -394,7 +410,9 @@
             "role": "Stellungnahme",
             "organization": "Stadtrat",
             "agendaItem": "8.3",
-            "result": "schriftliche Stellungnahme"
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           }
         ],
         "rootPaperId": 241020,
@@ -457,7 +475,9 @@
             "role": "Stellungnahme",
             "organization": "Stadtrat",
             "agendaItem": "8.4",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -465,7 +485,9 @@
             "role": "Stellungnahme",
             "organization": "Stadtrat",
             "agendaItem": "8.4",
-            "result": "schriftliche Stellungnahme"
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           }
         ],
         "rootPaperId": 241021,
@@ -644,7 +666,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "5.20",
-            "result": "geändert beschlossen"
+            "result": "geändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-09-14"
           }
         ],
         "rootPaperId": 241041,
@@ -673,7 +697,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "5.20.1",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-09-14"
           }
         ],
         "rootPaperId": 241041,
@@ -707,7 +733,9 @@
             "role": "Stellungnahme",
             "organization": "Stadtrat",
             "agendaItem": "8.5",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -715,7 +743,9 @@
             "role": "Stellungnahme",
             "organization": "Stadtrat",
             "agendaItem": "8.5",
-            "result": "schriftliche Stellungnahme"
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           }
         ],
         "rootPaperId": 241042,
@@ -778,7 +808,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.42",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -786,7 +818,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.42",
-            "result": "abgelehnt"
+            "result": "abgelehnt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           }
         ],
         "rootPaperId": 241050,
@@ -818,7 +852,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.45",
-            "result": "zurückgezogen"
+            "result": "zurückgezogen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           }
         ],
         "rootPaperId": 241051,
@@ -892,7 +928,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.10",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           }
         ],
         "rootPaperId": 241054,
@@ -930,7 +968,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.41",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -938,7 +978,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.41",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           }
         ],
         "rootPaperId": 241055,
@@ -997,7 +1039,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "9.20",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-09-14"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -1005,7 +1049,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "9.20",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-09-18"
           }
         ],
         "rootPaperId": 241055,
@@ -1083,7 +1129,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "5.14",
-            "result": "zurückgezogen"
+            "result": "zurückgezogen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2024-01-18"
           }
         ],
         "rootPaperId": 241056,
@@ -1112,7 +1160,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "5.14.1",
-            "result": "zurückgezogen"
+            "result": "zurückgezogen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2024-01-18"
           }
         ],
         "rootPaperId": 241056,
@@ -1146,7 +1196,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.40",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -1154,7 +1206,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.40",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Kulturausschusses",
@@ -1265,7 +1319,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.47",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -1273,7 +1329,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.47",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Gesundheits- und Sozialausschusses",
@@ -1313,7 +1371,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "4.4",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-12-11"
           }
         ],
         "rootPaperId": 241058,
@@ -1382,7 +1442,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "4.4.1",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-12-11"
           }
         ],
         "rootPaperId": 241058,
@@ -1446,7 +1508,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "5.21",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-08-17"
           }
         ],
         "rootPaperId": 241059,
@@ -1484,7 +1548,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.46",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -1492,7 +1558,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.46",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
@@ -1508,7 +1576,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.7",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -1516,7 +1586,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.7",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           }
         ],
         "rootPaperId": 241061,
@@ -1591,7 +1663,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.7.1",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -1599,7 +1673,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.7.1",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           }
         ],
         "rootPaperId": 241061,
@@ -1633,7 +1709,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.44",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -1641,7 +1719,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.44",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
@@ -1665,7 +1745,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.8",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -1673,7 +1755,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.8",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           }
         ],
         "rootPaperId": 241065,
@@ -1733,7 +1817,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.8.1",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -1741,7 +1827,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.8.1",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           }
         ],
         "rootPaperId": 241065,
@@ -1794,7 +1882,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "10.8",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2024-03-07"
           }
         ],
         "rootPaperId": 241065,
@@ -1828,7 +1918,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.43",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -1836,7 +1928,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.43",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Kulturausschusses",
@@ -2030,7 +2124,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "9.16",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2022-09-01"
           }
         ],
         "rootPaperId": 241066,
@@ -2064,7 +2160,9 @@
             "role": "Stellungnahme",
             "organization": "Stadtrat",
             "agendaItem": "8.6",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2072,7 +2170,9 @@
             "role": "Stellungnahme",
             "organization": "Stadtrat",
             "agendaItem": "8.2",
-            "result": "schriftliche Stellungnahme"
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           }
         ],
         "rootPaperId": 241067,
@@ -2132,7 +2232,9 @@
             "role": "Stellungnahme",
             "organization": "Stadtrat",
             "agendaItem": "9.20",
-            "result": "schriftliche Stellungnahme"
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-06-22"
           }
         ],
         "rootPaperId": 241067,
@@ -2224,7 +2326,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "9.3",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-08-17"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2232,7 +2336,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "9.3",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-08-21"
           }
         ],
         "rootPaperId": 241069,
@@ -2264,7 +2370,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.54",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2272,7 +2380,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.54",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
@@ -2288,7 +2398,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.8",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-09-14"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2296,7 +2408,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.8",
-            "result": "abgelehnt"
+            "result": "abgelehnt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-09-18"
           }
         ],
         "rootPaperId": 241075,
@@ -2341,7 +2455,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "6.8.1",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-09-14"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2349,7 +2465,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "6.8.1",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-09-18"
           }
         ],
         "rootPaperId": 241075,
@@ -2413,7 +2531,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "5.21",
-            "result": "geändert beschlossen"
+            "result": "geändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-09-14"
           }
         ],
         "rootPaperId": 241079,
@@ -2450,7 +2570,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "5.21.1",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-09-14"
           }
         ],
         "rootPaperId": 241079,
@@ -2484,7 +2606,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.48",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2492,7 +2616,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.48",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
@@ -2651,7 +2777,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.62",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2659,7 +2787,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.62",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Betriebsausschusses Kommunales Gebäudemanagement",
@@ -2683,7 +2813,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.9",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2691,7 +2823,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.9",
-            "result": "geändert beschlossen"
+            "result": "geändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           }
         ],
         "rootPaperId": 241082,
@@ -2745,7 +2879,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.9.2",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2753,7 +2889,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.9.2",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           }
         ],
         "rootPaperId": 241082,
@@ -2782,7 +2920,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.9.1",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2790,7 +2930,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.9.1",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           }
         ],
         "rootPaperId": 241082,
@@ -2824,7 +2966,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.63",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2832,7 +2976,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.63",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Jugendhilfeausschusses",
@@ -2856,7 +3002,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.10",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2864,7 +3012,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.10",
-            "result": "abgelehnt"
+            "result": "abgelehnt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           }
         ],
         "rootPaperId": 241083,
@@ -2917,7 +3067,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.10.1",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2925,7 +3077,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.10.1",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           }
         ],
         "rootPaperId": 241083,
@@ -2959,7 +3113,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.65",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2967,7 +3123,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.65",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Familie und Gleichstellung",
@@ -2999,7 +3157,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.11",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3007,7 +3167,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.11",
-            "result": "zurückgestellt"
+            "result": "zurückgestellt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3023,7 +3185,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.21",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-11-20"
           }
         ],
         "rootPaperId": 241084,
@@ -3084,7 +3248,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.11.1",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3092,7 +3258,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.11.1",
-            "result": "zurückgestellt"
+            "result": "zurückgestellt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3108,7 +3276,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "6.21.1",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-11-20"
           }
         ],
         "rootPaperId": 241084,
@@ -3142,7 +3312,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.66",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3150,7 +3322,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.66",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Bildung, Schule und Sport",
@@ -3182,7 +3356,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.12",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3190,7 +3366,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.12",
-            "result": "zurückgestellt"
+            "result": "zurückgestellt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3206,7 +3384,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.6",
-            "result": "abgelehnt"
+            "result": "abgelehnt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-12-07"
           }
         ],
         "rootPaperId": 241085,
@@ -3267,7 +3447,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.12.1",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3275,7 +3457,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.12.1",
-            "result": "zurückgestellt"
+            "result": "zurückgestellt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3291,7 +3475,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "6.6.1",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-12-07"
           }
         ],
         "rootPaperId": 241085,
@@ -3325,7 +3511,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.67",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3333,7 +3521,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.67",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           }
         ],
         "rootPaperId": 241086,
@@ -3362,7 +3552,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.67.1",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3370,7 +3562,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.67.1",
-            "result": "abgelehnt"
+            "result": "abgelehnt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           }
         ],
         "rootPaperId": 241086,
@@ -3404,7 +3598,9 @@
             "role": "Stellungnahme",
             "organization": "Stadtrat",
             "agendaItem": "8.7",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3412,7 +3608,9 @@
             "role": "Stellungnahme",
             "organization": "Stadtrat",
             "agendaItem": "8.7",
-            "result": "schriftliche Stellungnahme"
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           }
         ],
         "rootPaperId": 241087,
@@ -3475,7 +3673,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.49",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3483,7 +3683,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.49",
-            "result": "abgelehnt"
+            "result": "abgelehnt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           }
         ],
         "rootPaperId": 241091,
@@ -3521,7 +3723,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.55",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3529,7 +3733,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.55",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
@@ -3794,7 +4000,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "10.1",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2024-05-02"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3802,7 +4010,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "10.1",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2024-05-06"
           }
         ],
         "rootPaperId": 241092,
@@ -3836,7 +4046,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.50",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3844,7 +4056,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.50",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           }
         ],
         "rootPaperId": 241093,
@@ -3919,7 +4133,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "9.3",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2024-01-18"
           }
         ],
         "rootPaperId": 241093,
@@ -3953,7 +4169,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.51",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3961,7 +4179,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.51",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
@@ -3985,7 +4205,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.13",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -3993,7 +4215,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.13",
-            "result": "geändert beschlossen"
+            "result": "geändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           }
         ],
         "rootPaperId": 241094,
@@ -4048,7 +4272,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.13.2",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -4056,7 +4282,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.13.2",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           }
         ],
         "rootPaperId": 241094,
@@ -4093,7 +4321,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.13.1",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -4101,7 +4331,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.13.1",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           }
         ],
         "rootPaperId": 241094,
@@ -4154,7 +4386,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "10.15",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2024-09-12"
           }
         ],
         "rootPaperId": 241094,
@@ -4188,7 +4422,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.52",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -4196,7 +4432,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.52",
-            "result": "abgelehnt"
+            "result": "abgelehnt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           }
         ],
         "rootPaperId": 241095,
@@ -4228,7 +4466,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.56",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -4236,7 +4476,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.56",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Wirtschaftsförderung, Tourismus und regionale Entwicklung",
@@ -4379,7 +4621,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.57",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -4387,7 +4631,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.57",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Betriebsausschusses Stadtgarten und Friedhöfe Magdeburg",
@@ -4403,7 +4649,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.14",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -4411,7 +4659,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.14",
-            "result": "abgelehnt"
+            "result": "abgelehnt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           }
         ],
         "rootPaperId": 241097,
@@ -4463,7 +4713,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.14.1",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -4471,7 +4723,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.14.2",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           }
         ],
         "rootPaperId": 241097,
@@ -4500,7 +4754,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.14.1",
-            "result": "ungeändert beschlossen"
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-10-16"
           }
         ],
         "rootPaperId": 241097,
@@ -4534,7 +4790,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.59",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -4542,7 +4800,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.59",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Jugendhilfeausschusses",
@@ -4574,7 +4834,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "4.5",
-            "result": "abgelehnt"
+            "result": "abgelehnt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-12-11"
           }
         ],
         "rootPaperId": 241098,
@@ -4635,7 +4897,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "4.5.1",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-12-11"
           }
         ],
         "rootPaperId": 241098,
@@ -4669,7 +4933,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.58",
-            "result": "vertagt"
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-25"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -4677,7 +4943,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.58",
-            "result": "in die Ausschüsse verwiesen"
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-7",
+            "sessionId": "2023-05-30"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Betriebsausschusses Kommunales Gebäudemanagement",
@@ -4725,7 +4993,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "7.6",
-            "result": "zurückgestellt"
+            "result": "zurückgestellt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2024-09-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -4733,7 +5003,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.17",
-            "result": "zurückgestellt"
+            "result": "zurückgestellt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2024-11-14"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -4741,7 +5013,9 @@
             "role": "Beschlussfassung",
             "organization": "Stadtrat",
             "agendaItem": "6.1",
-            "result": "zurückgestellt"
+            "result": "zurückgestellt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2025-05-22"
           }
         ],
         "rootPaperId": 241099,
@@ -4819,7 +5093,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "7.6.1",
-            "result": "zurückgestellt"
+            "result": "zurückgestellt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2024-09-12"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -4827,7 +5103,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "6.17.1",
-            "result": "zurückgestellt"
+            "result": "zurückgestellt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2024-11-14"
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -4835,7 +5113,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "6.1.1",
-            "result": "zurückgestellt"
+            "result": "zurückgestellt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2025-05-22"
           }
         ],
         "rootPaperId": 241099,
@@ -4896,7 +5176,9 @@
             "role": "Kenntnisnahme",
             "organization": "Stadtrat",
             "agendaItem": "10.4",
-            "result": "zur Kenntnis genommen"
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2024-09-12"
           }
         ],
         "rootPaperId": 241099,

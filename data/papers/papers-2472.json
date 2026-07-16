@@ -55,7 +55,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "6.30",
-        "result": "ungeändert beschlossen"
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-12-04"
       }
     ],
     "rootPaperId": 247200,
@@ -82,7 +84,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.2",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247201,
@@ -123,7 +127,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.3",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247202,
@@ -152,7 +158,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "8.49",
-        "result": "vertagt"
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates (Fortsetzung)",
@@ -160,7 +168,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "8.49",
-        "result": "abgelehnt"
+        "result": "abgelehnt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-29"
       }
     ],
     "rootPaperId": 247203,
@@ -216,7 +226,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.4",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247206,
@@ -243,7 +255,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "8.4.1",
-        "result": "vertagt"
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates (Fortsetzung)",
@@ -251,7 +265,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "8.4.1",
-        "result": "ungeändert beschlossen"
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-29"
       }
     ],
     "rootPaperId": 245607,
@@ -280,7 +296,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.6",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247209,
@@ -331,7 +349,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "6.2",
-        "result": "geändert beschlossen"
+        "result": "geändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-12-04"
       }
     ],
     "rootPaperId": 247211,
@@ -377,7 +397,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.23",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-12-04"
       }
     ],
     "rootPaperId": 245440,
@@ -446,7 +468,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.12",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-12-04"
       }
     ],
     "rootPaperId": 247214,
@@ -481,7 +505,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "9.8",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-11-06"
       }
     ],
     "rootPaperId": 247215,
@@ -540,7 +566,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "6.5.2",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-02-26"
       }
     ],
     "rootPaperId": 246978,
@@ -593,7 +621,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.7.2",
-        "result": "vertagt"
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-01-22"
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -601,7 +631,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.7.2",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-01-26"
       }
     ],
     "rootPaperId": 246948,
@@ -691,7 +723,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "11.13",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-01-22"
       }
     ],
     "rootPaperId": 245609,
@@ -736,7 +770,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "9.15",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-11-06"
       }
     ],
     "rootPaperId": 246311,
@@ -781,7 +817,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.24",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-12-04"
       }
     ],
     "rootPaperId": 247225,
@@ -839,7 +877,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "7.22.1",
-        "result": "ungeändert beschlossen"
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-11-06"
       }
     ],
     "rootPaperId": 246608,
@@ -876,7 +916,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "5.47.1",
-        "result": "ungeändert beschlossen"
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-11-06"
       }
     ],
     "rootPaperId": 246899,
@@ -927,7 +969,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.5.1",
-        "result": "vertagt"
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-01-22"
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -935,7 +979,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.5.1",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-01-26"
       }
     ],
     "rootPaperId": 246581,
@@ -988,7 +1034,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.22",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-12-04"
       }
     ],
     "rootPaperId": 244526,
@@ -1059,7 +1107,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "6.40",
-        "result": "ungeändert beschlossen"
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-12-04"
       }
     ],
     "rootPaperId": 247232,
@@ -1134,7 +1184,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "6.41",
-        "result": "ungeändert beschlossen"
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-12-04"
       }
     ],
     "rootPaperId": 247233,
@@ -1246,7 +1298,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.6.2",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-01-22"
       }
     ],
     "rootPaperId": 246752,
@@ -1297,7 +1351,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "7.10",
-        "result": "ungeändert beschlossen"
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-01-22"
       }
     ],
     "rootPaperId": 247239,
@@ -1360,7 +1416,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "6.13",
-        "result": "ungeändert beschlossen"
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-12-04"
       }
     ],
     "rootPaperId": 247240,
@@ -1416,7 +1474,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.13",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247243,
@@ -1482,7 +1542,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.21",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-12-04"
       }
     ],
     "rootPaperId": 246582,
@@ -1577,7 +1639,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "9.1",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-11-06"
       }
     ],
     "rootPaperId": 246588,
@@ -1606,7 +1670,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.7",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247250,
@@ -1635,7 +1701,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "7.13.1",
-        "result": "geändert beschlossen"
+        "result": "geändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 246841,
@@ -1666,7 +1734,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.20",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247252,
@@ -1695,7 +1765,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "7.13.2",
-        "result": "abgelehnt"
+        "result": "abgelehnt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 246841,
@@ -1724,7 +1796,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "8.37.1",
-        "result": "vertagt"
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates (Fortsetzung)",
@@ -1732,7 +1806,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "8.37.1",
-        "result": "in die Ausschüsse verwiesen"
+        "result": "in die Ausschüsse verwiesen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-29"
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
@@ -1817,7 +1893,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.27",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247256,
@@ -1846,7 +1924,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.25",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247257,
@@ -1875,7 +1955,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.24",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247258,
@@ -1904,7 +1986,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.12",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247259,
@@ -1933,7 +2017,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "8.25.1",
-        "result": "vertagt"
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates (Fortsetzung)",
@@ -1941,7 +2027,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "8.25.1",
-        "result": "in die Ausschüsse verwiesen"
+        "result": "in die Ausschüsse verwiesen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-29"
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für kommunale Rechts- und Bürgerangelegenheiten",
@@ -2002,7 +2090,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "8.43.1",
-        "result": "vertagt"
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates (Fortsetzung)",
@@ -2010,7 +2100,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "8.43.1",
-        "result": "in die Ausschüsse verwiesen"
+        "result": "in die Ausschüsse verwiesen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-29"
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
@@ -2034,7 +2126,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "8.14.1",
-        "result": "vertagt"
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-01-22"
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2042,7 +2136,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "8.14.1",
-        "result": "geändert beschlossen"
+        "result": "geändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-01-26"
       }
     ],
     "rootPaperId": 247194,
@@ -2089,7 +2185,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.20",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-12-04"
       }
     ],
     "rootPaperId": 238646,
@@ -2118,7 +2216,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.5",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247264,
@@ -2147,7 +2247,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.10",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247265,
@@ -2208,7 +2310,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.10.1",
-        "result": "zurückgestellt"
+        "result": "zurückgestellt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-01-22"
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2216,7 +2320,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.10.1",
-        "result": "zurückgestellt"
+        "result": "zurückgestellt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-01-26"
       }
     ],
     "rootPaperId": 246982,
@@ -2245,7 +2351,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.19",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247267,
@@ -2310,7 +2418,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "5.11",
-        "result": "ungeändert beschlossen"
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-04-23"
       }
     ],
     "rootPaperId": 247268,
@@ -2391,7 +2501,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "5.12",
-        "result": "geändert beschlossen"
+        "result": "geändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-04-23"
       }
     ],
     "rootPaperId": 247269,
@@ -2465,7 +2577,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "7.3.1",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-12-04"
       }
     ],
     "rootPaperId": 246981,
@@ -2494,7 +2608,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "8.24.1",
-        "result": "vertagt"
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates (Fortsetzung)",
@@ -2502,7 +2618,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "8.24.1",
-        "result": "ungeändert beschlossen"
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-29"
       }
     ],
     "rootPaperId": 246169,
@@ -2540,7 +2658,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.42",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247275,
@@ -2573,7 +2693,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.40",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247276,
@@ -2602,7 +2724,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.41",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247277,
@@ -2631,7 +2755,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.14",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247278,
@@ -2689,7 +2815,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.28",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247280,
@@ -2718,7 +2846,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.29",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247282,
@@ -2763,7 +2893,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "6.3.3",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-02-26"
       }
     ],
     "rootPaperId": 246961,
@@ -2808,7 +2940,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.6",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-12-04"
       }
     ],
     "rootPaperId": 247284,
@@ -2835,7 +2969,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.21",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247285,
@@ -2864,7 +3000,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "7.5.1",
-        "result": "Einzelabstimmung"
+        "result": "Einzelabstimmung",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 245890,
@@ -2925,7 +3063,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "7.1.3",
-        "result": "vertagt"
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-03-26"
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
@@ -2933,7 +3073,9 @@
         "role": "Kenntnisnahme",
         "organization": "Stadtrat",
         "agendaItem": "7.1.3",
-        "result": "zur Kenntnis genommen"
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-03-30"
       }
     ],
     "rootPaperId": 245780,
@@ -2962,7 +3104,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.26",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247289,
@@ -3056,7 +3200,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.15",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247292,
@@ -3085,7 +3231,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.33",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247293,
@@ -3114,7 +3262,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "10.36",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 247294,
@@ -3172,7 +3322,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "7.12.1",
-        "result": "geändert beschlossen"
+        "result": "geändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2025-09-25"
       }
     ],
     "rootPaperId": 246850,

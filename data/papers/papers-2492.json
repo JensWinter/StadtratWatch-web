@@ -106,12 +106,43 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.9",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249207,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249208,
+    "reference": "S0325/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Fahrradstaffel bei der Falschparkendenkontrolle",
+    "files": [
+      {
+        "id": 747777,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747777&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-14T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "7.2",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249208,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248951
+    ]
   },
   {
     "id": 249209,
@@ -133,7 +164,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.34",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249209,
@@ -166,7 +199,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.21",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249210,
@@ -199,7 +234,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.20",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249211,
@@ -226,7 +263,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "6.2.1",
-        "result": "abgelehnt"
+        "result": "abgelehnt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 247704,
@@ -281,6 +320,12 @@
         "name": "DS0249/26_Anlage 1: Fazit Bauwerksprüfung Elbe-Schwimmhalle",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746570&type=do",
         "size": 1522376
+      },
+      {
+        "id": 747903,
+        "name": "Beschlussausfertigung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747903&type=do",
+        "size": 13816
       }
     ],
     "consultations": [
@@ -298,11 +343,17 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "4.1",
-        "result": "ungeändert beschlossen"
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-07-03"
       }
     ],
     "rootPaperId": 249216,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249336,
+      249369,
+      249381
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -360,7 +411,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.35",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249221,
@@ -387,7 +440,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.8",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249223,
@@ -414,7 +469,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.10",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249224,
@@ -468,7 +525,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "6.1.1.2",
-        "result": "in die Ausschüsse verwiesen"
+        "result": "in die Ausschüsse verwiesen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 245800,
@@ -526,7 +585,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.4",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249230,
@@ -553,7 +614,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.17",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249234,
@@ -580,7 +643,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.16",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249237,
@@ -607,7 +672,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "5.32.3",
-        "result": "ungeändert beschlossen"
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 248561,
@@ -636,7 +703,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "5.2.3",
-        "result": "abgelehnt"
+        "result": "abgelehnt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 248146,
@@ -667,11 +736,15 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.22",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249242,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249272
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -694,7 +767,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.23",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249243,
@@ -721,7 +796,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "6.1.1.3",
-        "result": "in die Ausschüsse verwiesen"
+        "result": "in die Ausschüsse verwiesen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 245800,
@@ -750,7 +827,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "5.2.4",
-        "result": "zurückgezogen"
+        "result": "zurückgezogen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 248146,
@@ -808,7 +887,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.11",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249249,
@@ -835,7 +916,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.36",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249250,
@@ -862,7 +945,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.25",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249253,
@@ -889,7 +974,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.12",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249254,
@@ -916,7 +1003,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.24",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249255,
@@ -943,7 +1032,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.18",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249256,
@@ -970,7 +1061,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.38",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249257,
@@ -997,7 +1090,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "5.2.3.1",
-        "result": "zurückgezogen"
+        "result": "zurückgezogen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 248146,
@@ -1026,7 +1121,9 @@
         "role": "Beschlussfassung",
         "organization": "Stadtrat",
         "agendaItem": "5.2.2.1",
-        "result": "Einzelabstimmung"
+        "result": "Einzelabstimmung",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 248146,
@@ -1055,7 +1152,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.26",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249260,
@@ -1082,7 +1181,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.19",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249261,
@@ -1109,7 +1210,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.27",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249262,
@@ -1136,7 +1239,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "8.28",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 249263,
@@ -1196,16 +1301,45 @@
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Verwaltungsausschusses",
-        "date": "2026-07-03T17:00:00+02:00",
+        "date": "2026-07-03T17:30:00+02:00",
         "role": "Kenntnisnahme",
         "organization": "Verwaltungsausschuss",
         "agendaItem": "7.2",
-        "result": null
+        "result": "zur Kenntnis genommen"
       }
     ],
     "rootPaperId": 249265,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249268,
+    "reference": "S0335/26",
+    "type": "Stellungnahme",
+    "title": "Weitere unzumutbare Verzögerungen bei Einbürgerungsanträgen",
+    "files": [
+      {
+        "id": 747600,
+        "name": "Stellungnahme",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747600&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-14T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "7.3",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249268,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249023
+    ]
   },
   {
     "id": 249269,
@@ -1385,7 +1519,7 @@
         "result": "genehmigt OB"
       }
     ],
-    "rootPaperId": 249272,
+    "rootPaperId": 249242,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": [
       249242
@@ -1455,6 +1589,64 @@
     "superOrdinatedPaperIds": []
   },
   {
+    "id": 249276,
+    "reference": "I0209/26",
+    "type": "Informationsvorlage Prüfantrag",
+    "title": "Gebäude Windmühlenstraße 29 für Verwaltung nutzen",
+    "files": [
+      {
+        "id": 746425,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746425&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-14T09:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "6.1",
+        "result": "zur Kenntnis genommen"
+      }
+    ],
+    "rootPaperId": 249276,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248902
+    ]
+  },
+  {
+    "id": 249278,
+    "reference": "S0340/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Parteipolitische Neutralität: Gemeinsame Stellungnahme von Kulturinstitutionen",
+    "files": [
+      {
+        "id": 747149,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747149&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-14T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "7.9",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 248849,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248849
+    ]
+  },
+  {
     "id": 249279,
     "reference": "S0341/26",
     "type": "Stellungnahme (Anfrage)",
@@ -1481,6 +1673,68 @@
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": [
       249250
+    ]
+  },
+  {
+    "id": 249280,
+    "reference": "I0210/26",
+    "type": "Informationsvorlage",
+    "title": "Verlauf und wesentliche Ergebnisse der Einwohnerversammlung für den Stadtteil Rothensee am 20.05.2026",
+    "files": [
+      {
+        "id": 746514,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746514&type=do",
+        "size": null
+      },
+      {
+        "id": 746524,
+        "name": "I0210/26 - Anlage 1 Ergebnsiprotokoll Rothensee",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746524&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-14T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "4.1",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249280,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249286,
+    "reference": "S0346/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Aufkommender Müll durch Essenslieferungen im öffentlichen Raum",
+    "files": [
+      {
+        "id": 746528,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746528&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-14T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "7.4",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249286,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249067
     ]
   },
   {
@@ -1658,7 +1912,9 @@
         "role": "Stellungnahme",
         "organization": "Stadtrat",
         "agendaItem": "5.1",
-        "result": "schriftliche Stellungnahme"
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-07-03"
       }
     ],
     "rootPaperId": 249294,
@@ -1699,6 +1955,35 @@
     "superOrdinatedPaperIds": []
   },
   {
+    "id": 249296,
+    "reference": "S0351/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Drohnentechnik bei Verstößen im Straßenverkehr",
+    "files": [
+      {
+        "id": 747045,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747045&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-14T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "7.5",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249296,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249196
+    ]
+  },
+  {
     "id": 249298,
     "reference": "S0352/26",
     "type": "Stellungnahme (Anfrage)",
@@ -1725,6 +2010,35 @@
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": [
       248946
+    ]
+  },
+  {
+    "id": 249299,
+    "reference": "S0353/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Stellungnahme \"Auswirkungen der MVB-Baustelle am Breiten Weg auf Innenstadtwirtschaft und Erreichbarkeit\"",
+    "files": [
+      {
+        "id": 746606,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746606&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-14T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "7.7",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249299,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249234
     ]
   }
 ]
