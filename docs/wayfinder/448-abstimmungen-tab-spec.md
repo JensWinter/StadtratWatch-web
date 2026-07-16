@@ -105,9 +105,11 @@ Neuer Ordner `src/scripts/generate-paper-votings/` nach dem Muster von `generate
 
 ## 7. Deployment des Assets
 
-Die Batch-Dateien landen im selben S3-Bucket/CloudFront wie `web-assets/papers/` und werden über **denselben operativen Upload-Weg** wie die bestehenden Paper-Assets nach `web-assets/paper-votings/` synchronisiert. Weil der Client per `find` auf `paperId` sucht, ist keine CloudFront-Invalidierung pro Inhalt nötig, solange Batchdateien überschrieben werden (ggf. Standard-Invalidierung wie bei den übrigen Web-Assets).
+Die Batch-Dateien landen im selben S3-Bucket/CloudFront wie `web-assets/papers/` und werden über **denselben operativen Upload-Weg** wie die bestehenden Paper-Assets nach `web-assets/paper-votings/` synchronisiert. ~~Weil der Client per `find` auf `paperId` sucht, ist keine CloudFront-Invalidierung pro Inhalt nötig, solange Batchdateien überschrieben werden (ggf. Standard-Invalidierung wie bei den übrigen Web-Assets).~~ Nach **jedem** Upload ist eine CloudFront-Invalidierung nötig — siehe Korrektur unten.
 
-> **Ausführungs-Notiz (keine offene Entscheidung):** Der genaue Sync-Mechanismus der `web-assets/`-Dateien ist nicht im Repo skriptiert (kein `aws s3 sync` im Code gefunden) — er ist operativ/CI-seitig. Vor dem Ausrollen den bestehenden Upload-Schritt der Paper-Assets identifizieren und `paper-votings/` dort anhängen.
+> **Erledigt in [#457](https://github.com/JensWinter/StadtratWatch-web/issues/457).** Der Upload-Weg ist identifiziert und dokumentiert: **manueller Upload über die AWS-S3-Konsole**, siehe `docs/guides/publishing-web-assets.md`.
+>
+> **Korrektur zur Invalidierung:** Die oben durchgestrichene Aussage ist falsch. Der `find` auf `paperId` betrifft nur, wie der Client *innerhalb* einer Batch-Datei sucht, und hat mit Edge-Caching nichts zu tun. Da die Batch-Dateinamen stabil sind, in-place überschrieben werden und die Web-Assets **keinen `Cache-Control`-Header** ausliefern, ist nach jedem Upload sehr wohl eine CloudFront-Invalidierung nötig — sonst liefern die Edges bis zum Ablauf der Default-TTL alte Daten. Der inhaltsadressierte `oparl/`-Prefix ist der Sonderfall, der ohne Invalidierung auskommt; diese Begründung darf nicht auf `web-assets/` übertragen werden.
 
 ## 8. Client-Implementierung (`astro/src/pages/paper/index.astro`)
 

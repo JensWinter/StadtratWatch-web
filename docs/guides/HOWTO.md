@@ -12,6 +12,7 @@ Run the processing pipeline in this order. The script sections below document in
 4. `generate-image-assets` - create voting visualization image assets from processed session data.
 5. `generate-paper-votings` - reverse the voting-paper-map against the session scans into the per-paper voting assets. Needs both the OParl derivates (step 2) and the scanned votings (step 3.2).
 6. `index-search` - rebuild the Typesense search index after all paper, speech, and asset data is available.
+7. Publish the generated web assets to S3/CloudFront - see [publishing-web-assets.md](publishing-web-assets.md). This is a **manual** step and is not part of any build: until it runs, the new assets do not exist in production.
 
 
 ### Parse Speakers
@@ -204,14 +205,14 @@ This tool builds the web assets behind the »Abstimmungen« tab on the paper det
 
 It scans `<data-dir>` for `{period-id}/registry.json` and intersects each period's `voting-paper-map.json` with the session scans: only agenda items that were **actually scanned** produce a voting, so papers that were never voted on do not appear in the output at all (which is what disables the tab). A paper voted on in several parliament periods collects the votings of all of them, each joined against its own registry.
 
-Output is batched by paper id (`paper-votings-{batch}.json`, `batch = paperId / 100`), stably sorted (session date descending, then voting id ascending), so a repeated run produces no diff. The files belong next to the other web assets on S3/CloudFront under `web-assets/paper-votings/`.
+Output is batched by paper id (`paper-votings-{batch}.json`, `batch = paperId / 100`), stably sorted (session date descending, then voting id ascending), so a repeated run produces no diff. The files belong next to the other web assets on S3/CloudFront under `web-assets/paper-votings/`; generating them does **not** publish them — see [publishing-web-assets.md](publishing-web-assets.md).
 
 Run this **after** the OParl derivates (`voting-paper-map.json`) and the video processing (`session-scan-*.json`) exist.
 
 #### Using the deno script
 ```shell
 deno run \
-  -R=data \
+  -R=data,output/paper-votings \
   -W=output/paper-votings \
   src/scripts/generate-paper-votings/index.ts \
   -d=data/ \
