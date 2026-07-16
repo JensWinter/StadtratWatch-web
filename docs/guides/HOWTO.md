@@ -219,9 +219,6 @@ deno run \
   -o=output/paper-votings/
 ```
 
-The output directory needs **read** access too, not just write: after writing the batches the tool
-lists the directory to prune batch files that no longer have content.
-
 `-d`/`--data-dir` defaults to `data/`, so it can be omitted when run from the repository root.
 
 #### Build the docker image
