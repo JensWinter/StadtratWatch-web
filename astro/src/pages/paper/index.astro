@@ -149,6 +149,7 @@ import Layout from '@layouts/Layout.astro';
 <script>
   import Alpine from 'alpinejs';
   import { AWS_CLOUDFRONT_BASE_URL } from 'astro:env/client';
+  import { toPaperBatchNo } from '@models/paper-batch.ts';
 
   type PaperFile = {
     id: number;
@@ -248,7 +249,7 @@ import Layout from '@layouts/Layout.astro';
         const queryParams = new URLSearchParams(location.search);
         const paperId = +(queryParams.get('paperId') || '0');
 
-        const batchNo = `${Math.floor(paperId / 100)}`.padStart(4, '0');
+        const batchNo = toPaperBatchNo(paperId);
 
         const batchResponse = await fetch(
           `${AWS_CLOUDFRONT_BASE_URL}/web-assets/papers/papers-${batchNo}.json`,
@@ -278,8 +279,7 @@ import Layout from '@layouts/Layout.astro';
           paper.files.length > 0 && (paper.files[0].size || 0) <= 1024 * 1024;
         this.fileSizeDisplay = formatFileSize(paper.files[0].size || 0);
 
-        const paperGraphBatchNo =
-          `${Math.floor(paper.rootPaperId / 100)}`.padStart(4, '0');
+        const paperGraphBatchNo = toPaperBatchNo(paper.rootPaperId);
 
         const paperGraphBatchResponse = await fetch(
           `${AWS_CLOUDFRONT_BASE_URL}/web-assets/papers/paper-graphs-${paperGraphBatchNo}.json`,
