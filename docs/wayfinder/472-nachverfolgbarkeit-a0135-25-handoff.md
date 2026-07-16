@@ -6,8 +6,8 @@ Datum: 2026-07-16
 
 Quellen:
 
-- Antrag A0135/25 (SPD/Tierschutzallianz/Volt) — `docs/misc/Antrag.pdf`
-- Stellungnahme der Stadt S0403/25 — `docs/misc/Stellungnahme.pdf`
+- Antrag A0135/25 (SPD/Tierschutzallianz/Volt) — [Antrag.pdf](https://github.com/user-attachments/files/30096370/Antrag.pdf)
+- Stellungnahme der Stadt S0403/25 — [Stellungnahme.pdf](https://github.com/user-attachments/files/30096376/Stellungnahme.pdf)
 - [T1 · Beschlussnummer-Extraktion (#469)](https://github.com/JensWinter/StadtratWatch-web/issues/469) — `docs/research/2026-07-16-beschlussnummer-extraktion.md`
 - [T2 · Umsetzungsstand-Datenlücke (#470)](https://github.com/JensWinter/StadtratWatch-web/issues/470) — `docs/research/2026-07-16-umsetzungsstand-datenluecke.md`
 - [T3 · Spec Beschlussnummer (#471)](https://github.com/JensWinter/StadtratWatch-web/issues/471) — `docs/research/2026-07-16-beschlussnummer-spec.md`
