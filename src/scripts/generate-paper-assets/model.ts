@@ -12,6 +12,8 @@ export type PaperConsultationDto = {
   organization: string;
   agendaItem: string | null;
   result: string | null;
+  parliamentPeriodId?: string;
+  sessionId?: string;
 };
 
 export type PaperDto = {
