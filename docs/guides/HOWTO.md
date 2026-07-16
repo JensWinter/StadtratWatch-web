@@ -161,8 +161,13 @@ docker run \
   -v $(pwd)/output/papers:/app/papers:ro \
   -v $(pwd)/data/papers:/app/generated \
   -v $(pwd)/output/ratsinfosystem:/app/oparl:ro \
+  -v $(pwd)/data:/app/data:ro \
   srw-generate-paper-assets
 ```
+
+The mounted `data` directory holds the parliament period registries. It lets the
+generator link consultations to their session pages when a session exists for the
+meeting's date.
 
 
 ### Generate OParl derivates

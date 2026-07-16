@@ -24,6 +24,7 @@ import { createInMemoryPaperGraph } from './paper-graph.ts';
 import { OparlObjectsStore } from '../shared/oparl/oparl-objects-store.ts';
 import { PaperAssetsWriter } from './paper-assets-writer.ts';
 import { PaperGraphAssetsWriter } from './paper-graph-assets-writer.ts';
+import { SessionIndex, SessionIndexStore, SessionLocation } from './session-index.ts';
 
 export class PaperAssetsGenerator {
   private readonly meetingsRepository: OparlMeetingsRepository;
@@ -31,10 +32,12 @@ export class PaperAssetsGenerator {
   private readonly organizationsRepository: OparlOrganizationsRepository;
   private readonly agendaItemsRepository: OparlAgendaItemsRepository;
   private readonly filesRepository: OparlFilesRepository;
+  private readonly sessionIndex: SessionIndex;
 
   constructor(
     private readonly paperFilesStore: PaperFilesStore,
     private readonly oparlObjectsStore: OparlObjectsStore,
+    private readonly sessionIndexStore: SessionIndexStore,
     private readonly paperAssetsWriter: PaperAssetsWriter,
     private readonly paperGraphAssetsWriter: PaperGraphAssetsWriter,
   ) {
@@ -43,6 +46,7 @@ export class PaperAssetsGenerator {
     this.organizationsRepository = new OparlOrganizationsInMemoryRepository(this.oparlObjectsStore.loadOrganizations());
     this.agendaItemsRepository = new OparlAgendaItemsInMemoryRepository(this.oparlObjectsStore.loadAgendaItems());
     this.filesRepository = new OparlFilesInMemoryRepository(this.oparlObjectsStore.loadFiles(), this.papersRepository);
+    this.sessionIndex = this.sessionIndexStore.loadSessionIndex();
   }
 
   public generatePaperAssets() {
@@ -146,6 +150,8 @@ export class PaperAssetsGenerator {
           return null;
         }
 
+        const sessionLocation = this.resolveSessionLocation(meeting.start);
+
         return {
           meeting: meeting.name,
           date: meeting.start || null,
@@ -153,6 +159,7 @@ export class PaperAssetsGenerator {
           organization: organization.name,
           agendaItem: agendaItem.number || null,
           result: agendaItem.result || null,
+          ...sessionLocation,
         };
       })
       .filter((consultation): consultation is PaperConsultationDto => consultation !== null)
@@ -162,6 +169,15 @@ export class PaperAssetsGenerator {
         if (!b.date) return -1;
         return a.date.localeCompare(b.date);
       });
+  }
+
+  private resolveSessionLocation(meetingStart: string | undefined): Partial<SessionLocation> {
+    if (!meetingStart) {
+      return {};
+    }
+
+    const meetingDate = meetingStart.split('T')[0];
+    return this.sessionIndex[meetingDate] ?? {};
   }
 
   private getFiles(paper: OparlPaper) {

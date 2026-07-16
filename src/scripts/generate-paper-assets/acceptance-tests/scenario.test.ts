@@ -14,6 +14,7 @@ import {
 import { PaperAssetDto, PaperGraphAssetDto } from '../model.ts';
 import { PaperFilesStore } from '../paper-files-store.ts';
 import { PaperGraphAssetsWriter } from '../paper-graph-assets-writer.ts';
+import { SessionIndex, SessionIndexStore } from '../session-index.ts';
 
 class MockPaperFilesStore implements PaperFilesStore {
   getFileSize(_fileId: number): number | null {
@@ -89,6 +90,13 @@ class MockOparlObjectsStore implements OparlObjectsStore {
   }
 }
 
+class MockSessionIndexStore implements SessionIndexStore {
+  constructor(private readonly sessionIndex: SessionIndex = {}) {
+  }
+
+  loadSessionIndex = (): SessionIndex => this.sessionIndex;
+}
+
 class MockPaperAssetsWriter implements PaperAssetsWriter {
   papersWritten = 0;
   paperAssetsWritten = 0;
@@ -112,6 +120,7 @@ class MockPaperGraphAssetsWriter implements PaperGraphAssetsWriter {
 describe('Generating paper assets', () => {
   let paperFilesStore: MockPaperFilesStore;
   let oparlObjectsStore: MockOparlObjectsStore;
+  let sessionIndexStore: MockSessionIndexStore;
   let paperAssetsWriter: MockPaperAssetsWriter;
   let paperGraphAssetsWriter: MockPaperGraphAssetsWriter;
 
@@ -119,6 +128,7 @@ describe('Generating paper assets', () => {
     // GIVEN
     paperFilesStoreIsAvailable();
     oparlObjectStoreIsAvailable();
+    sessionIndexStoreIsAvailable();
     paperAssetsWriterIsAvailable();
     paperGraphAssetWriterIsAvailable();
 
@@ -134,6 +144,7 @@ describe('Generating paper assets', () => {
     // GIVEN
     paperFilesStoreIsAvailable();
     oparlObjectStoreIsAvailable();
+    sessionIndexStoreIsAvailable();
     paperAssetsWriterIsAvailable();
     paperGraphAssetWriterIsAvailable();
 
@@ -153,6 +164,10 @@ describe('Generating paper assets', () => {
     oparlObjectsStore = new MockOparlObjectsStore();
   }
 
+  function sessionIndexStoreIsAvailable(sessionIndex: SessionIndex = {}) {
+    sessionIndexStore = new MockSessionIndexStore(sessionIndex);
+  }
+
   function paperAssetsWriterIsAvailable() {
     paperAssetsWriter = new MockPaperAssetsWriter();
   }
@@ -165,6 +180,7 @@ describe('Generating paper assets', () => {
     const generator = new PaperAssetsGenerator(
       paperFilesStore,
       oparlObjectsStore,
+      sessionIndexStore,
       paperAssetsWriter,
       paperGraphAssetsWriter,
     );

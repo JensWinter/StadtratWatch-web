@@ -11,10 +11,11 @@ RUN deno install --entrypoint src/scripts/generate-paper-assets/index.ts --unsta
 RUN deno cache src/scripts/generate-paper-assets/index.ts --unstable-sloppy-imports
 
 CMD ["run", \
-        "-R=/app/oparl,/app/papers", \
+        "-R=/app/oparl,/app/papers,/app/data", \
         "-W=/app/generated", \
         "-E=OPARL_COUNCIL_ORGANIZATION_ID", \
         "src/scripts/generate-paper-assets/index.ts", \
         "-r=./oparl", \
         "-p=./papers", \
+        "-d=./data", \
         "-o=./generated"]

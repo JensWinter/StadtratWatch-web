@@ -107,8 +107,10 @@ import Layout from '@layouts/Layout.astro';
                   >
                   </div>
                 </div>
-                <div
-                  class="timeline-end timeline-box mt-5 ms-3 w-full space-y-2"
+                <a
+                  class="timeline-end timeline-box mt-5 ms-3 block w-full space-y-2"
+                  :class="consultation.sessionId ? 'hover:bg-base-200 hover:cursor-pointer' : ''"
+                  :href="consultation.sessionId ? `/pp/${consultation.parliamentPeriodId}/session/${consultation.sessionId}/` : null"
                 >
                   <div class="text-base-content/70 space-x-1">
                     <span>TOP</span>
@@ -121,7 +123,7 @@ import Layout from '@layouts/Layout.astro';
                       class="badge badge-neutral badge-sm"
                       x-text="consultation.result"></span>
                   </div>
-                </div>
+                </a>
                 <hr x-show="index < paper.consultations.length - 1" />
               </li>
             </template>
@@ -255,6 +257,8 @@ import Layout from '@layouts/Layout.astro';
     organization: string;
     agendaItem: string | null;
     result: string | null;
+    parliamentPeriodId?: string;
+    sessionId?: string;
   };
 
   type Paper = {
