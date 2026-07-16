@@ -54,3 +54,4 @@ typesense/data
 
 # OParl raw data — fetched from S3/CloudFront at build time (see astro/scripts/fetch-oparl)
 /data/oparl-magdeburg/
+deu.traineddata
