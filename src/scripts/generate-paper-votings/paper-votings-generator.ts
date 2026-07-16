@@ -1,4 +1,5 @@
 import { getVoteCounts, getVotesByFactions, getVotingId, votingAccepted } from '@srw-astro/models/voting-breakdown';
+import { toPaperBatchNo } from '@srw-astro/models/paper-batch';
 import { SessionScanItem } from '@srw-astro/models/session-scan';
 import { Registry } from '@srw-astro/models/registry';
 import { PeriodData, PeriodDataStore } from './period-data-store.ts';
@@ -72,7 +73,7 @@ export class PaperVotingsGenerator {
     const paperVotingsByBatchNo = new Map<string, PaperVotingsDto[]>();
 
     for (const entry of paperVotings) {
-      const batchNo = getBatchNo(entry.paperId);
+      const batchNo = toPaperBatchNo(entry.paperId);
       const batch = paperVotingsByBatchNo.get(batchNo) ?? [];
       batch.push(entry);
       paperVotingsByBatchNo.set(batchNo, batch);
@@ -82,8 +83,4 @@ export class PaperVotingsGenerator {
       .map<PaperVotingsAssetDto>(([batchNo, entries]) => ({ batchNo, paperVotings: entries }))
       .toSorted((a, b) => a.batchNo.localeCompare(b.batchNo));
   }
-}
-
-function getBatchNo(paperId: number): string {
-  return `${Math.floor(paperId / 100)}`.padStart(4, '0');
 }

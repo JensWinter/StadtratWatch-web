@@ -19,6 +19,7 @@ import {
   OparlAgendaItemsRepository,
 } from '../shared/oparl/oparl-agenda-items-repository.ts';
 import { OparlPaper } from '@srw-astro/models/oparl';
+import { toPaperBatchNo } from '@srw-astro/models/paper-batch';
 import { createInMemoryPaperGraph } from './paper-graph.ts';
 import { OparlObjectsStore } from '../shared/oparl/oparl-objects-store.ts';
 import { PaperAssetsWriter } from './paper-assets-writer.ts';
@@ -73,11 +74,10 @@ export class PaperAssetsGenerator {
         };
       },
     );
-    // Group papers in batches of 100.
     const paperAssetsGroups = papers
       .sort((a, b) => a.id - b.id)
       .reduce((acc, paper) => {
-        const batchNo = `${Math.floor(paper.id / 100)}`.padStart(4, '0');
+        const batchNo = toPaperBatchNo(paper.id);
         if (!acc[batchNo]) {
           acc[batchNo] = [];
         }
@@ -101,11 +101,10 @@ export class PaperAssetsGenerator {
           .filter((paper) => paper !== undefined);
         return { rootPaperId, papers: graphPapers };
       });
-    // Group paper graphs in batches of 100.
     const paperGraphGroups = paperGraphs
       .sort((a, b) => a.rootPaperId - b.rootPaperId)
       .reduce((acc, paperGraph) => {
-        const batchNo = `${Math.floor(paperGraph.rootPaperId / 100)}`.padStart(4, '0');
+        const batchNo = toPaperBatchNo(paperGraph.rootPaperId);
         if (!acc[batchNo]) {
           acc[batchNo] = [];
         }
