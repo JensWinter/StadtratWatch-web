@@ -139,10 +139,10 @@ docker build -t srw-download-paper-files -f docker/download-paper-files.Dockerfi
 docker run \
   --rm \
   -e OPARL_COUNCIL_ORGANIZATION_ID=https://ratsinfo.magdeburg.de/oparl/bodies/0001/organizations/gr/1 \
-  -v $(pwd)/output/papers/2025:/app/papers \
-  -v $(pwd)/output/ratsinfosystem:/app/oparl:ro \
+  -v $(pwd)/output/papers/2026:/app/papers \
+  -v $(pwd)/data/oparl-magdeburg:/app/oparl:ro \
   srw-download-paper-files \
-  2025
+  2026
 ```
 
 
@@ -163,7 +163,7 @@ docker run \
   -e OPARL_COUNCIL_ORGANIZATION_ID=https://ratsinfo.magdeburg.de/oparl/bodies/0001/organizations/gr/1 \
   -v $(pwd)/output/papers:/app/papers:ro \
   -v $(pwd)/data/papers:/app/generated \
-  -v $(pwd)/output/ratsinfosystem:/app/oparl:ro \
+  -v $(pwd)/data/oparl-magdeburg:/app/oparl:ro \
   -v $(pwd)/data:/app/data:ro \
   srw-generate-paper-assets
 ```
@@ -180,7 +180,7 @@ The council organization id is read from the `OPARL_COUNCIL_ORGANIZATION_ID` env
 
 #### Using the deno script
 ```shell
-OPARL_COUNCIL_ORGANIZATION_ID=<council-org-id> \
+OPARL_COUNCIL_ORGANIZATION_ID=https://ratsinfo.magdeburg.de/oparl/bodies/0001/organizations/gr/1 \
   deno run \
     -R=. \
     -W=data \
@@ -201,8 +201,8 @@ docker build -t srw-generate-oparl-derivatives -f docker/generate-oparl-derivati
 ```shell
 docker run \
   --rm \
-  -e OPARL_COUNCIL_ORGANIZATION_ID=<council-org-id> \
-  -v $(pwd)/output/ratsinfosystem:/app/oparl:ro \
+  -e OPARL_COUNCIL_ORGANIZATION_ID=https://ratsinfo.magdeburg.de/oparl/bodies/0001/organizations/gr/1 \
+  -v $(pwd)/data/oparl-magdeburg:/app/oparl:ro \
   -v $(pwd)/data:/app/data \
   srw-generate-oparl-derivatives
 ```
@@ -256,8 +256,8 @@ When running the container, the input and output folders have to be provided as 
 ```shell 
 docker run \
   --rm \
-  -v $(pwd)/output/papers/2025:/input \
-  -v $(pwd)/output/papers/2025-extracted:/output \
+  -v $(pwd)/output/papers/2026:/input \
+  -v $(pwd)/output/papers/2026-extracted:/output \
   srw-tika
 ```
 
@@ -285,7 +285,7 @@ docker run \
   -e OPARL_COUNCIL_ORGANIZATION_ID=https://ratsinfo.magdeburg.de/oparl/bodies/0001/organizations/gr/1 \
 	-v $(pwd)/output/papers/all-extracted:/app/papers-content:ro \
 	-v $(pwd)/data:/app/parliament-periods:ro \
-	-v $(pwd)/output/ratsinfosystem:/app/oparl:ro \
+	-v $(pwd)/data/oparl-magdeburg:/app/oparl:ro \
 	srw-index-search
 ```
 
