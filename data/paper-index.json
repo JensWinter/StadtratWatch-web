@@ -57698,7 +57698,7 @@
   {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248797",
     "id": "248797",
-    "date": "2026-07-10",
+    "date": "2026-07-24",
     "paperType": "Beschlussvorlage",
     "reference": "DS0154/26",
     "name": "33. Änderung des Flächennutzungsplanes \"Kümmelsberg Nord\" - Feststellungsbeschluss"
@@ -58582,6 +58582,14 @@
     "paperType": "Antrag",
     "reference": "A0132/26",
     "name": "Magdeburg- Innenstadt am Fluss"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249092",
+    "id": "249092",
+    "date": "2026-06-04",
+    "paperType": "Anfrage",
+    "reference": "F0181/26",
+    "name": "Öffentliche Nutzung von Solar-Carports und Ladeinfrastruktur an der Otto-von-Guericke-Universität"
   },
   {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249098",
