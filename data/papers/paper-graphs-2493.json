@@ -228,40 +228,6 @@
     ]
   },
   {
-    "rootPaperId": 249315,
-    "papers": [
-      {
-        "id": 249315,
-        "reference": "S0359/26",
-        "type": "Stellungnahme",
-        "title": "Erweiterung des städtischen MD-Melders um die Kategorie „Barrieren melden“",
-        "files": [
-          {
-            "id": 746881,
-            "name": "Stellungnahme",
-            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746881&type=do",
-            "size": null
-          }
-        ],
-        "consultations": [
-          {
-            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
-            "date": "2026-07-14T09:00:00+02:00",
-            "role": "Genehmigung OB",
-            "organization": "Die Oberbürgermeisterin",
-            "agendaItem": "7.6",
-            "result": "genehmigt OB"
-          }
-        ],
-        "rootPaperId": 249315,
-        "subordinatedPaperIds": [],
-        "superOrdinatedPaperIds": [
-          249052
-        ]
-      }
-    ]
-  },
-  {
     "rootPaperId": 249318,
     "papers": [
       {
@@ -706,40 +672,6 @@
         "rootPaperId": 249338,
         "subordinatedPaperIds": [],
         "superOrdinatedPaperIds": []
-      }
-    ]
-  },
-  {
-    "rootPaperId": 249344,
-    "papers": [
-      {
-        "id": 249344,
-        "reference": "I0224/26",
-        "type": "Informationsvorlage Prüfantrag",
-        "title": "Weiße Kreise für die Sicherheit von Motorradfahrern",
-        "files": [
-          {
-            "id": 747206,
-            "name": "Information",
-            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747206&type=do",
-            "size": null
-          }
-        ],
-        "consultations": [
-          {
-            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
-            "date": "2026-07-14T09:00:00+02:00",
-            "role": "Genehmigung OB",
-            "organization": "Die Oberbürgermeisterin",
-            "agendaItem": "4.10",
-            "result": "genehmigt OB"
-          }
-        ],
-        "rootPaperId": 249344,
-        "subordinatedPaperIds": [],
-        "superOrdinatedPaperIds": [
-          248631
-        ]
       }
     ]
   },

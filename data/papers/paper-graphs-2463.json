@@ -2734,25 +2734,25 @@
             "id": 738056,
             "name": "Information",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=738056&type=do",
-            "size": null
+            "size": 73940
           },
           {
             "id": 738830,
             "name": "I0078/26 - Anlage 1 Haltestelle Hertzstraße",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=738830&type=do",
-            "size": null
+            "size": 520928
           },
           {
             "id": 738831,
             "name": "I0078/26 - Anlage 2 Haltestelle Fermersleber Weg",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=738831&type=do",
-            "size": null
+            "size": 591416
           },
           {
             "id": 738832,
             "name": "I0078/26 - Anlage 3 Haltestelle Brenneckestraße",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=738832&type=do",
-            "size": null
+            "size": 1446542
           }
         ],
         "consultations": [
@@ -4080,13 +4080,13 @@
             "id": 734558,
             "name": "Stellungnahme (Antrag)",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=734558&type=do",
-            "size": null
+            "size": 105687
           },
           {
             "id": 734858,
             "name": "S0583/25 - Anlage - Angebotsvergleich",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=734858&type=do",
-            "size": null
+            "size": 575938
           }
         ],
         "consultations": [
@@ -4155,7 +4155,7 @@
             "id": 736994,
             "name": "Änderungsantrag",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=736994&type=do",
-            "size": null
+            "size": 64550
           }
         ],
         "consultations": [

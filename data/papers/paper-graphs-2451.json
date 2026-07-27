@@ -2336,9 +2336,46 @@
           }
         ],
         "rootPaperId": 245169,
-        "subordinatedPaperIds": [],
+        "subordinatedPaperIds": [
+          249137
+        ],
         "superOrdinatedPaperIds": [
           245169
+        ]
+      },
+      {
+        "id": 249137,
+        "reference": "I0190/26",
+        "type": "Informationsvorlage",
+        "title": "Integrationsstrukturen stärken – Sprachkurse für Frauen mit Migrationshintergrund initiieren",
+        "files": [
+          {
+            "id": 747718,
+            "name": "Information",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747718&type=do",
+            "size": null
+          },
+          {
+            "id": 747719,
+            "name": "Stellungnahme zum interfraktonellen Antrag A0266-24 - Integrationsstrukturen stärken",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747719&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-07-14T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "4.4",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 245169,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          247119
         ]
       }
     ]
@@ -3320,7 +3357,7 @@
             "id": 737283,
             "name": "Information",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=737283&type=do",
-            "size": null
+            "size": 26547
           }
         ],
         "consultations": [

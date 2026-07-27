@@ -140,7 +140,7 @@
         "id": 740562,
         "name": "Information",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740562&type=do",
-        "size": null
+        "size": 69070
       }
     ],
     "consultations": [
@@ -326,13 +326,13 @@
         "id": 740807,
         "name": "I0117/26 Information",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740807&type=do",
-        "size": null
+        "size": 76373
       },
       {
         "id": 740808,
         "name": "I0117/26 Anlage FM-Liste_Mikroprojektförderung_01_Kunst_und_Kultur_HH-Jahr_2026",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740808&type=do",
-        "size": null
+        "size": 88519
       }
     ],
     "consultations": [
@@ -435,13 +435,13 @@
         "id": 740831,
         "name": "Information",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740831&type=do",
-        "size": null
+        "size": 15148
       },
       {
         "id": 740913,
         "name": "I0119/26 - Anlage 1 Projektförderung Kunst und Kultur Fördermittelliste",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740913&type=do",
-        "size": null
+        "size": 83964
       }
     ],
     "consultations": [
@@ -795,13 +795,13 @@
         "id": 740875,
         "name": "IO121/26_Anlage_Kooperationsvereinbarung",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740875&type=do",
-        "size": null
+        "size": 199653
       },
       {
         "id": 740876,
         "name": "Information",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740876&type=do",
-        "size": null
+        "size": 16412
       }
     ],
     "consultations": [
@@ -946,7 +946,9 @@
       }
     ],
     "rootPaperId": 248631,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249344
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -1210,19 +1212,19 @@
         "id": 740909,
         "name": "Anlage 1 - Schreiben an MI - Sicherheit bei Großveranstaltungen",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740909&type=do",
-        "size": null
+        "size": 1577740
       },
       {
         "id": 740910,
         "name": "Anlage 2 - Sicherheit bei Großveranstaltungen - Antwort MI",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740910&type=do",
-        "size": null
+        "size": 2324064
       },
       {
         "id": 740911,
         "name": "Information",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740911&type=do",
-        "size": null
+        "size": 74763
       }
     ],
     "consultations": [
@@ -1375,7 +1377,7 @@
         "id": 740923,
         "name": "Information",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=740923&type=do",
-        "size": null
+        "size": 65937
       }
     ],
     "consultations": [
@@ -2520,7 +2522,7 @@
         "id": 741321,
         "name": "Information",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741321&type=do",
-        "size": null
+        "size": 335810
       }
     ],
     "consultations": [

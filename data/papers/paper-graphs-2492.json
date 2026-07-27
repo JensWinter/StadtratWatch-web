@@ -1602,40 +1602,6 @@
     ]
   },
   {
-    "rootPaperId": 249286,
-    "papers": [
-      {
-        "id": 249286,
-        "reference": "S0346/26",
-        "type": "Stellungnahme (Anfrage)",
-        "title": "Aufkommender Müll durch Essenslieferungen im öffentlichen Raum",
-        "files": [
-          {
-            "id": 746528,
-            "name": "Stellungnahme (Anfrage)",
-            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746528&type=do",
-            "size": null
-          }
-        ],
-        "consultations": [
-          {
-            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
-            "date": "2026-07-14T09:00:00+02:00",
-            "role": "Genehmigung OB",
-            "organization": "Die Oberbürgermeisterin",
-            "agendaItem": "7.4",
-            "result": "genehmigt OB"
-          }
-        ],
-        "rootPaperId": 249286,
-        "subordinatedPaperIds": [],
-        "superOrdinatedPaperIds": [
-          249067
-        ]
-      }
-    ]
-  },
-  {
     "rootPaperId": 249288,
     "papers": [
       {

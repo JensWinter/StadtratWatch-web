@@ -1071,8 +1071,39 @@
           }
         ],
         "rootPaperId": 249052,
-        "subordinatedPaperIds": [],
+        "subordinatedPaperIds": [
+          249315
+        ],
         "superOrdinatedPaperIds": []
+      },
+      {
+        "id": 249315,
+        "reference": "S0359/26",
+        "type": "Stellungnahme",
+        "title": "Erweiterung des städtischen MD-Melders um die Kategorie „Barrieren melden“",
+        "files": [
+          {
+            "id": 746881,
+            "name": "Stellungnahme",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746881&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-07-14T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "7.6",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 249052,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          249052
+        ]
       }
     ]
   },
@@ -1261,8 +1292,39 @@
           }
         ],
         "rootPaperId": 249067,
-        "subordinatedPaperIds": [],
+        "subordinatedPaperIds": [
+          249286
+        ],
         "superOrdinatedPaperIds": []
+      },
+      {
+        "id": 249286,
+        "reference": "S0346/26",
+        "type": "Stellungnahme (Anfrage)",
+        "title": "Aufkommender Müll durch Essenslieferungen im öffentlichen Raum",
+        "files": [
+          {
+            "id": 746528,
+            "name": "Stellungnahme (Anfrage)",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746528&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-07-14T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "7.4",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 249067,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          249067
+        ]
       }
     ]
   },
@@ -1583,6 +1645,33 @@
           }
         ],
         "rootPaperId": 249091,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249092,
+    "papers": [
+      {
+        "id": 249092,
+        "reference": "F0181/26",
+        "type": "Anfrage",
+        "title": "Öffentliche Nutzung von Solar-Carports und Ladeinfrastruktur an der Otto-von-Guericke-Universität",
+        "files": [],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-06-18T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "8.7",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-06-18"
+          }
+        ],
+        "rootPaperId": 249092,
         "subordinatedPaperIds": [],
         "superOrdinatedPaperIds": []
       }

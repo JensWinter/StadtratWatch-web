@@ -1004,7 +1004,9 @@
       }
     ],
     "rootPaperId": 249052,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249315
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -1193,7 +1195,9 @@
       }
     ],
     "rootPaperId": 249067,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249286
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -1535,6 +1539,28 @@
     "superOrdinatedPaperIds": []
   },
   {
+    "id": 249092,
+    "reference": "F0181/26",
+    "type": "Anfrage",
+    "title": "Öffentliche Nutzung von Solar-Carports und Ladeinfrastruktur an der Otto-von-Guericke-Universität",
+    "files": [],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "8.7",
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
+      }
+    ],
+    "rootPaperId": 249092,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
     "id": 249093,
     "reference": "S0272/26",
     "type": "Stellungnahme (Antrag)",
@@ -1573,7 +1599,7 @@
         "id": 745050,
         "name": "DS0599/25/1 Änderungsantrag",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745050&type=do",
-        "size": null
+        "size": 64792
       }
     ],
     "consultations": [

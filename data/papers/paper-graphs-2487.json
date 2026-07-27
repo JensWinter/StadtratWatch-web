@@ -526,19 +526,19 @@
             "id": 741768,
             "name": "Information",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741768&type=do",
-            "size": null
+            "size": 215483
           },
           {
             "id": 741794,
             "name": "I0139_26_Anlage 1",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741794&type=do",
-            "size": null
+            "size": 84857
           },
           {
             "id": 741795,
             "name": "I0139_26_Anlage 2",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741795&type=do",
-            "size": null
+            "size": 131833
           }
         ],
         "consultations": [
@@ -789,7 +789,7 @@
             "id": 742301,
             "name": "Information",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742301&type=do",
-            "size": null
+            "size": 75652
           }
         ],
         "consultations": [
@@ -2318,9 +2318,9 @@
             "size": null
           },
           {
-            "id": 747832,
-            "name": "DS0154/26 Anlage 3 Plangrundlage",
-            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747832&type=do",
+            "id": 748427,
+            "name": "DS0154/26 - Anlage 3 Plangrundlage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748427&type=do",
             "size": null
           }
         ],
