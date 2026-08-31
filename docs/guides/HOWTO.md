@@ -380,16 +380,21 @@ derivates via `generate-oparl-derivatives`. The Astro build itself consumes the 
 Run it when you need the raw snapshot:
 
 ```bash
-cd astro
-npm run fetch-oparl
+deno run \
+  --allow-net \
+  --allow-read \
+  --allow-write \
+  --allow-env \
+  src/scripts/fetch-oparl/index.ts \
+  -r data/oparl-magdeburg
 ```
 
 `fetch-oparl` reads `oparl/manifest.json` from CloudFront, compares each file's content hash against
 the local copy and downloads only the blobs that changed or are missing (it is idempotent — if
 everything matches it does nothing). It needs only the public base URL; no AWS credentials are
 involved:
-- `AWS_CLOUDFRONT_BASE_URL` - base URL of the public CloudFront distribution (already required by
-  the Astro build; see `astro/astro.config.mjs`).
+- `AWS_CLOUDFRONT_BASE_URL` - base URL of the public CloudFront distribution.
+- `OPARL_S3_PREFIX` - key prefix (default `oparl`); must match the prefix `scrape-oparl --push` used.
 
 Resilience: missing local files are a hard requirement, so the run fails if a needed file is absent
 and the manifest cannot be fetched. If the manifest is unreachable but every file already exists
