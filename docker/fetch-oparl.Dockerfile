@@ -7,8 +7,9 @@ COPY deno.lock /app
 COPY src /app/src
 COPY astro/src/models /app/astro/src/models
 
-RUN deno install --entrypoint src/scripts/fetch-oparl/index.ts --unstable-sloppy-imports
-
+RUN deno install --entrypoint src/scripts/fetch-oparl/index.ts --unstable-sloppy-imports && \
+    mkdir -p /app/data && \
+    chown deno:deno /app/data
 
 USER deno
 
