@@ -380,8 +380,13 @@ derivates via `generate-oparl-derivatives`. The Astro build itself consumes the 
 Run it when you need the raw snapshot:
 
 ```bash
-cd astro
-npm run fetch-oparl
+deno run \
+  --allow-net \
+  --allow-read \
+  --allow-write \
+  --allow-env \
+  src/scripts/fetch-oparl/index.ts \
+  -d data/oparl-magdeburg
 ```
 
 `fetch-oparl` reads `oparl/manifest.json` from CloudFront, compares each file's content hash against
@@ -390,9 +395,13 @@ everything matches it does nothing). It needs only the public base URL; no AWS c
 involved:
 - `AWS_CLOUDFRONT_BASE_URL` - base URL of the public CloudFront distribution (already required by
   the Astro build; see `astro/astro.config.mjs`).
+- `OPARL_S3_PREFIX` - key prefix the snapshot lives under (default `oparl`; matches the publisher).
+
+The target directory is a CLI argument (`-d`/`--dir`, default `data/oparl-magdeburg/`).
 
 Resilience: missing local files are a hard requirement, so the run fails if a needed file is absent
 and the manifest cannot be fetched. If the manifest is unreachable but every file already exists
 locally, it warns and keeps the local copy, so offline dev and builds keep working after the first
-fetch. The manifest's `lastSync` timestamp is written back to `data/oparl-magdeburg/scraper-metadata.txt`,
-so an incremental `scrape-oparl` on a fresh clone resumes from the last published snapshot.
+fetch. The manifest's `lastSync` timestamp is written back to `<dir>/scraper-metadata.txt` relative to
+the selected `-d`/`--dir` value (by default, `data/oparl-magdeburg/scraper-metadata.txt`), so an
+incremental `scrape-oparl` on a fresh clone resumes from the last published snapshot.
