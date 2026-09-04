@@ -24,6 +24,22 @@
     "name": "Beschaffung eines Konzertflügels für das Konservatorium"
   },
   {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/214171",
+    "id": "214171",
+    "date": "2011-10-04",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0378/11",
+    "name": "Abwägung zum vorhabenbezogenen Bebauungsplan Nr. 178-7.1 \"Elbe-Hafen-Silo\""
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/214172",
+    "id": "214172",
+    "date": "2011-10-04",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0379/11",
+    "name": "Öffentliche Auslegung des Entwurfs zum vorhabenbezogenen B-Plan Nr. 178-7.1 \"Elbe-Hafen-Silo\""
+  },
+  {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/215132",
     "id": "215132",
     "date": "2012-03-02",
@@ -54874,7 +54890,7 @@
   {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/247755",
     "id": "247755",
-    "date": "2025-12-04",
+    "date": "2026-08-05",
     "paperType": "Beschlussvorlage",
     "reference": "DS0600/25",
     "name": "Änderung des Gesellschaftsvertrages der Magdeburger Hafen GmbH"
@@ -55800,6 +55816,14 @@
     "name": "Grundsatzbeschluss Umgestaltung Straßenraum Marienstraße"
   },
   {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248118",
+    "id": "248118",
+    "date": "2026-09-03",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0030/26",
+    "name": "Grundsatzbeschluss Umgestaltung Straßenraum Karl-Schmidt-Straße, südlicher Abschnitt zwischen Grundschule Buckau und Einmündung Hettstedter Straße"
+  },
+  {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248120",
     "id": "248120",
     "date": "2026-02-03",
@@ -55826,7 +55850,7 @@
   {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248126",
     "id": "248126",
-    "date": "2026-05-19",
+    "date": "2026-08-27",
     "paperType": "Beschlussvorlage",
     "reference": "DS0031/26",
     "name": "Grundsatzbeschluss und Variantenentscheidung zur Umgestaltung des Straßenraumes Salzmannstraße"
@@ -57168,6 +57192,22 @@
     "name": "Mindestbeförderungsentgelte für Mietwagenfahrten festlegen – Dumpingpreise und -löhne durch Taxi-Konkurrenz ausbremsen"
   },
   {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248595",
+    "id": "248595",
+    "date": "2026-07-22",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0109/26",
+    "name": "Behandlung der Stellungnahmen (Abwägung) zum Bebauungsplan Nr. 368-1C \"Kümmelsberg Westseite\" Teilbereich C"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248597",
+    "id": "248597",
+    "date": "2026-07-23",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0110/26",
+    "name": "Satzung zum Bebauungsplan Nr. 368-1C \"Kümmelsberg Westseite\" Teilbereich C"
+  },
+  {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248600",
     "id": "248600",
     "date": "2026-05-27",
@@ -57194,7 +57234,7 @@
   {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248619",
     "id": "248619",
-    "date": "2026-07-09",
+    "date": "2026-08-25",
     "paperType": "Beschlussvorlage",
     "reference": "DS0114/26",
     "name": "I. Beantragung von Städtebaufördermitteln für das Programmjahr 2027"
@@ -57392,6 +57432,22 @@
     "name": "Fortschreibung Abfallwirtschaftskonzept"
   },
   {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248671",
+    "id": "248671",
+    "date": "2026-07-24",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0125/26",
+    "name": "Behandlung der Stellungnahmen (Abwägung) zur 1. Änderung des Bebauungsplans Nr. 476-1 \"Mariannenviertel\""
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248672",
+    "id": "248672",
+    "date": "2026-07-23",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0126/26",
+    "name": "Satzung der 1. Änderung des Bebauungsplan Nr. 476-1 \"Mariannenviertel\""
+  },
+  {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248678",
     "id": "248678",
     "date": "2026-06-10",
@@ -57466,7 +57522,7 @@
   {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248711",
     "id": "248711",
-    "date": "2026-04-28",
+    "date": "2026-07-31",
     "paperType": "Informationsvorlage",
     "reference": "I0138/26",
     "name": "Radverkehrskonzeption der Landeshauptstadt Magdeburg"
@@ -57710,6 +57766,14 @@
     "paperType": "Anfrage",
     "reference": "F0136/26",
     "name": "Menschenunwürdige Zustände in Flüchtlingsheim an der Saalestraße?"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248802",
+    "id": "248802",
+    "date": "2026-07-23",
+    "paperType": "Beschlussvorlage EB",
+    "reference": "DS0157/26",
+    "name": "Neubau Freiwillige Feuerwehr Südost, Schanzenweg, 39122 Magdeburg - Vorentwurf"
   },
   {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248803",
@@ -58248,6 +58312,14 @@
     "name": "Fahrradstaffel bei der Falschparkendenkontrolle"
   },
   {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248960",
+    "id": "248960",
+    "date": "2026-07-23",
+    "paperType": "Informationsvorlage",
+    "reference": "I0168/26",
+    "name": "Sachstand Pflegekonferenz"
+  },
+  {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/248962",
     "id": "248962",
     "date": "2026-05-19",
@@ -58448,6 +58520,14 @@
     "name": "150 Jahre Magdeburger Straßenbahn als Festivalthema der Moderne 2027"
   },
   {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249037",
+    "id": "249037",
+    "date": "2026-07-30",
+    "paperType": "Informationsvorlage",
+    "reference": "I0177/26",
+    "name": "Blumenwiesen in der Landeshauptstadt Magdeburg - Gestaltung, ökologische Aufwertung und Stadtbildpflege im Bereich der Kaiser-Otto-Brücke sowie weiterer geeigneter Standorte"
+  },
+  {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249039",
     "id": "249039",
     "date": "2026-06-03",
@@ -58474,7 +58554,7 @@
   {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249050",
     "id": "249050",
-    "date": "2026-06-19",
+    "date": "2026-08-12",
     "paperType": "Antrag",
     "reference": "A0114/26",
     "name": "Sicherstellung von Ersatzparkplätzen für Menschen mit Behinderung bei Baustellen"
@@ -58592,6 +58672,14 @@
     "name": "Öffentliche Nutzung von Solar-Carports und Ladeinfrastruktur an der Otto-von-Guericke-Universität"
   },
   {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249094",
+    "id": "249094",
+    "date": "2026-06-05",
+    "paperType": "Anfrage",
+    "reference": "F0182/26",
+    "name": "Fußverkehrsführung Lassallestraße / Herweghstraße / Zuckerbusch"
+  },
+  {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249098",
     "id": "249098",
     "date": "2026-06-08",
@@ -58648,6 +58736,14 @@
     "name": "Verlauf und wesentliche Ergebnisse der Einwohnerversammlung für die Stadtteile Stadtfeld West und Diesdorf am 28.03.2026"
   },
   {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249131",
+    "id": "249131",
+    "date": "2026-08-06",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0238/26",
+    "name": "Aufstellungsbeschluss über die 54. Änderung des Flächennutzungsplanes der Landeshauptstadt Magdeburg „Freizeitpark Neustädter See“"
+  },
+  {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249136",
     "id": "249136",
     "date": "2026-06-10",
@@ -58662,6 +58758,14 @@
     "paperType": "Beschlussvorlage",
     "reference": "DS0239/26",
     "name": "Jahresabschluss 2025 der WOHNEN UND PFLEGEN MAGDEBURG gemeinnützige GmbH"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249143",
+    "id": "249143",
+    "date": "2026-09-03",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0240/26",
+    "name": "Neufassung der Entgeltordnung des Technikmuseums Magdeburg"
   },
   {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249168",
@@ -58856,6 +58960,14 @@
     "name": "Nachfrage zu „Organisierter Sozialbetrug durch rumänische oder bulgarische Staatsbürger?“"
   },
   {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249251",
+    "id": "249251",
+    "date": "2026-08-17",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0253/26",
+    "name": "Variantenentscheidung Radquerung Walter-Rathenau-Straße"
+  },
+  {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249253",
     "id": "249253",
     "date": "2026-06-18",
@@ -59048,6 +59160,22 @@
     "name": "Zielerreichung und Wirksamkeit des Suchtpräventions- und Suchthilfekonzeptes"
   },
   {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249328",
+    "id": "249328",
+    "date": "2026-07-23",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0264/26",
+    "name": "Finanzierung der Baumaßnahme \"Fernwärme-Erschließung Stadtpark\""
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249329",
+    "id": "249329",
+    "date": "2026-07-30",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0265/26",
+    "name": "Jahresabschluss 2025 der Natur- und Kulturpark Elbaue GmbH"
+  },
+  {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249332",
     "id": "249332",
     "date": "2026-06-30",
@@ -59062,6 +59190,14 @@
     "paperType": "Anfrage",
     "reference": "F0224/26",
     "name": "Angebote, Unterstützungsstrukturen und Versorgungslücken für erwachsene Menschen mit Autismus und Neurodivergenz in Magdeburg"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249334",
+    "id": "249334",
+    "date": "2026-07-30",
+    "paperType": "Informationsvorlage",
+    "reference": "I0222/26",
+    "name": "Übersicht zum Stand der Verschuldung der städtischen Gesellschaften und der ihnen gewährten Kommunalbürgschaften, der Entwicklungsmaßnahme Rothensee und der Eigenbetriebe"
   },
   {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249337",
@@ -59240,11 +59376,755 @@
     "name": "70 Jahre Barleber See in 2028"
   },
   {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249394",
+    "id": "249394",
+    "date": "2026-07-28",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0280/26",
+    "name": "Antrag auf Aufnahme und Mitgliedschaft der Landeshauptstadt Magdeburg im Industrieclub Magdeburg e.V."
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249397",
+    "id": "249397",
+    "date": "2026-07-24",
+    "paperType": "Beschlussvorlage EB",
+    "reference": "DS0282/26",
+    "name": "Modernisierung der Stadthalle, Heinrich-Heine-Platz 1 in 39114 Magdeburg, Bestätigung der Kostenerhöhung"
+  },
+  {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249421",
     "id": "249421",
     "date": "2026-07-09",
     "paperType": "Beschlussvorlage",
     "reference": "DS0291/26",
     "name": "Präsentation der Landeshauptstadt Magdeburg auf der Grünen Woche 2027"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249422",
+    "id": "249422",
+    "date": "2026-08-04",
+    "paperType": "Beschlussvorlage EB",
+    "reference": "DS0292/26",
+    "name": "Sanierung der Kindertagesstätte \"Bussi Bär\" und Jugendwerkstatt \"Buntes Werkstattprojekt\", Ferchlander Weg 1 in 39128 Magdeburg – Erhöhung des Kostenrahmens"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249430",
+    "id": "249430",
+    "date": "2026-08-18",
+    "paperType": "Antrag",
+    "reference": "A0143/26",
+    "name": "Machbarkeits- und Kostenprüfung zur Verlegung des Magdeburger Weihnachtsmarktes auf den Domplatz ab dem Jahr 2027"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249432",
+    "id": "249432",
+    "date": "2026-07-30",
+    "paperType": "Informationsvorlage",
+    "reference": "I0232/26",
+    "name": "ZOOLOGISCHER GARTEN MAGDEBURG gGmbH - Umsetzung des Stadtratsbeschlusses vom 04.12.2025"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249433",
+    "id": "249433",
+    "date": "2026-08-20",
+    "paperType": "Beschlussvorlage EB",
+    "reference": "DS0294/26",
+    "name": "Nationales Schwimmzentrum für Deutschland, Neubau einer Schwimmhalle für den Hochleistungs-, Vereins- und Schulsport - Beschluss der EW Bau und Einstellen der Gesamtkosten"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249435",
+    "id": "249435",
+    "date": "2026-09-03",
+    "paperType": "Informationsvorlage",
+    "reference": "I0234/26",
+    "name": "Standort für den Gedenkort des Anschlages vom 20. Dezember 2024"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249470",
+    "id": "249470",
+    "date": "2026-08-05",
+    "paperType": "Beschlussvorlage EB",
+    "reference": "DS0301/26",
+    "name": "Bestellung Beschäftigtenvertreter für den Betriebsausschuss Kommunales Gebäudemanagement"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249489",
+    "id": "249489",
+    "date": "2026-07-30",
+    "paperType": "Beschlussvorlage EB",
+    "reference": "DS0305/26",
+    "name": "Bestellung von weiteren Stellvertretungen für die Beschäftigtenvertretung im Betriebsausschuss des Eigenbetriebes Kommunale Kindertageseinrichtungen Magdeburg (Eb KKM)"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249492",
+    "id": "249492",
+    "date": "2026-08-11",
+    "paperType": "Informationsvorlage",
+    "reference": "I0247/26",
+    "name": "Auswertung der Kontingentsprechtage: Terminfreier Zugang in den Bürgerbüros"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249507",
+    "id": "249507",
+    "date": "2026-08-04",
+    "paperType": "Anfrage",
+    "reference": "F0247/26",
+    "name": "Parteipolitische Neutralität für Fördermittelempfänger – Äußerungen in der Sendung Gute Nacht Magdeburg des Offenen Kanals Magdeburg"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249513",
+    "id": "249513",
+    "date": "2026-07-30",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0313/26",
+    "name": "Genehmigung der Annahme von Sponsoringleistungen gemäß § 99 Abs. 6 KVG LSA"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249516",
+    "id": "249516",
+    "date": "2026-09-03",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0314/26",
+    "name": "Bestandsfähigkeitsindikatoren für die Infrastrukturplanung Tagesbetreuung für Kinder bis unter 7 Jahre ab 2027"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249518",
+    "id": "249518",
+    "date": "2026-08-20",
+    "paperType": "Beschlussvorlage EB",
+    "reference": "DS0316/26",
+    "name": "Jahresabschluss 2025 des Eigenbetriebes Konservatorium Georg Philipp Telemann"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249520",
+    "id": "249520",
+    "date": "2026-08-19",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0318/26",
+    "name": "Finanzierung der Baumaßnahme Magdeburger Ring zwischen den Brücken Damaschkeplatz und Anschluss Ausbau 2. Nord-Süd-Verbindung MVB"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249521",
+    "id": "249521",
+    "date": "2026-08-25",
+    "paperType": "Informationsvorlage",
+    "reference": "I0253/26",
+    "name": "Finanzbericht 2026 zum Stichtag 30.06.2026"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249522",
+    "id": "249522",
+    "date": "2026-07-30",
+    "paperType": "Informationsvorlage",
+    "reference": "I0254/26",
+    "name": "Gestaltungskonzept Außengastronomie, Sondernutzung und Werbung im Erhaltungssatzungsgebiet Domplatz7 Südl. Stadtzentrum"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249531",
+    "id": "249531",
+    "date": "2026-08-05",
+    "paperType": "Informationsvorlage",
+    "reference": "I0257/26",
+    "name": "Terminplanung 2027"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249536",
+    "id": "249536",
+    "date": "2026-08-06",
+    "paperType": "Informationsvorlage",
+    "reference": "I0259/26",
+    "name": "Sponsoringleistungen 2025 für die Landeshauptstadt Magdeburg"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249537",
+    "id": "249537",
+    "date": "2026-08-06",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0325/26",
+    "name": "Verwendung von Mitteln aus dem Infra-SVG, Kommunalarm (Gesetz für das Sondervermögen Infrastruktur)"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249538",
+    "id": "249538",
+    "date": "2026-08-05",
+    "paperType": "Informationsvorlage",
+    "reference": "I0260/26",
+    "name": "Thema: Bericht über Teilnahme der Landeshauptstadt Magdeburg an der 5. Gedenk- und Erinnerungsreise des Riga-Komitees"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249542",
+    "id": "249542",
+    "date": "2026-08-06",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0327/26",
+    "name": "Genehmigung der Annahme von Sponsoringleistungen gemäß § 99 Abs. 6 KVG LSA"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249544",
+    "id": "249544",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0147/26",
+    "name": "Neue Neustadt sauber und lebenswert – Sofortmaßnahmen gegen Vermüllung und für mehr Lebensqualität"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249545",
+    "id": "249545",
+    "date": "2026-08-27",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0329/26",
+    "name": "Neufassung der Vergnügungssteuersatzung"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249550",
+    "id": "249550",
+    "date": "2026-08-07",
+    "paperType": "Informationsvorlage",
+    "reference": "I0261/26",
+    "name": "Ganztagsbetreuung von Schulkindern ab Schuljahr 2026/2027"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249564",
+    "id": "249564",
+    "date": "2026-08-20",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0343/26",
+    "name": "Genehmigung der Annahme von Spenden gem. § 99 Abs. 6 KVG-LSA"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249565",
+    "id": "249565",
+    "date": "2026-08-28",
+    "paperType": "Beschlussvorlage EB",
+    "reference": "DS0344/26",
+    "name": "Neufassung der Friedhofssatzung der Landeshauptstadt Magdeburg"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249577",
+    "id": "249577",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0148/26",
+    "name": "Platz der Deutschen Einheit"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249578",
+    "id": "249578",
+    "date": "2026-08-13",
+    "paperType": "Antrag",
+    "reference": "A0149/26",
+    "name": "Pilotprojekt zur Begrünung der Grundstücksmauer der Grundschule Rothensee prüfen"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249579",
+    "id": "249579",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0150/26",
+    "name": "Befriste Öffnungszeiten Hegelspielplatz"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249580",
+    "id": "249580",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0151/26",
+    "name": "Datenerhebung und Konsequenzen gemäß §4 Grünanlagensatzung"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249581",
+    "id": "249581",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0152/26",
+    "name": "Sport bringt Menschen in die Stadt – Chancen für eine lebendige Innenstadt nutzen"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249584",
+    "id": "249584",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0153/26",
+    "name": "Nationalen Veteranentag in Magdeburg etablieren"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249591",
+    "id": "249591",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0154/26",
+    "name": "Taxifestpreise in Magdeburg ermöglichen"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249592",
+    "id": "249592",
+    "date": "2026-08-25",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0353/26",
+    "name": "Prüfergebnis Umsetzbarkeit und Finanzierung Zwischenvariante für den Bundesstützpunkt Schwimmen bis zur Fertigstellung der Sanierung der Elbeschwimmhalle"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249594",
+    "id": "249594",
+    "date": "2026-08-15",
+    "paperType": "Antrag",
+    "reference": "A0155/26",
+    "name": "Abbau unzumutbarer Wartezeiten bei Einbürgerungen"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249596",
+    "id": "249596",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0156/26",
+    "name": "Kulturerbe-Siegel für den Magdeburger Dom"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249597",
+    "id": "249597",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0157/26",
+    "name": "Wiederinbetriebnahme des Brunnens Leiterstraße 5"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249598",
+    "id": "249598",
+    "date": "2026-08-13",
+    "paperType": "Antrag",
+    "reference": "A0158/26",
+    "name": "Vom Pilotprojekt barriefreie Baustelle lernen"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249599",
+    "id": "249599",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0159/26",
+    "name": "Zebrastreifen Friedrich-Ebert-Straße"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249600",
+    "id": "249600",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0160/26",
+    "name": "Ergänzung der Haus- und Badeordnung für die kommunalen Freibäder – Verbot von Smartglasses"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249604",
+    "id": "249604",
+    "date": "2026-08-13",
+    "paperType": "Anfrage",
+    "reference": "F0248/26",
+    "name": "Entwicklung der Skateanlage am Olvenstedter Scheid"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249609",
+    "id": "249609",
+    "date": "2026-08-14",
+    "paperType": "Antrag",
+    "reference": "A0162/26",
+    "name": "Elektronische Anzeigetafeln für freie Parkplätze an der AVNET-Arena"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249612",
+    "id": "249612",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0164/26",
+    "name": "Strategische Umsetzung der Machbarkeitsstudie „Radschnellverbindungen in der Region Magdeburg“"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249613",
+    "id": "249613",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0165/26",
+    "name": "Touristischer Hinweis auf das Denkmal für das Magdeburger Recht"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249614",
+    "id": "249614",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0166/26",
+    "name": "Verbindliche Umsetzung bestehender Stadtratsbeschlüsse zur Radverkehrsinfrastruktur"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249617",
+    "id": "249617",
+    "date": "2026-09-02",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0359/26",
+    "name": "Erweiterung Stadtarchiv, 2. BA - Mittel aus Infra-SVG"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249618",
+    "id": "249618",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0167/26",
+    "name": "Vereinheitlichung von Funkfrequenzen von Zufahrtsschranken zur Erleichterung der Arbeit bei Müllabfuhr, Rettungsdienst und Co."
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249619",
+    "id": "249619",
+    "date": "2026-08-14",
+    "paperType": "Antrag",
+    "reference": "A0168/26",
+    "name": "Eine Jugendfläche für die Stadt prüfen"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249620",
+    "id": "249620",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0169/26",
+    "name": "Anbringung von weißen Zick-Zack-Linien in der Schillerstraße"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249621",
+    "id": "249621",
+    "date": "2026-08-14",
+    "paperType": "Antrag",
+    "reference": "A0170/26",
+    "name": "Planung und Umsetzung einer besseren Verkehrsinfrastruktur für den gesamten Verkehrsbereich der neuen IGS Willi Brandt in der Listemannstraße"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249623",
+    "id": "249623",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0172/26",
+    "name": "Provisorische Schrotebrücke an der Dehmbergstraße errichten"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249624",
+    "id": "249624",
+    "date": "2026-08-14",
+    "paperType": "Antrag",
+    "reference": "A0173/26",
+    "name": "Sozialleistungsmissbrauch durch Südosteuropäer prüfen!"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249627",
+    "id": "249627",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0174/26",
+    "name": "Fußgänger-Querungsmöglichkeit am Südring"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249628",
+    "id": "249628",
+    "date": "2026-09-01",
+    "paperType": "Antrag",
+    "reference": "A0175/26",
+    "name": "Auswertung der Vorbereitung und Durchführung der Umsetzung des Stadtratsbeschlusses zum A0014/26 zu einem Lokaltermin am Südring sowie Ergebnissicherung"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249629",
+    "id": "249629",
+    "date": "2026-09-03",
+    "paperType": "Informationsvorlage",
+    "reference": "I0271/26",
+    "name": "Weiterentwicklung des IBA-Shops (Sachstand)"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249635",
+    "id": "249635",
+    "date": "2026-08-18",
+    "paperType": "Anfrage",
+    "reference": "F0249/26",
+    "name": "Beflaggung am Alten Rathaus"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249636",
+    "id": "249636",
+    "date": "2026-08-18",
+    "paperType": "Anfrage",
+    "reference": "F0250/26",
+    "name": "Nordverbinder"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249665",
+    "id": "249665",
+    "date": "2026-09-03",
+    "paperType": "Informationsvorlage",
+    "reference": "I0282/26",
+    "name": "Informationen zu operativen und mittelfristigen Hitzeschutzmaßnahmen der Landeshauptstadt Magdeburg"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249667",
+    "id": "249667",
+    "date": "2026-08-24",
+    "paperType": "Anfrage",
+    "reference": "F0251/26",
+    "name": "Ferien beendet – befindet sich Magdeburgs Baustellenplanung noch im Urlaubsmodus?"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249669",
+    "id": "249669",
+    "date": "2026-08-24",
+    "paperType": "Anfrage",
+    "reference": "F0252/26",
+    "name": "Umsetzung der Präventionsketten in der Landeshauptstadt Magdeburg"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249670",
+    "id": "249670",
+    "date": "2026-08-24",
+    "paperType": "Anfrage",
+    "reference": "F0253/26",
+    "name": "Sachstand zur Wiederbesetzung der Stelle der Kinderbeauftragten"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249672",
+    "id": "249672",
+    "date": "2026-08-25",
+    "paperType": "Anfrage",
+    "reference": "F0254/26",
+    "name": "Umgang mit an HIV-erkrankten Patient:innen in städtischen Pflegeheimen"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249673",
+    "id": "249673",
+    "date": "2026-08-25",
+    "paperType": "Anfrage",
+    "reference": "F0255/26",
+    "name": "Unterstützung von Mieterinnen und Mietern bei der Einstellung von Strom -und Wasser-versorgung"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249678",
+    "id": "249678",
+    "date": "2026-08-25",
+    "paperType": "Anfrage",
+    "reference": "F0256/26",
+    "name": "Illegale Müllablagerungen und ordnungsrechtliche Durchsetzung in der Landeshauptstadt Magdeburg"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249685",
+    "id": "249685",
+    "date": "2026-08-27",
+    "paperType": "Anfrage",
+    "reference": "F0257/26",
+    "name": "Kosten und Sicherheitsmaßnahmen des CSD Magdeburg 2026"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249686",
+    "id": "249686",
+    "date": "2026-08-25",
+    "paperType": "Anfrage",
+    "reference": "F0258/26",
+    "name": "Illegale Graffiti zur CSD-Aktionswoche"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249687",
+    "id": "249687",
+    "date": "2026-08-25",
+    "paperType": "Anfrage",
+    "reference": "F0259/26",
+    "name": "Tempo-30-Strecke in der Zerrennerstraße"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249689",
+    "id": "249689",
+    "date": "2026-08-25",
+    "paperType": "Anfrage",
+    "reference": "F0260/26",
+    "name": "Nachfragen zur Information I0107/26 - Tempo 30-Zone vor der Kita Weltenbummler prüfen"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249691",
+    "id": "249691",
+    "date": "2026-08-25",
+    "paperType": "Anfrage",
+    "reference": "F0261/26",
+    "name": "Umsetzung des Landeskonzepts für Katastrophenschutz-Leuchttürme in der Landeshauptstadt Magdeburg"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249693",
+    "id": "249693",
+    "date": "2026-08-25",
+    "paperType": "Anfrage",
+    "reference": "F0262/26",
+    "name": "JVA Magdeburg"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249695",
+    "id": "249695",
+    "date": "2026-08-25",
+    "paperType": "Anfrage",
+    "reference": "F0263/26",
+    "name": "Zukunft und Entwicklungsperspektiven des Biotops ehemaliges Hellas-Bad"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249696",
+    "id": "249696",
+    "date": "2026-08-26",
+    "paperType": "Anfrage",
+    "reference": "F0264/26",
+    "name": "Mehr Barrierefreiheit im städtischen Raum – Einführung des Sonnenblumenbandes"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249697",
+    "id": "249697",
+    "date": "2026-08-26",
+    "paperType": "Anfrage",
+    "reference": "F0265/26",
+    "name": "Bruchgefährdeter Baum im Herrenkrugpark"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249698",
+    "id": "249698",
+    "date": "2026-08-26",
+    "paperType": "Anfrage",
+    "reference": "F0266/26",
+    "name": "Einführung von Verwaltungsgebühren bei Anträgen auf Beschulung außerhalb des Einzugsbereiches nach Änderung der Grundschulbezirke"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249700",
+    "id": "249700",
+    "date": "2026-08-26",
+    "paperType": "Anfrage",
+    "reference": "F0267/26",
+    "name": "Grundhafter Ausbau Simonstraße"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249701",
+    "id": "249701",
+    "date": "2026-08-26",
+    "paperType": "Anfrage",
+    "reference": "F0268/26",
+    "name": "Aktueller Umsetzungsstand – Parkausweise für Handwerksbetriebe und Gesundheitsdienstleister"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249706",
+    "id": "249706",
+    "date": "2026-08-26",
+    "paperType": "Antrag",
+    "reference": "A0178/26",
+    "name": "Temporäre Anpassung der Verkehrsführung an der Tangenten-Abfahrt zur Albert-Vater-Straße (B1) aus Richtung Norden kommend"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249707",
+    "id": "249707",
+    "date": "2026-08-27",
+    "paperType": "Anfrage",
+    "reference": "F0270/26",
+    "name": "Kostenexplosion bei der Sanierung der Stadthalle"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249713",
+    "id": "249713",
+    "date": "2026-08-27",
+    "paperType": "Anfrage",
+    "reference": "F0271/26",
+    "name": "Sichtbarkeit von Trinkwasserspendern"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249714",
+    "id": "249714",
+    "date": "2026-08-27",
+    "paperType": "Anfrage",
+    "reference": "F0272/26",
+    "name": "Stadtweg – aktueller Planungsstand und Baumfällungen"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249715",
+    "id": "249715",
+    "date": "2026-08-27",
+    "paperType": "Anfrage",
+    "reference": "F0273/26",
+    "name": "Erweiterte Öffnungszeiten für Bäder und Saunen während des Umbaus der Elbeschwimmhalle"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249716",
+    "id": "249716",
+    "date": "2026-08-27",
+    "paperType": "Anfrage",
+    "reference": "F0274/26",
+    "name": "Wiederherstellung des Mosaiks „Blaues Band“ in der Kreuzgangstraße"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249717",
+    "id": "249717",
+    "date": "2026-08-27",
+    "paperType": "Anfrage",
+    "reference": "F0275/26",
+    "name": "Wartezeit für Fuß- und Radverkehr am Europaring"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249718",
+    "id": "249718",
+    "date": "2026-08-27",
+    "paperType": "Anfrage",
+    "reference": "F0276/26",
+    "name": "Erneute Nachfrage zur Kaltlufthalle Diesdorf"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249719",
+    "id": "249719",
+    "date": "2026-08-27",
+    "paperType": "Anfrage",
+    "reference": "F0277/26",
+    "name": "Fahrzeugmaterial Buslinie 58"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249720",
+    "id": "249720",
+    "date": "2026-08-27",
+    "paperType": "Anfrage",
+    "reference": "F0278/26",
+    "name": "Baumfällungen im Zuge von Baugenehmigungsverfahren"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249726",
+    "id": "249726",
+    "date": "2026-08-27",
+    "paperType": "Anfrage",
+    "reference": "F0279/26",
+    "name": "Praktische Hilfe für Mieter bei Versorgungsabschaltungen"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249728",
+    "id": "249728",
+    "date": "2026-08-27",
+    "paperType": "Anfrage",
+    "reference": "F0280/26",
+    "name": "Magdeburger ZOO-Tiere bald ohne Pflege-Personal?"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249729",
+    "id": "249729",
+    "date": "2026-08-27",
+    "paperType": "Anfrage",
+    "reference": "F0281/26",
+    "name": "Verbleib bzw. Beantwortung der Fragen der Kinder vom Gang des Magdeburger Rechts 2025"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249738",
+    "id": "249738",
+    "date": "2026-08-31",
+    "paperType": "Anfrage",
+    "reference": "F0282/26",
+    "name": "Parkplätze und Umleitungen im Stadtpark"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249740",
+    "id": "249740",
+    "date": "2026-08-31",
+    "paperType": "Anfrage",
+    "reference": "F0283/26",
+    "name": "Politische Neutralität und Öffentlichkeitsarbeit der GWA Buckau - Ravedemo Sommerfest"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249743",
+    "id": "249743",
+    "date": "2026-09-01",
+    "paperType": "Änderungsantrag",
+    "reference": "A0022/26/1",
+    "name": "Mein Name ist - Bürgerfreundlichere Verwaltung"
   }
 ]
