@@ -165,6 +165,24 @@
         "organization": "Finanz- und Grundstücksausschuss",
         "agendaItem": "7.1",
         "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-06-11T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "7.4",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "9.16",
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 247187,
@@ -534,7 +552,9 @@
       }
     ],
     "rootPaperId": 248415,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249586
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -1694,6 +1714,34 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "6.16",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-04-16T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "7.8",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-05-21T14:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "10.12",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-05-21"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-05-26T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "10.12",
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-05-26"
       }
     ],
     "rootPaperId": 246608,
@@ -2302,6 +2350,34 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "9.24",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-04-16T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "6.5.4",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-05-21T14:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "7.21.1",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-05-21"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-05-26T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "7.21.1",
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-05-26"
       }
     ],
     "rootPaperId": 248201,
@@ -2500,6 +2576,16 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "5.10",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "9.17",
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 248211,
@@ -2518,7 +2604,7 @@
         "id": 739884,
         "name": "S0133/26 Stellungnahme (Antrag)",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=739884&type=do",
-        "size": null
+        "size": 51365
       }
     ],
     "consultations": [
@@ -2545,6 +2631,34 @@
         "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
         "agendaItem": "6.6.1",
         "result": "vertagt"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-06-11T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "6.3.1",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "7.19.1",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-31T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "7.19.1",
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-31"
       }
     ],
     "rootPaperId": 248149,

@@ -2708,6 +2708,22 @@
             "organization": "Betriebsausschuss Stadtgarten und Friedhöfe Magdeburg",
             "agendaItem": "7.1",
             "result": "zur Kenntnis genommen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+            "date": "2026-08-20T15:30:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+            "agendaItem": "8.6",
+            "result": "zur Kenntnis genommen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+            "date": "2026-09-02T16:30:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Finanz- und Grundstücksausschuss",
+            "agendaItem": "7.4",
+            "result": "zur Kenntnis genommen"
           }
         ],
         "rootPaperId": 247388,
@@ -2977,7 +2993,8 @@
         ],
         "rootPaperId": 247391,
         "subordinatedPaperIds": [
-          247961
+          247961,
+          249444
         ],
         "superOrdinatedPaperIds": []
       },
@@ -3025,6 +3042,49 @@
             "role": "Kenntnisnahme",
             "organization": "Ausschuss für kommunale Rechts- und Bürgerangelegenheiten",
             "agendaItem": "9.1",
+            "result": "zur Kenntnis genommen"
+          }
+        ],
+        "rootPaperId": 247391,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          247391
+        ]
+      },
+      {
+        "id": 249444,
+        "reference": "I0237/26",
+        "type": "Informationsvorlage",
+        "title": "Umweltzonen überprüfen",
+        "files": [
+          {
+            "id": 747847,
+            "name": "Information",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747847&type=do",
+            "size": null
+          },
+          {
+            "id": 748732,
+            "name": "I023726 - Anlage 1 Schreiben des Ministeriums für Wissenschaft, Energie, Klimaschutz und Umwelt",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748732&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-08-03T13:30:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "4.10",
+            "result": "genehmigt OB"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+            "date": "2026-08-18T17:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Ausschuss für Umwelt und Energie",
+            "agendaItem": "5.3",
             "result": "zur Kenntnis genommen"
           }
         ],

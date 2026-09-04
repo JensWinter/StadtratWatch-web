@@ -2836,6 +2836,22 @@
             "organization": "Die Oberbürgermeisterin",
             "agendaItem": "4.7",
             "result": "genehmigt OB"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Gesundheits- und Sozialausschusses",
+            "date": "2026-08-19T17:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Gesundheits- und Sozialausschuss",
+            "agendaItem": "7.6",
+            "result": "zur Kenntnis genommen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Jugendhilfeausschusses",
+            "date": "2026-08-20T16:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Jugendhilfeausschuss",
+            "agendaItem": "6.3",
+            "result": "zur Kenntnis genommen"
           }
         ],
         "rootPaperId": 245841,

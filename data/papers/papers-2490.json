@@ -335,7 +335,9 @@
       }
     ],
     "rootPaperId": 249009,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249128
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -450,6 +452,30 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "9.13",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-08-18T17:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "4.3.1",
+        "result": null
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "7.4.2",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Bildung, Schule und Sport",
+        "date": "2026-08-25T16:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Bildung, Schule und Sport",
+        "agendaItem": "7.4.2",
+        "result": "zur Kenntnis genommen"
       }
     ],
     "rootPaperId": 248653,
@@ -661,7 +687,9 @@
       }
     ],
     "rootPaperId": 249028,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249130
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -693,6 +721,53 @@
     "subordinatedPaperIds": [
       249215
     ],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249037,
+    "reference": "I0177/26",
+    "type": "Informationsvorlage",
+    "title": "Blumenwiesen in der Landeshauptstadt Magdeburg - Gestaltung, ökologische Aufwertung und Stadtbildpflege im Bereich der Kaiser-Otto-Brücke sowie weiterer geeigneter Standorte",
+    "files": [
+      {
+        "id": 744580,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=744580&type=do",
+        "size": null
+      },
+      {
+        "id": 744801,
+        "name": "I0177/26 - Anlage 2 - Visualisierung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=744801&type=do",
+        "size": null
+      },
+      {
+        "id": 748352,
+        "name": "I0177/26 - Anlage 1 - Lageplan",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748352&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-03T13:30:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "4.12",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-08-18T17:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "5.2",
+        "result": "zur Kenntnis genommen"
+      }
+    ],
+    "rootPaperId": 249037,
+    "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": []
   },
   {
@@ -845,7 +920,7 @@
         "result": "genehmigt OB"
       }
     ],
-    "rootPaperId": 249044,
+    "rootPaperId": 248974,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": [
       248974
@@ -957,10 +1032,28 @@
         "result": "in die Ausschüsse verwiesen",
         "parliamentPeriodId": "magdeburg-8",
         "sessionId": "2026-06-18"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "7.13",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für kommunale Rechts- und Bürgerangelegenheiten",
+        "date": "2026-08-20T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für kommunale Rechts- und Bürgerangelegenheiten",
+        "agendaItem": "5.11",
+        "result": "nicht empfohlen"
       }
     ],
     "rootPaperId": 249050,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249486
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -1054,10 +1147,28 @@
         "result": "in die Ausschüsse verwiesen",
         "parliamentPeriodId": "magdeburg-8",
         "sessionId": "2026-06-18"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "7.9",
+        "result": "zurückgestellt"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Jugendhilfeausschusses",
+        "date": "2026-08-20T16:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Jugendhilfeausschuss",
+        "agendaItem": "5.3",
+        "result": "vertagt"
       }
     ],
     "rootPaperId": 249054,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249420
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -1274,7 +1385,9 @@
       }
     ],
     "rootPaperId": 249070,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249702
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -1327,6 +1440,22 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "9.15",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Kulturausschusses",
+        "date": "2026-08-19T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Kulturausschuss",
+        "agendaItem": "4.2.1",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "7.18.1",
+        "result": "zur Kenntnis genommen"
       }
     ],
     "rootPaperId": 249073,
@@ -1421,6 +1550,22 @@
         "role": "Kenntnisnahme",
         "organization": "Betriebsausschuss Stadtgarten und Friedhöfe Magdeburg",
         "agendaItem": "7.1",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "8.6",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-09-02T16:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "7.4",
         "result": "zur Kenntnis genommen"
       }
     ],
@@ -1581,6 +1726,30 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "9.14",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-08-18T17:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "4.4.1",
+        "result": null
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "7.3.1",
+        "result": "zurückgestellt"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Bildung, Schule und Sport",
+        "date": "2026-08-25T16:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Bildung, Schule und Sport",
+        "agendaItem": "7.2.1",
+        "result": "zur Kenntnis genommen"
       }
     ],
     "rootPaperId": 248660,
@@ -1588,6 +1757,30 @@
     "superOrdinatedPaperIds": [
       248660
     ]
+  },
+  {
+    "id": 249094,
+    "reference": "F0182/26",
+    "type": "Anfrage",
+    "title": "Fußverkehrsführung Lassallestraße / Herweghstraße / Zuckerbusch",
+    "files": [],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "8.14",
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
+      }
+    ],
+    "rootPaperId": 249094,
+    "subordinatedPaperIds": [
+      249335
+    ],
+    "superOrdinatedPaperIds": []
   },
   {
     "id": 249095,
@@ -1639,6 +1832,22 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "8.11",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "7.11.1",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Jugendhilfeausschusses",
+        "date": "2026-08-20T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Jugendhilfeausschuss",
+        "agendaItem": "5.2.1",
+        "result": "zur Kenntnis genommen"
       }
     ],
     "rootPaperId": 248876,
@@ -1668,6 +1877,22 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "8.12",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "7.12.1",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-09-02T16:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "6.7.1",
+        "result": "zur Kenntnis genommen"
       }
     ],
     "rootPaperId": 248871,

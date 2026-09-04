@@ -2811,7 +2811,7 @@
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Betriebsausschusses Städtischer Abfallwirtschaftsbetrieb",
-            "date": "2026-03-03T16:30:00+01:00",
+            "date": "2026-03-03T16:40:00+01:00",
             "role": "Beratung",
             "organization": "Betriebsausschuss Städtischer Abfallwirtschaftsbetrieb",
             "agendaItem": "8.3",
@@ -2885,7 +2885,7 @@
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Betriebsausschusses Städtischer Abfallwirtschaftsbetrieb",
-            "date": "2026-03-03T16:30:00+01:00",
+            "date": "2026-03-03T16:40:00+01:00",
             "role": "Kenntnisnahme",
             "organization": "Betriebsausschuss Städtischer Abfallwirtschaftsbetrieb",
             "agendaItem": "8.3.1",
@@ -3253,6 +3253,24 @@
             "organization": "Finanz- und Grundstücksausschuss",
             "agendaItem": "7.1",
             "result": "zur Kenntnis genommen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+            "date": "2026-06-11T16:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+            "agendaItem": "7.4",
+            "result": "zur Kenntnis genommen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-06-18T14:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.16",
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-06-18"
           }
         ],
         "rootPaperId": 247187,

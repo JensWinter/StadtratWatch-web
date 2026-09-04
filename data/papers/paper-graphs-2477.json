@@ -1155,6 +1155,36 @@
             "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
             "agendaItem": "6.6.1",
             "result": "zur Kenntnis genommen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-04-23T14:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "6.7.1",
+            "result": "zurückgestellt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-04-23"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "7.22.1",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "7.22.1",
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
           }
         ],
         "rootPaperId": 247725,
@@ -1701,6 +1731,16 @@
             "result": "abgelehnt",
             "parliamentPeriodId": "magdeburg-8",
             "sessionId": "2026-02-26"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "6.13",
+            "result": "abgelehnt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
           }
         ],
         "rootPaperId": 247755,

@@ -1063,6 +1063,24 @@
         "organization": "Ausschuss für Umwelt und Energie",
         "agendaItem": "5.2",
         "result": "vertagt"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-06-09T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "5.2",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "5.20",
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 248028,
@@ -2683,31 +2701,31 @@
         "id": 738494,
         "name": "DS0018_26 - Anlage 1 Übersichtskarte",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=738494&type=do",
-        "size": null
+        "size": 4587943
       },
       {
         "id": 738495,
         "name": "DS0018_26 - Anlage 2 Lageplan Konzept",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=738495&type=do",
-        "size": null
+        "size": 5770621
       },
       {
         "id": 738496,
         "name": "DS0018_26 - Anlage 3 Kostenannahme",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=738496&type=do",
-        "size": null
+        "size": 1619842
       },
       {
         "id": 738497,
         "name": "DS0018_26 - Anlage 4 Fotodokumentation",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=738497&type=do",
-        "size": null
+        "size": 333304
       },
       {
         "id": 738499,
         "name": "DS0018/26 Beschlussvorlage",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=738499&type=do",
-        "size": null
+        "size": 214148
       }
     ],
     "consultations": [
@@ -2726,6 +2744,24 @@
         "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
         "agendaItem": "5.7",
         "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-06-24T16:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "5.2",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.27",
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
       }
     ],
     "rootPaperId": 248072,

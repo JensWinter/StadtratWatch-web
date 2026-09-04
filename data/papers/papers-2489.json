@@ -310,13 +310,13 @@
         "id": 746912,
         "name": "DS0197/26 - Anlage 1 Abwägungskatalog",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746912&type=do",
-        "size": null
+        "size": 847768
       },
       {
         "id": 746914,
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746914&type=do",
-        "size": null
+        "size": 166860
       }
     ],
     "consultations": [
@@ -327,6 +327,32 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "2.10",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-08-18T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "3.12",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "6.14",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.33",
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
       }
     ],
     "rootPaperId": 248912,
@@ -343,25 +369,25 @@
         "id": 746920,
         "name": "DS0198/26 - Anlage 1 Lageplan",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746920&type=do",
-        "size": null
+        "size": 744636
       },
       {
         "id": 746921,
         "name": "DS0198/26 - Anlage 2 B-Plan",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746921&type=do",
-        "size": null
+        "size": 5823912
       },
       {
         "id": 746923,
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746923&type=do",
-        "size": null
+        "size": 165139
       },
       {
         "id": 747729,
         "name": "DS0198/26 - Anlage 3 Begründung",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747729&type=do",
-        "size": null
+        "size": 1499589
       }
     ],
     "consultations": [
@@ -372,6 +398,32 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "2.11",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-08-18T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "3.13",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "6.15",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.34",
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
       }
     ],
     "rootPaperId": 248913,
@@ -469,6 +521,16 @@
         "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
         "agendaItem": "7.6",
         "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-06-18T14:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "9.19",
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-06-18"
       }
     ],
     "rootPaperId": 248917,
@@ -485,13 +547,13 @@
         "id": 743545,
         "name": "Information",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743545&type=do",
-        "size": null
+        "size": 40479
       },
       {
         "id": 743546,
         "name": "I0161/26 - Anlage 1 Entwurfskizzen",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743546&type=do",
-        "size": null
+        "size": 162729
       }
     ],
     "consultations": [
@@ -510,6 +572,40 @@
         "organization": "Ausschuss für Wirtschaftsförderung, Tourismus und regionale Entwicklung",
         "agendaItem": "6.6",
         "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Kulturausschusses",
+        "date": "2026-06-24T17:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Kulturausschuss",
+        "agendaItem": "6.1",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Betriebsausschusses Kommunales Gebäudemanagement",
+        "date": "2026-08-18T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Betriebsausschuss Kommunales Gebäudemanagement",
+        "agendaItem": "7.2",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-08-19T16:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "7.2",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "10.17",
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
       }
     ],
     "rootPaperId": 248918,
@@ -628,10 +724,22 @@
         "result": "vertagt",
         "parliamentPeriodId": "magdeburg-8",
         "sessionId": "2026-05-21"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-05-26T16:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "9.14",
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-05-26"
       }
     ],
     "rootPaperId": 248923,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249428
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -1221,7 +1329,7 @@
         "result": "genehmigt OB"
       }
     ],
-    "rootPaperId": 248954,
+    "rootPaperId": 248806,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": [
       248806
@@ -1237,7 +1345,7 @@
         "id": 743898,
         "name": "Information",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743898&type=do",
-        "size": null
+        "size": 104597
       }
     ],
     "consultations": [
@@ -1248,6 +1356,32 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "5.3",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-08-18T17:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "5.1",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "8.14",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "10.26",
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
       }
     ],
     "rootPaperId": 248955,
@@ -1335,6 +1469,49 @@
     ]
   },
   {
+    "id": 248960,
+    "reference": "I0168/26",
+    "type": "Informationsvorlage",
+    "title": "Sachstand Pflegekonferenz",
+    "files": [
+      {
+        "id": 743948,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=743948&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-28T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "5.5",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Gesundheits- und Sozialausschusses",
+        "date": "2026-08-19T17:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Gesundheits- und Sozialausschuss",
+        "agendaItem": "7.1",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Jugendhilfeausschusses",
+        "date": "2026-08-20T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Jugendhilfeausschuss",
+        "agendaItem": "6.1",
+        "result": "zur Kenntnis genommen"
+      }
+    ],
+    "rootPaperId": 248960,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
     "id": 248961,
     "reference": "S0242/26",
     "type": "Stellungnahme (Anfrage)",
@@ -1357,7 +1534,7 @@
         "result": "genehmigt OB"
       }
     ],
-    "rootPaperId": 248961,
+    "rootPaperId": 248584,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": [
       248584
@@ -1386,10 +1563,22 @@
         "result": "vertagt",
         "parliamentPeriodId": "magdeburg-8",
         "sessionId": "2026-05-21"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-05-26T16:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "9.23",
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-05-26"
       }
     ],
     "rootPaperId": 248962,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249126
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -1705,7 +1894,9 @@
       }
     ],
     "rootPaperId": 248974,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249044
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -2504,6 +2695,22 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "9.11",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-08-18T17:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "4.1.1",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-08-19T16:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "6.1.1",
+        "result": "zur Kenntnis genommen"
       }
     ],
     "rootPaperId": 248999,

@@ -2346,7 +2346,8 @@
         ],
         "rootPaperId": 247669,
         "subordinatedPaperIds": [
-          247905
+          247905,
+          249454
         ],
         "superOrdinatedPaperIds": []
       },
@@ -2399,6 +2400,43 @@
             "result": "zur Kenntnis genommen",
             "parliamentPeriodId": "magdeburg-8",
             "sessionId": "2026-03-30"
+          }
+        ],
+        "rootPaperId": 247669,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          247669
+        ]
+      },
+      {
+        "id": 249454,
+        "reference": "I0240/26",
+        "type": "Informationsvorlage",
+        "title": "Mehr Sicherheit für Fußgänger und Radfahrer – Gübser Weg / Leineweberstraße",
+        "files": [
+          {
+            "id": 747929,
+            "name": "Information",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747929&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-07-28T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "5.10",
+            "result": "genehmigt OB"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+            "date": "2026-08-20T15:30:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+            "agendaItem": "8.3",
+            "result": "zur Kenntnis genommen"
           }
         ],
         "rootPaperId": 247669,
@@ -3207,7 +3245,7 @@
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Betriebsausschusses Städtischer Abfallwirtschaftsbetrieb",
-            "date": "2026-03-03T16:30:00+01:00",
+            "date": "2026-03-03T16:40:00+01:00",
             "role": "Beratung",
             "organization": "Betriebsausschuss Städtischer Abfallwirtschaftsbetrieb",
             "agendaItem": "8.1",
@@ -3272,7 +3310,7 @@
           },
           {
             "meeting": "öffentliche/nicht öffentliche Sitzung des Betriebsausschusses Städtischer Abfallwirtschaftsbetrieb",
-            "date": "2026-03-03T16:30:00+01:00",
+            "date": "2026-03-03T16:40:00+01:00",
             "role": "Kenntnisnahme",
             "organization": "Betriebsausschuss Städtischer Abfallwirtschaftsbetrieb",
             "agendaItem": "8.1.1",

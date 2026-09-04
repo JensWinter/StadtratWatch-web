@@ -1,0 +1,1623 @@
+[
+  {
+    "rootPaperId": 249600,
+    "papers": [
+      {
+        "id": 249600,
+        "reference": "A0160/26",
+        "type": "Antrag",
+        "title": "Ergänzung der Haus- und Badeordnung für die kommunalen Freibäder – Verbot von Smartglasses",
+        "files": [
+          {
+            "id": 749468,
+            "name": "A0160/26 Antrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749468&type=do",
+            "size": 55193
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.36",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.36",
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
+          }
+        ],
+        "rootPaperId": 249600,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249604,
+    "papers": [
+      {
+        "id": 249604,
+        "reference": "F0248/26",
+        "type": "Anfrage",
+        "title": "Entwicklung der Skateanlage am Olvenstedter Scheid",
+        "files": [
+          {
+            "id": 749411,
+            "name": "Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749411&type=do",
+            "size": 69712
+          },
+          {
+            "id": 749412,
+            "name": "Anlage_SkateanlageOlvenstedt",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749412&type=do",
+            "size": 6470545
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.2",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249604,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249607,
+    "papers": [
+      {
+        "id": 249607,
+        "reference": "S0441/26",
+        "type": "Stellungnahme (Anfrage)",
+        "title": "Bilanz des vergangenen Hitzewochenendes und Hitzeanpassungsmaßnahmen der Landeshauptstadt Magdeburg",
+        "files": [
+          {
+            "id": 749417,
+            "name": "Stellungnahme (Anfrage)",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749417&type=do",
+            "size": null
+          },
+          {
+            "id": 749424,
+            "name": "Anlage 1 - Klimamaßnahmen HHP 2027",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749424&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-08-25T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "8.4",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 249607,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          249338
+        ]
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249609,
+    "papers": [
+      {
+        "id": 249609,
+        "reference": "A0162/26",
+        "type": "Antrag",
+        "title": "Elektronische Anzeigetafeln für freie Parkplätze an der AVNET-Arena",
+        "files": [
+          {
+            "id": 749485,
+            "name": "A0162/26 Antrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749485&type=do",
+            "size": 14942
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.41",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.41",
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
+          }
+        ],
+        "rootPaperId": 249609,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249612,
+    "papers": [
+      {
+        "id": 249612,
+        "reference": "A0164/26",
+        "type": "Antrag",
+        "title": "Strategische Umsetzung der Machbarkeitsstudie „Radschnellverbindungen in der Region Magdeburg“",
+        "files": [
+          {
+            "id": 749445,
+            "name": "Antrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749445&type=do",
+            "size": 98736
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.35",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.35",
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
+          }
+        ],
+        "rootPaperId": 249612,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249613,
+    "papers": [
+      {
+        "id": 249613,
+        "reference": "A0165/26",
+        "type": "Antrag",
+        "title": "Touristischer Hinweis auf das Denkmal für das Magdeburger Recht",
+        "files": [
+          {
+            "id": 749447,
+            "name": "Antrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749447&type=do",
+            "size": 14344
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.34",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.34",
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
+          }
+        ],
+        "rootPaperId": 249613,
+        "subordinatedPaperIds": [
+          249690
+        ],
+        "superOrdinatedPaperIds": []
+      },
+      {
+        "id": 249690,
+        "reference": "A0165/26/1",
+        "type": "Änderungsantrag",
+        "title": "Touristischer Hinweis auf das Denkmal für das Magdeburger Recht",
+        "files": [
+          {
+            "id": 750175,
+            "name": "A0165/26/1 - Änderungsantrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750175&type=do",
+            "size": 15593
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.34.1",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.34.1",
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
+          }
+        ],
+        "rootPaperId": 249613,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          249613
+        ]
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249614,
+    "papers": [
+      {
+        "id": 249614,
+        "reference": "A0166/26",
+        "type": "Antrag",
+        "title": "Verbindliche Umsetzung bestehender Stadtratsbeschlüsse zur Radverkehrsinfrastruktur",
+        "files": [
+          {
+            "id": 749452,
+            "name": "Antrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749452&type=do",
+            "size": 63900
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.33",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.33",
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
+          }
+        ],
+        "rootPaperId": 249614,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249617,
+    "papers": [
+      {
+        "id": 249617,
+        "reference": "DS0359/26",
+        "type": "Beschlussvorlage",
+        "title": "Erweiterung Stadtarchiv, 2. BA - Mittel aus Infra-SVG",
+        "files": [
+          {
+            "id": 749491,
+            "name": "Beschlussvorlage Stadt",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749491&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-09-02T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "3.7",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 249617,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249618,
+    "papers": [
+      {
+        "id": 249618,
+        "reference": "A0167/26",
+        "type": "Antrag",
+        "title": "Vereinheitlichung von Funkfrequenzen von Zufahrtsschranken zur Erleichterung der Arbeit bei Müllabfuhr, Rettungsdienst und Co.",
+        "files": [
+          {
+            "id": 749502,
+            "name": "A0167/26 Antrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749502&type=do",
+            "size": 63453
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.42",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.42",
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
+          }
+        ],
+        "rootPaperId": 249618,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249619,
+    "papers": [
+      {
+        "id": 249619,
+        "reference": "A0168/26",
+        "type": "Antrag",
+        "title": "Eine Jugendfläche für die Stadt prüfen",
+        "files": [
+          {
+            "id": 749505,
+            "name": "A0168/26 Antrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749505&type=do",
+            "size": 60907
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.43",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.43",
+            "result": "ungeändert beschlossen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
+          }
+        ],
+        "rootPaperId": 249619,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249620,
+    "papers": [
+      {
+        "id": 249620,
+        "reference": "A0169/26",
+        "type": "Antrag",
+        "title": "Anbringung von weißen Zick-Zack-Linien in der Schillerstraße",
+        "files": [
+          {
+            "id": 749507,
+            "name": "A0169/26 Antrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749507&type=do",
+            "size": 60219
+          },
+          {
+            "id": 749508,
+            "name": "A0169/26 Anlage zum Antrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749508&type=do",
+            "size": 609582
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.44",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.44",
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
+          }
+        ],
+        "rootPaperId": 249620,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249621,
+    "papers": [
+      {
+        "id": 249621,
+        "reference": "A0170/26",
+        "type": "Antrag",
+        "title": "Planung und Umsetzung einer besseren Verkehrsinfrastruktur für den gesamten Verkehrsbereich der neuen IGS Willi Brandt in der Listemannstraße",
+        "files": [
+          {
+            "id": 749510,
+            "name": "A0170/26 Antrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749510&type=do",
+            "size": 61249
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.47",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.47",
+            "result": "geändert beschlossen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
+          }
+        ],
+        "rootPaperId": 249621,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249623,
+    "papers": [
+      {
+        "id": 249623,
+        "reference": "A0172/26",
+        "type": "Antrag",
+        "title": "Provisorische Schrotebrücke an der Dehmbergstraße errichten",
+        "files": [
+          {
+            "id": 749514,
+            "name": "Antrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749514&type=do",
+            "size": 15186
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.46",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.46",
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
+          }
+        ],
+        "rootPaperId": 249623,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249624,
+    "papers": [
+      {
+        "id": 249624,
+        "reference": "A0173/26",
+        "type": "Antrag",
+        "title": "Sozialleistungsmissbrauch durch Südosteuropäer prüfen!",
+        "files": [
+          {
+            "id": 749516,
+            "name": "Antrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749516&type=do",
+            "size": 76799
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.45",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.45",
+            "result": "abgelehnt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
+          }
+        ],
+        "rootPaperId": 249624,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249627,
+    "papers": [
+      {
+        "id": 249627,
+        "reference": "A0174/26",
+        "type": "Antrag",
+        "title": "Fußgänger-Querungsmöglichkeit am Südring",
+        "files": [
+          {
+            "id": 749518,
+            "name": "A01474/26 Antrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749518&type=do",
+            "size": 13908
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.48",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.48",
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
+          }
+        ],
+        "rootPaperId": 249627,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249628,
+    "papers": [
+      {
+        "id": 249628,
+        "reference": "A0175/26",
+        "type": "Antrag",
+        "title": "Auswertung der Vorbereitung und Durchführung der Umsetzung des Stadtratsbeschlusses zum A0014/26 zu einem Lokaltermin am Südring sowie Ergebnissicherung",
+        "files": [
+          {
+            "id": 749520,
+            "name": "A0175/26 Antrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749520&type=do",
+            "size": 62935
+          },
+          {
+            "id": 749521,
+            "name": "A0175/26 Anlage 2 Stadtratsausweis",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749521&type=do",
+            "size": 413131
+          },
+          {
+            "id": 749522,
+            "name": "A0175/26 Anlage 1 VerfuegungAnfragenStadtratsmitgliedern",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749522&type=do",
+            "size": 204510
+          },
+          {
+            "id": 749523,
+            "name": "A0175/26 Anlage 3",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749523&type=do",
+            "size": 186772
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.49",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Beschlussfassung",
+            "organization": "Stadtrat",
+            "agendaItem": "7.49",
+            "result": "in die Ausschüsse verwiesen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
+          }
+        ],
+        "rootPaperId": 249628,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249629,
+    "papers": [
+      {
+        "id": 249629,
+        "reference": "I0271/26",
+        "type": "Informationsvorlage",
+        "title": "Weiterentwicklung des IBA-Shops (Sachstand)",
+        "files": [
+          {
+            "id": 750930,
+            "name": "Information",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750930&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-09-02T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "5.5",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 249629,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249634,
+    "papers": [
+      {
+        "id": 249634,
+        "reference": "DS0011/26/3",
+        "type": "Änderungsantrag",
+        "title": "Hitzeaktionsplan Magdeburg",
+        "files": [
+          {
+            "id": 749637,
+            "name": "DS0011/26/3 Änderungsantrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749637&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Betriebsausschusses Kommunales Gebäudemanagement",
+            "date": "2026-08-18T16:00:00+02:00",
+            "role": "Beratung",
+            "organization": "Betriebsausschuss Kommunales Gebäudemanagement",
+            "agendaItem": "5.4",
+            "result": "nicht empfohlen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+            "date": "2026-08-18T17:00:00+02:00",
+            "role": "Beratung",
+            "organization": "Ausschuss für Umwelt und Energie",
+            "agendaItem": "3.3.3",
+            "result": "nicht empfohlen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Gesundheits- und Sozialausschusses",
+            "date": "2026-08-19T17:00:00+02:00",
+            "role": "Beratung",
+            "organization": "Gesundheits- und Sozialausschuss",
+            "agendaItem": "5.1.3",
+            "result": "empfohlen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+            "date": "2026-08-20T15:30:00+02:00",
+            "role": "Beratung",
+            "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+            "agendaItem": "6.5.3",
+            "result": "nicht empfohlen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Wirtschaftsförderung, Tourismus und regionale Entwicklung",
+            "date": "2026-08-20T17:00:00+02:00",
+            "role": "Beratung",
+            "organization": "Ausschuss für Wirtschaftsförderung, Tourismus und regionale Entwicklung",
+            "agendaItem": "4.1.3",
+            "result": "nicht empfohlen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+            "date": "2026-09-02T16:30:00+02:00",
+            "role": "Beratung",
+            "organization": "Finanz- und Grundstücksausschuss",
+            "agendaItem": "5.2.3",
+            "result": "empfohlen"
+          }
+        ],
+        "rootPaperId": 249634,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          248019
+        ]
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249635,
+    "papers": [
+      {
+        "id": 249635,
+        "reference": "F0249/26",
+        "type": "Anfrage",
+        "title": "Beflaggung am Alten Rathaus",
+        "files": [
+          {
+            "id": 749648,
+            "name": "F0249/26 - Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749648&type=do",
+            "size": 49365
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.11",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249635,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249636,
+    "papers": [
+      {
+        "id": 249636,
+        "reference": "F0250/26",
+        "type": "Anfrage",
+        "title": "Nordverbinder",
+        "files": [
+          {
+            "id": 749650,
+            "name": "F0250/26 - Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749650&type=do",
+            "size": 19419
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.12",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249636,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249658,
+    "papers": [
+      {
+        "id": 249658,
+        "reference": "A0068/26/1",
+        "type": "Änderungsantrag",
+        "title": "Verkehrsberuhigung in der Zerrennerstraße",
+        "files": [
+          {
+            "id": 749963,
+            "name": "Änderungsantrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749963&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Bildung, Schule und Sport",
+            "date": "2026-08-25T16:30:00+02:00",
+            "role": "Beratung",
+            "organization": "Ausschuss für Bildung, Schule und Sport",
+            "agendaItem": "7.3.1",
+            "result": "nicht empfohlen"
+          }
+        ],
+        "rootPaperId": 249658,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          248588
+        ]
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249660,
+    "papers": [
+      {
+        "id": 249660,
+        "reference": "A0082/26/1",
+        "type": "Änderungsantrag",
+        "title": "Fußgängerüberweg Zerrennerstraße",
+        "files": [
+          {
+            "id": 749965,
+            "name": "Änderungsantrag",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749965&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Bildung, Schule und Sport",
+            "date": "2026-08-25T16:30:00+02:00",
+            "role": "Beratung",
+            "organization": "Ausschuss für Bildung, Schule und Sport",
+            "agendaItem": "7.4.1",
+            "result": "nicht empfohlen"
+          }
+        ],
+        "rootPaperId": 249660,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          248653
+        ]
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249665,
+    "papers": [
+      {
+        "id": 249665,
+        "reference": "I0282/26",
+        "type": "Informationsvorlage",
+        "title": "Informationen zu operativen und mittelfristigen Hitzeschutzmaßnahmen der Landeshauptstadt Magdeburg",
+        "files": [
+          {
+            "id": 750061,
+            "name": "Information",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750061&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-09-02T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "5.3",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 249665,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249667,
+    "papers": [
+      {
+        "id": 249667,
+        "reference": "F0251/26",
+        "type": "Anfrage",
+        "title": "Ferien beendet – befindet sich Magdeburgs Baustellenplanung noch im Urlaubsmodus?",
+        "files": [
+          {
+            "id": 750070,
+            "name": "Anlage Anfrage F0251-26",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750070&type=do",
+            "size": 634257
+          },
+          {
+            "id": 750071,
+            "name": "Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750071&type=do",
+            "size": 63988
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.15",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249667,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249669,
+    "papers": [
+      {
+        "id": 249669,
+        "reference": "F0252/26",
+        "type": "Anfrage",
+        "title": "Umsetzung der Präventionsketten in der Landeshauptstadt Magdeburg",
+        "files": [
+          {
+            "id": 750076,
+            "name": "F0252/26 Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750076&type=do",
+            "size": 17109
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.23",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249669,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249670,
+    "papers": [
+      {
+        "id": 249670,
+        "reference": "F0253/26",
+        "type": "Anfrage",
+        "title": "Sachstand zur Wiederbesetzung der Stelle der Kinderbeauftragten",
+        "files": [
+          {
+            "id": 750079,
+            "name": "F0253/26 Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750079&type=do",
+            "size": 19857
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.24",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249670,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249672,
+    "papers": [
+      {
+        "id": 249672,
+        "reference": "F0254/26",
+        "type": "Anfrage",
+        "title": "Umgang mit an HIV-erkrankten Patient:innen in städtischen Pflegeheimen",
+        "files": [
+          {
+            "id": 750085,
+            "name": "Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750085&type=do",
+            "size": 22523
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.25",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249672,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249673,
+    "papers": [
+      {
+        "id": 249673,
+        "reference": "F0255/26",
+        "type": "Anfrage",
+        "title": "Unterstützung von Mieterinnen und Mietern bei der Einstellung von Strom -und Wasser-versorgung",
+        "files": [
+          {
+            "id": 750095,
+            "name": "F0255/26 Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750095&type=do",
+            "size": 67576
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.26",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249673,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249678,
+    "papers": [
+      {
+        "id": 249678,
+        "reference": "F0256/26",
+        "type": "Anfrage",
+        "title": "Illegale Müllablagerungen und ordnungsrechtliche Durchsetzung in der Landeshauptstadt Magdeburg",
+        "files": [
+          {
+            "id": 750142,
+            "name": "Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750142&type=do",
+            "size": 21219
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.3",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249678,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249685,
+    "papers": [
+      {
+        "id": 249685,
+        "reference": "F0257/26",
+        "type": "Anfrage",
+        "title": "Kosten und Sicherheitsmaßnahmen des CSD Magdeburg 2026",
+        "files": [
+          {
+            "id": 750158,
+            "name": "Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750158&type=do",
+            "size": 85080
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.5",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249685,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249686,
+    "papers": [
+      {
+        "id": 249686,
+        "reference": "F0258/26",
+        "type": "Anfrage",
+        "title": "Illegale Graffiti zur CSD-Aktionswoche",
+        "files": [
+          {
+            "id": 750160,
+            "name": "Anlage_CSD",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750160&type=do",
+            "size": 534437
+          },
+          {
+            "id": 750164,
+            "name": "Dienstanweisung_03_02_Graffiti",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750164&type=do",
+            "size": 41113
+          },
+          {
+            "id": 750165,
+            "name": "Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750165&type=do",
+            "size": 65218
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.4",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249686,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249687,
+    "papers": [
+      {
+        "id": 249687,
+        "reference": "F0259/26",
+        "type": "Anfrage",
+        "title": "Tempo-30-Strecke in der Zerrennerstraße",
+        "files": [
+          {
+            "id": 750167,
+            "name": "F0259/26 - Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750167&type=do",
+            "size": 19534
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.13",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249687,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249689,
+    "papers": [
+      {
+        "id": 249689,
+        "reference": "F0260/26",
+        "type": "Anfrage",
+        "title": "Nachfragen zur Information I0107/26 - Tempo 30-Zone vor der Kita Weltenbummler prüfen",
+        "files": [
+          {
+            "id": 750173,
+            "name": "Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750173&type=do",
+            "size": 64162
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.10",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249689,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249691,
+    "papers": [
+      {
+        "id": 249691,
+        "reference": "F0261/26",
+        "type": "Anfrage",
+        "title": "Umsetzung des Landeskonzepts für Katastrophenschutz-Leuchttürme in der Landeshauptstadt Magdeburg",
+        "files": [
+          {
+            "id": 750180,
+            "name": "F0261/26 Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750180&type=do",
+            "size": 90936
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.16",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249691,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249693,
+    "papers": [
+      {
+        "id": 249693,
+        "reference": "F0262/26",
+        "type": "Anfrage",
+        "title": "JVA Magdeburg",
+        "files": [
+          {
+            "id": 750185,
+            "name": "F0262/26 Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750185&type=do",
+            "size": 16138
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.29",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249693,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249694,
+    "papers": [
+      {
+        "id": 249694,
+        "reference": "S0449/26",
+        "type": "Stellungnahme (Anfrage)",
+        "title": "Gemeinwohlorientierter Wohnungsbau in Magdeburg",
+        "files": [
+          {
+            "id": 750187,
+            "name": "Stellungnahme (Anfrage)",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750187&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-09-02T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "8.3",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 249694,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          249337
+        ]
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249695,
+    "papers": [
+      {
+        "id": 249695,
+        "reference": "F0263/26",
+        "type": "Anfrage",
+        "title": "Zukunft und Entwicklungsperspektiven des Biotops ehemaliges Hellas-Bad",
+        "files": [
+          {
+            "id": 750189,
+            "name": "F0263/26 Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750189&type=do",
+            "size": 463278
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.30",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249695,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249696,
+    "papers": [
+      {
+        "id": 249696,
+        "reference": "F0264/26",
+        "type": "Anfrage",
+        "title": "Mehr Barrierefreiheit im städtischen Raum – Einführung des Sonnenblumenbandes",
+        "files": [
+          {
+            "id": 750191,
+            "name": "F0264/26 Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750191&type=do",
+            "size": 89770
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.31",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249696,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249697,
+    "papers": [
+      {
+        "id": 249697,
+        "reference": "F0265/26",
+        "type": "Anfrage",
+        "title": "Bruchgefährdeter Baum im Herrenkrugpark",
+        "files": [
+          {
+            "id": 750193,
+            "name": "F0265/26 Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750193&type=do",
+            "size": 320616
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.32",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249697,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249698,
+    "papers": [
+      {
+        "id": 249698,
+        "reference": "F0266/26",
+        "type": "Anfrage",
+        "title": "Einführung von Verwaltungsgebühren bei Anträgen auf Beschulung außerhalb des Einzugsbereiches nach Änderung der Grundschulbezirke",
+        "files": [
+          {
+            "id": 750195,
+            "name": "F0266/26 Anfrage",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750195&type=do",
+            "size": 15924
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Stellungnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "9.33",
+            "result": "schriftliche Stellungnahme",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 249698,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
+      }
+    ]
+  }
+]
