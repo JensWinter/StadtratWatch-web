@@ -29,6 +29,40 @@ function inMemoryStore(initial: Record<string, string> = {}) {
       metadata = lastSync;
       return Promise.resolve();
     },
+    createStagingSnapshot() {
+      const stagedFiles = new Map(files);
+      let stagedMetadata = metadata;
+      const stagedStore: SnapshotStore = {
+        ensureReady: () => Promise.resolve(),
+        async readLocalShas() {
+          const shas: LocalShas = new Map();
+          for (const filename of OPARL_SNAPSHOT_FILENAMES) {
+            const content = stagedFiles.get(filename);
+            shas.set(filename, content === undefined ? null : await shortSnapshotSha(encoder.encode(content)));
+          }
+          return shas;
+        },
+        async writeBlob(filename, body) {
+          stagedFiles.set(filename, new TextDecoder().decode(await new Response(body).arrayBuffer()));
+        },
+        writeScraperMetadata(lastSync) {
+          stagedMetadata = lastSync;
+          return Promise.resolve();
+        },
+        createStagingSnapshot: () => Promise.reject(new Error('Nested staging snapshots are unsupported.')),
+      };
+
+      return Promise.resolve({
+        store: stagedStore,
+        commit() {
+          files.clear();
+          for (const [filename, content] of stagedFiles) files.set(filename, content);
+          metadata = stagedMetadata;
+          return Promise.resolve();
+        },
+        discard: () => Promise.resolve(),
+      });
+    },
   };
 
   return { store, files, getMetadata: () => metadata };
@@ -154,5 +188,22 @@ describe('syncOparlSnapshot', () => {
     const { source } = await inMemorySource(content, { failManifest: true });
 
     await assertRejects(() => syncOparlSnapshot(source, store, silentLog()), Error, 'organizations.json');
+  });
+
+  it('keeps the current snapshot intact when a later blob download fails', async () => {
+    const initial = fullContent();
+    const { store, files } = inMemoryStore(initial);
+    const remote = fullContent({
+      'meetings.json': JSON.stringify([{ updated: 'meetings' }]),
+      'papers.json': JSON.stringify([{ updated: 'papers' }]),
+    });
+    const { source } = await inMemorySource(remote);
+    const originalFetchBlob = source.fetchBlob;
+    source.fetchBlob = (blob) =>
+      blob.startsWith('papers.') ? Promise.reject(new Error('papers download failed')) : originalFetchBlob(blob);
+
+    await assertRejects(() => syncOparlSnapshot(source, store, silentLog()), Error, 'papers download failed');
+
+    assertEquals(Object.fromEntries(files), initial);
   });
 });

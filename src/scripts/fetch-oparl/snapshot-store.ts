@@ -1,4 +1,5 @@
 import * as path from '@std/path';
+import { copy } from '@std/fs';
 import {
   OPARL_SNAPSHOT_FILENAMES,
   SCRAPER_METADATA_FILENAME,
@@ -14,6 +15,14 @@ export type SnapshotStore = {
   readLocalShas(): Promise<LocalShas>;
   writeBlob(filename: string, body: ReadableStream<Uint8Array>): Promise<void>;
   writeScraperMetadata(lastSync: string): Promise<void>;
+  createStagingSnapshot(): Promise<StagedSnapshot>;
+};
+
+/** An isolated candidate generation that can be promoted only once it is complete. */
+export type StagedSnapshot = {
+  store: SnapshotStore;
+  commit(): Promise<void>;
+  discard(): Promise<void>;
 };
 
 /** Snapshot store backed by a directory on the local filesystem. */
@@ -45,6 +54,31 @@ export function createFileSnapshotStore(directory: string): SnapshotStore {
 
     async writeScraperMetadata(lastSync) {
       await Deno.writeTextFile(pathTo(SCRAPER_METADATA_FILENAME), lastSync);
+    },
+
+    async createStagingSnapshot() {
+      const stagingDirectory = `${directory}.staging-${crypto.randomUUID()}`;
+      await copy(directory, stagingDirectory);
+
+      return {
+        store: createFileSnapshotStore(stagingDirectory),
+        async commit() {
+          const previousDirectory = `${directory}.previous-${crypto.randomUUID()}`;
+          await Deno.rename(directory, previousDirectory);
+          try {
+            await Deno.rename(stagingDirectory, directory);
+          } catch (error) {
+            await Deno.rename(previousDirectory, directory);
+            throw error;
+          }
+          await Deno.remove(previousDirectory, { recursive: true }).catch(() => {});
+        },
+        async discard() {
+          await Deno.remove(stagingDirectory, { recursive: true }).catch((error) => {
+            if (!(error instanceof Deno.errors.NotFound)) throw error;
+          });
+        },
+      };
     },
   };
 }

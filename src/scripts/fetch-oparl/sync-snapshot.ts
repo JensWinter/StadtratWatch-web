@@ -28,11 +28,30 @@ export async function syncOparlSnapshot(
   const plan = createSyncPlan(manifestFetch, localShas);
 
   reportWarnings(plan, log);
-  const downloaded = await downloadPlannedBlobs(plan, source, store, log);
-  await restoreLastSync(plan, store);
+  const downloaded = await updateSnapshot(plan, source, store, log);
 
   reportSummary(downloaded, plan.upToDate, log);
   return { downloaded, upToDate: plan.upToDate };
+}
+
+async function updateSnapshot(
+  plan: SyncPlan,
+  source: SnapshotSource,
+  store: SnapshotStore,
+  log: SyncLogger,
+): Promise<string[]> {
+  if (plan.downloads.length === 0 && !plan.lastSync) return [];
+
+  const stagedSnapshot = await store.createStagingSnapshot();
+  try {
+    const downloaded = await downloadPlannedBlobs(plan, source, stagedSnapshot.store, log);
+    await restoreLastSync(plan, stagedSnapshot.store);
+    await stagedSnapshot.commit();
+    return downloaded;
+  } catch (error) {
+    await stagedSnapshot.discard();
+    throw error;
+  }
 }
 
 function reportWarnings(plan: SyncPlan, log: SyncLogger): void {

@@ -59,6 +59,20 @@ describe('createFileSnapshotStore', { ignore: !hasFilesystemAccess }, () => {
 
     assertEquals(await Deno.readTextFile(path.join(dir, SCRAPER_METADATA_FILENAME)), '2026-06-28T12:34:56.000Z');
   });
+
+  it('promotes a complete staged snapshot without changing the current snapshot first', async () => {
+    await Deno.writeTextFile(path.join(dir, 'meetings.json'), '[{"generation":"old"}]');
+    const store = createFileSnapshotStore(dir);
+    const stagedSnapshot = await store.createStagingSnapshot();
+
+    await stagedSnapshot.store.writeBlob('meetings.json', bodyOf('[{"generation":"new"}]'));
+
+    assertEquals(await Deno.readTextFile(path.join(dir, 'meetings.json')), '[{"generation":"old"}]');
+
+    await stagedSnapshot.commit();
+
+    assertEquals(await Deno.readTextFile(path.join(dir, 'meetings.json')), '[{"generation":"new"}]');
+  });
 });
 
 async function exists(filePath: string): Promise<boolean> {
