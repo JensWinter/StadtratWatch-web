@@ -402,5 +402,6 @@ The target directory is a CLI argument (`-d`/`--dir`, default `data/oparl-magdeb
 Resilience: missing local files are a hard requirement, so the run fails if a needed file is absent
 and the manifest cannot be fetched. If the manifest is unreachable but every file already exists
 locally, it warns and keeps the local copy, so offline dev and builds keep working after the first
-fetch. The manifest's `lastSync` timestamp is written back to `data/oparl-magdeburg/scraper-metadata.txt`,
-so an incremental `scrape-oparl` on a fresh clone resumes from the last published snapshot.
+fetch. The manifest's `lastSync` timestamp is written back to `<dir>/scraper-metadata.txt` relative to
+the selected `-d`/`--dir` value (by default, `data/oparl-magdeburg/scraper-metadata.txt`), so an
+incremental `scrape-oparl` on a fresh clone resumes from the last published snapshot.
