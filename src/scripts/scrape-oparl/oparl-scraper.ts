@@ -1,7 +1,7 @@
 import { type OparlBody, type OparlObject } from '@srw-astro/models/oparl';
 import { type OparlClient } from './oparl-client.ts';
 import { type IOparlObjectFileStore } from './oparl-file-store.ts';
-import { OPARL_FILENAME_BY_TYPE, OparlObjectType } from './oparl-filenames.ts';
+import { OPARL_FILENAME_BY_TYPE, OparlObjectType } from '../shared/oparl/oparl-snapshot.ts';
 
 export class OparlScraper {
   constructor(private readonly client: OparlClient, private readonly oparlObjectsStore: IOparlObjectFileStore) {}

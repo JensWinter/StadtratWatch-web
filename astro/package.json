@@ -3,13 +3,12 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "fetch-oparl": "node --env-file-if-exists=.env scripts/fetch-oparl/fetch-oparl.mjs",
     "dev": "astro dev",
     "build": "NODE_OPTIONS='--max-old-space-size=8192' astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --config .prettierrc src/ scripts/ --write",
-    "format:check": "prettier --config .prettierrc src/ scripts/ --check",
+    "format": "prettier --config .prettierrc src/ --write",
+    "format:check": "prettier --config .prettierrc src/ --check",
     "test": "vitest"
   },
   "dependencies": {

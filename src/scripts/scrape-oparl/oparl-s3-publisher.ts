@@ -1,33 +1,17 @@
 import { type PutObjectCommandInput } from '@aws-sdk/client-s3';
 import * as path from '@std/path';
 import { type ScrapeOparlPushEnv } from './env.ts';
-import { OPARL_FILENAMES } from './oparl-filenames.ts';
+import {
+  MANIFEST_FILENAME,
+  OPARL_SNAPSHOT_FILENAMES,
+  type OparlManifest,
+  type OparlManifestEntry,
+  SCRAPER_METADATA_FILENAME,
+  shortSnapshotSha,
+} from '../shared/oparl/oparl-snapshot.ts';
 
 const BLOB_CACHE_CONTROL = 'public, max-age=31536000, immutable';
 const MANIFEST_CACHE_CONTROL = 'public, max-age=60';
-const MANIFEST_FILENAME = 'manifest.json';
-/** Mirrors the file `ScraperMetadataFileStore` writes; carried in the manifest, not as a blob. */
-const METADATA_FILENAME = 'scraper-metadata.txt';
-
-export type OparlManifestEntry = {
-  /** Object key (relative to the prefix), e.g. `meetings.<sha>.json.gz`. */
-  blob: string;
-  /** Short SHA-256 of the uncompressed JSON. */
-  sha: string;
-  /** Uncompressed byte size. */
-  bytes: number;
-};
-
-export type OparlManifest = {
-  /**
-   * ISO timestamp of the last successful scrape, taken from the local `scraper-metadata.txt`.
-   * Absent when no such file exists at push time. `fetch-oparl` restores it locally so an
-   * incremental scrape on another machine resumes from the last published snapshot.
-   */
-  lastSync?: string;
-  /** One entry per snapshot file, keyed by filename. */
-  files: Record<string, OparlManifestEntry>;
-};
 
 /**
  * Sends a single S3 put given its input. Abstracted so tests can inject a fake, and so the (heavy)
@@ -80,7 +64,7 @@ export async function uploadOparlSnapshot(
     CacheControl: MANIFEST_CACHE_CONTROL,
   });
   console.log(
-    `Uploaded ${manifestKey} (${OPARL_FILENAMES.length} entries, lastSync ${lastSync ?? 'none'}).`,
+    `Uploaded ${manifestKey} (${OPARL_SNAPSHOT_FILENAMES.length} entries, lastSync ${lastSync ?? 'none'}).`,
   );
 
   return manifest;
@@ -89,7 +73,7 @@ export async function uploadOparlSnapshot(
 /** Reads `<directory>/scraper-metadata.txt`, trimmed; null if absent, empty or unreadable. */
 async function readLastSync(directory: string): Promise<string | null> {
   try {
-    const text = (await Deno.readTextFile(path.join(directory, METADATA_FILENAME))).trim();
+    const text = (await Deno.readTextFile(path.join(directory, SCRAPER_METADATA_FILENAME))).trim();
     return text.length > 0 ? text : null;
   } catch {
     return null;
@@ -118,9 +102,9 @@ type PreparedBlob = {
 async function prepareBlobs(prefix: string, readFile: FileReader): Promise<PreparedBlob[]> {
   const blobs: PreparedBlob[] = [];
 
-  for (const filename of OPARL_FILENAMES) {
+  for (const filename of OPARL_SNAPSHOT_FILENAMES) {
     const data = await readFile(filename);
-    const sha = await shortSha(data);
+    const sha = await shortSnapshotSha(data);
     const body = await gzip(data);
     const base = filename.replace(/\.json$/, '');
     const blob = `${base}.${sha}.json.gz`;
@@ -144,13 +128,6 @@ function buildManifest(blobs: PreparedBlob[], lastSync: string | null): OparlMan
     files[blob.filename] = { blob: blob.blob, sha: blob.sha, bytes: blob.bytes };
   }
   return lastSync ? { lastSync, files } : { files };
-}
-
-/** First 12 hex chars of the SHA-256 of the uncompressed bytes (gzip determinism is irrelevant). */
-async function shortSha(data: Uint8Array<ArrayBuffer>): Promise<string> {
-  const digest = await crypto.subtle.digest('SHA-256', data);
-  const hex = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
-  return hex.slice(0, 12);
 }
 
 async function gzip(data: Uint8Array<ArrayBuffer>): Promise<Uint8Array<ArrayBuffer>> {

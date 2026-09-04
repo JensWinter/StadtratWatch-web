@@ -2,7 +2,7 @@ import { type FileReader, type MetadataReader, uploadOparlSnapshot } from './opa
 import type { PutObjectCommandInput } from '@aws-sdk/client-s3';
 import { assertEquals, assertMatch, assertRejects } from '@std/assert';
 import { describe, it } from '@std/testing/bdd';
-import { OPARL_FILENAMES } from './oparl-filenames.ts';
+import { OPARL_SNAPSHOT_FILENAMES } from '../shared/oparl/oparl-snapshot.ts';
 
 const BUCKET = 'test-bucket';
 const PREFIX = 'oparl';
@@ -54,7 +54,7 @@ describe('uploadOparlSnapshot', () => {
 
     await uploadOparlSnapshot(DIR, BUCKET, PREFIX, recordingSend(calls), fakeReader(), fakeMetadata(null));
 
-    assertEquals(calls.length, OPARL_FILENAMES.length + 1);
+    assertEquals(calls.length, OPARL_SNAPSHOT_FILENAMES.length + 1);
     assertEquals(calls.every((input) => input.Bucket === BUCKET), true);
   });
 
@@ -64,7 +64,7 @@ describe('uploadOparlSnapshot', () => {
     await uploadOparlSnapshot(DIR, BUCKET, PREFIX, recordingSend(calls), fakeReader(), fakeMetadata(null));
 
     const blobPuts = calls.filter((input) => input.Key !== `${PREFIX}/manifest.json`);
-    assertEquals(blobPuts.length, OPARL_FILENAMES.length);
+    assertEquals(blobPuts.length, OPARL_SNAPSHOT_FILENAMES.length);
     for (const input of blobPuts) {
       assertEquals(input.ContentEncoding, 'gzip');
       assertEquals(input.ContentType, 'application/json');
@@ -92,9 +92,9 @@ describe('uploadOparlSnapshot', () => {
 
     const uploaded = JSON.parse(new TextDecoder().decode(manifestPut.Body as Uint8Array));
     assertEquals(uploaded, manifest);
-    assertEquals(Object.keys(manifest.files).sort(), [...OPARL_FILENAMES].sort());
+    assertEquals(Object.keys(manifest.files).sort(), [...OPARL_SNAPSHOT_FILENAMES].sort());
 
-    for (const filename of OPARL_FILENAMES) {
+    for (const filename of OPARL_SNAPSHOT_FILENAMES) {
       const entry = manifest.files[filename];
       const raw = contentFor(filename);
       assertEquals(entry.bytes, raw.length);
