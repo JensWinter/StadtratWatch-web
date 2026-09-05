@@ -21,8 +21,39 @@
           }
         ],
         "rootPaperId": 249100,
-        "subordinatedPaperIds": [],
+        "subordinatedPaperIds": [
+          249480
+        ],
         "superOrdinatedPaperIds": []
+      },
+      {
+        "id": 249480,
+        "reference": "S0411/26",
+        "type": "Stellungnahme",
+        "title": "Beitritt zum Städtenetzwerk Eurocities",
+        "files": [
+          {
+            "id": 748391,
+            "name": "Stellungnahme",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748391&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-08-11T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "8.1",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 249100,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          249100
+        ]
       }
     ]
   },
@@ -268,74 +299,6 @@
     ]
   },
   {
-    "rootPaperId": 249126,
-    "papers": [
-      {
-        "id": 249126,
-        "reference": "S0285/26",
-        "type": "Stellungnahme (Anfrage)",
-        "title": "Grundstück zwischen Seehäuser- und Weferlingerstraße",
-        "files": [
-          {
-            "id": 745567,
-            "name": "Stellungnahme (Anfrage)",
-            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745567&type=do",
-            "size": null
-          }
-        ],
-        "consultations": [
-          {
-            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
-            "date": "2026-06-23T09:00:00+02:00",
-            "role": "Genehmigung OB",
-            "organization": "Die Oberbürgermeisterin",
-            "agendaItem": "9.18",
-            "result": "genehmigt OB"
-          }
-        ],
-        "rootPaperId": 249126,
-        "subordinatedPaperIds": [],
-        "superOrdinatedPaperIds": [
-          248962
-        ]
-      }
-    ]
-  },
-  {
-    "rootPaperId": 249128,
-    "papers": [
-      {
-        "id": 249128,
-        "reference": "S0287/26",
-        "type": "Stellungnahme (Anfrage)",
-        "title": "Bauruine „Campus Apartments“ an der Sandtorstraße in der Alte Neustadt",
-        "files": [
-          {
-            "id": 745565,
-            "name": "Stellungnahme (Anfrage)",
-            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745565&type=do",
-            "size": null
-          }
-        ],
-        "consultations": [
-          {
-            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
-            "date": "2026-06-23T09:00:00+02:00",
-            "role": "Genehmigung OB",
-            "organization": "Die Oberbürgermeisterin",
-            "agendaItem": "9.19",
-            "result": "genehmigt OB"
-          }
-        ],
-        "rootPaperId": 249128,
-        "subordinatedPaperIds": [],
-        "superOrdinatedPaperIds": [
-          249009
-        ]
-      }
-    ]
-  },
-  {
     "rootPaperId": 249129,
     "papers": [
       {
@@ -359,6 +322,22 @@
             "organization": "Die Oberbürgermeisterin",
             "agendaItem": "6.4",
             "result": "genehmigt OB"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Bildung, Schule und Sport",
+            "date": "2026-08-25T16:30:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Ausschuss für Bildung, Schule und Sport",
+            "agendaItem": "8.1",
+            "result": "zur Kenntnis genommen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+            "date": "2026-09-02T16:30:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Finanz- und Grundstücksausschuss",
+            "agendaItem": "7.2",
+            "result": "zur Kenntnis genommen"
           }
         ],
         "rootPaperId": 249129,
@@ -366,6 +345,52 @@
         "superOrdinatedPaperIds": [
           245432
         ]
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249131,
+    "papers": [
+      {
+        "id": 249131,
+        "reference": "DS0238/26",
+        "type": "Beschlussvorlage",
+        "title": "Aufstellungsbeschluss über die 54. Änderung des Flächennutzungsplanes der Landeshauptstadt Magdeburg „Freizeitpark Neustädter See“",
+        "files": [
+          {
+            "id": 745462,
+            "name": "Beschlussvorlage Stadt",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745462&type=do",
+            "size": null
+          },
+          {
+            "id": 745616,
+            "name": "DS0238/26 - Anlage 1 Übersichtsplan",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745616&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-08-11T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "3.6",
+            "result": "genehmigt OB"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+            "date": "2026-09-08T17:00:00+02:00",
+            "role": "Beratung",
+            "organization": "Ausschuss für Umwelt und Energie",
+            "agendaItem": "4.1",
+            "result": null
+          }
+        ],
+        "rootPaperId": 249131,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
       }
     ]
   },
@@ -438,6 +463,48 @@
     ]
   },
   {
+    "rootPaperId": 249135,
+    "papers": [
+      {
+        "id": 249135,
+        "reference": "I0189/26",
+        "type": "Informationsvorlage",
+        "title": "MANV-Konzept",
+        "files": [
+          {
+            "id": 745559,
+            "name": "Information",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745559&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-07-28T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "5.3",
+            "result": "genehmigt OB"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Gesundheits- und Sozialausschusses",
+            "date": "2026-08-19T17:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Gesundheits- und Sozialausschuss",
+            "agendaItem": "7.2",
+            "result": "zur Kenntnis genommen"
+          }
+        ],
+        "rootPaperId": 249135,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          247672
+        ]
+      }
+    ]
+  },
+  {
     "rootPaperId": 249136,
     "papers": [
       {
@@ -466,8 +533,39 @@
           }
         ],
         "rootPaperId": 249136,
-        "subordinatedPaperIds": [],
+        "subordinatedPaperIds": [
+          249638
+        ],
         "superOrdinatedPaperIds": []
+      },
+      {
+        "id": 249638,
+        "reference": "S0443/26",
+        "type": "Stellungnahme (Anfrage)",
+        "title": "Einrichtung eines Cafés im Gebäude des Kulturhistorischen Museums der Landeshauptstadt Magdeburg",
+        "files": [
+          {
+            "id": 749656,
+            "name": "Stellungnahme (Anfrage)",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749656&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-08-25T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "8.2",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 249136,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          249136
+        ]
       }
     ]
   },
@@ -576,6 +674,56 @@
         "superOrdinatedPaperIds": [
           246880
         ]
+      }
+    ]
+  },
+  {
+    "rootPaperId": 249143,
+    "papers": [
+      {
+        "id": 249143,
+        "reference": "DS0240/26",
+        "type": "Beschlussvorlage",
+        "title": "Neufassung der Entgeltordnung des Technikmuseums Magdeburg",
+        "files": [
+          {
+            "id": 745546,
+            "name": "DS0240/26 Anlage 3_Synopse",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745546&type=do",
+            "size": null
+          },
+          {
+            "id": 745551,
+            "name": "DS0240/26 Anlage 1_Entgeltordnung",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745551&type=do",
+            "size": null
+          },
+          {
+            "id": 745557,
+            "name": "Beschlussvorlage Stadt",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=745557&type=do",
+            "size": null
+          },
+          {
+            "id": 750962,
+            "name": "DS0240/26 Anlage 2_Entgelttarife_Entgeltordnung",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750962&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-09-02T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "3.6",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 249143,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": []
       }
     ]
   },
@@ -717,6 +865,14 @@
             "organization": "Die Oberbürgermeisterin",
             "agendaItem": "9.23",
             "result": "genehmigt OB"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+            "date": "2026-08-18T17:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Ausschuss für Umwelt und Energie",
+            "agendaItem": "4.2.1",
+            "result": null
           }
         ],
         "rootPaperId": 249172,
@@ -751,6 +907,30 @@
             "organization": "Die Oberbürgermeisterin",
             "agendaItem": "9.24",
             "result": "genehmigt OB"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+            "date": "2026-08-20T15:30:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+            "agendaItem": "7.14.1",
+            "result": "zur Kenntnis genommen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Wirtschaftsförderung, Tourismus und regionale Entwicklung",
+            "date": "2026-08-20T17:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Ausschuss für Wirtschaftsförderung, Tourismus und regionale Entwicklung",
+            "agendaItem": "5.5.1",
+            "result": "zur Kenntnis genommen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+            "date": "2026-09-02T16:30:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Finanz- und Grundstücksausschuss",
+            "agendaItem": "6.3.1",
+            "result": "zur Kenntnis genommen"
           }
         ],
         "rootPaperId": 249174,
@@ -1173,8 +1353,39 @@
           }
         ],
         "rootPaperId": 249197,
-        "subordinatedPaperIds": [],
+        "subordinatedPaperIds": [
+          249423
+        ],
         "superOrdinatedPaperIds": []
+      },
+      {
+        "id": 249423,
+        "reference": "S0388/26",
+        "type": "Stellungnahme (Anfrage)",
+        "title": "Situation am Pechauer Platz: Zustand des Spielplatzes und Wegfall der sanitären Infrastruktur",
+        "files": [
+          {
+            "id": 747744,
+            "name": "Stellungnahme (Anfrage)",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747744&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-07-28T09:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "7.9",
+            "result": "zur Kenntnis genommen"
+          }
+        ],
+        "rootPaperId": 249197,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          249197
+        ]
       }
     ]
   }

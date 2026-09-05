@@ -170,7 +170,9 @@
       }
     ],
     "rootPaperId": 249209,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249323
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -205,7 +207,9 @@
       }
     ],
     "rootPaperId": 249210,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249590
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -240,7 +244,9 @@
       }
     ],
     "rootPaperId": 249211,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249495
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -272,6 +278,51 @@
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": [
       247704
+    ]
+  },
+  {
+    "id": 249213,
+    "reference": "S0326/26",
+    "type": "Stellungnahme (Antrag)",
+    "title": "Schnelle Lösungen für die Schrotebrücken",
+    "files": [
+      {
+        "id": 748123,
+        "name": "Stellungnahme (Antrag)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748123&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-28T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "8.15",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "7.7.3",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-09-02T16:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "6.5.1",
+        "result": "zur Kenntnis genommen"
+      }
+    ],
+    "rootPaperId": 249213,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248652
     ]
   },
   {
@@ -475,7 +526,9 @@
       }
     ],
     "rootPaperId": 249224,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249576
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -488,7 +541,7 @@
         "id": 746126,
         "name": "Beschlussvorlage Stadt",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746126&type=do",
-        "size": null
+        "size": 162092
       }
     ],
     "consultations": [
@@ -499,10 +552,30 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "4.7",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für kommunale Rechts- und Bürgerangelegenheiten",
+        "date": "2026-08-20T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für kommunale Rechts- und Bürgerangelegenheiten",
+        "agendaItem": "4.1",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.15",
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
       }
     ],
     "rootPaperId": 249225,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249704
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -593,6 +666,81 @@
     "rootPaperId": 249230,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249231,
+    "reference": "S0330/26",
+    "type": "Stellungnahme",
+    "title": "Darlegung des pädagogischen Konzeptes der Clearingstelle und des Erweiterungsbaus am Kinderschutzzentrum",
+    "files": [],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-14T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "7.12",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Gesundheits- und Sozialausschusses",
+        "date": "2026-08-19T17:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Gesundheits- und Sozialausschuss",
+        "agendaItem": "6.3.1",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Jugendhilfeausschusses",
+        "date": "2026-08-20T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Jugendhilfeausschuss",
+        "agendaItem": "5.4.1",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Familie und Gleichstellung",
+        "date": "2026-08-25T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Familie und Gleichstellung",
+        "agendaItem": "5.3.1",
+        "result": "zur Kenntnis genommen"
+      }
+    ],
+    "rootPaperId": 249231,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248887
+    ]
+  },
+  {
+    "id": 249233,
+    "reference": "S0331/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Vergabeverfahren Prüfauftrag Verkehrslandeplatz Magdeburg",
+    "files": [
+      {
+        "id": 748118,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748118&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-28T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "8.7",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249233,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248997
+    ]
   },
   {
     "id": 249234,
@@ -848,7 +996,7 @@
         "id": 746253,
         "name": "Information",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746253&type=do",
-        "size": null
+        "size": 71389
       }
     ],
     "consultations": [
@@ -859,6 +1007,32 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "6.3",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Gesundheits- und Sozialausschusses",
+        "date": "2026-08-19T17:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Gesundheits- und Sozialausschuss",
+        "agendaItem": "7.5",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Jugendhilfeausschusses",
+        "date": "2026-08-20T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Jugendhilfeausschuss",
+        "agendaItem": "6.5",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "10.23",
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
       }
     ],
     "rootPaperId": 249248,
@@ -926,6 +1100,45 @@
     "superOrdinatedPaperIds": []
   },
   {
+    "id": 249251,
+    "reference": "DS0253/26",
+    "type": "Beschlussvorlage",
+    "title": "Variantenentscheidung Radquerung Walter-Rathenau-Straße",
+    "files": [
+      {
+        "id": 748092,
+        "name": "Beschlussvorlage Stadt",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748092&type=do",
+        "size": null
+      },
+      {
+        "id": 748311,
+        "name": "DS0253/26 - Anlage 1 Kostenschätzung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748311&type=do",
+        "size": null
+      },
+      {
+        "id": 748312,
+        "name": "DS0253/26 - Anlage 2 Lageplan",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748312&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-18T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "4.3",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249251,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
     "id": 249253,
     "reference": "F0208/26",
     "type": "Anfrage",
@@ -951,7 +1164,9 @@
       }
     ],
     "rootPaperId": 249253,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249631
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -1216,7 +1431,9 @@
       }
     ],
     "rootPaperId": 249262,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249351
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -1245,7 +1462,9 @@
       }
     ],
     "rootPaperId": 249263,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      249302
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -1425,6 +1644,14 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "9.22",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "7.5.1",
+        "result": "zur Kenntnis genommen"
       }
     ],
     "rootPaperId": 248875,
@@ -1598,7 +1825,7 @@
         "id": 746425,
         "name": "Information",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746425&type=do",
-        "size": null
+        "size": 20099
       }
     ],
     "consultations": [
@@ -1609,12 +1836,67 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "6.1",
         "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Betriebsausschusses Kommunales Gebäudemanagement",
+        "date": "2026-08-18T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Betriebsausschuss Kommunales Gebäudemanagement",
+        "agendaItem": "7.1",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "8.2",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "10.31",
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
       }
     ],
     "rootPaperId": 249276,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": [
       248902
+    ]
+  },
+  {
+    "id": 249277,
+    "reference": "S0339/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Abgrenzung der Aufgaben von Stadtratsfraktionen",
+    "files": [
+      {
+        "id": 748024,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748024&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-28T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "8.1",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249277,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249254
     ]
   },
   {
@@ -1709,6 +1991,67 @@
     "superOrdinatedPaperIds": []
   },
   {
+    "id": 249281,
+    "reference": "S0342/26",
+    "type": "Stellungnahme",
+    "title": "MINT-Erlebnispfad",
+    "files": [
+      {
+        "id": 746516,
+        "name": "Stellungnahme",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746516&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-03T13:30:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "6.1",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Jugendhilfeausschusses",
+        "date": "2026-08-20T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Jugendhilfeausschuss",
+        "agendaItem": "5.1.2",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Wirtschaftsförderung, Tourismus und regionale Entwicklung",
+        "date": "2026-08-20T17:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Wirtschaftsförderung, Tourismus und regionale Entwicklung",
+        "agendaItem": "5.3.2",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Familie und Gleichstellung",
+        "date": "2026-08-25T16:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Familie und Gleichstellung",
+        "agendaItem": "5.2.2",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Bildung, Schule und Sport",
+        "date": "2026-08-25T16:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Bildung, Schule und Sport",
+        "agendaItem": "7.5.2",
+        "result": "zur Kenntnis genommen"
+      }
+    ],
+    "rootPaperId": 249281,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248632
+    ]
+  },
+  {
     "id": 249286,
     "reference": "S0346/26",
     "type": "Stellungnahme (Anfrage)",
@@ -1735,6 +2078,35 @@
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": [
       249067
+    ]
+  },
+  {
+    "id": 249287,
+    "reference": "S0347/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Wann kommt welche Ersatzquerung am Schleinufer?",
+    "files": [
+      {
+        "id": 748627,
+        "name": "S0347/26 Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748627&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-03T13:30:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "6.7",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249287,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248984
     ]
   },
   {
@@ -1805,6 +2177,35 @@
     "rootPaperId": 249288,
     "subordinatedPaperIds": [],
     "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249289,
+    "reference": "S0348/26",
+    "type": "Stellungnahme",
+    "title": "Brunnen Leiterstraße 5",
+    "files": [
+      {
+        "id": 746534,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746534&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-28T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "8.5",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249289,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249069
+    ]
   },
   {
     "id": 249291,
@@ -1884,6 +2285,22 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "9.1",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Kulturausschusses",
+        "date": "2026-08-19T17:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Kulturausschuss",
+        "agendaItem": "4.4.1",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für kommunale Rechts- und Bürgerangelegenheiten",
+        "date": "2026-08-20T17:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für kommunale Rechts- und Bürgerangelegenheiten",
+        "agendaItem": "5.7.1",
+        "result": "zur Kenntnis genommen"
       }
     ],
     "rootPaperId": 249292,

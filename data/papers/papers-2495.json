@@ -1,0 +1,1943 @@
+[
+  {
+    "id": 249501,
+    "reference": "S0421/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Gewerbliche Nutzung einer Wohnung in der Basedowstraße",
+    "files": [
+      {
+        "id": 748307,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748307&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-11T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "8.6",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249382,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249382
+    ]
+  },
+  {
+    "id": 249506,
+    "reference": "S0424/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Prognostizierte Real-Einsparungen durch Finanzmittel aus dem Sondervermögen Infrastruktur sowie Prioritätensetzung des Finanzmitteleinsatzes",
+    "files": [
+      {
+        "id": 748380,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748380&type=do",
+        "size": null
+      },
+      {
+        "id": 748390,
+        "name": "S0424/26 Anlage 1 Übersicht Einsparungen durch das Infra-SVG",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748390&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-03T13:30:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "6.4",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 248737,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248737
+    ]
+  },
+  {
+    "id": 249507,
+    "reference": "F0247/26",
+    "type": "Anfrage",
+    "title": "Parteipolitische Neutralität für Fördermittelempfänger – Äußerungen in der Sendung Gute Nacht Magdeburg des Offenen Kanals Magdeburg",
+    "files": [
+      {
+        "id": 748359,
+        "name": "Anfrage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748359&type=do",
+        "size": 67935
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Stellungnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "9.1",
+        "result": "schriftliche Stellungnahme",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      }
+    ],
+    "rootPaperId": 249507,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249509,
+    "reference": "S0425/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Sperrung der Ringabfahrt Albert-Vater-Straße (B1)",
+    "files": [
+      {
+        "id": 748365,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748365&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-03T13:30:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "6.11",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249509,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249230
+    ]
+  },
+  {
+    "id": 249510,
+    "reference": "S0426/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Ausstattung der Ersatzhaltestellen am Breiten Weg – Sitzgelegenheiten und Wetterschutz",
+    "files": [
+      {
+        "id": 748393,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748393&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-03T13:30:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "6.12",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249510,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249243
+    ]
+  },
+  {
+    "id": 249512,
+    "reference": "S0427/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Kontrollen von Baustellen",
+    "files": [
+      {
+        "id": 748415,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748415&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-03T13:30:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "6.13",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249512,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249000
+    ]
+  },
+  {
+    "id": 249513,
+    "reference": "DS0313/26",
+    "type": "Beschlussvorlage",
+    "title": "Genehmigung der Annahme von Sponsoringleistungen gemäß § 99 Abs. 6 KVG LSA",
+    "files": [
+      {
+        "id": 748438,
+        "name": "Beschlussvorlage Stadt",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748438&type=do",
+        "size": 222512
+      },
+      {
+        "id": 748440,
+        "name": "DS0313/26 - Anlage 1 Willkommensaktion",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748440&type=do",
+        "size": 62514
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-03T13:30:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "3.1",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.3",
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      }
+    ],
+    "rootPaperId": 249513,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249516,
+    "reference": "DS0314/26",
+    "type": "Beschlussvorlage",
+    "title": "Bestandsfähigkeitsindikatoren für die Infrastrukturplanung Tagesbetreuung für Kinder bis unter 7 Jahre ab 2027",
+    "files": [
+      {
+        "id": 750913,
+        "name": "Beschlussvorlage Stadt",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750913&type=do",
+        "size": null
+      },
+      {
+        "id": 750917,
+        "name": "Anlage 1 Indikatoren Bestandsfähigkeit",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=750917&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-09-02T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "3.9",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249516,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249518,
+    "reference": "DS0316/26",
+    "type": "Beschlussvorlage EB",
+    "title": "Jahresabschluss 2025 des Eigenbetriebes Konservatorium Georg Philipp Telemann",
+    "files": [
+      {
+        "id": 748490,
+        "name": "Beschlussvorlage EB",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748490&type=do",
+        "size": null
+      },
+      {
+        "id": 748516,
+        "name": "DS0316/26 - Anlage 1 Bilanz",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748516&type=do",
+        "size": null
+      },
+      {
+        "id": 748517,
+        "name": "DS0316/26 - Anlage 2 GuV",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748517&type=do",
+        "size": null
+      },
+      {
+        "id": 748519,
+        "name": "DS0316/26 - Anlage 4 Lagebericht",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748519&type=do",
+        "size": null
+      },
+      {
+        "id": 748520,
+        "name": "DS0316/26 - Anlage 5 rechtliche steuerliche Verhältnisse",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748520&type=do",
+        "size": null
+      },
+      {
+        "id": 748521,
+        "name": "DS0316/26 - Anlage 6 Fragenkatalog nach §53HGRG",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748521&type=do",
+        "size": null
+      },
+      {
+        "id": 748522,
+        "name": "DS0316/26 - Anlage 7 Bestätigungsvermerk",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748522&type=do",
+        "size": null
+      },
+      {
+        "id": 748531,
+        "name": "DS0316/26 - Anlage 3 Anhang und Anlagenspiegel",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748531&type=do",
+        "size": null
+      },
+      {
+        "id": 748802,
+        "name": "DS0316/26 - Anlage 8 Feststellungsvermerk Amt14",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748802&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-25T09:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "7.1",
+        "result": "zur Kenntnis genommen"
+      }
+    ],
+    "rootPaperId": 249518,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249520,
+    "reference": "DS0318/26",
+    "type": "Beschlussvorlage",
+    "title": "Finanzierung der Baumaßnahme Magdeburger Ring zwischen den Brücken Damaschkeplatz und Anschluss Ausbau 2. Nord-Süd-Verbindung MVB",
+    "files": [
+      {
+        "id": 748475,
+        "name": "Beschlussvorlage Stadt",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748475&type=do",
+        "size": null
+      },
+      {
+        "id": 748484,
+        "name": "DS0318/26_Anlage 1_Kostenberechnung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748484&type=do",
+        "size": null
+      },
+      {
+        "id": 748485,
+        "name": "DS0318/26_Anlage 2_Lageplan",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748485&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-18T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "4.4",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249520,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249521,
+    "reference": "I0253/26",
+    "type": "Informationsvorlage",
+    "title": "Finanzbericht 2026 zum Stichtag 30.06.2026",
+    "files": [
+      {
+        "id": 748469,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748469&type=do",
+        "size": null
+      },
+      {
+        "id": 749682,
+        "name": "I0253/26 Finanzbericht per 30.06.2026",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749682&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-25T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "5.1",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249521,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249522,
+    "reference": "I0254/26",
+    "type": "Informationsvorlage",
+    "title": "Gestaltungskonzept Außengastronomie, Sondernutzung und Werbung im Erhaltungssatzungsgebiet Domplatz7 Südl. Stadtzentrum",
+    "files": [
+      {
+        "id": 748530,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748530&type=do",
+        "size": null
+      },
+      {
+        "id": 748631,
+        "name": "I0254/26 - Anlage 1 Regelungen-kurz-gefasst",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748631&type=do",
+        "size": null
+      },
+      {
+        "id": 748632,
+        "name": "I0254/26 - Anlage 2 Band 1 Grundlagen+Analyse",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748632&type=do",
+        "size": null
+      },
+      {
+        "id": 748633,
+        "name": "I0254/26 - Anlage 2 Band 2 Gestaltungskonzept",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748633&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-03T13:30:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "4.9",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249522,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249523,
+    "reference": "S0429/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Kleine Schulstraße 18",
+    "files": [
+      {
+        "id": 748515,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748515&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-11T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "8.7",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249324,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249324
+    ]
+  },
+  {
+    "id": 249524,
+    "reference": "S0430/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Verkehrssituation Herrenkurgstraße/Biederitzer Weg",
+    "files": [
+      {
+        "id": 748526,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748526&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-11T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "8.8",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249524,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249374
+    ]
+  },
+  {
+    "id": 249526,
+    "reference": "I0255/26",
+    "type": "Informationsvorlage",
+    "title": "Einrichtung von Arbeitsgelegenheiten nach dem Asylbewerberleistungsgesetz (AsylbLG)",
+    "files": [
+      {
+        "id": 748601,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748601&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-11T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "5.5",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249526,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      247671
+    ]
+  },
+  {
+    "id": 249527,
+    "reference": "I0289/26",
+    "type": "Informationsvorlage",
+    "title": "Grundsatzbeschluss: Einführung einer Einwegverpackungsabgabe",
+    "files": [
+      {
+        "id": 748605,
+        "name": "I0289-26_Anlage 1_Beschluss Bundesverfassungsgericht",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748605&type=do",
+        "size": null
+      },
+      {
+        "id": 748606,
+        "name": "I0289-26_Anlage 2_Pressemitteilung Eberhard Karls Universität Tübingen",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748606&type=do",
+        "size": null
+      },
+      {
+        "id": 748607,
+        "name": "I0289-26_Anlage 3_Umfrage Deutsche Umwelthilfe",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748607&type=do",
+        "size": null
+      },
+      {
+        "id": 748608,
+        "name": "I0289-26_Anlage 4_WESER KURIER vom 26.11.2025 und Faktenpapier der Handelskammer Bremen",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748608&type=do",
+        "size": null
+      },
+      {
+        "id": 748609,
+        "name": "I0289-26_Anlage 5_Märkische Allgemeine vom 20.07.2026",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748609&type=do",
+        "size": null
+      },
+      {
+        "id": 748610,
+        "name": "I0289-26_Anlage 6_Kölnische Rundschau vom 20.08.2025",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748610&type=do",
+        "size": null
+      },
+      {
+        "id": 748611,
+        "name": "I0289-26_Anlage 7_Schreiben EB SFM vom 11.06.2025 und EB SAB 03.07.2025",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748611&type=do",
+        "size": null
+      },
+      {
+        "id": 749877,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749877&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-25T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "5.2",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 245606,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      245606
+    ]
+  },
+  {
+    "id": 249531,
+    "reference": "I0257/26",
+    "type": "Informationsvorlage",
+    "title": "Terminplanung 2027",
+    "files": [
+      {
+        "id": 748664,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748664&type=do",
+        "size": null
+      },
+      {
+        "id": 748917,
+        "name": "I0257/26 - Anlage 1 Terminplanung 2027",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748917&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-03T13:30:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "4.1",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249531,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249533,
+    "reference": "I0258/26",
+    "type": "Informationsvorlage",
+    "title": "Bezahlmethode „Bargeld“ auf den Wertstoffhöfen der Landeshauptstadt Magdeburg",
+    "files": [
+      {
+        "id": 748685,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748685&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-11T09:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "7.5",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Betriebsausschusses Städtischer Abfallwirtschaftsbetrieb",
+        "date": "2026-09-01T16:40:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Betriebsausschuss Städtischer Abfallwirtschaftsbetrieb",
+        "agendaItem": "9.1",
+        "result": "zur Kenntnis genommen"
+      }
+    ],
+    "rootPaperId": 249533,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      247681
+    ]
+  },
+  {
+    "id": 249536,
+    "reference": "I0259/26",
+    "type": "Informationsvorlage",
+    "title": "Sponsoringleistungen 2025 für die Landeshauptstadt Magdeburg",
+    "files": [
+      {
+        "id": 748722,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748722&type=do",
+        "size": null
+      },
+      {
+        "id": 749014,
+        "name": "I0259/26 Auflistung Sponsoring 2025",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749014&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-11T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "5.1",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-09-02T16:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "7.1",
+        "result": "zur Kenntnis genommen"
+      }
+    ],
+    "rootPaperId": 249536,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249537,
+    "reference": "DS0325/26",
+    "type": "Beschlussvorlage",
+    "title": "Verwendung von Mitteln aus dem Infra-SVG, Kommunalarm (Gesetz für das Sondervermögen Infrastruktur)",
+    "files": [
+      {
+        "id": 748738,
+        "name": "Beschlussvorlage Stadt",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748738&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-11T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "3.4",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-09-02T16:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "5.1",
+        "result": "empfohlen"
+      }
+    ],
+    "rootPaperId": 249537,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249538,
+    "reference": "I0260/26",
+    "type": "Informationsvorlage",
+    "title": "Thema: Bericht über Teilnahme der Landeshauptstadt Magdeburg an der 5. Gedenk- und Erinnerungsreise des Riga-Komitees",
+    "files": [
+      {
+        "id": 748759,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748759&type=do",
+        "size": null
+      },
+      {
+        "id": 748766,
+        "name": "I0260/26 - Anlage 1",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748766&type=do",
+        "size": null
+      },
+      {
+        "id": 748769,
+        "name": "I0260/26 - Anlage 3",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748769&type=do",
+        "size": null
+      },
+      {
+        "id": 748813,
+        "name": "I0260/26 - Anlage 2",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748813&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-11T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "5.2",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249538,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249541,
+    "reference": "S0432/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Aktueller Stand der Klimatisierung öffentlicher Gebäude und Berücksichtigung bei Neubauten",
+    "files": [
+      {
+        "id": 748811,
+        "name": "S0432/26 - Anlage 1 Übersicht",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748811&type=do",
+        "size": null
+      },
+      {
+        "id": 748812,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748812&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-11T09:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "7.7",
+        "result": "zur Kenntnis genommen"
+      }
+    ],
+    "rootPaperId": 249362,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249362
+    ]
+  },
+  {
+    "id": 249542,
+    "reference": "DS0327/26",
+    "type": "Beschlussvorlage",
+    "title": "Genehmigung der Annahme von Sponsoringleistungen gemäß § 99 Abs. 6 KVG LSA",
+    "files": [
+      {
+        "id": 748817,
+        "name": "Beschlussvorlage Stadt",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748817&type=do",
+        "size": 222514
+      },
+      {
+        "id": 748876,
+        "name": "DS0327_26 - Anlage Kaiser-Otto-Fest 2026",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748876&type=do",
+        "size": 55607
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-11T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "3.1",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.1",
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      }
+    ],
+    "rootPaperId": 249542,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249544,
+    "reference": "A0147/26",
+    "type": "Antrag",
+    "title": "Neue Neustadt sauber und lebenswert – Sofortmaßnahmen gegen Vermüllung und für mehr Lebensqualität",
+    "files": [
+      {
+        "id": 748832,
+        "name": "Antrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748832&type=do",
+        "size": 95209
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.23",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-31T16:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.23",
+        "result": "in die Ausschüsse verwiesen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-31"
+      }
+    ],
+    "rootPaperId": 249544,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249545,
+    "reference": "DS0329/26",
+    "type": "Beschlussvorlage",
+    "title": "Neufassung der Vergnügungssteuersatzung",
+    "files": [
+      {
+        "id": 748968,
+        "name": "Beschlussvorlage Stadt",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748968&type=do",
+        "size": null
+      },
+      {
+        "id": 749264,
+        "name": "DS0329/26 - Anlage 1 Vergnügungssteuersatzung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749264&type=do",
+        "size": null
+      },
+      {
+        "id": 749265,
+        "name": "DS0329/26 - Anlage 2 Synopse",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749265&type=do",
+        "size": null
+      },
+      {
+        "id": 749266,
+        "name": "DS0329/26 - Anlage 3 Stellungnahme DEHOGA vom 13.07.2026",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749266&type=do",
+        "size": null
+      },
+      {
+        "id": 749267,
+        "name": "DS0329/26 - Anlage 4 Stellungnahme der IHK vom 20.07.2026",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749267&type=do",
+        "size": null
+      },
+      {
+        "id": 749268,
+        "name": "DS0329/26 - Anlage 5 Stellungnahme Verband der Automatenkaufleute vom 31.07.2026",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749268&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-09-02T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "3.1",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249545,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249550,
+    "reference": "I0261/26",
+    "type": "Informationsvorlage",
+    "title": "Ganztagsbetreuung von Schulkindern ab Schuljahr 2026/2027",
+    "files": [
+      {
+        "id": 748904,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748904&type=do",
+        "size": null
+      },
+      {
+        "id": 749022,
+        "name": "I0261/26 - Anlage 1 Positionspapier zum Ganztagsförderungsgesetz",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749022&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-11T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "5.4",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Bildung, Schule und Sport",
+        "date": "2026-08-25T16:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Bildung, Schule und Sport",
+        "agendaItem": "8.3",
+        "result": "zur Kenntnis genommen"
+      }
+    ],
+    "rootPaperId": 249550,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249556,
+    "reference": "DS0048/26/1",
+    "type": "Änderungsantrag",
+    "title": "Neufassung der Eigenbetriebssatzung des EB Puppentheater Magdeburg",
+    "files": [
+      {
+        "id": 748984,
+        "name": "Änderungsantrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748984&type=do",
+        "size": 53044
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.23.1",
+        "result": "zurückgestellt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      }
+    ],
+    "rootPaperId": 249556,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248186
+    ]
+  },
+  {
+    "id": 249564,
+    "reference": "DS0343/26",
+    "type": "Beschlussvorlage",
+    "title": "Genehmigung der Annahme von Spenden gem. § 99 Abs. 6 KVG-LSA",
+    "files": [
+      {
+        "id": 749030,
+        "name": "Beschlussvorlage Stadt",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749030&type=do",
+        "size": null
+      },
+      {
+        "id": 749035,
+        "name": "DS0343/26 - Anlage 1 Spendenannahme",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749035&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-25T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "3.2",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249564,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249565,
+    "reference": "DS0344/26",
+    "type": "Beschlussvorlage EB",
+    "title": "Neufassung der Friedhofssatzung der Landeshauptstadt Magdeburg",
+    "files": [
+      {
+        "id": 749038,
+        "name": "Beschlussvorlage EB",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749038&type=do",
+        "size": null
+      },
+      {
+        "id": 749759,
+        "name": "DS0344_26 Anlage 2 Synopse",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749759&type=do",
+        "size": null
+      },
+      {
+        "id": 749774,
+        "name": "DS0344_26 Anlage 1",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749774&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-09-02T09:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "7.1",
+        "result": "zur Kenntnis genommen"
+      }
+    ],
+    "rootPaperId": 249565,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249569,
+    "reference": "I0263/26",
+    "type": "Informationsvorlage Prüfantrag",
+    "title": "Eine Lösung für den Fuß- und Radverkehr am Schleinufer – Elbuferpromenade wieder nutzbar machen!",
+    "files": [
+      {
+        "id": 749339,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749339&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-09-02T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "5.4",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249569,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      246976
+    ]
+  },
+  {
+    "id": 249574,
+    "reference": "S0437/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "70 Jahre Barleber See in 2028",
+    "files": [
+      {
+        "id": 749210,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749210&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-18T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "9.1",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249385,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249385
+    ]
+  },
+  {
+    "id": 249576,
+    "reference": "S0438/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Kaltlufthalle Diesdorf",
+    "files": [
+      {
+        "id": 749213,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749213&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-25T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "8.1",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249224,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249224
+    ]
+  },
+  {
+    "id": 249577,
+    "reference": "A0148/26",
+    "type": "Antrag",
+    "title": "Platz der Deutschen Einheit",
+    "files": [
+      {
+        "id": 749437,
+        "name": "Antrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749437&type=do",
+        "size": 150524
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.32",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-31T16:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.32",
+        "result": "in die Ausschüsse verwiesen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-31"
+      }
+    ],
+    "rootPaperId": 249577,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249578,
+    "reference": "A0149/26",
+    "type": "Antrag",
+    "title": "Pilotprojekt zur Begrünung der Grundstücksmauer der Grundschule Rothensee prüfen",
+    "files": [
+      {
+        "id": 749433,
+        "name": "Antrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749433&type=do",
+        "size": 17012
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.31",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-31T16:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.31",
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-31"
+      }
+    ],
+    "rootPaperId": 249578,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249579,
+    "reference": "A0150/26",
+    "type": "Antrag",
+    "title": "Befriste Öffnungszeiten Hegelspielplatz",
+    "files": [
+      {
+        "id": 749483,
+        "name": "A0150/26 Antrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749483&type=do",
+        "size": 15758
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.39",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-31T16:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.39",
+        "result": "in die Ausschüsse verwiesen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-31"
+      }
+    ],
+    "rootPaperId": 249579,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249580,
+    "reference": "A0151/26",
+    "type": "Antrag",
+    "title": "Datenerhebung und Konsequenzen gemäß §4 Grünanlagensatzung",
+    "files": [
+      {
+        "id": 749484,
+        "name": "A0151/26 Antrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749484&type=do",
+        "size": 67298
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.40",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-31T16:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.40",
+        "result": "in die Ausschüsse verwiesen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-31"
+      }
+    ],
+    "rootPaperId": 249580,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249581,
+    "reference": "A0152/26",
+    "type": "Antrag",
+    "title": "Sport bringt Menschen in die Stadt – Chancen für eine lebendige Innenstadt nutzen",
+    "files": [
+      {
+        "id": 749438,
+        "name": "Antrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749438&type=do",
+        "size": 52145
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.30",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-31T16:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.30",
+        "result": "in die Ausschüsse verwiesen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-31"
+      }
+    ],
+    "rootPaperId": 249581,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249582,
+    "reference": "DS0291/26/1",
+    "type": "Änderungsantrag",
+    "title": "Präsentation der Landeshauptstadt Magdeburg auf der Grünen Woche 2027",
+    "files": [
+      {
+        "id": 749500,
+        "name": "DS0291/26/1 Änderungsantrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749500&type=do",
+        "size": 62444
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-08-19T16:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "5.10.1",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Wirtschaftsförderung, Tourismus und regionale Entwicklung",
+        "date": "2026-08-20T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Wirtschaftsförderung, Tourismus und regionale Entwicklung",
+        "agendaItem": "4.2.1",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.22.1",
+        "result": "geändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      }
+    ],
+    "rootPaperId": 249421,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249421
+    ]
+  },
+  {
+    "id": 249584,
+    "reference": "A0153/26",
+    "type": "Antrag",
+    "title": "Nationalen Veteranentag in Magdeburg etablieren",
+    "files": [
+      {
+        "id": 749440,
+        "name": "Antrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749440&type=do",
+        "size": 63682
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.29",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-31T16:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.29",
+        "result": "in die Ausschüsse verwiesen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-31"
+      }
+    ],
+    "rootPaperId": 249584,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249586,
+    "reference": "I0266/26",
+    "type": "Informationsvorlage Prüfantrag",
+    "title": "Früh-Schwimmen an Hitzetagen in Freibädern ermöglichen",
+    "files": [
+      {
+        "id": 749245,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749245&type=do",
+        "size": 24933
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-18T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "6.2",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Bildung, Schule und Sport",
+        "date": "2026-08-25T16:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Bildung, Schule und Sport",
+        "agendaItem": "8.4",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "10.14",
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      }
+    ],
+    "rootPaperId": 248415,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248415
+    ]
+  },
+  {
+    "id": 249589,
+    "reference": "S0439/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Sachstand zum Magdeburger Modellprojekt „Selbstbestimmtes Wohnen“",
+    "files": [
+      {
+        "id": 749315,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749315&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-25T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "8.3",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249332,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249332
+    ]
+  },
+  {
+    "id": 249590,
+    "reference": "S0440/26",
+    "type": "Stellungnahme (Anfrage)",
+    "title": "Werbeanlage Salbker Lesezeichen",
+    "files": [
+      {
+        "id": 749322,
+        "name": "Stellungnahme (Anfrage)",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749322&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-25T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "8.5",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249210,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      249210
+    ]
+  },
+  {
+    "id": 249591,
+    "reference": "A0154/26",
+    "type": "Antrag",
+    "title": "Taxifestpreise in Magdeburg ermöglichen",
+    "files": [
+      {
+        "id": 749338,
+        "name": "Antrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749338&type=do",
+        "size": 13852
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.24",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-31T16:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.24",
+        "result": "in die Ausschüsse verwiesen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-31"
+      }
+    ],
+    "rootPaperId": 249591,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249592,
+    "reference": "DS0353/26",
+    "type": "Beschlussvorlage",
+    "title": "Prüfergebnis Umsetzbarkeit und Finanzierung Zwischenvariante für den Bundesstützpunkt Schwimmen bis zur Fertigstellung der Sanierung der Elbeschwimmhalle",
+    "files": [
+      {
+        "id": 749798,
+        "name": "Beschlussvorlage Stadt",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749798&type=do",
+        "size": 182357
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-25T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "3.5",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.39",
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      }
+    ],
+    "rootPaperId": 249592,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249593,
+    "reference": "I0267/26",
+    "type": "Informationsvorlage Prüfantrag",
+    "title": "Erhöhung der Sicherheit für Fußgängerinnen und Fußgänger durch Warnfiguren",
+    "files": [
+      {
+        "id": 749450,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749450&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-25T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "5.3",
+        "result": "genehmigt OB"
+      }
+    ],
+    "rootPaperId": 249593,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      247482
+    ]
+  },
+  {
+    "id": 249594,
+    "reference": "A0155/26",
+    "type": "Antrag",
+    "title": "Abbau unzumutbarer Wartezeiten bei Einbürgerungen",
+    "files": [
+      {
+        "id": 749376,
+        "name": "A0155/26 Antrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749376&type=do",
+        "size": 279310
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.25",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-31T16:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.25",
+        "result": "abgelehnt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-31"
+      }
+    ],
+    "rootPaperId": 249594,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249595,
+    "reference": "I0268/26",
+    "type": "Informationsvorlage Prüfantrag",
+    "title": "Umsetzung des Stadtratsbeschlusses DS0189/26 – Aufnahme auswärtiger Schülerinnen und Schüler zum Schuljahr 2026/2027 vom 21.05.2026",
+    "files": [
+      {
+        "id": 749381,
+        "name": "Information",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749381&type=do",
+        "size": 55711
+      },
+      {
+        "id": 749383,
+        "name": "I0268/26_Anlage",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749383&type=do",
+        "size": 87601
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-08-18T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "6.3",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Bildung, Schule und Sport",
+        "date": "2026-08-25T16:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Bildung, Schule und Sport",
+        "agendaItem": "8.5",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Stadtrat",
+        "agendaItem": "10.15",
+        "result": "zur Kenntnis genommen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      }
+    ],
+    "rootPaperId": 249595,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": [
+      248865
+    ]
+  },
+  {
+    "id": 249596,
+    "reference": "A0156/26",
+    "type": "Antrag",
+    "title": "Kulturerbe-Siegel für den Magdeburger Dom",
+    "files": [
+      {
+        "id": 749385,
+        "name": "A0156/26 Antrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749385&type=do",
+        "size": 15253
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.26",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-31T16:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.26",
+        "result": "in die Ausschüsse verwiesen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-31"
+      }
+    ],
+    "rootPaperId": 249596,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249597,
+    "reference": "A0157/26",
+    "type": "Antrag",
+    "title": "Wiederinbetriebnahme des Brunnens Leiterstraße 5",
+    "files": [
+      {
+        "id": 749387,
+        "name": "A0157/26 Antrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749387&type=do",
+        "size": 58843
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.27",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-31T16:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.27",
+        "result": "in die Ausschüsse verwiesen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-31"
+      }
+    ],
+    "rootPaperId": 249597,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249598,
+    "reference": "A0158/26",
+    "type": "Antrag",
+    "title": "Vom Pilotprojekt barriefreie Baustelle lernen",
+    "files": [
+      {
+        "id": 749470,
+        "name": "A0158/26 Antrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749470&type=do",
+        "size": 56119
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.38",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-31T16:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.38",
+        "result": "abgelehnt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-31"
+      }
+    ],
+    "rootPaperId": 249598,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 249599,
+    "reference": "A0159/26",
+    "type": "Antrag",
+    "title": "Zebrastreifen Friedrich-Ebert-Straße",
+    "files": [
+      {
+        "id": 749466,
+        "name": "A0159/26 Antrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749466&type=do",
+        "size": 59820
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.37",
+        "result": "vertagt",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-31T16:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "7.37",
+        "result": "in die Ausschüsse verwiesen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-31"
+      }
+    ],
+    "rootPaperId": 249599,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  }
+]

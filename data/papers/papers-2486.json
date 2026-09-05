@@ -58,11 +58,36 @@
         "result": "in die Ausschüsse verwiesen",
         "parliamentPeriodId": "magdeburg-8",
         "sessionId": "2026-05-26"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "7.6",
+        "result": "nicht empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für kommunale Rechts- und Bürgerangelegenheiten",
+        "date": "2026-08-20T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für kommunale Rechts- und Bürgerangelegenheiten",
+        "agendaItem": "5.2",
+        "result": "nicht empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-09-02T16:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "6.4",
+        "result": "zurückgezogen"
       }
     ],
     "rootPaperId": 248600,
     "subordinatedPaperIds": [
-      248734
+      248734,
+      249450
     ],
     "superOrdinatedPaperIds": []
   },
@@ -544,9 +569,57 @@
     "title": "I. Beantragung von Städtebaufördermitteln für das Programmjahr 2027",
     "files": [
       {
+        "id": 741913,
+        "name": "DS0114-26 Anlage II.3 LZ Stadtfeld",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741913&type=do",
+        "size": null
+      },
+      {
+        "id": 741915,
+        "name": "DS0114-26 Anlage II.5 LZ W-C-B",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741915&type=do",
+        "size": null
+      },
+      {
+        "id": 741916,
+        "name": "DS0114-26 Anlage II.6 SZ Barleber See",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741916&type=do",
+        "size": null
+      },
+      {
+        "id": 741917,
+        "name": "DS0114-26 Anlage II.7 SZ Leipziger Straße",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741917&type=do",
+        "size": null
+      },
+      {
+        "id": 741922,
+        "name": "DS0114-26 Anlage II.12 W+nE Nord Rückbau",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741922&type=do",
+        "size": null
+      },
+      {
+        "id": 741925,
+        "name": "DS0114-26 Anlage II.14 W+nE Rothensee",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741925&type=do",
+        "size": null
+      },
+      {
+        "id": 742861,
+        "name": "DS0114-26 Anlage I.7 SZ Leipziger Straße",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742861&type=do",
+        "size": null
+      },
+      {
         "id": 742866,
         "name": "DS0114-26 Anlage I.12 W+nE Nord Rückbau",
         "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742866&type=do",
+        "size": null
+      },
+      {
+        "id": 742868,
+        "name": "DS0114-26 Anlage I.14 W+nE Rothensee",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=742868&type=do",
         "size": null
       },
       {
@@ -678,6 +751,22 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "2.4",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "6.7",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-09-02T16:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "5.4",
+        "result": "empfohlen"
       }
     ],
     "rootPaperId": 248619,
@@ -2002,6 +2091,22 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "3.7",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "6.11",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-09-02T16:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "5.5",
+        "result": "empfohlen"
       }
     ],
     "rootPaperId": 248658,
@@ -2446,6 +2551,136 @@
     ]
   },
   {
+    "id": 248671,
+    "reference": "DS0125/26",
+    "type": "Beschlussvorlage",
+    "title": "Behandlung der Stellungnahmen (Abwägung) zur 1. Änderung des Bebauungsplans Nr. 476-1 \"Mariannenviertel\"",
+    "files": [
+      {
+        "id": 747141,
+        "name": "Beschlussvorlage Stadt",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747141&type=do",
+        "size": 162428
+      },
+      {
+        "id": 747158,
+        "name": "DS0125/26 - Anlage 1 Abwägungskatalog Teil I",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747158&type=do",
+        "size": 383704
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-28T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "3.8",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-08-18T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "3.4",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "6.22",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.25",
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      }
+    ],
+    "rootPaperId": 248671,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 248672,
+    "reference": "DS0126/26",
+    "type": "Beschlussvorlage",
+    "title": "Satzung der 1. Änderung des Bebauungsplan Nr. 476-1 \"Mariannenviertel\"",
+    "files": [
+      {
+        "id": 747202,
+        "name": "DS0126/26 - Anlage 1 Lageplan",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747202&type=do",
+        "size": 477815
+      },
+      {
+        "id": 747205,
+        "name": "Beschlussvorlage Stadt",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=747205&type=do",
+        "size": 161139
+      },
+      {
+        "id": 748320,
+        "name": "DS0126/26 - Anlage 2 B-Plan",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748320&type=do",
+        "size": 2697339
+      },
+      {
+        "id": 748321,
+        "name": "DS0126/26 - Anlage 3 B-Begründung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748321&type=do",
+        "size": 3300263
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-28T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "3.9",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-08-18T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "3.5",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "6.23",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+        "date": "2026-08-27T14:00:00+02:00",
+        "role": "Beschlussfassung",
+        "organization": "Stadtrat",
+        "agendaItem": "6.26",
+        "result": "ungeändert beschlossen",
+        "parliamentPeriodId": "magdeburg-8",
+        "sessionId": "2026-08-27"
+      }
+    ],
+    "rootPaperId": 248672,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
     "id": 248678,
     "reference": "DS0129/26",
     "type": "Beschlussvorlage",
@@ -2688,6 +2923,22 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "6.3",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "8.1",
+        "result": "zur Kenntnis genommen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Bildung, Schule und Sport",
+        "date": "2026-08-25T16:30:00+02:00",
+        "role": "Kenntnisnahme",
+        "organization": "Ausschuss für Bildung, Schule und Sport",
+        "agendaItem": "8.2",
+        "result": "zur Kenntnis genommen"
       }
     ],
     "rootPaperId": 248686,
@@ -2955,6 +3206,30 @@
         "organization": "Die Oberbürgermeisterin",
         "agendaItem": "4.3",
         "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-08-18T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "3.6",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "6.8",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Finanz- und Grundstücksausschusses",
+        "date": "2026-09-02T16:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Finanz- und Grundstücksausschuss",
+        "agendaItem": "5.6",
+        "result": "empfohlen"
       }
     ],
     "rootPaperId": 248699,

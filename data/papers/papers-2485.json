@@ -2046,7 +2046,9 @@
       }
     ],
     "rootPaperId": 248584,
-    "subordinatedPaperIds": [],
+    "subordinatedPaperIds": [
+      248961
+    ],
     "superOrdinatedPaperIds": []
   },
   {
@@ -2437,6 +2439,188 @@
     "superOrdinatedPaperIds": [
       248202
     ]
+  },
+  {
+    "id": 248595,
+    "reference": "DS0109/26",
+    "type": "Beschlussvorlage",
+    "title": "Behandlung der Stellungnahmen (Abwägung) zum Bebauungsplan Nr. 368-1C \"Kümmelsberg Westseite\" Teilbereich C",
+    "files": [
+      {
+        "id": 746047,
+        "name": "Beschlussvorlage Stadt",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746047&type=do",
+        "size": null
+      },
+      {
+        "id": 748140,
+        "name": "DS0109/26 - Anlage 1 Abwägungskatalog",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748140&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-28T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "3.6",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-08-18T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "3.1",
+        "result": "empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "6.20",
+        "result": "empfohlen"
+      }
+    ],
+    "rootPaperId": 248595,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 248597,
+    "reference": "DS0110/26",
+    "type": "Beschlussvorlage",
+    "title": "Satzung zum Bebauungsplan Nr. 368-1C \"Kümmelsberg Westseite\" Teilbereich C",
+    "files": [
+      {
+        "id": 746062,
+        "name": "Beschlussvorlage Stadt",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=746062&type=do",
+        "size": null
+      },
+      {
+        "id": 748152,
+        "name": "DS0110/26 - Anlage-1 Lageplan",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748152&type=do",
+        "size": null
+      },
+      {
+        "id": 748153,
+        "name": "DS0110/26 - Anlage 2 B-Plan-Satzung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748153&type=do",
+        "size": null
+      },
+      {
+        "id": 748154,
+        "name": "DS0110/26 - Anlage 3 Begründung+Umweltbericht_26-05",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748154&type=do",
+        "size": null
+      },
+      {
+        "id": 748155,
+        "name": "DS0110/26 - Anlage 4 Zusammenfassende Erklärung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748155&type=do",
+        "size": null
+      },
+      {
+        "id": 748156,
+        "name": "DS0110/26 - Anlage-5 Artenschutzfachbeitrag",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748156&type=do",
+        "size": null
+      },
+      {
+        "id": 748158,
+        "name": "DS0110/26 - Anlage 6 EAB Text",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748158&type=do",
+        "size": null
+      },
+      {
+        "id": 748159,
+        "name": "DS0110/26 - Anlage 6.1 EAB Bestandsplan",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748159&type=do",
+        "size": null
+      },
+      {
+        "id": 748160,
+        "name": "DS0110/26 - Anlage 7 Faunistische-Untersuchung",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748160&type=do",
+        "size": null
+      },
+      {
+        "id": 748161,
+        "name": "DS0110/26 - Anlage 8 Feldhamster-Ga",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748161&type=do",
+        "size": null
+      },
+      {
+        "id": 748162,
+        "name": "DS0110/26 - Anlage 9 Schall-Ga",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748162&type=do",
+        "size": null
+      },
+      {
+        "id": 748163,
+        "name": "DS0110 26 - Anlage 10 Baugrund-Ga",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748163&type=do",
+        "size": null
+      },
+      {
+        "id": 748164,
+        "name": "DS0110/26 - Anlage 11 RW-Konzept-Text",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748164&type=do",
+        "size": null
+      },
+      {
+        "id": 748165,
+        "name": "DS0110/26 - Anlage 11-1 RW-Konzept-Plan",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748165&type=do",
+        "size": null
+      },
+      {
+        "id": 748166,
+        "name": "DS0110/26 - Anlage 11-2 RW-Konzept-Schnitte1",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748166&type=do",
+        "size": null
+      },
+      {
+        "id": 748167,
+        "name": "DS0110/26 - Anlage 11-3 RW-Konzept-Schnitte2",
+        "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748167&type=do",
+        "size": null
+      }
+    ],
+    "consultations": [
+      {
+        "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+        "date": "2026-07-28T09:00:00+02:00",
+        "role": "Genehmigung OB",
+        "organization": "Die Oberbürgermeisterin",
+        "agendaItem": "3.7",
+        "result": "genehmigt OB"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Umwelt und Energie",
+        "date": "2026-08-18T17:00:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Umwelt und Energie",
+        "agendaItem": "3.2",
+        "result": "nicht empfohlen"
+      },
+      {
+        "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+        "date": "2026-08-20T15:30:00+02:00",
+        "role": "Beratung",
+        "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+        "agendaItem": "6.21",
+        "result": "empfohlen"
+      }
+    ],
+    "rootPaperId": 248597,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
   },
   {
     "id": 248599,

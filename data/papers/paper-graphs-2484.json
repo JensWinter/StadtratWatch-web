@@ -380,8 +380,57 @@
           }
         ],
         "rootPaperId": 248415,
-        "subordinatedPaperIds": [],
+        "subordinatedPaperIds": [
+          249586
+        ],
         "superOrdinatedPaperIds": []
+      },
+      {
+        "id": 249586,
+        "reference": "I0266/26",
+        "type": "Informationsvorlage Prüfantrag",
+        "title": "Früh-Schwimmen an Hitzetagen in Freibädern ermöglichen",
+        "files": [
+          {
+            "id": 749245,
+            "name": "Information",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749245&type=do",
+            "size": 24933
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-08-18T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "6.2",
+            "result": "genehmigt OB"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Bildung, Schule und Sport",
+            "date": "2026-08-25T16:30:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Ausschuss für Bildung, Schule und Sport",
+            "agendaItem": "8.4",
+            "result": "zur Kenntnis genommen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "10.14",
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          }
+        ],
+        "rootPaperId": 248415,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          248415
+        ]
       }
     ]
   },
@@ -583,7 +632,7 @@
             "id": 741534,
             "name": "S0191/26 Stellungnahme (Antrag)",
             "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=741534&type=do",
-            "size": null
+            "size": 101531
           }
         ],
         "consultations": [
@@ -594,6 +643,34 @@
             "organization": "Die Oberbürgermeisterin",
             "agendaItem": "9.11",
             "result": "genehmigt OB"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Ausschusses für Stadtentwicklung, Bauen und Verkehr",
+            "date": "2026-06-11T16:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Ausschuss für Stadtentwicklung, Bauen und Verkehr",
+            "agendaItem": "6.8.3",
+            "result": "zur Kenntnis genommen"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-27T14:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "7.6.1",
+            "result": "vertagt",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-27"
+          },
+          {
+            "meeting": "öffentliche/nicht öffentliche Sitzung des Stadtrates",
+            "date": "2026-08-31T16:00:00+02:00",
+            "role": "Kenntnisnahme",
+            "organization": "Stadtrat",
+            "agendaItem": "7.6.1",
+            "result": "zur Kenntnis genommen",
+            "parliamentPeriodId": "magdeburg-8",
+            "sessionId": "2026-08-31"
           }
         ],
         "rootPaperId": 248422,

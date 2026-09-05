@@ -1,0 +1,26 @@
+[
+  {
+    "id": 214171,
+    "reference": "DS0378/11",
+    "type": "Beschlussvorlage",
+    "title": "Abwägung zum vorhabenbezogenen Bebauungsplan Nr. 178-7.1 \"Elbe-Hafen-Silo\"",
+    "files": [],
+    "consultations": [],
+    "rootPaperId": 214171,
+    "subordinatedPaperIds": [
+      214557
+    ],
+    "superOrdinatedPaperIds": []
+  },
+  {
+    "id": 214172,
+    "reference": "DS0379/11",
+    "type": "Beschlussvorlage",
+    "title": "Öffentliche Auslegung des Entwurfs zum vorhabenbezogenen B-Plan Nr. 178-7.1 \"Elbe-Hafen-Silo\"",
+    "files": [],
+    "consultations": [],
+    "rootPaperId": 214172,
+    "subordinatedPaperIds": [],
+    "superOrdinatedPaperIds": []
+  }
+]

@@ -508,7 +508,8 @@
         "rootPaperId": 245606,
         "subordinatedPaperIds": [
           245736,
-          247719
+          247719,
+          249527
         ],
         "superOrdinatedPaperIds": []
       },
@@ -563,6 +564,77 @@
             "role": "Genehmigung OB",
             "organization": "Die Oberbürgermeisterin",
             "agendaItem": "6.6",
+            "result": "genehmigt OB"
+          }
+        ],
+        "rootPaperId": 245606,
+        "subordinatedPaperIds": [],
+        "superOrdinatedPaperIds": [
+          245606
+        ]
+      },
+      {
+        "id": 249527,
+        "reference": "I0289/26",
+        "type": "Informationsvorlage",
+        "title": "Grundsatzbeschluss: Einführung einer Einwegverpackungsabgabe",
+        "files": [
+          {
+            "id": 748605,
+            "name": "I0289-26_Anlage 1_Beschluss Bundesverfassungsgericht",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748605&type=do",
+            "size": null
+          },
+          {
+            "id": 748606,
+            "name": "I0289-26_Anlage 2_Pressemitteilung Eberhard Karls Universität Tübingen",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748606&type=do",
+            "size": null
+          },
+          {
+            "id": 748607,
+            "name": "I0289-26_Anlage 3_Umfrage Deutsche Umwelthilfe",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748607&type=do",
+            "size": null
+          },
+          {
+            "id": 748608,
+            "name": "I0289-26_Anlage 4_WESER KURIER vom 26.11.2025 und Faktenpapier der Handelskammer Bremen",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748608&type=do",
+            "size": null
+          },
+          {
+            "id": 748609,
+            "name": "I0289-26_Anlage 5_Märkische Allgemeine vom 20.07.2026",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748609&type=do",
+            "size": null
+          },
+          {
+            "id": 748610,
+            "name": "I0289-26_Anlage 6_Kölnische Rundschau vom 20.08.2025",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748610&type=do",
+            "size": null
+          },
+          {
+            "id": 748611,
+            "name": "I0289-26_Anlage 7_Schreiben EB SFM vom 11.06.2025 und EB SAB 03.07.2025",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=748611&type=do",
+            "size": null
+          },
+          {
+            "id": 749877,
+            "name": "Information",
+            "url": "https://ratsinfo.magdeburg.de/getfile.asp?id=749877&type=do",
+            "size": null
+          }
+        ],
+        "consultations": [
+          {
+            "meeting": "nicht öffentliche Sitzung der Oberbürgermeisterin",
+            "date": "2026-08-25T09:00:00+02:00",
+            "role": "Genehmigung OB",
+            "organization": "Die Oberbürgermeisterin",
+            "agendaItem": "5.2",
             "result": "genehmigt OB"
           }
         ],

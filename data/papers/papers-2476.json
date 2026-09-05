@@ -2645,7 +2645,8 @@
     ],
     "rootPaperId": 247669,
     "subordinatedPaperIds": [
-      247905
+      247905,
+      249454
     ],
     "superOrdinatedPaperIds": []
   },
@@ -3184,7 +3185,7 @@
       },
       {
         "meeting": "öffentliche/nicht öffentliche Sitzung des Betriebsausschusses Städtischer Abfallwirtschaftsbetrieb",
-        "date": "2026-03-03T16:30:00+01:00",
+        "date": "2026-03-03T16:40:00+01:00",
         "role": "Beratung",
         "organization": "Betriebsausschuss Städtischer Abfallwirtschaftsbetrieb",
         "agendaItem": "8.1",
