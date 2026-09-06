@@ -101,10 +101,10 @@ export async function diffWebAssets(assets: LocalAsset[], remote: RemoteObject[]
   const invalidations = [...uploads, ...deletes].map(toInvalidationPath);
 
   return {
-    uploads: uploads.sort(),
-    deletes: deletes.sort(),
-    invalidations: invalidations.sort(),
-    unchanged: unchanged.sort(),
+    uploads: uploads.toSorted((a, b) => a.localeCompare(b)),
+    deletes: deletes.toSorted((a, b) => a.localeCompare(b)),
+    invalidations: invalidations.toSorted((a, b) => a.localeCompare(b)),
+    unchanged: unchanged.toSorted((a, b) => a.localeCompare(b)),
   };
 }
 
