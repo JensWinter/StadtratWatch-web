@@ -4,7 +4,7 @@
 
 Dieses Kapitel vertieft die wenigen Entscheidungen, die die Architektur am stärksten prägen, am schwersten umkehrbar oder am riskantesten sind. Während Kapitel 4 (Lösungsstrategie) alle wesentlichen Technologieentscheidungen knapp und in der Übersicht begründet, dokumentieren die folgenden _Architecture Decision Records_ (ADR) zusätzlich den Problemkontext, die betrachteten Alternativen und die Konsequenzen.
 
-Die ADRs folgen einem schlanken https://adr.github.io/madr/[MADR]-Format. Sie sind nachträglich für bereits umgesetzte Entscheidungen verfasst; ihr Status ist daher durchgängig _Akzeptiert_. Die zeitliche Nachvollziehbarkeit ergibt sich aus der Git-Historie dieses Dokuments.
+Die ADRs folgen einem schlanken https://adr.github.io/madr/[MADR]-Format. Die meisten sind nachträglich für bereits umgesetzte Entscheidungen verfasst und tragen den Status _Akzeptiert_; noch nicht umgesetzte, aber bereits getroffene Richtungsentscheidungen tragen _Vorgeschlagen_, bis sie umgesetzt sind. Die zeitliche Nachvollziehbarkeit ergibt sich aus der Git-Historie dieses Dokuments.
 
 [cols="1,4,1",options="header"]
 |===
@@ -29,6 +29,10 @@ Die ADRs folgen einem schlanken https://adr.github.io/madr/[MADR]-Format. Sie si
 | <<adr-0005,ADR-0005>>
 | OParl-Rohdaten extern statt im Repository
 | Akzeptiert
+
+| <<adr-0006,ADR-0006>>
+| Web-Assets dezentral je Generator publizieren
+| Vorgeschlagen
 |===
 
 include::adr-0001-json-datenbestand.adoc[leveloffset=+1]
@@ -40,3 +44,5 @@ include::adr-0003-automatische-datengewinnung.adoc[leveloffset=+1]
 include::adr-0004-geteilte-modelle.adoc[leveloffset=+1]
 
 include::adr-0005-externe-oparl-rohdaten.adoc[leveloffset=+1]
+
+include::adr-0006-web-assets-dezentral-publizieren.adoc[leveloffset=+1]
