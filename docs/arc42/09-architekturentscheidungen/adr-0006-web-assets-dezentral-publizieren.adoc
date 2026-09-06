@@ -1,0 +1,57 @@
+[#adr-0006]
+= ADR-0006: Web-Assets dezentral je Generator publizieren
+
+*Status:* Vorgeschlagen (umzusetzen via https://github.com/JensWinter/StadtratWatch-web/issues/463[#463])
+
+== Kontext und Problem
+
+Die ausgelieferten Web-Assets unter dem `web-assets/`-Präfix — die Drucksachen-JSON-Batches (`papers/`), die Abstimmungs-Batches (`paper-votings/`) und die Abstimmungs-PNGs (`parliament-periods/{periode}/`) — werden *manuell über die AWS-S3-Konsole* hochgeladen. Es gibt dafür kein Skript und keinen CI-Schritt; das Vorgehen ist als Runbook (`docs/guides/publishing-web-assets.md`) dokumentiert.
+
+Der manuelle Weg hat vier gegen die Live-Distribution verifizierte Schwächen:
+
+. *Kein `Cache-Control`.* Die Assets liefern überhaupt keinen `Cache-Control`-Header; die Frische hängt allein an der Default-TTL der Distribution.
+. *Invalidierung ist Handarbeit.* Die Batch-Dateinamen sind stabil und werden in-place überschrieben — anders als beim inhaltsadressierten `oparl/`-Präfix (<<adr-0005,ADR-0005>>) ist nach jedem Upload eine CloudFront-Invalidierung nötig.
+. *Verwaiste Batch-Dateien.* Ein Konsolen-Upload fügt nur hinzu und überschreibt; er löscht nichts. Batches, die der Generator lokal nicht mehr erzeugt, bleiben in S3 liegen und liefern dauerhaft veraltete Daten aus.
+. *Ein vergessener Upload bleibt stumm.* Ein fehlender Key liefert `403` (der Bucket verweigert `s3:ListBucket`), ununterscheidbar von einem korrekt leeren Batch. Der Client rendert beides als deaktivierten Tab — ein misslungener Upload fällt niemandem auf.
+
+Dazu ist der Schritt unversioniert, nicht reviewbar und nicht reproduzierbar.
+
+Zwei Rahmenbedingungen prägen die Lösung:
+
+* Anders als der `oparl/`-Snapshot (<<adr-0005,ADR-0005>>) sind diese Assets *nicht inhaltsadressiert*, sondern werden mit stabilen Namen in-place überschrieben. Invalidierung und das Entfernen verwaister Objekte sind daher zwingender Teil jedes Uploads — das `oparl/`-Muster lässt sich nicht einfach übertragen.
+* `data/papers/` (~41 MB, ~496 Dateien, nicht in LFS) wird im Repository versioniert, obwohl der Astro-Build es *gar nicht liest*: der Build konsumiert nur das committete Derivat `paper-index.json`, während die Batch-Dateien rein zur Laufzeit clientseitig von CloudFront geladen werden. Committet ist `data/papers/` heute allein, weil es die Quelle des manuellen Uploads ist — inkonsistent zu `paper-votings`/`image-assets`, die in `output/` (nicht committet) landen.
+
+== Betrachtete Optionen
+
+* *Manuell über die Konsole* (Status quo) — unversioniert, nicht reviewbar, fehleranfällig (die vier Schwächen oben).
+* *Zentrales `publish-web-assets`-Skript* — ein Skript synchronisiert alle drei Präfixe. Müsste die autoritative Liste der erlaubten Dateien unabhängig rekonstruieren — genau die fragile Stelle aus Schwäche 4 —, obwohl der jeweilige Generator sie ohnehin besitzt.
+* *Dezentral je Generator* (gewählt) — jeder Generator publiziert seine eigenen Assets über ein `--push`-Flag, nach dem etablierten Muster von `scrape-oparl --push` (<<adr-0005,ADR-0005>>).
+
+== Entscheidung
+
+Jeder der drei Generatoren `generate-paper-assets`, `generate-paper-votings` und `generate-image-assets` erhält ein optionales, authentifiziertes `--push`-Flag, das seine erzeugten Assets in denselben Bucket lädt — analog zu `scrape-oparl --push`. Ohne das Flag schreibt der Generator nur lokal.
+
+* *Gemeinsame Logik.* Der S3/CloudFront-Anteil (put/list/delete, `Cache-Control`, CloudFront-Invalidierung, `--dry-run`-Diff, injizierbares `S3Send` für Tests ohne AWS) wird nach `src/scripts/shared/` extrahiert und von allen drei Generatoren mit ihrem jeweiligen Präfix und ihrer Dateiliste aufgerufen — keine dreifach duplizierte Upload-Logik.
+* *Lokalität statt Rekonstruktion.* Weil die Web-Assets in-place überschrieben werden, gehören das Entfernen verwaister Objekte und die CloudFront-Invalidierung zwingend zum Upload. Der Generator hält die autoritative Liste seiner erzeugten Dateien und löst damit die Schwächen 3 und 4 direkt, statt dass ein zentrales Skript die Wahrheit rekonstruieren müsste.
+* *`data/papers/` wird ent-committet.* `generate-paper-assets` schreibt nach `output/` wie die anderen beiden Generatoren und publiziert via `--push`; `data/papers/` verlässt das Repository. Die Eingabe von `index-search` (heute `data/papers/`) wird auf den Generator-Output nachgezogen. Damit folgen alle drei Generatoren demselben Muster: nach `output/` erzeugen, per `--push` als bewusster Maintainer-Schritt liefern.
+* *Authentifizierung* über Umgebungsvariablen wie bei `scrape-oparl --push` (`AWS_REGION`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `OPARL_S3_BUCKET`), neu `AWS_CLOUDFRONT_DISTRIBUTION_ID` für die Invalidierung. Der Upload bleibt ein maintainer-vorbehaltener Schritt.
+
+Diese Entscheidung betrifft ausschließlich die ausgelieferten `web-assets/`. Der `oparl/`-Präfix bleibt bei `scrape-oparl --push` (<<adr-0005,ADR-0005>>). Ein automatisches Auslösen beim Push ist bewusst nicht vorgesehen; die Assets entstehen aus Generatorläufen auf der Maintainer-Maschine, nicht im Netlify-Build — konsistent mit dem Mensch-im-Loop-Prinzip (<<adr-0003,ADR-0003>>).
+
+== Konsequenzen
+
+*Positiv*
+
+* Der Upload ist versioniert, reviewbar und reproduzierbar statt eines Konsolen-Klickpfads.
+* Die Lokalität der autoritativen Dateiliste löst das Entfernen verwaister Objekte (Schwäche 3) und die Post-Upload-Verifikation gegen die tatsächlich erzeugten Dateien (Schwäche 4) sauber.
+* `Cache-Control` wird explizit gesetzt und die berührten Pfade werden automatisch invalidiert (Schwächen 1 und 2).
+* Alle drei Generatoren folgen demselben Muster (`output/` + `--push`); der frühere Sonderfall des committeten `data/papers/` entfällt.
+* Repository und `.git`-Historie schrumpfen um den ~41-MB-Bestand von `data/papers/`.
+* Konsistent mit dem bereits etablierten, getesteten Muster aus <<adr-0005,ADR-0005>>.
+
+*Negativ*
+
+* `data/papers/` ist nicht mehr über die Git-Historie diffbar. Das wird bewusst akzeptiert, da der Bestand deterministisch aus den OParl-Derivaten reproduzierbar ist — dieselbe Abwägung wie in <<adr-0005,ADR-0005>>.
+* Publizieren ohne vorheriges Neugenerieren ist nicht mehr möglich. Akzeptiert, da die Generatorläufe deterministisch sind.
+* Statt einer gebündelten CloudFront-Invalidierung fallen bis zu drei separate an; das ist minderschwer.
+* Die Umstellung erfordert Doku-Anpassungen: `docs/guides/session-processing/*` (der separate Publish-Schritt entfällt, `data/papers/` ist keine Git-Senke mehr, `index-search`-Eingabe), `docs/guides/HOWTO.md`, `docs/guides/publishing-web-assets.md` sowie die arc42-Kapitel 5, 6 und 7.
