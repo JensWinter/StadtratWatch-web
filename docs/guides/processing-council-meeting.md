@@ -323,9 +323,10 @@ deno run \
 ```bash
 docker run \
   --rm \
-  -v $(pwd)/sessions-media-files/2025-12-04:/app/input:ro \
+  -v $(pwd)/data/magdeburg-8/2025-12-04/config-2025-12-04.json:/app/scan-config.json:ro \
+  -v $(pwd)/sessions-media-files/2025-12-04:/app/voting-images:ro \
   -v $(pwd)/output/sessions-scan-results/2025-12-04:/app/output \
-  srw-parse-speakers \
+  srw-scan-voting-images \
   2025-12-04
 ```
 
@@ -346,7 +347,7 @@ Also save the corrected scanned votings file in `data/$PARLIAMENT_PERIOD/$DATE/s
 ```bash
 deno run \
   -A \
-  src/scripts/generate-voting-images/index.ts \
+  src/scripts/generate-image-assets/index.ts \
   -i data/magdeburg-8 \
   -o output/image-assets/magdeburg-8
 ```
