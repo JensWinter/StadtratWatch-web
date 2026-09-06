@@ -1,0 +1,89 @@
+' Datenquellen und Datensenken der Sitzungsverarbeitung (woher / wohin).
+' Begleitender Fliesstext: session-processing-pipeline.md
+' Chronologischer Gesamtablauf: session-processing-overview.puml
+'
+' Rendern z. B. mit:
+'   plantuml docs/guides/session-processing/session-processing-dataflow.puml
+
+@startuml session-processing-dataflow
+title Datenquellen und Datensenken der Sitzungsverarbeitung
+
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam wrapWidth 200
+left to right direction
+
+actor "Maintainer:in" as M
+
+cloud "OParl-API\n(Ratsinfo MD)" as OParl
+cloud "YouTube" as YT
+cloud "HuggingFace\n(pyannote)" as HF
+cloud "OpenAI\n(Whisper)" as OAI
+component "scan-check-ui\n(externes Prüfwerkzeug)" as UI #E3F2FD
+
+package "Skripte - lokal, bedarfsweise" #FFFDE7 {
+  component "scrape-oparl" as SCRAPE
+  component "download-paper-files" as DPF
+  component "generate-paper-assets" as GPA
+  component "generate-oparl-derivatives" as GOD
+  component "tika-batch-extract" as TIKA
+  component "yt-dlp + ffmpeg" as MEDIA
+  component "scan-voting-images" as SVI
+  component "speaker-diarization" as SD
+  component "parse-speakers" as PS
+  component "extract-speeches" as ES
+  component "speech-to-text" as STT
+  component "generate-image-assets" as GIA
+  component "generate-paper-votings" as GPV
+  component "index-search" as IDX
+}
+
+database "Git-Repo\n(data/, committed)" as GIT
+database "S3 »stadtrat-watch«\n(Zwischenartefakte,\nredacted)" as S3RAW
+database "S3/CloudFront\n(web-assets +\noparl-Snapshot)" as S3WEB
+database "Typesense (VPS)\n(Suchindex)" as TS
+node "Netlify\n(statische Website)" as NET
+
+' --- Quellen ---
+OParl --> SCRAPE
+YT --> MEDIA
+HF --> SD
+STT --> OAI : Audio
+OAI --> STT : Text
+
+' --- OParl-/Drucksachen-Zweig ---
+SCRAPE --> S3WEB : oparl-Snapshot
+SCRAPE ..> GIT : oparl-magdeburg (lokal, nicht committed)
+DPF --> GPA
+GPA --> GIT : data/papers/
+GOD --> GIT : paper-index.json,\nvoting-paper-map.json
+DPF --> TIKA
+TIKA --> IDX : PDF-Volltext
+
+' --- Video-Zweig ---
+MEDIA --> SVI
+MEDIA --> SD
+SVI --> S3RAW : session-scan (roh)
+SD --> PS
+PS --> S3RAW : session-speakers
+MEDIA --> ES
+ES --> STT
+
+' --- Manuelle Prüfung ---
+M --> UI
+UI --> S3RAW : geprüfte Scans / Speeches
+UI --> GIT : session-scan / session-speeches
+
+' --- Zusammenführung ---
+GIT --> GIA
+GIA --> S3WEB : Abstimmungs-PNGs
+GIT --> GPV
+GPV --> S3WEB : paper-votings
+GIT --> IDX
+IDX --> TS
+
+' --- Veröffentlichung ---
+M --> GIT : commit + push (Freigabe)
+GIT --> NET : Netlify-Build
+M --> S3WEB : web-assets manuell publizieren
+@enduml

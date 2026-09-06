@@ -1,0 +1,182 @@
+' Verarbeitung einer neuen Stadtratssitzung - chronologischer Gesamtablauf
+' (wer macht was wann). Begleitender Fliesstext: session-processing-pipeline.md
+' Datenfluss-Diagramm: session-processing-dataflow.puml
+'
+' Rendern z. B. mit:
+'   plantuml docs/guides/session-processing/session-processing-overview.puml
+
+@startuml session-processing-overview
+title Verarbeitung einer neuen Stadtratssitzung - Gesamtablauf
+
+skinparam shadowing false
+skinparam wrapWidth 260
+skinparam activity {
+  BackgroundColor #FFFDE7
+  BorderColor #999999
+}
+
+|#E3F2FD|Maintainer:in (manuell)|
+|#FFF9C4|Skripte (Deno / Python / Shell)|
+|#E8F5E9|Externe Dienste|
+
+|Maintainer:in (manuell)|
+start
+:Sitzung in **registry.json** eintragen
+(id, date, youtubeUrl, approved = false);
+note right: -> Git-Repo: data/{periode}/registry.json
+:Scan-**config-YYYY-MM-DD.json** anlegen
+(Bildregionen, names);
+note right
+  -> Git-Repo: data/{periode}/{date}/
+  -> S3-Bucket »sessions-configs«
+end note
+
+|Externe Dienste|
+:YouTube-Livestream / Aufzeichnung;
+
+|Maintainer:in (manuell)|
+:Video mit **yt-dlp** herunterladen;
+note right: -> lokal: sessions-media-files/{date}/
+
+fork
+  ' ===================== Zweig A: Abstimmungen (OCR) =====================
+  |Maintainer:in (manuell)|
+  :Abstimmungstafeln als **Screenshots** erfassen
+  (YYYY-MM-DD-XXX.png, chronologisch);
+  note right
+    -> lokal: sessions-media-files/{date}/
+    -> S3-Bucket »sessions-raw/{date}«
+  end note
+  |Skripte (Deno / Python / Shell)|
+  :**scan-voting-images** (Deno + Tesseract)
+  OCR der Tafeln (Voten, TOP, Drucksachennr.);
+  note right
+    Eingabe: Screenshots + config
+    Ausgabe: **session-scan-{date}.json** (roh)
+    -> S3-Bucket »sessions-scan-results«
+  end note
+  |Maintainer:in (manuell)|
+  :**scan-check-ui** (externes Prüfwerkzeug)
+  Voten, TOPs, Drucksachennummern prüfen/korrigieren;
+  note right
+    ggf. Scan-Config anpassen und
+    scan-voting-images erneut laufen lassen
+    Ausgabe: geprüfte session-scan-{date}.json
+    -> S3-Bucket »sessions-scan-results-redacted«
+    -> Git: data/{periode}/{date}/session-scan-{date}.json
+  end note
+
+fork again
+  ' ===================== Zweig B: Reden (Audio) =====================
+  |Skripte (Deno / Python / Shell)|
+  :**ffmpeg** (Shell)
+  Tonspur extrahieren (wav/mp3), ggf. splitten;
+  note right: -> lokal: sessions-media-files/{date}/
+  |Externe Dienste|
+  :**HuggingFace** stellt pyannote-Modell bereit;
+  |Skripte (Deno / Python / Shell)|
+  :**speaker-diarization** (Python, pyannote)
+  wer spricht wann -> RTTM;
+  note right: -> S3-Bucket »sessions-speakers«
+  :**parse-speakers** (Deno)
+  RTTM aufbereiten;
+  note right
+    Ausgabe: **session-speakers-{date}.json** (anonym)
+    -> S3-Bucket »sessions-speakers«
+  end note
+  |Maintainer:in (manuell)|
+  :**scan-check-ui** (externes Prüfwerkzeug)
+  Sprecher:innen zuordnen, Rede-Segmente definieren;
+  note right
+    Ausgabe: **session-speeches-{date}.json** (ohne Transkript)
+    -> S3-Bucket »sessions-speakers-redacted«
+  end note
+  :Redebeiträge fachlich sichten
+  (Vorsitz / Ortsbürgermeister:in / Kommission markieren,
+  Rausch-Segmente entfernen);
+  note right: -> S3-Bucket »sessions-speeches-redacted«
+  |Skripte (Deno / Python / Shell)|
+  :**extract-speeches** (Shell, ffmpeg)
+  Audio je Redebeitrag zuschneiden;
+  note right: -> lokal: output/speeches/{date}/ (MP3 je Rede)
+  |Externe Dienste|
+  :**OpenAI Whisper** transkribiert;
+  |Skripte (Deno / Python / Shell)|
+  :**speech-to-text** (Deno)
+  Redebeiträge transkribieren;
+  note right: Ausgabe: session-speeches-{date}.json (mit Text)
+  |Maintainer:in (manuell)|
+  :Transkription sichten/korrigieren;
+  note right
+    -> S3-Bucket »sessions-speeches-with-transcriptions«
+    -> Git: data/{periode}/{date}/session-speeches-{date}.json
+  end note
+
+fork again
+  ' ============ Zweig C: OParl / Drucksachen (unabhängig) ============
+  |Externe Dienste|
+  :**OParl-API** (Ratsinfo Magdeburg);
+  |Skripte (Deno / Python / Shell)|
+  :**scrape-oparl** (Deno, --push)
+  OParl-Rohdaten abrufen;
+  note right
+    -> lokal: data/oparl-magdeburg/ (nicht committed)
+    -> S3/CloudFront (oparl-Snapshot)
+  end note
+  :**download-paper-files** (Deno)
+  verlinkte PDFs laden;
+  note right: -> lokal: output/papers/{jahr}/
+  :**generate-paper-assets** (Deno)
+  Drucksachen in JSON-Batches überführen;
+  note right: -> Git: data/papers/
+  :**generate-oparl-derivatives** (Deno)
+  Derivate für den Build erzeugen;
+  note right
+    -> Git: data/paper-index.json
+    -> Git: data/{periode}/voting-paper-map.json
+  end note
+  :**tika-batch-extract** (Docker/Tika)
+  Volltext aus PDFs extrahieren;
+  note right: -> lokal: output/papers/{jahr}-extracted/
+end fork
+
+' ===================== Zusammenführung (Assets, Suche) =====================
+|Skripte (Deno / Python / Shell)|
+:**generate-image-assets** (Deno)
+Abstimmungs-PNGs erzeugen;
+note right
+  Eingabe: session-scan-{date}.json + registry.json
+  -> lokal: output/image-assets/{periode}/ (Ziel: S3 web-assets)
+end note
+:**generate-paper-votings** (Deno)
+voting-paper-map gegen Scans umkehren;
+note right
+  Eingabe: voting-paper-map.json + session-scan-{date}.json
+  -> lokal: output/paper-votings/ (Ziel: S3 web-assets/paper-votings)
+end note
+:**index-search** (Deno)
+Drucksachen + Redebeiträge indizieren;
+note right
+  Eingabe: data/papers/ (extrahiert) + session-speeches-{date}.json
+  -> Typesense-Collections (VPS)
+end note
+
+|Maintainer:in (manuell)|
+:**Freigabe** - approved = true in registry.json setzen;
+note right: -> Git: data/{periode}/registry.json
+:**git commit + push** auf main;
+note right: -> GitHub-Repository (main)
+
+|Skripte (Deno / Python / Shell)|
+:**Netlify-Build** (automatisch bei Push)
+Astro rendert statische Website + API v1;
+note right
+  liest nur committete Daten (data/)
+  -> Netlify (statische Auslieferung)
+end note
+
+|Maintainer:in (manuell)|
+:**web-assets** manuell nach S3/CloudFront publizieren
+(Abstimmungs-PNGs, paper-votings) - AWS-Konsole;
+stop
+@enduml
