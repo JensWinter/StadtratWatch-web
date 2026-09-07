@@ -6,6 +6,7 @@ import { OparlObjectsFileStore } from '../shared/oparl/oparl-objects-store.ts';
 import { PaperGraphAssetsFileWriter } from './paper-graph-assets-writer.ts';
 import { SessionIndexFileStore } from './session-index.ts';
 import { getGeneratePaperAssetsEnvOrExit } from './env.ts';
+import { pushPaperAssetsFromEnv } from './push.ts';
 
 const args = parseArgs(Deno.args);
 
@@ -33,5 +34,9 @@ const generator = new PaperAssetsGenerator(
   paperGraphAssetsWriter,
 );
 generator.generatePaperAssets();
+
+if (args.push) {
+  await pushPaperAssetsFromEnv(args.outputDir, { dryRun: args.dryRun });
+}
 
 console.log('Done.');
