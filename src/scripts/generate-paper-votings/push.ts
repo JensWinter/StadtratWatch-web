@@ -20,7 +20,7 @@ const PAPER_VOTINGS_PREFIX = 'web-assets/paper-votings';
  * touched paths. A real publish then verifies the remote prefix against that same list, catching a
  * silent put or delete failure the plan alone would not reveal. A dry run reports the diff and skips
  * both mutation and verification. Assets and operations are passed in, so this is unit-testable
- * without touching S3 or the filesystem.
+ * without writing to S3 or the filesystem.
  */
 export async function publishAndVerifyPaperVotings(
   assets: LocalAsset[],

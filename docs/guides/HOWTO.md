@@ -239,7 +239,7 @@ against the batches it produced — catching a silent upload failure the console
 
 Pushing needs the AWS credentials plus `AWS_CLOUDFRONT_DISTRIBUTION_ID` (see `.env.sample`); a plain
 generate run needs none of them. Use `--push --dry-run` to print the upload/delete/invalidate diff
-without touching S3.
+without writing to S3 or invalidating CloudFront.
 
 ```shell
 deno run -A \
