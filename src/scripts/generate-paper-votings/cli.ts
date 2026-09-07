@@ -57,7 +57,10 @@ a scanned voting do not appear in the output.
                             web-assets/paper-votings/ on S3/CloudFront: upload new
                             or changed batches, prune orphaned ones, set
                             Cache-Control, invalidate the touched paths, and verify
-                            the result. Requires AWS_* env (see .env.sample).
+                            the result. Requires OPARL_S3_BUCKET (the target bucket)
+                            plus AWS credentials/configuration (AWS_REGION,
+                            AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY,
+                            AWS_CLOUDFRONT_DISTRIBUTION_ID). See .env.sample.
     --dry-run               Only meaningful with --push: report the upload/delete/
                             invalidate diff without mutating S3.
   `);
