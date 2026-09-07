@@ -46,9 +46,9 @@ und macht deutlich, **was wann durch wen** geschieht.
 
 | Ablage | Inhalt | Versioniert? |
 |--------|--------|--------------|
-| **Git-Repo** (`data/`) | Freigegebene, ausgelieferte JSON-Daten: `registry.json`, `session-scan-*.json`, `session-speeches-*.json`, `data/papers/`, OParl-Derivate. | ✅ Git |
+| **Git-Repo** (`data/`) | Freigegebene, ausgelieferte JSON-Daten: `registry.json`, `session-scan-*.json`, `session-speeches-*.json`, OParl-Derivate. | ✅ Git |
 | **S3 »stadtrat-watch«** | Aktiv genutzte **Zwischenartefakte**: Configs, Roh-Screenshots, RTTM, anonyme und redaktionell geprüfte (`*-redacted`) Zwischenstände. | ❌ |
-| **S3/CloudFront (web-assets)** | Große Binär-/Auslieferungs-Assets: Abstimmungs-PNGs, `paper-votings`, PDF-Dateien, sowie der **oparl-Snapshot**. Publizieren erfolgt **manuell** über die AWS-Konsole. | ❌ |
+| **S3/CloudFront (web-assets)** | Große Binär-/Auslieferungs-Assets: Abstimmungs-PNGs, `paper-votings`, Drucksachen-Batches (`papers/`), sowie der **oparl-Snapshot**. Publizieren erfolgt **skriptgesteuert** je Generator über dessen `--push`-Flag. | ❌ |
 | **Typesense (VPS)** | Volltext-Suchindex (`papers`, `speeches`). | ❌ |
 | **Netlify** | Ausgelieferte statische Website + API v1. | ❌ (Build-Artefakt) |
 | **lokal** (`output/`, `sessions-media-files/`) | Nur Arbeitsartefakte während der Verarbeitung (Video, Audio, MP3-Ausschnitte, Roh-Outputs). | ❌ |
@@ -67,8 +67,9 @@ laufen können und über die Datenablage entkoppelt sind, gefolgt von einer
   Transkription → Prüfung → `session-speeches-*.json`.
 - **Zweig C — OParl/Drucksachen:** OParl-Abruf → PDFs → Drucksachen-Assets →
   Build-Derivate → Volltext.
-- **Zusammenführung:** Bild-Assets, Paper-Votings, Suchindex.
-- **Veröffentlichung:** Freigabe → Push → Netlify-Build → web-assets publizieren.
+- **Zusammenführung:** Bild-Assets, Paper-Votings, Suchindex. Die Generatoren
+  publizieren ihre Web-Assets dabei direkt per `--push` nach S3/CloudFront.
+- **Veröffentlichung:** Freigabe → Push → Netlify-Build.
 
 > Das vollständige, gerenderte Aktivitätsdiagramm steht in
 > [`session-processing-overview.puml`](./session-processing-overview.puml), das
@@ -124,7 +125,7 @@ Ergebnisse der jeweils benötigten Zweige voraus.
 |---|------|-----|----------|------------------|-----------------|
 | 15a | 🤖 | Skript | **`scrape-oparl`** (Deno, `--push`) | OParl-API der Stadt | OParl-Rohdaten → lokal `data/oparl-magdeburg/` (**nicht** committed) **und** S3/CloudFront (oparl-Snapshot). Auf anderen Rechnern via `fetch-oparl` beziehbar. |
 | 15b | 🤖 | Skript | **`download-paper-files`** (Deno) | Datei-Verweise aus OParl | PDF-Dokumente → lokal `output/papers/{jahr}/` |
-| 15c | 🤖 | Skript | **`generate-paper-assets`** (Deno) | OParl-Rohdaten + PDF-Dateigrößen + Registries | Drucksachen-**JSON-Batches** → Git `data/papers/` |
+| 15c | 🤖 | Skript | **`generate-paper-assets`** (Deno, `--push`) | OParl-Rohdaten + PDF-Dateigrößen + Registries | Drucksachen-**JSON-Batches** → lokal `output/paper-assets/`, mit `--push` nach S3/CloudFront (`web-assets/papers/`) |
 | 15d | 🤖 | Skript | **`generate-oparl-derivatives`** (Deno) | OParl-Rohdaten + `registry.json` | **`data/paper-index.json`** + **`data/{periode}/voting-paper-map.json`** → Git (die **einzigen** OParl-Eingaben des Builds) |
 | 15e | 🤖 | Skript | **`tika-batch-extract`** (Docker/Tika) | PDF-Dokumente | Extrahierter Volltext → lokal `output/papers/{jahr}-extracted/` |
 
@@ -132,9 +133,9 @@ Ergebnisse der jeweils benötigten Zweige voraus.
 
 | # | Grad | Wer | Werkzeug | Eingabe (Quelle) | Ausgabe (Senke) |
 |---|------|-----|----------|------------------|-----------------|
-| 16 | 🤖 | Skript | **`generate-image-assets`** (Deno) | `session-scan-{date}.json` + `registry.json` | Abstimmungs-**PNGs** (`{date}-{voting}.png`) → lokal `output/image-assets/{periode}/` (Ziel: S3 web-assets) |
-| 17 | 🤖 | Skript | **`generate-paper-votings`** (Deno) | `voting-paper-map.json` (15d) + `session-scan-{date}.json` (6) | **`paper-votings-*.json`** → lokal `output/paper-votings/` (Ziel: S3 web-assets/paper-votings) |
-| 18 | 🤖 | Skript | **`index-search`** (Deno) | `data/papers/` + extrahierter Volltext (15e) + `session-speeches-{date}.json` (14) | Befüllte **Typesense**-Collections (`papers`, `speeches`) → VPS |
+| 16 | 🤖 | Skript | **`generate-image-assets`** (Deno, `--push`) | `session-scan-{date}.json` + `registry.json` | Abstimmungs-**PNGs** (`{date}-{voting}.png`) → lokal `output/image-assets/{periode}/`, mit `--push` nach S3/CloudFront (`web-assets/parliament-periods/{periode}/`) |
+| 17 | 🤖 | Skript | **`generate-paper-votings`** (Deno, `--push`) | `voting-paper-map.json` (15d) + `session-scan-{date}.json` (6) | **`paper-votings-*.json`** → lokal `output/paper-votings/`, mit `--push` nach S3/CloudFront (`web-assets/paper-votings/`) |
+| 18 | 🤖 | Skript | **`index-search`** (Deno) | OParl-Rohdaten-Metadaten (15a) + extrahierter Volltext (15e) + `session-speeches-{date}.json` (14) | Befüllte **Typesense**-Collections (`papers`, `speeches`) → VPS |
 
 ### Phase E — Freigabe & Veröffentlichung
 
@@ -143,7 +144,6 @@ Ergebnisse der jeweils benötigten Zweige voraus.
 | 19 | ✋ | Maintainer:in | Editor | geprüfte Sitzungsdaten | **`approved = true`** in `registry.json` → Git |
 | 20 | ✋ | Maintainer:in | `git` | committete `data/`-Änderungen | Push auf **GitHub `main`** |
 | 21 | 🤖 | Netlify | Astro-Build | committete Daten (`data/`, nur Derivate für OParl) | Statische Website + API v1 → **Netlify** (automatisch bei Push) |
-| 22 | ✋ | Maintainer:in | AWS-Konsole | `output/image-assets/`, `output/paper-votings/` | **web-assets** → S3/CloudFront (manuell publiziert) |
 
 ---
 
@@ -164,6 +164,12 @@ Ergebnisse der jeweils benötigten Zweige voraus.
   *Zwischenartefakte* (Configs, Roh-Screenshots, RTTM, `*-redacted`), das
   **web-assets**-Ziel (S3/CloudFront) hält die *ausgelieferten* Binär-Assets. Nur
   Letzteres wird von der Website zur Laufzeit geladen.
+- **Kein separater Publish-Schritt mehr:** Die drei Generatoren
+  (`generate-paper-assets`, `generate-image-assets`, `generate-paper-votings`)
+  publizieren ihre Web-Assets in Phase D **direkt per `--push`** — es gibt keinen
+  nachgelagerten manuellen Upload über die AWS-Konsole. Der Push ist ein bewusster
+  Maintainer-Schritt (er braucht AWS-Zugangsdaten), aber Teil des Generatorlaufs.
+  Details in [`publishing-web-assets.md`](../publishing-web-assets.md).
 
 ## Fehler- und Sonderfälle
 

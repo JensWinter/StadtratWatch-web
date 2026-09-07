@@ -55,7 +55,7 @@ OAI --> STT : Text
 SCRAPE --> S3WEB : oparl-Snapshot
 SCRAPE ..> GIT : oparl-magdeburg (lokal, nicht committed)
 DPF --> GPA
-GPA --> GIT : data/papers/
+GPA --> S3WEB : web-assets/papers/ (--push)
 GOD --> GIT : paper-index.json,\nvoting-paper-map.json
 DPF --> TIKA
 TIKA --> IDX : PDF-Volltext
@@ -76,14 +76,13 @@ UI --> GIT : session-scan / session-speeches
 
 ' --- Zusammenführung ---
 GIT --> GIA
-GIA --> S3WEB : Abstimmungs-PNGs
+GIA --> S3WEB : Abstimmungs-PNGs (--push)
 GIT --> GPV
-GPV --> S3WEB : paper-votings
-GIT --> IDX
+GPV --> S3WEB : paper-votings (--push)
+GIT --> IDX : session-speeches
 IDX --> TS
 
 ' --- Veröffentlichung ---
 M --> GIT : commit + push (Freigabe)
 GIT --> NET : Netlify-Build
-M --> S3WEB : web-assets manuell publizieren
 @enduml

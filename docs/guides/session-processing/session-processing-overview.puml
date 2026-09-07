@@ -126,9 +126,12 @@ fork again
   :**download-paper-files** (Deno)
   verlinkte PDFs laden;
   note right: -> lokal: output/papers/{jahr}/
-  :**generate-paper-assets** (Deno)
+  :**generate-paper-assets** (Deno, --push)
   Drucksachen in JSON-Batches überführen;
-  note right: -> Git: data/papers/
+  note right
+    -> lokal: output/paper-assets/
+    -> S3/CloudFront (web-assets/papers/) via --push
+  end note
   :**generate-oparl-derivatives** (Deno)
   Derivate für den Build erzeugen;
   note right
@@ -142,22 +145,25 @@ end fork
 
 ' ===================== Zusammenführung (Assets, Suche) =====================
 |Skripte (Deno / Python / Shell)|
-:**generate-image-assets** (Deno)
+:**generate-image-assets** (Deno, --push)
 Abstimmungs-PNGs erzeugen;
 note right
   Eingabe: session-scan-{date}.json + registry.json
-  -> lokal: output/image-assets/{periode}/ (Ziel: S3 web-assets)
+  -> lokal: output/image-assets/{periode}/
+  -> S3/CloudFront (web-assets/parliament-periods/{periode}/) via --push
 end note
-:**generate-paper-votings** (Deno)
+:**generate-paper-votings** (Deno, --push)
 voting-paper-map gegen Scans umkehren;
 note right
   Eingabe: voting-paper-map.json + session-scan-{date}.json
-  -> lokal: output/paper-votings/ (Ziel: S3 web-assets/paper-votings)
+  -> lokal: output/paper-votings/
+  -> S3/CloudFront (web-assets/paper-votings/) via --push
 end note
 :**index-search** (Deno)
 Drucksachen + Redebeiträge indizieren;
 note right
-  Eingabe: data/papers/ (extrahiert) + session-speeches-{date}.json
+  Eingabe: OParl-Rohdaten-Metadaten + extrahierter PDF-Volltext
+           + session-speeches-{date}.json
   -> Typesense-Collections (VPS)
 end note
 
@@ -174,9 +180,5 @@ note right
   liest nur committete Daten (data/)
   -> Netlify (statische Auslieferung)
 end note
-
-|Maintainer:in (manuell)|
-:**web-assets** manuell nach S3/CloudFront publizieren
-(Abstimmungs-PNGs, paper-votings) - AWS-Konsole;
 stop
 @enduml

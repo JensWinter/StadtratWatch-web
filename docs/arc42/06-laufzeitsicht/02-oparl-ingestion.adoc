@@ -7,7 +7,8 @@ aufbereitet werden. Quelle ist die standardisierte OParl-Schnittstelle der Stadt
 
 Der Ablauf ist eine Kette über die Datenablage: `scrape-oparl` legt die
 Rohdaten ab, `download-paper-files` lädt die verlinkten PDF-Dokumente, und
-`generate-paper-assets` überführt die Drucksachen in das ausgelieferte JSON-Format.
+`generate-paper-assets` überführt die Drucksachen in das ausgelieferte JSON-Format
+und veröffentlicht die Batches mit `--push` nach S3/CloudFront.
 Im Anschluss erzeugt `generate-oparl-derivatives` aus denselben Rohdaten die
 OParl-Derivate (`paper-index.json`, `voting-paper-map.json`), die der
 Astro-Build konsumiert (siehe <<konzept-datenhaltung,Datenhaltung>>).
@@ -42,10 +43,11 @@ endif
 :OParl-Rohdaten ablegen\n(data/oparl-magdeburg/);
 
 :**download-paper-files** (Deno)\nverlinkte PDF-Dokumente laden;
-:**generate-paper-assets** (Deno)\nDrucksachen in JSON-Batches überführen;
+:**generate-paper-assets** (Deno, --push)\nDrucksachen in JSON-Batches überführen;
 note right
   Eingabe: OParl-Rohdaten + PDF-Dateigrößen
-  Ausgabe: data/papers/
+  Ausgabe: output/paper-assets/
+  -> S3/CloudFront (web-assets/papers/) via --push
 end note
 
 :**generate-oparl-derivatives** (Deno)\nOParl-Derivate erzeugen;
@@ -59,7 +61,8 @@ end note
 :**index-search** (Deno)\nDrucksachen + Redebeiträge\nin Typesense importieren;
 note right
   Eingaben:
-  - **data/papers/** (aus dieser Pipeline)
+  - **OParl-Rohdaten** (Drucksachen-Metadaten)
+    + extrahierter PDF-Volltext
   - **session-speeches-*.json**
     (aus Video-Pipeline, Szenario 6.1)
   Ziel: Typesense-Collections
@@ -84,9 +87,10 @@ stop
 | Datei-Verweise aus den OParl-Daten
 | Heruntergeladene PDF-Dokumente
 
-| *generate-paper-assets* (Deno)
+| *generate-paper-assets* (Deno, `--push`)
 | OParl-Rohdaten + heruntergeladene PDFs (für die Dateigrößen)
-| Drucksachen-Metadaten als JSON-Batches in `data/papers/`
+| Drucksachen-Metadaten als JSON-Batches in `output/paper-assets/`; mit `--push`
+  nach S3/CloudFront (`web-assets/papers/`)
 
 | *generate-oparl-derivatives* (Deno)
 | OParl-Rohdaten + `registry.json` je Wahlperiode
@@ -94,8 +98,9 @@ stop
   `data/{periode}/voting-paper-map.json` (je Periode)
 
 | *index-search* (Deno)
-| `data/papers/` (aus dieser Pipeline) **und** `session-speeches-*.json` (aus der
-  Video-Pipeline, <<lz-sitzungsverarbeitung,Szenario 6.1>>)
+| OParl-Rohdaten (Drucksachen-Metadaten) + extrahierter PDF-Volltext (aus dieser
+  Pipeline) **und** `session-speeches-*.json` (aus der Video-Pipeline,
+  <<lz-sitzungsverarbeitung,Szenario 6.1>>)
 | Befüllte Typesense-Collections (`papers`, `speeches`)
 |===
 

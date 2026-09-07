@@ -12,7 +12,8 @@ Run the processing pipeline in this order. The script sections below document in
 4. `generate-image-assets` - create voting visualization image assets from processed session data.
 5. `generate-paper-votings` - reverse the voting-paper-map against the session scans into the per-paper voting assets. Needs both the OParl derivates (step 2) and the scanned votings (step 3.2).
 6. `index-search` - rebuild the Typesense search index after all paper, speech, and asset data is available.
-7. Publish the generated web assets to S3/CloudFront - see [publishing-web-assets.md](publishing-web-assets.md). This is a **manual** step and is not part of any build: until it runs, the new assets do not exist in production.
+
+Each of the three web-asset generators (`generate-paper-assets`, `generate-image-assets`, `generate-paper-votings`) publishes its own output to S3/CloudFront when run with `--push` — there is no separate manual publish step. See the `--push` section under each generator below and [publishing-web-assets.md](publishing-web-assets.md).
 
 
 ### Parse Speakers
@@ -128,13 +129,13 @@ docker run \
 
 #### Publish to S3/CloudFront (`--push`)
 Adding `--push` publishes the generated output directory to
-`web-assets/parliament-periods/{period}/` after generating, so the console click-path in
-[publishing-web-assets.md](publishing-web-assets.md) is no longer needed for this prefix. The period
+`web-assets/parliament-periods/{period}/` after generating — this is the only way to publish this
+prefix (see [publishing-web-assets.md](publishing-web-assets.md)). The period
 is read from the input registry's `id`, and the nested `images/votings/{sessionId}/` sub-tree is
 mirrored as-is under the period prefix. The output directory is the authoritative picture of the
 period prefix, so the push uploads new or changed images, **prunes** orphaned ones, sets
 `Cache-Control`, invalidates the touched paths, and then verifies the remote prefix against the
-images it produced — catching a silent upload failure the console path could not.
+images it produced — catching a silent upload failure.
 
 Pushing needs `OPARL_S3_BUCKET` (the target bucket) plus the AWS credentials and
 `AWS_CLOUDFRONT_DISTRIBUTION_ID` (see `.env.sample`); a plain generate run needs none of them. Use
@@ -199,12 +200,12 @@ OPARL_COUNCIL_ORGANIZATION_ID=https://ratsinfo.magdeburg.de/oparl/bodies/0001/or
 their session pages when a council session exists for the meeting's date.
 
 #### Publish to S3/CloudFront (`--push`)
-Adding `--push` publishes `output/paper-assets/` to `web-assets/papers/` after generating, so the
-console click-path in [publishing-web-assets.md](publishing-web-assets.md) is no longer needed for
-this prefix. The output directory is the authoritative picture of the prefix (the run prunes stale
+Adding `--push` publishes `output/paper-assets/` to `web-assets/papers/` after generating — this is
+the only way to publish this prefix (see [publishing-web-assets.md](publishing-web-assets.md)). The
+output directory is the authoritative picture of the prefix (the run prunes stale
 batches as it writes), so the push uploads new or changed batches, **prunes** orphaned ones, sets
 `Cache-Control`, invalidates the touched paths, and then verifies the remote prefix against the
-batches it produced — catching a silent upload failure the console path could not.
+batches it produced — catching a silent upload failure.
 
 Pushing needs `OPARL_S3_BUCKET` (the target bucket) plus the AWS credentials and
 `AWS_CLOUDFRONT_DISTRIBUTION_ID` (see `.env.sample`); a plain generate run needs none of them. Use
@@ -295,12 +296,12 @@ deno run \
 `-d`/`--data-dir` defaults to `data/`, so it can be omitted when run from the repository root.
 
 #### Publish to S3/CloudFront (`--push`)
-Adding `--push` publishes `output/paper-votings/` to `web-assets/paper-votings/` after generating,
-so the console click-path in [publishing-web-assets.md](publishing-web-assets.md) is no longer needed
-for this prefix. The output directory is the authoritative picture of the prefix (the run prunes
-empty batches), so the push uploads new or changed batches, **prunes** orphaned ones, sets
-`Cache-Control`, invalidates `/web-assets/paper-votings/*`, and then verifies the remote prefix
-against the batches it produced — catching a silent upload failure the console path could not.
+Adding `--push` publishes `output/paper-votings/` to `web-assets/paper-votings/` after generating —
+this is the only way to publish this prefix (see
+[publishing-web-assets.md](publishing-web-assets.md)). The output directory is the authoritative
+picture of the prefix (the run prunes empty batches), so the push uploads new or changed batches,
+**prunes** orphaned ones, sets `Cache-Control`, invalidates the touched paths, and then verifies the
+remote prefix against the batches it produced — catching a silent upload failure.
 
 Pushing needs the AWS credentials plus `AWS_CLOUDFRONT_DISTRIBUTION_ID` (see `.env.sample`); a plain
 generate run needs none of them. Use `--push --dry-run` to print the upload/delete/invalidate diff

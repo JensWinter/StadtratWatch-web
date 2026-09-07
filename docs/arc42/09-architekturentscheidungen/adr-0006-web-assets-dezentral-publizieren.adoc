@@ -1,7 +1,7 @@
 [#adr-0006]
 = ADR-0006: Web-Assets dezentral je Generator publizieren
 
-*Status:* Vorgeschlagen (umzusetzen via https://github.com/JensWinter/StadtratWatch-web/issues/463[#463])
+*Status:* Akzeptiert (umgesetzt via https://github.com/JensWinter/StadtratWatch-web/issues/463[#463])
 
 == Kontext und Problem
 

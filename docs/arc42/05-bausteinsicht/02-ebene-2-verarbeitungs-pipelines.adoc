@@ -56,7 +56,9 @@ S5 --> TS
 | *Drucksachen-Aufbereitung*
 | `generate-paper-assets`, `download-paper-files`
 | Überführt die Drucksachen (OParl-`Paper`) aus den OParl-Rohdaten
-  in das ausgelieferte JSON-Batch-Format und lädt die verlinkten PDF-Dokumente.
+  in das ausgelieferte JSON-Batch-Format (nach `output/`, nicht committet) und lädt
+  die verlinkten PDF-Dokumente. `generate-paper-assets` veröffentlicht die Batches
+  mit `--push` nach S3/CloudFront (siehe <<adr-0006,ADR-0006>>).
 
 | *Video-Verarbeitung*
 | `scan-voting-images`, `speaker-diarization`, `parse-speakers`,
@@ -67,8 +69,10 @@ S5 --> TS
   separaten Prüfwerkzeug `scan-check-ui` und Transkription der Redebeiträge.
 
 | *Asset-Generierung*
-| `generate-image-assets`
-| Erzeugt aus den Abstimmungsdaten die Visualisierungs-PNGs für die Auslieferung.
+| `generate-image-assets`, `generate-paper-votings`
+| Erzeugt aus den Abstimmungsdaten die Visualisierungs-PNGs und die
+  `paper-votings`-Batches für die Auslieferung (nach `output/`, nicht committet) und
+  veröffentlicht sie mit `--push` nach S3/CloudFront (siehe <<adr-0006,ADR-0006>>).
 
 | *Suchindizierung*
 | `index-search`

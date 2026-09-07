@@ -32,7 +32,7 @@ Die ADRs folgen einem schlanken https://adr.github.io/madr/[MADR]-Format. Die me
 
 | <<adr-0006,ADR-0006>>
 | Web-Assets dezentral je Generator publizieren
-| Vorgeschlagen
+| Akzeptiert
 |===
 
 include::adr-0001-json-datenbestand.adoc[leveloffset=+1]
