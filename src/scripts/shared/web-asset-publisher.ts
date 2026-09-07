@@ -159,7 +159,8 @@ export async function collectWebAssets(directory: string, prefix: string): Promi
   const assets: LocalAsset[] = [];
   for await (const entry of walk(directory, { includeDirs: false })) {
     const relativeKey = path.relative(directory, entry.path).split(path.SEPARATOR).join('/');
-    assets.push({ key: `${base}/${relativeKey}`, body: await Deno.readFile(entry.path) });
+    const key = base ? `${base}/${relativeKey}` : relativeKey;
+    assets.push({ key, body: await Deno.readFile(entry.path) });
   }
   return assets.sort((first, second) => first.key.localeCompare(second.key));
 }
@@ -187,7 +188,7 @@ export async function createAwsOperations(env: PushEnv): Promise<WebAssetOperati
         const page = await s3.send(
           new ListObjectsV2Command({
             Bucket: bucket,
-            Prefix: `${trimTrailingSlash(prefix)}/`,
+            Prefix: trimTrailingSlash(prefix) || undefined,
             ContinuationToken: continuationToken,
           }),
         );
