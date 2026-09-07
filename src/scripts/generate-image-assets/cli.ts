@@ -6,16 +6,19 @@ export type GenerateDataAssetsArgs = {
   help: boolean;
   inputDir: string;
   outputDir: string;
+  push: boolean;
+  dryRun: boolean;
 };
 
 export function parseArgs(args: string[]): GenerateDataAssetsArgs {
   return stdCliParseArgs(args, {
-    boolean: ['help'],
+    boolean: ['help', 'push', 'dry-run'],
     string: ['input-dir', 'output-dir'],
     alias: {
       help: 'h',
       'input-dir': ['i', 'inputDir'],
       'output-dir': ['o', 'outputDir'],
+      'dry-run': 'dryRun',
     },
   }) as GenerateDataAssetsArgs;
 }
@@ -42,9 +45,20 @@ export function checkArgs(args: GenerateDataAssetsArgs) {
 
 export function printHelpText() {
   console.log(`
-Usage: deno run index.ts -i <input-dir> -o <output-dir>
+Usage: deno run index.ts -i <input-dir> -o <output-dir> [--push [--dry-run]]
 -h, --help                  Show this help message and exit.
 -i, --input-dir             The input directory.
 -o, --output-dir            The output directory.
+    --push                  After generating, publish the output directory to
+                            web-assets/parliament-periods/{period}/ on
+                            S3/CloudFront: upload new or changed images, prune
+                            orphaned ones, set Cache-Control, invalidate the
+                            touched paths, and verify the result. Requires
+                            OPARL_S3_BUCKET (the target bucket) plus AWS
+                            credentials/configuration (AWS_REGION,
+                            AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY,
+                            AWS_CLOUDFRONT_DISTRIBUTION_ID). See .env.sample.
+    --dry-run               Only meaningful with --push: report the upload/delete/
+                            invalidate diff without mutating S3.
   `);
 }
