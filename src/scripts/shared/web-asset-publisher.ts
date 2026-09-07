@@ -203,9 +203,15 @@ export async function createAwsOperations(env: PushEnv): Promise<WebAssetOperati
     },
     deleteKeys: async (bucket, keys) => {
       for (const batch of chunk(keys, S3_DELETE_BATCH_LIMIT)) {
-        await s3.send(
+        const response = await s3.send(
           new DeleteObjectsCommand({ Bucket: bucket, Delete: { Objects: batch.map((key) => ({ Key: key })) } }),
         );
+        if (response.Errors?.length) {
+          const details = response.Errors.map((error) =>
+            [error.Key ?? '<unknown key>', error.Code, error.Message].filter(Boolean).join(': ')
+          ).join('; ');
+          throw new Error(`Failed to delete S3 objects from ${bucket}: ${details}`);
+        }
       }
     },
     invalidate: (distributionId, paths) =>
