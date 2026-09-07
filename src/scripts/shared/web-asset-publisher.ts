@@ -150,6 +150,34 @@ export async function publishWebAssets(
 }
 
 /**
+ * Confirms the remote prefix ended up holding exactly the authoritative asset set, by re-listing it
+ * after a publish and comparing keys. A silent put or delete failure leaves the plan claiming success
+ * while the bucket disagrees, so this reads back the real inventory rather than trusting the plan or
+ * probing a guessed key. Throws listing every asset that never arrived and every orphan that was not
+ * pruned; returns quietly when the two sets match.
+ */
+export async function verifyWebAssets(
+  assets: LocalAsset[],
+  target: WebAssetTarget,
+  operations: Pick<WebAssetOperations, 'list'>,
+): Promise<void> {
+  const remoteKeys = new Set((await operations.list(target.bucket, target.prefix)).map((object) => object.key));
+  const expectedKeys = new Set(assets.map((asset) => asset.key));
+
+  const missing = [...expectedKeys].filter((key) => !remoteKeys.has(key)).toSorted((a, b) => a.localeCompare(b));
+  const orphaned = [...remoteKeys].filter((key) => !expectedKeys.has(key)).toSorted((a, b) => a.localeCompare(b));
+  if (missing.length === 0 && orphaned.length === 0) {
+    return;
+  }
+
+  const problems = [
+    missing.length > 0 ? `missing uploads: ${missing.join(', ')}` : '',
+    orphaned.length > 0 ? `unpruned orphans: ${orphaned.join(', ')}` : '',
+  ].filter(Boolean).join('; ');
+  throw new Error(`Web asset verification failed for ${target.bucket}/${target.prefix}: ${problems}`);
+}
+
+/**
  * Reads every file under `directory` into an authoritative asset list, keyed as
  * `<prefix>/<path-relative-to-directory>` with forward slashes. The result is the complete picture
  * the prefix should contain, so pruning orphans against it is safe.

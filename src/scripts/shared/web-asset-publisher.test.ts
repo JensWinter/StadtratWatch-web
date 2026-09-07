@@ -2,6 +2,7 @@ import {
   type LocalAsset,
   publishWebAssets,
   type RemoteObject,
+  verifyWebAssets,
   WEB_ASSET_CACHE_CONTROL,
   type WebAssetOperations,
   type WebAssetTarget,
@@ -9,7 +10,7 @@ import {
 import type { PutObjectCommandInput } from '@aws-sdk/client-s3';
 import { crypto } from '@std/crypto';
 import { encodeHex } from '@std/encoding/hex';
-import { assertEquals } from '@std/assert';
+import { assertEquals, assertRejects } from '@std/assert';
 import { describe, it } from '@std/testing/bdd';
 
 const TARGET: WebAssetTarget = {
@@ -153,5 +154,40 @@ describe('publishWebAssets', () => {
     assertEquals(recorder.puts, []);
     assertEquals(recorder.deleted, []);
     assertEquals(recorder.invalidated, []);
+  });
+});
+
+describe('verifyWebAssets', () => {
+  it('passes when the remote prefix holds exactly the authoritative keys', async () => {
+    const assets: LocalAsset[] = [
+      { key: KEY_A, body: bytes('a') },
+      { key: KEY_B, body: bytes('b') },
+    ];
+    const { operations } = fakeOperations([
+      { key: KEY_A, etag: await etagOf('a') },
+      { key: KEY_B, etag: await etagOf('b') },
+    ]);
+
+    await verifyWebAssets(assets, TARGET, operations);
+  });
+
+  it('rejects when an authoritative asset is missing from the remote prefix', async () => {
+    const assets: LocalAsset[] = [
+      { key: KEY_A, body: bytes('a') },
+      { key: KEY_B, body: bytes('b') },
+    ];
+    const { operations } = fakeOperations([{ key: KEY_A, etag: await etagOf('a') }]);
+
+    await assertRejects(() => verifyWebAssets(assets, TARGET, operations), Error, KEY_B);
+  });
+
+  it('rejects when the remote prefix still holds an orphan the run did not produce', async () => {
+    const assets: LocalAsset[] = [{ key: KEY_A, body: bytes('a') }];
+    const { operations } = fakeOperations([
+      { key: KEY_A, etag: await etagOf('a') },
+      { key: ORPHAN, etag: await etagOf('gone') },
+    ]);
+
+    await assertRejects(() => verifyWebAssets(assets, TARGET, operations), Error, ORPHAN);
   });
 });
