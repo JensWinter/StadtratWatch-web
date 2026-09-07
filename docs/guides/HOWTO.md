@@ -126,6 +126,29 @@ docker run \
   srw-generate-image-assets
 ```
 
+#### Publish to S3/CloudFront (`--push`)
+Adding `--push` publishes the generated output directory to
+`web-assets/parliament-periods/{period}/` after generating, so the console click-path in
+[publishing-web-assets.md](publishing-web-assets.md) is no longer needed for this prefix. The period
+is read from the input registry's `id`, and the nested `images/votings/{sessionId}/` sub-tree is
+mirrored as-is under the period prefix. The output directory is the authoritative picture of the
+period prefix, so the push uploads new or changed images, **prunes** orphaned ones, sets
+`Cache-Control`, invalidates the touched paths, and then verifies the remote prefix against the
+images it produced — catching a silent upload failure the console path could not.
+
+Pushing needs `OPARL_S3_BUCKET` (the target bucket) plus the AWS credentials and
+`AWS_CLOUDFRONT_DISTRIBUTION_ID` (see `.env.sample`); a plain generate run needs none of them. Use
+`--push --dry-run` to print the upload/delete/invalidate diff without writing to S3 or invalidating
+CloudFront.
+
+```shell
+deno run -A \
+  src/scripts/generate-image-assets/index.ts \
+  -i=data/magdeburg-8 \
+  -o=output/image-assets/magdeburg-8 \
+  --push
+```
+
 
 ### Download paper files
 
