@@ -4,16 +4,19 @@ export type GeneratePaperVotingsArgs = {
   help: boolean;
   dataDir: string;
   outputDir: string;
+  push: boolean;
+  dryRun: boolean;
 };
 
 export function parseArgs(args: string[]): GeneratePaperVotingsArgs {
   return stdCliParseArgs(args, {
-    boolean: ['help'],
+    boolean: ['help', 'push', 'dry-run'],
     string: ['data-dir', 'output-dir'],
     alias: {
       help: 'h',
       'data-dir': ['d', 'dataDir'],
       'output-dir': ['o', 'outputDir'],
+      'dry-run': 'dryRun',
     },
     default: {
       'data-dir': 'data/',
@@ -37,7 +40,7 @@ export function checkArgs(args: GeneratePaperVotingsArgs) {
 
 export function printHelpText() {
   console.log(`
-Usage: deno run index.ts [-d <data-dir>] -o <output-dir>
+Usage: deno run index.ts [-d <data-dir>] -o <output-dir> [--push [--dry-run]]
 
 Scans <data-dir> for {period-id}/registry.json and reverses every period's
 voting-paper-map.json against the scanned votings, so that each paper carries the
@@ -50,5 +53,15 @@ a scanned voting do not appear in the output.
                             Default: data/
 -o, --output-dir            The output directory. Batched json files
                             (paper-votings-{batch}.json) will be written here.
+    --push                  After generating, publish the output directory to
+                            web-assets/paper-votings/ on S3/CloudFront: upload new
+                            or changed batches, prune orphaned ones, set
+                            Cache-Control, invalidate the touched paths, and verify
+                            the result. Requires OPARL_S3_BUCKET (the target bucket)
+                            plus AWS credentials/configuration (AWS_REGION,
+                            AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY,
+                            AWS_CLOUDFRONT_DISTRIBUTION_ID). See .env.sample.
+    --dry-run               Only meaningful with --push: report the upload/delete/
+                            invalidate diff without mutating S3.
   `);
 }

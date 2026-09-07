@@ -229,6 +229,25 @@ deno run \
 
 `-d`/`--data-dir` defaults to `data/`, so it can be omitted when run from the repository root.
 
+#### Publish to S3/CloudFront (`--push`)
+Adding `--push` publishes `output/paper-votings/` to `web-assets/paper-votings/` after generating,
+so the console click-path in [publishing-web-assets.md](publishing-web-assets.md) is no longer needed
+for this prefix. The output directory is the authoritative picture of the prefix (the run prunes
+empty batches), so the push uploads new or changed batches, **prunes** orphaned ones, sets
+`Cache-Control`, invalidates `/web-assets/paper-votings/*`, and then verifies the remote prefix
+against the batches it produced — catching a silent upload failure the console path could not.
+
+Pushing needs the AWS credentials plus `AWS_CLOUDFRONT_DISTRIBUTION_ID` (see `.env.sample`); a plain
+generate run needs none of them. Use `--push --dry-run` to print the upload/delete/invalidate diff
+without writing to S3 or invalidating CloudFront.
+
+```shell
+deno run -A \
+  src/scripts/generate-paper-votings/index.ts \
+  -o=output/paper-votings/ \
+  --push
+```
+
 #### Build the docker image
 ```bash
 docker build -t srw-generate-paper-votings -f docker/generate-paper-votings.Dockerfile .
