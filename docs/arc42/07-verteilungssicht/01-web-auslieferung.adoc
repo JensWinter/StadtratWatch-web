@@ -129,12 +129,25 @@ von der Veröffentlichung der Website *entkoppelt*. Ein Push auf `main` rollt di
 Seite aus, erreicht den S3-Bucket aber nicht — die beiden Kanäle haben eigene
 Auslöser und können auseinanderlaufen.
 
+Jeder der drei Generatoren (`generate-paper-assets`, `generate-paper-votings`,
+`generate-image-assets`) veröffentlicht seine eigenen Assets *skriptgesteuert* über
+ein `--push`-Flag, das auf die gemeinsame, getestete Publisher-Logik in
+`src/scripts/shared/web-asset-publisher.ts` aufsetzt (siehe
+<<adr-0006,ADR-0006>>). Es gibt keinen separaten manuellen Upload über die
+AWS-Konsole mehr; der Push bleibt aber ein bewusster, authentifizierter
+Maintainer-Schritt (AWS-Zugangsdaten nötig) und ist Teil des Generatorlaufs, nicht
+ein nachgelagerter. Weil der Generator die autoritative Liste seiner erzeugten
+Dateien besitzt, entfernt der Push verwaiste Objekte, setzt `Cache-Control`,
+invalidiert die berührten Pfade und verifiziert das Ergebnis anschließend gegen die
+erzeugten Dateien.
+
 Zwei Prefixes im selben Bucket verhalten sich dabei gegensätzlich:
 
-* `oparl/` wird von `scrape-oparl --push` skriptgesteuert veröffentlicht,
-  inhaltsadressiert und unveränderlich — eine Invalidierung ist nie nötig.
-* `web-assets/` wird manuell hochgeladen, mit stabilen, in-place überschriebenen
-  Dateinamen — hier ist nach jedem Upload eine CloudFront-Invalidierung nötig.
+* `oparl/` wird von `scrape-oparl --push` inhaltsadressiert und unveränderlich
+  veröffentlicht — eine Invalidierung ist nie nötig.
+* `web-assets/` wird mit stabilen, in-place überschriebenen Dateinamen
+  veröffentlicht — hier ist nach jedem Push eine CloudFront-Invalidierung nötig, die
+  der Publisher automatisch für die berührten Pfade auslöst.
 
-Der operative Weg (Klickpfad, Cache-Regeln, Verifikation) ist in
+Der operative Weg (`--push`-Aufrufe, Cache-Regeln, Verifikation) ist in
 `docs/guides/publishing-web-assets.md` dokumentiert.

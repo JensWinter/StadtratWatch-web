@@ -1,131 +1,98 @@
 ## Publishing web assets to S3/CloudFront
 
-The web application is built by Netlify from the `main` branch, but the large assets it fetches at
-runtime are **not** part of that build. They live in an S3 bucket behind the public CloudFront
-distribution (`AWS_CLOUDFRONT_BASE_URL`, e.g. `https://d2zk2bghxwzsug.cloudfront.net`) and are
-published separately, by hand.
-
-> **This is a manual, maintainer-only step.** There is no `aws s3 sync` in this repository, no
-> deployment workflow (`.github/workflows/ci.yml` is a quality gate only), and no other automation:
-> the files are uploaded through the **AWS S3 console**. Publishing is therefore not triggered by a
-> push and is decoupled from the website's release — newly generated assets stay invisible in
-> production until someone uploads them. See [Known gaps](#known-gaps) for the sharp edges this
-> creates.
+The web application is built by Netlify from the `main` branch, but the large assets it fetches at runtime are **not** part of that build. They live in an S3 bucket behind the public CloudFront distribution under the `web-assets/` prefix, and each generator publishes its own assets there via a `--push` flag.
 
 ### What goes where
 
-Each prefix under `web-assets/` is a plain mirror of a local directory. Upload the directory's
-contents so the keys land directly under the prefix (no extra nesting).
+Each prefix under `web-assets/` is published by exactly one generator. Every generator writes to a
+local `output/` directory (git-ignored) and, with `--push`, mirrors that directory to its prefix.
 
-| Local source | S3 prefix | Produced by |
+| Local source | S3 prefix | Published by |
 | --- | --- | --- |
-| `data/papers/` (committed) | `web-assets/papers/` | `generate-paper-assets` |
-| `output/paper-votings/` (**not** committed) | `web-assets/paper-votings/` | `generate-paper-votings` |
-| `output/image-assets/{period}/` (**not** committed) | `web-assets/parliament-periods/{period}/` | `generate-image-assets` |
+| `output/paper-assets/` | `web-assets/papers/` | `generate-paper-assets --push` |
+| `output/paper-votings/` | `web-assets/paper-votings/` | `generate-paper-votings --push` |
+| `output/image-assets/{period}/` | `web-assets/parliament-periods/{period}/` | `generate-image-assets --push` |
 
-`generate-image-assets` already writes the `images/votings/{sessionId}/` sub-tree itself, so the
-period directory is mirrored as-is. The voting id in the filename is zero-padded to three digits,
-giving keys like
-`web-assets/parliament-periods/magdeburg-8/images/votings/2024-10-17/2024-10-17-047.png`.
+Because the sources are git-ignored, they exist only on the machine that ran the generator, so a push always follows a fresh generate rather than relying on a stale local copy.
 
-The `oparl/` prefix in the same bucket is the one exception: it is **not** uploaded by hand. It is
-published by `scrape-oparl --push`, which is fully scripted and content-addressed. Do not touch it
-through the console. See [HOWTO.md](HOWTO.md#publish-the-snapshot-to-s3cloudfront---push).
+`generate-image-assets` writes the `images/votings/{sessionId}/` sub-tree itself, so the period
+directory is mirrored as-is. The voting id in the filename is zero-padded to three digits, giving
+keys like `web-assets/parliament-periods/magdeburg-8/images/votings/2024-10-17/2024-10-17-047.png`.
 
-`web-assets/papers/` is the only prefix whose source is committed to git. `paper-votings` and the
-image assets are generated into `output/` (git-ignored), so they exist only on the machine that ran
-the generator — regenerate before uploading rather than relying on a stale local copy.
+The `oparl/` prefix in the same bucket is the one exception: it is published by `scrape-oparl --push`
+(content-addressed, immutable blobs plus a manifest — never invalidated). Do not conflate its rules
+with `web-assets/`. See [HOWTO.md](HOWTO.md#publish-the-snapshot-to-s3cloudfront---push).
 
-### Publishing `paper-votings`
+### How a `--push` run works
 
-1. Make sure the inputs are current: the OParl derivates (`data/{period}/voting-paper-map.json`) and
-   the session scans (`data/{period}/{date}/session-scan-*.json`) must already reflect the sessions
-   you want to appear. See the mandatory processing order in [HOWTO.md](HOWTO.md).
-2. Regenerate the assets by running `generate-paper-votings` — the command is in
-   [HOWTO.md](HOWTO.md#generate-paper-votings). The run is deterministic and prunes batch files that
-   no longer have content, so `output/paper-votings/` is a complete, authoritative picture of what
-   the prefix should contain — not an increment.
-3. In the S3 console, open the bucket behind the CloudFront distribution (the same bucket as
-   `OPARL_S3_BUCKET`) and navigate to `web-assets/paper-votings/`. Create the prefix on first publish.
-4. Upload **all** files from `output/paper-votings/`, overwriting existing objects. Keep the default
-   upload settings — see [Cache behaviour](#cache-behaviour) for why no metadata is set by hand.
-5. Delete any `paper-votings-*.json` objects that the generator no longer produces. The console does
-   not do this for you: an upload only adds and overwrites. A leftover batch file serves stale
-   votings forever, because the client trusts whatever batch it fetches.
-6. Invalidate and verify (below).
+The three generators share one publisher, so a push behaves identically for every prefix. The
+generated `output/` directory is the **authoritative picture** of the prefix — each generator prunes
+stale local files as it writes, so what is on disk is exactly what the prefix should contain. Against
+that authoritative list the publisher:
 
-Because batch filenames are derived from the paper id (`paper-votings-{batch}.json`, where `batch` is
-`paperId / 100` zero-padded to four digits — see `toPaperBatchNo` in
-`astro/src/models/paper-batch.ts`), they are **stable across runs** and are overwritten in place.
-Adding a paper to an existing batch changes that file's content but not its name.
+1. **Uploads** new or changed objects (change is detected by comparing the local MD5 against the
+   remote ETag, so unchanged objects are skipped).
+2. **Prunes** remote orphans — objects under the prefix that the generator no longer produces. This
+   is what a console upload could never do: an upload only adds and overwrites, so a removed batch
+   would otherwise serve stale data forever.
+3. Sets an explicit **`Cache-Control: public, max-age=3600`** on every upload. Unlike the immutable
+   `oparl/` blobs, these files are overwritten in place under stable names, so a one-hour TTL keeps
+   caches warm between the infrequent publishes while bounding how long a stale copy can linger.
+4. **Invalidates** the touched CloudFront paths (every upload and delete). The edge turns fresh
+   immediately; the TTL from step 3 only governs already-warm browser caches, which an invalidation
+   cannot reach.
+5. **Verifies** by re-listing the prefix and asserting it holds *exactly* the produced files. A
+   silent put or delete failure leaves the bucket disagreeing with the plan, and this read-back
+   catches it — the run fails loudly listing any missing upload or unpruned orphan, rather than
+   leaving a silent gap.
 
-### Cache behaviour
+Because batch filenames are derived from the paper id (`paper-votings-{batch}.json` /
+`papers-{batch}.json`, where `batch = paperId / 100`, zero-padded — see `toPaperBatchNo` in
+`astro/src/models/paper-batch.ts`), they are **stable across runs** and overwritten in place. Adding
+a paper to an existing batch changes that file's content but not its name.
 
-Existing web assets carry **no `Cache-Control` header at all** — neither the paper JSON batches nor
-the voting PNGs. Uploading through the console without setting metadata reproduces exactly that, so
-the correct action for `paper-votings` is to **set nothing**. It matches the other web assets, which
-is what we want; it is not an endorsement of the setup (see [Known gaps](#known-gaps)).
+### Configuration
 
-With no explicit directive, CloudFront applies the distribution's **default TTL** and browsers fall
-back to heuristic freshness based on `Last-Modified`.
+A push reads the AWS configuration from the environment; a plain generate run needs none of it. The
+variables are validated **only when `--push` is set** (see `.env.sample`):
 
-The practical consequence: **an overwritten batch file needs a CloudFront invalidation.** This is the
-opposite of the `oparl/` prefix, where blobs are content-hashed and immutable and therefore never
-need one — do not carry that reasoning over to `web-assets/`. After re-uploading, invalidate the
-paths you touched:
+| Variable | Purpose |
+| --- | --- |
+| `OPARL_S3_BUCKET` | Target bucket (the same bucket behind CloudFront that the OParl snapshot uses). |
+| `AWS_REGION` | Bucket region. |
+| `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` | Credentials with write access. **Never commit these**; provide them via the environment at runtime. |
+| `AWS_CLOUDFRONT_DISTRIBUTION_ID` | Distribution to invalidate. Needed only for web assets — unlike the immutable OParl blobs, these are overwritten in place and so must be invalidated on every publish. |
 
-```text
-/web-assets/paper-votings/*
-```
+### Previewing with `--dry-run`
 
-Without the invalidation, edge locations keep serving the previous batch until the default TTL
-expires, and the tab shows outdated votings (or none) in the meantime.
+Add `--dry-run` alongside `--push` to print the upload / delete / invalidate plan **without** writing
+to S3 or invalidating CloudFront. It lists the prefix and computes the diff exactly as a real run
+would, so it is the safe way to see what a publish would change before committing to it.
+
+The exact per-generator invocations live in [HOWTO.md](HOWTO.md) under each generator's
+*Publish to S3/CloudFront (`--push`)* section.
 
 ### Verifying a publish
 
-A missing object under `web-assets/` returns **`403 Forbidden`**, not `404` — the bucket denies
-`s3:ListBucket`, so S3 reports `AccessDenied` rather than `NoSuchKey`. Do not read a 403 as a
-permissions regression.
+The publisher verifies itself (step 5 above): a failed publish throws rather than passing silently,
+so a green run is already evidence that the prefix matches the produced files. That closes the old
+trap where a missed upload was indistinguishable from a paper that was simply never voted on.
 
-**Do not probe an arbitrary batch to check whether a publish worked.** Only batches that contain at
-least one voted-on paper exist at all — far fewer than the paper batches (122 vs. 486 at the time of
-writing). A 403 therefore has two very different meanings, and you cannot tell them apart from the
-status code:
-
-- the batch was never uploaded — a real problem; or
-- no paper in that batch has a scanned voting, so the generator correctly produced no such file —
-  permanent and expected.
-
-Pick the probe by checking `output/paper-votings/` first, and probe a batch that **does** exist
-locally. Do not invert the rule: a locally-absent batch only returns 403 once step 5 has actually
-been done — if an obsolete object was left behind, it happily returns 200 and serves stale votings.
-A 200 for a batch with no local counterpart is therefore a *finding*, not a pass.
-
-`239123` is a good probe, since it has votings in two parliament periods and therefore also
-exercises the cross-period path:
+To spot-check the live edge afterwards, remember that a missing object under `web-assets/` returns
+**`403 Forbidden`**, not `404` — the bucket denies `s3:ListBucket`, so S3 reports `AccessDenied`
+rather than `NoSuchKey`. Do not read a 403 as a permissions regression. Probe a key you know the
+generator produced (check `output/` first), for example a `paper-votings` batch that has content in
+two parliament periods and therefore also exercises the cross-period path:
 
 ```shell
 curl -sS -o /dev/null -D - \
   "$AWS_CLOUDFRONT_BASE_URL/web-assets/paper-votings/paper-votings-2391.json"
 ```
 
-Expected: `HTTP/2 200` with `content-type: application/json`. Then confirm the page itself renders
-the tab at `/paper?paperId=239123` (period badges visible, cards link to the voting detail pages).
+Expected: `HTTP/2 200` with `content-type: application/json`. Then confirm the page renders the tab
+at `/paper?paperId=239123` (period badges visible, cards link to the voting detail pages).
 
-The client treats every non-OK response the same way — the »Abstimmungen« tab stays disabled and no
-error is surfaced. That makes a missed upload **silent**: it looks exactly like a paper that was
-never voted on. The page will not tell you the publish failed, so verify against a batch you know
-has content.
-
-### Known gaps
-
-These are accepted for now, not endorsed. The fix for all three is the same — script the upload,
-modelled on the already-scripted, tested `src/scripts/scrape-oparl/oparl-s3-publisher.ts` — and is
-tracked in [#463](https://github.com/JensWinter/StadtratWatch-web/issues/463).
-
-- **The upload is manual.** A console click-path is unversioned, unreviewable, and easy to get
-  half-right — forgetting step 5 leaves stale batch files serving old votings indefinitely.
-- **No explicit `Cache-Control`.** Freshness depends on the distribution's default TTL and on
-  remembering to invalidate by hand. A publisher should set the header explicitly.
-- **A missed upload is silent.** The client degrades to a disabled tab, which is indistinguishable
-  from a paper that was never voted on, so nothing surfaces the failure.
+Do not probe an arbitrary batch to judge a publish: `paper-votings` batches exist only for papers
+that were actually voted on (far fewer than the paper batches), so a 403 is ambiguous between »never
+uploaded« and »correctly empty«. The post-publish verification is the authoritative check; a manual
+curl is only a live-edge spot-check.

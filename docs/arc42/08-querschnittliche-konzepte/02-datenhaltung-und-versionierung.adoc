@@ -21,7 +21,9 @@ StadtratWatch kommt ohne Datenbank aus. Der gesamte verarbeitete Bestand liegt a
 
 == Ausgelagerte Binär-Assets
 
-Große, generierte Binärdaten gehören nicht in das Repository. Abstimmungs-PNGs und die als JSON-Batches abgelegten Drucksachen-Daten liegen außerhalb in AWS S3 und werden zur Laufzeit über das CDN CloudFront geladen. Das hält das Repository schlank und die Auslieferung schnell. Die Basis-URL ist über die Umgebung konfiguriert (siehe unten).
+Große, generierte Binärdaten gehören nicht in das Repository. Abstimmungs-PNGs, die `paper-votings`-Batches und die als JSON-Batches abgelegten Drucksachen-Daten liegen außerhalb in AWS S3 unter dem Präfix `web-assets/` und werden zur Laufzeit über das CDN CloudFront geladen. Das hält das Repository schlank und die Auslieferung schnell. Die Basis-URL ist über die Umgebung konfiguriert (siehe unten).
+
+Alle drei Bestände sind generierte `output/`-Artefakte und *nicht committet*; der Build liest das committete Derivat `data/paper-index.json` (siehe Abschnitt _OParl-Precompile-Derivate_ unten). Jeder der drei Generatoren (`generate-paper-assets`, `generate-image-assets`, `generate-paper-votings`) veröffentlicht seine Assets skriptgesteuert über ein `--push`-Flag.
 
 == Externer OParl-Rohdaten-Snapshot
 
