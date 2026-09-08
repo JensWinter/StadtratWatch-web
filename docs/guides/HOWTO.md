@@ -13,9 +13,6 @@ Run the processing pipeline in this order. The script sections below document in
 5. `generate-paper-votings` - reverse the voting-paper-map against the session scans into the per-paper voting assets. Needs both the OParl derivates (step 2) and the scanned votings (step 3.2).
 6. `index-search` - rebuild the Typesense search index after all paper, speech, and asset data is available.
 
-Each of the three web-asset generators (`generate-paper-assets`, `generate-image-assets`, `generate-paper-votings`) publishes its own output to S3/CloudFront when run with `--push` — there is no separate manual publish step. See the `--push` section under each generator below and [publishing-web-assets.md](publishing-web-assets.md).
-
-
 ### Parse Speakers
 This tool parses multiple rttm files (from one session) and generates a single json file containing all speakers data.
 
@@ -303,9 +300,10 @@ picture of the prefix (the run prunes empty batches), so the push uploads new or
 **prunes** orphaned ones, sets `Cache-Control`, invalidates the touched paths, and then verifies the
 remote prefix against the batches it produced — catching a silent upload failure.
 
-Pushing needs the AWS credentials plus `AWS_CLOUDFRONT_DISTRIBUTION_ID` (see `.env.sample`); a plain
-generate run needs none of them. Use `--push --dry-run` to print the upload/delete/invalidate diff
-without writing to S3 or invalidating CloudFront.
+Pushing needs `OPARL_S3_BUCKET` (the target bucket) plus the AWS credentials and
+`AWS_CLOUDFRONT_DISTRIBUTION_ID` (see `.env.sample`); a plain generate run needs none of them. Use
+`--push --dry-run` to print the upload/delete/invalidate diff without writing to S3 or invalidating
+CloudFront.
 
 ```shell
 deno run -A \

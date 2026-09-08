@@ -14,7 +14,7 @@ und macht deutlich, **was wann durch wen** geschieht.
 - **Bedienungsanleitung mit konkreten Befehlen:** [`HOWTO.md`](../HOWTO.md) und
   [`processing-council-meeting.md`](../processing-council-meeting.md).
 - **Architektur-Einordnung:** arc42-Laufzeitsicht in
-  [`docs/arc42/06-laufzeitsicht/`](../../arc42/06-laufzeitsicht/) (Szenarien 6.1–6.4).
+  [`docs/arc42/06-laufzeitsicht/`](../../arc42/06-laufzeitsicht/index.adoc) (Szenarien 6.1–6.4).
 
 > Dieses Dokument ist die **fachliche Ablaufübersicht** und die Quelle der
 > Wahrheit für die *Reihenfolge* und *Verantwortlichkeiten*. Die exakten
@@ -48,7 +48,8 @@ und macht deutlich, **was wann durch wen** geschieht.
 |--------|--------|--------------|
 | **Git-Repo** (`data/`) | Freigegebene, ausgelieferte JSON-Daten: `registry.json`, `session-scan-*.json`, `session-speeches-*.json`, OParl-Derivate. | ✅ Git |
 | **S3 »stadtrat-watch«** | Aktiv genutzte **Zwischenartefakte**: Configs, Roh-Screenshots, RTTM, anonyme und redaktionell geprüfte (`*-redacted`) Zwischenstände. | ❌ |
-| **S3/CloudFront (web-assets)** | Große Binär-/Auslieferungs-Assets: Abstimmungs-PNGs, `paper-votings`, Drucksachen-Batches (`papers/`), sowie der **oparl-Snapshot**. Publizieren erfolgt **skriptgesteuert** je Generator über dessen `--push`-Flag. | ❌ |
+| **S3/CloudFront (`web-assets/`)** | Große Binär-/Auslieferungs-Assets: Abstimmungs-PNGs, `paper-votings`, Drucksachen-Batches (`papers/`). | ❌ |
+| **S3/CloudFront (`oparl/`)** | OParl-Rohdaten-Snapshot: inhaltsadressierte, unveränderliche Blobs (`<datei>.<sha>.json.gz`) + kleine `manifest.json`. | ❌ |
 | **Typesense (VPS)** | Volltext-Suchindex (`papers`, `speeches`). | ❌ |
 | **Netlify** | Ausgelieferte statische Website + API v1. | ❌ (Build-Artefakt) |
 | **lokal** (`output/`, `sessions-media-files/`) | Nur Arbeitsartefakte während der Verarbeitung (Video, Audio, MP3-Ausschnitte, Roh-Outputs). | ❌ |
@@ -67,8 +68,7 @@ laufen können und über die Datenablage entkoppelt sind, gefolgt von einer
   Transkription → Prüfung → `session-speeches-*.json`.
 - **Zweig C — OParl/Drucksachen:** OParl-Abruf → PDFs → Drucksachen-Assets →
   Build-Derivate → Volltext.
-- **Zusammenführung:** Bild-Assets, Paper-Votings, Suchindex. Die Generatoren
-  publizieren ihre Web-Assets dabei direkt per `--push` nach S3/CloudFront.
+- **Zusammenführung:** Bild-Assets, Paper-Votings, Suchindex.
 - **Veröffentlichung:** Freigabe → Push → Netlify-Build.
 
 > Das vollständige, gerenderte Aktivitätsdiagramm steht in
@@ -123,9 +123,9 @@ Ergebnisse der jeweils benötigten Zweige voraus.
 
 | # | Grad | Wer | Werkzeug | Eingabe (Quelle) | Ausgabe (Senke) |
 |---|------|-----|----------|------------------|-----------------|
-| 15a | 🤖 | Skript | **`scrape-oparl`** (Deno, `--push`) | OParl-API der Stadt | OParl-Rohdaten → lokal `data/oparl-magdeburg/` (**nicht** committed) **und** S3/CloudFront (oparl-Snapshot). Auf anderen Rechnern via `fetch-oparl` beziehbar. |
+| 15a | 🤖 | Skript | **`scrape-oparl`** (Deno) | OParl-API der Stadt | OParl-Rohdaten → lokal `data/oparl-magdeburg/` (**nicht** committed) **und** S3/CloudFront (oparl-Snapshot). Auf anderen Rechnern via `fetch-oparl` beziehbar. |
 | 15b | 🤖 | Skript | **`download-paper-files`** (Deno) | Datei-Verweise aus OParl | PDF-Dokumente → lokal `output/papers/{jahr}/` |
-| 15c | 🤖 | Skript | **`generate-paper-assets`** (Deno, `--push`) | OParl-Rohdaten + PDF-Dateigrößen + Registries | Drucksachen-**JSON-Batches** → lokal `output/paper-assets/`, mit `--push` nach S3/CloudFront (`web-assets/papers/`) |
+| 15c | 🤖 | Skript | **`generate-paper-assets`** (Deno) | OParl-Rohdaten + PDF-Dateigrößen + Registries | Drucksachen-**JSON-Batches** → lokal `output/paper-assets/`, mit `--push` nach S3/CloudFront (`web-assets/papers/`) |
 | 15d | 🤖 | Skript | **`generate-oparl-derivatives`** (Deno) | OParl-Rohdaten + `registry.json` | **`data/paper-index.json`** + **`data/{periode}/voting-paper-map.json`** → Git (die **einzigen** OParl-Eingaben des Builds) |
 | 15e | 🤖 | Skript | **`tika-batch-extract`** (Docker/Tika) | PDF-Dokumente | Extrahierter Volltext → lokal `output/papers/{jahr}-extracted/` |
 
@@ -133,8 +133,8 @@ Ergebnisse der jeweils benötigten Zweige voraus.
 
 | # | Grad | Wer | Werkzeug | Eingabe (Quelle) | Ausgabe (Senke) |
 |---|------|-----|----------|------------------|-----------------|
-| 16 | 🤖 | Skript | **`generate-image-assets`** (Deno, `--push`) | `session-scan-{date}.json` + `registry.json` | Abstimmungs-**PNGs** (`{date}-{voting}.png`) → lokal `output/image-assets/{periode}/`, mit `--push` nach S3/CloudFront (`web-assets/parliament-periods/{periode}/`) |
-| 17 | 🤖 | Skript | **`generate-paper-votings`** (Deno, `--push`) | `voting-paper-map.json` (15d) + `session-scan-{date}.json` (6) | **`paper-votings-*.json`** → lokal `output/paper-votings/`, mit `--push` nach S3/CloudFront (`web-assets/paper-votings/`) |
+| 16 | 🤖 | Skript | **`generate-image-assets`** (Deno) | `session-scan-{date}.json` + `registry.json` | Abstimmungs-**PNGs** (`{date}-{voting}.png`) → lokal `output/image-assets/{periode}/`, mit `--push` nach S3/CloudFront (`web-assets/parliament-periods/{periode}/`) |
+| 17 | 🤖 | Skript | **`generate-paper-votings`** (Deno) | `voting-paper-map.json` (15d) + `session-scan-{date}.json` (6) | **`paper-votings-*.json`** → lokal `output/paper-votings/`, mit `--push` nach S3/CloudFront (`web-assets/paper-votings/`) |
 | 18 | 🤖 | Skript | **`index-search`** (Deno) | OParl-Rohdaten-Metadaten (15a) + extrahierter Volltext (15e) + `session-speeches-{date}.json` (14) | Befüllte **Typesense**-Collections (`papers`, `speeches`) → VPS |
 
 ### Phase E — Freigabe & Veröffentlichung

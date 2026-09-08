@@ -1,17 +1,6 @@
 ## Publishing web assets to S3/CloudFront
 
-The web application is built by Netlify from the `main` branch, but the large assets it fetches at
-runtime are **not** part of that build. They live in an S3 bucket behind the public CloudFront
-distribution (`AWS_CLOUDFRONT_BASE_URL`, e.g. `https://d2zk2bghxwzsug.cloudfront.net`) under the
-`web-assets/` prefix, and each generator publishes its own assets there via a `--push` flag.
-
-> **Publishing is scripted and decentralized — there is no manual console step and no separate
-> publish stage.** Each of the three web-asset generators uploads its own output when run with
-> `--push`, using the shared, tested publisher in `src/scripts/shared/web-asset-publisher.ts`. A push
-> is still a deliberate, maintainer-only action (it needs AWS credentials), but it is part of the
-> generator run, not a follow-up. Publishing remains decoupled from the website release: a push on
-> `main` rolls out the site, while `--push` rolls out the assets — the two channels have separate
-> triggers. See [ADR-0006](../arc42/09-architekturentscheidungen/adr-0006-web-assets-dezentral-publizieren.adoc).
+The web application is built by Netlify from the `main` branch, but the large assets it fetches at runtime are **not** part of that build. They live in an S3 bucket behind the public CloudFront distribution under the `web-assets/` prefix, and each generator publishes its own assets there via a `--push` flag.
 
 ### What goes where
 
@@ -24,11 +13,7 @@ local `output/` directory (git-ignored) and, with `--push`, mirrors that directo
 | `output/paper-votings/` | `web-assets/paper-votings/` | `generate-paper-votings --push` |
 | `output/image-assets/{period}/` | `web-assets/parliament-periods/{period}/` | `generate-image-assets --push` |
 
-None of these sources is committed to git. `data/papers/` is **no longer committed** — the paper
-batches are a generated `output/` artefact like the other two, and the committed derivate the build
-actually reads is `data/paper-index.json` (see *Generate OParl derivates* in
-[HOWTO.md](HOWTO.md)). Because the sources are git-ignored, they exist only on the machine that ran
-the generator, so a push always follows a fresh generate rather than relying on a stale local copy.
+Because the sources are git-ignored, they exist only on the machine that ran the generator, so a push always follows a fresh generate rather than relying on a stale local copy.
 
 `generate-image-assets` writes the `images/votings/{sessionId}/` sub-tree itself, so the period
 directory is mirrored as-is. The voting id in the filename is zero-padded to three digits, giving
