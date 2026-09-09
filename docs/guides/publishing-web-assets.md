@@ -58,7 +58,7 @@ variables are validated **only when `--push` is set** (see `.env.sample`):
 
 | Variable | Purpose |
 | --- | --- |
-| `OPARL_S3_BUCKET` | Target bucket (the same bucket behind CloudFront that the OParl snapshot uses). |
+| `AWS_S3_BUCKET` | Target bucket (the same bucket behind CloudFront that the OParl snapshot uses). |
 | `AWS_REGION` | Bucket region. |
 | `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` | Credentials with write access. **Never commit these**; provide them via the environment at runtime. |
 | `AWS_CLOUDFRONT_DISTRIBUTION_ID` | Distribution to invalidate. Needed only for web assets — unlike the immutable OParl blobs, these are overwritten in place and so must be invalidated on every publish. |
