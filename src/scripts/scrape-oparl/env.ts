@@ -35,7 +35,7 @@ export type ScrapeOparlPushEnv = {
  */
 export function tryGetScrapeOparlPushEnv(): ScrapeOparlPushEnv {
   const bucket = requireEnv('AWS_S3_BUCKET');
-  const prefix = Deno.env.get('OPARL_S3_PREFIX') ?? DEFAULT_SNAPSHOT_PREFIX;
+  const prefix = Deno.env.get('AWS_S3_OPARL_PREFIX') ?? DEFAULT_SNAPSHOT_PREFIX;
   const region = requireEnv('AWS_REGION');
   const accessKeyId = requireEnv('AWS_ACCESS_KEY_ID');
   const secretAccessKey = requireEnv('AWS_SECRET_ACCESS_KEY');

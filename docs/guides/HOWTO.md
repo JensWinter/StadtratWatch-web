@@ -435,7 +435,7 @@ so other machines can resume incremental scrapes via `fetch-oparl`.
 
 The push reads these additional environment variables, validated **only when `--push` is set**:
 - `AWS_S3_BUCKET` - target S3 bucket (the existing bucket behind CloudFront).
-- `OPARL_S3_PREFIX` - key prefix (default `oparl`).
+- `AWS_S3_OPARL_PREFIX` - key prefix (default `oparl`).
 - `AWS_REGION` - bucket region.
 - `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` - credentials with write access to the bucket.
   **Never commit credentials**; provide them via the environment at runtime.
@@ -478,7 +478,7 @@ everything matches it does nothing). It needs only the public base URL; no AWS c
 involved:
 - `AWS_CLOUDFRONT_BASE_URL` - base URL of the public CloudFront distribution (already required by
   the Astro build; see `astro/astro.config.mjs`).
-- `OPARL_S3_PREFIX` - key prefix the snapshot lives under (default `oparl`; matches the publisher).
+- `AWS_S3_OPARL_PREFIX` - key prefix the snapshot lives under (default `oparl`; matches the publisher).
 
 The target directory is a CLI argument (`-d`/`--dir`, default `data/oparl-magdeburg/`).
 

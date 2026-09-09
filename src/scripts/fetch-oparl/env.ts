@@ -16,7 +16,7 @@ export function getFetchOparlEnvOrExit(): FetchOparlEnv {
     Deno.exit(1);
   }
 
-  const prefix = Deno.env.get('OPARL_S3_PREFIX') ?? DEFAULT_SNAPSHOT_PREFIX;
+  const prefix = Deno.env.get('AWS_S3_OPARL_PREFIX') ?? DEFAULT_SNAPSHOT_PREFIX;
 
   return { baseUrl, prefix };
 }

@@ -17,6 +17,6 @@ CMD ["run", \
         "--allow-net", \
         "-R=/app/data", \
         "-W=/app/data", \
-        "-E=AWS_CLOUDFRONT_BASE_URL,OPARL_S3_PREFIX", \
+        "-E=AWS_CLOUDFRONT_BASE_URL,AWS_S3_OPARL_PREFIX", \
         "src/scripts/fetch-oparl/index.ts", \
         "-d=./data/oparl-magdeburg"]
