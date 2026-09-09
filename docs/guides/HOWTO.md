@@ -134,7 +134,7 @@ period prefix, so the push uploads new or changed images, **prunes** orphaned on
 `Cache-Control`, invalidates the touched paths, and then verifies the remote prefix against the
 images it produced — catching a silent upload failure.
 
-Pushing needs `OPARL_S3_BUCKET` (the target bucket) plus the AWS credentials and
+Pushing needs `AWS_S3_BUCKET` (the target bucket) plus the AWS credentials and
 `AWS_CLOUDFRONT_DISTRIBUTION_ID` (see `.env.sample`); a plain generate run needs none of them. Use
 `--push --dry-run` to print the upload/delete/invalidate diff without writing to S3 or invalidating
 CloudFront.
@@ -204,7 +204,7 @@ batches as it writes), so the push uploads new or changed batches, **prunes** or
 `Cache-Control`, invalidates the touched paths, and then verifies the remote prefix against the
 batches it produced — catching a silent upload failure.
 
-Pushing needs `OPARL_S3_BUCKET` (the target bucket) plus the AWS credentials and
+Pushing needs `AWS_S3_BUCKET` (the target bucket) plus the AWS credentials and
 `AWS_CLOUDFRONT_DISTRIBUTION_ID` (see `.env.sample`); a plain generate run needs none of them. Use
 `--push --dry-run` to print the upload/delete/invalidate diff without writing to S3 or invalidating
 CloudFront.
@@ -300,7 +300,7 @@ picture of the prefix (the run prunes empty batches), so the push uploads new or
 **prunes** orphaned ones, sets `Cache-Control`, invalidates the touched paths, and then verifies the
 remote prefix against the batches it produced — catching a silent upload failure.
 
-Pushing needs `OPARL_S3_BUCKET` (the target bucket) plus the AWS credentials and
+Pushing needs `AWS_S3_BUCKET` (the target bucket) plus the AWS credentials and
 `AWS_CLOUDFRONT_DISTRIBUTION_ID` (see `.env.sample`); a plain generate run needs none of them. Use
 `--push --dry-run` to print the upload/delete/invalidate diff without writing to S3 or invalidating
 CloudFront.
@@ -434,7 +434,7 @@ needed. The manifest also carries a `lastSync` timestamp (read from the local `s
 so other machines can resume incremental scrapes via `fetch-oparl`.
 
 The push reads these additional environment variables, validated **only when `--push` is set**:
-- `OPARL_S3_BUCKET` - target S3 bucket (the existing bucket behind CloudFront).
+- `AWS_S3_BUCKET` - target S3 bucket (the existing bucket behind CloudFront).
 - `OPARL_S3_PREFIX` - key prefix (default `oparl`).
 - `AWS_REGION` - bucket region.
 - `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` - credentials with write access to the bucket.

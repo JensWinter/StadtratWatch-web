@@ -54,7 +54,7 @@ Usage: deno run index.ts -i <input-dir> -o <output-dir> [--push [--dry-run]]
                             S3/CloudFront: upload new or changed images, prune
                             orphaned ones, set Cache-Control, invalidate the
                             touched paths, and verify the result. Requires
-                            OPARL_S3_BUCKET (the target bucket) plus AWS
+                            AWS_S3_BUCKET (the target bucket) plus AWS
                             credentials/configuration (AWS_REGION,
                             AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY,
                             AWS_CLOUDFRONT_DISTRIBUTION_ID). See .env.sample.

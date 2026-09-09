@@ -1,6 +1,6 @@
 /**
  * The AWS credentials and targets needed to publish web assets to S3/CloudFront. The bucket is the
- * same one the OParl snapshot uses (`OPARL_S3_BUCKET`); the distribution id is new and only web
+ * same one the OParl snapshot uses (`AWS_S3_BUCKET`); the distribution id is new and only web
  * assets need it, because — unlike the immutable OParl blobs — they are overwritten in place and so
  * must be invalidated on every publish.
  */
@@ -19,7 +19,7 @@ export type PushEnv = {
  */
 export function tryGetPushEnv(): PushEnv {
   return {
-    bucket: requireEnv('OPARL_S3_BUCKET'),
+    bucket: requireEnv('AWS_S3_BUCKET'),
     region: requireEnv('AWS_REGION'),
     accessKeyId: requireEnv('AWS_ACCESS_KEY_ID'),
     secretAccessKey: requireEnv('AWS_SECRET_ACCESS_KEY'),

@@ -64,7 +64,7 @@ Usage: deno run index.ts -r <ratsinfo-dir> -p <papers-dir> [-d <data-dir>] -o <o
     --push                  After generating, publish the output directory to web-assets/papers/ on
                             S3/CloudFront: upload new or changed batches, prune orphaned ones, set
                             Cache-Control, invalidate the touched paths, and verify the result.
-                            Requires OPARL_S3_BUCKET (the target bucket) plus AWS credentials/
+                            Requires AWS_S3_BUCKET (the target bucket) plus AWS credentials/
                             configuration (AWS_REGION, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY,
                             AWS_CLOUDFRONT_DISTRIBUTION_ID). See .env.sample.
     --dry-run               Only meaningful with --push: report the upload/delete/invalidate diff
