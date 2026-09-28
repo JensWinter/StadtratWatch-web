@@ -133,7 +133,7 @@ Ergebnisse der jeweils benötigten Zweige voraus.
 
 | # | Grad | Wer | Werkzeug | Eingabe (Quelle) | Ausgabe (Senke) |
 |---|------|-----|----------|------------------|-----------------|
-| 16 | 🤖 | Skript | **`generate-image-assets`** (Deno) | `session-scan-{date}.json` + `registry.json` | Abstimmungs-**PNGs** (`{date}-{voting}.png`) → lokal `output/image-assets/{periode}/`, mit `--push` nach S3/CloudFront (`web-assets/parliament-periods/{periode}/`) |
+| 16 | 🤖 | Skript | **`generate-image-assets`** (Deno) | `session-scan-{date}.json` + `registry.json` | Abstimmungs-**PNGs** (`{date}-{voting}.png`) und Partei-OpenGraph-**PNGs** (`parties/{partyId}.png`) → lokal `output/image-assets/{periode}/`, mit `--push` nach S3/CloudFront (`web-assets/parliament-periods/{periode}/`) |
 | 17 | 🤖 | Skript | **`generate-paper-votings`** (Deno) | `voting-paper-map.json` (15d) + `session-scan-{date}.json` (6) | **`paper-votings-*.json`** → lokal `output/paper-votings/`, mit `--push` nach S3/CloudFront (`web-assets/paper-votings/`) |
 | 18 | 🤖 | Skript | **`index-search`** (Deno) | OParl-Rohdaten-Metadaten (15a) + extrahierter Volltext (15e) + `session-speeches-{date}.json` (14) | Befüllte **Typesense**-Collections (`papers`, `speeches`) → VPS |
 

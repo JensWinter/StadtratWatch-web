@@ -55,7 +55,7 @@ deno check src/         # Type-check code
 2. **Paper Assets** → generate-paper-assets converts OParl data to batched JSON format, download-paper-files fetches PDFs
 3. **OParl Derivates** → generate-oparl-derivatives precompiles the raw OParl data into two small, committed build inputs (`data/paper-index.json`, `data/{period}/voting-paper-map.json`). The **web build reads only these derivates, never the raw `data/oparl-magdeburg/`**. Raw OParl is a maintainer-only input for regenerating the derivates (populated via `fetch-oparl`).
 4. **Video Processing** → scan-voting-images extracts voting results via OCR, parse-speakers identifies speakers, speech-to-text transcribes using OpenAI
-5. **Asset Generation** → generate-image-assets creates voting visualization PNGs
+5. **Asset Generation** → generate-image-assets creates voting visualization PNGs and party OpenGraph PNGs
 6. **Search Indexing** → index-search imports into Typesense for full-text search
 7. **Web Rendering** → Astro builds static pages using data/ directory (committed derivates + session data)
 

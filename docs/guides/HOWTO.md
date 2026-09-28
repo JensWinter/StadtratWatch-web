@@ -9,7 +9,7 @@ Run the processing pipeline in this order. The script sections below document in
    1. `parse-speakers` - combine speaker diarization data for the session.
    2. `scan-voting-images` - extract voting results from session screenshots.
    3. `speech-to-text` - generate speech transcriptions.
-4. `generate-image-assets` - create voting visualization image assets from processed session data.
+4. `generate-image-assets` - create voting visualization image assets from processed session data and OpenGraph images for the party detail pages.
 5. `generate-paper-votings` - reverse the voting-paper-map against the session scans into the per-paper voting assets. Needs both the OParl derivates (step 2) and the scanned votings (step 3.2).
 6. `index-search` - rebuild the Typesense search index after all paper, speech, and asset data is available.
 
@@ -128,7 +128,7 @@ docker run \
 Adding `--push` publishes the generated output directory to
 `web-assets/parliament-periods/{period}/` after generating — this is the only way to publish this
 prefix (see [publishing-web-assets.md](publishing-web-assets.md)). The period
-is read from the input registry's `id`, and the nested `images/votings/{sessionId}/` sub-tree is
+is read from the input registry's `id`, and the nested `images/votings/{sessionId}/` and `images/parties/` sub-trees are
 mirrored as-is under the period prefix. The output directory is the authoritative picture of the
 period prefix, so the push uploads new or changed images, **prunes** orphaned ones, sets
 `Cache-Control`, invalidates the touched paths, and then verifies the remote prefix against the

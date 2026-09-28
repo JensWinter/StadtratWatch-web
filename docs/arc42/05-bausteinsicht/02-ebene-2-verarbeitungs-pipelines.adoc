@@ -70,7 +70,8 @@ S5 --> TS
 
 | *Asset-Generierung*
 | `generate-image-assets`, `generate-paper-votings`
-| Erzeugt aus den Abstimmungsdaten die Visualisierungs-PNGs und die
+| Erzeugt aus den Abstimmungsdaten die Visualisierungs-PNGs, aus der Registry die
+  OpenGraph-PNGs der Partei-Detailseiten und die
   `paper-votings`-Batches für die Auslieferung (nach `output/`, nicht committet) und
   veröffentlicht sie mit `--push` nach S3/CloudFront (siehe <<adr-0006,ADR-0006>>).
 

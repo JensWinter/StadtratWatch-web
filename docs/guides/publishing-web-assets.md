@@ -15,9 +15,11 @@ local `output/` directory (git-ignored) and, with `--push`, mirrors that directo
 
 Because the sources are git-ignored, they exist only on the machine that ran the generator, so a push always follows a fresh generate rather than relying on a stale local copy.
 
-`generate-image-assets` writes the `images/votings/{sessionId}/` sub-tree itself, so the period
+`generate-image-assets` writes the `images/votings/{sessionId}/` and `images/parties/` sub-trees itself, so the period
 directory is mirrored as-is. The voting id in the filename is zero-padded to three digits, giving
 keys like `web-assets/parliament-periods/magdeburg-8/images/votings/2024-10-17/2024-10-17-047.png`.
+Party images are the OpenGraph images of the party detail pages, keyed by party id, e.g.
+`web-assets/parliament-periods/magdeburg-8/images/parties/cdu.png`.
 
 The `oparl/` prefix in the same bucket is the one exception: it is published by `scrape-oparl --push`
 (content-addressed, immutable blobs plus a manifest — never invalidated). Do not conflate its rules

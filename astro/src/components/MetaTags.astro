@@ -7,6 +7,7 @@ import { AWS_CLOUDFRONT_BASE_URL } from 'astro:env/client';
 interface MetaTagsProps {
   factionName?: string;
   partyName?: string;
+  partyId?: string;
   personName?: string;
   sessionDate?: string;
   voting?: SessionScanItem;
@@ -18,6 +19,7 @@ interface MetaTagsProps {
 const {
   factionName,
   partyName,
+  partyId,
   personName,
   sessionDate,
   voting,
@@ -39,6 +41,7 @@ if (factionName) {
 if (partyName) {
   title = `StadtratWatch: ${partyName}`;
   description = `${partyName}: Abstimmungen, Anwesenheiten und andere Daten und Analysen der Partei im Magdeburger Stadtrat`;
+  image = getPartyImageUrl(parliamentPeriodId!, partyId!);
 }
 
 if (personName) {
@@ -107,6 +110,17 @@ function getVotingImageUrl(
   votingId: number,
 ): string {
   return `${AWS_CLOUDFRONT_BASE_URL}/web-assets/parliament-periods/${parliamentPeriodId}/images/votings/${sessionId}/${sessionId}-${votingId.toString().padStart(3, '0')}.png`;
+}
+
+function getPartyImageUrl(parliamentPeriodId: string, partyId: string): string {
+  return (
+    AWS_CLOUDFRONT_BASE_URL +
+    '/parliament-periods/' +
+    parliamentPeriodId +
+    '/images/parties/' +
+    partyId +
+    '.jpg'
+  );
 }
 ---
 

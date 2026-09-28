@@ -22,9 +22,10 @@ const votingsImageData = votingsImageDataGenerator.generateVotingsImageData(regi
 
 const imagesGenerator = new ImagesGenerator();
 const votingImages = imagesGenerator.generateVotingImages(votingsImageData);
+const partyImages = imagesGenerator.generatePartyImages(registry);
 
 const assetsWriter = new ImageAssetsWriter(args.outputDir);
-assetsWriter.writeImageAssets(votingImages);
+assetsWriter.writeImageAssets(votingImages, partyImages);
 
 if (args.push) {
   await pushImageAssetsFromEnv(args.outputDir, registry.id, { dryRun: args.dryRun });

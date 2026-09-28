@@ -1,5 +1,6 @@
 import { Canvas, CanvasRenderingContext2D, createCanvas } from '@gfx/canvas';
 import type { Voting } from './model.ts';
+import type { Registry, RegistryParty } from '@srw-astro/models/registry';
 
 const TOTAL_WIDTH = 1200;
 const TOTAL_HEIGHT = 630;
@@ -24,9 +25,18 @@ export type GeneratedVotingImage = {
   canvas: Canvas;
 };
 
+export type GeneratedPartyImage = {
+  partyId: string;
+  canvas: Canvas;
+};
+
 export class ImagesGenerator {
   public generateVotingImages(votings: Voting[]): GeneratedVotingImage[] {
     return votings.map((voting) => this.generateVotingImage(voting));
+  }
+
+  public generatePartyImages(registry: Registry): GeneratedPartyImage[] {
+    return registry.parties.map((party) => this.generatePartyImage(party, registry.name));
   }
 
   private generateVotingImage(voting: Voting): GeneratedVotingImage {
@@ -42,6 +52,47 @@ export class ImagesGenerator {
     context.drawImage(votingDistributionCanvas, PADDING_LEFT + summaryCanvas.width + GAP, PADDING_TOP);
 
     return { sessionId: voting.sessionId, votingId: voting.votingId, canvas };
+  }
+
+  private generatePartyImage(party: RegistryParty, parliamentPeriodName: string): GeneratedPartyImage {
+    const canvas = createCanvas(TOTAL_WIDTH, TOTAL_HEIGHT);
+    const context = canvas.getContext('2d');
+
+    this.fillCanvas(context);
+
+    context.fillStyle = TEXT_COLOR;
+    context.font = '14pt Verdana';
+    context.fillText('StadtratWatch', PADDING_LEFT, PADDING_TOP + 20);
+
+    const contentWidth = TOTAL_WIDTH - PADDING_LEFT - PADDING_RIGHT;
+    const verticalCenter = TOTAL_HEIGHT / 2;
+
+    context.textAlign = 'center';
+    context.font = `bold ${this.getLargestFittingFontSize(party.name, contentWidth)}pt Verdana`;
+    context.fillText(party.name, TOTAL_WIDTH / 2, verticalCenter);
+
+    context.font = '20pt Verdana';
+    context.fillText('Magdeburger Stadtrat', TOTAL_WIDTH / 2, verticalCenter + 70);
+
+    context.textAlign = 'left';
+    context.font = '14pt Verdana';
+    context.fillText(parliamentPeriodName, PADDING_LEFT, TOTAL_HEIGHT - PADDING_BOTTOM);
+
+    return { partyId: party.id, canvas };
+  }
+
+  private getLargestFittingFontSize(text: string, maxWidth: number): number {
+    const MAX_FONT_SIZE = 60;
+    const MIN_FONT_SIZE = 24;
+
+    const context = createCanvas(maxWidth, 100).getContext('2d');
+    for (let fontSize = MAX_FONT_SIZE; fontSize > MIN_FONT_SIZE; fontSize -= 2) {
+      context.font = `bold ${fontSize}pt Verdana`;
+      if (context.measureText(text).width <= maxWidth) {
+        return fontSize;
+      }
+    }
+    return MIN_FONT_SIZE;
   }
 
   private fillCanvas(context: CanvasRenderingContext2D) {
