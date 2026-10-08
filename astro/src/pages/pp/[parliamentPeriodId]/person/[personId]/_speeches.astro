@@ -3,7 +3,6 @@ import { type Registry } from '@models/registry';
 import { type SessionInput } from '@models/SessionInput';
 import { type RegistryPerson } from '@models/registry';
 import Speech from '@components/Speech.astro';
-import AiBadgeVariantSwitcher from '@components/prototype/AiBadgeVariantSwitcher.astro';
 import { formatDate } from '@utils/format-date';
 
 type Props = {
@@ -96,8 +95,6 @@ const speechesBySessionDate = sessions
     <p>Link zum Redebeitrag kopiert</p>
   </div>
 </div>
-
-<AiBadgeVariantSwitcher />
 
 <div class="alert alert-soft alert-info fixed bottom-5 right-5 hidden">
   <span class="iconify lucide--info size-5"></span>

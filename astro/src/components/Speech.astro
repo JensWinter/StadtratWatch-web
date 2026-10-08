@@ -67,8 +67,9 @@ function getHintMailTitle(speech: SessionSpeech): string {
 
 // PROTOTYPE MOCK for issue #509 — stands in for the real `aiTextAssessment`
 // field (#507/#508, not yet implemented). Flags ~1 in 5 speeches so the
-// badge is actually visible while reviewing. Delete with the rest of this
-// prototype.
+// badge is actually visible while reviewing. Replace with the real field
+// once #507/#508 land; keep the markup below (variant C won the #509
+// placement decision).
 type MockAiTextAssessment = { label: 'AI' | 'Mixed' };
 
 function mockAiTextAssessment(
@@ -100,8 +101,7 @@ const methodikHref = '/methodik#ki-einschaetzung';
     aiAssessment && (
       <a
         href={methodikHref}
-        data-ai-badge-variant="C"
-        class="ai-badge-variant hidden tooltip tooltip-bottom"
+        class="tooltip tooltip-bottom"
         data-tip={aiBadgeTooltip}
         aria-label={aiBadgeTooltip}
       >
@@ -115,24 +115,6 @@ const methodikHref = '/methodik#ki-einschaetzung';
       <span class="badge badge-sm badge-neutral">{speech.onBehalfOf}</span>
     )
   }
-  {
-    aiAssessment && (
-      <span
-        data-ai-badge-variant="A"
-        class="ai-badge-variant hidden badge badge-sm badge-soft badge-warning tooltip tooltip-bottom"
-        data-tip={aiBadgeTooltip}
-      >
-        <a
-          href={methodikHref}
-          class="flex items-center gap-1"
-          aria-label={aiBadgeTooltip}
-        >
-          <span class="iconify lucide--bot size-3" />
-          KI-Einschätzung
-        </a>
-      </span>
-    )
-  }
   <div class="dropdown dropdown-end ml-auto">
     <button tabindex="0" class="btn btn-sm btn-ghost">
       <span class="iconify lucide--more-horizontal"></span>
@@ -141,20 +123,6 @@ const methodikHref = '/methodik#ki-einschaetzung';
       tabindex="0"
       class="dropdown-content menu p-2 shadow bg-base-200 rounded-box w-60"
     >
-      {
-        aiAssessment && (
-          <li data-ai-badge-variant="B" class="ai-badge-variant hidden">
-            <a
-              href={methodikHref}
-              title="Einschätzung eines KI-Textdetektors"
-              aria-label={aiBadgeTooltip}
-            >
-              <span class="iconify lucide--bot" />
-              KI-Einschätzung
-            </a>
-          </li>
-        )
-      }
       <li>
         <a
           class="copy-speech-link-btn"
@@ -197,21 +165,3 @@ const methodikHref = '/methodik#ki-einschaetzung';
     </a>
   </div>
 </div>
-
-<script>
-  // PROTOTYPE for issue #509 — delete together with the `ai-badge-variant`
-  // markup above and src/components/prototype/AiBadgeVariantSwitcher.astro.
-  function applyAiBadgeVariant() {
-    const variant =
-      new URLSearchParams(window.location.search).get('variant') || 'A';
-    document.querySelectorAll('[data-ai-badge-variant]').forEach((el) => {
-      el.classList.toggle(
-        'hidden',
-        el.getAttribute('data-ai-badge-variant') !== variant,
-      );
-    });
-  }
-  applyAiBadgeVariant();
-  window.addEventListener('srw-prototype-variant-change', applyAiBadgeVariant);
-  window.addEventListener('popstate', applyAiBadgeVariant);
-</script>
