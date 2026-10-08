@@ -87,8 +87,10 @@ function mockAiTextAssessment(
 }
 
 const aiAssessment = mockAiTextAssessment(speech);
-const aiBadgeTooltip =
-  'Automatisierte Einschätzung eines KI-Textdetektors (Pangram) für diesen Redebeitrag. Mehr zur Methodik.';
+// Final wording from issue #509.
+const aiBadgeDescription =
+  'Dieser Redebeitrag enthält möglicherweise in Teilen KI-generierten Text.';
+const aiBadgeMethodikLinkText = 'Informationen zur Analyse-Methodik';
 const methodikHref = '/methodik#ki-einschaetzung';
 ---
 
@@ -99,14 +101,25 @@ const methodikHref = '/methodik#ki-einschaetzung';
   <span class="text-base-content/80">{speech.speaker}</span>
   {
     aiAssessment && (
-      <a
-        href={methodikHref}
-        class="tooltip tooltip-bottom"
-        data-tip={aiBadgeTooltip}
-        aria-label={aiBadgeTooltip}
-      >
-        <span class="iconify lucide--bot size-4 text-warning align-middle" />
-      </a>
+      <div class="dropdown dropdown-bottom">
+        <button
+          type="button"
+          tabindex="0"
+          class="btn btn-ghost btn-xs btn-circle"
+          aria-label={aiBadgeDescription}
+        >
+          <span class="iconify lucide--bot size-4 text-warning align-middle" />
+        </button>
+        <div
+          tabindex="0"
+          class="dropdown-content z-10 bg-base-200 rounded-box shadow p-3 w-64 text-sm space-y-2"
+        >
+          <p>{aiBadgeDescription}</p>
+          <a href={methodikHref} class="link link-primary">
+            {aiBadgeMethodikLinkText}
+          </a>
+        </div>
+      </div>
     )
   }
   {faction && <span class="badge badge-sm badge-neutral">{faction.name}</span>}

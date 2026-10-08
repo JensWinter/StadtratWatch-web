@@ -8,16 +8,28 @@
 badge in the Fraktion/onBehalfOf row) and B (entry in the "…" menu) were
 removed, along with the `?variant=` switcher.
 
-Final wording (tooltip / `aria-label`, neutral per the card's wording
-decision):
+Final wording, from the issue #509 comment:
 
-> Automatisierte Einschätzung eines KI-Textdetektors (Pangram) für diesen
-> Redebeitrag. Mehr zur Methodik.
+> Dieser Redebeitrag enthält möglicherweise in Teilen KI-generierten Text.
+> Informationen zur Analyse-Methodik.
 
 Screenshot: see this branch at
 http://localhost:4321/pp/magdeburg-8/session/2026-01-22?tab=speeches
 (176 speeches, ~30 mock-flagged — dense enough to spot the icon without
 hunting).
+
+### Mobile follow-up: tap opened the methodology page directly
+
+The icon was originally an `<a href="/methodik#...">` with a CSS
+`tooltip`/`data-tip` (hover-driven). On touch devices there is no hover
+state, so a tap fired the link's `click` immediately — the explanatory
+text was never shown before navigating away. Fixed by reusing the same
+disclosure pattern this file already uses for the "…" menu: the icon is
+now a `<button>` inside a DaisyUI `dropdown` (tap/focus opens a panel with
+the description and an explicit "Informationen zur Analyse-Methodik" link)
+instead of being a link itself. No new touch-gesture JS — same
+tap-to-open mechanic as the existing menu, so no extra interaction pattern
+to learn.
 
 ## Still mock, not production-ready
 
