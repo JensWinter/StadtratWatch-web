@@ -241,7 +241,7 @@ Index is rebuilt with index-search script (see docs/guides/HOWTO.md). Frontend u
 - Voting data comes from manual OCR scanning, so accuracy depends on screenshot quality
 - Speech transcriptions require OpenAI API key (configured via environment variables in Deno scripts)
 - Some parties may have an "EXTREMIST_CLASSIFICATION" field in registry due to constitutional protection office classifications
-- Session data is **immutable** once approved - don't modify historical data without good reason
+- Session data is **immutable** once approved - don't modify historical data without good reason. Exception: additive `aiTextAssessment` writes from the `detect-ai-text` script are allowed (see [ADR 0001](docs/adr/0001-additive-ai-text-assessment-exception-to-session-immutability.md))
 - When working with shared models between Astro and Deno, make changes in both locations to maintain consistency
 - Be sure to typecheck when you’re done making a series of code changes
 
