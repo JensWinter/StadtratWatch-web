@@ -1,0 +1,100 @@
+---
+// PROTOTYPE for issue #509 — "Badge KI-Einschätzung gestalten".
+// Three placements for the KI-Einschätzung badge on Speech.astro, switchable
+// via ?variant=A|B|C: A = inline badge row, B = "…" menu entry, C = icon
+// next to the speaker name. Dev-only; delete together with Speech.astro's
+// `ai-badge-variant` markup once a variant is picked.
+if (import.meta.env.PROD) {
+  return null;
+}
+---
+
+<div
+  id="ai-badge-variant-switcher"
+  class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 rounded-full bg-neutral text-neutral-content shadow-lg px-2 py-1"
+>
+  <button
+    id="ai-badge-variant-prev"
+    type="button"
+    class="btn btn-circle btn-sm btn-ghost text-neutral-content"
+    aria-label="Vorherige Variante"
+  >
+    <span class="iconify lucide--chevron-left"></span>
+  </button>
+  <span
+    id="ai-badge-variant-label"
+    class="text-sm font-medium min-w-48 text-center"
+  >
+    A — Badge in der Zeile
+  </span>
+  <button
+    id="ai-badge-variant-next"
+    type="button"
+    class="btn btn-circle btn-sm btn-ghost text-neutral-content"
+    aria-label="Nächste Variante"
+  >
+    <span class="iconify lucide--chevron-right"></span>
+  </button>
+</div>
+
+<script>
+  const VARIANTS: Record<string, string> = {
+    A: 'A — Badge in der Zeile',
+    B: 'B — Im „…“-Menü',
+    C: 'C — Icon am Namen',
+  };
+  const VARIANT_KEYS = Object.keys(VARIANTS);
+
+  function getCurrentVariant(): string {
+    const variant = new URLSearchParams(window.location.search).get('variant');
+    return variant && VARIANT_KEYS.includes(variant) ? variant : 'A';
+  }
+
+  function setVariant(variant: string) {
+    const url = new URL(window.location.href);
+    url.searchParams.set('variant', variant);
+    window.history.replaceState({}, '', url);
+    updateLabel();
+    window.dispatchEvent(new CustomEvent('srw-prototype-variant-change'));
+  }
+
+  function cycle(direction: 1 | -1) {
+    const currentIndex = VARIANT_KEYS.indexOf(getCurrentVariant());
+    const nextIndex =
+      (currentIndex + direction + VARIANT_KEYS.length) % VARIANT_KEYS.length;
+    setVariant(VARIANT_KEYS[nextIndex]);
+  }
+
+  function updateLabel() {
+    const label = document.getElementById('ai-badge-variant-label');
+    if (label) {
+      label.textContent = VARIANTS[getCurrentVariant()];
+    }
+  }
+
+  document
+    .getElementById('ai-badge-variant-prev')
+    ?.addEventListener('click', () => cycle(-1));
+  document
+    .getElementById('ai-badge-variant-next')
+    ?.addEventListener('click', () => cycle(1));
+
+  window.addEventListener('keydown', (event) => {
+    const target = event.target as HTMLElement | null;
+    if (
+      target &&
+      (target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.isContentEditable)
+    ) {
+      return;
+    }
+    if (event.key === 'ArrowLeft') {
+      cycle(-1);
+    } else if (event.key === 'ArrowRight') {
+      cycle(1);
+    }
+  });
+
+  updateLabel();
+</script>

@@ -64,6 +64,31 @@ Mit freundlichen Grüßen,
 function getHintMailTitle(speech: SessionSpeech): string {
   return `Hinweis zum Redebeitrag von ${speech.speaker} geben`;
 }
+
+// PROTOTYPE MOCK for issue #509 — stands in for the real `aiTextAssessment`
+// field (#507/#508, not yet implemented). Flags ~1 in 5 speeches so the
+// badge is actually visible while reviewing. Delete with the rest of this
+// prototype.
+type MockAiTextAssessment = { label: 'AI' | 'Mixed' };
+
+function mockAiTextAssessment(
+  speech: SessionSpeech,
+): MockAiTextAssessment | null {
+  const seed = `${speech.speaker}-${speech.start}`;
+  let hash = 0;
+  for (const char of seed) {
+    hash = (hash * 31 + char.charCodeAt(0)) >>> 0;
+  }
+  if (hash % 5 !== 0) {
+    return null;
+  }
+  return { label: hash % 2 === 0 ? 'AI' : 'Mixed' };
+}
+
+const aiAssessment = mockAiTextAssessment(speech);
+const aiBadgeTooltip =
+  'Automatisierte Einschätzung eines KI-Textdetektors (Pangram) für diesen Redebeitrag. Mehr zur Methodik.';
+const methodikHref = '/methodik#ki-einschaetzung';
 ---
 
 <div
@@ -71,10 +96,41 @@ function getHintMailTitle(speech: SessionSpeech): string {
   class="timeline-start text-sm flex flex-row flex-wrap gap-2 w-full items-center"
 >
   <span class="text-base-content/80">{speech.speaker}</span>
+  {
+    aiAssessment && (
+      <a
+        href={methodikHref}
+        data-ai-badge-variant="C"
+        class="ai-badge-variant hidden tooltip tooltip-bottom"
+        data-tip={aiBadgeTooltip}
+        aria-label={aiBadgeTooltip}
+      >
+        <span class="iconify lucide--bot size-4 text-warning align-middle" />
+      </a>
+    )
+  }
   {faction && <span class="badge badge-sm badge-neutral">{faction.name}</span>}
   {
     speech.onBehalfOf && (
       <span class="badge badge-sm badge-neutral">{speech.onBehalfOf}</span>
+    )
+  }
+  {
+    aiAssessment && (
+      <span
+        data-ai-badge-variant="A"
+        class="ai-badge-variant hidden badge badge-sm badge-soft badge-warning tooltip tooltip-bottom"
+        data-tip={aiBadgeTooltip}
+      >
+        <a
+          href={methodikHref}
+          class="flex items-center gap-1"
+          aria-label={aiBadgeTooltip}
+        >
+          <span class="iconify lucide--bot size-3" />
+          KI-Einschätzung
+        </a>
+      </span>
     )
   }
   <div class="dropdown dropdown-end ml-auto">
@@ -85,6 +141,20 @@ function getHintMailTitle(speech: SessionSpeech): string {
       tabindex="0"
       class="dropdown-content menu p-2 shadow bg-base-200 rounded-box w-60"
     >
+      {
+        aiAssessment && (
+          <li data-ai-badge-variant="B" class="ai-badge-variant hidden">
+            <a
+              href={methodikHref}
+              title="Einschätzung eines KI-Textdetektors"
+              aria-label={aiBadgeTooltip}
+            >
+              <span class="iconify lucide--bot" />
+              KI-Einschätzung
+            </a>
+          </li>
+        )
+      }
       <li>
         <a
           class="copy-speech-link-btn"
@@ -127,3 +197,21 @@ function getHintMailTitle(speech: SessionSpeech): string {
     </a>
   </div>
 </div>
+
+<script>
+  // PROTOTYPE for issue #509 — delete together with the `ai-badge-variant`
+  // markup above and src/components/prototype/AiBadgeVariantSwitcher.astro.
+  function applyAiBadgeVariant() {
+    const variant =
+      new URLSearchParams(window.location.search).get('variant') || 'A';
+    document.querySelectorAll('[data-ai-badge-variant]').forEach((el) => {
+      el.classList.toggle(
+        'hidden',
+        el.getAttribute('data-ai-badge-variant') !== variant,
+      );
+    });
+  }
+  applyAiBadgeVariant();
+  window.addEventListener('srw-prototype-variant-change', applyAiBadgeVariant);
+  window.addEventListener('popstate', applyAiBadgeVariant);
+</script>

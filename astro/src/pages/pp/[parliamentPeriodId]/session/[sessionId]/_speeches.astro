@@ -1,5 +1,6 @@
 ---
 import Speech from '@components/Speech.astro';
+import AiBadgeVariantSwitcher from '@components/prototype/AiBadgeVariantSwitcher.astro';
 import { type SessionInput } from '@models/SessionInput';
 import { type Registry } from '@models/registry';
 
@@ -67,6 +68,7 @@ const speeches = sessionInput.speeches.filter(
           <p>Link zum Redebeitrag kopiert</p>
         </div>
       </div>
+      <AiBadgeVariantSwitcher />
     </>
   )
 }
