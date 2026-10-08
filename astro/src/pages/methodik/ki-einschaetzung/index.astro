@@ -1,0 +1,74 @@
+---
+// PROTOTYPE for issue #510 — outline/copy draft, not production-ready.
+// Gated by the feature flag from #511 once that's named; left ungated here
+// since the flag doesn't exist yet.
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout>
+  <h1 class="mb-3 text-3xl">KI-Einschätzung bei Redebeiträgen</h1>
+
+  <p class="mt-3">
+    Bei einigen Redebeiträgen zeigen wir neben dem Namen der sprechenden Person
+    ein kleines Symbol mit dem Hinweis: „Dieser Redebeitrag enthält
+    möglicherweise in Teilen KI-generierten Text.“ Diese Seite erklärt, wie
+    diese Einschätzung entsteht, was sie bedeutet — und was nicht.
+  </p>
+
+  <h2 class="mt-8 mb-3 text-xl">Was prüfen wir?</h2>
+  <p class="mt-3">
+    Für ausgewählte Redebeiträge lassen wir das korrigierte Transkript durch
+    einen KI-Textdetektor des Anbieters <a
+      href="https://www.pangram.com/research/model-card/pangram-4"
+      target="_blank"
+      class="link link-primary">Pangram</a
+    > prüfen. Das Ergebnis ist eine Einschätzung eines KI-Textdetektors, keine Tatsachenfeststellung.
+    Pangram ordnet einen Text als überwiegend menschlich, überwiegend KI-generiert
+    oder gemischt ein. Das Badge erscheint nur, wenn diese Einschätzung mit hoher
+    Zuversicht auf KI oder gemischten Text hindeutet.
+  </p>
+  <p class="mt-3">
+    Welche Redebeiträge geprüft werden, legen wir redaktionell fest. Wir
+    veröffentlichen nicht, welche Beiträge geprüft wurden und welche nicht — nur
+    das Ergebnis der Prüfung ist über das Badge sichtbar, wenn es eine
+    auffällige Einschätzung ergibt.
+  </p>
+
+  <h2 class="mt-8 mb-3 text-xl">Wofür der Detektor nicht gebaut ist</h2>
+  <p class="mt-3">
+    Pangram ist für geschriebenen Text entwickelt und evaluiert. Unsere
+    Redebeiträge sind dagegen Transkripte gesprochener Sprache — ein
+    Einsatzbereich, für den der Hersteller keine Eignung erklärt. Gesprochene
+    Sprache unterscheidet sich von geschriebenem Text (Füllwörter, Abbrüche,
+    Umgangssprache), was die Einschätzung verzerren kann.
+  </p>
+  <p class="mt-3">
+    Deshalb haben wir vor dem Einsatz ein Validierungstor durchlaufen: Wir haben
+    die Einschätzung an 199 Redebeiträgen aus der Zeit vor 2023 getestet —
+    Beiträgen, bei denen eine KI-Beteiligung ausgeschlossen werden kann. Das
+    Ergebnis: <strong>0 % dieser Beiträge</strong> wurden mit hoher Zuversicht als
+    KI-generiert oder gemischt eingeordnet. Dieser Test lässt sich nicht auf alle
+    denkbaren Fälle verallgemeinern, gibt uns aber Vertrauen in die geringe Fehlalarmquote
+    auf unseren Transkripten.
+  </p>
+
+  <h2 class="mt-8 mb-3 text-xl">Was das Badge bedeutet — und was nicht</h2>
+  <p class="mt-3">
+    Das Badge bedeutet: Ein automatisierter Textdetektor hat im korrigierten
+    Transkript dieses Redebeitrags mit hoher Zuversicht Muster erkannt, die
+    typisch für KI-generierten oder KI-unterstützten Text sind.
+  </p>
+  <p class="mt-3">
+    Das Badge bedeutet <strong>nicht</strong>, dass die sprechende Person den
+    Beitrag nicht selbst verfasst hat, dass eine Täuschung vorliegt, oder dass
+    wir eine Bewertung des Inhalts vornehmen. Es ist ein Hinweis auf ein
+    automatisiert erkanntes Muster, keine Feststellung von Fehlverhalten.
+  </p>
+
+  <h2 class="mt-8 mb-3 text-xl">Einspruch</h2>
+  <p class="mt-3">
+    Wenn Sie eine Einschätzung für falsch halten oder Rückfragen haben, nutzen
+    Sie bitte die Funktion „Beitrag melden“ am jeweiligen Redebeitrag. Wir
+    prüfen jeden Hinweis.
+  </p>
+</Layout>
