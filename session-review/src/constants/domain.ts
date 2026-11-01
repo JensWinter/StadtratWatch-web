@@ -25,6 +25,7 @@ export const VOTING_COMMITTEES = [
   'Ausschuss WTR',
   'Betriebsausschuss KGM',
   'Betriebsausschuss KKM',
+  'Betriebsausschuss PTH',
   'Betriebsausschuss SAB',
   'Betriebsausschuss SFM',
   'Finanz- und Grundstücksausschuss',
