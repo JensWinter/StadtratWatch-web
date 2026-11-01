@@ -30,7 +30,7 @@ type TypesenseDocument = {
   paper_type: string;
   paper_reference: string;
 
-  speech_parliament_period: string;
+  speech_electoral_period: string;
   speech_session: string;
   speech_start: number;
   speech_session_date: number;
@@ -62,7 +62,7 @@ export class TypesenseImporter implements IDocumentsImporter {
       paper_type: paper.paper_type,
       paper_reference: paper.paper_reference,
 
-      speech_parliament_period: '',
+      speech_electoral_period: '',
       speech_session: '',
       speech_start: 0,
       speech_session_date: 0,
@@ -85,7 +85,7 @@ export class TypesenseImporter implements IDocumentsImporter {
       paper_type: '',
       paper_reference: '',
 
-      speech_parliament_period: speech.speech_parliament_period,
+      speech_electoral_period: speech.speech_parliament_period,
       speech_session: speech.speech_session,
       speech_start: speech.speech_start,
       speech_session_date: speech.speech_session_date,
