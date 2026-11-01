@@ -5,8 +5,22 @@ export interface ConfigName {
   columnIndex: number;
 }
 
+export interface NamesColumn {
+  left: number;
+  top: number;
+  width: number;
+  testPixelXOffset: number;
+  testPixelYOffset: number;
+}
+
+export interface SessionLayout {
+  namesRowHeight: number;
+  namesColumns: NamesColumn[];
+}
+
 export interface SessionConfig {
   youtubeUrl: string;
+  layout: SessionLayout;
   names: ConfigName[];
 }
 
