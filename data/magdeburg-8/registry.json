@@ -1,7 +1,7 @@
 {
   "id": "magdeburg-8",
   "name": "Wahlperiode VIII",
-  "lastUpdate": "2026-10-13T10:00:00Z",
+  "lastUpdate": "2026-11-01T10:00:00Z",
   "sessions": [
     {
       "id": "2024-07-08",
@@ -328,8 +328,8 @@
       "date": "2026-09-24",
       "title": "Stadtratssitzung",
       "youtubeUrl": "https://www.youtube.com/live/ObN-9tu-hIc",
-      "meetingMinutesUrl": null,
-      "approved": false
+      "meetingMinutesUrl": "https://ratsinfo.magdeburg.de/getfile.asp?id=753778&type=do",
+      "approved": true
     }
   ],
   "factions": [
