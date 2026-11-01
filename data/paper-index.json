@@ -60120,12 +60120,36 @@
     "name": "Unterstützung von Mieterinnen und Mietern bei der Einstellung von Strom -und Wasser-versorgung"
   },
   {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249676",
+    "id": "249676",
+    "date": "2026-10-20",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0375/26",
+    "name": "Grundsatzbeschluss zum Ausbau der Helmstedter Chaussee in Magdeburg"
+  },
+  {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249678",
     "id": "249678",
     "date": "2026-08-25",
     "paperType": "Anfrage",
     "reference": "F0256/26",
     "name": "Illegale Müllablagerungen und ordnungsrechtliche Durchsetzung in der Landeshauptstadt Magdeburg"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249681",
+    "id": "249681",
+    "date": "2026-10-19",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0376/26",
+    "name": "Behandlung der Stellungnahmen (Abwägung) zur 51. Änderung des Flächennutzungsplans der Landeshauptstadt Magdeburg \"Glindenberger Weg/ westlich Umspannwerk\""
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249682",
+    "id": "249682",
+    "date": "2026-10-19",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0377/26",
+    "name": "Feststellungsbeschluss zur 51. Änderung des Flächennutzungsplans der Landeshauptstadt Magdeburg \"Glindenberger Weg/ westlich Umspannwerk\""
   },
   {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249685",
@@ -60238,6 +60262,14 @@
     "paperType": "Anfrage",
     "reference": "F0270/26",
     "name": "Kostenexplosion bei der Sanierung der Stadthalle"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249709",
+    "id": "249709",
+    "date": "2026-10-20",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0381/26",
+    "name": "Richtlinie zur Umsetzung des „Notfallfonds Soziale Lebenslagen“ der Landeshauptstadt Magdeburg (Magdeburger Notfallfonds)"
   },
   {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249713",
@@ -60456,9 +60488,17 @@
     "name": "Vergabe Rahmenzeitvertragsarbeiten 2027 + optionaler Verlängerung um ein Jahr (2028) Los 21: Blitzschutzarbeiten (2 Teil-Lose)"
   },
   {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249803",
+    "id": "249803",
+    "date": "2026-10-14",
+    "paperType": "Beschlussvorlage EB",
+    "reference": "DS0413/26",
+    "name": "Weiterführung der Gebäudedienstleistungen im Rahmen des Betriebs der PPP-Schulliegenschaften im PPP-Modell"
+  },
+  {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249804",
     "id": "249804",
-    "date": "2026-09-25",
+    "date": "2026-10-20",
     "paperType": "Antrag",
     "reference": "A0186/26",
     "name": "Fortschreibung des Rahmenplans Stadtpark"
@@ -60470,6 +60510,14 @@
     "paperType": "Antrag",
     "reference": "A0187/26",
     "name": "Städtetag und Festival der Moderne nicht ohne \"Taut-Kiosk\" als Eyecatcher mit Alleinstellungsmerkmal"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249808",
+    "id": "249808",
+    "date": "2026-10-20",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0414/26",
+    "name": "Überplanmäßige Aufwendungen im Deckungskreis Hilfe zur Erziehung (DKHzE), Plankostenstelle 51510000 für das Haushaltsjahr 2026"
   },
   {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249814",
@@ -60576,12 +60624,36 @@
     "name": "Sperrung der Maybachstraße und Erreichbarkeit des ZOB"
   },
   {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249890",
+    "id": "249890",
+    "date": "2026-10-20",
+    "paperType": "Beschlussvorlage EB",
+    "reference": "DS0444/26",
+    "name": "1. Änderungssatzung der Straßenreinigungsgebührensatzung"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249897",
+    "id": "249897",
+    "date": "2026-10-15",
+    "paperType": "Beschlussvorlage EB",
+    "reference": "DS0445/26",
+    "name": "Wirtschaftsplan 2027 Eigenbetrieb Theater Magdeburg"
+  },
+  {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249902",
     "id": "249902",
     "date": "2026-09-21",
     "paperType": "Anfrage",
     "reference": "F0288/26",
     "name": "Vorhabenbezogener Bebauungsplan Nr. 341-3.1 \"Fachmarktzentrum"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249903",
+    "id": "249903",
+    "date": "2026-10-15",
+    "paperType": "Beschlussvorlage EB",
+    "reference": "DS0447/26",
+    "name": "1. Änderungssatzung Straßenreinigungssatzung"
   },
   {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249905",
@@ -60784,6 +60856,14 @@
     "name": "Kinder- und Jugendhaus „Mühle“ – aktueller Stand"
   },
   {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249973",
+    "id": "249973",
+    "date": "2026-10-20",
+    "paperType": "Informationsvorlage",
+    "reference": "I0334/26",
+    "name": "Ausreichung der Mikroprojekte-Fördermittel für Kunst und Kultur im Haushaltsjahr 2026 auf der Grundlage der Fachförderrichtlinie Kultur der Landeshauptstadt Magdeburg - DS0359/25"
+  },
+  {
     "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/249974",
     "id": "249974",
     "date": "2026-10-01",
@@ -60822,5 +60902,53 @@
     "paperType": "Beschlussvorlage",
     "reference": "DS0472/26",
     "name": "Abberufung Generalintendant Theater Magdeburg und Bestellung einer Interimsintendanz"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/250034",
+    "id": "250034",
+    "date": "2026-10-15",
+    "paperType": "Informationsvorlage",
+    "reference": "I0353/26",
+    "name": "Verlauf und wesentliche Ergebnisse der Einwohnerversammlung für den Stadtteil Lemsdorf am 26.08.2026"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/250042",
+    "id": "250042",
+    "date": "2026-10-15",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0476/26",
+    "name": "Jahresabschluss 2025 der Magdeburger Märkte GmbH"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/250045",
+    "id": "250045",
+    "date": "2026-10-15",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0477/26",
+    "name": "Jahresabschluss der Gesellschaft zur Durchführung der Magdeburger Weihnachtsmärkte mbH zum 31.03.2026"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/250060",
+    "id": "250060",
+    "date": "2026-10-15",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0484/26",
+    "name": "Genehmigung der Annahme von Spenden gem. § 99 Abs. 6 KVG-LSA"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/250064",
+    "id": "250064",
+    "date": "2026-10-15",
+    "paperType": "Beschlussvorlage",
+    "reference": "DS0488/26",
+    "name": "Jahresabschluss 2025 der Zentrum für Produkt-, Verfahrens- und Prozessinnovation GmbH (ZPVP GmbH)"
+  },
+  {
+    "oparlId": "https://ratsinfo.magdeburg.de/oparl/bodies/0001/papers/vo/250078",
+    "id": "250078",
+    "date": "2026-10-20",
+    "paperType": "Informationsvorlage",
+    "reference": "I0358/26",
+    "name": "Planfeststellungsverfahren zur Erweiterung der Deponie Hängelsberge"
   }
 ]
