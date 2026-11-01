@@ -12,12 +12,12 @@
     "format:check": "bun fmt --check src"
   },
   "dependencies": {
-    "@aws-sdk/client-cloudfront": "^3.1155.0",
-    "@aws-sdk/client-s3": "^3.1155.0",
-    "@napi-rs/canvas": "1.0.12",
+    "@aws-sdk/client-cloudfront": "^3.1159.0",
+    "@aws-sdk/client-s3": "^3.1159.0",
+    "@napi-rs/canvas": "1.0.13",
     "@srw-astro/models": "workspace:*",
     "fast-png": "8.0.0",
-    "openai": "^7.42.0",
+    "openai": "^7.45.1",
     "tesseract.js": "7.0.0"
   },
   "devDependencies": {
