@@ -22,10 +22,16 @@ function seatTop(seat: ConfigName, column: NamesColumn, namesRowHeight: number):
   return column.top + seat.rowIndex * namesRowHeight;
 }
 
-export function VotesCheck({ sessionDate, voting, config }: Props) {
+export function VotesCheck({ sessionDate, voting, config }: Readonly<Props>) {
   const src = `${env.awsCloudFrontSessionsRawBaseFolder}/${sessionDate}/${voting.votingFilename}`;
   const [imageSize, setImageSize] = useState<ImageSize | null>(null);
+  const [imageSrc, setImageSrc] = useState(src);
   const [showConfiguredNames, setShowConfiguredNames] = useState(true);
+
+  if (imageSrc !== src) {
+    setImageSrc(src);
+    setImageSize(null);
+  }
 
   const scale = imageSize ? DISPLAY_HEIGHT / imageSize.height : 0;
   const { namesColumns, namesRowHeight } = config.layout;
