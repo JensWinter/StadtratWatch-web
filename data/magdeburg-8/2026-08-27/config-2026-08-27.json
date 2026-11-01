@@ -235,21 +235,21 @@
             "faction": "AfD"
         },
         {
-            "name": "Julian Reek",
-            "columnIndex": 1,
-            "rowIndex": 11,
-            "party": "AfD",
-            "faction": "AfD"
+          "name": "Bernd Neubauer",
+          "columnIndex": 1,
+          "rowIndex": 11,
+          "party": "AfD",
+          "faction": "AfD"
         },
         {
-            "name": "Florian Ruß",
+            "name": "Julian Reek",
             "columnIndex": 1,
             "rowIndex": 12,
             "party": "AfD",
             "faction": "AfD"
         },
         {
-            "name": "Bernd Neubauer",
+            "name": "Florian Ruß",
             "columnIndex": 1,
             "rowIndex": 13,
             "party": "AfD",
