@@ -47,7 +47,7 @@ export class VotingsImageDataGenerator {
 
       const mapSessionScanVoteToVote = (vote: SessionScanVote): Vote => ({
         personId: personsOfSession.find((p) => p.name === vote.name)?.id || '',
-        vote: vote.vote,
+        vote: vote.vote === 'J' || vote.vote === 'N' || vote.vote === 'E' ? vote.vote : 'O',
       });
       return sessionInput.votings.map<Voting>((sessionVoting) => {
         const allVotes = sessionVoting.votes.map(mapSessionScanVoteToVote);
