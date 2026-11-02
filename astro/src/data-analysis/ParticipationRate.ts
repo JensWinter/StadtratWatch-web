@@ -6,7 +6,6 @@ import type {
   RegistryPerson,
 } from '@models/registry.ts';
 import type { SessionScanItem } from '@models/session-scan.ts';
-import { VoteResult } from '@models/Session.ts';
 import {
   getPersonsOfSessionAndFaction,
   getPersonsOfSessionAndParty,
@@ -146,6 +145,6 @@ function calcParticipationRate(
 ): number | null {
   const votes = voting.votes
     .filter((vote) => persons.includes(vote.name))
-    .filter((vote) => vote.vote !== VoteResult.DID_NOT_VOTE);
+    .filter((vote) => vote.vote !== 'O');
   return persons.length === 0 ? null : votes.length / persons.length;
 }

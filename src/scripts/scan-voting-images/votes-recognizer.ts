@@ -1,11 +1,10 @@
-import { VoteResult } from '@srw-astro/models/session';
+import type { VoteCode } from '@srw-astro/models/session';
 import type { SessionScanVote } from '@srw-astro/models/session-scan';
 
 import type { ScanConfig, ScanConfigLayout, ScanConfigPerson } from './scan-config.ts';
 import type { IVotingImagesSource, PixelMatrix } from './voting-images-source.ts';
 
 type CategorizedColor = 'red' | 'green' | 'yellow' | 'white' | 'unknown';
-type VoteCode = VoteResult.VOTE_FOR | VoteResult.VOTE_AGAINST | VoteResult.VOTE_ABSTENTION | VoteResult.DID_NOT_VOTE;
 
 export interface IVotesRecognizer {
   getVotesForNames(votingFilepath: string, config: ScanConfig): SessionScanVote[];
@@ -75,15 +74,15 @@ export class VotesRecognizer implements IVotesRecognizer {
   private categoryToVote(category: CategorizedColor): VoteCode {
     switch (category) {
       case 'red':
-        return VoteResult.VOTE_AGAINST;
+        return 'N';
       case 'green':
-        return VoteResult.VOTE_FOR;
+        return 'J';
       case 'yellow':
-        return VoteResult.VOTE_ABSTENTION;
+        return 'E';
       case 'white':
-        return VoteResult.DID_NOT_VOTE;
+        return 'O';
       default:
-        return VoteResult.DID_NOT_VOTE;
+        return 'O';
     }
   }
 }

@@ -2,6 +2,7 @@ import { describe, expect, it } from 'bun:test';
 
 import type { PaperVotingsDto } from '@srw-astro/models/paper-votings';
 import type { Registry, RegistryFaction, RegistryPerson } from '@srw-astro/models/registry';
+import type { VoteCode } from '@srw-astro/models/session';
 import type { SessionScan, SessionScanItem, SessionScanVote } from '@srw-astro/models/session-scan';
 
 import type { PaperVotingsAssetDto } from '../model.ts';
@@ -122,7 +123,7 @@ describe('Generating paper votings', () => {
     ]);
   });
 
-  it('counts votes per result, treating anything that is not yes, no or abstention as absent', async () => {
+  it('counts votes per vote code', async () => {
     givenPeriods([
       period(PERIOD_8, {
         votingPaperMap: { '2024-07-08': { '1.1': 111 } },
@@ -133,7 +134,6 @@ describe('Generating paper votings', () => {
               vote('Opposer', 'N'),
               vote('Abstainer', 'E'),
               vote('Absentee', 'O'),
-              vote('Unknown Voter', '?'),
             ]),
           ],
         },
@@ -142,14 +142,13 @@ describe('Generating paper votings', () => {
           person('Opposer', 'faction-1'),
           person('Abstainer', 'faction-1'),
           person('Absentee', 'faction-1'),
-          person('Unknown Voter', 'faction-1'),
         ],
       }),
     ]);
 
     await runGeneration();
 
-    expect(votingsOf(111)[0].counts).toEqual({ J: 1, N: 1, E: 1, O: 2 });
+    expect(votingsOf(111)[0].counts).toEqual({ J: 1, N: 1, E: 1, O: 1 });
   });
 
   it('accepts a voting with more yes than no votes', async () => {
@@ -311,8 +310,8 @@ function scan(votingFilename: string, agendaItem: string, votes: SessionScanVote
   };
 }
 
-function vote(name: string, voteResult: string): SessionScanVote {
-  return { name, vote: voteResult };
+function vote(name: string, voteCode: VoteCode): SessionScanVote {
+  return { name, vote: voteCode };
 }
 
 function faction(id: string, name: string, seats: number): RegistryFaction {

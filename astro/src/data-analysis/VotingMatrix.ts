@@ -1,7 +1,6 @@
 import type { Registry, RegistryPerson } from '@models/registry.ts';
 import type { SessionScanItem } from '@models/session-scan.ts';
 import type { SessionInput } from '@models/SessionInput.ts';
-import { VoteResult } from '@models/Session.ts';
 
 export type VotingMatrixItem = {
   personId: string;
@@ -47,13 +46,10 @@ function calcVotingComparisonScore(
   const relevantVotings = votings.filter(
     (voting) =>
       voting.votes.some(
-        (vote) =>
-          vote.name === person.name && vote.vote !== VoteResult.DID_NOT_VOTE,
+        (vote) => vote.name === person.name && vote.vote !== 'O',
       ) &&
       voting.votes.some(
-        (vote) =>
-          vote.name === otherPerson.name &&
-          vote.vote !== VoteResult.DID_NOT_VOTE,
+        (vote) => vote.name === otherPerson.name && vote.vote !== 'O',
       ),
   );
   const equalVotes = relevantVotings.filter((voting) => {

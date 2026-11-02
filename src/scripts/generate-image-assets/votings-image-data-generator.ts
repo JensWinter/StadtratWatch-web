@@ -1,5 +1,5 @@
 import type { Registry, RegistryFaction, RegistryPerson } from '@srw-astro/models/registry';
-import { type Vote, VoteResult } from '@srw-astro/models/session';
+import type { Vote } from '@srw-astro/models/session';
 import type { SessionInput } from '@srw-astro/models/session-input';
 import type { SessionScanVote } from '@srw-astro/models/session-scan';
 
@@ -20,37 +20,20 @@ function getVotingForFactions(
   return factions.map((faction) => {
     const factionPersons = persons.filter((person) => person.factionId === faction.id);
     const votesFor = votes.filter(
-      (vote) => vote.vote === VoteResult.VOTE_FOR && factionPersons.some((person) => person.id === vote.personId),
+      (vote) => vote.vote === 'J' && factionPersons.some((person) => person.id === vote.personId),
     ).length;
     const votesAgainst = votes.filter(
-      (vote) => vote.vote === VoteResult.VOTE_AGAINST && factionPersons.some((person) => person.id === vote.personId),
+      (vote) => vote.vote === 'N' && factionPersons.some((person) => person.id === vote.personId),
     ).length;
     const abstentions = votes.filter(
-      (vote) =>
-        vote.vote === VoteResult.VOTE_ABSTENTION && factionPersons.some((person) => person.id === vote.personId),
+      (vote) => vote.vote === 'E' && factionPersons.some((person) => person.id === vote.personId),
     ).length;
     const notVoted = votes.filter(
-      (vote) => vote.vote === VoteResult.DID_NOT_VOTE && factionPersons.some((person) => person.id === vote.personId),
+      (vote) => vote.vote === 'O' && factionPersons.some((person) => person.id === vote.personId),
     ).length;
 
     return { faction: faction.name, votesFor, votesAgainst, abstentions, notVoted };
   });
-}
-
-function getVoteResult(vote: string): VoteResult {
-  if (vote === 'J') {
-    return VoteResult.VOTE_FOR;
-  }
-
-  if (vote === 'N') {
-    return VoteResult.VOTE_AGAINST;
-  }
-
-  if (vote === 'E') {
-    return VoteResult.VOTE_ABSTENTION;
-  }
-
-  return VoteResult.DID_NOT_VOTE;
 }
 
 export class VotingsImageDataGenerator {
@@ -64,7 +47,7 @@ export class VotingsImageDataGenerator {
 
       const mapSessionScanVoteToVote = (vote: SessionScanVote): Vote => ({
         personId: personsOfSession.find((p) => p.name === vote.name)?.id || '',
-        vote: getVoteResult(vote.vote),
+        vote: vote.vote === 'J' || vote.vote === 'N' || vote.vote === 'E' ? vote.vote : 'O',
       });
       return sessionInput.votings.map<Voting>((sessionVoting) => {
         const allVotes = sessionVoting.votes.map(mapSessionScanVoteToVote);

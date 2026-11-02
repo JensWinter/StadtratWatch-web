@@ -4,6 +4,7 @@ import { getEntry } from 'astro:content';
 import { getVideoTimestampAsSeconds } from '@utils/session-utils.ts';
 import type { Registry, RegistrySession } from '@models/registry.ts';
 import { getVotingId } from '@models/voting-breakdown.ts';
+import type { VoteCode } from '@models/Session.ts';
 
 export const getStaticPaths = async () => {
   const paths = await getStaticParliamentPeriodPaths();
@@ -21,20 +22,12 @@ export const getStaticPaths = async () => {
   );
 };
 
-function translateVote(vote: string): string {
-  switch (vote) {
-    case 'J':
-      return 'yes';
-    case 'N':
-      return 'no';
-    case 'E':
-      return 'abstain';
-    case 'O':
-      return 'no_show';
-    default:
-      return vote;
-  }
-}
+const apiVoteByVoteCode: Record<VoteCode, string> = {
+  J: 'yes',
+  N: 'no',
+  E: 'abstain',
+  O: 'no_show',
+};
 
 export async function GET({
   params,
@@ -69,7 +62,7 @@ export async function GET({
     votingSubject: scan.votingSubject,
     votes: scan.votes.map((vote) => ({
       personId: personsMap.get(vote.name)?.id,
-      vote: translateVote(vote.vote),
+      vote: apiVoteByVoteCode[vote.vote],
     })),
   }));
 
