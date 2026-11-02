@@ -65,7 +65,7 @@ Das Repository ist öffentlich. StadtratWatch nutzt deshalb die Sicherheitsfunkt
 | Die gesamte Git-Historie wurde einmalig mit `gitleaks` geprüft, das auch formatlose Schlüssel anhand allgemeiner Muster findet. Ein Fund wird durch Austausch des Schlüssels behoben, nicht durch Umschreiben der Historie.
 
 | *Dependabot-Warnungen und -Sicherheitsupdates*
-| Bekannte Schwachstellen in den Abhängigkeiten von `astro/` (npm) und den Skripten (Bun) erzeugen eine Warnung und je betroffenem Paket einen eigenen Pull Request. Die wöchentlichen Versionsupdates aus `.github/dependabot.yml` laufen davon unabhängig.
+| Bekannte Schwachstellen in den Abhängigkeiten von `astro/` und `session-review/` (npm) sowie den Skripten (Bun) erzeugen eine Warnung und je betroffenem Paket einen eigenen Pull Request. Die wöchentlichen Versionsupdates aus `.github/dependabot.yml` laufen davon unabhängig.
 
 | *CodeQL (Standardeinrichtung)*
 | Statische Analyse des eigenen Codes (JavaScript/TypeScript, Python) und der GitHub-Actions-Workflows bei jedem Push, jedem Pull Request und wöchentlich.
