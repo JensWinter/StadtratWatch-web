@@ -50,6 +50,32 @@ Für einzelne Pipeline-Schritte verlassen Sitzungsinhalte die eigene Infrastrukt
 | Die ausgelieferte Anwendung enthält nur öffentliche Konfigurationswerte (siehe <<konzept-datenhaltung,Datenhaltung & Versionierung>>); der Typesense-Schlüssel ist ein reiner Such-Schlüssel. Geheimnisse der Pipelines verbleiben in der Verarbeitungsumgebung.
 |===
 
+== Schwachstellen und Geheimnisse erkennen
+
+Das Repository ist öffentlich. StadtratWatch nutzt deshalb die Sicherheitsfunktionen, die GitHub für öffentliche Repositorys kostenlos anbietet, statt eigene Scanner zu betreiben. Diese Funktionen werden in den Repository-Einstellungen eingeschaltet und sind nicht im Repository versioniert; die folgende Tabelle ist ihre einzige schriftliche Ablage.
+
+[cols="2,4",options="header"]
+|===
+| Maßnahme | Wirkung
+
+| *Secret Scanning mit Push Protection*
+| GitHub durchsucht die gesamte Historie nach bekannten Schlüsselformaten (u. a. AWS, OpenAI) und weist Pushes ab, die solche Schlüssel enthalten. Eigene Schlüssel ohne festes Format (Typesense-Admin-Schlüssel, Pangram) erkennt es nicht; sie gelangen über `.env`-Dateien in die Pipelines, die per `.gitignore` ausgeschlossen sind.
+
+| *Einmalige Prüfung der Historie*
+| Die gesamte Git-Historie wurde einmalig mit `gitleaks` geprüft, das auch formatlose Schlüssel anhand allgemeiner Muster findet. Ein Fund wird durch Austausch des Schlüssels behoben, nicht durch Umschreiben der Historie.
+
+| *Dependabot-Warnungen und -Sicherheitsupdates*
+| Bekannte Schwachstellen in den Abhängigkeiten von `astro/` und `session-review/` (npm) sowie den Skripten (Bun) erzeugen eine Warnung und je betroffenem Paket einen eigenen Pull Request. Die wöchentlichen Versionsupdates aus `.github/dependabot.yml` laufen davon unabhängig.
+
+| *CodeQL (Standardeinrichtung)*
+| Statische Analyse des eigenen Codes (JavaScript/TypeScript, Python) und der GitHub-Actions-Workflows bei jedem Push, jedem Pull Request und wöchentlich.
+
+| *Vertrauliche Meldung von Sicherheitslücken*
+| Über die private Meldefunktion von GitHub und `SECURITY.md` können Finder:innen Lücken melden, ohne sie öffentlich zu machen. Zum Geltungsbereich gehören neben Website, API und Code auch die selbst gehosteten Dienste Typesense und Matomo.
+|===
+
+Bewusst nicht abgedeckt sind die Deno-Abhängigkeiten, weil die Skripte auf Bun umziehen (<<adr-0007,ADR-0007>>) und die verbliebenen Deno-Pakete bald entfallen, sowie die Docker-Images in `docker/`, weil sie nur kurzzeitig auf dem Rechner einer:eines Maintainer:in laufen. Die Aktualität des Typesense-Containers auf dem Projekt-Server liegt außerhalb dieses Repositorys.
+
 == Datensparsame Reichweitenmessung
 
 Zur Reichweitenmessung kommt eine *selbst gehostete Matomo-Instanz* zum Einsatz (`matomo.unser-magdeburg.de`). Damit verlassen keine Besucherdaten die eigene Infrastruktur an Dritte; es findet kein Tracking durch externe Werbe- oder Analysedienste statt. Die datenschutzbezogene Feinkonfiguration (z. B. Anonymisierung, Cookie-Verhalten) liegt in der Matomo-Instanz selbst und ist nicht Teil dieses Repositorys.
