@@ -1,5 +1,11 @@
 // The codes the session scans persist: Ja, Nein, Enthaltung, O for nicht abgestimmt.
-export type VoteCode = 'J' | 'N' | 'E' | 'O';
+export const voteCodes = ['J', 'N', 'E', 'O'] as const;
+
+export type VoteCode = (typeof voteCodes)[number];
+
+export function isVoteCode(value: string): value is VoteCode {
+  return (voteCodes as readonly string[]).includes(value);
+}
 
 export type Vote = {
   personId: string;

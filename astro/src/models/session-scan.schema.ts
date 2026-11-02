@@ -1,5 +1,5 @@
 import { z } from 'astro/zod';
-import type { VoteCode } from './Session.ts';
+import { voteCodes, type VoteCode } from './Session.ts';
 import type { SessionScan } from './session-scan.ts';
 
 // Runtime schema for the session-scan files, consumed by the Astro content
@@ -8,7 +8,7 @@ import type { SessionScan } from './session-scan.ts';
 // Uses astro/zod (= zod v4) so the schema object matches the instance Astro's
 // content-collection validator expects.
 
-const voteCodeSchema = z.enum(['J', 'N', 'E', 'O']);
+const voteCodeSchema = z.enum(voteCodes);
 
 export const sessionScanSchema = z.array(
   z.object({

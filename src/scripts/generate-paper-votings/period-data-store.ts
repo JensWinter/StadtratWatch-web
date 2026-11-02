@@ -3,7 +3,7 @@ import * as path from 'node:path';
 
 import type { VotingPaperMap } from '@srw-astro/models/oparl-derivatives';
 import type { Registry } from '@srw-astro/models/registry';
-import type { SessionScan } from '@srw-astro/models/session-scan';
+import { assertKnownVoteCodes, type SessionScan } from '@srw-astro/models/session-scan';
 
 export type PeriodData = {
   registry: Registry;
@@ -53,6 +53,7 @@ export class PeriodDataFileStore implements PeriodDataStore {
       const sessionScanPath = path.join(periodDir, session.date, `session-scan-${session.date}.json`);
       const sessionScan = await this.readJsonFile<SessionScan>(sessionScanPath);
       if (sessionScan) {
+        assertKnownVoteCodes(sessionScan, sessionScanPath);
         sessionScansByDate[session.date] = sessionScan;
       }
     }
