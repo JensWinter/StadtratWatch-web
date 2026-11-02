@@ -1,3 +1,5 @@
+import type { VoteCode } from './Session.ts';
+
 export type SessionScan = SessionScanItem[];
 
 export type SessionScanItem = {
@@ -17,5 +19,5 @@ export type SessionScanVotingSubject = {
 
 export type SessionScanVote = {
   name: string;
-  vote: string;
+  vote: VoteCode;
 };

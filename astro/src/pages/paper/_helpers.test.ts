@@ -9,7 +9,6 @@ import type {
   PaperVotingItem,
   PaperVotingsDto,
 } from '@models/paper-votings.ts';
-import { VoteResult } from '@models/Session.ts';
 
 function paperVotingItem(
   overrides: Partial<PaperVotingItem> = {},
@@ -112,21 +111,14 @@ describe('toPaperVotingViews', () => {
 
 describe('getVoteStatusClass', () => {
   test('maps each cast vote to its status color', () => {
-    assert.equal(getVoteStatusClass(VoteResult.VOTE_FOR), 'status-success');
-    assert.equal(getVoteStatusClass(VoteResult.VOTE_AGAINST), 'status-error');
-    assert.equal(
-      getVoteStatusClass(VoteResult.VOTE_ABSTENTION),
-      'status-warning',
-    );
+    assert.equal(getVoteStatusClass('J'), 'status-success');
+    assert.equal(getVoteStatusClass('N'), 'status-error');
+    assert.equal(getVoteStatusClass('E'), 'status-warning');
   });
 
   // The session page leaves non-votes unmodified, which daisyUI renders as a
   // faint neutral dot; adding status-neutral would make them solid instead.
   test('leaves non-votes unmodified, like the session page does', () => {
-    assert.equal(getVoteStatusClass(VoteResult.DID_NOT_VOTE), '');
-  });
-
-  test('leaves unknown vote codes unmodified', () => {
-    assert.equal(getVoteStatusClass('?'), '');
+    assert.equal(getVoteStatusClass('O'), '');
   });
 });

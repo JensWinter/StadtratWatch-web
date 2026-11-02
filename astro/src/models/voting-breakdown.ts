@@ -1,35 +1,23 @@
 import type { Registry } from './registry.ts';
 import type { SessionScanItem, SessionScanVote } from './session-scan.ts';
-import { VoteResult } from './Session.ts';
+import type { VoteCode } from './Session.ts';
 
 export type VotesByFaction = {
   factionId: string;
   factionName: string;
   orderIndex: number;
-  votes: { personName: string; vote: string }[];
+  votes: { personName: string; vote: VoteCode }[];
 };
 
-// Keyed by the vote codes the scans carry (VoteResult), which the web assets expose as-is.
-export type VoteCounts = {
-  [VoteResult.VOTE_FOR]: number;
-  [VoteResult.VOTE_AGAINST]: number;
-  [VoteResult.VOTE_ABSTENTION]: number;
-  [VoteResult.DID_NOT_VOTE]: number;
+// Keyed by the vote codes the scans carry, which the web assets expose as-is.
+export type VoteCounts = Record<VoteCode, number>;
+
+const votePresentationOrder: Record<VoteCode, number> = {
+  J: 1,
+  N: 2,
+  E: 3,
+  O: 4,
 };
-
-const votePresentationOrder = new Map<string, number>([
-  [VoteResult.VOTE_FOR, 1],
-  [VoteResult.VOTE_AGAINST, 2],
-  [VoteResult.VOTE_ABSTENTION, 3],
-  [VoteResult.DID_NOT_VOTE, 4],
-]);
-
-function getVotePresentationOrder(vote: string): number {
-  return (
-    votePresentationOrder.get(vote) ??
-    votePresentationOrder.get(VoteResult.DID_NOT_VOTE)!
-  );
-}
 
 // The scan filename carries the voting id, e.g. 2024-07-08-014.png -> 14.
 const votingIdRange = { start: 11, end: 14 };
@@ -42,30 +30,13 @@ export function getVotingId(voting: SessionScanItem): number {
 }
 
 export function getVoteCounts(voting: SessionScanItem): VoteCounts {
-  const counts: VoteCounts = {
-    [VoteResult.VOTE_FOR]: 0,
-    [VoteResult.VOTE_AGAINST]: 0,
-    [VoteResult.VOTE_ABSTENTION]: 0,
-    [VoteResult.DID_NOT_VOTE]: 0,
-  };
+  const counts: VoteCounts = { J: 0, N: 0, E: 0, O: 0 };
 
   for (const vote of voting.votes) {
-    const countedVote = isCountedVoteResult(vote.vote)
-      ? vote.vote
-      : VoteResult.DID_NOT_VOTE;
-    counts[countedVote]++;
+    counts[vote.vote]++;
   }
 
   return counts;
-}
-
-function isCountedVoteResult(vote: string): vote is keyof VoteCounts {
-  return (
-    vote === VoteResult.VOTE_FOR ||
-    vote === VoteResult.VOTE_AGAINST ||
-    vote === VoteResult.VOTE_ABSTENTION ||
-    vote === VoteResult.DID_NOT_VOTE
-  );
 }
 
 export function getVotesByFactions(
@@ -98,7 +69,7 @@ export function getVotesByFactions(
         .filter((vote) => vote.factionId === faction.id)
         .toSorted(
           (a, b) =>
-            getVotePresentationOrder(a.vote) - getVotePresentationOrder(b.vote),
+            votePresentationOrder[a.vote] - votePresentationOrder[b.vote],
         )
         .map((vote) => ({
           personName: vote.personName,
@@ -109,5 +80,5 @@ export function getVotesByFactions(
 
 export function votingAccepted(voting: SessionScanItem): boolean {
   const counts = getVoteCounts(voting);
-  return counts[VoteResult.VOTE_FOR] > counts[VoteResult.VOTE_AGAINST];
+  return counts.J > counts.N;
 }

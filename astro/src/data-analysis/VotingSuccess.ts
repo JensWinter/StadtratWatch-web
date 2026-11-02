@@ -6,7 +6,7 @@ import type {
   RegistryPerson,
 } from '@models/registry.ts';
 import type { SessionScanItem } from '@models/session-scan.ts';
-import { VoteResult, VotingResult } from '@models/Session.ts';
+import type { VotingResult } from '@models/Session.ts';
 import {
   getPersonsOfSessionAndFaction,
   getPersonsOfSessionAndParty,
@@ -131,8 +131,7 @@ export function calcVotingSuccessRateOfPerson(
       // TODO: To be decided => Different results if the abstentions are counted as success or not
       //  or if the they are not counted at all
       voting.votes.some(
-        (vote) =>
-          vote.name === person.name && vote.vote !== VoteResult.DID_NOT_VOTE,
+        (vote) => vote.name === person.name && vote.vote !== 'O',
       ),
     )
     .map((voting) => {
@@ -141,10 +140,8 @@ export function calcVotingSuccessRateOfPerson(
       )!.vote;
       const votingResult = getVotingResult(voting);
       return (
-        (personVote === VoteResult.VOTE_FOR &&
-          votingResult === VotingResult.PASSED) ||
-        (personVote === VoteResult.VOTE_AGAINST &&
-          votingResult === VotingResult.REJECTED)
+        (personVote === 'J' && votingResult === 'PASSED') ||
+        (personVote === 'N' && votingResult === 'REJECTED')
       );
     });
 
@@ -186,29 +183,20 @@ function calcPersonsVotingResult(
   voting: SessionScanItem,
 ): VotingResult | null {
   const personsVotes = voting.votes.filter(
-    (vote) =>
-      persons.includes(vote.name) && vote.vote !== VoteResult.DID_NOT_VOTE,
+    (vote) => persons.includes(vote.name) && vote.vote !== 'O',
   );
-  const votedFor = personsVotes.filter(
-    (vote) => vote.vote === VoteResult.VOTE_FOR,
-  ).length;
-  const votedAgainst = personsVotes.filter(
-    (vote) => vote.vote === VoteResult.VOTE_AGAINST,
-  ).length;
+  const votedFor = personsVotes.filter((vote) => vote.vote === 'J').length;
+  const votedAgainst = personsVotes.filter((vote) => vote.vote === 'N').length;
 
   if (personsVotes.length === 0) {
     return null;
   }
 
-  return votedFor > votedAgainst ? VotingResult.PASSED : VotingResult.REJECTED;
+  return votedFor > votedAgainst ? 'PASSED' : 'REJECTED';
 }
 
 function getVotingResult(voting: SessionScanItem): VotingResult {
-  const votedFor = voting.votes.filter(
-    (vote) => vote.vote === VoteResult.VOTE_FOR,
-  ).length;
-  const votedAgainst = voting.votes.filter(
-    (vote) => vote.vote === VoteResult.VOTE_AGAINST,
-  ).length;
-  return votedFor > votedAgainst ? VotingResult.PASSED : VotingResult.REJECTED;
+  const votedFor = voting.votes.filter((vote) => vote.vote === 'J').length;
+  const votedAgainst = voting.votes.filter((vote) => vote.vote === 'N').length;
+  return votedFor > votedAgainst ? 'PASSED' : 'REJECTED';
 }

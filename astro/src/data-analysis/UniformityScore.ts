@@ -5,7 +5,6 @@ import type {
 } from '@models/registry.ts';
 import type { SessionInput } from '@models/SessionInput.ts';
 import type { SessionScanItem } from '@models/session-scan.ts';
-import { VoteResult } from '@models/Session.ts';
 import {
   getPersonsOfSessionAndFaction,
   getPersonsOfSessionAndParty,
@@ -112,13 +111,13 @@ function calcUniformityScore(
 ): number | null {
   const votesFor = voting.votes
     .filter((vote) => persons.includes(vote.name))
-    .filter((vote) => vote.vote === VoteResult.VOTE_FOR).length;
+    .filter((vote) => vote.vote === 'J').length;
   const votesAgainst = voting.votes
     .filter((vote) => persons.includes(vote.name))
-    .filter((vote) => vote.vote === VoteResult.VOTE_AGAINST).length;
+    .filter((vote) => vote.vote === 'N').length;
   const votesAbstained = voting.votes
     .filter((vote) => persons.includes(vote.name))
-    .filter((vote) => vote.vote === VoteResult.VOTE_ABSTENTION).length;
+    .filter((vote) => vote.vote === 'E').length;
 
   const totalVotes = votesFor + votesAgainst + votesAbstained;
   if (totalVotes === 0) {

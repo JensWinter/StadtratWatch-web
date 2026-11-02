@@ -1,20 +1,12 @@
-import { VoteResult, VotingResult } from '@models/Session.ts';
+import type { VotingResult } from '@models/Session.ts';
 import type { SessionScanVote } from '@models/session-scan.ts';
 
-export enum MotionResult {
-  ACCEPTED = 'ACCEPTED',
-  PARTIALLY_ACCEPTED = 'PARTIALLY_ACCEPTED',
-  REJECTED = 'REJECTED',
-}
+export type MotionResult = 'ACCEPTED' | 'PARTIALLY_ACCEPTED' | 'REJECTED';
 
 export function getVotingResult(votes: SessionScanVote[]): VotingResult {
-  const votedFor = votes.filter(
-    (vote) => vote.vote === VoteResult.VOTE_FOR,
-  ).length;
-  const votedAgainst = votes.filter(
-    (vote) => vote.vote === VoteResult.VOTE_AGAINST,
-  ).length;
-  return votedFor > votedAgainst ? VotingResult.PASSED : VotingResult.REJECTED;
+  const votedFor = votes.filter((vote) => vote.vote === 'J').length;
+  const votedAgainst = votes.filter((vote) => vote.vote === 'N').length;
+  return votedFor > votedAgainst ? 'PASSED' : 'REJECTED';
 }
 
 export function getVotingId(votings: { votingId: number }[]): number {
@@ -25,14 +17,12 @@ export function getMotionResult(
   votings: { votingResult: VotingResult }[],
 ): MotionResult {
   const passedVotings = votings.filter(
-    (voting) => voting.votingResult === VotingResult.PASSED,
+    (voting) => voting.votingResult === 'PASSED',
   ).length;
 
   if (passedVotings === 0) {
-    return MotionResult.REJECTED;
+    return 'REJECTED';
   }
 
-  return passedVotings === votings.length
-    ? MotionResult.ACCEPTED
-    : MotionResult.PARTIALLY_ACCEPTED;
+  return passedVotings === votings.length ? 'ACCEPTED' : 'PARTIALLY_ACCEPTED';
 }

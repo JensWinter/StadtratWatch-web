@@ -6,7 +6,6 @@ import type {
   RegistryPerson,
 } from '@models/registry.ts';
 import type { SessionScanItem } from '@models/session-scan.ts';
-import { VoteResult } from '@models/Session.ts';
 import {
   getPersonsOfSessionAndFaction,
   getPersonsOfSessionAndParty,
@@ -117,8 +116,7 @@ export function calcAbstentionRateOfPerson(
     .flatMap((session) => session.votings)
     .filter((voting) =>
       voting.votes.some(
-        (vote) =>
-          vote.name === person.name && vote.vote !== VoteResult.DID_NOT_VOTE,
+        (vote) => vote.name === person.name && vote.vote !== 'O',
       ),
     )
     .map((voting) => calcAbstentionRate([person.name], voting))
@@ -152,9 +150,7 @@ function calcAbstentionRate(
 ): number | null {
   const allVotes = voting.votes
     .filter((vote) => persons.includes(vote.name))
-    .filter((vote) => vote.vote !== VoteResult.DID_NOT_VOTE);
-  const abstentions = allVotes.filter(
-    (vote) => vote.vote === VoteResult.VOTE_ABSTENTION,
-  ).length;
+    .filter((vote) => vote.vote !== 'O');
+  const abstentions = allVotes.filter((vote) => vote.vote === 'E').length;
   return allVotes.length === 0 ? null : abstentions / allVotes.length;
 }

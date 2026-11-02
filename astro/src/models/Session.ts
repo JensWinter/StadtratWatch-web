@@ -1,16 +1,9 @@
-export enum VoteResult {
-  VOTE_FOR = 'J',
-  VOTE_AGAINST = 'N',
-  VOTE_ABSTENTION = 'E',
-  DID_NOT_VOTE = 'O',
-}
+// The codes the session scans persist: Ja, Nein, Enthaltung, O for nicht abgestimmt.
+export type VoteCode = 'J' | 'N' | 'E' | 'O';
 
 export type Vote = {
   personId: string;
-  vote: VoteResult;
+  vote: VoteCode;
 };
 
-export enum VotingResult {
-  PASSED = 'PASSED',
-  REJECTED = 'REJECTED',
-}
+export type VotingResult = 'PASSED' | 'REJECTED';

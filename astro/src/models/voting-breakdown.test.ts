@@ -6,7 +6,7 @@ import {
   votingAccepted,
 } from './voting-breakdown.ts';
 import type { Registry } from './registry.ts';
-import type { SessionScanItem } from './session-scan.ts';
+import type { SessionScanItem, SessionScanVote } from './session-scan.ts';
 
 function createRegistry(): Registry {
   return {
@@ -65,9 +65,7 @@ function createRegistry(): Registry {
   };
 }
 
-function createVoting(
-  votes: { name: string; vote: string }[],
-): SessionScanItem {
+function createVoting(votes: SessionScanVote[]): SessionScanItem {
   return {
     votingFilename: '2024-07-08-001.png',
     videoTimestamp: '00:10:00',
@@ -148,19 +146,6 @@ describe('getVotesByFactions', () => {
     });
   });
 
-  test('sorts unrecognized votes last, even when they collide with object property names', () => {
-    const votesByFactions = getVotesByFactions(createRegistry(), [
-      { name: 'Abstainer', vote: 'toString' },
-      { name: 'Supporter', vote: 'J' },
-    ]);
-
-    const largeFaction = votesByFactions.find((f) => f.factionId === 'large');
-    expect(largeFaction?.votes).toEqual([
-      { personName: 'Supporter', vote: 'J' },
-      { personName: 'Abstainer', vote: 'toString' },
-    ]);
-  });
-
   test('fails when a vote references an unknown person', () => {
     expect(() =>
       getVotesByFactions(createRegistry(), [{ name: 'Ghost', vote: 'J' }]),
@@ -182,17 +167,16 @@ describe('getVotingId', () => {
 });
 
 describe('getVoteCounts', () => {
-  test('counts each vote result, treating anything unrecognized as not voted', () => {
+  test('counts each vote code', () => {
     const voting = createVoting([
       { name: 'Supporter', vote: 'J' },
       { name: 'Lone Voter', vote: 'J' },
       { name: 'Opposer', vote: 'N' },
       { name: 'Abstainer', vote: 'E' },
       { name: 'Absentee', vote: 'O' },
-      { name: 'Unknown Voter', vote: '?' },
     ]);
 
-    expect(getVoteCounts(voting)).toEqual({ J: 2, N: 1, E: 1, O: 2 });
+    expect(getVoteCounts(voting)).toEqual({ J: 2, N: 1, E: 1, O: 1 });
   });
 
   test('counts a voting without votes as all zero', () => {

@@ -2,7 +2,7 @@ import type {
   PaperVotingItem,
   PaperVotingsDto,
 } from '@models/paper-votings.ts';
-import { VoteResult } from '@models/Session.ts';
+import type { VoteCode } from '@models/Session.ts';
 import { formatDate } from '@utils/format-date.ts';
 
 export type PaperVotingView = PaperVotingItem & {
@@ -12,13 +12,14 @@ export type PaperVotingView = PaperVotingItem & {
 
 const periodNumberPattern = /-(\d+)$/;
 
-// Only cast votes get a color; anything else keeps daisyUI's faint default
-// dot, matching how the session page renders the same breakdown.
-const voteStatusClasses = new Map<string, string>([
-  [VoteResult.VOTE_FOR, 'status-success'],
-  [VoteResult.VOTE_AGAINST, 'status-error'],
-  [VoteResult.VOTE_ABSTENTION, 'status-warning'],
-]);
+// Only cast votes get a color; non-votes keep daisyUI's faint default dot,
+// matching how the session page renders the same breakdown.
+const voteStatusClasses: Record<VoteCode, string> = {
+  J: 'status-success',
+  N: 'status-error',
+  E: 'status-warning',
+  O: '',
+};
 
 export function selectPaperVotings(
   batch: PaperVotingsDto[],
@@ -48,6 +49,6 @@ export function toPaperVotingViews(
   }));
 }
 
-export function getVoteStatusClass(vote: string): string {
-  return voteStatusClasses.get(vote) ?? '';
+export function getVoteStatusClass(vote: VoteCode): string {
+  return voteStatusClasses[vote];
 }
