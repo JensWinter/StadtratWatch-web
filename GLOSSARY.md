@@ -4,6 +4,20 @@ Beobachtung des Magdeburger Stadtrats: Sitzungen, Abstimmungen und Redebeiträge
 
 ## Language
 
+### Abstimmungen
+
+**Stimme**:
+Das, was ein Ratsmitglied in einer Abstimmung abgibt: Ja, Nein, Enthaltung oder nicht abgestimmt. „Nicht abgestimmt“ umfasst Abwesenheit und Anwesenheit ohne Stimmabgabe, weil der Screenshot der Abstimmung beides nicht unterscheiden kann.
+_Avoid_: Votum, Vote (außer im Code), Abstimmungsverhalten
+
+**Abstimmungsergebnis**:
+Angenommen oder abgelehnt. Eine Abstimmung ist angenommen, wenn sie mehr Ja- als Nein-Stimmen erhält; Enthaltungen zählen nicht.
+_Avoid_: Ergebnis (ohne Zusatz), Voting-Ergebnis
+
+**Antragsergebnis**:
+Angenommen, teilweise angenommen oder abgelehnt. Ein Antrag mit mehreren Abstimmungen ist teilweise angenommen, wenn nur ein Teil seiner Abstimmungen angenommen ist.
+_Avoid_: Antragserfolg, Motion-Ergebnis
+
 ### Redebeiträge
 
 **Redebeitrag**:
