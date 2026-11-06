@@ -7,12 +7,24 @@ Beobachtung des Magdeburger Stadtrats: Sitzungen, Abstimmungen und Redebeiträge
 ### Abstimmungen
 
 **Stimme**:
-Das, was ein Ratsmitglied in einer Abstimmung abgibt: Ja, Nein, Enthaltung oder nicht abgestimmt. „Nicht abgestimmt“ umfasst Abwesenheit und Anwesenheit ohne Stimmabgabe, weil der Screenshot der Abstimmung beides nicht unterscheiden kann.
+Das, was ein Ratsmitglied in einer Abstimmung abgibt: Ja, Nein, Enthaltung oder nicht abgestimmt. „Nicht abgestimmt“ umfasst Abwesenheit und Anwesenheit ohne Stimmabgabe, weil der Screenshot der Abstimmung beides für das einzelne Ratsmitglied nicht unterscheiden kann.
 _Avoid_: Votum, Vote (außer im Code), Abstimmungsverhalten
 
 **Mehrheitserfordernis**:
 Die Mehrheit, die eine Abstimmung braucht, um angenommen zu sein. Im Regelfall die einfache Mehrheit (mehr Ja- als Nein-Stimmen, Enthaltungen zählen nicht); für bestimmte Abstimmungen schreibt die Geschäftsordnung eine qualifizierte Mehrheit vor, etwa zwei Drittel der anwesenden Mitglieder bei der Erweiterung der Tagesordnung.
 _Avoid_: Quorum, Mehrheitsregel, Schwelle
+
+**Bezugsgröße**:
+Die Zahl, an der ein Mehrheitserfordernis gemessen wird: die Ja- und Nein-Stimmen, die anwesenden Mitglieder oder die gesetzliche Mitgliederzahl.
+_Avoid_: Basis, Grundgesamtheit
+
+**Anwesende Mitglieder**:
+Die Zahl der Mitglieder, die bei einer Abstimmung anwesend sind, wie der Abstimmungsbildschirm sie als „Anwesend“ anzeigt. Sie schließt Enthaltende und Anwesende ohne Stimmabgabe ein und kann sich im Lauf einer Sitzung ändern.
+_Avoid_: Anwesenheit (für die Zahl), abgegebene Stimmen
+
+**Gesetzliche Mitgliederzahl**:
+Die Zahl der Sitze im Stadtrat einschließlich der Oberbürgermeisterin, in Magdeburg 57. Ein unbesetzter Sitz senkt sie nicht.
+_Avoid_: Mitgliederzahl (ohne Zusatz), Ratsgröße
 
 **Abstimmungsergebnis**:
 Angenommen oder abgelehnt. Eine Abstimmung ist angenommen, wenn ihre Stimmen das Mehrheitserfordernis der Abstimmung erfüllen.
