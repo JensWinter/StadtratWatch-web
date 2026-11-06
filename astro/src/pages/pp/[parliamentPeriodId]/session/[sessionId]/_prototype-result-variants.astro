@@ -1,0 +1,149 @@
+---
+// PROTOTYPE — wipe me. Three ways the voting detail page could show Mehrheitserfordernis and Abstimmungsergebnis (#621).
+import { requirementLabel, type PrototypeResult } from './_prototype-majority';
+
+type Props = { result: PrototypeResult; placement: 'side' | 'full' };
+const { result, placement } = Astro.props;
+const r = result;
+const castVotes = r.yes + r.no + r.abstain;
+const barTotal = r.referenceSize ?? castVotes + r.notVoted;
+const percent = (value: number) => `${(100 * value) / barTotal}%`;
+const absentOrSilent = r.referenceSize !== null ? r.referenceSize - castVotes : r.notVoted;
+const verdict = r.accepted ? 'Angenommen' : 'Abgelehnt';
+const missingYes = r.requiredYes !== null ? Math.max(0, r.requiredYes - r.yes) : null;
+---
+
+{placement === 'side' && (
+  <>
+    {/* ───────── A: existing card, one hint line under the badge ───────── */}
+    <div data-prototype-variant="A" class="card bg-base-100 border border-base-300">
+      <div class="card-body">
+        <div class="flex flex-col">
+          {[
+            [r.yes, 'progress-success'],
+            [r.no, 'progress-error'],
+            [r.abstain, 'progress-warning'],
+          ].map(([value, cls]) => (
+            <div class="flex flex-row items-center gap-x-2">
+              <progress class:list={['progress', cls]} value={value} max={castVotes} />
+              <span class="w-8 text-right text-sm">{value}</span>
+            </div>
+          ))}
+          <div class:list={['badge badge-lg w-full mt-3', r.accepted ? 'badge-success' : 'badge-error']}>
+            <span class:list={['iconify', r.accepted ? 'lucide--check' : 'lucide--x']} />
+            {verdict}
+          </div>
+          {r.isQualified && (
+            <p class="text-xs text-base-content/70 mt-2">
+              Erforderlich: {requirementLabel[r.requirement]}
+              {r.referenceSize !== null && (
+                <>
+                  {' '}
+                  ({r.requiredYes} von {r.referenceSize})
+                </>
+              )}
+            </p>
+          )}
+          {r.qualifiedMajorityMissed && (
+            <p class="text-xs text-error mt-1">Mehr Ja- als Nein-Stimmen reichten hier nicht.</p>
+          )}
+        </div>
+      </div>
+    </div>
+
+    {/* ───────── B: compact verdict + requirement on the side ───────── */}
+    <div data-prototype-variant="B" style="display:none" class="card bg-base-100 border border-base-300">
+      <div class="card-body justify-center gap-3">
+        <div class:list={['text-2xl font-bold flex items-center gap-2', r.accepted ? 'text-success' : 'text-error']}>
+          <span class:list={['iconify', r.accepted ? 'lucide--check' : 'lucide--x']} />
+          {verdict}
+        </div>
+        <div class="text-sm">
+          <div class="text-base-content/60 text-xs uppercase tracking-wide">Mehrheitserfordernis</div>
+          {requirementLabel[r.requirement]}
+        </div>
+      </div>
+    </div>
+
+    {/* ───────── C: big verdict only; the explanation lives below ───────── */}
+    <div
+      data-prototype-variant="C"
+      style="display:none"
+      class:list={['card border', r.accepted ? 'bg-success/10 border-success' : 'bg-error/10 border-error']}
+    >
+      <div class="card-body items-center justify-center text-center">
+        <span class:list={['iconify size-10', r.accepted ? 'lucide--check text-success' : 'lucide--x text-error']} />
+        <div class="text-2xl font-bold">{verdict}</div>
+        <div class="text-sm text-base-content/70">{r.yes} : {r.no} : {r.abstain}</div>
+      </div>
+    </div>
+  </>
+)}
+
+{placement === 'full' && (
+  <>
+    {/* ───────── B: one stacked bar against the Bezugsgröße with a threshold marker ───────── */}
+    <div data-prototype-variant="B" style="display:none" class="card bg-base-100 border border-base-300">
+      <div class="card-body gap-3">
+        <div class="relative pt-6">
+          {r.requiredYes !== null ? (
+            <div class="absolute top-0 bottom-0 border-l-2 border-dashed border-base-content" style={`left:${percent(r.requiredYes)}`}>
+              <span class="absolute -top-0 left-1 text-xs whitespace-nowrap">{r.requiredYes} Ja nötig</span>
+            </div>
+          ) : (
+            <div class="absolute top-0 bottom-0 border-l-2 border-dashed border-base-content" style={`left:${percent((r.yes + r.no) / 2)}`}>
+              <span class="absolute top-0 left-1 text-xs whitespace-nowrap">mehr Ja als Nein</span>
+            </div>
+          )}
+          <div class="flex h-8 rounded overflow-hidden text-xs font-semibold text-black">
+            <div class="bg-success flex items-center justify-center" style={`width:${percent(r.yes)}`}>{r.yes} Ja</div>
+            <div class="bg-error flex items-center justify-center" style={`width:${percent(r.no)}`}>{r.no > 0 && `${r.no} Nein`}</div>
+            <div class="bg-warning flex items-center justify-center" style={`width:${percent(r.abstain)}`}>{r.abstain > 0 && `${r.abstain} Enth.`}</div>
+            <div class="bg-base-300 flex items-center justify-center text-base-content/70" style={`width:${percent(absentOrSilent)}`}>
+              {absentOrSilent > 0 && `${absentOrSilent} ${r.referenceSize !== null ? 'ohne Stimme' : 'nicht abg.'}`}
+            </div>
+          </div>
+        </div>
+        <div class="text-xs text-base-content/70">
+          {r.referenceSize !== null
+            ? `Balken = ${r.referenceSize} ${r.referenceLabel}. ${r.accepted ? 'Schwelle erreicht.' : `${missingYes} Ja-Stimmen fehlten.`}`
+            : 'Balken = alle Stadträtinnen und Stadträte. Einfache Mehrheit: mehr Ja- als Nein-Stimmen.'}
+        </div>
+      </div>
+    </div>
+
+    {/* ───────── C: the calculation spelled out, always — also for einfache Mehrheit ───────── */}
+    <div data-prototype-variant="C" style="display:none" class="card bg-base-100 border border-base-300">
+      <div class="card-body gap-4">
+        <div class="stats stats-vertical sm:stats-horizontal border border-base-300">
+          <div class="stat"><div class="stat-title">Ja</div><div class="stat-value text-success">{r.yes}</div></div>
+          <div class="stat"><div class="stat-title">Nein</div><div class="stat-value text-error">{r.no}</div></div>
+          <div class="stat"><div class="stat-title">Enthaltung</div><div class="stat-value text-warning">{r.abstain}</div></div>
+          {r.referenceSize !== null && (
+            <div class="stat">
+              <div class="stat-title">{r.referenceLabel === 'Mitglieder' ? 'Gesetzliche Mitglieder' : 'Anwesend'}</div>
+              <div class="stat-value">{r.referenceSize}</div>
+            </div>
+          )}
+          <div class="stat">
+            <div class="stat-title">Erforderlich</div>
+            <div class="stat-value text-base">{requirementLabel[r.requirement]}</div>
+            {r.requiredYes !== null && <div class="stat-desc">mind. {r.requiredYes} Ja-Stimmen</div>}
+          </div>
+        </div>
+        <p>
+          <strong>{verdict}.</strong>{' '}
+          {r.requirement === 'simple' &&
+            (r.accepted
+              ? `Es gab mehr Ja- (${r.yes}) als Nein-Stimmen (${r.no}).`
+              : `Es gab nicht mehr Ja- (${r.yes}) als Nein-Stimmen (${r.no}); Gleichstand gilt als abgelehnt.`)}
+          {r.requirement !== 'simple' &&
+            (r.accepted
+              ? `${r.yes} Ja-Stimmen erreichen die nötigen ${r.requiredYes} (${requirementLabel[r.requirement]}: ${r.referenceSize}).`
+              : `${r.yes} Ja-Stimmen, nötig wären ${r.requiredYes} (${requirementLabel[r.requirement]}: ${r.referenceSize}).`)}
+          {r.qualifiedMajorityMissed && ' Mehr Ja- als Nein-Stimmen reichten deshalb nicht.'}
+        </p>
+      </div>
+    </div>
+  </>
+)}

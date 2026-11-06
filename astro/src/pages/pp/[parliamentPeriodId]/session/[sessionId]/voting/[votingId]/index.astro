@@ -8,6 +8,9 @@ import {
 import { getPaperId, getVotingPaperMap } from '../../../../_helpers2';
 import MetaTags from '@components/MetaTags.astro';
 import { getVideoTimestampAsSeconds } from '@utils/session-utils';
+import PrototypeSwitcher from '@components/PrototypeSwitcher.astro';
+import ResultVariants from '../../_prototype-result-variants.astro';
+import { computePrototypeResult } from '../../_prototype-majority';
 
 export const getStaticPaths = getParliamentPeriodWithSessionAndVotingPaths;
 
@@ -81,6 +84,7 @@ const votedAgainst = voting.votes.filter((vote) => vote.vote === 'N').length;
 const abstentions = voting.votes.filter((vote) => vote.vote === 'E').length;
 const totalVotes = votedFor + votedAgainst + abstentions;
 const votingAccepted = votedFor > votedAgainst;
+const prototypeResult = computePrototypeResult(voting);
 ---
 
 <PageLayout
@@ -130,49 +134,10 @@ const votingAccepted = votedFor > votedAgainst;
         </div>
       </div>
 
-      <div class="card bg-base-100 border border-base-300">
-        <div class="card-body">
-          <div class="flex flex-col">
-            <div class="flex flex-row items-center gap-x-2">
-              <progress
-                class="progress progress-success"
-                value={votedFor}
-                max={totalVotes}
-              ></progress>
-              <span class="w-8 text-right text-sm">{votedFor}</span>
-            </div>
-            <div class="flex flex-row items-center gap-x-2">
-              <progress
-                class="progress progress-error"
-                value={votedAgainst}
-                max={totalVotes}
-              ></progress>
-              <span class="w-8 text-right text-sm">{votedAgainst}</span>
-            </div>
-            <div class="flex flex-row items-center gap-x-2">
-              <progress
-                class="progress progress-warning"
-                value={abstentions}
-                max={totalVotes}
-              ></progress>
-              <span class="w-8 text-right text-sm">{abstentions}</span>
-            </div>
-            {votingAccepted && (
-              <div class="badge badge-success badge-lg w-full mt-3">
-                <span class="iconify lucide--check" />
-                Angenommen
-              </div>
-            )}
-            {!votingAccepted && (
-              <div class="badge badge-error badge-lg w-full mt-3">
-                <span class="iconify lucide--x" />
-                Abgelehnt
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
+      <ResultVariants result={prototypeResult} placement="side" />
     </div>
+
+    <ResultVariants result={prototypeResult} placement="full" />
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {groupsSortedByVotes.map(([faction, votes]) => (
@@ -216,4 +181,11 @@ const votingAccepted = votedFor > votedAgainst;
       ))}
     </div>
   </div>
+  <PrototypeSwitcher
+    variants={[
+      { key: 'A', name: 'Hinweis unter dem Ergebnis' },
+      { key: 'B', name: 'Schwellen-Balken' },
+      { key: 'C', name: 'Rechenweg' },
+    ]}
+  />
 </PageLayout>

@@ -1,0 +1,58 @@
+---
+// PROTOTYPE — wipe me. Floating variant switcher for throwaway UI prototypes.
+// Variants are rendered server-side as [data-prototype-variant] blocks; this shows the one named by ?variant=.
+type Props = { variants: { key: string; name: string }[] };
+const { variants } = Astro.props;
+---
+
+{import.meta.env.DEV && (
+  <div
+    id="prototype-switcher"
+    data-variants={JSON.stringify(variants)}
+    class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 rounded-full bg-black text-white px-4 py-2 shadow-2xl text-sm font-mono"
+  >
+    <button type="button" data-step="-1" class="px-2 hover:text-yellow-300">←</button>
+    <span id="prototype-switcher-label"></span>
+    <button type="button" data-step="1" class="px-2 hover:text-yellow-300">→</button>
+  </div>
+)}
+
+<script>
+  const switcher = document.getElementById('prototype-switcher');
+  if (switcher) {
+    const variants = JSON.parse(switcher.dataset.variants || '[]') as { key: string; name: string }[];
+    const label = document.getElementById('prototype-switcher-label')!;
+
+    const currentIndex = () => {
+      const key = new URL(location.href).searchParams.get('variant') ?? variants[0].key;
+      return Math.max(0, variants.findIndex((variant) => variant.key === key));
+    };
+
+    const render = () => {
+      const current = variants[currentIndex()];
+      document.querySelectorAll<HTMLElement>('[data-prototype-variant]').forEach((element) => {
+        element.style.display = element.dataset.prototypeVariant === current.key ? '' : 'none';
+      });
+      label.textContent = `${current.key} — ${current.name}`;
+    };
+
+    const step = (delta: number) => {
+      const next = variants[(currentIndex() + delta + variants.length) % variants.length];
+      const url = new URL(location.href);
+      url.searchParams.set('variant', next.key);
+      history.replaceState(null, '', url);
+      render();
+    };
+
+    switcher.querySelectorAll<HTMLButtonElement>('button').forEach((button) =>
+      button.addEventListener('click', () => step(Number(button.dataset.step))),
+    );
+    document.addEventListener('keydown', (event) => {
+      const target = event.target as HTMLElement;
+      if (target.closest('input, textarea, [contenteditable]')) return;
+      if (event.key === 'ArrowLeft') step(-1);
+      if (event.key === 'ArrowRight') step(1);
+    });
+    render();
+  }
+</script>

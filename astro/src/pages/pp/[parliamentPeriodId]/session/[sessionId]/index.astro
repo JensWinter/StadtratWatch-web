@@ -6,6 +6,7 @@ import {
 import PageLayout from '@layouts/PageLayout.astro';
 import { type BreadcrumbItem } from '@components/BreadcrumbMenu.astro';
 import Votings from './_votings.astro';
+import PrototypeSwitcher from '@components/PrototypeSwitcher.astro';
 import Speeches from './_speeches.astro';
 import SpeakingTimes from './_speaking-times.astro';
 import { formatDate } from '@utils/format-date';
@@ -129,6 +130,13 @@ const youtubeUrl = sessionInput.session.youtubeUrl;
       />
     </div>
   </div>
+  <PrototypeSwitcher
+    variants={[
+      { key: 'A', name: 'Hinweis unter dem Ergebnis' },
+      { key: 'B', name: 'Schwellen-Balken' },
+      { key: 'C', name: 'Rechenweg' },
+    ]}
+  />
 </PageLayout>
 
 <script>

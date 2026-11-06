@@ -7,6 +7,7 @@ import {
   getVotingId,
   votingAccepted,
 } from '@models/voting-breakdown.ts';
+import { computePrototypeResult, requirementLabel, requirementShortLabel } from './_prototype-majority';
 
 type Props = {
   parliamentPeriod: Registry;
@@ -31,6 +32,10 @@ const votings = sessionScan
       }) satisfies VotingListItem,
   )
   .toSorted((a, b) => a.id - b.id);
+
+const prototypeResults = new Map(
+  sessionScan.map((voting) => [getVotingId(voting), computePrototypeResult(voting)]),
+);
 ---
 
 {votings.length === 0 ? (
@@ -72,17 +77,16 @@ const votings = sessionScan
           <hr class="voting-item-leading-line" />
           <div class="timeline-middle">
             <div class="bg-base-200 grid place-items-center rounded-full border border-base-300 p-1">
-              {voting.accepted ? (
-                <span
-                  aria-label="angenommen"
-                  class="iconify lucide--check text-success"
-                />
-              ) : (
-                <span
-                  aria-label="abgelehnt"
-                  class="iconify lucide--x text-error"
-                />
-              )}
+              {(() => {
+                const r = prototypeResults.get(voting.id)!;
+                return (
+                  <>
+                    <span data-prototype-variant="A" class:list={['iconify', r.accepted ? 'lucide--check text-success' : 'lucide--x text-error']} />
+                    <span data-prototype-variant="B" style="display:none" class:list={['iconify', r.accepted ? 'lucide--check text-success' : 'lucide--x text-error']} />
+                    <span data-prototype-variant="C" style="display:none" class:list={['iconify', r.isQualified ? (r.accepted ? 'lucide--check-check text-success' : 'lucide--circle-slash text-error') : r.accepted ? 'lucide--check text-success' : 'lucide--x text-error']} />
+                  </>
+                );
+              })()}
             </div>
           </div>
           <a
@@ -93,8 +97,40 @@ const votings = sessionScan
               <span>{voting.agendaItem}</span>
               <span>{voting.type}</span>
               <span>{voting.motionId}</span>
+              {prototypeResults.get(voting.id)!.isQualified && (
+                <span data-prototype-variant="A" class="badge badge-outline badge-sm" title={requirementLabel[prototypeResults.get(voting.id)!.requirement]}>
+                  {requirementShortLabel[prototypeResults.get(voting.id)!.requirement]}
+                </span>
+              )}
             </div>
             <div class="text-base">{voting.title}</div>
+            {(() => {
+              const r = prototypeResults.get(voting.id)!;
+              const total = r.referenceSize ?? 0;
+              return (
+                <>
+                  {r.isQualified && r.requiredYes !== null && (
+                    <div data-prototype-variant="B" style="display:none" class="relative h-3 rounded bg-base-300 overflow-visible max-w-md">
+                      <div class="h-3 rounded-l bg-success" style={`width:${(100 * r.yes) / total}%`} />
+                      <div class="absolute -top-1 -bottom-1 border-l-2 border-base-content" style={`left:${(100 * r.requiredYes) / total}%`} />
+                      <span class="absolute -top-0.5 text-xs whitespace-nowrap ms-2" style={`left:${(100 * r.requiredYes) / total}%`}>
+                        {r.yes}/{r.requiredYes} Ja ({requirementShortLabel[r.requirement]})
+                      </span>
+                    </div>
+                  )}
+                  <div data-prototype-variant="C" style="display:none" class="text-sm">
+                    <span class:list={['font-semibold', r.accepted ? 'text-success' : 'text-error']}>
+                      {r.accepted ? 'Angenommen' : 'Abgelehnt'}
+                    </span>{' '}
+                    <span class="text-base-content/70">
+                      {r.isQualified
+                        ? `· ${requirementLabel[r.requirement]} nötig (${r.requiredYes} von ${r.referenceSize}), ${r.yes} Ja`
+                        : `· einfache Mehrheit, ${r.yes} : ${r.no}`}
+                    </span>
+                  </div>
+                </>
+              );
+            })()}
             {voting.authors.length > 0 && (
               <div class="flex flex-wrap gap-1">
                 {voting.authors.map((author) => (
