@@ -8,6 +8,7 @@ import {
 import { getPaperId, getVotingPaperMap } from '../../../../_helpers2';
 import MetaTags from '@components/MetaTags.astro';
 import { getVideoTimestampAsSeconds } from '@utils/session-utils';
+import { getVoteCounts, votingAccepted } from '@models/voting-breakdown';
 
 export const getStaticPaths = getParliamentPeriodWithSessionAndVotingPaths;
 
@@ -76,11 +77,9 @@ const paperId = getPaperId(votingPaperMap, sessionInput.session.date, voting);
 
 const youtubeUrl = `${sessionInput.session.youtubeUrl}?t=${getVideoTimestampAsSeconds(voting)}s`;
 
-const votedFor = voting.votes.filter((vote) => vote.vote === 'J').length;
-const votedAgainst = voting.votes.filter((vote) => vote.vote === 'N').length;
-const abstentions = voting.votes.filter((vote) => vote.vote === 'E').length;
+const { J: votedFor, N: votedAgainst, E: abstentions } = getVoteCounts(voting);
 const totalVotes = votedFor + votedAgainst + abstentions;
-const votingAccepted = votedFor > votedAgainst;
+const accepted = votingAccepted(voting);
 ---
 
 <PageLayout
@@ -157,13 +156,13 @@ const votingAccepted = votedFor > votedAgainst;
               ></progress>
               <span class="w-8 text-right text-sm">{abstentions}</span>
             </div>
-            {votingAccepted && (
+            {accepted && (
               <div class="badge badge-success badge-lg w-full mt-3">
                 <span class="iconify lucide--check" />
                 Angenommen
               </div>
             )}
-            {!votingAccepted && (
+            {!accepted && (
               <div class="badge badge-error badge-lg w-full mt-3">
                 <span class="iconify lucide--x" />
                 Abgelehnt
