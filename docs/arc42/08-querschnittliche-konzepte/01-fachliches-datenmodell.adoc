@@ -63,7 +63,7 @@ B }o--|| D
 | Politische Partei mit Sitzanzahl. Kann über `additionalInformation` eine belegte verfassungsschutzrechtliche Einstufung tragen.
 
 | *Abstimmung*
-| Ergebnis einer namentlichen Abstimmung zu einem Tagesordnungspunkt, mit Abstimmungsgegenstand (Titel, Antrag/Vorlage, Antragsteller) und Video-Zeitstempel.
+| Ergebnis einer namentlichen Abstimmung zu einem Tagesordnungspunkt, mit Abstimmungsgegenstand (Titel, Antrag/Vorlage, Antragsteller) und Video-Zeitstempel. Optional trägt sie ein _Mehrheitserfordernis_ (`majorityRequirement`, einer von sechs Werten: `simple`, `majority-of-present`, `two-thirds-of-present`, `majority-of-members`, `two-thirds-of-members`, `three-quarters-of-members`; ohne Angabe gilt die einfache Mehrheit) und die Zahl der _anwesenden Mitglieder_ (`presentMembers`, die Zahl „Anwesend“ vom Abstimmungsbildschirm). Beide Felder stehen im Session-Scan.
 
 | *Votum*
 | Stimmabgabe einer Person zu einer Abstimmung (Ja, Nein, Enthaltung, nicht abgestimmt).
@@ -71,6 +71,35 @@ B }o--|| D
 | *Redebeitrag*
 | Transkribierter Wortbeitrag einer Person in einer Sitzung, mit Startzeit und Dauer. Ausgewählte Redebeiträge tragen optional eine KI-Einschätzung (Feld `aiTextAssessment`).
 |===
+
+== Abstimmungsergebnis berechnen, nie erfassen
+
+Das _Abstimmungsergebnis_ (angenommen oder abgelehnt) wird nie gespeichert, sondern an genau einer Stelle der geteilten Modelle aus den Stimmen, dem Mehrheitserfordernis und seiner Bezugsgröße berechnet. Website, Skripte und Auswertungen lesen alle dieses berechnete Ergebnis. Weicht es von der Niederschrift ab, wird eine Eingabe korrigiert (Stimmen, `presentMembers` oder `majorityRequirement`), nie ein zweites, amtliches Ergebnis erfasst.
+
+[cols="2,4",options="header"]
+|===
+| Mehrheitserfordernis | angenommen, wenn
+
+| `simple` / ohne Angabe
+| mehr Ja- als Nein-Stimmen; Enthaltungen zählen nicht, Gleichstand gilt als abgelehnt
+
+| `majority-of-present`
+| Ja > ½ der anwesenden Mitglieder
+
+| `two-thirds-of-present`
+| Ja ≥ ⅔ der anwesenden Mitglieder
+
+| `majority-of-members`
+| Ja > ½ der gesetzlichen Mitgliederzahl (Ja ≥ 29)
+
+| `two-thirds-of-members`
+| Ja ≥ ⅔ der gesetzlichen Mitgliederzahl (Ja ≥ 38)
+
+| `three-quarters-of-members`
+| Ja ≥ ¾ der gesetzlichen Mitgliederzahl (Ja ≥ 43)
+|===
+
+Die gesetzliche Mitgliederzahl 57 (56 Stadträt:innen und die Oberbürgermeisterin) steht als benannte Konstante im geteilten Modell; ein unbesetzter Sitz senkt sie nicht. Die Vergleiche werden ganzzahlig gerechnet, damit keine Rundungsfehler entstehen. Das Ergebnis bleibt streng zweiwertig: Ein Erfordernis gegen die anwesenden Mitglieder ohne `presentMembers` ist ein Datenfehler, den die Prüfung beim Laden abfängt (siehe <<konzept-datenhaltung,Datenhaltung & Versionierung>>), kein Zustand „unbekannt“.
 
 == Geteilte, getypte Modelle als Quelle der Wahrheit
 

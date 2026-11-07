@@ -12,6 +12,9 @@ export type VotesByFaction = {
 // Keyed by the vote codes the scans carry, which the web assets expose as-is.
 export type VoteCounts = Record<VoteCode, number>;
 
+// 56 councillors plus the Oberbürgermeisterin; a vacant seat does not lower it.
+export const STATUTORY_MEMBER_COUNT = 57;
+
 const votePresentationOrder: Record<VoteCode, number> = {
   J: 1,
   N: 2,
@@ -79,6 +82,30 @@ export function getVotesByFactions(
 }
 
 export function votingAccepted(voting: SessionScanItem): boolean {
-  const counts = getVoteCounts(voting);
-  return counts.J > counts.N;
+  const { J: yes, N: no } = getVoteCounts(voting);
+
+  switch (voting.majorityRequirement) {
+    case 'majority-of-present':
+      return 2 * yes > requirePresentMembers(voting);
+    case 'two-thirds-of-present':
+      return 3 * yes >= 2 * requirePresentMembers(voting);
+    case 'majority-of-members':
+      return 2 * yes > STATUTORY_MEMBER_COUNT;
+    case 'two-thirds-of-members':
+      return 3 * yes >= 2 * STATUTORY_MEMBER_COUNT;
+    case 'three-quarters-of-members':
+      return 4 * yes >= 3 * STATUTORY_MEMBER_COUNT;
+    case 'simple':
+    case undefined:
+      return yes > no;
+  }
+}
+
+function requirePresentMembers(voting: SessionScanItem): number {
+  if (voting.presentMembers === undefined) {
+    throw new Error(
+      `${voting.votingFilename}: ${voting.majorityRequirement} needs presentMembers`,
+    );
+  }
+  return voting.presentMembers;
 }

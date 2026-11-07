@@ -2,7 +2,7 @@ import * as path from 'node:path';
 
 import type { Registry } from '@srw-astro/models/registry';
 import type { SessionInput } from '@srw-astro/models/session-input';
-import { assertKnownVoteCodes, type SessionScan } from '@srw-astro/models/session-scan';
+import { assertValidSessionScan, type SessionScan } from '@srw-astro/models/session-scan';
 import type { SessionSpeech } from '@srw-astro/models/session-speech';
 
 export type InputData = {
@@ -30,7 +30,7 @@ export class InputDataLoaders {
         const sessionDir = path.join(this.inputDir, session.date);
         const sessionScanPath = path.join(sessionDir, `session-scan-${session.date}.json`);
         const votings = await readJsonOrDefault<SessionScan>(sessionScanPath, []);
-        assertKnownVoteCodes(votings, sessionScanPath);
+        assertValidSessionScan(votings, sessionScanPath);
         const speeches = await readJsonOrDefault<SessionSpeech[]>(
           path.join(sessionDir, `session-speeches-${session.date}.json`),
           [],
