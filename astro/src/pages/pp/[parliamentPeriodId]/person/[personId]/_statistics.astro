@@ -1,6 +1,6 @@
 ---
 import { formatPercentage } from '@utils/format-number';
-import { type RegistryPerson } from '@models/registry';
+import { type Registry, type RegistryPerson } from '@models/registry';
 import { type SessionInput } from '@models/SessionInput';
 import { calcVotingSuccessRateOfPerson } from '@data-analysis/VotingSuccess';
 import { calcVotingSuccessRateHistoryOfPerson } from '@data-analysis/VotingSuccess';
@@ -14,14 +14,20 @@ import {
 } from '@data-analysis/AbstentionRate';
 
 type Props = {
+  parliamentPeriod: Registry;
   person: RegistryPerson;
   sessionInputs: SessionInput[];
 };
 
-const { person, sessionInputs } = Astro.props as Props;
+const { parliamentPeriod, person, sessionInputs } = Astro.props as Props;
 
-const votingsSuccessRate = calcVotingSuccessRateOfPerson(person, sessionInputs);
+const votingsSuccessRate = calcVotingSuccessRateOfPerson(
+  parliamentPeriod,
+  person,
+  sessionInputs,
+);
 const votingsSuccessRateHistory = calcVotingSuccessRateHistoryOfPerson(
+  parliamentPeriod,
   person,
   sessionInputs,
 );

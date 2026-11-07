@@ -31,6 +31,7 @@ const registry: Registry = {
   id: 'magdeburg-8',
   name: 'Stadtrat Magdeburg 8',
   lastUpdate: '2024-07-08',
+  legalMemberCount: 57,
   sessions: [],
   parties: [],
   factions: [faction, otherFaction],
@@ -79,7 +80,7 @@ describe('calcVotingSuccessRateOfPerson', () => {
       ]),
     ]);
 
-    expect(calcVotingSuccessRateOfPerson(alice, sessions)).toBe(1);
+    expect(calcVotingSuccessRateOfPerson(registry, alice, sessions)).toBe(1);
   });
 
   test('counts a no vote on a rejected voting as success', () => {
@@ -91,7 +92,7 @@ describe('calcVotingSuccessRateOfPerson', () => {
       ]),
     ]);
 
-    expect(calcVotingSuccessRateOfPerson(alice, sessions)).toBe(1);
+    expect(calcVotingSuccessRateOfPerson(registry, alice, sessions)).toBe(1);
   });
 
   test('counts a yes vote on a tied voting as failure', () => {
@@ -102,7 +103,7 @@ describe('calcVotingSuccessRateOfPerson', () => {
       ]),
     ]);
 
-    expect(calcVotingSuccessRateOfPerson(alice, sessions)).toBe(0);
+    expect(calcVotingSuccessRateOfPerson(registry, alice, sessions)).toBe(0);
   });
 
   test('counts an abstention as failure', () => {
@@ -113,7 +114,7 @@ describe('calcVotingSuccessRateOfPerson', () => {
       ]),
     ]);
 
-    expect(calcVotingSuccessRateOfPerson(alice, sessions)).toBe(0);
+    expect(calcVotingSuccessRateOfPerson(registry, alice, sessions)).toBe(0);
   });
 });
 

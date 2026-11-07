@@ -17,7 +17,15 @@ const parliamentPeriods = defineCollection({
     base: '../data',
     generateId: (options) => options.data.id as string,
   }),
-  schema: z.custom<Registry>(),
+  // Without a valid legalMemberCount every majority of members would silently
+  // be computed as rejected.
+  schema: z.custom<Registry>(
+    (registry) => {
+      const { legalMemberCount } = registry as Registry;
+      return Number.isInteger(legalMemberCount) && legalMemberCount > 0;
+    },
+    { message: 'registry.json needs a positive whole legalMemberCount' },
+  ),
 });
 
 const sessionScans = defineCollection({

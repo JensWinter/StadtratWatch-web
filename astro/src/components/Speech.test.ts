@@ -51,6 +51,7 @@ const parliamentPeriod: Registry = {
   id: 'magdeburg-8',
   name: 'Magdeburg 8',
   lastUpdate: '2026-01-22',
+  legalMemberCount: 57,
   sessions: [session],
   factions: [],
   parties: [],

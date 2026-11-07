@@ -83,10 +83,13 @@ Gibt detaillierte Informationen zu einer spezifischen Legislaturperiode zurück.
     "sessions": [...],
     "persons": [...],
     "factions": [...],
-    "lastUpdate": "2024-01-15T10:30:00Z"
+    "lastUpdate": "2024-01-15T10:30:00Z",
+    "legalMemberCount": 57
   }
 }
 ```
+
+- `legalMemberCount`: Gesetzliche Mitgliederzahl, die Zahl der Sitze im Stadtrat einschließlich der Oberbürgermeisterin. Ein unbesetzter Sitz senkt sie nicht.
 
 ### 3. Redebeiträge einer Sitzung abrufen
 

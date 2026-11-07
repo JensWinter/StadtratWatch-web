@@ -1,14 +1,30 @@
 import { assert, describe, beforeEach, test } from 'vitest';
 import { calcMotionsSuccessRateOfFaction } from '@data-analysis/MotionsSuccess.ts';
-import type { RegistryFaction, RegistrySession } from '@models/registry.ts';
+import type {
+  Registry,
+  RegistryFaction,
+  RegistrySession,
+} from '@models/registry.ts';
 import type { SessionInput } from '@models/SessionInput.ts';
 
 describe('MotionsSuccess', () => {
+  let registry: Registry;
   let faction1: RegistryFaction;
   let faction2: RegistryFaction;
   let session1: RegistrySession;
 
   beforeEach(() => {
+    registry = {
+      id: 'magdeburg-8',
+      name: 'Stadtrat Magdeburg 8',
+      lastUpdate: '2023-01-01',
+      legalMemberCount: 57,
+      sessions: [],
+      factions: [],
+      parties: [],
+      persons: [],
+    };
+
     faction1 = {
       id: 'faction-1',
       name: 'Faction 1',
@@ -32,7 +48,11 @@ describe('MotionsSuccess', () => {
   });
 
   test('is null when no sessions are provided', () => {
-    const motionsSuccessRate = calcMotionsSuccessRateOfFaction(faction1, []);
+    const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
+      faction1,
+      [],
+    );
 
     assert.isNull(motionsSuccessRate);
   });
@@ -47,6 +67,7 @@ describe('MotionsSuccess', () => {
     ];
 
     const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
       faction1,
       sessions,
     );
@@ -77,6 +98,7 @@ describe('MotionsSuccess', () => {
     ];
 
     const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
       faction1,
       sessions,
     );
@@ -107,6 +129,7 @@ describe('MotionsSuccess', () => {
     ];
 
     const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
       faction1,
       sessions,
     );
@@ -137,6 +160,7 @@ describe('MotionsSuccess', () => {
     ];
 
     const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
       faction1,
       sessions,
     );
@@ -167,6 +191,7 @@ describe('MotionsSuccess', () => {
     ];
 
     const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
       faction1,
       sessions,
     );
@@ -245,6 +270,7 @@ describe('MotionsSuccess', () => {
     ];
 
     const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
       faction1,
       sessions,
     );
@@ -299,10 +325,55 @@ describe('MotionsSuccess', () => {
     ];
 
     const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
       faction1,
       sessions,
     );
 
     assert.equal(motionsSuccessRate, 0.75);
+  });
+
+  test('measures a majority of members against the registry member count', () => {
+    const sessions: SessionInput[] = [
+      {
+        session: session1,
+        votings: [
+          {
+            votingFilename: 'voting-1',
+            videoTimestamp: '00:00:00',
+            votingSubject: {
+              agendaItem: 'Agenda Item 1',
+              motionId: 'motion-1',
+              title: 'Motion 1',
+              type: 'Antrag',
+              authors: [faction1.name],
+            },
+            votes: [
+              { name: 'Member 1', vote: 'J' },
+              { name: 'Member 2', vote: 'J' },
+            ],
+            majorityRequirement: 'majority-of-members',
+          },
+        ],
+        speeches: [],
+      },
+    ];
+
+    assert.equal(
+      calcMotionsSuccessRateOfFaction(
+        { ...registry, legalMemberCount: 3 },
+        faction1,
+        sessions,
+      ),
+      1,
+    );
+    assert.equal(
+      calcMotionsSuccessRateOfFaction(
+        { ...registry, legalMemberCount: 4 },
+        faction1,
+        sessions,
+      ),
+      0,
+    );
   });
 });

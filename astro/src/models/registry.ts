@@ -2,6 +2,9 @@ export type Registry = {
   id: string;
   name: string;
   lastUpdate: string;
+  // Gesetzliche Mitgliederzahl: all seats including the mayor. A vacant seat
+  // does not lower it.
+  legalMemberCount: number;
   sessions: RegistrySession[];
   factions: RegistryFaction[];
   parties: RegistryParty[];

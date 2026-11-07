@@ -48,7 +48,7 @@ B }o--|| D
 | Entität | Bedeutung und Inhalt
 
 | *Wahlperiode*
-| Amtszeit des Stadtrats; oberste Gliederungsebene. Die `registry.json` je Wahlperiode listet Sitzungen, Personen, Fraktionen und Parteien und ist deren Quelle der Wahrheit.
+| Amtszeit des Stadtrats; oberste Gliederungsebene. Die `registry.json` je Wahlperiode listet Sitzungen, Personen, Fraktionen und Parteien und ist deren Quelle der Wahrheit. Sie trägt außerdem die _gesetzliche Mitgliederzahl_ (`legalMemberCount`), damit sich die Größe des Stadtrats je Wahlperiode und Stadt ändern kann; der Build bricht ab, wenn sie fehlt.
 
 | *Sitzung*
 | Einzelne Stadtratssitzung an einem Datum. Trägt Abstimmungen, Redebeiträge und Tagesordnung; verweist auf das Sitzungsvideo und – sofern vorhanden – das Protokoll. Das Kennzeichen `approved` markiert die Freigabe (siehe <<konzept-datengewinnung,Datengewinnung & -qualität>>).
@@ -83,7 +83,7 @@ Eine bewusste Eigenheit ist die *Verknüpfung über Namen statt technischer Schl
 
 Das _Abstimmungsergebnis_ (angenommen oder abgelehnt) wird nie gespeichert, sondern an genau einer Stelle berechnet: `votingAccepted` im geteilten Modul `voting-breakdown.ts`. Website, Abstimmungsbilder, Drucksachen-Assets und Auswertungen lesen alle dieses berechnete Ergebnis. Weicht es von der Niederschrift ab, wird eine Eingabe korrigiert (Stimmen, `presentMembers` oder `majorityRequirement`), nie ein Ergebnis von Hand gesetzt.
 
-Grundlage sind die Ja-Stimmen (J), die Nein-Stimmen (N), die anwesenden Mitglieder (A) und die _gesetzliche Mitgliederzahl_ M = 57 (56 Stadträte und Oberbürgermeisterin; ein unbesetzter Sitz senkt sie nicht). Das Mehrheitserfordernis ist einer von sechs Werten:
+Grundlage sind die Ja-Stimmen (J), die Nein-Stimmen (N), die anwesenden Mitglieder (A) und die _gesetzliche Mitgliederzahl_ M aus `legalMemberCount` der Registry (alle Sitze einschließlich der Oberbürgermeisterin; ein unbesetzter Sitz senkt sie nicht; in Magdeburg in Wahlperiode 7 und 8: 57). Das Mehrheitserfordernis ist einer von sechs Werten:
 
 [cols="2,3",options="header"]
 |===
@@ -99,13 +99,13 @@ Grundlage sind die Ja-Stimmen (J), die Nein-Stimmen (N), die anwesenden Mitglied
 | J ≥ ⅔ · A
 
 | `majority-of-members`
-| J > M / 2, also J ≥ 29
+| J > M / 2 (bei M = 57: J ≥ 29)
 
 | `two-thirds-of-members`
-| J ≥ ⅔ · M, also J ≥ 38
+| J ≥ ⅔ · M (bei M = 57: J ≥ 38)
 
 | `three-quarters-of-members`
-| J ≥ ¾ · M, also J ≥ 43
+| J ≥ ¾ · M (bei M = 57: J ≥ 43)
 |===
 
 Die Vergleiche werden ganzzahlig gerechnet (etwa 3 · J ≥ 2 · A), damit keine Rundungsfehler entstehen. Das Abstimmungsergebnis ist streng zweiwertig, einen Zustand „unbekannt“ gibt es nicht. Deshalb gilt als Datenfehler, der beim Laden abgelehnt wird: ein unbekanntes Mehrheitserfordernis, bei `majority-of-present` oder `two-thirds-of-present` ein fehlendes `presentMembers`, ein `presentMembers`, das keine ganze Zahl ist, und ein `presentMembers` kleiner als Ja + Nein + Enthaltung. Ein `presentMembers` an einer Abstimmung, deren Erfordernis es nicht braucht, ist erlaubt und wird weder geprüft noch verwendet. Die deutschen Anzeigenamen der sechs Werte stehen an einer Stelle im geteilten Modul `session-scan.ts`.

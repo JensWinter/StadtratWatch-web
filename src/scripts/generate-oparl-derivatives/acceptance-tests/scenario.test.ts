@@ -87,6 +87,7 @@ class MockRegistryStore implements RegistryStore {
         id: CANONICAL_PERIOD_ID,
         name: 'Example period',
         lastUpdate: '2024-10-01',
+        legalMemberCount: 57,
         sessions: [
           session('2024-09-12'),
           session('2024-08-15'),
