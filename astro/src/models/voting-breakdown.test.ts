@@ -66,6 +66,20 @@ function createRegistry(): Registry {
   };
 }
 
+// Faction seats add up to the statutory member count; the Oberbürgermeisterin holds one.
+function createCouncilWithSeats(seatsPerFaction: number[]): Registry {
+  return {
+    ...createRegistry(),
+    factions: seatsPerFaction.map((seats, index) => ({
+      id: `faction-${index}`,
+      name: `Faction ${index}`,
+      seats,
+    })),
+  };
+}
+
+const magdeburgCouncil = createCouncilWithSeats([15, 13, 10, 6, 6, 3, 3, 1]);
+
 function createVoting(votes: SessionScanVote[]): SessionScanItem {
   return {
     votingFilename: '2024-07-08-001.png',
@@ -193,7 +207,7 @@ describe('votingAccepted', () => {
       { name: 'Lone Voter', vote: 'J' },
     ]);
 
-    expect(votingAccepted(voting)).toBe(true);
+    expect(votingAccepted(magdeburgCouncil, voting)).toBe(true);
   });
 
   test('rejects a voting with a tie', () => {
@@ -202,7 +216,7 @@ describe('votingAccepted', () => {
       { name: 'Opposer', vote: 'N' },
     ]);
 
-    expect(votingAccepted(voting)).toBe(false);
+    expect(votingAccepted(magdeburgCouncil, voting)).toBe(false);
   });
 
   test('rejects a voting with more no than yes votes', () => {
@@ -212,7 +226,7 @@ describe('votingAccepted', () => {
       { name: 'Supporter', vote: 'J' },
     ]);
 
-    expect(votingAccepted(voting)).toBe(false);
+    expect(votingAccepted(magdeburgCouncil, voting)).toBe(false);
   });
 
   test('ignores abstentions and non-votes when comparing', () => {
@@ -222,7 +236,7 @@ describe('votingAccepted', () => {
       { name: 'Absentee', vote: 'O' },
     ]);
 
-    expect(votingAccepted(voting)).toBe(true);
+    expect(votingAccepted(magdeburgCouncil, voting)).toBe(true);
   });
 });
 
@@ -256,7 +270,7 @@ describe('votingAccepted with a majority requirement', () => {
       { majorityRequirement: 'two-thirds-of-present', presentMembers: 46 },
     );
 
-    expect(votingAccepted(voting)).toBe(false);
+    expect(votingAccepted(magdeburgCouncil, voting)).toBe(false);
   });
 });
 
@@ -275,7 +289,7 @@ describe('votingAccepted with two thirds of present members', () => {
         { majorityRequirement: 'two-thirds-of-present', presentMembers },
       );
 
-      expect(votingAccepted(voting)).toBe(accepted);
+      expect(votingAccepted(magdeburgCouncil, voting)).toBe(accepted);
     },
   );
 });
@@ -295,7 +309,7 @@ describe('votingAccepted with the majority of present members', () => {
         { majorityRequirement: 'majority-of-present', presentMembers },
       );
 
-      expect(votingAccepted(voting)).toBe(accepted);
+      expect(votingAccepted(magdeburgCouncil, voting)).toBe(accepted);
     },
   );
 });
@@ -331,9 +345,21 @@ describe('votingAccepted with a requirement measured against the statutory membe
         { majorityRequirement },
       );
 
-      expect(votingAccepted(voting)).toBe(accepted);
+      expect(votingAccepted(magdeburgCouncil, voting)).toBe(accepted);
     },
   );
+});
+
+describe('votingAccepted statutory member count', () => {
+  test('is the sum of the faction seats of the parliament period', () => {
+    const councilOf60Seats = createCouncilWithSeats([30, 29, 1]);
+    const voting = createVotingWithCounts(
+      { yes: 30, no: 0, abstain: 0 },
+      { majorityRequirement: 'majority-of-members' },
+    );
+
+    expect(votingAccepted(councilOf60Seats, voting)).toBe(false);
+  });
 });
 
 describe('votingAccepted with the simple majority', () => {
@@ -352,7 +378,7 @@ describe('votingAccepted with the simple majority', () => {
         { majorityRequirement },
       );
 
-      expect(votingAccepted(voting)).toBe(accepted);
+      expect(votingAccepted(magdeburgCouncil, voting)).toBe(accepted);
     },
   );
 
@@ -362,7 +388,7 @@ describe('votingAccepted with the simple majority', () => {
       { majorityRequirement: 'simple' },
     );
 
-    expect(votingAccepted(voting)).toBe(true);
+    expect(votingAccepted(magdeburgCouncil, voting)).toBe(true);
   });
 
   test('ignores present members it does not need', () => {
@@ -371,7 +397,7 @@ describe('votingAccepted with the simple majority', () => {
       { majorityRequirement: 'simple', presentMembers: 46 },
     );
 
-    expect(votingAccepted(voting)).toBe(true);
+    expect(votingAccepted(magdeburgCouncil, voting)).toBe(true);
   });
 });
 
@@ -389,7 +415,7 @@ describe('votingAccepted for real votings needing two thirds of present members'
         { majorityRequirement: 'two-thirds-of-present', presentMembers },
       );
 
-      expect(votingAccepted(voting)).toBe(accepted);
+      expect(votingAccepted(magdeburgCouncil, voting)).toBe(accepted);
     },
   );
 });

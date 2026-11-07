@@ -12,9 +12,6 @@ export type VotesByFaction = {
 // Keyed by the vote codes the scans carry, which the web assets expose as-is.
 export type VoteCounts = Record<VoteCode, number>;
 
-// 56 councillors plus the Oberbürgermeisterin; a vacant seat does not lower it.
-export const STATUTORY_MEMBER_COUNT = 57;
-
 const votePresentationOrder: Record<VoteCode, number> = {
   J: 1,
   N: 2,
@@ -81,8 +78,12 @@ export function getVotesByFactions(
     }));
 }
 
-export function votingAccepted(voting: SessionScanItem): boolean {
+export function votingAccepted(
+  parliamentPeriod: Registry,
+  voting: SessionScanItem,
+): boolean {
   const { J: yes, N: no } = getVoteCounts(voting);
+  const statutoryMemberCount = getStatutoryMemberCount(parliamentPeriod);
 
   switch (voting.majorityRequirement) {
     case 'majority-of-present':
@@ -90,15 +91,25 @@ export function votingAccepted(voting: SessionScanItem): boolean {
     case 'two-thirds-of-present':
       return 3 * yes >= 2 * requirePresentMembers(voting);
     case 'majority-of-members':
-      return 2 * yes > STATUTORY_MEMBER_COUNT;
+      return 2 * yes > statutoryMemberCount;
     case 'two-thirds-of-members':
-      return 3 * yes >= 2 * STATUTORY_MEMBER_COUNT;
+      return 3 * yes >= 2 * statutoryMemberCount;
     case 'three-quarters-of-members':
-      return 4 * yes >= 3 * STATUTORY_MEMBER_COUNT;
+      return 4 * yes >= 3 * statutoryMemberCount;
     case 'simple':
     case undefined:
       return yes > no;
   }
+}
+
+// The Oberbürgermeisterin is registered as a one-seat faction, so the faction
+// seats add up to the statutory member count. Seats stay with their faction while
+// vacant, which matches the rule that a vacant seat does not lower the count.
+function getStatutoryMemberCount(parliamentPeriod: Registry): number {
+  return parliamentPeriod.factions.reduce(
+    (memberCount, faction) => memberCount + faction.seats,
+    0,
+  );
 }
 
 function requirePresentMembers(voting: SessionScanItem): number {

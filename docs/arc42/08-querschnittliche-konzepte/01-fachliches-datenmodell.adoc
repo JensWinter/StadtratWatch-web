@@ -90,16 +90,16 @@ Das _Abstimmungsergebnis_ (angenommen oder abgelehnt) wird nie gespeichert, sond
 | Ja ≥ ⅔ der anwesenden Mitglieder
 
 | `majority-of-members`
-| Ja > ½ der gesetzlichen Mitgliederzahl (Ja ≥ 29)
+| Ja > ½ der gesetzlichen Mitgliederzahl (bei 57: Ja ≥ 29)
 
 | `two-thirds-of-members`
-| Ja ≥ ⅔ der gesetzlichen Mitgliederzahl (Ja ≥ 38)
+| Ja ≥ ⅔ der gesetzlichen Mitgliederzahl (bei 57: Ja ≥ 38)
 
 | `three-quarters-of-members`
-| Ja ≥ ¾ der gesetzlichen Mitgliederzahl (Ja ≥ 43)
+| Ja ≥ ¾ der gesetzlichen Mitgliederzahl (bei 57: Ja ≥ 43)
 |===
 
-Die gesetzliche Mitgliederzahl 57 (56 Stadträt:innen und die Oberbürgermeisterin) steht als benannte Konstante im geteilten Modell; ein unbesetzter Sitz senkt sie nicht. Die Vergleiche werden ganzzahlig gerechnet, damit keine Rundungsfehler entstehen. Das Ergebnis bleibt streng zweiwertig: Ein Erfordernis gegen die anwesenden Mitglieder ohne `presentMembers` ist ein Datenfehler, den die Prüfung beim Laden abfängt (siehe <<konzept-datenhaltung,Datenhaltung & Versionierung>>), kein Zustand „unbekannt“.
+Die gesetzliche Mitgliederzahl (in Magdeburg 57: 56 Stadträt:innen und die Oberbürgermeisterin) ist die Summe der Fraktionssitze in der Registry der Wahlperiode; die Oberbürgermeisterin ist dort als Fraktion mit einem Sitz geführt. Ein unbesetzter Sitz bleibt bei seiner Fraktion und senkt die Zahl daher nicht. Ein künftiges fraktionsloses Mitglied braucht deshalb ebenfalls einen Eintrag mit Sitz unter den Fraktionen. Die Vergleiche werden ganzzahlig gerechnet, damit keine Rundungsfehler entstehen. Das Ergebnis bleibt streng zweiwertig: Ein Erfordernis gegen die anwesenden Mitglieder ohne `presentMembers` ist ein Datenfehler, den die Prüfung beim Laden abfängt (siehe <<konzept-datenhaltung,Datenhaltung & Versionierung>>), kein Zustand „unbekannt“.
 
 == Geteilte, getypte Modelle als Quelle der Wahrheit
 

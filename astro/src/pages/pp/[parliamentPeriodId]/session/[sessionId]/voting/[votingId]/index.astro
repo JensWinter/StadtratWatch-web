@@ -80,7 +80,7 @@ const youtubeUrl = `${sessionInput.session.youtubeUrl}?t=${getVideoTimestampAsSe
 
 const { J: votedFor, N: votedAgainst, E: abstentions } = getVoteCounts(voting);
 const totalVotes = votedFor + votedAgainst + abstentions;
-const accepted = votingAccepted(voting);
+const accepted = votingAccepted(parliamentPeriod, voting);
 const majorityRequirement = voting.majorityRequirement ?? 'simple';
 const qualifiedMajorityRequirementName =
   majorityRequirement === 'simple'

@@ -27,7 +27,7 @@ const votings = sessionScan
         type: voting.votingSubject.type || '',
         authors: voting.votingSubject.authors,
         votesByFactions: getVotesByFactions(parliamentPeriod, voting.votes),
-        accepted: votingAccepted(voting),
+        accepted: votingAccepted(parliamentPeriod, voting),
       }) satisfies VotingListItem,
   )
   .toSorted((a, b) => a.id - b.id);
