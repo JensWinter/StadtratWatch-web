@@ -30,6 +30,10 @@ _Avoid_: Mitgliederzahl (ohne Zusatz), Ratsgröße
 Angenommen oder abgelehnt. Eine Abstimmung ist angenommen, wenn ihre Stimmen das Mehrheitserfordernis der Abstimmung erfüllen.
 _Avoid_: Ergebnis (ohne Zusatz), Voting-Ergebnis
 
+**Abstimmungserfolg**:
+Wie oft die Stimme eines Ratsmitglieds mit dem Abstimmungsergebnis übereinstimmt. Für eine Fraktion oder Partei zählt die Mehrheit der Ja- und Nein-Stimmen ihrer Mitglieder.
+_Avoid_: Erfolgsquote, Votum
+
 **Antragsergebnis**:
 Angenommen, teilweise angenommen oder abgelehnt. Ein Antrag mit mehreren Abstimmungen ist teilweise angenommen, wenn nur ein Teil seiner Abstimmungen angenommen ist.
 _Avoid_: Antragserfolg, Motion-Ergebnis
