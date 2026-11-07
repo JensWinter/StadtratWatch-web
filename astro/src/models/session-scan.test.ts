@@ -79,6 +79,8 @@ describe('assertValidMajorityRequirements', () => {
     { majorityRequirement: 'two-thirds-of-members' },
     { majorityRequirement: 'two-thirds-of-present', presentMembers: 3 },
     { presentMembers: 50 },
+    { presentMembers: 2 },
+    { majorityRequirement: 'two-thirds-of-members', presentMembers: 3.5 },
   ])('accepts %o', (majority) => {
     expect(() =>
       assertValidMajorityRequirements(
@@ -116,7 +118,10 @@ describe('assertValidMajorityRequirements', () => {
   test('rejects a fractional presentMembers', () => {
     expect(() =>
       assertValidMajorityRequirements(
-        scanWithMajority({ presentMembers: 3.5 }),
+        scanWithMajority({
+          majorityRequirement: 'majority-of-present',
+          presentMembers: 3.5,
+        }),
         'session-scan.json',
       ),
     ).toThrow(

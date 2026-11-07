@@ -104,12 +104,14 @@ describe('sessionScanSchema majority requirement', () => {
     ).toBe(false);
   });
 
-  test('rejects presentMembers below cast votes even when it is not needed', () => {
-    expect(
-      sessionScanSchema.safeParse(scanWithMajority({ presentMembers: 2 }))
-        .success,
-    ).toBe(false);
-  });
+  test.each([{ presentMembers: 2 }, { presentMembers: 3.5 }])(
+    'ignores an impossible presentMembers the requirement does not need %o',
+    (majority) => {
+      expect(
+        sessionScanSchema.safeParse(scanWithMajority(majority)).success,
+      ).toBe(true);
+    },
+  );
 
   test('accepts presentMembers equal to yes + no + abstentions', () => {
     expect(
@@ -131,8 +133,12 @@ describe('sessionScanSchema majority requirement', () => {
 
   test('rejects a fractional presentMembers', () => {
     expect(
-      sessionScanSchema.safeParse(scanWithMajority({ presentMembers: 3.5 }))
-        .success,
+      sessionScanSchema.safeParse(
+        scanWithMajority({
+          majorityRequirement: 'majority-of-present',
+          presentMembers: 3.5,
+        }),
+      ).success,
     ).toBe(false);
   });
 });

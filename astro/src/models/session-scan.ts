@@ -76,10 +76,13 @@ export type SessionScanVote = {
 export function findPresentMembersViolation(
   voting: SessionScanItem,
 ): string | undefined {
+  // A presentMembers the requirement does not need stays as observed and is
+  // ignored, so a corrected voting keeps it without being checked.
+  if (!requiresPresentMembers(voting.majorityRequirement)) {
+    return undefined;
+  }
   if (voting.presentMembers === undefined) {
-    return requiresPresentMembers(voting.majorityRequirement)
-      ? `majority requirement "${voting.majorityRequirement}" requires presentMembers`
-      : undefined;
+    return `majority requirement "${voting.majorityRequirement}" requires presentMembers`;
   }
   if (!Number.isInteger(voting.presentMembers)) {
     return `presentMembers ${voting.presentMembers} is not a whole number`;
