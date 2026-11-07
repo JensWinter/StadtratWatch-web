@@ -9,7 +9,6 @@ assignees: ''
 
 Ratsinfo: ___
 Video: ___
-Branch: `___`
 
 Die Befehle verwenden die Variablen, die Zeitangaben und Dateinamen im Text ebenfalls (`$SESSION` = Sitzungsdatum).
 Hintergrund zu den Schritten: [`session-processing-pipeline.md`](https://github.com/JensWinter/StadtratWatch-web/blob/main/docs/guides/session-processing/session-processing-pipeline.md),

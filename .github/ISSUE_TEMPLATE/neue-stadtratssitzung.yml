@@ -19,10 +19,6 @@ body:
       label: Video
       description: YouTube-Link der Sitzungsaufzeichnung
       placeholder: https://www.youtube.com/live/...
-  - type: input
-    id: branch
-    attributes:
-      label: Branch
   - type: textarea
     id: checklist
     attributes:
