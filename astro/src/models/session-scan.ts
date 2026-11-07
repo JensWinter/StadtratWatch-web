@@ -71,13 +71,13 @@ export type SessionScanVote = {
   vote: VoteCode;
 };
 
-// Shared by the Astro content schema and the script loaders, so both reject the
-// same hand-corrected scans.
+// Used by both the Astro content schema and the script loaders, so the build and
+// the scripts apply the same rules.
 export function findPresentMembersViolation(
   voting: SessionScanItem,
 ): string | undefined {
-  // A presentMembers the requirement does not need stays as observed and is
-  // ignored, so a corrected voting keeps it without being checked.
+  // presentMembers only matters for requirements based on the members present.
+  // For any other requirement it is ignored, so it is not checked either.
   if (!requiresPresentMembers(voting.majorityRequirement)) {
     return undefined;
   }
@@ -110,8 +110,8 @@ export function assertKnownVoteCodes(
   }
 }
 
-// Scans are corrected by hand, so their JSON can hold a requirement the type
-// rules out or a presentMembers that cannot be right.
+// Scans are edited by hand, so a file can contain a majority requirement that
+// does not exist or an impossible presentMembers. Loading must catch both.
 export function assertValidMajorityRequirements(
   sessionScan: SessionScan,
   source: string,
