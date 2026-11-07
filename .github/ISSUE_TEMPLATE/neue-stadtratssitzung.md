@@ -1,34 +1,293 @@
 ---
 name: Neue Stadtratssitzung
-about: Checkliste für das Anlegen neue Sitzungsdaten
-title: Sitzung vom dd.mm.yyyy
+about: Checkliste für die Verarbeitung einer Stadtratssitzung (Markdown)
+title: Sitzung vom TT.MM.JJJJ
 labels: ''
 assignees: ''
 
 ---
 
-<Link zur Ratsinfo-Seite>
+Ratsinfo: ___
+Video: ___
+Branch: `___`
 
-- [ ] Abstimmungen aufzeichnen
-- [ ] Bild-Aufzeichnungen im Storage ablegen
-- [ ] Sitzungskonfiguration anlegen und im Storage ablegen
-- [ ] Bild-Aufzeichnungen scannen und Scan-Ergebnis im Storage ablegen
-- [ ] Scan-Ergebnis überprüfen und überarbeitete Daten im Storage ablegen
-- [ ] Video-Aufzeichnung herunterladen
-- [ ] Audio extrahieren (wav+mp3)
-- [ ] Speaker-Diarization ausführen und Ergebnis im Storage ablegen (speaker-diarization)
-- [ ] Speaker-Diarization überprüfen und Speeches erzeugen und überarbeitete Daten im Storage ablegen
-- [ ] Speeches überprüfen und überarbeitete Daten im Storage ablegen
-  - [ ] Redezeiten von Stadtratsvorsitzenden markieren
-  - [ ] Redezeiten von Ortsbürgermeister*innen markieren
-  - [ ] Reden für Ausschüsse etc. kennzeichnen
+Die Befehle verwenden die Variablen, die Zeitangaben und Dateinamen im Text ebenfalls (`$SESSION` = Sitzungsdatum).
+Hintergrund zu den Schritten: [`session-processing-pipeline.md`](https://github.com/JensWinter/StadtratWatch-web/blob/main/docs/guides/session-processing/session-processing-pipeline.md),
+[`HOWTO.md`](https://github.com/JensWinter/StadtratWatch-web/blob/main/docs/guides/HOWTO.md).
+
+Alle Befehle laufen im Repo-Wurzelverzeichnis. Einmal pro Terminal setzen:
+
+```bash
+export SESSION=JJJJ-MM-TT
+export PREVIOUS_SESSION=JJJJ-MM-TT        # letzte verarbeitete Sitzung, Vorlage für die Config
+export PARLIAMENT_PERIOD=magdeburg-8
+export YOUTUBE_URL=https://www.youtube.com/live/___
+export YEAR=${SESSION%%-*}
+export OPARL_COUNCIL_ORGANIZATION_ID=https://ratsinfo.magdeburg.de/oparl/bodies/0001/organizations/gr/1
+```
+
+S3-Ordner im Bucket `stadtrat-watch` (flach, Dateiname enthält das Datum; Ausnahme: `sessions-raw/$SESSION/`):
+`sessions-configs`, `sessions-raw`, `sessions-scan-results`, `sessions-scan-results-redacted`, `sessions-speakers`,
+`sessions-speakers-redacted`, `sessions-speeches`, `sessions-speeches-redacted`, `sessions-speeches-with-transcriptions`.
+
+Reihenfolge: Die Diarisierung (Abschnitt 3) dauert Stunden. Am besten früh starten und währenddessen die Abschnitte 1
+und 2 abarbeiten. Die drei Zweige A (Abstimmungen), B (Reden) und C (OParl) hängen nicht voneinander ab; erst
+Abschnitt 4 braucht alle drei.
+
+---
+
+## 0. Vorbereitung
+
+- [ ] Branch für dieses Issue angelegt und auf aktuellem Stand: `git merge main`
+- [ ] `.env.local` vollständig (AWS-, OpenAI-, Typesense-, OParl-Variablen; siehe `.env.sample`), `HUGGING_FACE_API_TOKEN`
+      gesetzt
+- [ ] Docker läuft
+- [ ] Prüfen, ob alles online ist: YouTube-Video, Tagesordnung und Drucksachen im Ratsinfo, Sitzungsprotokoll
+- [ ] Registry `data/$PARLIAMENT_PERIOD/registry.json`, Eintrag für die Sitzung in `sessions`:
+  - [ ] Eintrag vorhanden, sonst anlegen:
+    ```json
+    {
+      "id": "JJJJ-MM-TT",
+      "date": "JJJJ-MM-TT",
+      "title": "Stadtratssitzung",
+      "youtubeUrl": "https://www.youtube.com/live/___",
+      "meetingMinutesUrl": null,
+      "approved": false
+    }
+    ```
+  - [ ] Bei einer fortgesetzten Sitzung: `title` ist `Stadtratssitzung (Fortsetzung)`, eigenes Datum, eigener Eintrag
+  - [ ] `meetingMinutesUrl` mit dem Protokoll-Link aus dem Ratsinfo eintragen
+- [ ] Personenwechsel seit der letzten Sitzung prüfen (Protokoll, Ratsinfo, Presse): ausgeschiedene Mitglieder,
+      Nachrücker:innen, Wechsel der Fraktion oder Partei
+  - [ ] Ausgeschiedene Person: `end` auf den Tag vor der Sitzung setzen
+  - [ ] Neue Person: Eintrag in `persons` mit `start` = Sitzungsdatum
+  - [ ] Notieren, welche Namen sich ändern (für die Config in Abschnitt 2): ___
+
+## 1. Zweig C: OParl & Drucksachen
+
+- [ ] OParl-Daten aktualisieren und Snapshot veröffentlichen (ohne lokalen Snapshot vorher `fetch-oparl`):
+  ```bash
+  bun --env-file=.env.local src/scripts/fetch-oparl/index.ts -d data/oparl-magdeburg   # nur wenn nötig
+  bun --env-file=.env.local src/scripts/scrape-oparl/index.ts -m incremental -r data/oparl-magdeburg --push
+  ```
+- [ ] Prüfen: Die Sitzung mit Tagesordnung und Drucksachen ist in `data/oparl-magdeburg/meetings.json` enthalten
+- [ ] PDFs des Jahres herunterladen:
+  ```bash
+  bun src/scripts/download-paper-files/index.ts -r data/oparl-magdeburg -p output/papers/$YEAR -y $YEAR
+  ```
+- [ ] Paper-Assets erzeugen, Änderungen ansehen, dann veröffentlichen:
+  ```bash
+  bun --env-file=.env.local src/scripts/generate-paper-assets/index.ts \
+    -r data/oparl-magdeburg/ -p output/papers/ -d data/ -o output/paper-assets/ --push --dry-run
+  bun --env-file=.env.local src/scripts/generate-paper-assets/index.ts \
+    -r data/oparl-magdeburg/ -p output/papers/ -d data/ -o output/paper-assets/ --push
+  ```
+- [ ] OParl-Derivate erzeugen:
+  ```bash
+  bun src/scripts/generate-oparl-derivatives/index.ts
+  ```
+- [ ] Prüfen, dass `data/$PARLIAMENT_PERIOD/voting-paper-map.json` einen Eintrag für `$SESSION` enthält:
+  ```bash
+  grep -c "\"$SESSION\"" data/$PARLIAMENT_PERIOD/voting-paper-map.json
+  ```
+  Ein leerer Diff ist kein Fehler: Wurden die Derivate für die Sitzung schon früher erzeugt und committet und haben sich
+  die OParl-Daten seitdem nicht geändert, kommt dasselbe heraus.
+- [ ] Volltext aus den PDFs extrahieren (Tika):
+  ```bash
+  docker build -t srw-tika -f docker/tika-batch-extract.Dockerfile .
+  docker run --rm \
+    -v $(pwd)/output/papers/$YEAR:/input \
+    -v $(pwd)/output/papers/$YEAR-extracted:/output \
+    srw-tika
+  ```
+- [ ] Extrahierte Texte nach `output/papers/all-extracted/` übernehmen (Eingabe für `index-search`):
+  ```bash
+  cp output/papers/$YEAR-extracted/* output/papers/all-extracted/
+  ```
+
+## 2. Zweig A: Abstimmungen (OCR)
+
+### Video & Screenshots
+
+- [ ] Video herunterladen:
+  ```bash
+  mkdir -p sessions-media-files/$SESSION && cd sessions-media-files/$SESSION
+  yt-dlp -f "18" -o "${SESSION}-video.%(ext)s" "$YOUTUBE_URL"
+  cd -
+  ```
+- [ ] Screenshots aller Abstimmungstafeln aufnehmen: Vollbild, alle gleich groß, chronologisch nummeriert
+      `$SESSION-001.png`, `$SESSION-002.png`, … in `sessions-media-files/$SESSION/`
+- [ ] Anzahl der Screenshots mit der Zahl der Abstimmungen laut Protokoll abgleichen
+- [ ] Screenshots nach S3 `sessions-raw/$SESSION/` hochladen
+
+### Sitzungskonfiguration
+
+- [ ] Konfiguration der letzten Sitzung als Vorlage kopieren:
+  ```bash
+  mkdir -p data/$PARLIAMENT_PERIOD/$SESSION
+  cp data/$PARLIAMENT_PERIOD/$PREVIOUS_SESSION/config-$PREVIOUS_SESSION.json \
+    data/$PARLIAMENT_PERIOD/$SESSION/config-$SESSION.json
+  ```
+- [ ] `youtubeUrl` auf `$YOUTUBE_URL` setzen
+- [ ] Personenwechsel aus Abschnitt 0 in `names` übernehmen (Name, Partei, Fraktion)
+- [ ] `columnIndex`/`rowIndex` aller Namen mit einem Screenshot abgleichen (die Tafel ist alphabetisch sortiert, ein
+      Wechsel kann Zeilen verschieben)
+- [ ] `layout` (Spalten, Rechtecke für Zeitstempel/TOP/Titel) mit einem Screenshot abgleichen
+- [ ] Config nach S3 `sessions-configs/config-$SESSION.json` hochladen
+
+### Scannen & Prüfen
+
+- [ ] Screenshots scannen:
+  ```bash
+  bun src/scripts/scan-voting-images/index.ts \
+    -c data/$PARLIAMENT_PERIOD/$SESSION/config-$SESSION.json \
+    -i sessions-media-files/$SESSION \
+    -o output/sessions-scan-results/$SESSION \
+    -s $SESSION
+  ```
+- [ ] `output/sessions-scan-results/$SESSION/session-scan-$SESSION.json` nach S3 `sessions-scan-results/` **und**
+      `sessions-scan-results-redacted/` hochladen
+- [ ] In `session-review` prüfen (`cd session-review && npm run dev`, dann `/session/$SESSION/votings`):
+  - [ ] Stimmen je Person (Ja/Nein/Enthaltung/nicht anwesend)
+  - [ ] TOP-Nummern, Drucksachennummern, Titel (mit Protokoll abgleichen)
+  - [ ] Abstimmungsergebnisse mit dem Protokoll abgleichen
+- [ ] Bei groben Fehlern: Config anpassen und neu scannen
+- [ ] Geprüfte Datei nach S3 `sessions-scan-results-redacted/` hochladen (überschreiben)
+- [ ] Geprüfte Datei nach `data/$PARLIAMENT_PERIOD/$SESSION/session-scan-$SESSION.json` kopieren
+
+## 3. Zweig B: Reden (Audio)
+
+### Audio & Diarisierung
+
+- [ ] WAV erzeugen (für die Diarisierung), gleich in Teile zu je 4 Stunden gesplittet:
+  ```bash
+  docker run --rm -v $(pwd)/sessions-media-files/$SESSION:/session -w /session jrottenberg/ffmpeg:4.4-scratch \
+    -stats -i $SESSION-video.mp4 -ac 1 -ar 16000 -f segment -segment_time 14400 $SESSION-audio-%02d.wav
+  ```
+- [ ] MP3 erzeugen. Bewusst **nicht** splitten, auch bei mehr als 4 Stunden: `parse-speakers` rechnet alle Zeiten auf den
+      Sitzungsbeginn um, und `extract-speeches` schneidet damit aus genau einer Datei.
+  ```bash
+  docker run --rm -v $(pwd)/sessions-media-files/$SESSION:/session -w /session jrottenberg/ffmpeg:4.4-scratch \
+    -stats -i $SESSION-video.mp4 -ac 1 -ar 16000 -b:a 256k -y $SESSION-audio.mp3
+  ```
+- [ ] Docker-Image bauen (falls nicht vorhanden): `docker build -t srw-speaker-diarization src/scripts/speaker-diarization`
+- [ ] Diarisierung je Teil starten (dauert Stunden; `INDEX=00`, `01`, …):
+  ```bash
+  INDEX=00
+  docker run --rm -v $(pwd)/sessions-media-files/$SESSION:/session -w /session \
+    srw-speaker-diarization $SESSION-audio-$INDEX.wav $SESSION-speakers-$INDEX.rttm $HUGGING_FACE_API_TOKEN
+  ```
+  - [ ] Teil 00
+  - [ ] Teil 01 (falls vorhanden)
+  - [ ] Teil 02 (falls vorhanden)
+- [ ] RTTM-Dateien zusammenführen:
+  ```bash
+  bun src/scripts/parse-speakers/index.ts \
+    -i sessions-media-files/$SESSION -o output/sessions-scan-results/$SESSION -s $SESSION
+  ```
+- [ ] RTTM-Dateien und `session-speakers-$SESSION.json` nach S3 `sessions-speakers/` hochladen
+- [ ] `session-speakers-$SESSION.json` zusätzlich nach S3 `sessions-speakers-redacted/` hochladen
+
+### Sprecher:innen zuordnen
+
+- [ ] In `session-review` unter `/session/$SESSION/speakers` die Segmente den Personen zuordnen, Rauschen entfernen
+- [ ] Gespeicherte `session-speakers-$SESSION.json` nach S3 `sessions-speakers-redacted/` hochladen (überschreiben)
+- [ ] Erzeugte `session-speeches-$SESSION.json` nach S3 `sessions-speeches/` **und** `sessions-speeches-redacted/`
+      hochladen
+
+### Reden sichten
+
+- [ ] In `session-review` unter `/session/$SESSION/speeches`:
+  - [ ] Redezeiten der Stadtratsvorsitzenden markieren
+  - [ ] Redezeiten von Ortsbürgermeister:innen markieren
+  - [ ] Reden für Ausschüsse usw. kennzeichnen
   - [ ] Nicht-Reden entfernen
-- [ ] Redebeiträge in Einzeldateien extrahieren (extract-speeches)
-- [ ] Redebeiträge transkribieren (speech-to-text)
-  - [ ] Transkriptionen überprüfen und überarbeitete Daten im Storage ablegen
-- [ ] Paper Files herunterladen (download-paper-files)
-- [ ] Paper Assets erzeugen (generate-paper-assets)
-- [ ] Paper Assets im Storage ablegen
-- [ ] Voting Images erzeugen (generate-image-assets)
-- [ ] Neue Voting Images im Storage ablegen
-- [ ] Neue Web-App-Version veröffentlichen
+- [ ] Gesichtete Datei nach S3 `sessions-speeches-redacted/` hochladen (überschreiben)
+- [ ] Gesichtete Datei nach `output/sessions-scan-results/$SESSION/session-speeches-$SESSION.json` legen
+      (Eingabe für die nächsten Schritte)
+
+### Transkription
+
+- [ ] Docker-Image bauen (falls nicht vorhanden): `docker build -t srw-extract-speeches src/scripts/extract-speeches`
+- [ ] Redebeiträge als einzelne MP3s ausschneiden:
+  ```bash
+  docker run --rm \
+    -v $(pwd)/output/sessions-scan-results/$SESSION/session-speeches-$SESSION.json:/session-speeches.json:ro \
+    -v $(pwd)/sessions-media-files/$SESSION/$SESSION-audio.mp3:/session-audio.mp3:ro \
+    -v $(pwd)/output/speeches/$SESSION:/output \
+    srw-extract-speeches
+  ```
+- [ ] Transkribieren (bei Abbruch einfach erneut starten, setzt fort):
+  ```bash
+  bun --env-file=.env.local src/scripts/speech-to-text/index.ts \
+    -i output/speeches/$SESSION -o output/sessions-scan-results/$SESSION -s $SESSION
+  ```
+- [ ] `session-speeches-with-transcriptions-$SESSION.json` nach S3 `sessions-speeches-with-transcriptions/` hochladen
+- [ ] Transkripte korrigieren: Fehler, Begrüßungen und Vorstellungen der Redner:innen entfernen, fehlenden Text ergänzen,
+      doppelte Einträge entfernen
+- [ ] Korrigierte Datei nach S3 `sessions-speeches-with-transcriptions/` hochladen (überschreiben)
+- [ ] Korrigierte Datei als `data/$PARLIAMENT_PERIOD/$SESSION/session-speeches-$SESSION.json` ablegen
+
+### KI-Einschätzung (optional)
+
+- [ ] Redebeiträge auswählen und deren `start`-Werte notieren: ___
+- [ ] Pangram-Prüfung (fragt vorher die Kosten ab):
+  ```bash
+  bun src/scripts/detect-ai-text/index.ts \
+    -f data/$PARLIAMENT_PERIOD/$SESSION/session-speeches-$SESSION.json -t <starts> --skip-existing
+  ```
+
+## 4. Zusammenführung
+
+- [ ] Abstimmungsbilder erzeugen und veröffentlichen (erst `--dry-run` ansehen):
+  ```bash
+  bun --env-file=.env.local src/scripts/generate-image-assets/index.ts \
+    -i data/$PARLIAMENT_PERIOD -o output/image-assets/$PARLIAMENT_PERIOD --push --dry-run
+  bun --env-file=.env.local src/scripts/generate-image-assets/index.ts \
+    -i data/$PARLIAMENT_PERIOD -o output/image-assets/$PARLIAMENT_PERIOD --push
+  ```
+- [ ] Ein paar PNGs unter `output/image-assets/$PARLIAMENT_PERIOD/images/votings/$SESSION/` stichprobenartig ansehen
+- [ ] Paper-Votings erzeugen und veröffentlichen (erst `--dry-run` ansehen):
+  ```bash
+  bun --env-file=.env.local src/scripts/generate-paper-votings/index.ts -d data/ -o output/paper-votings/ --push --dry-run
+  bun --env-file=.env.local src/scripts/generate-paper-votings/index.ts -d data/ -o output/paper-votings/ --push
+  ```
+- [ ] Suchindex aktualisieren (Werte der Produktiv-Instanz eintragen):
+  ```bash
+  TYPESENSE_SERVER_URL=<url> \
+  TYPESENSE_COLLECTION_NAME=<collection> \
+  TYPESENSE_API_KEY=<key> \
+    bun --no-env-file src/scripts/index-search/index.ts \
+      -r data/oparl-magdeburg -c output/papers/all-extracted -p data
+  ```
+
+## 5. Lokal prüfen
+
+- [ ] `cd astro && npm run build` läuft durch
+- [ ] `npm run dev` und ansehen:
+  - [ ] `/pp/$PARLIAMENT_PERIOD/session/$SESSION/` (Abstimmungen, Bilder, Reden, Redezeiten)
+  - [ ] Personenseiten der neuen Mitglieder unter `/pp/$PARLIAMENT_PERIOD/person/<id>/` (falls es Wechsel gab)
+  - [ ] eine Drucksache der Sitzung unter `/paper?paperId=…` (Reiter „Abstimmungen")
+  - [ ] Suche nach einem Begriff aus einer Rede der Sitzung
+
+## 6. Freigabe & Veröffentlichung
+
+- [ ] Registry: `approved: true` für `$SESSION` setzen (nur wenn alles geprüft ist)
+- [ ] Registry: `lastUpdate` auf den aktuellen Zeitpunkt setzen
+- [ ] `git status`: Nur diese Dateien sollten sich ändern
+  - `data/$PARLIAMENT_PERIOD/registry.json`
+  - `data/$PARLIAMENT_PERIOD/$SESSION/config-$SESSION.json`
+  - `data/$PARLIAMENT_PERIOD/$SESSION/session-scan-$SESSION.json`
+  - `data/$PARLIAMENT_PERIOD/$SESSION/session-speeches-$SESSION.json`
+  - ggf. `data/$PARLIAMENT_PERIOD/voting-paper-map.json` und `data/paper-index.json` (nur wenn sich die OParl-Daten
+    geändert haben)
+- [ ] Keine `session-speakers-*.json` in `data/` (liegen nur in S3)
+- [ ] Korrekturen an bereits freigegebenen Sitzungen, die dabei auffallen, **nicht** in diese PR, sondern in eine eigene,
+      deren Titel den Fehler benennt
+- [ ] Commit(s) und Push des Branches
+- [ ] PR gegen `main` öffnen, mit „Closes #<Nummer dieses Issues>"
+- [ ] CI grün (Deno, Bun, Astro)
+- [ ] PR mergen → Netlify baut automatisch
+- [ ] Live-Seite prüfen: `https://stadtratwatch.de/pp/$PARLIAMENT_PERIOD/session/$SESSION/`
+- [ ] Issue schließen (falls nicht automatisch)
+- [ ] Lokale Arbeitsdateien aufräumen (`sessions-media-files/$SESSION/`, `output/speeches/$SESSION/`)
