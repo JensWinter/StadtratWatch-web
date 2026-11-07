@@ -52,7 +52,7 @@ export class PaperVotingsGenerator {
       agendaItem: scan.votingSubject.agendaItem,
       title: scan.votingSubject.title,
       type: scan.votingSubject.type || '',
-      accepted: votingAccepted(scan, registry.legalMemberCount),
+      accepted: votingAccepted(scan),
       counts: getVoteCounts(scan),
       votesByFactions: getVotesByFactions(registry, scan.votes),
     };

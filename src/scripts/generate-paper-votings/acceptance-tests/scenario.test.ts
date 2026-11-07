@@ -278,7 +278,6 @@ function period(
       id: periodId,
       name: `Period ${periodId}`,
       lastUpdate: '2024-10-01',
-      legalMemberCount: 57,
       sessions: Object.keys(options.sessionScansByDate).map((date) => ({
         id: date,
         date,

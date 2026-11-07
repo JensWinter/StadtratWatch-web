@@ -76,8 +76,7 @@ sowohl die Schreibpfade der Pipelines als auch die Lade-Muster der Web-Anwendung
 data/
 ├── magdeburg-7/                  # Wahlperiode (eigene registry.json je Periode)
 │   ├── registry.json             # Quelle der Wahrheit: Personen, Fraktionen,
-│   │                             #   Parteien, Sitzungsliste,
-│   │                             #   gesetzliche Mitgliederzahl
+│   │                             #   Parteien, Sitzungsliste
 │   └── YYYY-MM-DD/               # eine Sitzung
 │       ├── config-*.json
 │       ├── session-scan-*.json       # Abstimmungsergebnisse

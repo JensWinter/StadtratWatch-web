@@ -33,12 +33,10 @@ type Props = {
 const { parliamentPeriod, faction, sessionInputs } = Astro.props as Props;
 
 const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
-  parliamentPeriod,
   faction,
   sessionInputs,
 );
 const motionsSuccessRateHistory = calcMotionsSuccessRateHistoryOfFaction(
-  parliamentPeriod,
   faction,
   sessionInputs,
 );

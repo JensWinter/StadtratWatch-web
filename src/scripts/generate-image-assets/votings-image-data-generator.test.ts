@@ -10,7 +10,6 @@ const registry: Registry = {
   id: 'magdeburg-8',
   name: 'Stadtrat Magdeburg 8',
   lastUpdate: '2024-07-08',
-  legalMemberCount: 57,
   sessions: [],
   parties: [],
   factions: [{ id: 'f1', name: 'Faction 1', seats: 3 }],

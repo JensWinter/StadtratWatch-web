@@ -41,7 +41,6 @@ const breadcrumbItems: BreadcrumbItem[] = [
 const factions = parliamentPeriod.factions
   .map<FactionListItem>((faction) => {
     const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
-      parliamentPeriod,
       faction,
       sessionInputs,
     );

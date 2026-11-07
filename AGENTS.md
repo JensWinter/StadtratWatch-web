@@ -148,7 +148,7 @@ Each data processing script has a corresponding Dockerfile in `docker/` for cont
 
 ### Working with Parliament Data
 
-1. To add a new parliament period, create `data/{period-id}/registry.json` with sessions, persons, factions, parties and `legalMemberCount` (the Gesetzliche Mitgliederzahl)
+1. To add a new parliament period, create `data/{period-id}/registry.json` with sessions, persons, factions, parties
 2. For new sessions, create `data/{period-id}/{session-date}/` directory
 3. Run the processing scripts in the order in docs/guides/HOWTO.md ("Mandatory processing order")
 4. The Astro build automatically picks up data from `data/` directory
