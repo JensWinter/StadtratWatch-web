@@ -78,7 +78,37 @@ export function getVotesByFactions(
     }));
 }
 
+// 56 councillors plus the Oberbürgermeisterin, in periods 7 and 8. A vacant
+// seat does not lower it.
+const legalMemberCount = 57;
+
+// Fractions are compared as integers (3·J ≥ 2·A instead of J ≥ ⅔·A) to avoid
+// rounding errors.
 export function votingAccepted(voting: SessionScanItem): boolean {
-  const counts = getVoteCounts(voting);
-  return counts.J > counts.N;
+  const { J: yes, N: no } = getVoteCounts(voting);
+  const majorityRequirement = voting.majorityRequirement ?? 'simple';
+
+  switch (majorityRequirement) {
+    case 'simple':
+      return yes > no;
+    case 'majority-of-present':
+      return 2 * yes > presentMembersOrThrow(voting);
+    case 'two-thirds-of-present':
+      return 3 * yes >= 2 * presentMembersOrThrow(voting);
+    case 'majority-of-members':
+      return 2 * yes > legalMemberCount;
+    case 'two-thirds-of-members':
+      return 3 * yes >= 2 * legalMemberCount;
+    case 'three-quarters-of-members':
+      return 4 * yes >= 3 * legalMemberCount;
+  }
+}
+
+function presentMembersOrThrow(voting: SessionScanItem): number {
+  if (voting.presentMembers === undefined) {
+    throw new Error(
+      `${voting.votingFilename}: ${voting.majorityRequirement} requires presentMembers`,
+    );
+  }
+  return voting.presentMembers;
 }

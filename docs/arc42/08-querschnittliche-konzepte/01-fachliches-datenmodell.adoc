@@ -63,7 +63,7 @@ B }o--|| D
 | Politische Partei mit Sitzanzahl. Kann über `additionalInformation` eine belegte verfassungsschutzrechtliche Einstufung tragen.
 
 | *Abstimmung*
-| Ergebnis einer namentlichen Abstimmung zu einem Tagesordnungspunkt, mit Abstimmungsgegenstand (Titel, Antrag/Vorlage, Antragsteller) und Video-Zeitstempel.
+| Ergebnis einer namentlichen Abstimmung zu einem Tagesordnungspunkt, mit Abstimmungsgegenstand (Titel, Antrag/Vorlage, Antragsteller) und Video-Zeitstempel. Optional trägt sie ein _Mehrheitserfordernis_ (`majorityRequirement`) und die Zahl der _anwesenden Mitglieder_ (`presentMembers`, „Anwesend“ vom Abstimmungsbildschirm); siehe <<konzept-abstimmungsergebnis>>.
 
 | *Votum*
 | Stimmabgabe einer Person zu einer Abstimmung (Ja, Nein, Enthaltung, nicht abgestimmt).
@@ -77,3 +77,35 @@ B }o--|| D
 Die Modelle liegen im Monorepo und werden über den Deno-Workspace von beiden Teilsystemen verwendet. So beschreibt genau eine Definition die Struktur, die die Pipeline schreibt und die Web-Anwendung liest; Abweichungen zwischen erzeugten und dargestellten Daten werden dadurch ausgeschlossen, was die Datenkorrektheit stützt.
 
 Eine bewusste Eigenheit ist die *Verknüpfung über Namen statt technischer Schlüssel* in den Sitzungsdaten: Vota und Redebeiträge referenzieren die Person über ihren Namen, nicht über eine ID. Das hält die aus Video gewonnenen Sitzungsdateien menschenlesbar und unabhängig prüfbar; die Zuordnung zur Registry-Person erfolgt über den Namen.
+
+[#konzept-abstimmungsergebnis]
+== Abstimmungsergebnis berechnen, nie erfassen
+
+Das _Abstimmungsergebnis_ (angenommen oder abgelehnt) wird nie gespeichert, sondern an genau einer Stelle berechnet: `votingAccepted` im geteilten Modul `voting-breakdown.ts`. Website, Abstimmungsbilder, Drucksachen-Assets und Auswertungen lesen alle dieses berechnete Ergebnis. Weicht es von der Niederschrift ab, wird eine Eingabe korrigiert (Stimmen, `presentMembers` oder `majorityRequirement`), nie ein Ergebnis von Hand gesetzt.
+
+Grundlage sind die Ja-Stimmen (J), die Nein-Stimmen (N), die anwesenden Mitglieder (A) und die _gesetzliche Mitgliederzahl_ M = 57 (56 Stadträte und Oberbürgermeisterin; ein unbesetzter Sitz senkt sie nicht). Das Mehrheitserfordernis ist einer von sechs Werten:
+
+[cols="2,3",options="header"]
+|===
+| `majorityRequirement` | angenommen, wenn
+
+| `simple` oder ohne Angabe
+| J > N (Enthaltungen zählen nicht, Gleichstand ist abgelehnt)
+
+| `majority-of-present`
+| J > A / 2
+
+| `two-thirds-of-present`
+| J ≥ ⅔ · A
+
+| `majority-of-members`
+| J > M / 2, also J ≥ 29
+
+| `two-thirds-of-members`
+| J ≥ ⅔ · M, also J ≥ 38
+
+| `three-quarters-of-members`
+| J ≥ ¾ · M, also J ≥ 43
+|===
+
+Die Vergleiche werden ganzzahlig gerechnet (etwa 3 · J ≥ 2 · A), damit keine Rundungsfehler entstehen. Das Abstimmungsergebnis ist streng zweiwertig, einen Zustand „unbekannt“ gibt es nicht. Deshalb gilt als Datenfehler, der beim Laden abgelehnt wird: ein unbekanntes Mehrheitserfordernis, ein fehlendes `presentMembers` bei `majority-of-present` oder `two-thirds-of-present`, ein `presentMembers`, das keine ganze Zahl ist, und ein `presentMembers` kleiner als Ja + Nein + Enthaltung. Ein `presentMembers` an einer Abstimmung, deren Erfordernis es nicht braucht, ist erlaubt und wird ignoriert. Die deutschen Anzeigenamen der sechs Werte stehen an einer Stelle im geteilten Modul `session-scan.ts`.

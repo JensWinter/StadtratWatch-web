@@ -224,3 +224,172 @@ describe('votingAccepted', () => {
     expect(votingAccepted(voting)).toBe(true);
   });
 });
+
+function createVotingWithCounts(
+  counts: { J: number; N: number; E: number },
+  majority: Pick<
+    SessionScanItem,
+    'majorityRequirement' | 'presentMembers'
+  > = {},
+): SessionScanItem {
+  const votes: SessionScanVote[] = [
+    ...Array.from({ length: counts.J }, (_, i) => ({
+      name: `Ja ${i}`,
+      vote: 'J' as const,
+    })),
+    ...Array.from({ length: counts.N }, (_, i) => ({
+      name: `Nein ${i}`,
+      vote: 'N' as const,
+    })),
+    ...Array.from({ length: counts.E }, (_, i) => ({
+      name: `Enthaltung ${i}`,
+      vote: 'E' as const,
+    })),
+  ];
+  return { ...createVoting(votes), ...majority };
+}
+
+describe('votingAccepted with a majority requirement', () => {
+  test.each([
+    { J: 21, N: 20, E: 0, accepted: true },
+    { J: 20, N: 20, E: 0, accepted: false },
+    { J: 19, N: 20, E: 0, accepted: false },
+  ])(
+    'simple majority, explicitly set: $J:$N:$E -> $accepted',
+    ({ accepted, ...counts }) => {
+      const voting = createVotingWithCounts(counts, {
+        majorityRequirement: 'simple',
+      });
+
+      expect(votingAccepted(voting)).toBe(accepted);
+    },
+  );
+
+  test.each([
+    { J: 21, N: 20, E: 0, accepted: true },
+    { J: 20, N: 20, E: 0, accepted: false },
+    { J: 19, N: 20, E: 0, accepted: false },
+  ])(
+    'simple majority, no requirement set: $J:$N:$E -> $accepted',
+    ({ accepted, ...counts }) => {
+      const voting = createVotingWithCounts(counts);
+
+      expect(votingAccepted(voting)).toBe(accepted);
+    },
+  );
+
+  test('simple majority ignores abstentions', () => {
+    const voting = createVotingWithCounts({ J: 2, N: 1, E: 40 });
+
+    expect(votingAccepted(voting)).toBe(true);
+  });
+
+  test('simple majority ignores a surplus presentMembers', () => {
+    const voting = createVotingWithCounts(
+      { J: 29, N: 16, E: 0 },
+      { presentMembers: 56 },
+    );
+
+    expect(votingAccepted(voting)).toBe(true);
+  });
+
+  test.each([
+    { J: 24, N: 22, E: 0, presentMembers: 46, accepted: true },
+    { J: 23, N: 0, E: 0, presentMembers: 46, accepted: false },
+    { J: 22, N: 0, E: 0, presentMembers: 46, accepted: false },
+    { J: 23, N: 0, E: 0, presentMembers: 45, accepted: true },
+  ])(
+    'majority of present: $J yes of $presentMembers present -> $accepted',
+    ({ accepted, presentMembers, ...counts }) => {
+      const voting = createVotingWithCounts(counts, {
+        majorityRequirement: 'majority-of-present',
+        presentMembers,
+      });
+
+      expect(votingAccepted(voting)).toBe(accepted);
+    },
+  );
+
+  test.each([
+    { J: 31, N: 0, E: 0, presentMembers: 45, accepted: true },
+    { J: 30, N: 0, E: 0, presentMembers: 45, accepted: true },
+    { J: 29, N: 0, E: 0, presentMembers: 45, accepted: false },
+  ])(
+    'two thirds of present: $J yes of $presentMembers present -> $accepted',
+    ({ accepted, presentMembers, ...counts }) => {
+      const voting = createVotingWithCounts(counts, {
+        majorityRequirement: 'two-thirds-of-present',
+        presentMembers,
+      });
+
+      expect(votingAccepted(voting)).toBe(accepted);
+    },
+  );
+
+  test.each([
+    { requirement: 'majority-of-members', J: 30, accepted: true },
+    { requirement: 'majority-of-members', J: 29, accepted: true },
+    { requirement: 'majority-of-members', J: 28, accepted: false },
+    { requirement: 'two-thirds-of-members', J: 39, accepted: true },
+    { requirement: 'two-thirds-of-members', J: 38, accepted: true },
+    { requirement: 'two-thirds-of-members', J: 37, accepted: false },
+    { requirement: 'three-quarters-of-members', J: 44, accepted: true },
+    { requirement: 'three-quarters-of-members', J: 43, accepted: true },
+    { requirement: 'three-quarters-of-members', J: 42, accepted: false },
+  ] as const)(
+    '$requirement: $J yes -> $accepted',
+    ({ requirement, J, accepted }) => {
+      const voting = createVotingWithCounts(
+        { J, N: 0, E: 0 },
+        { majorityRequirement: requirement },
+      );
+
+      expect(votingAccepted(voting)).toBe(accepted);
+    },
+  );
+
+  test.each([
+    {
+      name: 'Stadtschreiberstipendium 29:16:0, 46 present',
+      J: 29,
+      N: 16,
+      E: 0,
+      presentMembers: 46,
+      accepted: false,
+    },
+    {
+      name: 'Akteneinsicht 27:16:3, 46 present',
+      J: 27,
+      N: 16,
+      E: 3,
+      presentMembers: 46,
+      accepted: false,
+    },
+    {
+      name: 'Halberstädter Straße 24:14:4, 42 present',
+      J: 24,
+      N: 14,
+      E: 4,
+      presentMembers: 42,
+      accepted: false,
+    },
+    {
+      name: '37:0:1, 38 present',
+      J: 37,
+      N: 0,
+      E: 1,
+      presentMembers: 38,
+      accepted: true,
+    },
+  ])(
+    'two thirds of present, real case $name -> $accepted',
+    ({ accepted, presentMembers, name: _, ...counts }) => {
+      const voting = createVotingWithCounts(counts, {
+        majorityRequirement: 'two-thirds-of-present',
+        presentMembers,
+      });
+
+      expect(votingAccepted(voting)).toBe(accepted);
+    },
+  );
+});
