@@ -79,6 +79,8 @@ describe('assertValidMajorityRequirements', () => {
     { majorityRequirement: 'two-thirds-of-members' },
     { majorityRequirement: 'two-thirds-of-present', presentMembers: 3 },
     { presentMembers: 50 },
+    { majorityRequirement: 'majority-of-present', presentMembers: 50 },
+    { majorityRequirement: 'two-thirds-of-present', presentMembers: 50 },
     { presentMembers: 2 },
     { majorityRequirement: 'two-thirds-of-members', presentMembers: 3.5 },
   ])('accepts %o', (majority) => {

@@ -124,6 +124,17 @@ describe('sessionScanSchema majority requirement', () => {
     ).toBe(true);
   });
 
+  test.each(['majority-of-present', 'two-thirds-of-present'])(
+    'accepts a surplus presentMembers on %s',
+    (majorityRequirement) => {
+      expect(
+        sessionScanSchema.safeParse(
+          scanWithMajority({ majorityRequirement, presentMembers: 50 }),
+        ).success,
+      ).toBe(true);
+    },
+  );
+
   test('accepts a surplus presentMembers on a simple majority', () => {
     expect(
       sessionScanSchema.safeParse(scanWithMajority({ presentMembers: 50 }))
