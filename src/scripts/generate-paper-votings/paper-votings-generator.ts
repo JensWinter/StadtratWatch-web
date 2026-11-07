@@ -1,6 +1,6 @@
 import { toPaperBatchNo } from '@srw-astro/models/paper-batch';
 import type { PaperVotingItem, PaperVotingsDto } from '@srw-astro/models/paper-votings';
-import type { Registry } from '@srw-astro/models/registry';
+import { getLegalMemberCount, type Registry } from '@srw-astro/models/registry';
 import type { SessionScanItem } from '@srw-astro/models/session-scan';
 import { getVoteCounts, getVotesByFactions, getVotingId, votingAccepted } from '@srw-astro/models/voting-breakdown';
 
@@ -52,7 +52,7 @@ export class PaperVotingsGenerator {
       agendaItem: scan.votingSubject.agendaItem,
       title: scan.votingSubject.title,
       type: scan.votingSubject.type || '',
-      accepted: votingAccepted(scan),
+      accepted: votingAccepted(scan, getLegalMemberCount(registry)),
       counts: getVoteCounts(scan),
       votesByFactions: getVotesByFactions(registry, scan.votes),
     };

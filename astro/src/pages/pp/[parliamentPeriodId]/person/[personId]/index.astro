@@ -113,7 +113,11 @@ const {
       @change="history.pushState(null, '', `/pp/${parliamentPeriodId}/person/${personId}?tab=statistics`); currentTab = 'statistics'"
     />
     <div class="tab-content border-base-200 bg-base-100 p-6">
-      <Statistics person={person} sessionInputs={sessionInputs} />
+      <Statistics
+        parliamentPeriod={parliamentPeriod}
+        person={person}
+        sessionInputs={sessionInputs}
+      />
     </div>
 
     <input

@@ -8,6 +8,8 @@ import {
 import type { Registry } from './registry.ts';
 import type { SessionScanItem, SessionScanVote } from './session-scan.ts';
 
+const magdeburgLegalMemberCount = 57;
+
 function createRegistry(): Registry {
   return {
     id: 'magdeburg-8',
@@ -192,7 +194,7 @@ describe('votingAccepted', () => {
       { name: 'Lone Voter', vote: 'J' },
     ]);
 
-    expect(votingAccepted(voting)).toBe(true);
+    expect(votingAccepted(voting, magdeburgLegalMemberCount)).toBe(true);
   });
 
   test('rejects a voting with a tie', () => {
@@ -201,7 +203,7 @@ describe('votingAccepted', () => {
       { name: 'Opposer', vote: 'N' },
     ]);
 
-    expect(votingAccepted(voting)).toBe(false);
+    expect(votingAccepted(voting, magdeburgLegalMemberCount)).toBe(false);
   });
 
   test('rejects a voting with more no than yes votes', () => {
@@ -211,7 +213,7 @@ describe('votingAccepted', () => {
       { name: 'Supporter', vote: 'J' },
     ]);
 
-    expect(votingAccepted(voting)).toBe(false);
+    expect(votingAccepted(voting, magdeburgLegalMemberCount)).toBe(false);
   });
 
   test('ignores abstentions and non-votes when comparing', () => {
@@ -221,7 +223,7 @@ describe('votingAccepted', () => {
       { name: 'Absentee', vote: 'O' },
     ]);
 
-    expect(votingAccepted(voting)).toBe(true);
+    expect(votingAccepted(voting, magdeburgLegalMemberCount)).toBe(true);
   });
 });
 
@@ -261,7 +263,7 @@ describe('votingAccepted with a majority requirement', () => {
         majorityRequirement: 'simple',
       });
 
-      expect(votingAccepted(voting)).toBe(accepted);
+      expect(votingAccepted(voting, magdeburgLegalMemberCount)).toBe(accepted);
     },
   );
 
@@ -274,14 +276,14 @@ describe('votingAccepted with a majority requirement', () => {
     ({ accepted, ...counts }) => {
       const voting = createVotingWithCounts(counts);
 
-      expect(votingAccepted(voting)).toBe(accepted);
+      expect(votingAccepted(voting, magdeburgLegalMemberCount)).toBe(accepted);
     },
   );
 
   test('simple majority ignores abstentions', () => {
     const voting = createVotingWithCounts({ J: 2, N: 1, E: 40 });
 
-    expect(votingAccepted(voting)).toBe(true);
+    expect(votingAccepted(voting, magdeburgLegalMemberCount)).toBe(true);
   });
 
   test('simple majority ignores a surplus presentMembers', () => {
@@ -290,7 +292,7 @@ describe('votingAccepted with a majority requirement', () => {
       { presentMembers: 56 },
     );
 
-    expect(votingAccepted(voting)).toBe(true);
+    expect(votingAccepted(voting, magdeburgLegalMemberCount)).toBe(true);
   });
 
   test.each([
@@ -306,7 +308,7 @@ describe('votingAccepted with a majority requirement', () => {
         presentMembers,
       });
 
-      expect(votingAccepted(voting)).toBe(accepted);
+      expect(votingAccepted(voting, magdeburgLegalMemberCount)).toBe(accepted);
     },
   );
 
@@ -322,7 +324,7 @@ describe('votingAccepted with a majority requirement', () => {
         presentMembers,
       });
 
-      expect(votingAccepted(voting)).toBe(accepted);
+      expect(votingAccepted(voting, magdeburgLegalMemberCount)).toBe(accepted);
     },
   );
 
@@ -344,7 +346,26 @@ describe('votingAccepted with a majority requirement', () => {
         { majorityRequirement: requirement },
       );
 
-      expect(votingAccepted(voting)).toBe(accepted);
+      expect(votingAccepted(voting, magdeburgLegalMemberCount)).toBe(accepted);
+    },
+  );
+
+  test.each([
+    { requirement: 'majority-of-members', J: 21, accepted: true },
+    { requirement: 'majority-of-members', J: 20, accepted: false },
+    { requirement: 'two-thirds-of-members', J: 28, accepted: true },
+    { requirement: 'two-thirds-of-members', J: 27, accepted: false },
+    { requirement: 'three-quarters-of-members', J: 31, accepted: true },
+    { requirement: 'three-quarters-of-members', J: 30, accepted: false },
+  ] as const)(
+    '$requirement in a council of 41 members: $J yes -> $accepted',
+    ({ requirement, J, accepted }) => {
+      const voting = createVotingWithCounts(
+        { J, N: 0, E: 0 },
+        { majorityRequirement: requirement },
+      );
+
+      expect(votingAccepted(voting, 41)).toBe(accepted);
     },
   );
 
@@ -389,7 +410,7 @@ describe('votingAccepted with a majority requirement', () => {
         presentMembers,
       });
 
-      expect(votingAccepted(voting)).toBe(accepted);
+      expect(votingAccepted(voting, magdeburgLegalMemberCount)).toBe(accepted);
     },
   );
 });

@@ -1,5 +1,9 @@
 import type { SessionInput } from '@models/SessionInput.ts';
-import type { RegistryFaction } from '@models/registry.ts';
+import {
+  getLegalMemberCount,
+  type Registry,
+  type RegistryFaction,
+} from '@models/registry.ts';
 import type { SessionScanItem } from '@models/session-scan.ts';
 import { votingAccepted } from '@models/voting-breakdown.ts';
 
@@ -9,6 +13,7 @@ export type HistoryDataPoint = {
 };
 
 export function calcMotionsSuccessRateOfFaction(
+  parliamentPeriod: Registry,
   faction: RegistryFaction,
   sessions: SessionInput[],
 ): number | null {
@@ -26,7 +31,9 @@ export function calcMotionsSuccessRateOfFaction(
   const votingGroupsResults = Array.from(Object.values(groupedVotings))
     .map((votings) => votings!)
     .map((votings) => {
-      const votingsPassed = votings.filter(votingAccepted);
+      const votingsPassed = votings.filter((voting) =>
+        votingAccepted(voting, getLegalMemberCount(parliamentPeriod)),
+      );
       return votingsPassed.length / votings.length;
     });
 
@@ -37,6 +44,7 @@ export function calcMotionsSuccessRateOfFaction(
 }
 
 export function calcMotionsSuccessRateHistoryOfFaction(
+  parliamentPeriod: Registry,
   faction: RegistryFaction,
   sessions: SessionInput[],
 ): HistoryDataPoint[] {
@@ -45,7 +53,11 @@ export function calcMotionsSuccessRateHistoryOfFaction(
       const pastSessions = sessions.filter(
         (s) => s.session.date <= session.session.date,
       );
-      const value = calcMotionsSuccessRateOfFaction(faction, pastSessions);
+      const value = calcMotionsSuccessRateOfFaction(
+        parliamentPeriod,
+        faction,
+        pastSessions,
+      );
       return { date: session.session.date, value };
     })
     .filter((obj): obj is HistoryDataPoint => obj.value !== null)

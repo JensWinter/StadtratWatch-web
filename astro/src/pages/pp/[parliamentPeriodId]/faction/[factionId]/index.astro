@@ -9,6 +9,7 @@ import Motions from './_motions.astro';
 import Statistics from './_statistics.astro';
 import MetaTags from '@components/MetaTags.astro';
 import { getVotingPaperMap } from '../../_helpers2.ts';
+import { getLegalMemberCount } from '@models/registry';
 
 export const getStaticPaths = getParliamentPeriodWithFactionPaths;
 
@@ -74,6 +75,7 @@ const breadcrumbItems = [
     <div class="tab-content border-base-200 bg-base-100 p-6">
       <Motions
         parliamentPeriodId={parliamentPeriodId}
+        legalMemberCount={getLegalMemberCount(parliamentPeriod)}
         faction={faction}
         sessionInputs={sessionInputs}
         votingPaperMap={votingPaperMap}

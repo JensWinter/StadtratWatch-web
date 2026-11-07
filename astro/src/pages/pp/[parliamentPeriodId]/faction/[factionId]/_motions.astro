@@ -21,13 +21,19 @@ export type MotionListItem = {
 
 type Props = {
   parliamentPeriodId: string;
+  legalMemberCount: number;
   faction: RegistryFaction;
   sessionInputs: SessionInput[];
   votingPaperMap: VotingPaperMap;
 };
 
-const { parliamentPeriodId, faction, sessionInputs, votingPaperMap } =
-  Astro.props as Props;
+const {
+  parliamentPeriodId,
+  legalMemberCount,
+  faction,
+  sessionInputs,
+  votingPaperMap,
+} = Astro.props as Props;
 
 const factionMotionVotings = sessionInputs
   .flatMap((sessionInput) =>
@@ -61,7 +67,7 @@ const motions = Array.from(motionsMap)
     );
     const votings = motionVotings.map((motionVoting) => ({
       votingId: +motionVoting.voting.votingFilename.substring(11, 14),
-      accepted: votingAccepted(motionVoting.voting),
+      accepted: votingAccepted(motionVoting.voting, legalMemberCount),
     }));
     return {
       motionId,

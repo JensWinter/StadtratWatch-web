@@ -1,7 +1,7 @@
 ---
 import { type SessionScan } from '@models/session-scan';
 import { type VotingListItem } from './_model';
-import { type Registry } from '@models/registry';
+import { getLegalMemberCount, type Registry } from '@models/registry';
 import {
   getVotesByFactions,
   getVotingId,
@@ -27,7 +27,7 @@ const votings = sessionScan
         type: voting.votingSubject.type || '',
         authors: voting.votingSubject.authors,
         votesByFactions: getVotesByFactions(parliamentPeriod, voting.votes),
-        accepted: votingAccepted(voting),
+        accepted: votingAccepted(voting, getLegalMemberCount(parliamentPeriod)),
       }) satisfies VotingListItem,
   )
   .toSorted((a, b) => a.id - b.id);

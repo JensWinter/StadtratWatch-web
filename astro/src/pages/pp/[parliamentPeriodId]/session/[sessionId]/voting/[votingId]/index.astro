@@ -9,6 +9,7 @@ import { getPaperId, getVotingPaperMap } from '../../../../_helpers2';
 import MetaTags from '@components/MetaTags.astro';
 import { getVideoTimestampAsSeconds } from '@utils/session-utils';
 import { getVoteCounts, votingAccepted } from '@models/voting-breakdown';
+import { getLegalMemberCount } from '@models/registry';
 import { qualifiedMajorityDisplayName } from '@models/session-scan';
 
 export const getStaticPaths = getParliamentPeriodWithSessionAndVotingPaths;
@@ -80,7 +81,7 @@ const youtubeUrl = `${sessionInput.session.youtubeUrl}?t=${getVideoTimestampAsSe
 
 const { J: votedFor, N: votedAgainst, E: abstentions } = getVoteCounts(voting);
 const totalVotes = votedFor + votedAgainst + abstentions;
-const accepted = votingAccepted(voting);
+const accepted = votingAccepted(voting, getLegalMemberCount(parliamentPeriod));
 const qualifiedMajorityName = qualifiedMajorityDisplayName(voting);
 ---
 
