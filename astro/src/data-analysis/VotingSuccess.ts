@@ -6,7 +6,7 @@ import type {
   RegistryPerson,
 } from '@models/registry.ts';
 import type { SessionScanItem } from '@models/session-scan.ts';
-import type { VotingResult } from '@models/Session.ts';
+import { votingAccepted } from '@models/voting-breakdown.ts';
 import {
   getPersonsOfSessionAndFaction,
   getPersonsOfSessionAndParty,
@@ -138,10 +138,9 @@ export function calcVotingSuccessRateOfPerson(
       const personVote = voting.votes.find(
         (vote) => vote.name === person.name,
       )!.vote;
-      const votingResult = getVotingResult(voting);
+      const accepted = votingAccepted(voting);
       return (
-        (personVote === 'J' && votingResult === 'PASSED') ||
-        (personVote === 'N' && votingResult === 'REJECTED')
+        (personVote === 'J' && accepted) || (personVote === 'N' && !accepted)
       );
     });
 
@@ -172,16 +171,14 @@ function isPersonsVotingSuccessful(
   persons: string[],
   voting: SessionScanItem,
 ): boolean {
-  const votingResult = getVotingResult(voting);
-  const personsVotingResult = calcPersonsVotingResult(persons, voting);
-
-  return votingResult === personsVotingResult;
+  return votingAccepted(voting) === didPersonsMajorityVoteYes(persons, voting);
 }
 
-function calcPersonsVotingResult(
+// The position of a group of persons is the majority of their yes and no votes, a tie counting as rejection.
+function didPersonsMajorityVoteYes(
   persons: string[],
   voting: SessionScanItem,
-): VotingResult | null {
+): boolean | null {
   const personsVotes = voting.votes.filter(
     (vote) => persons.includes(vote.name) && vote.vote !== 'O',
   );
@@ -192,11 +189,5 @@ function calcPersonsVotingResult(
     return null;
   }
 
-  return votedFor > votedAgainst ? 'PASSED' : 'REJECTED';
-}
-
-function getVotingResult(voting: SessionScanItem): VotingResult {
-  const votedFor = voting.votes.filter((vote) => vote.vote === 'J').length;
-  const votedAgainst = voting.votes.filter((vote) => vote.vote === 'N').length;
-  return votedFor > votedAgainst ? 'PASSED' : 'REJECTED';
+  return votedFor > votedAgainst;
 }

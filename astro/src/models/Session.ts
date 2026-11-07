@@ -11,5 +11,3 @@ export type Vote = {
   personId: string;
   vote: VoteCode;
 };
-
-export type VotingResult = 'PASSED' | 'REJECTED';

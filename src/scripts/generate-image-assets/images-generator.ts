@@ -193,7 +193,7 @@ export class ImagesGenerator {
     this.drawVotesSummary(context, votedAgainst, 'Dagegen', 270, VOTED_AGAINST_FILL_COLOR);
     this.drawVotesSummary(context, abstentions, 'Enthalten', 460, ABSTENTIONS_FILL_COLOR);
 
-    if (votedFor > votedAgainst) {
+    if (voting.accepted) {
       this.drawTotalVotingSummary(context, 'Angenommen', VOTED_FOR_FILL_COLOR);
     } else {
       this.drawTotalVotingSummary(context, 'Abgelehnt', VOTED_AGAINST_FILL_COLOR);
