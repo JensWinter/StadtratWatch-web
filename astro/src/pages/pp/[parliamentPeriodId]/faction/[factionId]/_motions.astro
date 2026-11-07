@@ -1,7 +1,8 @@
 ---
 import { type SessionInput } from '@models/SessionInput';
 import { type RegistryFaction } from '@models/registry';
-import { getMotionResult, getVotingId, getVotingResult } from './_helpers';
+import { getMotionResult, getVotingId } from './_helpers';
+import { votingAccepted } from '@models/voting-breakdown';
 import { formatDate } from '@utils/format-date';
 import type { VotingPaperMap } from '@models/oparl-derivatives.ts';
 import { getPaperId } from '../../_helpers2';
@@ -60,7 +61,7 @@ const motions = Array.from(motionsMap)
     );
     const votings = motionVotings.map((motionVoting) => ({
       votingId: +motionVoting.voting.votingFilename.substring(11, 14),
-      votingResult: getVotingResult(motionVoting.voting.votes),
+      accepted: votingAccepted(motionVoting.voting),
     }));
     return {
       motionId,

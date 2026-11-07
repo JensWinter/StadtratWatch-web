@@ -1,7 +1,7 @@
 import type { SessionInput } from '@models/SessionInput.ts';
 import type { RegistryFaction } from '@models/registry.ts';
-import type { VotingResult } from '@models/Session.ts';
-import type { SessionScanItem, SessionScanVote } from '@models/session-scan.ts';
+import type { SessionScanItem } from '@models/session-scan.ts';
+import { votingAccepted } from '@models/voting-breakdown.ts';
 
 export type HistoryDataPoint = {
   date: string;
@@ -26,9 +26,7 @@ export function calcMotionsSuccessRateOfFaction(
   const votingGroupsResults = Array.from(Object.values(groupedVotings))
     .map((votings) => votings!)
     .map((votings) => {
-      const votingsPassed = votings.filter(
-        (voting) => getVotingResult(voting.votes) === 'PASSED',
-      );
+      const votingsPassed = votings.filter(votingAccepted);
       return votingsPassed.length / votings.length;
     });
 
@@ -52,10 +50,4 @@ export function calcMotionsSuccessRateHistoryOfFaction(
     })
     .filter((obj): obj is HistoryDataPoint => obj.value !== null)
     .toSorted((a, b) => a.date.localeCompare(b.date));
-}
-
-function getVotingResult(votes: SessionScanVote[]): VotingResult {
-  const votedFor = votes.filter((vote) => vote.vote === 'J').length;
-  const votedAgainst = votes.filter((vote) => vote.vote === 'N').length;
-  return votedFor > votedAgainst ? 'PASSED' : 'REJECTED';
 }

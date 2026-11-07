@@ -5,6 +5,7 @@ export type Voting = {
   motionType: string;
   motionId: string;
   subjectTitle: string;
+  accepted: boolean;
   votes: VotingPerFaction[];
 };
 

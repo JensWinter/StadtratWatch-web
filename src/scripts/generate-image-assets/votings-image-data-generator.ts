@@ -2,6 +2,7 @@ import type { Registry, RegistryFaction, RegistryPerson } from '@srw-astro/model
 import type { Vote } from '@srw-astro/models/session';
 import type { SessionInput } from '@srw-astro/models/session-input';
 import type { SessionScanVote } from '@srw-astro/models/session-scan';
+import { votingAccepted } from '@srw-astro/models/voting-breakdown';
 
 import type { Voting, VotingPerFaction } from './model.ts';
 
@@ -59,6 +60,7 @@ export class VotingsImageDataGenerator {
           motionType: sessionVoting.votingSubject.type || 'Sonstige',
           motionId: sessionVoting.votingSubject.motionId,
           subjectTitle: sessionVoting.votingSubject.title,
+          accepted: votingAccepted(sessionVoting),
           votes,
         };
       });
