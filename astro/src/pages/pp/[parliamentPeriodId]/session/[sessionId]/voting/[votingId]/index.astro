@@ -9,7 +9,7 @@ import { getPaperId, getVotingPaperMap } from '../../../../_helpers2';
 import MetaTags from '@components/MetaTags.astro';
 import { getVideoTimestampAsSeconds } from '@utils/session-utils';
 import { getVoteCounts, votingAccepted } from '@models/voting-breakdown';
-import { majorityRequirementDisplayNames } from '@utils/majority-requirement-presentation';
+import { majorityRequirementDisplayNames } from '@models/session-scan';
 
 export const getStaticPaths = getParliamentPeriodWithSessionAndVotingPaths;
 
