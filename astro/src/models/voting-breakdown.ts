@@ -78,7 +78,42 @@ export function getVotesByFactions(
     }));
 }
 
-export function votingAccepted(voting: SessionScanItem): boolean {
-  const counts = getVoteCounts(voting);
-  return counts.J > counts.N;
+export function votingAccepted(
+  parliamentPeriod: Registry,
+  voting: SessionScanItem,
+): boolean {
+  const { J: yes, N: no } = getVoteCounts(voting);
+  const statutoryMemberCount = getStatutoryMemberCount(parliamentPeriod);
+
+  switch (voting.majorityRequirement) {
+    case 'majority-of-present':
+      return 2 * yes > requirePresentMembers(voting);
+    case 'two-thirds-of-present':
+      return 3 * yes >= 2 * requirePresentMembers(voting);
+    case 'majority-of-members':
+      return 2 * yes > statutoryMemberCount;
+    case 'two-thirds-of-members':
+      return 3 * yes >= 2 * statutoryMemberCount;
+    case 'three-quarters-of-members':
+      return 4 * yes >= 3 * statutoryMemberCount;
+    case 'simple':
+    case undefined:
+      return yes > no;
+  }
+}
+
+function getStatutoryMemberCount(parliamentPeriod: Registry): number {
+  return parliamentPeriod.factions.reduce(
+    (memberCount, faction) => memberCount + faction.seats,
+    0,
+  );
+}
+
+function requirePresentMembers(voting: SessionScanItem): number {
+  if (voting.presentMembers === undefined) {
+    throw new Error(
+      `${voting.votingFilename}: ${voting.majorityRequirement} needs presentMembers`,
+    );
+  }
+  return voting.presentMembers;
 }

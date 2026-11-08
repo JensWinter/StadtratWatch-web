@@ -42,7 +42,7 @@ Die Derivate werden mit stabiler Sortierung vollständig neu erzeugt (sauberer `
 
 == Einlesen zur Bauzeit
 
-Die Web-Anwendung liest die Dateien der Datenablage — inklusive der committeten OParl-Derivate, aber *ohne* die rohen OParl-Daten — zur Bauzeit über Astro _Content Collections_ (`glob`-Loader) typisiert ein. Die Derivat-Collections und die Session-Scans nutzen echte Zod-Schemata, sodass ein strukturell abweichendes Derivat oder ein Session-Scan mit einer anderen Stimme als `J`, `N`, `E` oder `O` den Build abbricht. Weil Session-Scans auch von Hand korrigiert werden, prüfen auch die Skripte, die sie lesen (`generate-image-assets`, `generate-paper-votings`), jede Stimme und brechen bei einer unbekannten mit Datei, Abstimmung und Ratsmitglied ab. Damit wird der Dateibestand gegen die geteilten Modelle (siehe <<konzept-datenmodell,Fachliches Datenmodell>>) geprüft und steht den statischen Seiten strukturiert zur Verfügung.
+Die Web-Anwendung liest die Dateien der Datenablage — inklusive der committeten OParl-Derivate, aber *ohne* die rohen OParl-Daten — zur Bauzeit über Astro _Content Collections_ (`glob`-Loader) typisiert ein. Die Derivat-Collections und die Session-Scans nutzen echte Zod-Schemata, sodass ein strukturell abweichendes Derivat oder ein ungültiger Session-Scan den Build abbricht. Weil Session-Scans auch von Hand korrigiert werden, prüfen auch die Skripte, die sie lesen, jeden Session-Scan und brechen bei einem ungültigen ab. Damit wird der Dateibestand gegen die geteilten Modelle (siehe <<konzept-datenmodell,Fachliches Datenmodell>>) geprüft und steht den statischen Seiten strukturiert zur Verfügung.
 
 == Konfiguration & Umgebungen
 

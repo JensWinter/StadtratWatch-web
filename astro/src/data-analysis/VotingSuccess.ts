@@ -31,7 +31,7 @@ export function calcVotingSuccessRateOfFaction(
         faction,
       ).map((name) => name.name);
       const successfulVotings = session.votings.filter((voting) =>
-        isPersonsVotingSuccessful(persons, voting),
+        isPersonsVotingSuccessful(parliamentPeriod, persons, voting),
       );
       return {
         successfulVotings: successfulVotings.length,
@@ -82,7 +82,7 @@ export function calcVotingSuccessRateOfParty(
         party,
       ).map((name) => name.name);
       const successfulVotings = session.votings.filter((voting) =>
-        isPersonsVotingSuccessful(persons, voting),
+        isPersonsVotingSuccessful(parliamentPeriod, persons, voting),
       );
       return {
         successfulVotings: successfulVotings.length,
@@ -121,6 +121,7 @@ export function calcVotingSuccessRateHistoryOfParty(
 }
 
 export function calcVotingSuccessRateOfPerson(
+  parliamentPeriod: Registry,
   person: RegistryPerson,
   sessions: SessionInput[],
 ): number | null {
@@ -138,7 +139,7 @@ export function calcVotingSuccessRateOfPerson(
       const personVote = voting.votes.find(
         (vote) => vote.name === person.name,
       )!.vote;
-      const accepted = votingAccepted(voting);
+      const accepted = votingAccepted(parliamentPeriod, voting);
       return (
         (personVote === 'J' && accepted) || (personVote === 'N' && !accepted)
       );
@@ -152,6 +153,7 @@ export function calcVotingSuccessRateOfPerson(
 }
 
 export function calcVotingSuccessRateHistoryOfPerson(
+  parliamentPeriod: Registry,
   person: RegistryPerson,
   sessions: SessionInput[],
 ): HistoryDataPoint[] {
@@ -160,7 +162,11 @@ export function calcVotingSuccessRateHistoryOfPerson(
       const pastSessions = sessions.filter(
         (s) => s.session.date <= session.session.date,
       );
-      const value = calcVotingSuccessRateOfPerson(person, pastSessions);
+      const value = calcVotingSuccessRateOfPerson(
+        parliamentPeriod,
+        person,
+        pastSessions,
+      );
       return { date: session.session.date, value };
     })
     .filter((obj): obj is HistoryDataPoint => obj.value !== null)
@@ -168,10 +174,14 @@ export function calcVotingSuccessRateHistoryOfPerson(
 }
 
 function isPersonsVotingSuccessful(
+  parliamentPeriod: Registry,
   persons: string[],
   voting: SessionScanItem,
 ): boolean {
-  return votingAccepted(voting) === didPersonsMajorityVoteYes(persons, voting);
+  return (
+    votingAccepted(parliamentPeriod, voting) ===
+    didPersonsMajorityVoteYes(persons, voting)
+  );
 }
 
 // The position of a group of persons is the majority of their yes and no votes, a tie counting as rejection.

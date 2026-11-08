@@ -1,12 +1,17 @@
 import { assert, describe, beforeEach, test } from 'vitest';
 import { calcMotionsSuccessRateOfFaction } from '@data-analysis/MotionsSuccess.ts';
-import type { RegistryFaction, RegistrySession } from '@models/registry.ts';
+import type {
+  Registry,
+  RegistryFaction,
+  RegistrySession,
+} from '@models/registry.ts';
 import type { SessionInput } from '@models/SessionInput.ts';
 
 describe('MotionsSuccess', () => {
   let faction1: RegistryFaction;
   let faction2: RegistryFaction;
   let session1: RegistrySession;
+  let registry: Registry;
 
   beforeEach(() => {
     faction1 = {
@@ -29,10 +34,24 @@ describe('MotionsSuccess', () => {
       meetingMinutesUrl: 'https://example.com/minutes1',
       approved: true,
     };
+
+    registry = {
+      id: 'magdeburg-8',
+      name: 'Stadtrat Magdeburg 8',
+      lastUpdate: '2023-01-01',
+      sessions: [session1],
+      factions: [faction1, faction2],
+      parties: [],
+      persons: [],
+    };
   });
 
   test('is null when no sessions are provided', () => {
-    const motionsSuccessRate = calcMotionsSuccessRateOfFaction(faction1, []);
+    const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
+      faction1,
+      [],
+    );
 
     assert.isNull(motionsSuccessRate);
   });
@@ -47,6 +66,7 @@ describe('MotionsSuccess', () => {
     ];
 
     const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
       faction1,
       sessions,
     );
@@ -77,6 +97,7 @@ describe('MotionsSuccess', () => {
     ];
 
     const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
       faction1,
       sessions,
     );
@@ -107,6 +128,7 @@ describe('MotionsSuccess', () => {
     ];
 
     const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
       faction1,
       sessions,
     );
@@ -137,6 +159,7 @@ describe('MotionsSuccess', () => {
     ];
 
     const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
       faction1,
       sessions,
     );
@@ -167,6 +190,7 @@ describe('MotionsSuccess', () => {
     ];
 
     const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
       faction1,
       sessions,
     );
@@ -245,6 +269,7 @@ describe('MotionsSuccess', () => {
     ];
 
     const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
       faction1,
       sessions,
     );
@@ -299,6 +324,7 @@ describe('MotionsSuccess', () => {
     ];
 
     const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
       faction1,
       sessions,
     );

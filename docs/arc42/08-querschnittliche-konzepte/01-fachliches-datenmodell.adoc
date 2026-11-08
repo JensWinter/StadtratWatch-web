@@ -63,7 +63,7 @@ B }o--|| D
 | Politische Partei mit Sitzanzahl. Kann über `additionalInformation` eine belegte verfassungsschutzrechtliche Einstufung tragen.
 
 | *Abstimmung*
-| Ergebnis einer namentlichen Abstimmung zu einem Tagesordnungspunkt, mit Abstimmungsgegenstand (Titel, Antrag/Vorlage, Antragsteller) und Video-Zeitstempel.
+| Ergebnis einer namentlichen Abstimmung zu einem Tagesordnungspunkt, mit Abstimmungsgegenstand (Titel, Antrag/Vorlage, Antragsteller) und Video-Zeitstempel. Optional trägt sie ein _Mehrheitserfordernis_ (ohne Angabe die einfache Mehrheit) und die Zahl der _anwesenden Mitglieder_ vom Abstimmungsbildschirm.
 
 | *Votum*
 | Stimmabgabe einer Person zu einer Abstimmung (Ja, Nein, Enthaltung, nicht abgestimmt).
@@ -71,6 +71,35 @@ B }o--|| D
 | *Redebeitrag*
 | Transkribierter Wortbeitrag einer Person in einer Sitzung, mit Startzeit und Dauer. Ausgewählte Redebeiträge tragen optional eine KI-Einschätzung (Feld `aiTextAssessment`).
 |===
+
+== Abstimmungsergebnis berechnen
+
+Das _Abstimmungsergebnis_ (angenommen oder abgelehnt) wird an einer Stelle der geteilten Modelle aus den Stimmen, dem Mehrheitserfordernis und seiner Bezugsgröße berechnet. Website, Skripte und Auswertungen lesen dieses berechnete Ergebnis. Weicht es von der Niederschrift ab, wird eine Eingabe korrigiert (Stimmen, `presentMembers` oder `majorityRequirement`).
+
+[cols="2,4",options="header"]
+|===
+| Mehrheitserfordernis | angenommen, wenn
+
+| `simple` / ohne Angabe
+| mehr Ja- als Nein-Stimmen; Enthaltungen zählen nicht, Gleichstand gilt als abgelehnt
+
+| `majority-of-present`
+| Ja > ½ der anwesenden Mitglieder
+
+| `two-thirds-of-present`
+| Ja ≥ ⅔ der anwesenden Mitglieder
+
+| `majority-of-members`
+| Ja > ½ der gesetzlichen Mitgliederzahl
+
+| `two-thirds-of-members`
+| Ja ≥ ⅔ der gesetzlichen Mitgliederzahl
+
+| `three-quarters-of-members`
+| Ja ≥ ¾ der gesetzlichen Mitgliederzahl
+|===
+
+Die Mitgliederzahl (in Magdeburg 57: 56 Stadträt:innen und die Oberbürgermeisterin) ist die Summe der Fraktionssitze in der Registry der Wahlperiode; die Oberbürgermeisterin ist dort als Fraktion mit einem Sitz geführt. Ein unbesetzter Sitz bleibt bei seiner Fraktion und senkt die Zahl daher nicht. Ein künftiges fraktionsloses Mitglied braucht deshalb ebenfalls einen Eintrag mit Sitz unter den Fraktionen. Das Ergebnis bleibt streng zweiwertig: Ein Erfordernis gegen die anwesenden Mitglieder ohne `presentMembers` ist ein Datenfehler, den die Prüfung beim Laden abfängt (siehe <<konzept-datenhaltung,Datenhaltung & Versionierung>>), kein Zustand „unbekannt“.
 
 == Geteilte, getypte Modelle als Quelle der Wahrheit
 

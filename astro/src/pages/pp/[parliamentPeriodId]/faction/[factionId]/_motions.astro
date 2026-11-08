@@ -1,6 +1,6 @@
 ---
 import { type SessionInput } from '@models/SessionInput';
-import { type RegistryFaction } from '@models/registry';
+import { type Registry, type RegistryFaction } from '@models/registry';
 import { getMotionResult, getVotingId } from './_helpers';
 import { votingAccepted } from '@models/voting-breakdown';
 import { formatDate } from '@utils/format-date';
@@ -20,13 +20,13 @@ export type MotionListItem = {
 };
 
 type Props = {
-  parliamentPeriodId: string;
+  parliamentPeriod: Registry;
   faction: RegistryFaction;
   sessionInputs: SessionInput[];
   votingPaperMap: VotingPaperMap;
 };
 
-const { parliamentPeriodId, faction, sessionInputs, votingPaperMap } =
+const { parliamentPeriod, faction, sessionInputs, votingPaperMap } =
   Astro.props as Props;
 
 const factionMotionVotings = sessionInputs
@@ -61,7 +61,7 @@ const motions = Array.from(motionsMap)
     );
     const votings = motionVotings.map((motionVoting) => ({
       votingId: +motionVoting.voting.votingFilename.substring(11, 14),
-      accepted: votingAccepted(motionVoting.voting),
+      accepted: votingAccepted(parliamentPeriod, motionVoting.voting),
     }));
     return {
       motionId,
@@ -94,7 +94,7 @@ const motions = Array.from(motionsMap)
   class="overflow-x-auto space-y-4"
   x-data="motions"
   data-motions={JSON.stringify(motions)}
-  data-parliament-period-id={parliamentPeriodId}
+  data-parliament-period-id={parliamentPeriod.id}
 >
   <div class="flex flex-row flex-wrap gap-4">
     <div class="flex items-center gap-2">

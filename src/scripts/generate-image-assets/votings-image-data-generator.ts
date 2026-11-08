@@ -60,7 +60,7 @@ export class VotingsImageDataGenerator {
           motionType: sessionVoting.votingSubject.type || 'Sonstige',
           motionId: sessionVoting.votingSubject.motionId,
           subjectTitle: sessionVoting.votingSubject.title,
-          accepted: votingAccepted(sessionVoting),
+          accepted: votingAccepted(parliamentPeriod, sessionVoting),
           votes,
         };
       });

@@ -9,6 +9,7 @@ import { getPaperId, getVotingPaperMap } from '../../../../_helpers2';
 import MetaTags from '@components/MetaTags.astro';
 import { getVideoTimestampAsSeconds } from '@utils/session-utils';
 import { getVoteCounts, votingAccepted } from '@models/voting-breakdown';
+import { majorityRequirementDisplayNames } from '@models/session-scan';
 
 export const getStaticPaths = getParliamentPeriodWithSessionAndVotingPaths;
 
@@ -79,7 +80,12 @@ const youtubeUrl = `${sessionInput.session.youtubeUrl}?t=${getVideoTimestampAsSe
 
 const { J: votedFor, N: votedAgainst, E: abstentions } = getVoteCounts(voting);
 const totalVotes = votedFor + votedAgainst + abstentions;
-const accepted = votingAccepted(voting);
+const accepted = votingAccepted(parliamentPeriod, voting);
+const majorityRequirement = voting.majorityRequirement ?? 'simple';
+const qualifiedMajorityRequirementName =
+  majorityRequirement === 'simple'
+    ? undefined
+    : majorityRequirementDisplayNames[majorityRequirement];
 ---
 
 <PageLayout
@@ -167,6 +173,11 @@ const accepted = votingAccepted(voting);
                 <span class="iconify lucide--x" />
                 Abgelehnt
               </div>
+            )}
+            {qualifiedMajorityRequirementName && (
+              <p class="text-xs text-base-content/60 text-center mt-2">
+                {qualifiedMajorityRequirementName}
+              </p>
             )}
           </div>
         </div>
