@@ -167,6 +167,42 @@ describe('Generating paper votings', () => {
     expect(votingsOf(111)[0].accepted).toBe(false);
   });
 
+  it('marks a voting without a scanned majority requirement as simple majority', async () => {
+    givenPeriods([periodWithVotes([vote('Supporter', 'J')])]);
+
+    await runGeneration();
+
+    expect(votingsOf(111)[0].majorityRequirement).toEqual('simple');
+  });
+
+  it('rejects a voting with more yes than no votes that misses a two-thirds majority of present members', async () => {
+    const votingOfFourPresentMembers = {
+      ...scan('2024-07-08-001.png', '1.1', [
+        vote('Supporter', 'J'),
+        vote('Second Supporter', 'J'),
+        vote('Opposer', 'N'),
+      ]),
+      majorityRequirement: 'two-thirds-of-present',
+      presentMembers: 4,
+    } satisfies SessionScanItem;
+    givenPeriods([
+      period(PERIOD_8, {
+        votingPaperMap: { '2024-07-08': { '1.1': 111 } },
+        sessionScansByDate: { '2024-07-08': [votingOfFourPresentMembers] },
+        persons: [
+          person('Supporter', 'faction-1'),
+          person('Second Supporter', 'faction-1'),
+          person('Opposer', 'faction-1'),
+        ],
+      }),
+    ]);
+
+    await runGeneration();
+
+    expect(votingsOf(111)[0].majorityRequirement).toEqual('two-thirds-of-present');
+    expect(votingsOf(111)[0].accepted).toBe(false);
+  });
+
   it('carries the scanned subject through to the asset', async () => {
     givenPeriods([
       period(PERIOD_8, {

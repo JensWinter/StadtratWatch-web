@@ -1,3 +1,4 @@
+import type { MajorityRequirement } from './session-scan.ts';
 import type { VoteCounts, VotesByFaction } from './voting-breakdown.ts';
 
 export type PaperVotingItem = {
@@ -8,6 +9,7 @@ export type PaperVotingItem = {
   agendaItem: string;
   title: string;
   type: string;
+  majorityRequirement: MajorityRequirement;
   accepted: boolean;
   counts: VoteCounts;
   votesByFactions: VotesByFaction[];

@@ -21,6 +21,7 @@ function paperVotingItem(
     agendaItem: '12.6',
     title: 'Ein Antrag',
     type: 'Antrag',
+    majorityRequirement: 'simple',
     accepted: true,
     counts: { J: 30, N: 10, E: 2, O: 5 },
     votesByFactions: [],
