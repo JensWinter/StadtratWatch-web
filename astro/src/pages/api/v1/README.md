@@ -167,8 +167,15 @@ Gibt alle Abstimmungen einer spezifischen Stadtratssitzung zurück.
         {
           "personId": "person-456",
           "vote": "no"
+        },
+        {
+          "personId": "person-789",
+          "vote": "yes"
         }
-      ]
+      ],
+      "majorityRequirement": "simple",
+      "presentMembers": null,
+      "result": "accepted"
     }
   ]
 }
@@ -180,6 +187,18 @@ Gibt alle Abstimmungen einer spezifischen Stadtratssitzung zurück.
 - `videoTimestamp`: Zeitstempel im Video in Sekunden
 - `votingSubject`: Beschreibung des Abstimmungsthemas
 - `votes`: Array mit den einzelnen Stimmen
+- `majorityRequirement`: Mehrheitserfordernis der Abstimmung, immer gesetzt. Standard ist `"simple"`, wenn kein anderes Erfordernis erfasst ist. Mögliche Werte:
+  - `simple`: Einfache Mehrheit
+  - `majority-of-present`: Mehrheit der anwesenden Mitglieder
+  - `two-thirds-of-present`: Zwei Drittel der anwesenden Mitglieder
+  - `majority-of-members`: Mehrheit der Mitglieder
+  - `two-thirds-of-members`: Zwei Drittel der Mitglieder
+  - `three-quarters-of-members`: Drei Viertel der Mitglieder
+
+  Mitglieder meint die gesetzliche Mitgliederzahl, also alle Sitze im Stadtrat einschließlich der Oberbürgermeisterin. Ein unbesetzter Sitz senkt sie nicht.
+
+- `presentMembers`: Zahl der anwesenden Mitglieder („Anwesend“ auf dem Abstimmungsbildschirm) oder `null`, wo sie nicht erfasst ist. Bei `majority-of-present` und `two-thirds-of-present` ist sie immer gesetzt. Bei den anderen Mehrheitserfordernissen kann sie gesetzt sein, geht dann aber nicht in das Ergebnis ein.
+- `result`: Abstimmungsergebnis, `"accepted"` (angenommen) oder `"rejected"` (abgelehnt). Es wird aus den Stimmen, dem Mehrheitserfordernis und dessen Bezugsgröße berechnet.
 
 **Abstimmungsoptionen:**
 
