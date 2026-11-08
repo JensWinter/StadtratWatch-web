@@ -23,7 +23,6 @@ export const majorityRequirements = [
 
 export type MajorityRequirement = (typeof majorityRequirements)[number];
 
-// Without a majorityRequirement a voting needs the simple majority.
 export function getMajorityRequirement(
   voting: SessionScanItem,
 ): MajorityRequirement {
