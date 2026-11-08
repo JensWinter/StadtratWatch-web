@@ -331,4 +331,41 @@ describe('MotionsSuccess', () => {
 
     assert.equal(motionsSuccessRate, 0.75);
   });
+
+  test('counts a motion as rejected when it missed the two-thirds majority despite more yes than no votes', () => {
+    const sessions: SessionInput[] = [
+      {
+        session: session1,
+        votings: [
+          {
+            votingFilename: 'voting-1',
+            videoTimestamp: '00:00:00',
+            votingSubject: {
+              agendaItem: 'Agenda Item 1',
+              motionId: 'motion-1',
+              title: 'Motion 1',
+              type: 'Tagesordnung',
+              authors: [faction1.name],
+            },
+            majorityRequirement: 'two-thirds-of-present',
+            presentMembers: 4,
+            votes: [
+              { name: 'Member 1', vote: 'J' },
+              { name: 'Member 2', vote: 'J' },
+              { name: 'Member 3', vote: 'N' },
+            ],
+          },
+        ],
+        speeches: [],
+      },
+    ];
+
+    const motionsSuccessRate = calcMotionsSuccessRateOfFaction(
+      registry,
+      faction1,
+      sessions,
+    );
+
+    assert.equal(motionsSuccessRate, 0);
+  });
 });

@@ -1,11 +1,13 @@
 import { describe, expect, test } from 'vitest';
 import {
   calcVotingSuccessRateOfFaction,
+  calcVotingSuccessRateOfParty,
   calcVotingSuccessRateOfPerson,
 } from '@data-analysis/VotingSuccess.ts';
 import type {
   Registry,
   RegistryFaction,
+  RegistryParty,
   RegistryPerson,
 } from '@models/registry.ts';
 import type { SessionInput } from '@models/SessionInput.ts';
@@ -18,8 +20,17 @@ const otherFaction: RegistryFaction = {
   seats: 2,
 };
 
+const party: RegistryParty = { id: 'p', name: 'Party', seats: 4 };
+
 function createPerson(name: string, factionId: string): RegistryPerson {
-  return { id: name, name, factionId, partyId: 'p', start: null, end: null };
+  return {
+    id: name,
+    name,
+    factionId,
+    partyId: party.id,
+    start: null,
+    end: null,
+  };
 }
 
 const alice = createPerson('Alice', faction.id);
@@ -32,7 +43,7 @@ const registry: Registry = {
   name: 'Stadtrat Magdeburg 8',
   lastUpdate: '2024-07-08',
   sessions: [],
-  parties: [],
+  parties: [party],
   factions: [faction, otherFaction],
   persons: [alice, bob, carol, dave],
 };
@@ -51,6 +62,17 @@ function createVoting(votes: SessionScanVote[]): SessionScanItem {
     votes,
   };
 }
+
+const votingWithMoreYesThanNoMissingTwoThirdsOfPresent: SessionScanItem = {
+  ...createVoting([
+    { name: 'Alice', vote: 'J' },
+    { name: 'Bob', vote: 'J' },
+    { name: 'Carol', vote: 'N' },
+    { name: 'Dave', vote: 'E' },
+  ]),
+  majorityRequirement: 'two-thirds-of-present',
+  presentMembers: 4,
+};
 
 function createSessions(votings: SessionScanItem[]): SessionInput[] {
   return [
@@ -115,6 +137,24 @@ describe('calcVotingSuccessRateOfPerson', () => {
 
     expect(calcVotingSuccessRateOfPerson(registry, alice, sessions)).toBe(0);
   });
+
+  describe('on a voting that missed the two-thirds majority', () => {
+    const sessions = createSessions([
+      votingWithMoreYesThanNoMissingTwoThirdsOfPresent,
+    ]);
+
+    test('counts a yes vote as failure', () => {
+      expect(calcVotingSuccessRateOfPerson(registry, alice, sessions)).toBe(0);
+    });
+
+    test('counts a no vote as success', () => {
+      expect(calcVotingSuccessRateOfPerson(registry, carol, sessions)).toBe(1);
+    });
+
+    test('counts an abstention as failure', () => {
+      expect(calcVotingSuccessRateOfPerson(registry, dave, sessions)).toBe(0);
+    });
+  });
 });
 
 describe('calcVotingSuccessRateOfFaction', () => {
@@ -166,5 +206,33 @@ describe('calcVotingSuccessRateOfFaction', () => {
     ]);
 
     expect(calcVotingSuccessRateOfFaction(registry, faction, sessions)).toBe(0);
+  });
+
+  describe('on a voting that missed the two-thirds majority', () => {
+    const sessions = createSessions([
+      votingWithMoreYesThanNoMissingTwoThirdsOfPresent,
+    ]);
+
+    test('counts a faction voting yes unanimously as failure', () => {
+      expect(calcVotingSuccessRateOfFaction(registry, faction, sessions)).toBe(
+        0,
+      );
+    });
+
+    test('counts a faction voting no as success', () => {
+      expect(
+        calcVotingSuccessRateOfFaction(registry, otherFaction, sessions),
+      ).toBe(1);
+    });
+  });
+});
+
+describe('calcVotingSuccessRateOfParty', () => {
+  test('takes the party position from the majority of its yes and no votes, without the two-thirds requirement', () => {
+    const sessions = createSessions([
+      votingWithMoreYesThanNoMissingTwoThirdsOfPresent,
+    ]);
+
+    expect(calcVotingSuccessRateOfParty(registry, party, sessions)).toBe(0);
   });
 });
