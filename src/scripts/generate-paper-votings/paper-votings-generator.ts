@@ -1,7 +1,7 @@
 import { toPaperBatchNo } from '@srw-astro/models/paper-batch';
 import type { PaperVotingItem, PaperVotingsDto } from '@srw-astro/models/paper-votings';
 import type { Registry } from '@srw-astro/models/registry';
-import type { SessionScanItem } from '@srw-astro/models/session-scan';
+import { getMajorityRequirement, type SessionScanItem } from '@srw-astro/models/session-scan';
 import { getVoteCounts, getVotesByFactions, getVotingId, votingAccepted } from '@srw-astro/models/voting-breakdown';
 
 import type { PaperVotingsAssetDto } from './model.ts';
@@ -52,6 +52,7 @@ export class PaperVotingsGenerator {
       agendaItem: scan.votingSubject.agendaItem,
       title: scan.votingSubject.title,
       type: scan.votingSubject.type || '',
+      majorityRequirement: getMajorityRequirement(scan),
       accepted: votingAccepted(registry, scan),
       counts: getVoteCounts(scan),
       votesByFactions: getVotesByFactions(registry, scan.votes),
