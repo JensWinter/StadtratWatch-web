@@ -102,9 +102,6 @@ export function votingAccepted(
   }
 }
 
-// The Oberbürgermeisterin is registered as a one-seat faction, so the faction
-// seats add up to the statutory member count. Seats stay with their faction while
-// vacant, which matches the rule that a vacant seat does not lower the count.
 function getStatutoryMemberCount(parliamentPeriod: Registry): number {
   return parliamentPeriod.factions.reduce(
     (memberCount, faction) => memberCount + faction.seats,

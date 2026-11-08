@@ -63,7 +63,7 @@ B }o--|| D
 | Politische Partei mit Sitzanzahl. Kann über `additionalInformation` eine belegte verfassungsschutzrechtliche Einstufung tragen.
 
 | *Abstimmung*
-| Ergebnis einer namentlichen Abstimmung zu einem Tagesordnungspunkt, mit Abstimmungsgegenstand (Titel, Antrag/Vorlage, Antragsteller) und Video-Zeitstempel. Optional trägt sie ein _Mehrheitserfordernis_ (`majorityRequirement`, einer von sechs Werten: `simple`, `majority-of-present`, `two-thirds-of-present`, `majority-of-members`, `two-thirds-of-members`, `three-quarters-of-members`; ohne Angabe gilt die einfache Mehrheit) und die Zahl der _anwesenden Mitglieder_ (`presentMembers`, die Zahl „Anwesend“ vom Abstimmungsbildschirm). Beide Felder stehen im Session-Scan.
+| Ergebnis einer namentlichen Abstimmung zu einem Tagesordnungspunkt, mit Abstimmungsgegenstand (Titel, Antrag/Vorlage, Antragsteller) und Video-Zeitstempel. Optional trägt sie ein _Mehrheitserfordernis_ (ohne Angabe die einfache Mehrheit) und die Zahl der _anwesenden Mitglieder_ vom Abstimmungsbildschirm.
 
 | *Votum*
 | Stimmabgabe einer Person zu einer Abstimmung (Ja, Nein, Enthaltung, nicht abgestimmt).
@@ -74,7 +74,7 @@ B }o--|| D
 
 == Abstimmungsergebnis berechnen
 
-Das _Abstimmungsergebnis_ (angenommen oder abgelehnt) an einer Stelle der geteilten Modelle aus den Stimmen, dem Mehrheitserfordernis und seiner Bezugsgröße berechnet. Website, Skripte und Auswertungen lesen dieses berechnete Ergebnis. Weicht es von der Niederschrift ab, wird eine Eingabe korrigiert (Stimmen, `presentMembers` oder `majorityRequirement`).
+Das _Abstimmungsergebnis_ (angenommen oder abgelehnt) wird an einer Stelle der geteilten Modelle aus den Stimmen, dem Mehrheitserfordernis und seiner Bezugsgröße berechnet. Website, Skripte und Auswertungen lesen dieses berechnete Ergebnis. Weicht es von der Niederschrift ab, wird eine Eingabe korrigiert (Stimmen, `presentMembers` oder `majorityRequirement`).
 
 [cols="2,4",options="header"]
 |===

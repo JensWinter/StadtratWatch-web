@@ -27,10 +27,10 @@ export function calcMotionsSuccessRateOfFaction(
   const votingGroupsResults = Array.from(Object.values(groupedVotings))
     .map((votings) => votings!)
     .map((votings) => {
-      const votingsPassed = votings.filter((voting) =>
+      const votingsAccepted = votings.filter((voting) =>
         votingAccepted(parliamentPeriod, voting),
       );
-      return votingsPassed.length / votings.length;
+      return votingsAccepted.length / votings.length;
     });
 
   return votingGroupsResults.length === 0
