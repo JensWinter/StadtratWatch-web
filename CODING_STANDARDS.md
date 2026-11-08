@@ -5,6 +5,11 @@ Rules the reviewer applies to a diff. Conventions in `AGENTS.md` (Code Conventio
 ## Documentation
 
 - **Removals delete their mentions.** When a change removes a file, folder or step, delete every mention of it from the docs. Notes that only explain an absence ("X is not in `data/`", "do not commit X") are findings.
+- **arc42 names concepts and decisions.** Details like value lists, descriptions of validation rules and concrete error messages that the code holds stay in the code.
+
+## Domain data
+
+- **Council facts come from the period's data.** Read numbers that belong to a parliament period (member count, seats) from `data/{period}/registry.json`. Don't use hard-coded constants.
 
 ## Naming
 

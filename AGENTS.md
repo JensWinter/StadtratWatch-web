@@ -31,6 +31,7 @@ npm run preview         # Preview production build
 npm run format          # Format code with Prettier
 npm run format:check    # Check formatting
 npm test                # Run Vitest tests
+npm run check           # Type-check (astro check)
 ```
 
 ### Deno Scripts

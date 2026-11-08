@@ -9,7 +9,8 @@
     "astro": "astro",
     "format": "prettier --config .prettierrc src/ --write",
     "format:check": "prettier --config .prettierrc src/ --check",
-    "test": "vitest"
+    "test": "vitest",
+    "check": "astro check"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^1.0.0",
