@@ -38,3 +38,5 @@ Pipeline und Web-Anwendung liegen in einem Monorepo und teilen sich dieselben ge
 == Fortschreibung
 
 *14.10.2026:* Mit dem Wechsel der Pipeline von Deno zu Bun (<<adr-0007,ADR-0007>>) wird `@srw-astro/models` von einem Deno-Workspace-Paket zu einem Bun-Workspace-Paket. Name, Einstiegspunkte und Importe in `src/` bleiben unverändert. Neu festgehalten ist, dass die geteilten Modelle keine Bun-eigenen APIs nutzen. Bis die Umstellung abgeschlossen ist, bleibt der Deno-Workspace in Betrieb. Entschieden in https://github.com/JensWinter/StadtratWatch-web/issues/540[#540], Teil von https://github.com/JensWinter/StadtratWatch-web/issues/530[#530].
+
+*08.11.2026:* Auch das Prüfwerkzeug `session-review` bindet `@srw-astro/models` ein und hat keine eigene Kopie der Session-Scan-Typen mehr. Umgesetzt in https://github.com/JensWinter/StadtratWatch-web/issues/631[#631].

@@ -1,8 +1,8 @@
-import type { Voting } from '../../types';
+import type { SessionScanItem } from '@srw-astro/models/session-scan';
 import type { VotingsAction } from './votingsReducer';
 
 interface Props {
-  voting: Voting;
+  voting: SessionScanItem;
   dispatch: (action: VotingsAction) => void;
 }
 

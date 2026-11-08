@@ -1,8 +1,8 @@
-import type { Voting } from '../../types';
+import type { SessionScanItem } from '@srw-astro/models/session-scan';
 import styles from '../../components/SelectionList.module.css';
 
 interface Props {
-  votings: Voting[];
+  votings: SessionScanItem[];
   selectedIndex: number;
   onSelect: (index: number) => void;
 }

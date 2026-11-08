@@ -1,4 +1,5 @@
-import type { Voting, SessionConfig } from '../../types';
+import type { SessionScanItem } from '@srw-astro/models/session-scan';
+import type { SessionConfig } from '../../types';
 import type { VotingsAction } from './votingsReducer';
 import { timestampToSeconds } from '../../utils/time';
 import {
@@ -9,7 +10,7 @@ import {
 } from '../../constants/domain';
 
 interface Props {
-  voting: Voting;
+  voting: SessionScanItem;
   config: SessionConfig;
   dispatch: (action: VotingsAction) => void;
 }
@@ -62,7 +63,7 @@ export function VotingInfo({ voting, config, dispatch }: Props) {
           Typ
           <br />
           <select
-            value={voting.votingSubject.type}
+            value={voting.votingSubject.type ?? ''}
             onChange={(e) => dispatch({ type: 'setType', value: e.target.value })}
           >
             <option value=""></option>

@@ -13,7 +13,9 @@ versuchen, diese Fehler automatisch zu korrigieren, setzt die Architektur auf ei
 *menschliche Sichtung und Korrektur* mit anschließender expliziter Freigabe.
 Sichtung und Korrektur erfolgen mit dem separaten Prüfwerkzeug `session-review`,
 das die erkannten Voten, Tagesordnungspunkte und Drucksachennummern darstellt und
-manuell korrigierbar macht. Wo das nicht genügt, ergänzen den Ablauf:
+manuell korrigierbar macht. Dort werden je Abstimmung auch Mehrheitserfordernis und
+Anwesend gesetzt; das Werkzeug zeigt das daraus berechnete Abstimmungsergebnis zum
+Abgleich mit der Niederschrift. Wo das nicht genügt, ergänzen den Ablauf:
 
 * Anpassen der *Scan-Config* (Bildregionen) und erneuter Lauf von
   `scan-voting-images`, und
