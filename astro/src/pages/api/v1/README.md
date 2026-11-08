@@ -168,7 +168,10 @@ Gibt alle Abstimmungen einer spezifischen Stadtratssitzung zurück.
           "personId": "person-456",
           "vote": "no"
         }
-      ]
+      ],
+      "majorityRequirement": "simple",
+      "presentMembers": null,
+      "result": "accepted"
     }
   ]
 }
@@ -180,6 +183,9 @@ Gibt alle Abstimmungen einer spezifischen Stadtratssitzung zurück.
 - `videoTimestamp`: Zeitstempel im Video in Sekunden
 - `votingSubject`: Beschreibung des Abstimmungsthemas
 - `votes`: Array mit den einzelnen Stimmen
+- `majorityRequirement`: Mehrheitserfordernis der Abstimmung, immer gesetzt. Standard ist `"simple"`, wenn kein anderes Erfordernis erfasst ist.
+- `presentMembers`: Zahl der anwesenden Mitglieder („Anwesend“ auf dem Abstimmungsbildschirm) oder `null`, wo sie nicht erfasst ist. Bei `majority-of-present` und `two-thirds-of-present` ist sie immer gesetzt.
+- `result`: Abstimmungsergebnis, `"accepted"` (angenommen) oder `"rejected"` (abgelehnt). Es wird aus den Stimmen, dem Mehrheitserfordernis und dessen Bezugsgröße berechnet.
 
 **Abstimmungsoptionen:**
 
@@ -187,6 +193,19 @@ Gibt alle Abstimmungen einer spezifischen Stadtratssitzung zurück.
 - `no`: Nein-Stimme
 - `abstain`: Enthaltung
 - `no_show`: Nicht abgestimmt
+
+**Mehrheitserfordernisse:**
+
+Die gesetzliche Mitgliederzahl ist die Zahl aller Sitze im Stadtrat, einschließlich der Oberbürgermeisterin. Ein unbesetzter Sitz senkt sie nicht.
+
+| Wert                        | Bedeutung                              | Angenommen, wenn                                                                |
+| --------------------------- | -------------------------------------- | ------------------------------------------------------------------------------- |
+| `simple`                    | Einfache Mehrheit                      | mehr Ja- als Nein-Stimmen; Enthaltungen zählen nicht, Gleichstand ist abgelehnt |
+| `majority-of-present`       | Mehrheit der anwesenden Mitglieder     | Ja-Stimmen > Hälfte von `presentMembers`                                        |
+| `two-thirds-of-present`     | Zwei Drittel der anwesenden Mitglieder | Ja-Stimmen ≥ zwei Drittel von `presentMembers`                                  |
+| `majority-of-members`       | Mehrheit der Mitglieder                | Ja-Stimmen > Hälfte der gesetzlichen Mitgliederzahl                             |
+| `two-thirds-of-members`     | Zwei Drittel der Mitglieder            | Ja-Stimmen ≥ zwei Drittel der gesetzlichen Mitgliederzahl                       |
+| `three-quarters-of-members` | Drei Viertel der Mitglieder            | Ja-Stimmen ≥ drei Viertel der gesetzlichen Mitgliederzahl                       |
 
 ## Fehlerbehandlung
 

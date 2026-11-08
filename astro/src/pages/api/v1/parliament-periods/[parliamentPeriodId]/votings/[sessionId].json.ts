@@ -3,7 +3,7 @@ import { generateMeta } from '../../../_helpers.ts';
 import { getEntry } from 'astro:content';
 import { getVideoTimestampAsSeconds } from '@utils/session-utils.ts';
 import type { Registry, RegistrySession } from '@models/registry.ts';
-import { getVotingId } from '@models/voting-breakdown.ts';
+import { getVotingId, votingAccepted } from '@models/voting-breakdown.ts';
 import type { VoteCode } from '@models/Session.ts';
 
 export const getStaticPaths = async () => {
@@ -64,6 +64,9 @@ export async function GET({
       personId: personsMap.get(vote.name)?.id,
       vote: apiVoteByVoteCode[vote.vote],
     })),
+    majorityRequirement: scan.majorityRequirement ?? 'simple',
+    presentMembers: scan.presentMembers ?? null,
+    result: votingAccepted(parliamentPeriod, scan) ? 'accepted' : 'rejected',
   }));
 
   const response = {
