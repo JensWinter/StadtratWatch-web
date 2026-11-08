@@ -49,7 +49,9 @@ export function getQualifiedMajorityRequirementName(
     : majorityRequirementDisplayNames[majorityRequirement];
 }
 
-function isMajorityRequirement(value: string): value is MajorityRequirement {
+export function isMajorityRequirement(
+  value: string,
+): value is MajorityRequirement {
   return (majorityRequirements as readonly string[]).includes(value);
 }
 

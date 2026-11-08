@@ -1,6 +1,6 @@
 import { useEffect, useReducer } from 'react';
 import { useParams } from 'react-router-dom';
-import type { Voting } from '../../types';
+import type { SessionScanItem } from '@srw-astro/models/session-scan';
 import { env } from '../../constants/env';
 import { useSessionData } from '../../hooks/useSessionData';
 import { StatusGate } from '../../components/StatusGate';
@@ -10,13 +10,15 @@ import { VotingSelection } from './VotingSelection';
 import { VotesCheck } from './VotesCheck';
 import { TextCheck } from './TextCheck';
 import { VotingInfo } from './VotingInfo';
+import { VotingResultCheck } from './voting-result-check';
+import { findParliamentPeriodOfSession } from '../../data/parliament-periods';
 
 const dataUrl = (date: string) =>
   `${env.awsCloudFrontSessionsScanResultsRedactedBaseFolder}/session-scan-${date}.json`;
 
 export function VotingsRoute() {
   const { sessionDate } = useParams();
-  const { loading, error, data, config } = useSessionData<Voting[]>(sessionDate, dataUrl);
+  const { loading, error, data, config } = useSessionData<SessionScanItem[]>(sessionDate, dataUrl);
 
   const [state, dispatch] = useReducer(votingsReducer, initialVotingsState);
 
@@ -25,6 +27,7 @@ export function VotingsRoute() {
   }, [data]);
 
   const selected = state.votings[state.selectedIndex] ?? null;
+  const parliamentPeriod = sessionDate ? findParliamentPeriodOfSession(sessionDate) : undefined;
 
   function save() {
     if (!sessionDate) return;
@@ -47,6 +50,7 @@ export function VotingsRoute() {
             <div style={{ display: 'flex', flexDirection: 'row' }}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <VotesCheck sessionDate={sessionDate} voting={selected} config={config} />
+                <VotingResultCheck voting={selected} parliamentPeriod={parliamentPeriod} dispatch={dispatch} />
                 <TextCheck key={state.selectedIndex} voting={selected} dispatch={dispatch} />
               </div>
               <div style={{ width: 300 }}>

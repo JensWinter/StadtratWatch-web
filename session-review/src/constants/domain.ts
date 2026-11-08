@@ -1,4 +1,4 @@
-import type { Vote } from '../types';
+import type { VoteCode } from '@srw-astro/models/session';
 
 // Subject classification types (voting-info <select> Typ).
 export const VOTING_TYPES = [
@@ -80,7 +80,7 @@ export const CHAIR_PERSONS = [
   'Stephan Bublitz',
 ] as const;
 
-export function voteColor(vote: Vote): string {
+export function voteColor(vote: VoteCode): string {
   if (vote === 'J') return 'green';
   if (vote === 'N') return 'red';
   if (vote === 'E') return 'yellow';

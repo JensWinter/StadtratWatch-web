@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import type { Voting, SessionConfig, ConfigName, NamesColumn } from '../../types';
+import type { SessionScanItem } from '@srw-astro/models/session-scan';
+import type { SessionConfig, ConfigName, NamesColumn } from '../../types';
 import { env } from '../../constants/env';
 import { voteColor } from '../../constants/domain';
 
 interface Props {
   sessionDate: string;
-  voting: Voting;
+  voting: SessionScanItem;
   config: SessionConfig;
 }
 

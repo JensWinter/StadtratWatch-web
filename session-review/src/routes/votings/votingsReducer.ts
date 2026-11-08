@@ -1,20 +1,22 @@
 import { produce } from 'immer';
-import type { Voting } from '../../types';
+import type { MajorityRequirement, SessionScanItem } from '@srw-astro/models/session-scan';
 
 export interface VotingsState {
-  votings: Voting[];
+  votings: SessionScanItem[];
   selectedIndex: number;
 }
 
 export type VotingsAction =
-  | { type: 'init'; votings: Voting[] }
+  | { type: 'init'; votings: SessionScanItem[] }
   | { type: 'select'; index: number }
   | { type: 'setTimestamp'; value: string }
   | { type: 'setAgendaItem'; value: string }
   | { type: 'setMotionId'; value: string }
   | { type: 'setTitle'; value: string }
   | { type: 'setType'; value: string }
-  | { type: 'toggleAuthor'; author: string };
+  | { type: 'toggleAuthor'; author: string }
+  | { type: 'setMajorityRequirement'; value: MajorityRequirement | undefined }
+  | { type: 'setPresentMembers'; value: number | undefined };
 
 export const initialVotingsState: VotingsState = { votings: [], selectedIndex: -1 };
 
@@ -52,6 +54,16 @@ export const votingsReducer = produce(
         else authors.splice(at, 1);
         break;
       }
+      case 'setMajorityRequirement':
+        if (!current) break;
+        if (action.value === undefined) delete current.majorityRequirement;
+        else current.majorityRequirement = action.value;
+        break;
+      case 'setPresentMembers':
+        if (!current) break;
+        if (action.value === undefined) delete current.presentMembers;
+        else current.presentMembers = action.value;
+        break;
     }
   },
 );
