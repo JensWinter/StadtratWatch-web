@@ -29,7 +29,10 @@ export function getMajorityRequirement(
   return voting.majorityRequirement ?? 'simple';
 }
 
-const majorityRequirementDisplayNames: Record<MajorityRequirement, string> = {
+export const majorityRequirementDisplayNames: Record<
+  MajorityRequirement,
+  string
+> = {
   simple: 'Einfache Mehrheit',
   'majority-of-present': 'Mehrheit der anwesenden Mitglieder',
   'two-thirds-of-present': 'Zwei Drittel der anwesenden Mitglieder',
