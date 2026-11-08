@@ -41,6 +41,14 @@ export const majorityRequirementDisplayNames: Record<
   'three-quarters-of-members': 'Drei Viertel der Mitglieder',
 };
 
+export function getQualifiedMajorityRequirementName(
+  majorityRequirement: MajorityRequirement,
+): string | undefined {
+  return majorityRequirement === 'simple'
+    ? undefined
+    : majorityRequirementDisplayNames[majorityRequirement];
+}
+
 function isMajorityRequirement(value: string): value is MajorityRequirement {
   return (majorityRequirements as readonly string[]).includes(value);
 }

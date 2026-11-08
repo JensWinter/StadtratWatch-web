@@ -2,8 +2,9 @@ import { describe, expect, it } from 'bun:test';
 
 import type { Registry } from '@srw-astro/models/registry';
 import type { SessionInput } from '@srw-astro/models/session-input';
-import type { SessionScanVote } from '@srw-astro/models/session-scan';
+import type { SessionScanItem, SessionScanVote } from '@srw-astro/models/session-scan';
 
+import type { Voting } from './model.ts';
 import { VotingsImageDataGenerator } from './votings-image-data-generator.ts';
 
 const registry: Registry = {
@@ -23,7 +24,9 @@ const registry: Registry = {
   })),
 };
 
-function createSessionInput(votes: SessionScanVote[]): SessionInput {
+type MajorityFields = Pick<SessionScanItem, 'majorityRequirement' | 'presentMembers'>;
+
+function createSessionInput(votes: SessionScanVote[], majorityFields: MajorityFields = {}): SessionInput {
   return {
     session: {
       id: '2024-07-08',
@@ -39,15 +42,22 @@ function createSessionInput(votes: SessionScanVote[]): SessionInput {
         videoTimestamp: '00:10:00',
         votingSubject: { agendaItem: '1', motionId: 'A1', title: 'Ein Antrag', type: 'Antrag', authors: [] },
         votes,
+        ...majorityFields,
       },
     ],
     speeches: [],
   };
 }
 
+function generateVoting(votes: SessionScanVote[], majorityFields?: MajorityFields): Voting | undefined {
+  const [voting] = new VotingsImageDataGenerator().generateVotingsImageData(registry, [
+    createSessionInput(votes, majorityFields),
+  ]);
+  return voting;
+}
+
 function generateAccepted(votes: SessionScanVote[]): boolean | undefined {
-  const [voting] = new VotingsImageDataGenerator().generateVotingsImageData(registry, [createSessionInput(votes)]);
-  return voting?.accepted;
+  return generateVoting(votes)?.accepted;
 }
 
 describe('VotingsImageDataGenerator', () => {
@@ -69,5 +79,22 @@ describe('VotingsImageDataGenerator', () => {
         { name: 'Carol', vote: 'E' },
       ]),
     ).toBe(false);
+  });
+
+  it('marks a two-thirds voting with more yes than no votes as rejected when the yes votes miss the threshold', () => {
+    const voting = generateVoting(
+      [
+        { name: 'Alice', vote: 'J' },
+        { name: 'Bob', vote: 'J' },
+        { name: 'Carol', vote: 'N' },
+      ],
+      { majorityRequirement: 'two-thirds-of-present', presentMembers: 4 },
+    );
+    expect(voting?.accepted).toBe(false);
+    expect(voting?.majorityRequirement).toBe('two-thirds-of-present');
+  });
+
+  it('assumes the simple majority for a voting without a majority requirement', () => {
+    expect(generateVoting([{ name: 'Alice', vote: 'J' }])?.majorityRequirement).toBe('simple');
   });
 });

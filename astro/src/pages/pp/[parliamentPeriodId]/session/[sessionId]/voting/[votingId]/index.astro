@@ -11,7 +11,7 @@ import { getVideoTimestampAsSeconds } from '@utils/session-utils';
 import { getVoteCounts, votingAccepted } from '@models/voting-breakdown';
 import {
   getMajorityRequirement,
-  majorityRequirementDisplayNames,
+  getQualifiedMajorityRequirementName,
 } from '@models/session-scan';
 
 export const getStaticPaths = getParliamentPeriodWithSessionAndVotingPaths;
@@ -84,11 +84,9 @@ const youtubeUrl = `${sessionInput.session.youtubeUrl}?t=${getVideoTimestampAsSe
 const { J: votedFor, N: votedAgainst, E: abstentions } = getVoteCounts(voting);
 const totalVotes = votedFor + votedAgainst + abstentions;
 const accepted = votingAccepted(parliamentPeriod, voting);
-const majorityRequirement = getMajorityRequirement(voting);
-const qualifiedMajorityRequirementName =
-  majorityRequirement === 'simple'
-    ? undefined
-    : majorityRequirementDisplayNames[majorityRequirement];
+const qualifiedMajorityRequirementName = getQualifiedMajorityRequirementName(
+  getMajorityRequirement(voting),
+);
 ---
 
 <PageLayout
