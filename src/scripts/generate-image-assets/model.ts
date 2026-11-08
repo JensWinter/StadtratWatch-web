@@ -1,3 +1,5 @@
+import type { MajorityRequirement } from '@srw-astro/models/session-scan';
+
 export type Voting = {
   sessionId: string;
   votingId: number;
@@ -6,6 +8,7 @@ export type Voting = {
   motionId: string;
   subjectTitle: string;
   accepted: boolean;
+  majorityRequirement: MajorityRequirement;
   votes: VotingPerFaction[];
 };
 

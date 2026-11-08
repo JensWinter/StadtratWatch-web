@@ -1,4 +1,5 @@
 import { type Canvas, createCanvas, GlobalFonts, type SKRSContext2D } from '@napi-rs/canvas';
+import { getQualifiedMajorityRequirementName } from '@srw-astro/models/session-scan';
 
 import type { Voting } from './model.ts';
 
@@ -18,6 +19,9 @@ const VOTED_AGAINST_FILL_COLOR = '#ED5642';
 const ABSTENTIONS_FILL_COLOR = '#DDDDDD';
 const TEXT_COLOR = '#DDDDDD';
 const TEXT_COLOR_DARK = '#3C3C3C';
+
+const VOTING_RESULT_HEIGHT = 170;
+const MAJORITY_REQUIREMENT_LINE_HEIGHT = 35;
 
 // A fallback font has different glyph widths and changes how about 5% of the subjects wrap.
 const REQUIRED_FONT_FAMILY = 'Verdana';
@@ -186,7 +190,11 @@ export class ImagesGenerator {
     const votedAgainst = voting.votes.reduce((sum, faction) => sum + faction.votesAgainst, 0);
     const abstentions = voting.votes.reduce((sum, faction) => sum + faction.abstentions, 0);
 
-    const canvas = createCanvas(COLUMN_WIDTH, 170);
+    const qualifiedMajorityRequirementName = getQualifiedMajorityRequirementName(voting.majorityRequirement);
+    const canvasHeight =
+      VOTING_RESULT_HEIGHT + (qualifiedMajorityRequirementName ? MAJORITY_REQUIREMENT_LINE_HEIGHT : 0);
+
+    const canvas = createCanvas(COLUMN_WIDTH, canvasHeight);
     const context = canvas.getContext('2d');
 
     this.drawVotesSummary(context, votedFor, 'Dafür', 80, VOTED_FOR_FILL_COLOR);
@@ -199,7 +207,18 @@ export class ImagesGenerator {
       this.drawTotalVotingSummary(context, 'Abgelehnt', VOTED_AGAINST_FILL_COLOR);
     }
 
+    if (qualifiedMajorityRequirementName) {
+      this.drawMajorityRequirement(context, qualifiedMajorityRequirementName);
+    }
+
     return canvas;
+  }
+
+  private drawMajorityRequirement(context: SKRSContext2D, text: string) {
+    context.font = '14pt Verdana';
+    context.fillStyle = TEXT_COLOR;
+    context.textAlign = 'center';
+    context.fillText(text, COLUMN_WIDTH / 2, VOTING_RESULT_HEIGHT + 28);
   }
 
   private drawVotesSummary(context: SKRSContext2D, votes: number, text: string, xCenter: number, fillColor: string) {

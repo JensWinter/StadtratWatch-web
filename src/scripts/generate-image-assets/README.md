@@ -3,8 +3,8 @@
 ## Purpose
 
 Reads a parliament period's `registry.json` and the reviewed `session-scan-{date}.json` of each session, and renders one
-PNG per voting (1200×630): subject, motion, result and the votes per faction. It runs once the votings are scanned and
-reviewed, as step 6 of the processing order (see [HOWTO](../../../docs/guides/HOWTO.md)).
+PNG per voting (1200×630): subject, motion, result and the votes per faction. A majority requirement other than the
+simple majority is named in a line under the result.
 
 ## Usage
 
