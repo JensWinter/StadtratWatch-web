@@ -184,7 +184,7 @@ Gibt alle Abstimmungen einer spezifischen Stadtratssitzung zurück.
 - `votingSubject`: Beschreibung des Abstimmungsthemas
 - `votes`: Array mit den einzelnen Stimmen
 - `majorityRequirement`: Mehrheitserfordernis der Abstimmung, immer gesetzt. Standard ist `"simple"`, wenn kein anderes Erfordernis erfasst ist.
-- `presentMembers`: Zahl der anwesenden Mitglieder („Anwesend“ auf dem Abstimmungsbildschirm) oder `null`, wo sie nicht erfasst ist. Bei `majority-of-present` und `two-thirds-of-present` ist sie immer gesetzt.
+- `presentMembers`: Zahl der anwesenden Mitglieder („Anwesend“ auf dem Abstimmungsbildschirm) oder `null`, wo sie nicht erfasst ist. Bei `majority-of-present` und `two-thirds-of-present` ist sie immer gesetzt. Bei den anderen Mehrheitserfordernissen kann sie gesetzt sein, geht dann aber nicht in das Ergebnis ein.
 - `result`: Abstimmungsergebnis, `"accepted"` (angenommen) oder `"rejected"` (abgelehnt). Es wird aus den Stimmen, dem Mehrheitserfordernis und dessen Bezugsgröße berechnet.
 
 **Abstimmungsoptionen:**

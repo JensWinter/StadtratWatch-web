@@ -5,6 +5,7 @@ import { getVideoTimestampAsSeconds } from '@utils/session-utils.ts';
 import type { Registry, RegistrySession } from '@models/registry.ts';
 import { getVotingId, votingAccepted } from '@models/voting-breakdown.ts';
 import type { VoteCode } from '@models/Session.ts';
+import { getMajorityRequirement } from '@models/session-scan.ts';
 
 export const getStaticPaths = async () => {
   const paths = await getStaticParliamentPeriodPaths();
@@ -64,7 +65,7 @@ export async function GET({
       personId: personsMap.get(vote.name)?.id,
       vote: apiVoteByVoteCode[vote.vote],
     })),
-    majorityRequirement: scan.majorityRequirement ?? 'simple',
+    majorityRequirement: getMajorityRequirement(scan),
     presentMembers: scan.presentMembers ?? null,
     result: votingAccepted(parliamentPeriod, scan) ? 'accepted' : 'rejected',
   }));

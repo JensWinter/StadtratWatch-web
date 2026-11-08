@@ -12,7 +12,6 @@ export type SessionScanItem = {
   presentMembers?: number;
 };
 
-// Without a majorityRequirement a voting needs the simple majority.
 export const majorityRequirements = [
   'simple',
   'majority-of-present',
@@ -23,6 +22,13 @@ export const majorityRequirements = [
 ] as const;
 
 export type MajorityRequirement = (typeof majorityRequirements)[number];
+
+// Without a majorityRequirement a voting needs the simple majority.
+export function getMajorityRequirement(
+  voting: SessionScanItem,
+): MajorityRequirement {
+  return voting.majorityRequirement ?? 'simple';
+}
 
 export const majorityRequirementDisplayNames: Record<
   MajorityRequirement,
