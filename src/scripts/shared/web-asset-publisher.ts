@@ -22,15 +22,6 @@ const CONTENT_TYPE_BY_EXTENSION: Record<string, string> = {
 };
 const DEFAULT_CONTENT_TYPE = 'application/octet-stream';
 
-/**
- * Above this many touched files, a publish invalidates the whole prefix with one wildcard path instead
- * of one path per file. CloudFront bills invalidation paths beyond 1,000 per month and counts a
- * wildcard as a single path, while a full re-render of a period touches thousands of files. Wiping the
- * prefix from the edge costs only origin re-fetches of files that did not change, which is cheap. At
- * 15 paths per publish, more than 60 publishes a month stay within the free quota.
- */
-export const MAX_INDIVIDUAL_INVALIDATION_PATHS = 15;
-
 /** A locally produced asset, addressed by the full S3 key it should occupy (prefix included). */
 export type LocalAsset = {
   key: string;
@@ -87,13 +78,15 @@ export type WebAssetPlan = {
 
 /**
  * Computes what to upload, delete and invalidate for an authoritative asset set against the current
- * remote inventory under `prefix`. An asset is uploaded when it is new or its content differs from the
- * remote ETag; a remote object is deleted when it is absent from the set (an orphan). Every upload and
- * delete must be invalidated, because those are the only keys whose cached bytes changed: each one by
- * its own path while there are few, the whole prefix by one wildcard once there are more than
- * `MAX_INDIVIDUAL_INVALIDATION_PATHS`.
+ * remote inventory. An asset is uploaded when it is new or its content differs from the remote ETag;
+ * a remote object is deleted when it is absent from the set (an orphan). Every upload and delete must
+ * be invalidated, because those are the only keys whose cached bytes changed. They are covered by a
+ * single path: the file itself when only one changed, otherwise a wildcard for the deepest folder
+ * holding all of them. CloudFront bills invalidation paths beyond 1,000 per month and counts a
+ * wildcard as one path, while a full re-render of a period touches thousands of files. A wider
+ * wildcard only makes the edge re-fetch unchanged files from S3, which is cheap.
  */
-function diffWebAssets(assets: LocalAsset[], remote: RemoteObject[], prefix: string): WebAssetPlan {
+function diffWebAssets(assets: LocalAsset[], remote: RemoteObject[]): WebAssetPlan {
   const remoteEtagByKey = new Map(remote.map((object) => [object.key, normalizeEtag(object.etag)]));
   const localKeys = new Set(assets.map((asset) => asset.key));
 
@@ -109,7 +102,7 @@ function diffWebAssets(assets: LocalAsset[], remote: RemoteObject[], prefix: str
   }
 
   const deletes = remote.map((object) => object.key).filter((key) => !localKeys.has(key));
-  const invalidations = invalidationPathsFor([...uploads, ...deletes], prefix);
+  const invalidations = invalidationPathsFor([...uploads, ...deletes]);
 
   return {
     uploads: uploads.toSorted((a, b) => a.localeCompare(b)),
@@ -131,7 +124,7 @@ export async function publishWebAssets(
   options: { dryRun?: boolean } = {},
 ): Promise<WebAssetPlan> {
   const remote = await operations.list(target.bucket, target.prefix);
-  const plan = diffWebAssets(assets, remote, target.prefix);
+  const plan = diffWebAssets(assets, remote);
 
   if (options.dryRun) {
     return plan;
@@ -284,16 +277,33 @@ function md5Hex(body: Uint8Array<ArrayBuffer>): string {
   return createHash('md5').update(body).digest('hex');
 }
 
-function invalidationPathsFor(touchedKeys: string[], prefix: string): string[] {
-  if (touchedKeys.length > MAX_INDIVIDUAL_INVALIDATION_PATHS) {
-    return [prefixWildcardPath(prefix)];
+function invalidationPathsFor(touchedKeys: string[]): string[] {
+  if (touchedKeys.length === 0) {
+    return [];
   }
-  return touchedKeys.map((key) => `/${key}`).toSorted((a, b) => a.localeCompare(b));
+  if (touchedKeys.length === 1) {
+    return [`/${touchedKeys[0]}`];
+  }
+  const commonFolder = deepestCommonFolder(touchedKeys);
+  return [commonFolder ? `/${commonFolder}/*` : '/*'];
 }
 
-function prefixWildcardPath(prefix: string): string {
-  const base = trimTrailingSlash(prefix);
-  return base ? `/${base}/*` : '/*';
+function deepestCommonFolder(keys: string[]): string {
+  const folderSegmentsPerKey = keys.map((key) => key.split('/').slice(0, -1));
+  const [firstSegments, ...otherSegments] = folderSegmentsPerKey;
+  const sharedDepth = otherSegments.reduce(
+    (depth, segments) => Math.min(depth, sharedLeadingSegmentCount(firstSegments, segments)),
+    firstSegments.length,
+  );
+  return firstSegments.slice(0, sharedDepth).join('/');
+}
+
+function sharedLeadingSegmentCount(first: string[], second: string[]): number {
+  let count = 0;
+  while (count < first.length && count < second.length && first[count] === second[count]) {
+    count++;
+  }
+  return count;
 }
 
 /**

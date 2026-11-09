@@ -150,10 +150,11 @@ Zwei Prefixes im selben Bucket verhalten sich dabei gegensätzlich:
   veröffentlicht — eine Invalidierung ist nie nötig.
 * `web-assets/` wird mit stabilen, in-place überschriebenen Dateinamen
   veröffentlicht — hier ist nach jedem Push eine CloudFront-Invalidierung nötig, die
-  der Publisher automatisch für die berührten Pfade auslöst. Bei wenigen geänderten
-  Dateien invalidiert er jede einzeln, bei vielen das ganze Präfix mit einem einzigen
-  Wildcard-Pfad. So bleibt auch ein vollständiges Neurendern einer Wahlperiode im
-  kostenlosen Kontingent von 1.000 Pfaden pro Monat.
+  der Publisher automatisch für die berührten Pfade auslöst. Jeder Push invalidiert
+  mit genau einem Pfad: der geänderten Datei selbst oder einem Wildcard-Pfad für den
+  tiefsten Ordner, der alle geänderten Dateien enthält. So bleibt auch ein
+  vollständiges Neurendern einer Wahlperiode im kostenlosen Kontingent von 1.000
+  Pfaden pro Monat.
 
 Der operative Weg (`--push`-Aufrufe, Cache-Regeln, Verifikation) ist in
 `docs/guides/publishing-web-assets.md` dokumentiert.
