@@ -8,7 +8,8 @@
             "title": "Umsetzung des Paktes für den Öffentlichen Gesundheitsdienst",
             "type": "Tagesordnung",
             "authors": [
-                "Dezernat für Soziales, Jugend und Gesundheit"
+                "Dezernat für Soziales, Jugend und Gesundheit",
+                "Oberbürgermeisterin"
             ]
         },
         "votes": [
@@ -240,7 +241,9 @@
                 "name": "Evelin Schulz",
                 "vote": "O"
             }
-        ]
+        ],
+        "presentMembers": 33,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2025-12-08-002.png",

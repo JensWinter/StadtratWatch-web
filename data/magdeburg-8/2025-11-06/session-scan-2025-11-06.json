@@ -483,7 +483,9 @@
                 "name": "Evelin Schulz",
                 "vote": "J"
             }
-        ]
+        ],
+        "presentMembers": 41,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2025-11-06-002.png",
@@ -726,7 +728,9 @@
                 "name": "Evelin Schulz",
                 "vote": "J"
             }
-        ]
+        ],
+        "presentMembers": 43,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2025-11-06-003.png",
@@ -1464,7 +1468,7 @@
             "agendaItem": "2",
             "motionId": "",
             "title": "Bestätigung der Tagesordnung",
-            "type": null,
+            "type": "Tagesordnung",
             "authors": []
         },
         "votes": [

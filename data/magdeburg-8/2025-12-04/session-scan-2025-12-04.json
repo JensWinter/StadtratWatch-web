@@ -240,7 +240,9 @@
                 "name": "Evelin Schulz",
                 "vote": "J"
             }
-        ]
+        ],
+        "presentMembers": 43,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2025-12-04-002.png",
@@ -486,7 +488,9 @@
                 "name": "Evelin Schulz",
                 "vote": "J"
             }
-        ]
+        ],
+        "presentMembers": 45,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2025-12-04-003.png",

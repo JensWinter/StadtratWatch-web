@@ -240,7 +240,9 @@
                 "name": "Evelin Schulz",
                 "vote": "J"
             }
-        ]
+        ],
+        "presentMembers": 45,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2026-08-27-002.png",
@@ -483,7 +485,9 @@
                 "name": "Evelin Schulz",
                 "vote": "E"
             }
-        ]
+        ],
+        "presentMembers": 45,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2026-08-27-003.png",
@@ -729,7 +733,9 @@
                 "name": "Evelin Schulz",
                 "vote": "J"
             }
-        ]
+        ],
+        "presentMembers": 45,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2026-08-27-004.png",
@@ -973,7 +979,9 @@
                 "name": "Evelin Schulz",
                 "vote": "J"
             }
-        ]
+        ],
+        "majorityRequirement": "two-thirds-of-present",
+        "presentMembers": 46
     },
     {
         "votingFilename": "2026-08-27-005.png",

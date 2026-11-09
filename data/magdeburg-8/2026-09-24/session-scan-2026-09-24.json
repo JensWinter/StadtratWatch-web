@@ -243,7 +243,9 @@
                 "name": "Evelin Schulz",
                 "vote": "O"
             }
-        ]
+        ],
+        "presentMembers": 48,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2026-09-24-002.png",
@@ -18467,7 +18469,7 @@
             "agendaItem": "6.32",
             "motionId": "A0192/26",
             "title": "Mieterinnen und Mieter der WOBAU sollen nicht das Haushaltsloch der Stadt stopfen",
-            "type": "Antrag",
+            "type": null,
             "authors": [
                 "SPD/Tierschutzallianz/Volt",
                 "GRÜNE/future!",
