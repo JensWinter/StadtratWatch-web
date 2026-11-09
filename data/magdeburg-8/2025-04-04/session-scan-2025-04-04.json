@@ -238,7 +238,9 @@
                 "name": "Evelin Schulz",
                 "vote": "J"
             }
-        ]
+        ],
+        "presentMembers": 43,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2025-04-04-002.png",
@@ -975,7 +977,9 @@
             "motionId": "DS0151/25",
             "title": "Weihnachtsmarkt 2025",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Personal, Bürgerservice und Ordnung"]
+            "authors": [
+                "Dezernat für Personal, Bürgerservice und Ordnung"
+            ]
         },
         "votes": [
             {
@@ -1216,7 +1220,9 @@
             "motionId": "DS0167/25",
             "title": "Beitrittsbeschluss zur Genehmigungsverfügung des Landesverwaltungsamtes zur Haushaltssatzung der Landeshauptstadt Magdeburg für das Jahr 2025",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Finanzen und Vermögen"]
+            "authors": [
+                "Dezernat für Finanzen und Vermögen"
+            ]
         },
         "votes": [
             {

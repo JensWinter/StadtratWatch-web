@@ -240,7 +240,9 @@
                 "name": "Evelin Schulz",
                 "vote": "O"
             }
-        ]
+        ],
+        "presentMembers": 47,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2025-08-28-002.png",

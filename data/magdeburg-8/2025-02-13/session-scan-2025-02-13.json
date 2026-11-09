@@ -245,7 +245,7 @@
         "videoTimestamp": "00:13:29",
         "votingSubject": {
             "agendaItem": "2",
-            "motionId": "",
+            "motionId": "A0038/25",
             "title": "Bestätigung der Tagesordnung",
             "type": "Tagesordnung",
             "authors": [
@@ -481,7 +481,9 @@
                 "name": "Evelin Schulz",
                 "vote": "E"
             }
-        ]
+        ],
+        "presentMembers": 41,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2025-02-13-003.png",
@@ -1459,7 +1461,9 @@
             "motionId": "DS0671/24",
             "title": "Beteiligungsbericht 2024",
             "type": "Beschlussvorlage",
-            "authors": ["Oberbürgermeisterin"]
+            "authors": [
+                "Oberbürgermeisterin"
+            ]
         },
         "votes": [
             {
@@ -1700,7 +1704,9 @@
             "motionId": "DS0402/24",
             "title": "Wirtschaftsplan 2025 des Eigenbetriebes Kommunales Gebäudemanagement",
             "type": "Beschlussvorlage",
-            "authors": ["Oberbürgermeisterin"]
+            "authors": [
+                "Oberbürgermeisterin"
+            ]
         },
         "votes": [
             {
@@ -1941,7 +1947,9 @@
             "motionId": "DS0651/24",
             "title": "Weiterbestellung von Herrn Julien Chavaz als Generalintendant des Theaters Magdeburg",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Personal, Bürgerservice und Ordnung"]
+            "authors": [
+                "Dezernat für Personal, Bürgerservice und Ordnung"
+            ]
         },
         "votes": [
             {
@@ -2182,7 +2190,9 @@
             "motionId": "DS0656/24",
             "title": "Beschluss über den Jahresabschluss der Landeshauptstadt Magdeburg per 31.12.2023",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Finanzen und Vermögen"]
+            "authors": [
+                "Dezernat für Finanzen und Vermögen"
+            ]
         },
         "votes": [
             {
@@ -2423,7 +2433,9 @@
             "motionId": "DS0427/24",
             "title": "Wirtschaftsplan Eigenbetrieb Stadtgarten und Friedhöfe Magdeburg 2025",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Finanzen und Vermögen"]
+            "authors": [
+                "Dezernat für Finanzen und Vermögen"
+            ]
         },
         "votes": [
             {
@@ -2664,7 +2676,9 @@
             "motionId": "DS0481/24",
             "title": "Wirtschaftsplan 2025 des Eigenbetriebes Konservatorium Georg Philipp Telemann",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Kultur, Schule und Sport"]
+            "authors": [
+                "Dezernat für Kultur, Schule und Sport"
+            ]
         },
         "votes": [
             {
@@ -2905,7 +2919,9 @@
             "motionId": "DS0574/24",
             "title": "Wirtschaftsplan 2025 Eigenbetrieb Theater Magdeburg",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Kultur, Schule und Sport"]
+            "authors": [
+                "Dezernat für Kultur, Schule und Sport"
+            ]
         },
         "votes": [
             {
@@ -3146,7 +3162,9 @@
             "motionId": "DS0667/24",
             "title": "Wirtschaftsplan 2025 EB Puppentheater der Stadt Magdeburg",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Kultur, Schule und Sport"]
+            "authors": [
+                "Dezernat für Kultur, Schule und Sport"
+            ]
         },
         "votes": [
             {
@@ -3387,7 +3405,9 @@
             "motionId": "DS0010/25",
             "title": "Bestellung des Beschäftigtenvertreters für den Betriebsausschuss des Eigenbetriebes Puppentheater Magdeburg",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Kultur, Schule und Sport"]
+            "authors": [
+                "Dezernat für Kultur, Schule und Sport"
+            ]
         },
         "votes": [
             {
@@ -4114,7 +4134,9 @@
             "motionId": "DS0614/24",
             "title": "Fahrradparkhaus (FPH) am Hauptbahnhof Magdeburg",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Umwelt und Stadtentwicklung"]
+            "authors": [
+                "Dezernat für Umwelt und Stadtentwicklung"
+            ]
         },
         "votes": [
             {

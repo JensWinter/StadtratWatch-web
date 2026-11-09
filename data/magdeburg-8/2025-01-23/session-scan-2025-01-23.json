@@ -7,7 +7,9 @@
             "motionId": "A0018/25",
             "title": "Bildung eines temporären Ausschusses zur Aufarbeitung des Anschlages am 20.12.2024 in Magdeburg",
             "type": "Tagesordnung",
-            "authors": []
+            "authors": [
+                "Oberbürgermeisterin"
+            ]
         },
         "votes": [
             {
@@ -238,7 +240,9 @@
                 "name": "Evelin Schulz",
                 "vote": "J"
             }
-        ]
+        ],
+        "presentMembers": 46,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2025-01-23-002.png",
@@ -248,7 +252,10 @@
             "motionId": "A0019/25",
             "title": "Akteneinsicht zur Causa „Wiehnachtmärt” 2024",
             "type": "Tagesordnung",
-            "authors": []
+            "authors": [
+                "GRÜNE/future!",
+                "DIE LINKE"
+            ]
         },
         "votes": [
             {
@@ -479,7 +486,9 @@
                 "name": "Evelin Schulz",
                 "vote": "J"
             }
-        ]
+        ],
+        "presentMembers": 46,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2025-01-23-003.png",
@@ -2183,7 +2192,9 @@
             "motionId": "A0018/25",
             "title": "Bildung eines temporären Ausschusses zur Aufarbeitung des Anschlages am 20.12.2024 in Magdeburg",
             "type": "Beschlussvorlage",
-            "authors": ["Oberbürgermeisterin"]
+            "authors": [
+                "Oberbürgermeisterin"
+            ]
         },
         "votes": [
             {
@@ -2424,7 +2435,9 @@
             "motionId": "DS0635/24",
             "title": "Jahresabschluss 2023 der Innovations- und Gründerzentrum Magdeburg GmbH (IGZ GmbH)",
             "type": "Beschlussvorlage",
-            "authors": ["Oberbürgermeisterin"]
+            "authors": [
+                "Oberbürgermeisterin"
+            ]
         },
         "votes": [
             {
@@ -3880,7 +3893,9 @@
             "motionId": "DS0630/24",
             "title": "Delegiertenversammlung 2025 der Deutschen Sektion des RGRE",
             "type": "Beschlussvorlage",
-            "authors": ["Oberbürgermeisterin"]
+            "authors": [
+                "Oberbürgermeisterin"
+            ]
         },
         "votes": [
             {
@@ -5336,7 +5351,9 @@
             "motionId": "DS0646/24",
             "title": "43. Hauptversammlung des Deutschen Städtetages vom 13. bis 15. Mai 2025 in Hannover",
             "type": "Beschlussvorlage",
-            "authors": ["Oberbürgermeisterin"]
+            "authors": [
+                "Oberbürgermeisterin"
+            ]
         },
         "votes": [
             {
@@ -5577,7 +5594,9 @@
             "motionId": "DS0648/24",
             "title": "Neubenennungen für die Fachausschüsse und den Arbeitskreis der Deutschen Sektion des RGRE",
             "type": "Beschlussvorlage",
-            "authors": ["Oberbürgermeisterin"]
+            "authors": [
+                "Oberbürgermeisterin"
+            ]
         },
         "votes": [
             {
@@ -5818,7 +5837,9 @@
             "motionId": "DS0575/24",
             "title": "1. Änderungssatzung der Satzung für den \"Eigenbetrieb Kommunales Gebäudemanagement der Landeshauptstadt Magdeburg\"",
             "type": "Beschlussvorlage",
-            "authors": ["Oberbürgermeisterin"]
+            "authors": [
+                "Oberbürgermeisterin"
+            ]
         },
         "votes": [
             {
@@ -6059,7 +6080,9 @@
             "motionId": "DS0573/24",
             "title": "Jahresabschluss 2023 des Städtischen Abfallwirtschaftsbetriebes (SAB)",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Personal, Bürgerservice und Ordnung"]
+            "authors": [
+                "Dezernat für Personal, Bürgerservice und Ordnung"
+            ]
         },
         "votes": [
             {
@@ -6300,7 +6323,9 @@
             "motionId": "DS0629/24",
             "title": "Genehmigung der Annahme von Sponsoringleistungen gemäß § 99 Abs. 6 KVG LSA",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Personal, Bürgerservice und Ordnung"]
+            "authors": [
+                "Dezernat für Personal, Bürgerservice und Ordnung"
+            ]
         },
         "votes": [
             {
@@ -6541,7 +6566,9 @@
             "motionId": "DS0636/24",
             "title": "Genehmigung der Annahme von Sponsoringleistungen gemäß § 99 Abs. 6 KVG LSA",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Personal, Bürgerservice und Ordnung"]
+            "authors": [
+                "Dezernat für Personal, Bürgerservice und Ordnung"
+            ]
         },
         "votes": [
             {
@@ -6782,7 +6809,9 @@
             "motionId": "DS0523/24",
             "title": "Annahme einer Schenkung gemäß § 99 Abs. 6 KVG",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Finanzen und Vermögen"]
+            "authors": [
+                "Dezernat für Finanzen und Vermögen"
+            ]
         },
         "votes": [
             {
@@ -7023,7 +7052,9 @@
             "motionId": "DS0608/24",
             "title": "Annahme einer Schenkung gemäß § 99 Abs. 6 KVG LSA",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Finanzen und Vermögen"]
+            "authors": [
+                "Dezernat für Finanzen und Vermögen"
+            ]
         },
         "votes": [
             {
@@ -7264,7 +7295,9 @@
             "motionId": "DS0627/24",
             "title": "Annahme einer Schenkung gemäß & 99 Abs. 6 KVG LSA",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Finanzen und Vermögen"]
+            "authors": [
+                "Dezernat für Finanzen und Vermögen"
+            ]
         },
         "votes": [
             {
@@ -7505,7 +7538,9 @@
             "motionId": "DS0644/24",
             "title": "Genehmigung der Annahme von Spenden gem. § 99 Abs. 6 KVG-LSA",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Finanzen und Vermögen"]
+            "authors": [
+                "Dezernat für Finanzen und Vermögen"
+            ]
         },
         "votes": [
             {
@@ -7989,7 +8024,9 @@
             "motionId": "DS0530/24",
             "title": "\"Satzung über die Schulbezirke der kommunalen Grundschulen im Einschuljahr 2026/27\"",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Kultur, Schule und Sport"]
+            "authors": [
+                "Dezernat für Kultur, Schule und Sport"
+            ]
         },
         "votes": [
             {
@@ -8473,7 +8510,9 @@
             "motionId": "DS0626/24",
             "title": "Fortschreibung zur mittelfristigen Schulentwicklungsplanung der allgemeinbildenden Schulen bis zum Zielplanjahr 2026/27 - hier: Integrierte Gesamtschule (IGS)",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Kultur, Schule und Sport"]
+            "authors": [
+                "Dezernat für Kultur, Schule und Sport"
+            ]
         },
         "votes": [
             {
@@ -8714,7 +8753,9 @@
             "motionId": "DS0626/24",
             "title": "Fortschreibung zur mittelfristigen Schulentwicklungsplanung der allgemeinbildenden Schulen bis zum Zielplanjahr 2026/27 - hier: Integrierte Gesamtschule (IGS)",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Kultur, Schule und Sport"]
+            "authors": [
+                "Dezernat für Kultur, Schule und Sport"
+            ]
         },
         "votes": [
             {
@@ -8955,7 +8996,9 @@
             "motionId": "DS0634/24",
             "title": "Grundsatzbeschluss zur Sanierung des Hortes \"Am Vogelgesang\"",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Soziales, Jugend und Gesundheit"]
+            "authors": [
+                "Dezernat für Soziales, Jugend und Gesundheit"
+            ]
         },
         "votes": [
             {
@@ -9196,7 +9239,9 @@
             "motionId": "DS0604/24",
             "title": "Einziehung einer Teilfläche „Domplatz“",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Umwelt und Stadtentwicklung"]
+            "authors": [
+                "Dezernat für Umwelt und Stadtentwicklung"
+            ]
         },
         "votes": [
             {
@@ -9437,7 +9482,9 @@
             "motionId": "DS0619/24",
             "title": "Neuaufstellung des Flächennutzungsplanes der Landeshauptstadt Magdeburg",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Umwelt und Stadtentwicklung"]
+            "authors": [
+                "Dezernat für Umwelt und Stadtentwicklung"
+            ]
         },
         "votes": [
             {
@@ -9678,7 +9725,9 @@
             "motionId": "DS0432/24",
             "title": "Behandlung der Stellungnahmen (Zwischenabwägung) zur 7. Änderung des Bebauungsplanes Nr. 301-1 „Kümmelsberg Ost” im Teilbereich",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Umwelt und Stadtentwicklung"]
+            "authors": [
+                "Dezernat für Umwelt und Stadtentwicklung"
+            ]
         },
         "votes": [
             {
@@ -9919,7 +9968,9 @@
             "motionId": "DS0433/24",
             "title": "Öffentliche Auslegung des Entwurfs und Erweiterung des Geltungsbereichs der 7. Änderung des B-Planes Nr. 301-1 „Kümmelsberg Ost” im Teilbereich",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Umwelt und Stadtentwicklung"]
+            "authors": [
+                "Dezernat für Umwelt und Stadtentwicklung"
+            ]
         },
         "votes": [
             {
@@ -10401,7 +10452,9 @@
             "motionId": "DS0482/24",
             "title": "Fortschreibung des Integrierten Handlungskonzeptes Sudenburg für das Städtebauförderprogramm \"Lebendige Zentren\"",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Umwelt und Stadtentwicklung"]
+            "authors": [
+                "Dezernat für Umwelt und Stadtentwicklung"
+            ]
         },
         "votes": [
             {
@@ -10642,7 +10695,9 @@
             "motionId": "DS0406/24",
             "title": "Behandlung der Stellungnahmen (Abwägung) zum Bebauungsplan Nr. 131-2 „Klosterwuhne 39” mit örtlicher Bauvorschrift",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Umwelt und Stadtentwicklung"]
+            "authors": [
+                "Dezernat für Umwelt und Stadtentwicklung"
+            ]
         },
         "votes": [
             {
@@ -10883,7 +10938,9 @@
             "motionId": "DS0407/24",
             "title": "Satzung des Bebauungsplans Nr. 131-2 „Klosterwuhne 39” mit örtlicher Bauvorschrift",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Umwelt und Stadtentwicklung"]
+            "authors": [
+                "Dezernat für Umwelt und Stadtentwicklung"
+            ]
         },
         "votes": [
             {
@@ -21340,7 +21397,9 @@
             "motionId": "DS0547/24",
             "title": "Satzung über die Festlegung von Kapazitätsgrenzen zur Aufnahme in den 5. Schuljahrgang für das Schuljahr 2025/26 an weiterführende kommunale Schulen der Landeshauptstadt Magdeburg",
             "type": "Beschlussvorlage",
-            "authors": ["Dezernat für Kultur, Schule und Sport"]
+            "authors": [
+                "Dezernat für Kultur, Schule und Sport"
+            ]
         },
         "votes": [
             {

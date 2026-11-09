@@ -240,14 +240,16 @@
                 "name": "Evelin Schulz",
                 "vote": "J"
             }
-        ]
+        ],
+        "presentMembers": 46,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2025-09-25-002.png",
         "videoTimestamp": "00:24:20",
         "votingSubject": {
             "agendaItem": "3.2",
-            "motionId": "",
+            "motionId": "DS0480/25",
             "title": "Erweiterung der Tagesordnung bei 2/3 Mehrheit als TOP 14.9",
             "type": "Tagesordnung",
             "authors": [
@@ -483,7 +485,9 @@
                 "name": "Evelin Schulz",
                 "vote": "J"
             }
-        ]
+        ],
+        "presentMembers": 46,
+        "majorityRequirement": "two-thirds-of-present"
     },
     {
         "votingFilename": "2025-09-25-003.png",
