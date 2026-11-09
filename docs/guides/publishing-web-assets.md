@@ -38,16 +38,9 @@ that authoritative list the publisher:
 3. Sets an explicit **`Cache-Control: public, max-age=3600`** on every upload. Unlike the immutable
    `oparl/` blobs, these files are overwritten in place under stable names, so a one-hour TTL keeps
    caches warm between the infrequent publishes while bounding how long a stale copy can linger.
-4. **Invalidates** every upload and delete with a **single CloudFront path**. If only one file
-   changed, that path is the file itself. Otherwise it is a wildcard for the deepest folder holding
-   all changed files: changes inside one voting session give
-   `/web-assets/parliament-periods/magdeburg-8/images/votings/2024-10-17/*`, changes across several
-   sessions give `/web-assets/parliament-periods/magdeburg-8/images/votings/*`. The wildcard always
-   ends at a folder boundary. CloudFront invalidates 1,000 paths per month for free and counts a
-   wildcard as one path, so every publish costs one path, even a full re-render of a period that
-   touches thousands of files. A wildcard wider than the changed files only makes CloudFront
-   re-fetch unchanged files from S3. The edge turns fresh immediately; the TTL from step 3 only
-   governs already-warm browser caches, which an invalidation cannot reach.
+4. **Invalidates** every upload and delete with a single CloudFront path: the file itself, or a
+   wildcard for the deepest folder holding all changed files. The edge turns fresh immediately; the
+   TTL from step 3 only governs already-warm browser caches, which an invalidation cannot reach.
 5. **Verifies** by re-listing the prefix and asserting it holds *exactly* the produced files. A
    silent put or delete failure leaves the bucket disagreeing with the plan, and this read-back
    catches it — the run fails loudly listing any missing upload or unpruned orphan, rather than
@@ -73,8 +66,7 @@ variables are validated **only when `--push` is set** (see `.env.sample`):
 ### Previewing with `--dry-run`
 
 Add `--dry-run` alongside `--push` to print the upload / delete / invalidate plan **without** writing
-to S3 or invalidating CloudFront. The `invalidate:` line shows the one path that would actually be sent
-to CloudFront, not the individual files. It lists the prefix and computes the diff exactly as a real run
+to S3 or invalidating CloudFront. It lists the prefix and computes the diff exactly as a real run
 would, so it is the safe way to see what a publish would change before committing to it.
 
 The exact per-generator invocations live in the

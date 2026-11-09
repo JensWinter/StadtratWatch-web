@@ -82,9 +82,7 @@ export type WebAssetPlan = {
  * a remote object is deleted when it is absent from the set (an orphan). Every upload and delete must
  * be invalidated, because those are the only keys whose cached bytes changed. They are covered by a
  * single path: the file itself when only one changed, otherwise a wildcard for the deepest folder
- * holding all of them. CloudFront bills invalidation paths beyond 1,000 per month and counts a
- * wildcard as one path, while a full re-render of a period touches thousands of files. A wider
- * wildcard only makes the edge re-fetch unchanged files from S3, which is cheap.
+ * holding all of them.
  */
 function diffWebAssets(assets: LocalAsset[], remote: RemoteObject[]): WebAssetPlan {
   const remoteEtagByKey = new Map(remote.map((object) => [object.key, normalizeEtag(object.etag)]));
