@@ -110,7 +110,7 @@ describe('publishWebAssets', () => {
     expect(recorder.deleted).toEqual([[ORPHAN]]);
   });
 
-  it('invalidates every uploaded and deleted path, and nothing that stayed unchanged', async () => {
+  it('invalidates a single changed file by its exact path', async () => {
     const assets = [
       { key: KEY_A, body: bytes('new') },
       { key: KEY_B, body: bytes('same') },
@@ -118,13 +118,71 @@ describe('publishWebAssets', () => {
     const { operations, recorder } = fakeOperations([
       { key: KEY_A, etag: etagOf('old') },
       { key: KEY_B, etag: etagOf('same') },
-      { key: ORPHAN, etag: etagOf('gone') },
     ]);
 
     const plan = await publishWebAssets(assets, TARGET, operations);
 
-    expect(plan.invalidations).toEqual([`/${KEY_A}`, `/${ORPHAN}`].sort());
-    expect(recorder.invalidated).toEqual([{ distributionId: TARGET.distributionId, paths: plan.invalidations }]);
+    expect(plan.invalidations).toEqual(['/web-assets/paper-votings/paper-votings-0000.json']);
+    expect(recorder.invalidated).toEqual([
+      { distributionId: TARGET.distributionId, paths: ['/web-assets/paper-votings/paper-votings-0000.json'] },
+    ]);
+  });
+
+  it('invalidates uploads and deletes in one folder with one wildcard for that folder', async () => {
+    const assets = [{ key: KEY_A, body: bytes('new') }];
+    const { operations } = fakeOperations([{ key: ORPHAN, etag: etagOf('gone') }]);
+
+    const plan = await publishWebAssets(assets, TARGET, operations);
+
+    expect(plan.invalidations).toEqual(['/web-assets/paper-votings/*']);
+  });
+
+  it('narrows the wildcard to the deepest folder holding every changed file', async () => {
+    const assets = [
+      {
+        key: 'web-assets/parliament-periods/magdeburg-8/images/votings/2024-10-17/2024-10-17-001.png',
+        body: bytes('a'),
+      },
+      {
+        key: 'web-assets/parliament-periods/magdeburg-8/images/votings/2024-10-17/2024-10-17-002.png',
+        body: bytes('b'),
+      },
+    ];
+    const { operations } = fakeOperations([]);
+
+    const plan = await publishWebAssets(assets, TARGET, operations);
+
+    expect(plan.invalidations).toEqual(['/web-assets/parliament-periods/magdeburg-8/images/votings/2024-10-17/*']);
+  });
+
+  it('stops the wildcard at a folder boundary when changed folders share a name prefix', async () => {
+    const assets = [
+      {
+        key: 'web-assets/parliament-periods/magdeburg-8/images/votings/2024-10-17/2024-10-17-001.png',
+        body: bytes('a'),
+      },
+      {
+        key: 'web-assets/parliament-periods/magdeburg-8/images/votings/2024-10-18/2024-10-18-001.png',
+        body: bytes('b'),
+      },
+    ];
+    const { operations } = fakeOperations([]);
+
+    const plan = await publishWebAssets(assets, TARGET, operations);
+
+    expect(plan.invalidations).toEqual(['/web-assets/parliament-periods/magdeburg-8/images/votings/*']);
+  });
+
+  it('invalidates everything when the changed files share no folder', async () => {
+    const assets = [
+      { key: 'papers.json', body: bytes('a') },
+      { key: 'votings.json', body: bytes('b') },
+    ];
+    const { operations } = fakeOperations([]);
+
+    const plan = await publishWebAssets(assets, { ...TARGET, prefix: '' }, operations);
+
+    expect(plan.invalidations).toEqual(['/*']);
   });
 
   it('performs no mutations on a dry-run but returns the full plan', async () => {
@@ -138,7 +196,7 @@ describe('publishWebAssets', () => {
 
     expect(plan.uploads).toEqual([KEY_A]);
     expect(plan.deletes).toEqual([ORPHAN]);
-    expect(plan.invalidations).toEqual([`/${KEY_A}`, `/${ORPHAN}`].sort());
+    expect(plan.invalidations).toEqual(['/web-assets/paper-votings/*']);
     expect(recorder.puts).toEqual([]);
     expect(recorder.deleted).toEqual([]);
     expect(recorder.invalidated).toEqual([]);

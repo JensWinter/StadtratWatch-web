@@ -38,9 +38,9 @@ that authoritative list the publisher:
 3. Sets an explicit **`Cache-Control: public, max-age=3600`** on every upload. Unlike the immutable
    `oparl/` blobs, these files are overwritten in place under stable names, so a one-hour TTL keeps
    caches warm between the infrequent publishes while bounding how long a stale copy can linger.
-4. **Invalidates** the touched CloudFront paths (every upload and delete). The edge turns fresh
-   immediately; the TTL from step 3 only governs already-warm browser caches, which an invalidation
-   cannot reach.
+4. **Invalidates** every upload and delete with a single CloudFront path: the file itself, or a
+   wildcard for the deepest folder holding all changed files. The edge turns fresh immediately; the
+   TTL from step 3 only governs already-warm browser caches, which an invalidation cannot reach.
 5. **Verifies** by re-listing the prefix and asserting it holds *exactly* the produced files. A
    silent put or delete failure leaves the bucket disagreeing with the plan, and this read-back
    catches it — the run fails loudly listing any missing upload or unpruned orphan, rather than

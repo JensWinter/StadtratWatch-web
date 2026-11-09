@@ -79,11 +79,12 @@ export type WebAssetPlan = {
 /**
  * Computes what to upload, delete and invalidate for an authoritative asset set against the current
  * remote inventory. An asset is uploaded when it is new or its content differs from the remote ETag;
- * a remote object is deleted when it is absent from the set (an orphan). The touched paths — every
- * upload and delete — are the ones to invalidate, because those are the only keys whose cached
- * bytes changed.
+ * a remote object is deleted when it is absent from the set (an orphan). Every upload and delete must
+ * be invalidated, because those are the only keys whose cached bytes changed. They are covered by a
+ * single path: the file itself when only one changed, otherwise a wildcard for the deepest folder
+ * holding all of them.
  */
-export function diffWebAssets(assets: LocalAsset[], remote: RemoteObject[]): WebAssetPlan {
+function diffWebAssets(assets: LocalAsset[], remote: RemoteObject[]): WebAssetPlan {
   const remoteEtagByKey = new Map(remote.map((object) => [object.key, normalizeEtag(object.etag)]));
   const localKeys = new Set(assets.map((asset) => asset.key));
 
@@ -99,12 +100,12 @@ export function diffWebAssets(assets: LocalAsset[], remote: RemoteObject[]): Web
   }
 
   const deletes = remote.map((object) => object.key).filter((key) => !localKeys.has(key));
-  const invalidations = [...uploads, ...deletes].map(toInvalidationPath);
+  const invalidations = invalidationPathsFor([...uploads, ...deletes]);
 
   return {
     uploads: uploads.toSorted((a, b) => a.localeCompare(b)),
     deletes: deletes.toSorted((a, b) => a.localeCompare(b)),
-    invalidations: invalidations.toSorted((a, b) => a.localeCompare(b)),
+    invalidations,
     unchanged: unchanged.toSorted((a, b) => a.localeCompare(b)),
   };
 }
@@ -274,8 +275,33 @@ function md5Hex(body: Uint8Array<ArrayBuffer>): string {
   return createHash('md5').update(body).digest('hex');
 }
 
-function toInvalidationPath(key: string): string {
-  return `/${key}`;
+function invalidationPathsFor(touchedKeys: string[]): string[] {
+  if (touchedKeys.length === 0) {
+    return [];
+  }
+  if (touchedKeys.length === 1) {
+    return [`/${touchedKeys[0]}`];
+  }
+  const commonFolder = deepestCommonFolder(touchedKeys);
+  return [commonFolder ? `/${commonFolder}/*` : '/*'];
+}
+
+function deepestCommonFolder(keys: string[]): string {
+  const folderSegmentsPerKey = keys.map((key) => key.split('/').slice(0, -1));
+  const [firstSegments, ...otherSegments] = folderSegmentsPerKey;
+  const sharedDepth = otherSegments.reduce(
+    (depth, segments) => Math.min(depth, sharedLeadingSegmentCount(firstSegments, segments)),
+    firstSegments.length,
+  );
+  return firstSegments.slice(0, sharedDepth).join('/');
+}
+
+function sharedLeadingSegmentCount(first: string[], second: string[]): number {
+  let count = 0;
+  while (count < first.length && count < second.length && first[count] === second[count]) {
+    count++;
+  }
+  return count;
 }
 
 /**

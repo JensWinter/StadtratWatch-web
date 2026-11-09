@@ -67,6 +67,7 @@ function logPlan(plan: WebAssetPlan, dryRun: boolean): void {
   console.log(`  invalidations: ${plan.invalidations.length}`);
   logKeys('upload', plan.uploads);
   logKeys('delete', plan.deletes);
+  logKeys('invalidate', plan.invalidations);
 }
 
 function logKeys(action: string, keys: string[]): void {
