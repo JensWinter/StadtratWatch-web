@@ -1,9 +1,13 @@
 import { describe, expect, it } from 'bun:test';
 import { createHash } from 'node:crypto';
+import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import * as path from 'node:path';
 
 import type { PutObjectCommandInput } from '@aws-sdk/client-s3';
 
 import {
+  collectWebAssets,
   type LocalAsset,
   publishWebAssets,
   type RemoteObject,
@@ -189,5 +193,61 @@ describe('verifyWebAssets', () => {
     ]);
 
     await expect(verifyWebAssets(assets, TARGET, operations)).rejects.toThrow(ORPHAN);
+  });
+});
+
+describe('collectWebAssets', () => {
+  async function withOutputDirectory(files: Record<string, string>, run: (directory: string) => Promise<void>) {
+    const directory = await mkdtemp(path.join(tmpdir(), 'web-assets-'));
+    try {
+      for (const [relativePath, content] of Object.entries(files)) {
+        const filePath = path.join(directory, relativePath);
+        await mkdir(path.dirname(filePath), { recursive: true });
+        await writeFile(filePath, content);
+      }
+      await run(directory);
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
+  }
+
+  it('skips dotfiles and everything inside dot-directories', async () => {
+    await withOutputDirectory(
+      {
+        'paper-votings-0000.json': 'a',
+        '.DS_Store': 'finder',
+        'images/.DS_Store': 'finder',
+        '.cache/leftover.json': 'stale',
+        'images/votings/1.png': 'png',
+      },
+      async (directory) => {
+        const assets = await collectWebAssets(directory, TARGET.prefix);
+
+        expect(assets.map((asset) => asset.key)).toEqual([
+          `${TARGET.prefix}/images/votings/1.png`,
+          `${TARGET.prefix}/paper-votings-0000.json`,
+        ]);
+      },
+    );
+  });
+
+  it('lets a publish prune a remote dotfile even when a local one with the same name exists', async () => {
+    const remoteDotfile = `${TARGET.prefix}/images/.DS_Store`;
+    await withOutputDirectory({ 'paper-votings-0000.json': 'a', 'images/.DS_Store': 'finder' }, async (directory) => {
+      const assets = await collectWebAssets(directory, TARGET.prefix);
+      const remote: RemoteObject[] = [
+        { key: KEY_A, etag: etagOf('a') },
+        { key: remoteDotfile, etag: etagOf('finder') },
+      ];
+      const { operations, recorder } = fakeOperations(remote);
+
+      const plan = await publishWebAssets(assets, TARGET, operations);
+
+      expect(plan.uploads).toEqual([]);
+      expect(plan.deletes).toEqual([remoteDotfile]);
+      const deletedKeys = new Set(recorder.deleted.flat());
+      const { operations: afterPrune } = fakeOperations(remote.filter((object) => !deletedKeys.has(object.key)));
+      await verifyWebAssets(assets, TARGET, afterPrune);
+    });
   });
 });

@@ -46,6 +46,10 @@ that authoritative list the publisher:
    catches it — the run fails loudly listing any missing upload or unpruned orphan, rather than
    leaving a silent gap.
 
+Dotfiles and dot-directories (anything whose name starts with `.`, such as macOS `.DS_Store`) are
+never part of the authoritative list: they are not published, and any that already sit under the
+prefix are pruned as orphans on the next push.
+
 Because batch filenames are derived from the paper id (`paper-votings-{batch}.json` /
 `papers-{batch}.json`, where `batch = paperId / 100`, zero-padded — see `toPaperBatchNo` in
 `astro/src/models/paper-batch.ts`), they are **stable across runs** and overwritten in place. Adding

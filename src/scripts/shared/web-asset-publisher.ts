@@ -181,9 +181,11 @@ export async function verifyWebAssets(
 }
 
 /**
- * Reads every file under `directory` into an authoritative asset list, keyed as
+ * Reads every generated file under `directory` into an authoritative asset list, keyed as
  * `<prefix>/<path-relative-to-directory>` with forward slashes. The result is the complete picture
- * the prefix should contain, so pruning orphans against it is safe.
+ * the prefix should contain, so pruning orphans against it is safe. Dotfiles and dot-directories are
+ * skipped: no generator writes them, they are OS or tool clutter (macOS `.DS_Store`), and leaving
+ * them out also makes the publish prune any that already reached the bucket.
  */
 export async function collectWebAssets(directory: string, prefix: string): Promise<LocalAsset[]> {
   const base = trimTrailingSlash(prefix);
@@ -191,7 +193,11 @@ export async function collectWebAssets(directory: string, prefix: string): Promi
   const entries = await readdir(directory, { recursive: true, withFileTypes: true });
   for (const entry of entries.filter((candidate) => candidate.isFile())) {
     const entryPath = path.join(entry.parentPath, entry.name);
-    const relativeKey = path.relative(directory, entryPath).split(path.sep).join('/');
+    const relativeSegments = path.relative(directory, entryPath).split(path.sep);
+    if (relativeSegments.some(startsWithDot)) {
+      continue;
+    }
+    const relativeKey = relativeSegments.join('/');
     const key = base ? `${base}/${relativeKey}` : relativeKey;
     assets.push({ key, body: new Uint8Array(await readFile(entryPath)) });
   }
@@ -276,6 +282,10 @@ function md5Hex(body: Uint8Array<ArrayBuffer>): string {
 
 function toInvalidationPath(key: string): string {
   return `/${key}`;
+}
+
+function startsWithDot(pathSegment: string): boolean {
+  return pathSegment.startsWith('.');
 }
 
 /**
