@@ -38,9 +38,15 @@ that authoritative list the publisher:
 3. Sets an explicit **`Cache-Control: public, max-age=3600`** on every upload. Unlike the immutable
    `oparl/` blobs, these files are overwritten in place under stable names, so a one-hour TTL keeps
    caches warm between the infrequent publishes while bounding how long a stale copy can linger.
-4. **Invalidates** the touched CloudFront paths (every upload and delete). The edge turns fresh
-   immediately; the TTL from step 3 only governs already-warm browser caches, which an invalidation
-   cannot reach.
+4. **Invalidates** the touched CloudFront paths (every upload and delete), bundled to keep the
+   number of paths small: up to `MAX_INDIVIDUAL_INVALIDATION_PATHS` touched files (in
+   `src/scripts/shared/web-asset-publisher.ts`) are invalidated one path each; above that, the
+   publish sends a single wildcard path for the whole prefix (for example
+   `/web-assets/parliament-periods/magdeburg-8/*`). CloudFront invalidates 1,000 paths per month for
+   free and counts a wildcard as one path, so even a full re-render of a period, which touches
+   thousands of files, costs one path. Wiping the whole prefix from the edge only makes CloudFront
+   re-fetch unchanged files from S3. The edge turns fresh immediately; the TTL from step 3 only
+   governs already-warm browser caches, which an invalidation cannot reach.
 5. **Verifies** by re-listing the prefix and asserting it holds *exactly* the produced files. A
    silent put or delete failure leaves the bucket disagreeing with the plan, and this read-back
    catches it — the run fails loudly listing any missing upload or unpruned orphan, rather than
@@ -66,7 +72,9 @@ variables are validated **only when `--push` is set** (see `.env.sample`):
 ### Previewing with `--dry-run`
 
 Add `--dry-run` alongside `--push` to print the upload / delete / invalidate plan **without** writing
-to S3 or invalidating CloudFront. It lists the prefix and computes the diff exactly as a real run
+to S3 or invalidating CloudFront. The `invalidate:` lines show the paths that would actually be sent
+to CloudFront after bundling, so a large change shows up as one wildcard line rather than one line per
+file. It lists the prefix and computes the diff exactly as a real run
 would, so it is the safe way to see what a publish would change before committing to it.
 
 The exact per-generator invocations live in the

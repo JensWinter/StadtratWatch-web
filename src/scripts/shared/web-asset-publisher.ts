@@ -22,6 +22,15 @@ const CONTENT_TYPE_BY_EXTENSION: Record<string, string> = {
 };
 const DEFAULT_CONTENT_TYPE = 'application/octet-stream';
 
+/**
+ * Above this many touched files, a publish invalidates the whole prefix with one wildcard path instead
+ * of one path per file. CloudFront bills invalidation paths beyond 1,000 per month and counts a
+ * wildcard as a single path, while a full re-render of a period touches thousands of files. Wiping the
+ * prefix from the edge costs only origin re-fetches of files that did not change, which is cheap. At
+ * 15 paths per publish, more than 60 publishes a month stay within the free quota.
+ */
+export const MAX_INDIVIDUAL_INVALIDATION_PATHS = 15;
+
 /** A locally produced asset, addressed by the full S3 key it should occupy (prefix included). */
 export type LocalAsset = {
   key: string;
@@ -78,12 +87,13 @@ export type WebAssetPlan = {
 
 /**
  * Computes what to upload, delete and invalidate for an authoritative asset set against the current
- * remote inventory. An asset is uploaded when it is new or its content differs from the remote ETag;
- * a remote object is deleted when it is absent from the set (an orphan). The touched paths — every
- * upload and delete — are the ones to invalidate, because those are the only keys whose cached
- * bytes changed.
+ * remote inventory under `prefix`. An asset is uploaded when it is new or its content differs from the
+ * remote ETag; a remote object is deleted when it is absent from the set (an orphan). Every upload and
+ * delete must be invalidated, because those are the only keys whose cached bytes changed: each one by
+ * its own path while there are few, the whole prefix by one wildcard once there are more than
+ * `MAX_INDIVIDUAL_INVALIDATION_PATHS`.
  */
-export function diffWebAssets(assets: LocalAsset[], remote: RemoteObject[]): WebAssetPlan {
+function diffWebAssets(assets: LocalAsset[], remote: RemoteObject[], prefix: string): WebAssetPlan {
   const remoteEtagByKey = new Map(remote.map((object) => [object.key, normalizeEtag(object.etag)]));
   const localKeys = new Set(assets.map((asset) => asset.key));
 
@@ -99,12 +109,12 @@ export function diffWebAssets(assets: LocalAsset[], remote: RemoteObject[]): Web
   }
 
   const deletes = remote.map((object) => object.key).filter((key) => !localKeys.has(key));
-  const invalidations = [...uploads, ...deletes].map(toInvalidationPath);
+  const invalidations = invalidationPathsFor([...uploads, ...deletes], prefix);
 
   return {
     uploads: uploads.toSorted((a, b) => a.localeCompare(b)),
     deletes: deletes.toSorted((a, b) => a.localeCompare(b)),
-    invalidations: invalidations.toSorted((a, b) => a.localeCompare(b)),
+    invalidations,
     unchanged: unchanged.toSorted((a, b) => a.localeCompare(b)),
   };
 }
@@ -121,7 +131,7 @@ export async function publishWebAssets(
   options: { dryRun?: boolean } = {},
 ): Promise<WebAssetPlan> {
   const remote = await operations.list(target.bucket, target.prefix);
-  const plan = diffWebAssets(assets, remote);
+  const plan = diffWebAssets(assets, remote, target.prefix);
 
   if (options.dryRun) {
     return plan;
@@ -274,8 +284,16 @@ function md5Hex(body: Uint8Array<ArrayBuffer>): string {
   return createHash('md5').update(body).digest('hex');
 }
 
-function toInvalidationPath(key: string): string {
-  return `/${key}`;
+function invalidationPathsFor(touchedKeys: string[], prefix: string): string[] {
+  if (touchedKeys.length > MAX_INDIVIDUAL_INVALIDATION_PATHS) {
+    return [prefixWildcardPath(prefix)];
+  }
+  return touchedKeys.map((key) => `/${key}`).toSorted((a, b) => a.localeCompare(b));
+}
+
+function prefixWildcardPath(prefix: string): string {
+  const base = trimTrailingSlash(prefix);
+  return base ? `/${base}/*` : '/*';
 }
 
 /**
