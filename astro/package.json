@@ -23,7 +23,7 @@
     "@types/alpinejs": "^3.17.0",
     "@types/d3": "^7.4.3",
     "alpinejs": "^3.17.4",
-    "astro": "^7.4.1",
+    "astro": "^7.4.12",
     "astro-seo-meta": "^7.0.1",
     "chart.js": "^4.4.9",
     "chartjs-adapter-date-fns": "^3.0.0",
