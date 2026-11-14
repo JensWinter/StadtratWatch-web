@@ -38,6 +38,19 @@ _Avoid_: Erfolgsquote, Votum
 Angenommen, teilweise angenommen oder abgelehnt. Ein Antrag mit mehreren Abstimmungen ist teilweise angenommen, wenn nur ein Teil seiner Abstimmungen angenommen ist.
 _Avoid_: Antragserfolg, Motion-Ergebnis
 
+### Drucksachen
+
+**Drucksache**:
+Ein Dokument aus dem Ratsinformationssystem, das der Stadtrat behandelt: Vorlage, Antrag, Anfrage, Änderungsantrag und andere. Identifiziert durch ihre Drucksachennummer.
+_Avoid_: Paper (außer im Code), Vorgang
+
+**Drucksachennummer**:
+Die Kennung einer Drucksache, etwa `A0113/26` oder `DS0059/23/1`.
+_Avoid_: Antragsnummer (nicht jede Drucksache ist ein Antrag), Referenz, motionId (außer im Code)
+
+**Änderungsantrag**:
+Eine Drucksache, die eine andere Drucksache ändern will. Ihre Drucksachennummer ist die der geänderten Drucksache mit angehängtem `/n`.
+
 ### Redebeiträge
 
 **Redebeitrag**:
