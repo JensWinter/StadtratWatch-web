@@ -17,7 +17,7 @@ Run the processing pipeline in this order. The script sections below document in
    5. [`detect-ai-text`](../../src/scripts/detect-ai-text/README.md) - optional, manual step: after transcripts are corrected and before committing
       session data, run a Pangram-based AI-text check on redaction-selected speeches.
 6. [`generate-image-assets`](../../src/scripts/generate-image-assets/README.md) - create voting visualization image assets from processed session data.
-7. [`generate-paper-votings`](../../src/scripts/generate-paper-votings/README.md) - assign the scanned votings to papers by their Drucksachennummer and write the per-paper voting assets. Needs both the OParl derivates (step 4) and the scanned votings (step 5.2).
+7. [`generate-paper-votings`](../../src/scripts/generate-paper-votings/README.md) - assign the scanned votings to papers by their Drucksachennummer and write the per-paper voting assets.
 8. [`index-search`](../../src/scripts/index-search/README.md) - rebuild the Typesense search index after all paper, speech, and asset data is available.
 
 ### Extract text from paper files
