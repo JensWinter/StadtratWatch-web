@@ -2670,7 +2670,7 @@
         "votingFilename": "2026-06-18-012.png",
         "videoTimestamp": "00:56:07",
         "votingSubject": {
-            "agendaItem": "5.2",
+            "agendaItem": "5.2.3.1",
             "motionId": "DS0040/26/3/1",
             "title": "Grundsatzentscheidung zur Nutzung von Einrichtungen der Landeshauptstadt Magdeburg für parteipolitische Veranstaltungen vor Wahlen",
             "type": "Geschäftsordnung",
@@ -2913,7 +2913,7 @@
         "votingFilename": "2026-06-18-013.png",
         "videoTimestamp": "00:57:39",
         "votingSubject": {
-            "agendaItem": "5.2.2",
+            "agendaItem": "5.2.2.1",
             "motionId": "DS0040/26/2/1",
             "title": "Grundsatzentscheidung zur Nutzung von Einrichtungen der Landeshauptstadt Magdeburg für parteipolitische Veranstaltungen",
             "type": "Änderungsantrag",
@@ -3159,10 +3159,10 @@
         "votingFilename": "2026-06-18-014.png",
         "videoTimestamp": "00:58:18",
         "votingSubject": {
-            "agendaItem": "5.2.2",
+            "agendaItem": "5.2.2.1",
             "motionId": "DS0040/26/2/1",
             "title": "Grundsatzentscheidung zur Nutzung von Einrichtungen der Landeshauptstadt Magdeburg für parteipolitische Veranstaltungen",
-            "type": null,
+            "type": "Änderungsantrag",
             "authors": [
                 "CDU/FDP",
                 "DIE LINKE",
@@ -3405,10 +3405,10 @@
         "votingFilename": "2026-06-18-015.png",
         "videoTimestamp": "00:58:59",
         "votingSubject": {
-            "agendaItem": "5.2.2",
+            "agendaItem": "5.2.2.1",
             "motionId": "DS0040/26/2/1",
             "title": "Grundsatzentscheidung zur Nutzung von Einrichtungen der Landeshauptstadt Magdeburg für parteipolitische Veranstaltungen",
-            "type": null,
+            "type": "Änderungsantrag",
             "authors": [
                 "CDU/FDP",
                 "DIE LINKE",
@@ -3651,10 +3651,10 @@
         "votingFilename": "2026-06-18-016.png",
         "videoTimestamp": "00:59:44",
         "votingSubject": {
-            "agendaItem": "5.2.2",
+            "agendaItem": "5.2.2.1",
             "motionId": "DS0040/26/2/1",
             "title": "Grundsatzentscheidung zur Nutzung von Einrichtungen der Landeshauptstadt Magdeburg für parteipolitische Veranstaltungen",
-            "type": null,
+            "type": "Änderungsantrag",
             "authors": [
                 "CDU/FDP",
                 "DIE LINKE",
