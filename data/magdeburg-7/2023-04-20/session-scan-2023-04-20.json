@@ -5339,7 +5339,7 @@
         "votingFilename": "2023-04-20-023.png",
         "videoTimestamp": "03:56:55",
         "votingSubject": {
-            "agendaItem": "5.10",
+            "agendaItem": "5.10.1",
             "motionId": "DS0059/23/1",
             "title": "Satzung über die Schulbezirke der kommunalen Grundschulen im Einschulungsjahr 2024/25",
             "type": "Änderungsantrag",
@@ -9714,7 +9714,7 @@
         "videoTimestamp": "06:08:26",
         "votingSubject": {
             "agendaItem": "5.23",
-            "motionId": "0S0023/23",
+            "motionId": "DS0023/23",
             "title": "Öffentliche Auslegung des 2. Entwurfs des einfachen Bebauungsplans Nr. 315-3 \"Große Diesdorfer Straße/ Liebknechtstraße”",
             "type": "Beschlussvorlage",
             "authors": [

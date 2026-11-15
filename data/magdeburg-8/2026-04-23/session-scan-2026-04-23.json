@@ -245,7 +245,7 @@
         "videoTimestamp": "00:06:33",
         "votingSubject": {
             "agendaItem": "2.1",
-            "motionId": " DS0287/25",
+            "motionId": "DS0287/25",
             "title": "Antrag auf Zurückstellung/Zurückziehung von TOP",
             "type": "Tagesordnung",
             "authors": [
@@ -488,7 +488,7 @@
         "videoTimestamp": "00:07:49",
         "votingSubject": {
             "agendaItem": "2.1",
-            "motionId": " A0286/25",
+            "motionId": "A0286/25",
             "title": "Antrag auf Zurückstellung/Zurückziehung von TOP",
             "type": "Tagesordnung",
             "authors": [
@@ -3888,7 +3888,7 @@
         "videoTimestamp": "01:32:29",
         "votingSubject": {
             "agendaItem": "5.6.2",
-            "motionId": "DS0080/26",
+            "motionId": "DS0080/26/2",
             "title": "Konzession für Leistungen im Rettungsdienst - Festlegung des Auswahlverfahrens",
             "type": "Änderungsantrag",
             "authors": [
