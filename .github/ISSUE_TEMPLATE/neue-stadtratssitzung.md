@@ -153,6 +153,12 @@ Abschnitt 4 braucht alle drei.
 - [ ] Bei groben Fehlern: Config anpassen und neu scannen
 - [ ] Geprüfte Datei nach S3 `sessions-scan-results-redacted/` hochladen (überschreiben)
 - [ ] Geprüfte Datei nach `data/$PARLIAMENT_PERIOD/$SESSION/session-scan-$SESSION.json` kopieren
+- [ ] Drucksachennummern gegen OParl prüfen (braucht die OParl-Derivate aus Abschnitt 1):
+  ```bash
+  bun src/scripts/check-paper-references/index.ts -s $SESSION
+  ```
+  Gemeldete Nummern mit dem Protokoll abgleichen, in `data/$PARLIAMENT_PERIOD/$SESSION/session-scan-$SESSION.json`
+  korrigieren und die Datei erneut nach S3 `sessions-scan-results-redacted/` hochladen
 
 ## 3. Zweig B: Reden (Audio)
 

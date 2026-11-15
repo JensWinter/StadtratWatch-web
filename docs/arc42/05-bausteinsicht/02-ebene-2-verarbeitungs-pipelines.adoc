@@ -62,11 +62,11 @@ S5 --> TS
 
 | *Video-Verarbeitung*
 | `scan-voting-images`, `speaker-diarization`, `parse-speakers`,
-  `session-review`, `speech-to-text`, `extract-speeches`, `detect-ai-text`
+  `session-review`, `check-paper-references`, `speech-to-text`, `extract-speeches`, `detect-ai-text`
 | Gewinnt die Inhalte aus den Sitzungsvideos: OCR der Abstimmungstafeln
   (Abstimmungsergebnisse), Diarisierung (wer spricht wann, als RTTM),
   Aufbereitung der Sprecher:innen-Segmente, manuelle Prüfung/Korrektur mit dem
-  separaten Prüfwerkzeug `session-review`, Transkription der Redebeiträge und KI-Einschätzung ausgewählter Redebeiträge.
+  separaten Prüfwerkzeug `session-review`, Abgleich der Drucksachennummern mit OParl, Transkription der Redebeiträge und KI-Einschätzung ausgewählter Redebeiträge.
 
 | *Asset-Generierung*
 | `generate-image-assets`, `generate-paper-votings`
