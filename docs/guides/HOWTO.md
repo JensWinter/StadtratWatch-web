@@ -12,7 +12,7 @@ Run the processing pipeline in this order. The script sections below document in
    1. [`parse-speakers`](../../src/scripts/parse-speakers/README.md) - combine speaker diarization data for the session.
    2. [`scan-voting-images`](../../src/scripts/scan-voting-images/README.md) - extract voting results from session screenshots.
    3. [`check-paper-references`](../../src/scripts/check-paper-references/README.md) - report votings whose Drucksachennummer
-      is not in OParl. Needs the OParl derivates (step 4) and the reviewed scan (step 5.2).
+      is not in OParl.
    4. [`speech-to-text`](../../src/scripts/speech-to-text/README.md) - generate speech transcriptions.
    5. [`detect-ai-text`](../../src/scripts/detect-ai-text/README.md) - optional, manual step: after transcripts are corrected and before committing
       session data, run a Pangram-based AI-text check on redaction-selected speeches.
