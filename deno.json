@@ -1,5 +1,6 @@
 {
   "exclude": [
+    "src/scripts/check-paper-references/",
     "src/scripts/detect-ai-text/",
     "src/scripts/download-paper-files/",
     "src/scripts/fetch-oparl/",
@@ -34,6 +35,7 @@
   "lint": {
     "include": ["src/"],
     "exclude": [
+      "!src/scripts/check-paper-references/",
       "!src/scripts/detect-ai-text/",
       "!src/scripts/download-paper-files/",
       "!src/scripts/fetch-oparl/",

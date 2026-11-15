@@ -11,8 +11,10 @@ Run the processing pipeline in this order. The script sections below document in
 5. Video processing steps:
    1. [`parse-speakers`](../../src/scripts/parse-speakers/README.md) - combine speaker diarization data for the session.
    2. [`scan-voting-images`](../../src/scripts/scan-voting-images/README.md) - extract voting results from session screenshots.
-   3. [`speech-to-text`](../../src/scripts/speech-to-text/README.md) - generate speech transcriptions.
-   4. [`detect-ai-text`](../../src/scripts/detect-ai-text/README.md) - optional, manual step: after transcripts are corrected and before committing
+   3. [`check-paper-references`](../../src/scripts/check-paper-references/README.md) - report votings whose Drucksachennummer
+      is not in OParl.
+   4. [`speech-to-text`](../../src/scripts/speech-to-text/README.md) - generate speech transcriptions.
+   5. [`detect-ai-text`](../../src/scripts/detect-ai-text/README.md) - optional, manual step: after transcripts are corrected and before committing
       session data, run a Pangram-based AI-text check on redaction-selected speeches.
 6. [`generate-image-assets`](../../src/scripts/generate-image-assets/README.md) - create voting visualization image assets from processed session data.
 7. [`generate-paper-votings`](../../src/scripts/generate-paper-votings/README.md) - reverse the voting-paper-map against the session scans into the per-paper voting assets. Needs both the OParl derivates (step 4) and the scanned votings (step 5.2).

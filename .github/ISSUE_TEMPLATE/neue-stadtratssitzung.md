@@ -238,6 +238,10 @@ Abschnitt 4 braucht alle drei.
 
 ## 4. Zusammenführung
 
+- [ ] Drucksachennummern prüfen, gemeldete korrigieren (`data/` und S3 `sessions-scan-results-redacted/`):
+  ```bash
+  bun src/scripts/check-paper-references/index.ts -s $SESSION
+  ```
 - [ ] Abstimmungsbilder erzeugen und veröffentlichen (erst `--dry-run` ansehen):
   ```bash
   bun --env-file=.env.local src/scripts/generate-image-assets/index.ts \

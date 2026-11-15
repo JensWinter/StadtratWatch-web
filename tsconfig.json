@@ -12,6 +12,7 @@
   },
   "include": [
     "src/deps/astro",
+    "src/scripts/check-paper-references",
     "src/scripts/detect-ai-text",
     "src/scripts/download-paper-files",
     "src/scripts/fetch-oparl",
