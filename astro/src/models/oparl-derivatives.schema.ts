@@ -2,6 +2,7 @@ import { z } from 'astro/zod';
 import type {
   PaperIndex,
   PaperIndexEntry,
+  PaperReferenceMap,
   VotingPaperMap,
 } from './oparl-derivatives.ts';
 
@@ -26,6 +27,8 @@ export const paperIndexEntrySchema = z.object({
 
 export const paperIndexSchema = z.array(paperIndexEntrySchema);
 
+export const paperReferenceMapSchema = z.record(z.string(), z.number());
+
 // Compile-time drift guards: build fails if a schema and its canonical type diverge.
 type AssertEqual<A, B> = [A] extends [B]
   ? [B] extends [A]
@@ -36,4 +39,5 @@ export const _schemasMatchTypes: [
   AssertEqual<z.infer<typeof votingPaperMapSchema>, VotingPaperMap>,
   AssertEqual<z.infer<typeof paperIndexEntrySchema>, PaperIndexEntry>,
   AssertEqual<z.infer<typeof paperIndexSchema>, PaperIndex>,
-] = [true, true, true];
+  AssertEqual<z.infer<typeof paperReferenceMapSchema>, PaperReferenceMap>,
+] = [true, true, true, true];

@@ -6,6 +6,7 @@ import * as fs from 'node:fs';
 import type { PaperIndex } from '@models/oparl-derivatives.ts';
 import {
   paperIndexEntrySchema,
+  paperReferenceMapSchema,
   votingPaperMapSchema,
 } from '@models/oparl-derivatives.schema.ts';
 import { sessionScanSchema } from '@models/session-scan.schema.ts';
@@ -61,10 +62,20 @@ const paperIndex = defineCollection({
   schema: paperIndexEntrySchema,
 });
 
+const paperReferenceMap = defineCollection({
+  loader: glob({
+    pattern: 'paper-reference-map.json',
+    base: '../data',
+    generateId: () => 'paper-reference-map',
+  }),
+  schema: paperReferenceMapSchema,
+});
+
 export const collections = {
   parliamentPeriods,
   sessionScans,
   sessionSpeeches,
   votingPaperMaps,
   paperIndex,
+  paperReferenceMap,
 };

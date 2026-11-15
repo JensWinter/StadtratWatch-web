@@ -17,3 +17,6 @@ export type PaperIndexEntry = {
 };
 
 export type PaperIndex = PaperIndexEntry[];
+
+// Drucksachennummer -> numeric paper id, for every paper with a Drucksachennummer (amendments included).
+export type PaperReferenceMap = { [reference: string]: number };

@@ -153,6 +153,7 @@ fork again
   Derivate für den Build erzeugen;
   note right
     -> Git: data/paper-index.json
+    -> Git: data/paper-reference-map.json
     -> Git: data/{periode}/voting-paper-map.json
   end note
   :**tika-batch-extract** (Docker/Tika)

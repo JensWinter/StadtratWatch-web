@@ -1,5 +1,10 @@
-import type { OparlMeeting } from '@srw-astro/models/oparl';
-import type { PaperIndex, PaperIndexEntry, VotingPaperMap } from '@srw-astro/models/oparl-derivatives';
+import type { OparlMeeting, OparlPaper } from '@srw-astro/models/oparl';
+import type {
+  PaperIndex,
+  PaperIndexEntry,
+  PaperReferenceMap,
+  VotingPaperMap,
+} from '@srw-astro/models/oparl-derivatives';
 import type { Registry } from '@srw-astro/models/registry';
 
 import {
@@ -48,6 +53,9 @@ export class OparlDerivativesGenerator {
 
     console.log('Generating global paper-index');
     await this.writer.writePaperIndex(this.buildPaperIndex());
+
+    console.log('Generating global paper-reference-map');
+    await this.writer.writePaperReferenceMap(this.buildPaperReferenceMap());
   }
 
   private indexCouncilMeetingsByDate(): Map<string, OparlMeeting> {
@@ -116,9 +124,8 @@ export class OparlDerivativesGenerator {
         continue;
       }
 
-      const paperId = Number(oparlIdSuffix(consultation.paper));
-      if (Number.isNaN(paperId)) {
-        console.warn(`Skipping non-numeric paper id derived from ${consultation.paper}`);
+      const paperId = numericPaperId(consultation.paper);
+      if (paperId === null) {
         continue;
       }
       paperIdByAgendaItemNumber[agendaItem.number] = paperId;
@@ -145,8 +152,39 @@ export class OparlDerivativesGenerator {
         return idComparison !== 0 ? idComparison : a.date.localeCompare(b.date);
       });
   }
+
+  private buildPaperReferenceMap(): PaperReferenceMap {
+    const papersWithReference = this.papersRepository
+      .getAllPapers()
+      .filter((paper): paper is OparlPaper & { reference: string } => !!paper.reference)
+      .toSorted((a, b) => a.reference.localeCompare(b.reference));
+
+    const paperReferenceMap: PaperReferenceMap = {};
+    for (const paper of papersWithReference) {
+      if (paper.reference in paperReferenceMap) {
+        console.warn(`Drucksachennummer ${paper.reference} occurs more than once; ignoring ${paper.id}`);
+        continue;
+      }
+      const paperId = numericPaperId(paper.id);
+      if (paperId === null) {
+        continue;
+      }
+      paperReferenceMap[paper.reference] = paperId;
+    }
+
+    return paperReferenceMap;
+  }
 }
 
 function oparlIdSuffix(oparlId: string): string {
   return oparlId.split('/').pop()!;
+}
+
+function numericPaperId(paperOparlId: string): number | null {
+  const paperId = Number(oparlIdSuffix(paperOparlId));
+  if (Number.isNaN(paperId)) {
+    console.warn(`Skipping non-numeric paper id derived from ${paperOparlId}`);
+    return null;
+  }
+  return paperId;
 }

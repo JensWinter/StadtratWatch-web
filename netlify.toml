@@ -2,8 +2,7 @@
 #
 # `base = "astro"` makes Netlify install and build inside the astro/ workspace.
 # The Astro build reads only the committed OParl derivates (data/paper-index.json,
-# data/{period}/voting-paper-map.json), so it no longer fetches raw OParl data —
-# there is no prebuild fetch-oparl step anymore.
+# data/paper-reference-map.json, data/{period}/voting-paper-map.json).
 # Paths below are relative to `base`, so `publish = "dist"` resolves to astro/dist.
 #
 # The env vars in astro.config.mjs must be set in the Netlify site UI.

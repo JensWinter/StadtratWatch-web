@@ -41,8 +41,8 @@ export function printHelpText() {
 Usage: bun index.ts [-o <oparl-dir>] [-d <data-dir>]
 
 Scans <data-dir> for {period-id}/registry.json and regenerates, in a single run,
-every period's voting-paper-map.json plus the global paper-index.json from the
-raw OParl data in <oparl-dir>.
+every period's voting-paper-map.json plus the global paper-index.json and
+paper-reference-map.json from the raw OParl data in <oparl-dir>.
 
 -h, --help                  Show this help message and exit.
 -o, --oparl-dir             The directory containing the raw OParl files

@@ -4,7 +4,7 @@ import { type Registry, type RegistryFaction } from '@models/registry';
 import { getMotionResult, getVotingId } from './_helpers';
 import { votingAccepted } from '@models/voting-breakdown';
 import { formatDate } from '@utils/format-date';
-import type { VotingPaperMap } from '@models/oparl-derivatives.ts';
+import type { VotingPaperDerivates } from '@models/voting-paper.ts';
 import { getPaperId } from '../../_helpers2';
 
 export type MotionListItem = {
@@ -23,10 +23,10 @@ type Props = {
   parliamentPeriod: Registry;
   faction: RegistryFaction;
   sessionInputs: SessionInput[];
-  votingPaperMap: VotingPaperMap;
+  votingPaperDerivates: VotingPaperDerivates;
 };
 
-const { parliamentPeriod, faction, sessionInputs, votingPaperMap } =
+const { parliamentPeriod, faction, sessionInputs, votingPaperDerivates } =
   Astro.props as Props;
 
 const factionMotionVotings = sessionInputs
@@ -55,7 +55,7 @@ const motions = Array.from(motionsMap)
     const sessionId = motionVoting.sessionId;
     const sessionDate = motionVoting.sessionDate;
     const paperId = getPaperId(
-      votingPaperMap,
+      votingPaperDerivates,
       motionVoting.sessionDate,
       motionVoting.voting,
     );

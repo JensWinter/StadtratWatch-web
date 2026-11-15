@@ -8,7 +8,7 @@ import type {
   OparlOrganization,
   OparlPaper,
 } from '@srw-astro/models/oparl';
-import type { PaperIndex, VotingPaperMap } from '@srw-astro/models/oparl-derivatives';
+import type { PaperIndex, PaperReferenceMap, VotingPaperMap } from '@srw-astro/models/oparl-derivatives';
 import type { Registry } from '@srw-astro/models/registry';
 
 import type { OparlObjectsStore } from '../../shared/oparl/oparl-objects-store.ts';
@@ -71,6 +71,8 @@ class MockOparlObjectsStore implements OparlObjectsStore {
     { ...paper('400', '2024-08-05'), subordinatedPaper: [url('papers/100')] },
     // Main paper without a date -> excluded from the index.
     { ...paper('500', undefined) },
+    // Amendment: sub paper with a reference -> in the reference map, not in the index.
+    { ...paper('600', '2024-08-06', 'Änderungsantrag', 'A0123/1'), subordinatedPaper: [url('papers/300')] },
   ];
 
   loadFiles = (): OparlFile[] => [];
@@ -103,6 +105,7 @@ class MockRegistryStore implements RegistryStore {
 class MockDerivativesWriter implements DerivativesWriter {
   votingPaperMaps: { [periodId: string]: VotingPaperMap } = {};
   paperIndex: PaperIndex = [];
+  paperReferenceMap: PaperReferenceMap = {};
 
   writeVotingPaperMap(periodId: string, votingPaperMap: VotingPaperMap): Promise<void> {
     this.votingPaperMaps[periodId] = votingPaperMap;
@@ -111,6 +114,11 @@ class MockDerivativesWriter implements DerivativesWriter {
 
   writePaperIndex(paperIndex: PaperIndex): Promise<void> {
     this.paperIndex = paperIndex;
+    return Promise.resolve();
+  }
+
+  writePaperReferenceMap(paperReferenceMap: PaperReferenceMap): Promise<void> {
+    this.paperReferenceMap = paperReferenceMap;
     return Promise.resolve();
   }
 }
@@ -161,6 +169,18 @@ describe('Generating OParl derivates', () => {
         name: 'Paper 300',
       },
     ]);
+  });
+
+  it('maps the Drucksachennummer of every paper, amendments included, to its paper id', async () => {
+    givenStoresAreAvailable();
+
+    await runGeneration();
+
+    expect(writer.paperReferenceMap).toEqual({
+      A0123: 300,
+      'A0123/1': 600,
+      B0456: 100,
+    });
   });
 
   function givenStoresAreAvailable() {

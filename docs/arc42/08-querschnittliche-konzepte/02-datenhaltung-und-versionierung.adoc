@@ -33,10 +33,11 @@ Das Veröffentlichen ist ein optionaler, authentifizierter Abschlussschritt des 
 
 == OParl-Precompile-Derivate
 
-Statt die rohen OParl-Daten direkt zu lesen, konsumiert der Web-Build zwei kleine, zweckgebundene Derivate, die ein manueller Precompile-Schritt (`generate-oparl-derivatives`) aus den Rohdaten erzeugt:
+Statt die rohen OParl-Daten direkt zu lesen, konsumiert der Web-Build drei kleine, zweckgebundene Derivate, die ein manueller Precompile-Schritt (`generate-oparl-derivatives`) aus den Rohdaten erzeugt:
 
 * `data/paper-index.json` (global) — projizierte Haupt-Drucksachen für die Drucksachen-Liste; der 3-Monats-Filter läuft weiterhin im Build.
 * `data/{periode}/voting-paper-map.json` (je Wahlperiode) — Abbildung Sitzung → Tagesordnungspunkt → Drucksachen-Id für den Voting→Paper-Bezug.
+* `data/paper-reference-map.json` (global) — Abbildung Drucksachennummer → Drucksachen-Id für alle Drucksachen, auch Änderungsanträge. Damit hängt der Drucksache-Link einer Abstimmung nicht allein am Tagesordnungspunkt, der im Scan öfter falsch erfasst ist.
 
 Die Derivate werden mit stabiler Sortierung vollständig neu erzeugt (sauberer `git diff`) und ohne Zeitstempel committet. Ein Astro-Build-Hook prüft die Konsistenz (`voting-paper-map`-Sitzungen gegen die `registry.json`) und bricht bei Abweichung ab (fail fast).
 

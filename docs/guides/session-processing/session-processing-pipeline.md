@@ -129,7 +129,7 @@ Ergebnisse der jeweils benötigten Zweige voraus.
 | 15a | 🤖 | Skript | **`scrape-oparl`** (Bun) | OParl-API der Stadt | OParl-Rohdaten → lokal `data/oparl-magdeburg/` (**nicht** committed) **und** S3/CloudFront (oparl-Snapshot). Auf anderen Rechnern via `fetch-oparl` beziehbar. |
 | 15b | 🤖 | Skript | **`download-paper-files`** (Bun) | Datei-Verweise aus OParl | PDF-Dokumente → lokal `output/papers/{jahr}/` |
 | 15c | 🤖 | Skript | **`generate-paper-assets`** (Bun) | OParl-Rohdaten + PDF-Dateigrößen + Registries | Drucksachen-**JSON-Batches** → lokal `output/paper-assets/`, mit `--push` nach S3/CloudFront (`web-assets/papers/`) |
-| 15d | 🤖 | Skript | **`generate-oparl-derivatives`** (Bun) | OParl-Rohdaten + `registry.json` | **`data/paper-index.json`** + **`data/{periode}/voting-paper-map.json`** → Git (die **einzigen** OParl-Eingaben des Builds) |
+| 15d | 🤖 | Skript | **`generate-oparl-derivatives`** (Bun) | OParl-Rohdaten + `registry.json` | **`data/paper-index.json`** + **`data/paper-reference-map.json`** + **`data/{periode}/voting-paper-map.json`** → Git (die **einzigen** OParl-Eingaben des Builds) |
 | 15e | 🤖 | Skript | **`tika-batch-extract`** (Docker/Tika) | PDF-Dokumente | Extrahierter Volltext → lokal `output/papers/{jahr}-extracted/` |
 
 ### Phase D — Zusammenführung (Assets & Suche)
