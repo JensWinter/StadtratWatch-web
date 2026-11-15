@@ -2,7 +2,6 @@
 // Deno workspace can reexport them without pulling in Zod; the matching runtime
 // schemas live in the Astro-only sibling oparl-derivatives.schema.ts.
 
-// sessionDate -> agendaItemNumber -> numeric paper id (the value the former getPaperId join produced).
 export type VotingPaperMap = {
   [sessionDate: string]: { [agendaItemNumber: string]: number };
 };
@@ -18,5 +17,4 @@ export type PaperIndexEntry = {
 
 export type PaperIndex = PaperIndexEntry[];
 
-// Drucksachennummer -> numeric paper id, for every paper with a Drucksachennummer (amendments included).
 export type PaperReferenceMap = { [reference: string]: number };

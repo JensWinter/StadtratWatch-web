@@ -6,11 +6,7 @@ Precompiles the raw OParl data in `data/oparl-magdeburg/` into the committed OPa
 
 - `data/{period-id}/voting-paper-map.json`, one per parliament period: session date → agenda item number → paper id.
 - `data/paper-index.json`, global: all main papers.
-- `data/paper-reference-map.json`, global: Drucksachennummer → paper id for every paper that has one, amendments
-  included. Used to resolve the paper link of a voting (`resolveVotingPaperId` in `astro/src/models/voting-paper.ts`).
-
-It runs after `generate-paper-assets` in the processing order (see [HOWTO](../../../docs/guides/HOWTO.md)); the raw
-snapshot comes from [`scrape-oparl`](../scrape-oparl/README.md) or [`fetch-oparl`](../fetch-oparl/README.md).
+- `data/paper-reference-map.json`, global: Drucksachennummer → paper id for every paper that has one.
 
 ## Usage
 
