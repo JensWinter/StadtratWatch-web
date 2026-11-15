@@ -136,7 +136,7 @@ Ergebnisse der jeweils benötigten Zweige voraus.
 
 | # | Grad | Wer | Werkzeug | Eingabe (Quelle) | Ausgabe (Senke) |
 |---|------|-----|----------|------------------|-----------------|
-| 16 | 🤖 | Skript | **`check-paper-references`** (Bun) | `session-scan-{date}.json` (6) + `paper-reference-map.json` (15d) | Abstimmungen, deren Drucksachennummer nicht in `paper-reference-map.json` steht → Konsole (Korrektur wie in Schritt 6) |
+| 16 | 🤖 | Skript | **`check-paper-references`** (Bun) | `session-scan-{date}.json` (6) + `paper-reference-map.json` (15d) | Abstimmungen, deren Drucksachennummer nicht in `paper-reference-map.json` steht → Konsole |
 | 17 | 🤖 | Skript | **`generate-image-assets`** (Bun) | `session-scan-{date}.json` + `registry.json` | Abstimmungs-**PNGs** (`{date}-{voting}.png`) → lokal `output/image-assets/{periode}/`, mit `--push` nach S3/CloudFront (`web-assets/parliament-periods/{periode}/`) |
 | 18 | 🤖 | Skript | **`generate-paper-votings`** (Bun) | `voting-paper-map.json` (15d) + `session-scan-{date}.json` (6) | **`paper-votings-*.json`** → lokal `output/paper-votings/`, mit `--push` nach S3/CloudFront (`web-assets/paper-votings/`) |
 | 19 | 🤖 | Skript | **`index-search`** (Bun) | OParl-Rohdaten-Metadaten (15a) + extrahierter Volltext (15e) + `session-speeches-{date}.json` (14a) | Befüllte **Typesense**-Collections (`papers`, `speeches`) → VPS |
