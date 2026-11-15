@@ -83,7 +83,7 @@ laufen können und über die Datenablage entkoppelt sind, gefolgt von einer
 
 Die Nummerierung folgt dem chronologischen Ablauf beim Onboarding **einer**
 Sitzung. Die Reihenfolge **innerhalb** eines Zweigs ist zwingend; die Zweige A/B/C
-sind untereinander unabhängig. Die Zusammenführungs-Schritte (17–19) setzen die
+sind untereinander unabhängig. Die Zusammenführungs-Schritte (16–19) setzen die
 Ergebnisse der jeweils benötigten Zweige voraus.
 
 ### Phase 0 — Vorbereitung
@@ -101,7 +101,6 @@ Ergebnisse der jeweils benötigten Zweige voraus.
 | 4 | ✋ | Maintainer:in | Screenshot | Video | **Screenshots** der Tafeln (`YYYY-MM-DD-XXX.png`, chronologisch, gleich groß) → lokal **und** S3 »sessions-raw/{date}« |
 | 5 | 🧑‍🔧 | Skript | **`scan-voting-images`** (Bun + Tesseract) | Screenshots + `config-*.json` | **`session-scan-{date}.json`** (roh) → S3 »sessions-scan-results« |
 | 6 | ✋ | Maintainer:in | **`session-review`** | rohe `session-scan` + Video | Geprüfte **`session-scan-{date}.json`** (Voten, TOPs, Drucksachennummern) → S3 »sessions-scan-results-redacted« **und** Git (`data/{periode}/{date}/`) |
-| 6a | 🤖 | Skript | **`check-paper-references`** (Bun) | `session-scan-{date}.json` (6) + `paper-reference-map.json` (15d) | Abstimmungen, deren Drucksachennummer es in OParl nicht gibt → Konsole (Korrektur wie in Schritt 6) |
 
 > **Korrektur-Iteration (Phase A):** Reicht die Korrektur in `session-review` nicht,
 > wird die **Scan-Config angepasst** und `scan-voting-images` erneut ausgeführt,
@@ -137,17 +136,18 @@ Ergebnisse der jeweils benötigten Zweige voraus.
 
 | # | Grad | Wer | Werkzeug | Eingabe (Quelle) | Ausgabe (Senke) |
 |---|------|-----|----------|------------------|-----------------|
-| 16 | 🤖 | Skript | **`generate-image-assets`** (Bun) | `session-scan-{date}.json` + `registry.json` | Abstimmungs-**PNGs** (`{date}-{voting}.png`) → lokal `output/image-assets/{periode}/`, mit `--push` nach S3/CloudFront (`web-assets/parliament-periods/{periode}/`) |
-| 17 | 🤖 | Skript | **`generate-paper-votings`** (Bun) | `voting-paper-map.json` (15d) + `session-scan-{date}.json` (6) | **`paper-votings-*.json`** → lokal `output/paper-votings/`, mit `--push` nach S3/CloudFront (`web-assets/paper-votings/`) |
-| 18 | 🤖 | Skript | **`index-search`** (Bun) | OParl-Rohdaten-Metadaten (15a) + extrahierter Volltext (15e) + `session-speeches-{date}.json` (14a) | Befüllte **Typesense**-Collections (`papers`, `speeches`) → VPS |
+| 16 | 🤖 | Skript | **`check-paper-references`** (Bun) | `session-scan-{date}.json` (6) + `paper-reference-map.json` (15d) | Abstimmungen, deren Drucksachennummer nicht in `paper-reference-map.json` steht → Konsole (Korrektur wie in Schritt 6) |
+| 17 | 🤖 | Skript | **`generate-image-assets`** (Bun) | `session-scan-{date}.json` + `registry.json` | Abstimmungs-**PNGs** (`{date}-{voting}.png`) → lokal `output/image-assets/{periode}/`, mit `--push` nach S3/CloudFront (`web-assets/parliament-periods/{periode}/`) |
+| 18 | 🤖 | Skript | **`generate-paper-votings`** (Bun) | `voting-paper-map.json` (15d) + `session-scan-{date}.json` (6) | **`paper-votings-*.json`** → lokal `output/paper-votings/`, mit `--push` nach S3/CloudFront (`web-assets/paper-votings/`) |
+| 19 | 🤖 | Skript | **`index-search`** (Bun) | OParl-Rohdaten-Metadaten (15a) + extrahierter Volltext (15e) + `session-speeches-{date}.json` (14a) | Befüllte **Typesense**-Collections (`papers`, `speeches`) → VPS |
 
 ### Phase E — Freigabe & Veröffentlichung
 
 | # | Grad | Wer | Werkzeug | Eingabe (Quelle) | Ausgabe (Senke) |
 |---|------|-----|----------|------------------|-----------------|
-| 19 | ✋ | Maintainer:in | Editor | geprüfte Sitzungsdaten | **`approved = true`** in `registry.json` → Git |
-| 20 | ✋ | Maintainer:in | `git` | committete `data/`-Änderungen | Push auf **GitHub `main`** |
-| 21 | 🤖 | Netlify | Astro-Build | committete Daten (`data/`, nur Derivate für OParl) | Statische Website + API v1 → **Netlify** (automatisch bei Push) |
+| 20 | ✋ | Maintainer:in | Editor | geprüfte Sitzungsdaten | **`approved = true`** in `registry.json` → Git |
+| 21 | ✋ | Maintainer:in | `git` | committete `data/`-Änderungen | Push auf **GitHub `main`** |
+| 22 | 🤖 | Netlify | Astro-Build | committete Daten (`data/`, nur Derivate für OParl) | Statische Website + API v1 → **Netlify** (automatisch bei Push) |
 
 ---
 
@@ -155,14 +155,14 @@ Ergebnisse der jeweils benötigten Zweige voraus.
 
 - **Anstoß:** Es gibt **keinen Scheduler**. Jede Skript-Stufe wird von der
   **Maintainer:in** bedarfsweise am lokalen Arbeitsplatz gestartet (nativ oder
-  containerisiert, siehe `docker/`). Nur der **Netlify-Build (21)** ist ein echter
-  Automatismus — ausgelöst durch den Push (20).
+  containerisiert, siehe `docker/`). Nur der **Netlify-Build (22)** ist ein echter
+  Automatismus — ausgelöst durch den Push (21).
 - **Parallelität:** Die Zweige **A**, **B** und **C** sind voneinander unabhängig.
   Schlägt einer fehl, bleiben die Ergebnisse der anderen nutzbar (Entkopplung über
   Dateien). Jede Stufe ist **wiederholbar** ohne Seiteneffekte.
 - **Mensch im Loop:** Die qualitätssichernden Schritte **6, 10, 11, 14a**, die
   Auswahl für die KI-Einschätzung (**14b**) und die
-  **Freigabe (19)** sind bewusst manuell. `approved` ist ein **Anzeige-Status**,
+  **Freigabe (20)** sind bewusst manuell. `approved` ist ein **Anzeige-Status**,
   **kein Veröffentlichungs-Gate**: Auch unbestätigte Sitzungen sind sichtbar, dann
   aber als *vorläufig* gekennzeichnet (arc42 Szenario 6.4).
 - **Zwei getrennte S3-Ziele:** Der Bucket **»stadtrat-watch«** hält die
