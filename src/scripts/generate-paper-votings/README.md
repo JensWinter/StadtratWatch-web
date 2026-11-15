@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Reads the period registries, voting-paper-maps and session scans from `data/` and writes the batched
+Reads the period registries, the session scans and `paper-reference-map.json` from `data/` and writes the batched
 `paper-votings-{batch}.json` files behind the »Abstimmungen« tab on the paper detail page: for each paper, the votings
 it was decided in, with the faction/person breakdown. It runs after
 [`generate-oparl-derivatives`](../generate-oparl-derivatives/README.md) and
@@ -17,18 +17,21 @@ From the repository root:
 bun src/scripts/generate-paper-votings/index.ts -d data/ -o output/paper-votings/
 ```
 
-| Flag               | Description                                                                                     |
-| ------------------ | ----------------------------------------------------------------------------------------------- |
-| `-d, --data-dir`   | Directory with the period registries, voting-paper-maps and session scans. Default: `data/`.    |
-| `-o, --output-dir` | Directory the `paper-votings-{batch}.json` files are written into.                              |
-| `--push`           | After generating, publish the output directory to S3/CloudFront (see [below](#publish---push)). |
-| `--dry-run`        | Only with `--push`: print the diff without writing to S3 or invalidating CloudFront.            |
-| `-h, --help`       | Show the help text and exit.                                                                    |
+| Flag               | Description                                                                                           |
+| ------------------ | ----------------------------------------------------------------------------------------------------- |
+| `-d, --data-dir`   | Directory with the period registries, session scans and `paper-reference-map.json`. Default: `data/`. |
+| `-o, --output-dir` | Directory the `paper-votings-{batch}.json` files are written into.                                    |
+| `--push`           | After generating, publish the output directory to S3/CloudFront (see [below](#publish---push)).       |
+| `--dry-run`        | Only with `--push`: print the diff without writing to S3 or invalidating CloudFront.                  |
+| `-h, --help`       | Show the help text and exit.                                                                          |
 
-The link from a voting to a paper only exists forwards (`{period}/voting-paper-map.json`: session date → agenda item →
-paper id), so the script reverses it and resolves each vote to its person and faction against the period's
-`registry.json`, the same breakdown the session detail page renders. Only agenda items that were **actually scanned**
-produce a voting, so papers that were never voted on do not appear in the output at all (which is what disables the
+A voting belongs to the paper whose Drucksachennummer was scanned with it, looked up in `paper-reference-map.json`.
+Whitespace in the number is ignored, in the scan as in OParl (OParl has e.g. `A0249/25 /1`). A voting without a number,
+or with a number that is not in OParl, belongs to no paper. The agenda item plays no part; it is only displayed. The
+voting page and a faction's motion list link to the paper by the same rule (`astro/src/models/voting-paper.ts`).
+
+Each vote is resolved to its person and faction against the period's `registry.json`, the same breakdown the session
+detail page renders. Papers that were never voted on do not appear in the output at all (which is what disables the
 tab). A paper voted on in several parliament periods collects the votings of all of them, each joined against its own
 registry.
 

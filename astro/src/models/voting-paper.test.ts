@@ -1,80 +1,49 @@
 import { describe, expect, test } from 'vitest';
-import { resolveVotingPaperId } from './voting-paper.ts';
-import type { PaperReferenceMap, VotingPaperMap } from './oparl-derivatives.ts';
-
-const SESSION_DATE = '2023-04-20';
+import { createVotingPaperResolver } from './voting-paper.ts';
+import type { PaperReferenceMap } from './oparl-derivatives.ts';
 
 const MAIN_MOTION_ID = 240337;
 const AMENDMENT_ID = 240946;
-const PAPER_FROM_OTHER_SESSION_ID = 239999;
-
-const votingPaperMap: VotingPaperMap = {
-  [SESSION_DATE]: {
-    '5.10': MAIN_MOTION_ID,
-    '5.10.1': AMENDMENT_ID,
-  },
-};
 
 const paperReferenceMap: PaperReferenceMap = {
   'DS0059/23': MAIN_MOTION_ID,
   'DS0059/23/1': AMENDMENT_ID,
-  'A0186/22': PAPER_FROM_OTHER_SESSION_ID,
 };
 
-const derivates = { votingPaperMap, paperReferenceMap };
+const resolveVotingPaperId = createVotingPaperResolver(paperReferenceMap);
 
-describe('resolveVotingPaperId', () => {
-  test('follows the Drucksachennummer when that paper is on the agenda of the session', () => {
-    const paperId = resolveVotingPaperId(derivates, SESSION_DATE, {
-      agendaItem: '5.10',
-      motionId: 'DS0059/23/1',
-    });
+describe('resolving the paper of a voting', () => {
+  test('follows the Drucksachennummer, whatever the agenda item', () => {
+    const paperId = resolveVotingPaperId({ motionId: 'DS0059/23/1' });
 
     expect(paperId).toBe(AMENDMENT_ID);
   });
 
-  test('follows the agenda item when the paper with the Drucksachennummer is not on the agenda of the session', () => {
-    const paperId = resolveVotingPaperId(derivates, SESSION_DATE, {
-      agendaItem: '5.10',
-      motionId: 'A0186/22',
-    });
+  test('ignores whitespace in the Drucksachennummer of the scan', () => {
+    const paperId = resolveVotingPaperId({ motionId: ' DS0059/23 /1 ' });
 
-    expect(paperId).toBe(MAIN_MOTION_ID);
+    expect(paperId).toBe(AMENDMENT_ID);
   });
 
-  test('follows the agenda item when the Drucksachennummer is not in OParl', () => {
-    const paperId = resolveVotingPaperId(derivates, SESSION_DATE, {
-      agendaItem: '5.10',
-      motionId: 'DS0059/32',
+  test('ignores whitespace in the Drucksachennummer from OParl', () => {
+    const resolveWithSpacedReference = createVotingPaperResolver({
+      'A0249/25 /1': AMENDMENT_ID,
     });
 
-    expect(paperId).toBe(MAIN_MOTION_ID);
+    const paperId = resolveWithSpacedReference({ motionId: 'A0249/25/1' });
+
+    expect(paperId).toBe(AMENDMENT_ID);
   });
 
-  test('finds no paper when neither the agenda item nor the Drucksachennummer has one', () => {
-    const paperId = resolveVotingPaperId(derivates, SESSION_DATE, {
-      agendaItem: '2.1',
-      motionId: '',
-    });
+  test('finds no paper when the Drucksachennummer is not in OParl', () => {
+    const paperId = resolveVotingPaperId({ motionId: '0S0059/23' });
 
     expect(paperId).toBeNull();
   });
 
-  test('follows the Drucksachennummer when the agenda item has no paper', () => {
-    const paperId = resolveVotingPaperId(derivates, SESSION_DATE, {
-      agendaItem: '2.1',
-      motionId: 'A0186/22',
-    });
+  test('finds no paper when the voting has no Drucksachennummer', () => {
+    const paperId = resolveVotingPaperId({ motionId: '' });
 
-    expect(paperId).toBe(PAPER_FROM_OTHER_SESSION_ID);
-  });
-
-  test('ignores whitespace around the Drucksachennummer', () => {
-    const paperId = resolveVotingPaperId(derivates, SESSION_DATE, {
-      agendaItem: '5.10',
-      motionId: ' DS0059/23/1 ',
-    });
-
-    expect(paperId).toBe(AMENDMENT_ID);
+    expect(paperId).toBeNull();
   });
 });

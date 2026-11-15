@@ -4,8 +4,7 @@ import { type Registry, type RegistryFaction } from '@models/registry';
 import { getMotionResult, getVotingId } from './_helpers';
 import { votingAccepted } from '@models/voting-breakdown';
 import { formatDate } from '@utils/format-date';
-import type { VotingPaperDerivates } from '@models/voting-paper.ts';
-import { getPaperId } from '../../_helpers2';
+import type { VotingPaperResolver } from '@models/voting-paper.ts';
 
 export type MotionListItem = {
   sessionId: string;
@@ -23,10 +22,10 @@ type Props = {
   parliamentPeriod: Registry;
   faction: RegistryFaction;
   sessionInputs: SessionInput[];
-  votingPaperDerivates: VotingPaperDerivates;
+  resolveVotingPaperId: VotingPaperResolver;
 };
 
-const { parliamentPeriod, faction, sessionInputs, votingPaperDerivates } =
+const { parliamentPeriod, faction, sessionInputs, resolveVotingPaperId } =
   Astro.props as Props;
 
 const factionMotionVotings = sessionInputs
@@ -54,11 +53,7 @@ const motions = Array.from(motionsMap)
     const motionTitle = motionVoting.voting.votingSubject.title;
     const sessionId = motionVoting.sessionId;
     const sessionDate = motionVoting.sessionDate;
-    const paperId = getPaperId(
-      votingPaperDerivates,
-      motionVoting.sessionDate,
-      motionVoting.voting,
-    );
+    const paperId = resolveVotingPaperId(motionVoting.voting.votingSubject);
     const votings = motionVotings.map((motionVoting) => ({
       votingId: +motionVoting.voting.votingFilename.substring(11, 14),
       accepted: votingAccepted(parliamentPeriod, motionVoting.voting),

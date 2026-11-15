@@ -46,14 +46,14 @@ export function printHelpText() {
   console.log(`
 Usage: bun index.ts [-d <data-dir>] -o <output-dir> [--push [--dry-run]]
 
-Scans <data-dir> for {period-id}/registry.json and reverses every period's
-voting-paper-map.json against the scanned votings, so that each paper carries the
-votings it was decided in - including the faction/person breakdown. Papers without
-a scanned voting do not appear in the output.
+Scans <data-dir> for {period-id}/registry.json and assigns every scanned voting to
+the paper of its Drucksachennummer (paper-reference-map.json), so that each paper
+carries the votings it was decided in - including the faction/person breakdown.
+Papers without a scanned voting do not appear in the output.
 
 -h, --help                  Show this help message and exit.
 -d, --data-dir              The data directory containing the parliament period
-                            registries, voting-paper-maps and session scans.
+                            registries, session scans and paper-reference-map.json.
                             Default: data/
 -o, --output-dir            The output directory. Batched json files
                             (paper-votings-{batch}.json) will be written here.

@@ -1,37 +1,20 @@
-import type { SessionScanItem } from '@models/session-scan';
 import {
-  resolveVotingPaperId,
-  type VotingPaperDerivates,
+  createVotingPaperResolver,
+  type VotingPaperResolver,
 } from '@models/voting-paper.ts';
 import { getEntry } from 'astro:content';
 
-export function getPaperId(
-  derivates: VotingPaperDerivates,
-  sessionDate: string,
-  voting: SessionScanItem,
-): number | null {
-  const paperId = resolveVotingPaperId(
-    derivates,
-    sessionDate,
-    voting.votingSubject,
-  );
-  if (paperId === null) {
-    console.warn(
-      `No paperId found for session ${sessionDate}, agendaItem ${voting.votingSubject.agendaItem}, motionId ${voting.votingSubject.motionId}`,
-    );
-  }
-  return paperId;
+let votingPaperResolverLoading: Promise<VotingPaperResolver> | undefined;
+
+export function getVotingPaperResolver(): Promise<VotingPaperResolver> {
+  votingPaperResolverLoading ??= loadVotingPaperResolver();
+  return votingPaperResolverLoading;
 }
 
-export async function getVotingPaperDerivates(
-  parliamentPeriodId: string,
-): Promise<VotingPaperDerivates> {
-  const [votingPaperMapEntry, paperReferenceMapEntry] = await Promise.all([
-    getEntry('votingPaperMaps', parliamentPeriodId),
-    getEntry('paperReferenceMap', 'paper-reference-map'),
-  ]);
-  return {
-    votingPaperMap: votingPaperMapEntry?.data ?? {},
-    paperReferenceMap: paperReferenceMapEntry?.data ?? {},
-  };
+async function loadVotingPaperResolver(): Promise<VotingPaperResolver> {
+  const paperReferenceMapEntry = await getEntry(
+    'paperReferenceMap',
+    'paper-reference-map',
+  );
+  return createVotingPaperResolver(paperReferenceMapEntry?.data ?? {});
 }

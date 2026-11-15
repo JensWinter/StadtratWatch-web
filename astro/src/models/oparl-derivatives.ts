@@ -2,10 +2,6 @@
 // Deno workspace can reexport them without pulling in Zod; the matching runtime
 // schemas live in the Astro-only sibling oparl-derivatives.schema.ts.
 
-export type VotingPaperMap = {
-  [sessionDate: string]: { [agendaItemNumber: string]: number };
-};
-
 export type PaperIndexEntry = {
   oparlId: string;
   id: string; // numeric suffix of oparlId

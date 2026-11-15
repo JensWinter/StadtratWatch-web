@@ -1,24 +1,23 @@
-import type { PaperReferenceMap, VotingPaperMap } from './oparl-derivatives.ts';
+import type { PaperReferenceMap } from './oparl-derivatives.ts';
 import type { SessionScanVotingSubject } from './session-scan.ts';
 
-export type VotingPaperDerivates = {
-  votingPaperMap: VotingPaperMap;
-  paperReferenceMap: PaperReferenceMap;
-};
+export type VotingPaperResolver = (
+  votingSubject: Pick<SessionScanVotingSubject, 'motionId'>,
+) => number | null;
 
-export function resolveVotingPaperId(
-  derivates: VotingPaperDerivates,
-  sessionDate: string,
-  votingSubject: Pick<SessionScanVotingSubject, 'agendaItem' | 'motionId'>,
-): number | null {
-  const sessionAgenda = derivates.votingPaperMap[sessionDate] ?? {};
-  const referencedPaperId =
-    derivates.paperReferenceMap[votingSubject.motionId.trim()];
-  if (
-    referencedPaperId !== undefined &&
-    Object.values(sessionAgenda).includes(referencedPaperId)
-  ) {
-    return referencedPaperId;
-  }
-  return sessionAgenda[votingSubject.agendaItem] ?? referencedPaperId ?? null;
+export function createVotingPaperResolver(
+  paperReferenceMap: PaperReferenceMap,
+): VotingPaperResolver {
+  const paperIdByReference = new Map(
+    Object.entries(paperReferenceMap).map(([reference, paperId]) => [
+      withoutWhitespace(reference),
+      paperId,
+    ]),
+  );
+  return (votingSubject) =>
+    paperIdByReference.get(withoutWhitespace(votingSubject.motionId)) ?? null;
+}
+
+function withoutWhitespace(reference: string): string {
+  return reference.replace(/\s/g, '');
 }

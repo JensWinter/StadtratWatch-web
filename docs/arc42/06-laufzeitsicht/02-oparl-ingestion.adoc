@@ -10,8 +10,7 @@ Rohdaten ab, `download-paper-files` lädt die verlinkten PDF-Dokumente, und
 `generate-paper-assets` überführt die Drucksachen in das ausgelieferte JSON-Format
 und veröffentlicht die Batches mit `--push` nach S3/CloudFront.
 Im Anschluss erzeugt `generate-oparl-derivatives` aus denselben Rohdaten die
-OParl-Derivate (`paper-index.json`, `paper-reference-map.json`,
-`voting-paper-map.json`), die der
+OParl-Derivate (`paper-index.json`, `paper-reference-map.json`), die der
 Astro-Build konsumiert (siehe <<konzept-datenhaltung,Datenhaltung>>).
 Den Abschluss
 bildet `index-search` — diese Stufe gehört nicht allein zur OParl-Verarbeitung,
@@ -53,11 +52,10 @@ end note
 
 :**generate-oparl-derivatives** (Bun)\nOParl-Derivate erzeugen;
 note right
-  Eingabe: OParl-Rohdaten + registry.json
+  Eingabe: OParl-Rohdaten (papers.json)
   Ausgabe:
   - data/paper-index.json
   - data/paper-reference-map.json
-  - data/{periode}/voting-paper-map.json
 end note
 
 :**index-search** (Bun)\nDrucksachen + Redebeiträge\nin Typesense importieren;
@@ -95,9 +93,8 @@ stop
   nach S3/CloudFront (`web-assets/papers/`)
 
 | *generate-oparl-derivatives*
-| OParl-Rohdaten + `registry.json` je Wahlperiode
+| OParl-Rohdaten (`papers.json`)
 | OParl-Derivate: `data/paper-index.json` und `data/paper-reference-map.json`
-  (global) sowie `data/{periode}/voting-paper-map.json` (je Periode)
 
 | *index-search*
 | OParl-Rohdaten (Drucksachen-Metadaten) + extrahierter PDF-Volltext (aus dieser

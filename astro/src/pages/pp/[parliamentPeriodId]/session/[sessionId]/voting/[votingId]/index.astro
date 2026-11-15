@@ -5,7 +5,7 @@ import {
   type ParliamentPeriodWithSessionAndVotingProps,
   getParliamentPeriodWithSessionAndVotingPaths,
 } from '../../../../_helpers';
-import { getPaperId, getVotingPaperDerivates } from '../../../../_helpers2';
+import { getVotingPaperResolver } from '../../../../_helpers2';
 import MetaTags from '@components/MetaTags.astro';
 import { getVideoTimestampAsSeconds } from '@utils/session-utils';
 import { getVoteCounts, votingAccepted } from '@models/voting-breakdown';
@@ -20,7 +20,7 @@ const { parliamentPeriodId, sessionId, votingId } = Astro.params;
 const { parliamentPeriod, sessionInput, voting } =
   Astro.props as ParliamentPeriodWithSessionAndVotingProps;
 
-const votingPaperDerivates = await getVotingPaperDerivates(parliamentPeriod.id);
+const resolveVotingPaperId = await getVotingPaperResolver();
 
 const breadcrumbItems = [
   {
@@ -77,11 +77,7 @@ const groupsSortedByVotes = Object.entries(votesGroupedByFaction).sort(
   (a, b) => b[1].length - a[1].length,
 );
 
-const paperId = getPaperId(
-  votingPaperDerivates,
-  sessionInput.session.date,
-  voting,
-);
+const paperId = resolveVotingPaperId(voting.votingSubject);
 
 const youtubeUrl = `${sessionInput.session.youtubeUrl}?t=${getVideoTimestampAsSeconds(voting)}s`;
 

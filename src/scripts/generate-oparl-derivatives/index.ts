@@ -1,9 +1,7 @@
 import { OparlObjectsFileStore } from '../shared/oparl/oparl-objects-store.ts';
 import { checkArgs, parseCliArgs, printHelpText } from './cli.ts';
 import { DerivativesFileWriter } from './derivatives-writer.ts';
-import { getGenerateOparlDerivativesEnvOrExit } from './env.ts';
 import { OparlDerivativesGenerator } from './oparl-derivatives-generator.ts';
-import { RegistryFileStore } from './registry-store.ts';
 
 const args = parseCliArgs(Bun.argv.slice(2));
 
@@ -14,13 +12,10 @@ if (args.help) {
 
 checkArgs(args);
 
-const env = getGenerateOparlDerivativesEnvOrExit();
-
 const oparlObjectsStore = new OparlObjectsFileStore(args.oparlDir);
-const registryStore = new RegistryFileStore(args.dataDir);
 const writer = new DerivativesFileWriter(args.dataDir);
 
-const generator = new OparlDerivativesGenerator(oparlObjectsStore, registryStore, writer, env.councilOrganizationId);
+const generator = new OparlDerivativesGenerator(oparlObjectsStore, writer);
 await generator.generate();
 
 console.log('Done.');

@@ -3,18 +3,12 @@ import type {
   PaperIndex,
   PaperIndexEntry,
   PaperReferenceMap,
-  VotingPaperMap,
 } from './oparl-derivatives.ts';
 
 // Runtime schemas for the committed OParl derivates, consumed by the Astro
 // content collections to fail-fast-validate each derivate file.
 // Uses astro/zod (= zod v4) so the schema object matches the instance Astro's
 // content-collection validator expects.
-
-export const votingPaperMapSchema = z.record(
-  z.string(),
-  z.record(z.string(), z.number()),
-);
 
 export const paperIndexEntrySchema = z.object({
   oparlId: z.string(),
@@ -36,8 +30,7 @@ type AssertEqual<A, B> = [A] extends [B]
     : never
   : never;
 export const _schemasMatchTypes: [
-  AssertEqual<z.infer<typeof votingPaperMapSchema>, VotingPaperMap>,
   AssertEqual<z.infer<typeof paperIndexEntrySchema>, PaperIndexEntry>,
   AssertEqual<z.infer<typeof paperIndexSchema>, PaperIndex>,
   AssertEqual<z.infer<typeof paperReferenceMapSchema>, PaperReferenceMap>,
-] = [true, true, true, true];
+] = [true, true, true];

@@ -60,7 +60,7 @@ SCRAPE --> S3WEB : oparl-Snapshot
 SCRAPE ..> GIT : oparl-magdeburg (lokal, nicht committed)
 DPF --> GPA
 GPA --> S3WEB : web-assets/papers/ (--push)
-GOD --> GIT : paper-index.json,\npaper-reference-map.json,\nvoting-paper-map.json
+GOD --> GIT : paper-index.json,\npaper-reference-map.json
 DPF --> TIKA
 TIKA --> IDX : PDF-Volltext
 

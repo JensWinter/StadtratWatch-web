@@ -8,61 +8,18 @@ import type {
   OparlOrganization,
   OparlPaper,
 } from '@srw-astro/models/oparl';
-import type { PaperIndex, PaperReferenceMap, VotingPaperMap } from '@srw-astro/models/oparl-derivatives';
-import type { Registry } from '@srw-astro/models/registry';
+import type { PaperIndex, PaperReferenceMap } from '@srw-astro/models/oparl-derivatives';
 
 import type { OparlObjectsStore } from '../../shared/oparl/oparl-objects-store.ts';
 import type { DerivativesWriter } from '../derivatives-writer.ts';
 import { OparlDerivativesGenerator } from '../oparl-derivatives-generator.ts';
-import type { RegistryStore } from '../registry-store.ts';
-
-const COUNCIL_ORG = 'https://example.org/oparl/organizations/gr/1';
-const OTHER_ORG = 'https://example.org/oparl/organizations/committee/1';
 
 class MockOparlObjectsStore implements OparlObjectsStore {
-  loadConsultations = (): OparlConsultation[] => [
-    consultation('c1', 'papers/100'),
-    consultation('c2', 'papers/200'),
-    // A consultation without a paper -> agenda item resolves to nothing.
-    { id: url('consultations/c3'), type: 't', name: 'c3', paper: undefined },
-  ];
+  loadConsultations = (): OparlConsultation[] => [];
 
-  loadMeetings = (): OparlMeeting[] => [
-    {
-      id: url('meetings/m1'),
-      type: 't',
-      name: 'Council',
-      start: '2024-08-15T16:00:00+02:00',
-      organization: [COUNCIL_ORG],
-    },
-    // Same day as m1 but a non-council org -> must be ignored.
-    {
-      id: url('meetings/m2'),
-      type: 't',
-      name: 'Committee',
-      start: '2024-08-15T10:00:00+02:00',
-      organization: [OTHER_ORG],
-    },
-    {
-      id: url('meetings/m3'),
-      type: 't',
-      name: 'Council',
-      start: '2024-09-12T16:00:00+02:00',
-      organization: [COUNCIL_ORG],
-    },
-  ];
+  loadMeetings = (): OparlMeeting[] => [];
 
-  loadAgendaItems = (): OparlAgendaItem[] => [
-    agendaItem('a1', 'meetings/m1', '4.1', 'consultations/c1'),
-    agendaItem('a2', 'meetings/m1', '4.2', 'consultations/c2'),
-    // Number without a resolvable paper.
-    agendaItem('a3', 'meetings/m1', '4.3', 'consultations/c3'),
-    // Agenda item without a number is skipped.
-    agendaItem('a4', 'meetings/m1', undefined, 'consultations/c1'),
-    // Belongs to the committee meeting -> must not appear.
-    agendaItem('a5', 'meetings/m2', '9.9', 'consultations/c1'),
-    // Session m3 has no agenda items with papers -> session omitted.
-  ];
+  loadAgendaItems = (): OparlAgendaItem[] => [];
 
   loadPapers = (): OparlPaper[] => [
     paper('300', '2024-08-01', 'Antrag', 'A0123'),
@@ -80,37 +37,9 @@ class MockOparlObjectsStore implements OparlObjectsStore {
   loadOrganizations = (): OparlOrganization[] => [];
 }
 
-const CANONICAL_PERIOD_ID = 'example-8';
-
-class MockRegistryStore implements RegistryStore {
-  loadRegistries = (): Promise<Registry[]> =>
-    Promise.resolve([
-      {
-        id: CANONICAL_PERIOD_ID,
-        name: 'Example period',
-        lastUpdate: '2024-10-01',
-        sessions: [
-          session('2024-09-12'),
-          session('2024-08-15'),
-          // Registry session without a matching OParl meeting -> skipped.
-          session('2024-10-10'),
-        ],
-        factions: [],
-        parties: [],
-        persons: [],
-      },
-    ]);
-}
-
 class MockDerivativesWriter implements DerivativesWriter {
-  votingPaperMaps: { [periodId: string]: VotingPaperMap } = {};
   paperIndex: PaperIndex = [];
   paperReferenceMap: PaperReferenceMap = {};
-
-  writeVotingPaperMap(periodId: string, votingPaperMap: VotingPaperMap): Promise<void> {
-    this.votingPaperMaps[periodId] = votingPaperMap;
-    return Promise.resolve();
-  }
 
   writePaperIndex(paperIndex: PaperIndex): Promise<void> {
     this.paperIndex = paperIndex;
@@ -125,26 +54,7 @@ class MockDerivativesWriter implements DerivativesWriter {
 
 describe('Generating OParl derivates', () => {
   let oparlObjectsStore: MockOparlObjectsStore;
-  let registryStore: MockRegistryStore;
   let writer: MockDerivativesWriter;
-
-  it('maps session agenda item numbers to paper ids for council meetings only', async () => {
-    givenStoresAreAvailable();
-
-    await runGeneration();
-
-    expect(writer.votingPaperMaps[CANONICAL_PERIOD_ID]).toEqual({
-      '2024-08-15': { '4.1': 100, '4.2': 200 },
-    });
-  });
-
-  it('writes the voting-paper-map under the canonical registry id', async () => {
-    givenStoresAreAvailable();
-
-    await runGeneration();
-
-    expect(Object.keys(writer.votingPaperMaps)).toEqual([CANONICAL_PERIOD_ID]);
-  });
 
   it('projects all dated main papers into a sorted paper index', async () => {
     givenStoresAreAvailable();
@@ -185,38 +95,16 @@ describe('Generating OParl derivates', () => {
 
   function givenStoresAreAvailable() {
     oparlObjectsStore = new MockOparlObjectsStore();
-    registryStore = new MockRegistryStore();
     writer = new MockDerivativesWriter();
   }
 
   async function runGeneration() {
-    await new OparlDerivativesGenerator(oparlObjectsStore, registryStore, writer, COUNCIL_ORG).generate();
+    await new OparlDerivativesGenerator(oparlObjectsStore, writer).generate();
   }
 });
 
 function url(suffix: string): string {
   return `https://example.org/oparl/${suffix}`;
-}
-
-function consultation(id: string, paperSuffix: string): OparlConsultation {
-  return { id: url(`consultations/${id}`), type: 't', name: id, paper: url(paperSuffix) };
-}
-
-function agendaItem(
-  id: string,
-  meetingSuffix: string,
-  number: string | undefined,
-  consultationSuffix: string,
-): OparlAgendaItem {
-  return {
-    id: url(`agenda-items/${id}`),
-    type: 't',
-    name: id,
-    order: 0,
-    meeting: url(meetingSuffix),
-    number,
-    consultation: url(consultationSuffix),
-  };
 }
 
 function paper(idSuffix: string, date: string | undefined, paperType?: string, reference?: string): OparlPaper {
@@ -229,8 +117,4 @@ function paper(idSuffix: string, date: string | undefined, paperType?: string, r
     reference,
     subordinatedPaper: [],
   };
-}
-
-function session(date: string) {
-  return { id: date, date, title: `Session ${date}`, youtubeUrl: '', meetingMinutesUrl: null, approved: true };
 }

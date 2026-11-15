@@ -40,16 +40,13 @@ export function printHelpText() {
   console.log(`
 Usage: bun index.ts [-o <oparl-dir>] [-d <data-dir>]
 
-Scans <data-dir> for {period-id}/registry.json and regenerates, in a single run,
-every period's voting-paper-map.json plus the global paper-index.json and
-paper-reference-map.json from the raw OParl data in <oparl-dir>.
+Regenerates paper-index.json and paper-reference-map.json in <data-dir> from
+papers.json in <oparl-dir>.
 
 -h, --help                  Show this help message and exit.
--o, --oparl-dir             The directory containing the raw OParl files
-                            (meetings.json, agenda-items.json, consultations.json,
-                            papers.json). Default: data/oparl-magdeburg/
--d, --data-dir              The data directory containing the parliament period
-                            registries. Derivates are written next to them.
+-o, --oparl-dir             The directory containing the raw OParl file
+                            papers.json. Default: data/oparl-magdeburg/
+-d, --data-dir              The data directory the derivates are written into.
                             Default: data/
   `);
 }
