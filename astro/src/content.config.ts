@@ -7,7 +7,6 @@ import type { PaperIndex } from '@models/oparl-derivatives.ts';
 import {
   paperIndexEntrySchema,
   paperReferenceMapSchema,
-  votingPaperMapSchema,
 } from '@models/oparl-derivatives.schema.ts';
 import { sessionScanSchema } from '@models/session-scan.schema.ts';
 import { z } from 'astro/zod';
@@ -45,15 +44,6 @@ const sessionSpeeches = defineCollection({
   schema: z.array(z.custom<SessionSpeech>()),
 });
 
-const votingPaperMaps = defineCollection({
-  loader: glob({
-    pattern: '**/voting-paper-map.json',
-    base: '../data',
-    generateId: (options) => options.entry.split('/')[0],
-  }),
-  schema: votingPaperMapSchema,
-});
-
 const paperIndex = defineCollection({
   loader: () =>
     JSON.parse(
@@ -75,7 +65,6 @@ export const collections = {
   parliamentPeriods,
   sessionScans,
   sessionSpeeches,
-  votingPaperMaps,
   paperIndex,
   paperReferenceMap,
 };

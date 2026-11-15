@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'bun:test';
 
+import type { PaperReferenceMap } from '@srw-astro/models/oparl-derivatives';
 import type { PaperVotingsDto } from '@srw-astro/models/paper-votings';
 import type { Registry, RegistryFaction, RegistryPerson } from '@srw-astro/models/registry';
 import type { VoteCode } from '@srw-astro/models/session';
@@ -18,9 +19,29 @@ const CROSS_PERIOD_PAPER = 239123;
 // Mirrors the live 243686 case: two scans for one agenda item in one session.
 const MULTI_SCAN_PAPER = 243686;
 const LOW_ID_PAPER = 42;
+const VOTED_PAPER = 111;
+// Mirrors the live 248977 case: TOP 2.1 on 2026-05-21 holds votings on several papers.
+const AKTENEINSICHT_PAPER = 248977;
+const AGENDA_CHANGE_PAPER = 248019;
+// Mirrors the live DS0059/23/1 case: an amendment scanned under the agenda item of its main motion.
+const MAIN_MOTION_PAPER = 240337;
+const AMENDMENT_PAPER = 240946;
+
+const paperReferenceMap: PaperReferenceMap = {
+  'DS0239/22': CROSS_PERIOD_PAPER,
+  'DS0243/24': MULTI_SCAN_PAPER,
+  'A0042/20': LOW_ID_PAPER,
+  'A0111/24': VOTED_PAPER,
+  'A0113/26': AKTENEINSICHT_PAPER,
+  'DS0011/26': AGENDA_CHANGE_PAPER,
+  'DS0059/23': MAIN_MOTION_PAPER,
+  'DS0059/23/1': AMENDMENT_PAPER,
+};
 
 class MockPeriodDataStore implements PeriodDataStore {
   constructor(private readonly periods: PeriodData[]) {}
+
+  loadPaperReferenceMap = (): Promise<PaperReferenceMap> => Promise.resolve(paperReferenceMap);
 
   loadPeriods = (): Promise<PeriodData[]> => Promise.resolve(this.periods);
 }
@@ -38,11 +59,43 @@ describe('Generating paper votings', () => {
   let writer: MockPaperVotingsWriter;
   let generator: PaperVotingsGenerator;
 
-  it('omits agenda items that are mapped to a paper but were never scanned', async () => {
+  it('assigns each voting to the paper of its Drucksachennummer, whatever the agenda item', async () => {
     givenPeriods([
       period(PERIOD_8, {
-        votingPaperMap: { '2024-07-08': { '1.1': 111 } },
-        sessionScansByDate: { '2024-07-08': [] },
+        sessionScansByDate: {
+          '2026-05-21': [scan('2026-05-21-001.png', '2.1', 'A0113/26'), scan('2026-05-21-003.png', '2.1', 'DS0011/26')],
+        },
+      }),
+    ]);
+
+    await runGeneration();
+
+    expect(votingsOf(AKTENEINSICHT_PAPER).map((voting) => voting.votingId)).toEqual([1]);
+    expect(votingsOf(AGENDA_CHANGE_PAPER).map((voting) => voting.votingId)).toEqual([3]);
+  });
+
+  it('assigns an amendment scanned under the agenda item of its main motion to the amendment', async () => {
+    givenPeriods([
+      period(PERIOD_7, {
+        sessionScansByDate: {
+          '2023-04-20': [
+            scan('2023-04-20-040.png', '5.10', 'DS0059/23'),
+            scan('2023-04-20-041.png', '5.10', 'DS0059/23/1'),
+          ],
+        },
+      }),
+    ]);
+
+    await runGeneration();
+
+    expect(votingsOf(MAIN_MOTION_PAPER).map((voting) => voting.votingId)).toEqual([40]);
+    expect(votingsOf(AMENDMENT_PAPER).map((voting) => voting.votingId)).toEqual([41]);
+  });
+
+  it('omits votings without a Drucksachennummer', async () => {
+    givenPeriods([
+      period(PERIOD_8, {
+        sessionScansByDate: { '2026-05-21': [scan('2026-05-21-002.png', '2.1', '')] },
       }),
     ]);
 
@@ -51,11 +104,10 @@ describe('Generating paper votings', () => {
     expect(writer.assets).toEqual([]);
   });
 
-  it('omits scanned agenda items that are not mapped to any paper', async () => {
+  it('omits votings whose Drucksachennummer is not in OParl', async () => {
     givenPeriods([
       period(PERIOD_8, {
-        votingPaperMap: {},
-        sessionScansByDate: { '2024-07-08': [scan('2024-07-08-001.png', '1.1')] },
+        sessionScansByDate: { '2024-04-04': [scan('2024-04-04-007.png', '5.7', '050577/23')] },
       }),
     ]);
 
@@ -67,9 +119,11 @@ describe('Generating paper votings', () => {
   it('keeps every scan of the same agenda item as its own voting', async () => {
     givenPeriods([
       period(PERIOD_8, {
-        votingPaperMap: { '2024-07-08': { '12.6': MULTI_SCAN_PAPER } },
         sessionScansByDate: {
-          '2024-07-08': [scan('2024-07-08-012.png', '12.6'), scan('2024-07-08-014.png', '12.6')],
+          '2024-07-08': [
+            scan('2024-07-08-012.png', '12.6', 'DS0243/24'),
+            scan('2024-07-08-014.png', '12.6', 'DS0243/24'),
+          ],
         },
       }),
     ]);
@@ -82,17 +136,15 @@ describe('Generating paper votings', () => {
   it('merges votings of one paper across parliament periods, each against its own registry', async () => {
     givenPeriods([
       period(PERIOD_7, {
-        votingPaperMap: { '2022-09-01': { '6.29': CROSS_PERIOD_PAPER } },
         sessionScansByDate: {
-          '2022-09-01': [scan('2022-09-01-003.png', '6.29', [vote('Old Councillor', 'J')])],
+          '2022-09-01': [scan('2022-09-01-003.png', '6.29', 'DS0239/22', [vote('Old Councillor', 'J')])],
         },
         factions: [faction('old-faction', 'Old Faction', 5)],
         persons: [person('Old Councillor', 'old-faction')],
       }),
       period(PERIOD_8, {
-        votingPaperMap: { '2024-10-17': { '7.1': CROSS_PERIOD_PAPER } },
         sessionScansByDate: {
-          '2024-10-17': [scan('2024-10-17-005.png', '7.1', [vote('New Councillor', 'J')])],
+          '2024-10-17': [scan('2024-10-17-005.png', '7.1', 'DS0239/22', [vote('New Councillor', 'J')])],
         },
         factions: [faction('new-faction', 'New Faction', 7)],
         persons: [person('New Councillor', 'new-faction')],
@@ -126,10 +178,9 @@ describe('Generating paper votings', () => {
   it('counts votes per vote code', async () => {
     givenPeriods([
       period(PERIOD_8, {
-        votingPaperMap: { '2024-07-08': { '1.1': 111 } },
         sessionScansByDate: {
           '2024-07-08': [
-            scan('2024-07-08-001.png', '1.1', [
+            scan('2024-07-08-001.png', '1.1', 'A0111/24', [
               vote('Supporter', 'J'),
               vote('Opposer', 'N'),
               vote('Abstainer', 'E'),
@@ -148,7 +199,7 @@ describe('Generating paper votings', () => {
 
     await runGeneration();
 
-    expect(votingsOf(111)[0].counts).toEqual({ J: 1, N: 1, E: 1, O: 1 });
+    expect(votingsOf(VOTED_PAPER)[0].counts).toEqual({ J: 1, N: 1, E: 1, O: 1 });
   });
 
   it('accepts a voting with more yes than no votes', async () => {
@@ -156,7 +207,7 @@ describe('Generating paper votings', () => {
 
     await runGeneration();
 
-    expect(votingsOf(111)[0].accepted).toBe(true);
+    expect(votingsOf(VOTED_PAPER)[0].accepted).toBe(true);
   });
 
   it('rejects a voting without a yes majority', async () => {
@@ -164,7 +215,7 @@ describe('Generating paper votings', () => {
 
     await runGeneration();
 
-    expect(votingsOf(111)[0].accepted).toBe(false);
+    expect(votingsOf(VOTED_PAPER)[0].accepted).toBe(false);
   });
 
   it('marks a voting without a scanned majority requirement as simple majority', async () => {
@@ -172,12 +223,12 @@ describe('Generating paper votings', () => {
 
     await runGeneration();
 
-    expect(votingsOf(111)[0].majorityRequirement).toEqual('simple');
+    expect(votingsOf(VOTED_PAPER)[0].majorityRequirement).toEqual('simple');
   });
 
   it('rejects a voting with more yes than no votes that misses a two-thirds majority of present members', async () => {
     const votingOfFourPresentMembers = {
-      ...scan('2024-07-08-001.png', '1.1', [
+      ...scan('2024-07-08-001.png', '1.1', 'A0111/24', [
         vote('Supporter', 'J'),
         vote('Second Supporter', 'J'),
         vote('Opposer', 'N'),
@@ -187,7 +238,6 @@ describe('Generating paper votings', () => {
     } satisfies SessionScanItem;
     givenPeriods([
       period(PERIOD_8, {
-        votingPaperMap: { '2024-07-08': { '1.1': 111 } },
         sessionScansByDate: { '2024-07-08': [votingOfFourPresentMembers] },
         persons: [
           person('Supporter', 'faction-1'),
@@ -199,15 +249,14 @@ describe('Generating paper votings', () => {
 
     await runGeneration();
 
-    expect(votingsOf(111)[0].majorityRequirement).toEqual('two-thirds-of-present');
-    expect(votingsOf(111)[0].accepted).toBe(false);
+    expect(votingsOf(VOTED_PAPER)[0].majorityRequirement).toEqual('two-thirds-of-present');
+    expect(votingsOf(VOTED_PAPER)[0].accepted).toBe(false);
   });
 
   it('carries the scanned subject through to the asset', async () => {
     givenPeriods([
       period(PERIOD_8, {
-        votingPaperMap: { '2024-07-08': { '12.6': MULTI_SCAN_PAPER } },
-        sessionScansByDate: { '2024-07-08': [scan('2024-07-08-012.png', '12.6')] },
+        sessionScansByDate: { '2024-07-08': [scan('2024-07-08-012.png', '12.6', 'DS0243/24')] },
       }),
     ]);
 
@@ -223,20 +272,16 @@ describe('Generating paper votings', () => {
   it('sorts votings by session date descending, then by voting id ascending', async () => {
     givenPeriods([
       period(PERIOD_8, {
-        votingPaperMap: {
-          '2024-07-08': { '1.1': 111 },
-          '2024-10-17': { '2.1': 111 },
-        },
         sessionScansByDate: {
-          '2024-07-08': [scan('2024-07-08-014.png', '1.1'), scan('2024-07-08-002.png', '1.1')],
-          '2024-10-17': [scan('2024-10-17-009.png', '2.1')],
+          '2024-07-08': [scan('2024-07-08-014.png', '1.1', 'A0111/24'), scan('2024-07-08-002.png', '1.1', 'A0111/24')],
+          '2024-10-17': [scan('2024-10-17-009.png', '2.1', 'A0111/24')],
         },
       }),
     ]);
 
     await runGeneration();
 
-    expect(votingsOf(111).map((voting) => [voting.date, voting.votingId])).toEqual([
+    expect(votingsOf(VOTED_PAPER).map((voting) => [voting.date, voting.votingId])).toEqual([
       ['2024-10-17', 9],
       ['2024-07-08', 2],
       ['2024-07-08', 14],
@@ -246,9 +291,8 @@ describe('Generating paper votings', () => {
   it('groups papers into batches of hundred, padded to four digits', async () => {
     givenPeriods([
       period(PERIOD_8, {
-        votingPaperMap: { '2024-07-08': { '1.1': LOW_ID_PAPER, '2.2': CROSS_PERIOD_PAPER } },
         sessionScansByDate: {
-          '2024-07-08': [scan('2024-07-08-001.png', '1.1'), scan('2024-07-08-002.png', '2.2')],
+          '2024-07-08': [scan('2024-07-08-001.png', '1.1', 'A0042/20'), scan('2024-07-08-002.png', '2.2', 'DS0239/22')],
         },
       }),
     ]);
@@ -287,15 +331,13 @@ describe('Generating paper votings', () => {
 
 function periodWithVotes(votes: SessionScanVote[]): PeriodData {
   return period(PERIOD_8, {
-    votingPaperMap: { '2024-07-08': { '1.1': 111 } },
-    sessionScansByDate: { '2024-07-08': [scan('2024-07-08-001.png', '1.1', votes)] },
+    sessionScansByDate: { '2024-07-08': [scan('2024-07-08-001.png', '1.1', 'A0111/24', votes)] },
   });
 }
 
 function period(
   periodId: string,
   options: {
-    votingPaperMap: PeriodData['votingPaperMap'];
     sessionScansByDate: { [sessionDate: string]: SessionScan };
     factions?: RegistryFaction[];
     persons?: RegistryPerson[];
@@ -326,18 +368,22 @@ function period(
       parties: [],
       persons,
     } satisfies Registry,
-    votingPaperMap: options.votingPaperMap,
     sessionScansByDate: options.sessionScansByDate,
   };
 }
 
-function scan(votingFilename: string, agendaItem: string, votes: SessionScanVote[] = []): SessionScanItem {
+function scan(
+  votingFilename: string,
+  agendaItem: string,
+  motionId: string,
+  votes: SessionScanVote[] = [],
+): SessionScanItem {
   return {
     votingFilename,
     videoTimestamp: '00:10:00',
     votingSubject: {
       agendaItem,
-      motionId: 'M1',
+      motionId,
       title: `Subject ${agendaItem}`,
       type: 'Antrag',
       authors: [],

@@ -99,10 +99,6 @@ body:
           ```bash
           bun src/scripts/generate-oparl-derivatives/index.ts
           ```
-        - [ ] Prüfen, dass `data/$PARLIAMENT_PERIOD/voting-paper-map.json` einen Eintrag für `$SESSION` enthält:
-          ```bash
-          grep -c "\"$SESSION\"" data/$PARLIAMENT_PERIOD/voting-paper-map.json
-          ```
           Ein leerer Diff ist kein Fehler: Wurden die Derivate für die Sitzung schon früher erzeugt und committet und haben sich
           die OParl-Daten seitdem nicht geändert, kommt dasselbe heraus.
         - [ ] Volltext aus den PDFs extrahieren (Tika):
@@ -296,7 +292,7 @@ body:
           - `data/$PARLIAMENT_PERIOD/$SESSION/config-$SESSION.json`
           - `data/$PARLIAMENT_PERIOD/$SESSION/session-scan-$SESSION.json`
           - `data/$PARLIAMENT_PERIOD/$SESSION/session-speeches-$SESSION.json`
-          - ggf. `data/$PARLIAMENT_PERIOD/voting-paper-map.json`, `data/paper-index.json` und `data/paper-reference-map.json` (nur wenn sich die OParl-Daten
+          - ggf. `data/paper-index.json` und `data/paper-reference-map.json` (nur wenn sich die OParl-Daten
             geändert haben)
         - [ ] Keine `session-speakers-*.json` in `data/` (liegen nur in S3)
         - [ ] Korrekturen an bereits freigegebenen Sitzungen, die dabei auffallen, **nicht** in diese PR, sondern in eine eigene,

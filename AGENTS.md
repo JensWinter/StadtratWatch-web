@@ -65,7 +65,7 @@ bun run test            # Run tests of migrated folders (never pass paths)
 
 1. **OParl Ingestion** → scrape-oparl fetches parliamentary data from the city council's OParl API
 2. **Paper Assets** → generate-paper-assets converts OParl data to batched JSON format, download-paper-files fetches PDFs
-3. **OParl Derivates** → generate-oparl-derivatives precompiles the raw OParl data into small, committed build inputs (`data/paper-index.json`, `data/paper-reference-map.json`, `data/{period}/voting-paper-map.json`). The **web build reads only these derivates, never the raw `data/oparl-magdeburg/`**. Raw OParl is a maintainer-only input for regenerating the derivates (populated via `fetch-oparl`).
+3. **OParl Derivates** → generate-oparl-derivatives precompiles the raw OParl data into small, committed build inputs (`data/paper-index.json`, `data/paper-reference-map.json`). The **web build reads only these derivates, never the raw `data/oparl-magdeburg/`**. Raw OParl is a maintainer-only input for regenerating the derivates (populated via `fetch-oparl`).
 4. **Video Processing** → scan-voting-images extracts voting results via OCR, parse-speakers identifies speakers, speech-to-text transcribes using OpenAI
 5. **Asset Generation** → generate-image-assets creates voting visualization PNGs
 6. **Search Indexing** → index-search imports into Typesense for full-text search

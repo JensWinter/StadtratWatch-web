@@ -1,22 +1,31 @@
 import { readdir } from 'node:fs/promises';
 import * as path from 'node:path';
 
-import type { VotingPaperMap } from '@srw-astro/models/oparl-derivatives';
+import type { PaperReferenceMap } from '@srw-astro/models/oparl-derivatives';
 import type { Registry } from '@srw-astro/models/registry';
 import { assertValidSessionScan, type SessionScan } from '@srw-astro/models/session-scan';
 
 export type PeriodData = {
   registry: Registry;
-  votingPaperMap: VotingPaperMap;
   sessionScansByDate: { [sessionDate: string]: SessionScan };
 };
 
 export interface PeriodDataStore {
+  loadPaperReferenceMap(): Promise<PaperReferenceMap>;
   loadPeriods(): Promise<PeriodData[]>;
 }
 
 export class PeriodDataFileStore implements PeriodDataStore {
   constructor(private readonly dataDir: string) {}
+
+  public async loadPaperReferenceMap(): Promise<PaperReferenceMap> {
+    const paperReferenceMapPath = path.join(this.dataDir, 'paper-reference-map.json');
+    const paperReferenceMap = await this.readJsonFile<PaperReferenceMap>(paperReferenceMapPath);
+    if (!paperReferenceMap) {
+      throw new Error(`Missing ${paperReferenceMapPath}`);
+    }
+    return paperReferenceMap;
+  }
 
   public async loadPeriods(): Promise<PeriodData[]> {
     const periods: PeriodData[] = [];
@@ -34,7 +43,6 @@ export class PeriodDataFileStore implements PeriodDataStore {
 
       periods.push({
         registry,
-        votingPaperMap: (await this.readJsonFile<VotingPaperMap>(path.join(periodDir, 'voting-paper-map.json'))) ?? {},
         sessionScansByDate: await this.loadSessionScansByDate(periodDir, registry),
       });
     }

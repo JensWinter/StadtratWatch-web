@@ -5,18 +5,6 @@ import tailwindcss from '@tailwindcss/vite';
 
 import sitemap from '@astrojs/sitemap';
 
-import { validateVotingPaperMapConsistency } from './src/content-validation/voting-paper-map-consistency.ts';
-
-/** @type {import('astro').AstroIntegration} */
-const validateOparlDerivates = {
-  name: 'validate-oparl-derivates',
-  hooks: {
-    'astro:config:setup': () => {
-      validateVotingPaperMapConsistency();
-    },
-  },
-};
-
 export default defineConfig({
   site: 'https://www.stadtratwatch.de',
   env: {
@@ -60,7 +48,7 @@ export default defineConfig({
     },
   },
 
-  integrations: [alpinejs(), sitemap(), validateOparlDerivates],
+  integrations: [alpinejs(), sitemap()],
 
   vite: {
     plugins: [tailwindcss()],

@@ -8,7 +8,7 @@ import Councilors from './_councilors.astro';
 import Motions from './_motions.astro';
 import Statistics from './_statistics.astro';
 import MetaTags from '@components/MetaTags.astro';
-import { getVotingPaperDerivates } from '../../_helpers2.ts';
+import { getVotingPaperResolver } from '../../_helpers2.ts';
 
 export const getStaticPaths = getParliamentPeriodWithFactionPaths;
 
@@ -16,7 +16,7 @@ const { parliamentPeriodId, factionId } = Astro.params;
 const { parliamentPeriod, faction, sessionInputs } =
   Astro.props as ParliamentPeriodWithFactionProps;
 
-const votingPaperDerivates = await getVotingPaperDerivates(parliamentPeriod.id);
+const resolveVotingPaperId = await getVotingPaperResolver();
 
 const breadcrumbItems = [
   {
@@ -76,7 +76,7 @@ const breadcrumbItems = [
         parliamentPeriod={parliamentPeriod}
         faction={faction}
         sessionInputs={sessionInputs}
-        votingPaperDerivates={votingPaperDerivates}
+        resolveVotingPaperId={resolveVotingPaperId}
       />
     </div>
 

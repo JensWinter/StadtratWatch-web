@@ -7,7 +7,7 @@ Run the processing pipeline in this order. The script sections below document in
    `data/oparl-magdeburg/`, so the incremental scrape resumes from it.
 2. [`download-paper-files`](../../src/scripts/download-paper-files/README.md) - download the PDF documents linked to the council meetings of a year.
 3. [`generate-paper-assets`](../../src/scripts/generate-paper-assets/README.md) - convert scraped OParl data into the internal paper assets. Needs the downloaded PDFs (step 2) for the file sizes.
-4. [`generate-oparl-derivatives`](../../src/scripts/generate-oparl-derivatives/README.md) - precompile the committed OParl derivates (`voting-paper-map.json`, `paper-index.json`, `paper-reference-map.json`) the Astro build consumes.
+4. [`generate-oparl-derivatives`](../../src/scripts/generate-oparl-derivatives/README.md) - precompile the committed OParl derivates (`paper-index.json`, `paper-reference-map.json`) the Astro build consumes.
 5. Video processing steps:
    1. [`parse-speakers`](../../src/scripts/parse-speakers/README.md) - combine speaker diarization data for the session.
    2. [`scan-voting-images`](../../src/scripts/scan-voting-images/README.md) - extract voting results from session screenshots.
@@ -17,7 +17,7 @@ Run the processing pipeline in this order. The script sections below document in
    5. [`detect-ai-text`](../../src/scripts/detect-ai-text/README.md) - optional, manual step: after transcripts are corrected and before committing
       session data, run a Pangram-based AI-text check on redaction-selected speeches.
 6. [`generate-image-assets`](../../src/scripts/generate-image-assets/README.md) - create voting visualization image assets from processed session data.
-7. [`generate-paper-votings`](../../src/scripts/generate-paper-votings/README.md) - reverse the voting-paper-map against the session scans into the per-paper voting assets. Needs both the OParl derivates (step 4) and the scanned votings (step 5.2).
+7. [`generate-paper-votings`](../../src/scripts/generate-paper-votings/README.md) - assign the scanned votings to papers by their Drucksachennummer and write the per-paper voting assets.
 8. [`index-search`](../../src/scripts/index-search/README.md) - rebuild the Typesense search index after all paper, speech, and asset data is available.
 
 ### Extract text from paper files

@@ -154,7 +154,6 @@ fork again
   note right
     -> Git: data/paper-index.json
     -> Git: data/paper-reference-map.json
-    -> Git: data/{periode}/voting-paper-map.json
   end note
   :**tika-batch-extract** (Docker/Tika)
   Volltext aus PDFs extrahieren;
@@ -171,9 +170,9 @@ note right
   -> S3/CloudFront (web-assets/parliament-periods/{periode}/) via --push
 end note
 :**generate-paper-votings** (Bun, --push)
-voting-paper-map gegen Scans umkehren;
+Abstimmungen über die Drucksachennummer Drucksachen zuordnen;
 note right
-  Eingabe: voting-paper-map.json + session-scan-{date}.json
+  Eingabe: paper-reference-map.json + session-scan-{date}.json
   -> lokal: output/paper-votings/
   -> S3/CloudFront (web-assets/paper-votings/) via --push
 end note

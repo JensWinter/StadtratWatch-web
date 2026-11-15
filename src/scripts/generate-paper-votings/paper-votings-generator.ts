@@ -3,6 +3,7 @@ import type { PaperVotingItem, PaperVotingsDto } from '@srw-astro/models/paper-v
 import type { Registry } from '@srw-astro/models/registry';
 import { getMajorityRequirement, type SessionScanItem } from '@srw-astro/models/session-scan';
 import { getVoteCounts, getVotesByFactions, getVotingId, votingAccepted } from '@srw-astro/models/voting-breakdown';
+import { createVotingPaperResolver, type VotingPaperResolver } from '@srw-astro/models/voting-paper';
 
 import type { PaperVotingsAssetDto } from './model.ts';
 import type { PaperVotingsWriter } from './paper-votings-writer.ts';
@@ -16,10 +17,11 @@ export class PaperVotingsGenerator {
 
   public async generatePaperVotings(): Promise<void> {
     const votingsByPaperId = new Map<number, PaperVotingItem[]>();
+    const resolveVotingPaperId = createVotingPaperResolver(await this.periodDataStore.loadPaperReferenceMap());
 
     for (const period of await this.periodDataStore.loadPeriods()) {
       console.log(`Collecting paper votings for period ${period.registry.id}`);
-      this.collectPeriodVotings(period, votingsByPaperId);
+      this.collectPeriodVotings(period, resolveVotingPaperId, votingsByPaperId);
     }
 
     const paperVotings = this.sortPaperVotings(votingsByPaperId);
@@ -27,18 +29,20 @@ export class PaperVotingsGenerator {
     await this.writer.writePaperVotings(this.batchPaperVotings(paperVotings));
   }
 
-  private collectPeriodVotings(period: PeriodData, votingsByPaperId: Map<number, PaperVotingItem[]>): void {
-    for (const [sessionDate, paperIdByAgendaItem] of Object.entries(period.votingPaperMap)) {
-      const sessionScan = period.sessionScansByDate[sessionDate] ?? [];
-
-      for (const [agendaItem, paperId] of Object.entries(paperIdByAgendaItem)) {
-        const scansOfAgendaItem = sessionScan.filter((scan) => scan.votingSubject.agendaItem === agendaItem);
-
-        for (const scan of scansOfAgendaItem) {
-          const votings = votingsByPaperId.get(paperId) ?? [];
-          votings.push(this.toPaperVotingItem(scan, sessionDate, period.registry));
-          votingsByPaperId.set(paperId, votings);
+  private collectPeriodVotings(
+    period: PeriodData,
+    resolveVotingPaperId: VotingPaperResolver,
+    votingsByPaperId: Map<number, PaperVotingItem[]>,
+  ): void {
+    for (const [sessionDate, sessionScan] of Object.entries(period.sessionScansByDate)) {
+      for (const scan of sessionScan) {
+        const paperId = resolveVotingPaperId(scan.votingSubject);
+        if (paperId === null) {
+          continue;
         }
+        const votings = votingsByPaperId.get(paperId) ?? [];
+        votings.push(this.toPaperVotingItem(scan, sessionDate, period.registry));
+        votingsByPaperId.set(paperId, votings);
       }
     }
   }
