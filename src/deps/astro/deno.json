@@ -12,6 +12,7 @@
     "./session-scan": "./session-scan.ts",
     "./session-speech": "./session-speech.ts",
     "./session": "./session.ts",
-    "./voting-breakdown": "./voting-breakdown.ts"
+    "./voting-breakdown": "./voting-breakdown.ts",
+    "./voting-paper": "./voting-paper.ts"
   }
 }

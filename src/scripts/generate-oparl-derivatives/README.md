@@ -2,11 +2,11 @@
 
 ## Purpose
 
-Precompiles the raw OParl data in `data/oparl-magdeburg/` into the two committed OParl derivates the Astro build reads:
-one `data/{period-id}/voting-paper-map.json` per parliament period (session date → agenda item number → paper id) and a
-single global `data/paper-index.json` (all main papers). It runs after `generate-paper-assets` in the processing order
-(see [HOWTO](../../../docs/guides/HOWTO.md)); the raw snapshot comes from [`scrape-oparl`](../scrape-oparl/README.md) or
-[`fetch-oparl`](../fetch-oparl/README.md).
+Precompiles the raw OParl data in `data/oparl-magdeburg/` into the committed OParl derivates the Astro build reads:
+
+- `data/{period-id}/voting-paper-map.json`, one per parliament period: session date → agenda item number → paper id.
+- `data/paper-index.json`, global: all main papers.
+- `data/paper-reference-map.json`, global: Drucksachennummer → paper id for every paper that has one.
 
 ## Usage
 

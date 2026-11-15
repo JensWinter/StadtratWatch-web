@@ -278,7 +278,7 @@ Abschnitt 4 braucht alle drei.
   - `data/$PARLIAMENT_PERIOD/$SESSION/config-$SESSION.json`
   - `data/$PARLIAMENT_PERIOD/$SESSION/session-scan-$SESSION.json`
   - `data/$PARLIAMENT_PERIOD/$SESSION/session-speeches-$SESSION.json`
-  - ggf. `data/$PARLIAMENT_PERIOD/voting-paper-map.json` und `data/paper-index.json` (nur wenn sich die OParl-Daten
+  - ggf. `data/$PARLIAMENT_PERIOD/voting-paper-map.json`, `data/paper-index.json` und `data/paper-reference-map.json` (nur wenn sich die OParl-Daten
     geändert haben)
 - [ ] Keine `session-speakers-*.json` in `data/` (liegen nur in S3)
 - [ ] Korrekturen an bereits freigegebenen Sitzungen, die dabei auffallen, **nicht** in diese PR, sondern in eine eigene,

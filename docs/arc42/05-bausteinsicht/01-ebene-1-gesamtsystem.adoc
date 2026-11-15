@@ -87,5 +87,7 @@ data/
 │                                 #   die Derivat-Erzeugung geladen — nicht vom
 │                                 #   Web-Build)
 ├── paper-index.json             # committetes OParl-Derivat: Haupt-Drucksachen
+├── paper-reference-map.json     # committetes OParl-Derivat: Drucksachennummer →
+│                                #   Drucksachen-Id
 └── magdeburg-*/voting-paper-map.json  # committetes OParl-Derivat je Periode
 ----

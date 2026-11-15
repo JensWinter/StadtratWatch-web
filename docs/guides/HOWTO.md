@@ -7,7 +7,7 @@ Run the processing pipeline in this order. The script sections below document in
    `data/oparl-magdeburg/`, so the incremental scrape resumes from it.
 2. [`download-paper-files`](../../src/scripts/download-paper-files/README.md) - download the PDF documents linked to the council meetings of a year.
 3. [`generate-paper-assets`](../../src/scripts/generate-paper-assets/README.md) - convert scraped OParl data into the internal paper assets. Needs the downloaded PDFs (step 2) for the file sizes.
-4. [`generate-oparl-derivatives`](../../src/scripts/generate-oparl-derivatives/README.md) - precompile the committed OParl derivates (`voting-paper-map.json`, `paper-index.json`) the Astro build consumes.
+4. [`generate-oparl-derivatives`](../../src/scripts/generate-oparl-derivatives/README.md) - precompile the committed OParl derivates (`voting-paper-map.json`, `paper-index.json`, `paper-reference-map.json`) the Astro build consumes.
 5. Video processing steps:
    1. [`parse-speakers`](../../src/scripts/parse-speakers/README.md) - combine speaker diarization data for the session.
    2. [`scan-voting-images`](../../src/scripts/scan-voting-images/README.md) - extract voting results from session screenshots.

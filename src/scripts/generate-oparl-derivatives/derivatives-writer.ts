@@ -1,10 +1,11 @@
 import * as path from 'node:path';
 
-import type { PaperIndex, VotingPaperMap } from '@srw-astro/models/oparl-derivatives';
+import type { PaperIndex, PaperReferenceMap, VotingPaperMap } from '@srw-astro/models/oparl-derivatives';
 
 export interface DerivativesWriter {
   writeVotingPaperMap(periodId: string, votingPaperMap: VotingPaperMap): Promise<void>;
   writePaperIndex(paperIndex: PaperIndex): Promise<void>;
+  writePaperReferenceMap(paperReferenceMap: PaperReferenceMap): Promise<void>;
 }
 
 export class DerivativesFileWriter implements DerivativesWriter {
@@ -16,6 +17,10 @@ export class DerivativesFileWriter implements DerivativesWriter {
 
   public async writePaperIndex(paperIndex: PaperIndex): Promise<void> {
     await writeJsonFile(path.join(this.dataDir, 'paper-index.json'), paperIndex);
+  }
+
+  public async writePaperReferenceMap(paperReferenceMap: PaperReferenceMap): Promise<void> {
+    await writeJsonFile(path.join(this.dataDir, 'paper-reference-map.json'), paperReferenceMap);
   }
 }
 
