@@ -1,20 +1,29 @@
 import { describe, expect, it } from 'bun:test';
 
 import type { PaperReferenceMap } from '@srw-astro/models/oparl-derivatives';
-import type { SessionScanItem } from '@srw-astro/models/session-scan';
+import type { SessionScan, SessionScanItem } from '@srw-astro/models/session-scan';
 
-import type { CheckInputStore, SessionScansByDate } from '../data-store.ts';
+import type { CheckInputStore, SessionScanSource } from '../data-store.ts';
 import { PaperReferenceChecker } from '../paper-reference-checker.ts';
 
 class MockCheckInputStore implements CheckInputStore {
   constructor(
     private readonly paperReferenceMap: PaperReferenceMap,
-    private readonly sessionScansByDate: SessionScansByDate,
+    private readonly sessionScansByDate: { [sessionDate: string]: SessionScan | 'unreadable' },
   ) {}
 
   loadPaperReferenceMap = (): Promise<PaperReferenceMap> => Promise.resolve(this.paperReferenceMap);
 
-  loadSessionScansByDate = (): Promise<SessionScansByDate> => Promise.resolve(this.sessionScansByDate);
+  listSessionScans = (): Promise<SessionScanSource[]> =>
+    Promise.resolve(
+      Object.entries(this.sessionScansByDate).map(([sessionDate, sessionScan]) => ({
+        sessionDate,
+        loadSessionScan: () =>
+          sessionScan === 'unreadable'
+            ? Promise.reject(new Error(`Unreadable scan of ${sessionDate}`))
+            : Promise.resolve(sessionScan),
+      })),
+    );
 }
 
 describe('PaperReferenceChecker', () => {
@@ -55,6 +64,17 @@ describe('PaperReferenceChecker', () => {
     const store = new MockCheckInputStore(
       {},
       { '2023-04-20': [voting('5.23', '0S0023/23')], '2024-04-04': [voting('5.7', '050577/23')] },
+    );
+
+    const unknownReferences = await new PaperReferenceChecker(store).check('2024-04-04');
+
+    expect(unknownReferences).toEqual([{ sessionDate: '2024-04-04', agendaItem: '5.7', motionId: '050577/23' }]);
+  });
+
+  it('checks the given session even when the scan of another session is unreadable', async () => {
+    const store = new MockCheckInputStore(
+      {},
+      { '2023-04-20': 'unreadable', '2024-04-04': [voting('5.7', '050577/23')] },
     );
 
     const unknownReferences = await new PaperReferenceChecker(store).check('2024-04-04');

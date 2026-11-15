@@ -1,7 +1,7 @@
 import type { PaperReferenceMap } from '@srw-astro/models/oparl-derivatives';
 import type { SessionScan } from '@srw-astro/models/session-scan';
 
-import type { CheckInputStore, SessionScansByDate } from './data-store.ts';
+import type { CheckInputStore, SessionScanSource } from './data-store.ts';
 
 export type UnknownPaperReference = {
   sessionDate: string;
@@ -14,21 +14,26 @@ export class PaperReferenceChecker {
 
   public async check(sessionDate?: string): Promise<UnknownPaperReference[]> {
     const paperReferenceMap = await this.store.loadPaperReferenceMap();
-    const sessionScansByDate = await this.store.loadSessionScansByDate();
-    const sessionScansToCheck = sessionDate ? selectSession(sessionScansByDate, sessionDate) : sessionScansByDate;
+    const sessionScans = await this.store.listSessionScans();
+    const sessionScansToCheck = sessionDate ? [selectSession(sessionScans, sessionDate)] : sessionScans;
 
-    return Object.entries(sessionScansToCheck).flatMap(([checkedSessionDate, sessionScan]) =>
-      findUnknownPaperReferences(checkedSessionDate, sessionScan, paperReferenceMap),
-    );
+    const unknownReferences: UnknownPaperReference[] = [];
+    for (const sessionScanSource of sessionScansToCheck) {
+      const sessionScan = await sessionScanSource.loadSessionScan();
+      unknownReferences.push(
+        ...findUnknownPaperReferences(sessionScanSource.sessionDate, sessionScan, paperReferenceMap),
+      );
+    }
+    return unknownReferences;
   }
 }
 
-function selectSession(sessionScansByDate: SessionScansByDate, sessionDate: string): SessionScansByDate {
-  const sessionScan = sessionScansByDate[sessionDate];
+function selectSession(sessionScans: SessionScanSource[], sessionDate: string): SessionScanSource {
+  const sessionScan = sessionScans.find((candidate) => candidate.sessionDate === sessionDate);
   if (!sessionScan) {
     throw new Error(`No session scan found for session ${sessionDate}.`);
   }
-  return { [sessionDate]: sessionScan };
+  return sessionScan;
 }
 
 function findUnknownPaperReferences(

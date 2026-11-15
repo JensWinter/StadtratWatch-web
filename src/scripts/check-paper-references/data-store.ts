@@ -4,11 +4,14 @@ import * as path from 'node:path';
 import type { PaperReferenceMap } from '@srw-astro/models/oparl-derivatives';
 import type { SessionScan } from '@srw-astro/models/session-scan';
 
-export type SessionScansByDate = { [sessionDate: string]: SessionScan };
+export type SessionScanSource = {
+  sessionDate: string;
+  loadSessionScan(): Promise<SessionScan>;
+};
 
 export interface CheckInputStore {
   loadPaperReferenceMap(): Promise<PaperReferenceMap>;
-  loadSessionScansByDate(): Promise<SessionScansByDate>;
+  listSessionScans(): Promise<SessionScanSource[]>;
 }
 
 export class CheckInputFileStore implements CheckInputStore {
@@ -18,18 +21,18 @@ export class CheckInputFileStore implements CheckInputStore {
     return (await Bun.file(path.join(this.dataDir, 'paper-reference-map.json')).json()) as PaperReferenceMap;
   }
 
-  public async loadSessionScansByDate(): Promise<SessionScansByDate> {
-    const sessionScansByDate: SessionScansByDate = {};
+  public async listSessionScans(): Promise<SessionScanSource[]> {
+    const sessionScans: SessionScanSource[] = [];
 
     for (const sessionDir of await this.listSessionDirs()) {
       const sessionDate = path.basename(sessionDir);
       const sessionScanFile = Bun.file(path.join(sessionDir, `session-scan-${sessionDate}.json`));
       if (await sessionScanFile.exists()) {
-        sessionScansByDate[sessionDate] = (await sessionScanFile.json()) as SessionScan;
+        sessionScans.push({ sessionDate, loadSessionScan: async () => (await sessionScanFile.json()) as SessionScan });
       }
     }
 
-    return sessionScansByDate;
+    return sessionScans;
   }
 
   private async listSessionDirs(): Promise<string[]> {
