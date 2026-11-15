@@ -1,5 +1,5 @@
+import type { PaperReferenceMap } from '@srw-astro/models/oparl-derivatives';
 import type { SessionScan } from '@srw-astro/models/session-scan';
-import { createPaperReferenceLookup, type PaperReferenceLookup } from '@srw-astro/models/voting-paper';
 
 import type { CheckInputStore, SessionScansByDate } from './data-store.ts';
 
@@ -13,12 +13,12 @@ export class PaperReferenceChecker {
   constructor(private readonly store: CheckInputStore) {}
 
   public async check(sessionDate?: string): Promise<UnknownPaperReference[]> {
-    const findPaperId = createPaperReferenceLookup(await this.store.loadPaperReferenceMap());
+    const paperReferenceMap = await this.store.loadPaperReferenceMap();
     const sessionScansByDate = await this.store.loadSessionScansByDate();
     const sessionScansToCheck = sessionDate ? selectSession(sessionScansByDate, sessionDate) : sessionScansByDate;
 
     return Object.entries(sessionScansToCheck).flatMap(([checkedSessionDate, sessionScan]) =>
-      findUnknownPaperReferences(checkedSessionDate, sessionScan, findPaperId),
+      findUnknownPaperReferences(checkedSessionDate, sessionScan, paperReferenceMap),
     );
   }
 }
@@ -34,10 +34,10 @@ function selectSession(sessionScansByDate: SessionScansByDate, sessionDate: stri
 function findUnknownPaperReferences(
   sessionDate: string,
   sessionScan: SessionScan,
-  findPaperId: PaperReferenceLookup,
+  paperReferenceMap: PaperReferenceMap,
 ): UnknownPaperReference[] {
   return sessionScan
     .map((voting) => voting.votingSubject)
-    .filter(({ motionId }) => motionId.trim() !== '' && findPaperId(motionId) === undefined)
+    .filter(({ motionId }) => motionId.trim() !== '' && !Object.hasOwn(paperReferenceMap, motionId))
     .map(({ agendaItem, motionId }) => ({ sessionDate, agendaItem, motionId }));
 }

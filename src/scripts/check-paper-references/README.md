@@ -3,8 +3,8 @@
 ## Purpose
 
 Reports every voting whose Drucksachennummer is not in `data/paper-reference-map.json`, e.g. the typo `0S0023/23`. Each
-line names the session, the agenda item and the number. Whitespace in the number is ignored, in the scan as in OParl, and
-votings without a number are skipped. Wrong agenda items are not checked.
+line names the session, the agenda item and the number. The number must match exactly, so stray whitespace is reported
+too. Votings without a number are skipped. Wrong agenda items are not checked.
 
 ## Usage
 

@@ -1,8 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import {
-  createPaperReferenceLookup,
-  resolveVotingPaperId,
-} from './voting-paper.ts';
+import { resolveVotingPaperId } from './voting-paper.ts';
 import type { PaperReferenceMap, VotingPaperMap } from './oparl-derivatives.ts';
 
 const SESSION_DATE = '2023-04-20';
@@ -79,15 +76,5 @@ describe('resolveVotingPaperId', () => {
     });
 
     expect(paperId).toBe(AMENDMENT_ID);
-  });
-});
-
-describe('createPaperReferenceLookup', () => {
-  test('finds the paper of a Drucksachennummer even when OParl writes it with a space', () => {
-    const findPaperId = createPaperReferenceLookup({
-      'A0024/25 /1': AMENDMENT_ID,
-    });
-
-    expect(findPaperId(' A0024/25/1')).toBe(AMENDMENT_ID);
   });
 });

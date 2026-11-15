@@ -39,7 +39,7 @@ export function printHelpText() {
 Usage: bun index.ts [-d <data-dir>] [-s <session>]
 
 Reports every voting whose Drucksachennummer is not in <data-dir>/paper-reference-map.json.
-Whitespace in the number is ignored, votings without a number are skipped.
+The number must match exactly, whitespace included. Votings without a number are skipped.
 Exits with code 1 if it reports anything, 2 if the session has no scan.
 
 -h, --help                  Show this help message and exit.

@@ -37,7 +37,7 @@ describe('PaperReferenceChecker', () => {
     expect(unknownReferences).toEqual([]);
   });
 
-  it('ignores whitespace in the Drucksachennummer, in the scan as in OParl', async () => {
+  it('reports a Drucksachennummer that differs from OParl only in whitespace', async () => {
     const store = new MockCheckInputStore(
       { 'DS0286/25': 246000, 'A0024/25 /1': 245735 },
       { '2025-06-19': [voting('2.1', ' DS0286/25'), voting('5.5.1', 'A0024/25/1'), voting('5.5.1', 'A0024/25 /1')] },
@@ -45,7 +45,10 @@ describe('PaperReferenceChecker', () => {
 
     const unknownReferences = await new PaperReferenceChecker(store).check();
 
-    expect(unknownReferences).toEqual([]);
+    expect(unknownReferences).toEqual([
+      { sessionDate: '2025-06-19', agendaItem: '2.1', motionId: ' DS0286/25' },
+      { sessionDate: '2025-06-19', agendaItem: '5.5.1', motionId: 'A0024/25/1' },
+    ]);
   });
 
   it('checks only the given session', async () => {
