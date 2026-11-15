@@ -245,7 +245,7 @@
         "videoTimestamp": "00:06:33",
         "votingSubject": {
             "agendaItem": "2.1",
-            "motionId": " DS0287/25",
+            "motionId": "DS0287/25",
             "title": "Antrag auf Zurückstellung/Zurückziehung von TOP",
             "type": "Tagesordnung",
             "authors": [
@@ -488,7 +488,7 @@
         "videoTimestamp": "00:07:49",
         "votingSubject": {
             "agendaItem": "2.1",
-            "motionId": " A0286/25",
+            "motionId": "A0286/25",
             "title": "Antrag auf Zurückstellung/Zurückziehung von TOP",
             "type": "Tagesordnung",
             "authors": [

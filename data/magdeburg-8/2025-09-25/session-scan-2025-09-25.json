@@ -2920,7 +2920,7 @@
         "videoTimestamp": "02:25:33",
         "votingSubject": {
             "agendaItem": "7.5",
-            "motionId": " DS0113/25",
+            "motionId": "DS0113/25",
             "title": "EW-Bau für die Sanierung des Carl-Miller-Freibades in der Carl-Miller-Straße 1 in 39112 Magdeburg",
             "type": "Beschlussvorlage",
             "authors": [
@@ -5107,7 +5107,7 @@
         "videoTimestamp": "04:11:00",
         "votingSubject": {
             "agendaItem": "7.12",
-            "motionId": " DS0362/25",
+            "motionId": "DS0362/25",
             "title": "Umsetzung Festival der Moderne 2027",
             "type": "Beschlussvorlage",
             "authors": [
