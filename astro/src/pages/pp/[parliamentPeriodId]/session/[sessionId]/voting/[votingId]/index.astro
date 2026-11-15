@@ -120,10 +120,14 @@ const qualifiedMajorityRequirementName = getQualifiedMajorityRequirementName(
             <span>TOP {voting.votingSubject.agendaItem}</span>
             <span>
               {voting.votingSubject.type}
+              {voting.votingSubject.motionId && ' '}
               {voting.votingSubject.motionId && paperId && (
                 <a href={`/paper?paperId=${paperId}`} class="link link-primary">
                   {voting.votingSubject.motionId}
                 </a>
+              )}
+              {voting.votingSubject.motionId && !paperId && (
+                <span>{voting.votingSubject.motionId}</span>
               )}
             </span>
           </div>
