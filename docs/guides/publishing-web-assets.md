@@ -65,11 +65,7 @@ variables are validated **only when `--push` is set** (see `.env.sample`):
 
 ### CloudFront configuration
 
-The behavior for `web-assets/*` uses the response headers policy **SimpleCORS**. It is set by hand in the AWS
-console, so set it again if the distribution is ever rebuilt.
-
-Without it, the browser can refuse the files, because they come from another domain than the site. The Abstimmungen
-tab then looks empty.
+The behavior for `web-assets/*` uses the response headers policy **SimpleCORS**.
 
 ### Previewing with `--dry-run`
 

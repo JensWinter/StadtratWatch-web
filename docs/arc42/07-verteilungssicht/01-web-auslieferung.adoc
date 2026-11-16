@@ -85,9 +85,7 @@ App --> Ratsinfo : HTTPS, PDF-Abruf
 | Object-Store mit vorgelagertem CDN (öffentliche CloudFront-Domain, z. B.
   `https://d2zk2bghxwzsug.cloudfront.net`).
 | Liefert die großen Binär-Assets (Abstimmungs-PNGs) und die
-  Drucksachen-JSON-Batches an den Browser. Damit der Browser die Dateien
-  annimmt, ist in CloudFront die Einstellung „SimpleCORS“ gesetzt (siehe
-  `docs/guides/publishing-web-assets.md`).
+  Drucksachen-JSON-Batches an den Browser. CloudFront-Einstellung „SimpleCORS“ ist gesetzt.
 
 | *Ratsinformationssystem*
 | Externes System der Stadt (kein StadtratWatch-Knoten).
