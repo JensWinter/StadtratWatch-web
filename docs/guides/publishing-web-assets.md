@@ -95,8 +95,8 @@ curl -sS -o /dev/null -D - -H "Origin: https://www.stadtratwatch.de" \
   "$AWS_CLOUDFRONT_BASE_URL/web-assets/paper-votings/paper-votings-2391.json"
 ```
 
-Expected: `HTTP/2 200` with `content-type: application/json` and `access-control-allow-origin: *` (only sent when the request has `Origin`, as browsers always do). Then confirm the page renders the tab
-at `/paper?paperId=239123` (period badges visible, cards link to the voting detail pages).
+Expected: `HTTP/2 200` with `content-type: application/json` and `access-control-allow-origin: *`. Then confirm
+the page renders the tab at `/paper?paperId=239123` (period badges visible, cards link to the voting detail pages).
 
 Do not probe an arbitrary batch to judge a publish: `paper-votings` batches exist only for papers
 that were actually voted on (far fewer than the paper batches), so a 403 is ambiguous between »never
