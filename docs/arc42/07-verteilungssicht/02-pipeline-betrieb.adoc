@@ -7,6 +7,9 @@ Maintainer:in ausgeführt — als Deno-, Python- und Shell-Skripte, für die jew
 ein Docker-Image bereitsteht (`docker/`). Es gibt keinen Scheduler und keinen
 Server, der die Pipelines automatisch anstößt; der Anstoß und die fachliche
 Reihenfolge liegen in menschlicher Hand (siehe `docs/guides/HOWTO.md`).
+Den OParl-Teil (`fetch-oparl` bis `generate-oparl-derivatives`) bündelt der
+*OParl-Sync* (`oparl-sync`) zu einem Lauf, der ebenfalls von Hand startet und
+beim ersten Fehler abbricht.
 
 Das Ergebnis fließt an drei Ziele: in das *GitHub-Repository* (die strukturierten
 JSON-Daten, per Git committet und gepusht), in *AWS S3* (große Binär-Assets) und

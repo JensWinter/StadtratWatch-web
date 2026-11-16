@@ -21,6 +21,7 @@
     "src/scripts/generate-paper-assets",
     "src/scripts/generate-paper-votings",
     "src/scripts/index-search",
+    "src/scripts/oparl-sync",
     "src/scripts/parse-speakers",
     "src/scripts/scan-voting-images",
     "src/scripts/scrape-oparl",
