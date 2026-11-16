@@ -63,6 +63,10 @@ variables are validated **only when `--push` is set** (see `.env.sample`):
 | `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` | Credentials with write access. **Never commit these**; provide them via the environment at runtime. |
 | `AWS_CLOUDFRONT_DISTRIBUTION_ID` | Distribution to invalidate. Needed only for web assets — unlike the immutable OParl blobs, these are overwritten in place and so must be invalidated on every publish. |
 
+### CloudFront configuration
+
+The behavior for `web-assets/*` uses the response headers policy **SimpleCORS**.
+
 ### Previewing with `--dry-run`
 
 Add `--dry-run` alongside `--push` to print the upload / delete / invalidate plan **without** writing
@@ -87,11 +91,11 @@ generator produced (check `output/` first), for example a `paper-votings` batch 
 two parliament periods and therefore also exercises the cross-period path:
 
 ```shell
-curl -sS -o /dev/null -D - \
+curl -sS -o /dev/null -D - -H "Origin: https://www.stadtratwatch.de" \
   "$AWS_CLOUDFRONT_BASE_URL/web-assets/paper-votings/paper-votings-2391.json"
 ```
 
-Expected: `HTTP/2 200` with `content-type: application/json`. Then confirm the page renders the tab
+Expected: `HTTP/2 200` with `content-type: application/json` and `access-control-allow-origin: *` (only sent when the request has `Origin`, as browsers always do). Then confirm the page renders the tab
 at `/paper?paperId=239123` (period badges visible, cards link to the voting detail pages).
 
 Do not probe an arbitrary batch to judge a publish: `paper-votings` batches exist only for papers
