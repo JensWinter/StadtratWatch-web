@@ -52,7 +52,7 @@ _Avoid_: Antragsnummer (nicht jede Drucksache ist ein Antrag), Referenz, motionI
 Eine Drucksache, die eine andere Drucksache ändern will. Ihre Drucksachennummer ist die der geänderten Drucksache mit angehängtem `/n`.
 
 **OParl-Sync**:
-Ein von Hand gestarteter Lauf, der den Stand der Drucksachen an das Ratsinformationssystem angleicht: OParl-Rohdaten, die daraus abgeleiteten Daten und die Daten der Drucksachen-Seiten. Der Suchindex gehört nicht dazu.
+Ein von Hand gestarteter Lauf, der den Stand der Drucksachen an das Ratsinformationssystem angleicht: OParl-Rohdaten, die daraus abgeleiteten Daten und die Daten der Drucksachen-Seiten.
 _Avoid_: OParl-Import, Scrape (für den ganzen Lauf), Ingestion
 
 ### Redebeiträge
