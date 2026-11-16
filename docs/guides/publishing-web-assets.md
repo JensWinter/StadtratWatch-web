@@ -63,6 +63,16 @@ variables are validated **only when `--push` is set** (see `.env.sample`):
 | `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` | Credentials with write access. **Never commit these**; provide them via the environment at runtime. |
 | `AWS_CLOUDFRONT_DISTRIBUTION_ID` | Distribution to invalidate. Needed only for web assets — unlike the immutable OParl blobs, these are overwritten in place and so must be invalidated on every publish. |
 
+### CloudFront configuration
+
+The distribution is configured by hand in the AWS console; this is the setting a rebuild must restore.
+
+The site fetches `web-assets/` from another domain, so every response needs `Access-Control-Allow-Origin`. S3 only
+sends it when the request carries an `Origin` header, and `Origin` is not part of the cache key. A first request
+without `Origin` (`curl`, a crawler) would otherwise cache a response without the header and break the paper page for
+browsers until the entry expires. The behavior serving `web-assets/*` therefore uses the managed response headers
+policy **SimpleCORS**, which adds `Access-Control-Allow-Origin: *` to every response, cache hits included.
+
 ### Previewing with `--dry-run`
 
 Add `--dry-run` alongside `--push` to print the upload / delete / invalidate plan **without** writing
