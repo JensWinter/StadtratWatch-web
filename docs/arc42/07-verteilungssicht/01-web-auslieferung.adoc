@@ -85,9 +85,8 @@ App --> Ratsinfo : HTTPS, PDF-Abruf
 | Object-Store mit vorgelagertem CDN (öffentliche CloudFront-Domain, z. B.
   `https://d2zk2bghxwzsug.cloudfront.net`).
 | Liefert die großen Binär-Assets (Abstimmungs-PNGs) und die
-  Drucksachen-JSON-Batches an den Browser. Die Response-Headers-Policy
-  „SimpleCORS“ setzt `Access-Control-Allow-Origin` für jede Anfrage mit
-  `Origin`, auch bei Antworten aus dem Cache (siehe
+  Drucksachen-JSON-Batches an den Browser. Damit der Browser die Dateien
+  annimmt, ist in CloudFront die Einstellung „SimpleCORS“ gesetzt (siehe
   `docs/guides/publishing-web-assets.md`).
 
 | *Ratsinformationssystem*

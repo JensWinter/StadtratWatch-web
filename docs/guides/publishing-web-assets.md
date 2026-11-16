@@ -65,15 +65,11 @@ variables are validated **only when `--push` is set** (see `.env.sample`):
 
 ### CloudFront configuration
 
-The distribution is configured by hand in the AWS console; this is the setting a rebuild must restore.
+The behavior for `web-assets/*` uses the response headers policy **SimpleCORS**. It is set by hand in the AWS
+console, so set it again if the distribution is ever rebuilt.
 
-The site fetches `web-assets/` from another domain, so every response needs `Access-Control-Allow-Origin`. S3 only
-sends it when the request carries an `Origin` header, and `Origin` is not part of the cache key. A first request
-without `Origin` (`curl`, a crawler) would otherwise cache a response without the header and break the paper page for
-browsers until the entry expires. The behavior serving `web-assets/*` therefore uses the managed response headers
-policy **SimpleCORS**, which adds `Access-Control-Allow-Origin: *` to every response to a request with `Origin`, cache
-hits included. A request without `Origin` still gets no CORS header, which is fine: browsers always send `Origin` for
-these fetches, so probe with `-H "Origin: https://www.stadtratwatch.de"`.
+Without it, the browser can refuse the files, because they come from another domain than the site. The Abstimmungen
+tab then looks empty.
 
 ### Previewing with `--dry-run`
 
@@ -103,7 +99,7 @@ curl -sS -o /dev/null -D - -H "Origin: https://www.stadtratwatch.de" \
   "$AWS_CLOUDFRONT_BASE_URL/web-assets/paper-votings/paper-votings-2391.json"
 ```
 
-Expected: `HTTP/2 200` with `content-type: application/json` and `access-control-allow-origin: *`. Then confirm the page renders the tab
+Expected: `HTTP/2 200` with `content-type: application/json` and `access-control-allow-origin: *` (only sent when the request has `Origin`, as browsers always do). Then confirm the page renders the tab
 at `/paper?paperId=239123` (period badges visible, cards link to the voting detail pages).
 
 Do not probe an arbitrary batch to judge a publish: `paper-votings` batches exist only for papers
