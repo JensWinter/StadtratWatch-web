@@ -86,8 +86,9 @@ App --> Ratsinfo : HTTPS, PDF-Abruf
   `https://d2zk2bghxwzsug.cloudfront.net`).
 | Liefert die großen Binär-Assets (Abstimmungs-PNGs) und die
   Drucksachen-JSON-Batches an den Browser. Die Response-Headers-Policy
-  „SimpleCORS“ setzt `Access-Control-Allow-Origin` für jede Antwort, auch aus
-  dem Cache (siehe `docs/guides/publishing-web-assets.md`).
+  „SimpleCORS“ setzt `Access-Control-Allow-Origin` für jede Anfrage mit
+  `Origin`, auch bei Antworten aus dem Cache (siehe
+  `docs/guides/publishing-web-assets.md`).
 
 | *Ratsinformationssystem*
 | Externes System der Stadt (kein StadtratWatch-Knoten).

@@ -71,7 +71,9 @@ The site fetches `web-assets/` from another domain, so every response needs `Acc
 sends it when the request carries an `Origin` header, and `Origin` is not part of the cache key. A first request
 without `Origin` (`curl`, a crawler) would otherwise cache a response without the header and break the paper page for
 browsers until the entry expires. The behavior serving `web-assets/*` therefore uses the managed response headers
-policy **SimpleCORS**, which adds `Access-Control-Allow-Origin: *` to every response, cache hits included.
+policy **SimpleCORS**, which adds `Access-Control-Allow-Origin: *` to every response to a request with `Origin`, cache
+hits included. A request without `Origin` still gets no CORS header, which is fine: browsers always send `Origin` for
+these fetches, so probe with `-H "Origin: https://www.stadtratwatch.de"`.
 
 ### Previewing with `--dry-run`
 
@@ -97,11 +99,11 @@ generator produced (check `output/` first), for example a `paper-votings` batch 
 two parliament periods and therefore also exercises the cross-period path:
 
 ```shell
-curl -sS -o /dev/null -D - \
+curl -sS -o /dev/null -D - -H "Origin: https://www.stadtratwatch.de" \
   "$AWS_CLOUDFRONT_BASE_URL/web-assets/paper-votings/paper-votings-2391.json"
 ```
 
-Expected: `HTTP/2 200` with `content-type: application/json`. Then confirm the page renders the tab
+Expected: `HTTP/2 200` with `content-type: application/json` and `access-control-allow-origin: *`. Then confirm the page renders the tab
 at `/paper?paperId=239123` (period badges visible, cards link to the voting detail pages).
 
 Do not probe an arbitrary batch to judge a publish: `paper-votings` batches exist only for papers
