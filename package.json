@@ -1,7 +1,7 @@
 {
   "private": true,
   "type": "module",
-  "packageManager": "bun@1.4.4",
+  "packageManager": "bun@1.4.5",
   "workspaces": [
     "src/deps/astro"
   ],
@@ -12,16 +12,16 @@
     "format:check": "bun fmt --check src"
   },
   "dependencies": {
-    "@aws-sdk/client-cloudfront": "^3.1167.0",
-    "@aws-sdk/client-s3": "^3.1167.0",
+    "@aws-sdk/client-cloudfront": "^3.1173.0",
+    "@aws-sdk/client-s3": "^3.1173.0",
     "@napi-rs/canvas": "1.1.1",
     "@srw-astro/models": "workspace:*",
     "fast-png": "8.0.0",
-    "openai": "^7.55.0",
+    "openai": "^7.62.0",
     "tesseract.js": "7.0.0"
   },
   "devDependencies": {
-    "@types/bun": "1.4.4",
+    "@types/bun": "1.4.5",
     "typescript": "7.0.2"
   }
 }
