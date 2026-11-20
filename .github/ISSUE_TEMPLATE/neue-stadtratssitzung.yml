@@ -78,28 +78,19 @@ body:
 
         ## 1. Zweig C: OParl & Drucksachen
 
-        - [ ] OParl-Daten aktualisieren und Snapshot veröffentlichen (ohne lokalen Snapshot vorher `fetch-oparl`):
+        - [ ] OParl-Sync zur Probe ausführen (Snapshot, PDFs des laufenden und des vorigen Jahres, Paper-Assets; andere Jahre
+              mit `-y <Jahr>`). `--dry-run` aktualisiert nur lokal, zeigt den Diff der Paper-Assets, veröffentlicht nichts und
+              schreibt keine Derivate:
           ```bash
-          bun --env-file=.env.local src/scripts/fetch-oparl/index.ts -d data/oparl-magdeburg   # nur wenn nötig
-          bun --env-file=.env.local src/scripts/scrape-oparl/index.ts -m incremental -r data/oparl-magdeburg --push
+          bun --env-file=.env.local src/scripts/oparl-sync/index.ts --dry-run
           ```
         - [ ] Prüfen: Die Sitzung mit Tagesordnung und Drucksachen ist in `data/oparl-magdeburg/meetings.json` enthalten
-        - [ ] PDFs des Jahres herunterladen:
+        - [ ] OParl-Sync ausführen (veröffentlicht Snapshot und Paper-Assets, erzeugt danach die OParl-Derivate):
           ```bash
-          bun src/scripts/download-paper-files/index.ts -r data/oparl-magdeburg -p output/papers/$YEAR -y $YEAR
+          bun --env-file=.env.local src/scripts/oparl-sync/index.ts
           ```
-        - [ ] Paper-Assets erzeugen, Änderungen ansehen, dann veröffentlichen:
-          ```bash
-          bun --env-file=.env.local src/scripts/generate-paper-assets/index.ts \
-            -r data/oparl-magdeburg/ -p output/papers/ -d data/ -o output/paper-assets/ --push --dry-run
-          bun --env-file=.env.local src/scripts/generate-paper-assets/index.ts \
-            -r data/oparl-magdeburg/ -p output/papers/ -d data/ -o output/paper-assets/ --push
-          ```
-        - [ ] OParl-Derivate erzeugen:
-          ```bash
-          bun src/scripts/generate-oparl-derivatives/index.ts
-          ```
-          Ein leerer Diff ist kein Fehler: Wurden die Derivate für die Sitzung schon früher erzeugt und committet und haben sich
+          Bricht ein Schritt ab, den ganzen Lauf erneut starten. Am Ende meldet der Lauf, ob sich die Derivate geändert haben.
+          Keine Änderung ist kein Fehler: Wurden die Derivate für die Sitzung schon früher erzeugt und committet und haben sich
           die OParl-Daten seitdem nicht geändert, kommt dasselbe heraus.
         - [ ] Volltext aus den PDFs extrahieren (Tika):
           ```bash
