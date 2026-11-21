@@ -49,3 +49,22 @@ To run the script, you need to provide the following arguments:
 ./init-schema.sh "http://localhost:8108" "papers-and-speeches-0001" "abc123"
 ```
 This command will initialize the specified collection on the Typesense server running at `http://localhost:8108` using the provided API key.
+
+### Rebuild the collection
+
+The frontend searches `papers-and-speeches`, an alias pointing to the current collection. To change the schema without
+search downtime, build a new collection next to the old one and switch the alias:
+
+1. Look up the collection the alias points to: `curl "<URL>/aliases/papers-and-speeches" -H "X-TYPESENSE-API-KEY: <API KEY>"`.
+   The steps below assume it is `papers-and-speeches-0001`.
+   Create the new collection with the next number: `./init-schema.sh "<URL>" "papers-and-speeches-0002" "<API KEY>"`
+2. Index everything into it with `index-search` (`TYPESENSE_COLLECTION_NAME=papers-and-speeches-0002`, see
+   [its README](../src/scripts/index-search/README.md)).
+3. Point the alias to it:
+   ```bash
+   curl -X PUT "<URL>/aliases/papers-and-speeches" \
+     -H "X-TYPESENSE-API-KEY: <API KEY>" \
+     -H "Content-Type: application/json" \
+     -d '{"collection_name": "papers-and-speeches-0002"}'
+   ```
+4. Delete the old collection: `curl -X DELETE "<URL>/collections/papers-and-speeches-0001" -H "X-TYPESENSE-API-KEY: <API KEY>"`
