@@ -177,6 +177,8 @@ docker run \
   $HUGGING_FACE_API_TOKEN
 ```
 
+On a Mac, running it natively without Docker uses the GPU; see [speaker-diarization](../../src/scripts/speaker-diarization/README.md#run-locally-without-docker-macos).
+
 ## Parse Speakers
 
 This tool parses multiple rttm files (from one session) and generates a single json file containing all speakers data.

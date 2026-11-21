@@ -59,3 +59,7 @@ typesense/data
 # the web build fetches them at runtime (see src/scripts/generate-paper-assets --push). Not committed.
 /data/papers/
 deu.traineddata
+
+# Local Python environment and bytecode of the speaker diarization step
+.venv/
+__pycache__/

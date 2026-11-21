@@ -1,2 +1,6 @@
 Dockerfile
 .dockerignore
+.venv
+__pycache__
+compare_rttm.py
+test_device.py
