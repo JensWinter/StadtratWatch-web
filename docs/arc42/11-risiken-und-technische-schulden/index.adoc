@@ -69,6 +69,6 @@ Dieses Kapitel ist ein lebendes Dokument; die zeitliche Nachvollziehbarkeit ergi
 | [[schuld-td3]]TD3
 | *Manuelle Pipeline-Orchestrierung.* Die Verarbeitungsschritte (Ingestion, OCR, Transkription, Asset- und Index-Erzeugung) werden manuell in dokumentierter Reihenfolge nach docs/guides/HOWTO.md ausgeführt; eine durchgehende, automatisierte Orchestrierung fehlt.
 | mittel
-| Umgang: bewusst akzeptiert, da die Schritte selten und idempotent sind und sich ohne Datenverlust wiederholen lassen. Tilgung durch schrittweise Automatisierung unter Wahrung der Reproduzierbarkeit.
+| Umgang: bewusst akzeptiert, da die Schritte selten und idempotent sind und sich ohne Datenverlust wiederholen lassen. Tilgung durch schrittweise Automatisierung unter Wahrung der Reproduzierbarkeit. Der OParl-Teil ist bereits im OParl-Sync (`oparl-sync`) gebündelt.
 | <<laufzeitsicht,Kap. 6>>
 |===

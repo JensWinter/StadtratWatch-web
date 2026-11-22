@@ -84,6 +84,9 @@ S5 --> TS
 ====
 Die hier gezeigte Reihenfolge ist die fachliche Abhängigkeit, nicht ein
 durchlaufender Automatismus: Die Stufen werden bedarfsweise und teils manuell
-gestartet (siehe `docs/guides/HOWTO.md`). Der genaue zeitliche Ablauf je Sitzung gehört in die
+gestartet (siehe `docs/guides/HOWTO.md`). OParl-Ingestion und
+Drucksachen-Aufbereitung samt `fetch-oparl` und `generate-oparl-derivatives` laufen
+gebündelt als *OParl-Sync* (`oparl-sync`); die Derivate entstehen dabei erst,
+nachdem die Drucksachen-Batches veröffentlicht sind. Der genaue zeitliche Ablauf je Sitzung gehört in die
 Laufzeitsicht (Kapitel 6).
 ====
