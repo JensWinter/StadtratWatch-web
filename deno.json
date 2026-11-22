@@ -13,6 +13,7 @@
     "src/scripts/scan-voting-images/",
     "src/scripts/scrape-oparl/",
     "src/scripts/shared/**/*.test.ts",
+    "src/scripts/speaker-diarization/",
     "src/scripts/speech-to-text/"
   ],
   "nodeModulesDir": "none",
